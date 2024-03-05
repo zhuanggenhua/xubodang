@@ -1,0 +1,12 @@
+{
+    "systemInfo": {
+        "arch": "x64",
+        "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+        "version": "Windows 10 Pro"
+    },
+    "sceneListMap": {
+        "6d3ab2b9-b577-44d1-a11a-8fe37214ce68": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\home.scene",
+        "ebf99b4f-7bc1-47d4-b2e6-181b740bc2ad": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene"
+    },
+    "deviceMd5": "a71bfce4187a9b7a045951c098917077"
+}

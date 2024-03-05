@@ -1,0 +1,42 @@
+{
+  "./chunks/de/de93e53c577dc7bd45eab2762f034c0c8e913cd3.js": {
+    "__unresolved_0": {
+      "error": "Error: 以 file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/common/utils.ts 为起点找不到模块 \"./enum\"",
+      "messages": [
+        {
+          "level": "warn",
+          "text": "你是否遗漏了扩展名？请注意你不能在模块说明符中省略扩展名。"
+        }
+      ]
+    }
+  },
+  "./chunks/85/85afa609f3711fd07bcab68ba1b92483f90c0786.js": {
+    "__unresolved_0": {
+      "error": "Error: 以 file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/common/index.ts 为起点找不到模块 \"./enum\"",
+      "messages": [
+        {
+          "level": "warn",
+          "text": "你是否遗漏了扩展名？请注意你不能在模块说明符中省略扩展名。"
+        }
+      ]
+    },
+    "__unresolved_1": {
+      "error": "Error: 以 file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/common/index.ts 为起点找不到模块 \"./utils\"",
+      "messages": [
+        {
+          "level": "warn",
+          "text": "你是否遗漏了扩展名？请注意你不能在模块说明符中省略扩展名。"
+        }
+      ]
+    },
+    "__unresolved_2": {
+      "error": "Error: 以 file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/common/index.ts 为起点找不到模块 \"./state\"",
+      "messages": [
+        {
+          "level": "warn",
+          "text": "你是否遗漏了扩展名？请注意你不能在模块说明符中省略扩展名。"
+        }
+      ]
+    }
+  }
+}
