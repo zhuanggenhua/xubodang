@@ -1,6 +1,7 @@
 import { Prefab, SpriteFrame, Node } from 'cc';
 import { IRoom, IState } from '../common';
 import { Singleton } from '../common/base';
+import Particle from '../particle/Particle';
 
 
 const PLAYER_SPEED = 100;
@@ -11,6 +12,7 @@ const WEAPON_DAMAGE = 5;
 const PLAYER_RADIUS = 50;
 const BULLET_RADIUS = 10;
 
+// 设计图尺寸
 export const mapW = 720;
 export const mapH = 1280;
 

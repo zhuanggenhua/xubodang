@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "3cbf6947-65b9-4e56-950f-e1e09ccf0995",
+  "uuid": "ec35ae2f-326c-4a1d-920f-1452a44a5268",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "3cbf6947-65b9-4e56-950f-e1e09ccf0995@6c48a",
+      "uuid": "ec35ae2f-326c-4a1d-920f-1452a44a5268@6c48a",
       "displayName": "divisorys",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "3cbf6947-65b9-4e56-950f-e1e09ccf0995",
+        "imageUuidOrDatabaseUri": "ec35ae2f-326c-4a1d-920f-1452a44a5268",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "3cbf6947-65b9-4e56-950f-e1e09ccf0995@f9941",
+      "uuid": "ec35ae2f-326c-4a1d-920f-1452a44a5268@f9941",
       "displayName": "divisorys",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "3cbf6947-65b9-4e56-950f-e1e09ccf0995@6c48a",
+        "imageUuidOrDatabaseUri": "ec35ae2f-326c-4a1d-920f-1452a44a5268@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "3cbf6947-65b9-4e56-950f-e1e09ccf0995@f9941"
+    "redirect": "ec35ae2f-326c-4a1d-920f-1452a44a5268@f9941"
   }
 }

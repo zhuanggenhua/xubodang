@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Color, Component, instantiate, ParticleSystem2D, Prefab, mapH, mapW, _dec, _dec2, _class, _class2, _descriptor, _crd, ccclass, property, blinkInterval, HomeMgr;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, ParticleMgr, LightParticle, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _crd, ccclass, property, blinkInterval, HomeMgr;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -9,12 +9,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
   function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'transform-class-properties is enabled and runs after the decorators transform.'); }
 
-  function _reportPossibleCrUseOfmapH(extras) {
-    _reporterNs.report("mapH", "../global/DataManager", _context.meta, extras);
+  function _reportPossibleCrUseOfParticleMgr(extras) {
+    _reporterNs.report("ParticleMgr", "../particle/ParticleMgr", _context.meta, extras);
   }
 
-  function _reportPossibleCrUseOfmapW(extras) {
-    _reporterNs.report("mapW", "../global/DataManager", _context.meta, extras);
+  function _reportPossibleCrUseOfLightParticle(extras) {
+    _reporterNs.report("LightParticle", "../particle/LightParticle", _context.meta, extras);
   }
 
   return {
@@ -25,83 +25,66 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       __checkObsolete__ = _cc.__checkObsolete__;
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
       _decorator = _cc._decorator;
-      Color = _cc.Color;
       Component = _cc.Component;
-      instantiate = _cc.instantiate;
-      ParticleSystem2D = _cc.ParticleSystem2D;
-      Prefab = _cc.Prefab;
+      Node = _cc.Node;
     }, function (_unresolved_2) {
-      mapH = _unresolved_2.mapH;
-      mapW = _unresolved_2.mapW;
+      ParticleMgr = _unresolved_2.default;
+    }, function (_unresolved_3) {
+      LightParticle = _unresolved_3.LightParticle;
     }],
     execute: function () {
       _crd = true;
 
-      _cclegacy._RF.push({}, "332c813+dtILo26MFIhw80h", "HomeMgr", undefined);
+      _cclegacy._RF.push({}, "dde21zvwz9AcZv0p6AdySwj", "HomeMgr", undefined);
 
-      __checkObsolete__(['_decorator', 'Color', 'Component', 'GradientRange', 'instantiate', 'Node', 'ParticleSystem', 'ParticleSystem2D', 'Prefab']);
+      __checkObsolete__(['_decorator', 'Color', 'Component', 'GradientRange', 'Graphics', 'instantiate', 'Node', 'ParticleSystem2D', 'Prefab', 'tween']);
 
       ({
         ccclass,
         property
       } = _decorator);
-      blinkInterval = 0.5; // 闪烁间隔时间（秒）
+      blinkInterval = 1; // 闪烁间隔时间（秒）
 
-      _export("HomeMgr", HomeMgr = (_dec = ccclass('HomeMgr'), _dec2 = property(Prefab), _dec(_class = (_class2 = class HomeMgr extends Component {
+      _export("HomeMgr", HomeMgr = (_dec = ccclass('HomeMgr'), _dec2 = property(Node), _dec3 = property(Node), _dec(_class = (_class2 = class HomeMgr extends Component {
         constructor() {
           super(...arguments);
 
-          _initializerDefineProperty(this, "bg_light", _descriptor, this);
+          _initializerDefineProperty(this, "canvas", _descriptor, this);
 
-          this.particleInstances = [];
+          _initializerDefineProperty(this, "bg", _descriptor2, this);
+
+          this.particleMgr = void 0;
         }
 
         onLoad() {
-          this.particleInstances = []; // 存储生成的粒子对象引用
-
-          var spacing = (_crd && mapW === void 0 ? (_reportPossibleCrUseOfmapW({
+          this.particleMgr = this.canvas.addComponent(_crd && ParticleMgr === void 0 ? (_reportPossibleCrUseOfParticleMgr({
             error: Error()
-          }), mapW) : mapW) / (10 + 1); // 计算粒子间的间距
-
-          for (var i = 0; i < 10; i++) {
-            // 假设生成10个粒子对象
-            var particle = instantiate(this.bg_light); // 创建新的粒子实例
-            // 设置粒子颜色为金色，稍微透明
-
-            particle.getComponent(ParticleSystem2D).startColor = new Color(255, 215, 0, 0.5); // 金色，半透明
-
-            particle.getComponent(ParticleSystem2D).endColor = new Color(255, 215, 0, 0); // 金色，完全透明
-
-            this.node.addChild(particle); // 将新粒子添加到当前节点的子节点中
-
-            this.particleInstances.push(particle); // 保存粒子实例的引用
-            // 设置粒子对象的位置
-
-            var posX = spacing * (i + 1) - (_crd && mapW === void 0 ? (_reportPossibleCrUseOfmapW({
-              error: Error()
-            }), mapW) : mapW) / 2; // 计算每个粒子的X坐标位置
-
-            var posY = -(_crd && mapH === void 0 ? (_reportPossibleCrUseOfmapH({
-              error: Error()
-            }), mapH) : mapH) / 2; // 假设屏幕底部的Y坐标位置
-
-            particle.setPosition(posX, posY);
-          }
-        }
-
-        start() {
-          this.schedule(this.blinkParticles, blinkInterval);
-        }
-
-        blinkParticles() {
-          this.particleInstances.forEach(particle => {
-            particle.active = !particle.active; // 切换粒子的可见性
+          }), ParticleMgr) : ParticleMgr);
+          this.particleMgr.init(_crd && LightParticle === void 0 ? (_reportPossibleCrUseOfLightParticle({
+            error: Error()
+          }), LightParticle) : LightParticle, {
+            gap: 1
           });
         }
 
-        update(deltaTime) {}
+        onDestroy() {
+          this.particleMgr.clear();
+        }
 
-      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "bg_light", [_dec2], {
+        start() {}
+
+        update(deltaTime) {
+          this.particleMgr.update(deltaTime);
+        }
+
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "canvas", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "bg", [_dec3], {
         configurable: true,
         enumerable: true,
         writable: true,

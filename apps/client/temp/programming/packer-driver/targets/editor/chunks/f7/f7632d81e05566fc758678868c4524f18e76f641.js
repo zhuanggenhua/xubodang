@@ -20,7 +20,7 @@ System.register(["cc"], function (_export, _context) {
     execute: function () {
       _crd = true;
 
-      _cclegacy._RF.push({}, "82abcdrLkdOjJxgMEXf0Dz1", "skyCanvas", undefined);
+      _cclegacy._RF.push({}, "055f0zMwKpMYobUCCt2pzMG", "skyCanvas", undefined);
 
       __checkObsolete__(['_decorator', 'Component', 'Graphics', 'Node', 'UITransform', 'v2', 'v3', 'Vec2', 'Vec3']);
 

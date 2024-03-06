@@ -26,7 +26,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     execute: function () {
       _crd = true;
 
-      _cclegacy._RF.push({}, "33b5fEl/oFFu45InAIo7SjT", "DataManager", undefined);
+      _cclegacy._RF.push({}, "f3a50IPeU9FqKFr/UCCSiVN", "DataManager", undefined);
 
       __checkObsolete__(['Prefab', 'SpriteFrame', 'Node']);
 
@@ -34,7 +34,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       BULLET_SPEED = 600;
       WEAPON_DAMAGE = 5;
       PLAYER_RADIUS = 50;
-      BULLET_RADIUS = 10;
+      BULLET_RADIUS = 10; // 设计图尺寸
 
       _export("mapW", mapW = 720);
 

@@ -1,1255 +1,1103 @@
 {
-  "851e21c0-0eb2-4d34-901d-671b2523ee8d": {
-    "url": "db://assets/resources",
+  "6fa0e14a-4e40-48f7-b2f1-60ff861c81a7": {
+    "url": "db://assets/Scripts",
     "value": {}
   },
-  "af737579-4421-42c3-b079-521131dd0baf": {
-    "url": "db://assets/resources/prefab",
+  "2433da3a-de7f-4712-80a0-c1ba36c72aff": {
+    "url": "db://assets/Scripts/scene",
     "value": {}
   },
-  "c6bbb272-cae5-4d57-aeb2-107f89063ff1": {
-    "url": "db://assets/resources/ui",
+  "dbbb8ad9-c288-418b-b96a-c97d29f68160": {
+    "url": "db://assets/Scripts/utils",
     "value": {}
   },
-  "13ab3322-383c-4ef2-b2c5-2ba1a7ef4b5f": {
-    "url": "db://assets/resources/font",
+  "dde21cef-c33f-4071-9bf4-a7a01dc92c23": {
+    "url": "db://assets/scripts/scene/HomeMgr.ts",
     "value": {}
   },
-  "85879d8e-7de4-47cb-8009-aef119c77392": {
-    "url": "db://assets/resources/font/font.svg",
+  "b3ee90f8-b88b-4cff-a561-a2901ad38ec5": {
+    "url": "db://assets/Scripts/utils/tool.ts",
     "value": {}
   },
-  "3ea97e5e-fb30-43ad-ad34-ea2ceb38c66d": {
-    "url": "db://assets/resources/ui/ui_theme.svg",
+  "5f4dcc52-0e8e-4323-8a07-eadb99272335": {
+    "url": "db://assets/Scripts/base",
     "value": {}
   },
-  "961a70a3-62f7-497e-afbd-d888250e75e8": {
-    "url": "db://assets/resources/ui/ui-theme.png",
+  "3f98269b-2fec-4e08-8825-a3239e1a8788": {
+    "url": "db://assets/Scripts/enum",
     "value": {}
   },
-  "961a70a3-62f7-497e-afbd-d888250e75e8@6c48a": {
-    "url": "db://assets/resources/ui/ui-theme.png@6c48a",
-    "value": {
-      "depends": [
-        "961a70a3-62f7-497e-afbd-d888250e75e8"
-      ]
-    }
-  },
-  "961a70a3-62f7-497e-afbd-d888250e75e8@f9941": {
-    "url": "db://assets/resources/ui/ui-theme.png@f9941",
-    "value": {
-      "depends": [
-        "961a70a3-62f7-497e-afbd-d888250e75e8@6c48a"
-      ]
-    }
-  },
-  "301b9017-c3cc-4683-8d39-12e6923626b8": {
-    "url": "db://assets/resources/ui/bg/battle.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "d8dd3c4a-880b-490f-bb48-07bb4787372b": {
-    "url": "db://assets/resources/ui/input/black_item.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "f62b1eab-34e5-466e-adb6-cc534c551ef9": {
-    "url": "db://assets/resources/ui/input/black_item_bold.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "842b1325-c997-4c56-8a02-f44aa9918dab": {
-    "url": "db://assets/resources/ui/cha.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "1b58c9fa-849a-418c-b2da-fae1e60ebed7": {
-    "url": "db://assets/resources/ui/button/gou.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "1b58c9fa-849a-418c-b2da-fae1e60ebed7@6c48a": {
-    "url": "db://assets/resources/ui/button/gou.png@6c48a",
-    "value": {
-      "depends": [
-        "1b58c9fa-849a-418c-b2da-fae1e60ebed7"
-      ]
-    }
-  },
-  "f62b1eab-34e5-466e-adb6-cc534c551ef9@6c48a": {
-    "url": "db://assets/resources/ui/input/black_item_bold.png@6c48a",
-    "value": {
-      "depends": [
-        "f62b1eab-34e5-466e-adb6-cc534c551ef9"
-      ]
-    }
-  },
-  "d8dd3c4a-880b-490f-bb48-07bb4787372b@6c48a": {
-    "url": "db://assets/resources/ui/input/black_item.png@6c48a",
-    "value": {
-      "depends": [
-        "d8dd3c4a-880b-490f-bb48-07bb4787372b"
-      ]
-    }
-  },
-  "301b9017-c3cc-4683-8d39-12e6923626b8@6c48a": {
-    "url": "db://assets/resources/ui/bg/battle.png@6c48a",
-    "value": {
-      "depends": [
-        "301b9017-c3cc-4683-8d39-12e6923626b8"
-      ]
-    }
-  },
-  "842b1325-c997-4c56-8a02-f44aa9918dab@6c48a": {
-    "url": "db://assets/resources/ui/cha.png@6c48a",
-    "value": {
-      "depends": [
-        "842b1325-c997-4c56-8a02-f44aa9918dab"
-      ]
-    }
-  },
-  "1b58c9fa-849a-418c-b2da-fae1e60ebed7@f9941": {
-    "url": "db://assets/resources/ui/button/gou.png@f9941",
-    "value": {
-      "depends": [
-        "1b58c9fa-849a-418c-b2da-fae1e60ebed7@6c48a"
-      ]
-    }
-  },
-  "d8dd3c4a-880b-490f-bb48-07bb4787372b@f9941": {
-    "url": "db://assets/resources/ui/input/black_item.png@f9941",
-    "value": {
-      "depends": [
-        "d8dd3c4a-880b-490f-bb48-07bb4787372b@6c48a"
-      ]
-    }
-  },
-  "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44": {
-    "url": "db://assets/resources/ui/input/grey_item.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "721462cc-3a5f-434a-9950-0a7e3dd3ec25": {
-    "url": "db://assets/resources/ui/input/grey_item_bold.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "301b9017-c3cc-4683-8d39-12e6923626b8@f9941": {
-    "url": "db://assets/resources/ui/bg/battle.png@f9941",
-    "value": {
-      "depends": [
-        "301b9017-c3cc-4683-8d39-12e6923626b8@6c48a"
-      ]
-    }
-  },
-  "842b1325-c997-4c56-8a02-f44aa9918dab@f9941": {
-    "url": "db://assets/resources/ui/cha.png@f9941",
-    "value": {
-      "depends": [
-        "842b1325-c997-4c56-8a02-f44aa9918dab@6c48a"
-      ]
-    }
-  },
-  "47bf824b-c737-48bb-9ac2-b1420fb5683d": {
-    "url": "db://assets/resources/ui/gun_icon.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "8d5cea6a-8d81-48e7-a016-a65dcafa414d": {
-    "url": "db://assets/resources/ui/button/jiaru.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "f62b1eab-34e5-466e-adb6-cc534c551ef9@f9941": {
-    "url": "db://assets/resources/ui/input/black_item_bold.png@f9941",
-    "value": {
-      "depends": [
-        "f62b1eab-34e5-466e-adb6-cc534c551ef9@6c48a"
-      ]
-    }
-  },
-  "4bd7bdc3-dbb9-4aa2-a97a-9cce0d57737a": {
-    "url": "db://assets/resources/ui/key.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "47bf824b-c737-48bb-9ac2-b1420fb5683d@6c48a": {
-    "url": "db://assets/resources/ui/gun_icon.png@6c48a",
-    "value": {
-      "depends": [
-        "47bf824b-c737-48bb-9ac2-b1420fb5683d"
-      ]
-    }
-  },
-  "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44@6c48a": {
-    "url": "db://assets/resources/ui/input/grey_item.png@6c48a",
-    "value": {
-      "depends": [
-        "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44"
-      ]
-    }
-  },
-  "721462cc-3a5f-434a-9950-0a7e3dd3ec25@6c48a": {
-    "url": "db://assets/resources/ui/input/grey_item_bold.png@6c48a",
-    "value": {
-      "depends": [
-        "721462cc-3a5f-434a-9950-0a7e3dd3ec25"
-      ]
-    }
-  },
-  "8d5cea6a-8d81-48e7-a016-a65dcafa414d@6c48a": {
-    "url": "db://assets/resources/ui/button/jiaru.png@6c48a",
-    "value": {
-      "depends": [
-        "8d5cea6a-8d81-48e7-a016-a65dcafa414d"
-      ]
-    }
-  },
-  "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44@f9941": {
-    "url": "db://assets/resources/ui/input/grey_item.png@f9941",
-    "value": {
-      "depends": [
-        "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44@6c48a"
-      ]
-    }
-  },
-  "fbc0f428-1006-4175-a1f6-e58429ebaafd": {
-    "url": "db://assets/resources/ui/button/konglan.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "4bd7bdc3-dbb9-4aa2-a97a-9cce0d57737a@6c48a": {
-    "url": "db://assets/resources/ui/key.png@6c48a",
-    "value": {
-      "depends": [
-        "4bd7bdc3-dbb9-4aa2-a97a-9cce0d57737a"
-      ]
-    }
-  },
-  "47bf824b-c737-48bb-9ac2-b1420fb5683d@f9941": {
-    "url": "db://assets/resources/ui/gun_icon.png@f9941",
-    "value": {
-      "depends": [
-        "47bf824b-c737-48bb-9ac2-b1420fb5683d@6c48a"
-      ]
-    }
-  },
-  "0d2d8935-a7c4-4709-8b5a-243e76da090b": {
-    "url": "db://assets/resources/ui/pop/pop.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "721462cc-3a5f-434a-9950-0a7e3dd3ec25@f9941": {
-    "url": "db://assets/resources/ui/input/grey_item_bold.png@f9941",
-    "value": {
-      "depends": [
-        "721462cc-3a5f-434a-9950-0a7e3dd3ec25@6c48a"
-      ]
-    }
-  },
-  "127bab4a-0306-4b1f-b8c1-8eeb15b97685": {
-    "url": "db://assets/resources/ui/progress/progress.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "8d5cea6a-8d81-48e7-a016-a65dcafa414d@f9941": {
-    "url": "db://assets/resources/ui/button/jiaru.png@f9941",
-    "value": {
-      "depends": [
-        "8d5cea6a-8d81-48e7-a016-a65dcafa414d@6c48a"
-      ]
-    }
-  },
-  "f98d117b-8aeb-4620-bd32-c3dd06a80849": {
-    "url": "db://assets/resources/ui/progress/progress_column.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "4bd7bdc3-dbb9-4aa2-a97a-9cce0d57737a@f9941": {
-    "url": "db://assets/resources/ui/key.png@f9941",
-    "value": {
-      "depends": [
-        "4bd7bdc3-dbb9-4aa2-a97a-9cce0d57737a@6c48a"
-      ]
-    }
-  },
-  "ea645096-9400-459e-a365-cbd218cb95c2": {
-    "url": "db://assets/resources/ui/qi.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "127bab4a-0306-4b1f-b8c1-8eeb15b97685@6c48a": {
-    "url": "db://assets/resources/ui/progress/progress.png@6c48a",
-    "value": {
-      "depends": [
-        "127bab4a-0306-4b1f-b8c1-8eeb15b97685"
-      ]
-    }
-  },
-  "fbc0f428-1006-4175-a1f6-e58429ebaafd@6c48a": {
-    "url": "db://assets/resources/ui/button/konglan.png@6c48a",
-    "value": {
-      "depends": [
-        "fbc0f428-1006-4175-a1f6-e58429ebaafd"
-      ]
-    }
-  },
-  "0d2d8935-a7c4-4709-8b5a-243e76da090b@6c48a": {
-    "url": "db://assets/resources/ui/pop/pop.png@6c48a",
-    "value": {
-      "depends": [
-        "0d2d8935-a7c4-4709-8b5a-243e76da090b"
-      ]
-    }
-  },
-  "127bab4a-0306-4b1f-b8c1-8eeb15b97685@f9941": {
-    "url": "db://assets/resources/ui/progress/progress.png@f9941",
-    "value": {
-      "depends": [
-        "127bab4a-0306-4b1f-b8c1-8eeb15b97685@6c48a"
-      ]
-    }
-  },
-  "e43fa69d-19cd-4215-951e-5b7a05e20fa4": {
-    "url": "db://assets/resources/ui/quan.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "fbc0f428-1006-4175-a1f6-e58429ebaafd@f9941": {
-    "url": "db://assets/resources/ui/button/konglan.png@f9941",
-    "value": {
-      "depends": [
-        "fbc0f428-1006-4175-a1f6-e58429ebaafd@6c48a"
-      ]
-    }
-  },
-  "71d99543-e683-47ac-81a9-e3a1544a087b": {
-    "url": "db://assets/resources/ui/button/wenhao.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "f98d117b-8aeb-4620-bd32-c3dd06a80849@6c48a": {
-    "url": "db://assets/resources/ui/progress/progress_column.png@6c48a",
-    "value": {
-      "depends": [
-        "f98d117b-8aeb-4620-bd32-c3dd06a80849"
-      ]
-    }
-  },
-  "ea645096-9400-459e-a365-cbd218cb95c2@6c48a": {
-    "url": "db://assets/resources/ui/qi.png@6c48a",
-    "value": {
-      "depends": [
-        "ea645096-9400-459e-a365-cbd218cb95c2"
-      ]
-    }
-  },
-  "0d2d8935-a7c4-4709-8b5a-243e76da090b@f9941": {
-    "url": "db://assets/resources/ui/pop/pop.png@f9941",
-    "value": {
-      "depends": [
-        "0d2d8935-a7c4-4709-8b5a-243e76da090b@6c48a"
-      ]
-    }
-  },
-  "f98d117b-8aeb-4620-bd32-c3dd06a80849@f9941": {
-    "url": "db://assets/resources/ui/progress/progress_column.png@f9941",
-    "value": {
-      "depends": [
-        "f98d117b-8aeb-4620-bd32-c3dd06a80849@6c48a"
-      ]
-    }
-  },
-  "ea645096-9400-459e-a365-cbd218cb95c2@f9941": {
-    "url": "db://assets/resources/ui/qi.png@f9941",
-    "value": {
-      "depends": [
-        "ea645096-9400-459e-a365-cbd218cb95c2@6c48a"
-      ]
-    }
-  },
-  "e43fa69d-19cd-4215-951e-5b7a05e20fa4@6c48a": {
-    "url": "db://assets/resources/ui/quan.png@6c48a",
-    "value": {
-      "depends": [
-        "e43fa69d-19cd-4215-951e-5b7a05e20fa4"
-      ]
-    }
-  },
-  "71d99543-e683-47ac-81a9-e3a1544a087b@6c48a": {
-    "url": "db://assets/resources/ui/button/wenhao.png@6c48a",
-    "value": {
-      "depends": [
-        "71d99543-e683-47ac-81a9-e3a1544a087b"
-      ]
-    }
-  },
-  "e43fa69d-19cd-4215-951e-5b7a05e20fa4@f9941": {
-    "url": "db://assets/resources/ui/quan.png@f9941",
-    "value": {
-      "depends": [
-        "e43fa69d-19cd-4215-951e-5b7a05e20fa4@6c48a"
-      ]
-    }
-  },
-  "71d99543-e683-47ac-81a9-e3a1544a087b@f9941": {
-    "url": "db://assets/resources/ui/button/wenhao.png@f9941",
-    "value": {
-      "depends": [
-        "71d99543-e683-47ac-81a9-e3a1544a087b@6c48a"
-      ]
-    }
-  },
-  "6d3ab2b9-b577-44d1-a11a-8fe37214ce68": {
-    "url": "db://assets/home.scene",
-    "value": {
-      "depends": [
-        "6d3ab2b9-b577-44d1-a11a-8fe37214ce68",
-        "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
-        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
-        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
-        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941"
-      ],
-      "dependScripts": []
-    }
-  },
-  "9220b7b2-bdd1-4e95-8b00-4622b08ea667": {
-    "url": "db://assets/scene",
-    "value": {}
-  },
-  "ebc25456-753f-40f0-b534-e2d9bc099c53": {
-    "url": "db://assets/resources/ui/bg",
-    "value": {}
-  },
-  "dc5d83c2-da53-4e78-90f2-f8fea2e6d475": {
-    "url": "db://assets/resources/ui/button",
-    "value": {}
-  },
-  "0546806a-4717-4cb7-9f4c-8f54a097762e": {
-    "url": "db://assets/resources/ui/input",
-    "value": {}
-  },
-  "bb97060a-aa21-443c-9958-c572414b0095": {
-    "url": "db://assets/resources/ui/pop",
-    "value": {}
-  },
-  "0921cab7-0fef-45ae-af6a-0e2575a47edd": {
-    "url": "db://assets/resources/ui/progress",
-    "value": {}
-  },
-  "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3": {
-    "url": "db://assets/resources/ui/bg/big screen - options.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "3cbf6947-65b9-4e56-950f-e1e09ccf0995": {
-    "url": "db://assets/resources/ui/bg/divisorys.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "a87e6135-317b-4d0c-8582-59ffcffdc92b": {
-    "url": "db://assets/resources/ui/button/exit bright 100.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "36bf53b4-47df-4a7d-af1c-51150875b26e": {
-    "url": "db://assets/resources/ui/button/exit bright.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "3cbf6947-65b9-4e56-950f-e1e09ccf0995@6c48a": {
-    "url": "db://assets/resources/ui/bg/divisorys.png@6c48a",
-    "value": {
-      "depends": [
-        "3cbf6947-65b9-4e56-950f-e1e09ccf0995"
-      ]
-    }
-  },
-  "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3@6c48a": {
-    "url": "db://assets/resources/ui/bg/big screen - options.png@6c48a",
-    "value": {
-      "depends": [
-        "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3"
-      ]
-    }
-  },
-  "a87e6135-317b-4d0c-8582-59ffcffdc92b@6c48a": {
-    "url": "db://assets/resources/ui/button/exit bright 100.png@6c48a",
-    "value": {
-      "depends": [
-        "a87e6135-317b-4d0c-8582-59ffcffdc92b"
-      ]
-    }
-  },
-  "208f0bfe-11ed-46d6-a68f-8c2ef89e7724": {
-    "url": "db://assets/resources/ui/button/exit.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "a87e6135-317b-4d0c-8582-59ffcffdc92b@f9941": {
-    "url": "db://assets/resources/ui/button/exit bright 100.png@f9941",
-    "value": {
-      "depends": [
-        "a87e6135-317b-4d0c-8582-59ffcffdc92b@6c48a"
-      ]
-    }
-  },
-  "3cbf6947-65b9-4e56-950f-e1e09ccf0995@f9941": {
-    "url": "db://assets/resources/ui/bg/divisorys.png@f9941",
-    "value": {
-      "depends": [
-        "3cbf6947-65b9-4e56-950f-e1e09ccf0995@6c48a"
-      ]
-    }
-  },
-  "4bad5947-7cd0-4cc6-8b04-20c30403b669": {
-    "url": "db://assets/resources/ui/button/home bright 100.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "36bf53b4-47df-4a7d-af1c-51150875b26e@6c48a": {
-    "url": "db://assets/resources/ui/button/exit bright.png@6c48a",
-    "value": {
-      "depends": [
-        "36bf53b4-47df-4a7d-af1c-51150875b26e"
-      ]
-    }
-  },
-  "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3@f9941": {
-    "url": "db://assets/resources/ui/bg/big screen - options.png@f9941",
-    "value": {
-      "depends": [
-        "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3@6c48a"
-      ]
-    }
-  },
-  "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd": {
-    "url": "db://assets/resources/ui/button/home bright.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "36bf53b4-47df-4a7d-af1c-51150875b26e@f9941": {
-    "url": "db://assets/resources/ui/button/exit bright.png@f9941",
-    "value": {
-      "depends": [
-        "36bf53b4-47df-4a7d-af1c-51150875b26e@6c48a"
-      ]
-    }
-  },
-  "fdc11688-0a52-4073-b6f0-b938dab337c6": {
-    "url": "db://assets/resources/ui/button/home.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "208f0bfe-11ed-46d6-a68f-8c2ef89e7724@6c48a": {
-    "url": "db://assets/resources/ui/button/exit.png@6c48a",
-    "value": {
-      "depends": [
-        "208f0bfe-11ed-46d6-a68f-8c2ef89e7724"
-      ]
-    }
-  },
-  "4bad5947-7cd0-4cc6-8b04-20c30403b669@6c48a": {
-    "url": "db://assets/resources/ui/button/home bright 100.png@6c48a",
-    "value": {
-      "depends": [
-        "4bad5947-7cd0-4cc6-8b04-20c30403b669"
-      ]
-    }
-  },
-  "208f0bfe-11ed-46d6-a68f-8c2ef89e7724@f9941": {
-    "url": "db://assets/resources/ui/button/exit.png@f9941",
-    "value": {
-      "depends": [
-        "208f0bfe-11ed-46d6-a68f-8c2ef89e7724@6c48a"
-      ]
-    }
-  },
-  "4bad5947-7cd0-4cc6-8b04-20c30403b669@f9941": {
-    "url": "db://assets/resources/ui/button/home bright 100.png@f9941",
-    "value": {
-      "depends": [
-        "4bad5947-7cd0-4cc6-8b04-20c30403b669@6c48a"
-      ]
-    }
-  },
-  "dab03d54-0a8d-4998-8c97-fc6e462f2fe5": {
-    "url": "db://assets/resources/ui/button/movement buttons.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd@6c48a": {
-    "url": "db://assets/resources/ui/button/home bright.png@6c48a",
-    "value": {
-      "depends": [
-        "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd"
-      ]
-    }
-  },
-  "fdc11688-0a52-4073-b6f0-b938dab337c6@6c48a": {
-    "url": "db://assets/resources/ui/button/home.png@6c48a",
-    "value": {
-      "depends": [
-        "fdc11688-0a52-4073-b6f0-b938dab337c6"
-      ]
-    }
-  },
-  "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd@f9941": {
-    "url": "db://assets/resources/ui/button/home bright.png@f9941",
-    "value": {
-      "depends": [
-        "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd@6c48a"
-      ]
-    }
-  },
-  "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d": {
-    "url": "db://assets/resources/ui/button/save bright 100.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "fdc11688-0a52-4073-b6f0-b938dab337c6@f9941": {
-    "url": "db://assets/resources/ui/button/home.png@f9941",
-    "value": {
-      "depends": [
-        "fdc11688-0a52-4073-b6f0-b938dab337c6@6c48a"
-      ]
-    }
-  },
-  "58021e64-8df3-4d74-9473-9a040ceebb47": {
-    "url": "db://assets/resources/ui/button/save bright.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "2cbcce42-4a80-4985-8329-c488616b2dbc": {
-    "url": "db://assets/resources/ui/button/save.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "d0b3880b-5953-40f1-882d-16f568df854f": {
-    "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "dab03d54-0a8d-4998-8c97-fc6e462f2fe5@6c48a": {
-    "url": "db://assets/resources/ui/button/movement buttons.png@6c48a",
-    "value": {
-      "depends": [
-        "dab03d54-0a8d-4998-8c97-fc6e462f2fe5"
-      ]
-    }
-  },
-  "dab03d54-0a8d-4998-8c97-fc6e462f2fe5@f9941": {
-    "url": "db://assets/resources/ui/button/movement buttons.png@f9941",
-    "value": {
-      "depends": [
-        "dab03d54-0a8d-4998-8c97-fc6e462f2fe5@6c48a"
-      ]
-    }
-  },
-  "90da9c89-73f3-41c1-a3de-3242a1971975": {
-    "url": "db://assets/resources/ui/button/tiny screen - other things.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d@6c48a": {
-    "url": "db://assets/resources/ui/button/save bright 100.png@6c48a",
-    "value": {
-      "depends": [
-        "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d"
-      ]
-    }
-  },
-  "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d@f9941": {
-    "url": "db://assets/resources/ui/button/save bright 100.png@f9941",
-    "value": {
-      "depends": [
-        "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d@6c48a"
-      ]
-    }
-  },
-  "41bf19f3-c845-448f-acef-5899e0793101": {
-    "url": "db://assets/resources/ui/button/tiny screen selected - other things.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "2cbcce42-4a80-4985-8329-c488616b2dbc@6c48a": {
-    "url": "db://assets/resources/ui/button/save.png@6c48a",
-    "value": {
-      "depends": [
-        "2cbcce42-4a80-4985-8329-c488616b2dbc"
-      ]
-    }
-  },
-  "58021e64-8df3-4d74-9473-9a040ceebb47@6c48a": {
-    "url": "db://assets/resources/ui/button/save bright.png@6c48a",
-    "value": {
-      "depends": [
-        "58021e64-8df3-4d74-9473-9a040ceebb47"
-      ]
-    }
-  },
-  "2cbcce42-4a80-4985-8329-c488616b2dbc@f9941": {
-    "url": "db://assets/resources/ui/button/save.png@f9941",
-    "value": {
-      "depends": [
-        "2cbcce42-4a80-4985-8329-c488616b2dbc@6c48a"
-      ]
-    }
-  },
-  "d0b3880b-5953-40f1-882d-16f568df854f@6c48a": {
-    "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png@6c48a",
-    "value": {
-      "depends": [
-        "d0b3880b-5953-40f1-882d-16f568df854f"
-      ]
-    }
-  },
-  "58021e64-8df3-4d74-9473-9a040ceebb47@f9941": {
-    "url": "db://assets/resources/ui/button/save bright.png@f9941",
-    "value": {
-      "depends": [
-        "58021e64-8df3-4d74-9473-9a040ceebb47@6c48a"
-      ]
-    }
-  },
-  "90da9c89-73f3-41c1-a3de-3242a1971975@6c48a": {
-    "url": "db://assets/resources/ui/button/tiny screen - other things.png@6c48a",
-    "value": {
-      "depends": [
-        "90da9c89-73f3-41c1-a3de-3242a1971975"
-      ]
-    }
-  },
-  "d0b3880b-5953-40f1-882d-16f568df854f@f9941": {
-    "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png@f9941",
-    "value": {
-      "depends": [
-        "d0b3880b-5953-40f1-882d-16f568df854f@6c48a"
-      ]
-    }
-  },
-  "90da9c89-73f3-41c1-a3de-3242a1971975@f9941": {
-    "url": "db://assets/resources/ui/button/tiny screen - other things.png@f9941",
-    "value": {
-      "depends": [
-        "90da9c89-73f3-41c1-a3de-3242a1971975@6c48a"
-      ]
-    }
-  },
-  "41bf19f3-c845-448f-acef-5899e0793101@6c48a": {
-    "url": "db://assets/resources/ui/button/tiny screen selected - other things.png@6c48a",
-    "value": {
-      "depends": [
-        "41bf19f3-c845-448f-acef-5899e0793101"
-      ]
-    }
-  },
-  "23c87243-3742-4eaf-aa20-2217925e6d7e": {
-    "url": "db://assets/resources/ui/pop/inventory.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "41bf19f3-c845-448f-acef-5899e0793101@f9941": {
-    "url": "db://assets/resources/ui/button/tiny screen selected - other things.png@f9941",
-    "value": {
-      "depends": [
-        "41bf19f3-c845-448f-acef-5899e0793101@6c48a"
-      ]
-    }
-  },
-  "23c87243-3742-4eaf-aa20-2217925e6d7e@6c48a": {
-    "url": "db://assets/resources/ui/pop/inventory.png@6c48a",
-    "value": {
-      "depends": [
-        "23c87243-3742-4eaf-aa20-2217925e6d7e"
-      ]
-    }
-  },
-  "58993453-051f-4e1b-a312-fc9fad802974": {
-    "url": "db://assets/resources/ui/progress/volume control 1.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "23c87243-3742-4eaf-aa20-2217925e6d7e@f9941": {
-    "url": "db://assets/resources/ui/pop/inventory.png@f9941",
-    "value": {
-      "depends": [
-        "23c87243-3742-4eaf-aa20-2217925e6d7e@6c48a"
-      ]
-    }
-  },
-  "7312b949-dee1-4f24-9384-f43b7b94fbef": {
-    "url": "db://assets/resources/ui/progress/volume control 2.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "f1551523-b004-4d6a-a9f6-7bc33b721fc8": {
-    "url": "db://assets/resources/ui/progress/volume control 3 button.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "58993453-051f-4e1b-a312-fc9fad802974@6c48a": {
-    "url": "db://assets/resources/ui/progress/volume control 1.png@6c48a",
-    "value": {
-      "depends": [
-        "58993453-051f-4e1b-a312-fc9fad802974"
-      ]
-    }
-  },
-  "f1551523-b004-4d6a-a9f6-7bc33b721fc8@6c48a": {
-    "url": "db://assets/resources/ui/progress/volume control 3 button.png@6c48a",
-    "value": {
-      "depends": [
-        "f1551523-b004-4d6a-a9f6-7bc33b721fc8"
-      ]
-    }
-  },
-  "58993453-051f-4e1b-a312-fc9fad802974@f9941": {
-    "url": "db://assets/resources/ui/progress/volume control 1.png@f9941",
-    "value": {
-      "depends": [
-        "58993453-051f-4e1b-a312-fc9fad802974@6c48a"
-      ]
-    }
-  },
-  "7312b949-dee1-4f24-9384-f43b7b94fbef@6c48a": {
-    "url": "db://assets/resources/ui/progress/volume control 2.png@6c48a",
-    "value": {
-      "depends": [
-        "7312b949-dee1-4f24-9384-f43b7b94fbef"
-      ]
-    }
-  },
-  "7312b949-dee1-4f24-9384-f43b7b94fbef@f9941": {
-    "url": "db://assets/resources/ui/progress/volume control 2.png@f9941",
-    "value": {
-      "depends": [
-        "7312b949-dee1-4f24-9384-f43b7b94fbef@6c48a"
-      ]
-    }
-  },
-  "f1551523-b004-4d6a-a9f6-7bc33b721fc8@f9941": {
-    "url": "db://assets/resources/ui/progress/volume control 3 button.png@f9941",
-    "value": {
-      "depends": [
-        "f1551523-b004-4d6a-a9f6-7bc33b721fc8@6c48a"
-      ]
-    }
-  },
-  "7daab754-eb05-468e-b2bc-f076d39e2282": {
-    "url": "db://assets/resources/ui/buff",
-    "value": {}
-  },
-  "013e198a-d359-4286-9b3b-3fdc33a39678": {
-    "url": "db://assets/resources/ui/lock",
-    "value": {}
-  },
-  "5aa93678-e6f3-4849-9033-47bfc0c38bea": {
-    "url": "db://assets/resources/ui/achievement.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "5aa93678-e6f3-4849-9033-47bfc0c38bea@6c48a": {
-    "url": "db://assets/resources/ui/achievement.png@6c48a",
-    "value": {
-      "depends": [
-        "5aa93678-e6f3-4849-9033-47bfc0c38bea"
-      ]
-    }
-  },
-  "5aa93678-e6f3-4849-9033-47bfc0c38bea@f9941": {
-    "url": "db://assets/resources/ui/achievement.png@f9941",
-    "value": {
-      "depends": [
-        "5aa93678-e6f3-4849-9033-47bfc0c38bea@6c48a"
-      ]
-    }
-  },
-  "4626c67a-2b3a-4651-866c-3b94203665af": {
-    "url": "db://assets/resources/ui/buff/32.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "4626c67a-2b3a-4651-866c-3b94203665af@6c48a": {
-    "url": "db://assets/resources/ui/buff/32.png@6c48a",
-    "value": {
-      "depends": [
-        "4626c67a-2b3a-4651-866c-3b94203665af"
-      ]
-    }
-  },
-  "4626c67a-2b3a-4651-866c-3b94203665af@f9941": {
-    "url": "db://assets/resources/ui/buff/32.png@f9941",
-    "value": {
-      "depends": [
-        "4626c67a-2b3a-4651-866c-3b94203665af@6c48a"
-      ]
-    }
-  },
-  "3125760c-7736-4eff-af03-70f611666a74": {
-    "url": "db://assets/resources/ui/button/88.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "3125760c-7736-4eff-af03-70f611666a74@6c48a": {
-    "url": "db://assets/resources/ui/button/88.png@6c48a",
-    "value": {
-      "depends": [
-        "3125760c-7736-4eff-af03-70f611666a74"
-      ]
-    }
-  },
-  "3125760c-7736-4eff-af03-70f611666a74@f9941": {
-    "url": "db://assets/resources/ui/button/88.png@f9941",
-    "value": {
-      "depends": [
-        "3125760c-7736-4eff-af03-70f611666a74@6c48a"
-      ]
-    }
-  },
-  "8bdc714c-df6f-4e78-b5d1-59ffabba2156": {
-    "url": "db://assets/resources/ui/lock/lock1.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "8bdc714c-df6f-4e78-b5d1-59ffabba2156@6c48a": {
-    "url": "db://assets/resources/ui/lock/lock1.png@6c48a",
-    "value": {
-      "depends": [
-        "8bdc714c-df6f-4e78-b5d1-59ffabba2156"
-      ]
-    }
-  },
-  "8bdc714c-df6f-4e78-b5d1-59ffabba2156@f9941": {
-    "url": "db://assets/resources/ui/lock/lock1.png@f9941",
-    "value": {
-      "depends": [
-        "8bdc714c-df6f-4e78-b5d1-59ffabba2156@6c48a"
-      ]
-    }
-  },
-  "b2ecbc4d-fa18-4db9-a172-5666a6c92353": {
-    "url": "db://assets/resources/ui/lock/lock2.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "b2ecbc4d-fa18-4db9-a172-5666a6c92353@6c48a": {
-    "url": "db://assets/resources/ui/lock/lock2.png@6c48a",
-    "value": {
-      "depends": [
-        "b2ecbc4d-fa18-4db9-a172-5666a6c92353"
-      ]
-    }
-  },
-  "b2ecbc4d-fa18-4db9-a172-5666a6c92353@f9941": {
-    "url": "db://assets/resources/ui/lock/lock2.png@f9941",
-    "value": {
-      "depends": [
-        "b2ecbc4d-fa18-4db9-a172-5666a6c92353@6c48a"
-      ]
-    }
-  },
-  "0e8808ad-a93e-41dc-8a82-cab54f10288e": {
-    "url": "db://assets/resources/ui/lock/lock3.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "0e8808ad-a93e-41dc-8a82-cab54f10288e@6c48a": {
-    "url": "db://assets/resources/ui/lock/lock3.png@6c48a",
-    "value": {
-      "depends": [
-        "0e8808ad-a93e-41dc-8a82-cab54f10288e"
-      ]
-    }
-  },
-  "0e8808ad-a93e-41dc-8a82-cab54f10288e@f9941": {
-    "url": "db://assets/resources/ui/lock/lock3.png@f9941",
-    "value": {
-      "depends": [
-        "0e8808ad-a93e-41dc-8a82-cab54f10288e@6c48a"
-      ]
-    }
-  },
-  "214cbc66-62e2-45f3-8c3e-5883c8f6ef22": {
-    "url": "db://assets/resources/ui/lock/lock4.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "214cbc66-62e2-45f3-8c3e-5883c8f6ef22@6c48a": {
-    "url": "db://assets/resources/ui/lock/lock4.png@6c48a",
-    "value": {
-      "depends": [
-        "214cbc66-62e2-45f3-8c3e-5883c8f6ef22"
-      ]
-    }
-  },
-  "214cbc66-62e2-45f3-8c3e-5883c8f6ef22@f9941": {
-    "url": "db://assets/resources/ui/lock/lock4.png@f9941",
-    "value": {
-      "depends": [
-        "214cbc66-62e2-45f3-8c3e-5883c8f6ef22@6c48a"
-      ]
-    }
-  },
-  "547b6e0d-9afa-406c-b58f-8866f364af22": {
-    "url": "db://assets/resources/ui/lock/lock5.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "547b6e0d-9afa-406c-b58f-8866f364af22@6c48a": {
-    "url": "db://assets/resources/ui/lock/lock5.png@6c48a",
-    "value": {
-      "depends": [
-        "547b6e0d-9afa-406c-b58f-8866f364af22"
-      ]
-    }
-  },
-  "547b6e0d-9afa-406c-b58f-8866f364af22@f9941": {
-    "url": "db://assets/resources/ui/lock/lock5.png@f9941",
-    "value": {
-      "depends": [
-        "547b6e0d-9afa-406c-b58f-8866f364af22@6c48a"
-      ]
-    }
-  },
-  "d9f2f77a-4097-4277-9af9-c8836aaa3367": {
-    "url": "db://assets/scripts",
-    "value": {}
-  },
-  "9c1b3ba8-6da8-4c3a-8a19-da6e990696fd": {
-    "url": "db://assets/scripts/bg",
-    "value": {}
-  },
-  "82abc76b-2e47-4e8c-9c60-3045dfd03cf5": {
-    "url": "db://assets/scripts/bg/skyCanvas.ts",
-    "value": {}
-  },
-  "d98b271a-afec-49e2-a39c-c004acd6f5a9": {
-    "url": "db://assets/scripts/base",
-    "value": {}
-  },
-  "e4f09c85-ab72-4715-b8b7-8bfb951dfe74": {
-    "url": "db://assets/scripts/global",
-    "value": {}
-  },
-  "5bb3a3a5-c93d-4235-8b06-cd08129f271f": {
-    "url": "db://assets/scripts/particle",
-    "value": {}
-  },
-  "8a545879-c059-45f8-8d8b-fa1ae29a18a7": {
-    "url": "db://assets/scripts/utils",
-    "value": {}
-  },
-  "79b04743-8b1d-4ee4-bb1e-b804575c4da0": {
-    "url": "db://assets/scripts/base/Singleton.ts",
-    "value": {}
-  },
-  "33b5f125-fe81-45bb-8e48-9c0228ed28d3": {
-    "url": "db://assets/scripts/global/DataManager.ts",
-    "value": {}
-  },
-  "3e47c599-a7fd-468d-806f-1489f6cddf76": {
-    "url": "db://assets/scripts/particle/Particle.ts",
-    "value": {}
-  },
-  "41053c5e-d500-48ef-ac48-43bed6d82ced": {
-    "url": "db://assets/scripts/particle/ParticleSystem.ts",
-    "value": {}
-  },
-  "dfbd2417-4ea9-4a2e-a665-1fa9146031e0": {
-    "url": "db://assets/scripts/utils/tool.ts",
-    "value": {}
-  },
-  "66fa76b1-3f89-4430-89d2-69c60e25f114": {
-    "url": "db://assets/scripts/common",
-    "value": {}
-  },
-  "9c8c2c9a-8e92-437c-a274-5ec8621e8093": {
-    "url": "db://assets/scripts/enum",
-    "value": {}
-  },
-  "b6cc1cec-5dbb-44e9-8b1e-7337beb0d356": {
-    "url": "db://assets/scripts/proto",
-    "value": {}
-  },
-  "ded85ff7-e17b-4670-892a-99930b0b66d8": {
-    "url": "db://assets/resources/ui/bg",
-    "value": {}
-  },
-  "1da9a5ee-607f-4589-99ba-529dee7d290e": {
-    "url": "db://assets/resources/ui/button",
-    "value": {}
-  },
-  "e879ba79-37bf-4ebe-accf-f7e1c7617786": {
-    "url": "db://assets/resources/ui/input",
-    "value": {}
-  },
-  "ad114b0c-6173-42a4-b7c2-818edb033f0a": {
-    "url": "db://assets/resources/ui/pop",
-    "value": {}
-  },
-  "32fd90fc-ae19-4580-8595-09cd88640d47": {
-    "url": "db://assets/resources/ui/progress",
-    "value": {}
-  },
-  "ad7d9b15-02fb-4f0f-ad4f-8708e10b38ec": {
-    "url": "db://assets/scripts/common/base.ts",
-    "value": {}
-  },
-  "04c274f5-388d-4365-a7a1-7a25c5f0fe14": {
-    "url": "db://assets/scripts/common/enum.ts",
-    "value": {}
-  },
-  "43d7581d-a73c-4655-9fba-e0663f198732": {
-    "url": "db://assets/scripts/common/index.ts",
-    "value": {}
-  },
-  "b912abcf-ab29-48ae-b6fa-749f083315f7": {
-    "url": "db://assets/scripts/common/state.ts",
-    "value": {}
-  },
-  "95427b26-97e6-4535-8e1e-754b1c16673c": {
-    "url": "db://assets/scripts/common/utils.ts",
-    "value": {}
-  },
-  "026e64ea-89b7-4c50-81a5-1c281ac08729": {
+  "7835cf46-385e-4218-9c8d-cdefc4cd7ef6": {
     "url": "db://assets/scripts/enum/index.ts",
     "value": {}
   },
-  "24d4b7ba-e5bb-46cf-a96f-2a380c6c9f8d": {
+  "4307655f-c161-4dcb-9a41-25f5afa3771b": {
+    "url": "db://assets/scripts/global",
+    "value": {}
+  },
+  "f3a5020f-794f-45a8-a16b-fd40824a254d": {
+    "url": "db://assets/scripts/global/DataManager.ts",
+    "value": {}
+  },
+  "81da83e4-4c6e-4f0d-a462-defb873c0270": {
+    "url": "db://assets/Scripts/bg",
+    "value": {}
+  },
+  "055f0ccc-c0aa-4c62-86d4-082b76a73306": {
+    "url": "db://assets/Scripts/bg/skyCanvas.ts",
+    "value": {}
+  },
+  "ed377966-fc0e-45dc-81ce-c5219e0d7666": {
+    "url": "db://assets/scripts/particle",
+    "value": {}
+  },
+  "5465a5a1-3d0e-4305-9793-31c488986615": {
     "url": "db://assets/scripts/particle/LightParticle.ts",
     "value": {}
   },
-  "ebf99b4f-7bc1-47d4-b2e6-181b740bc2ad": {
-    "url": "db://assets/scene/home.scene",
-    "value": {
-      "depends": [
-        "ebf99b4f-7bc1-47d4-b2e6-181b740bc2ad",
-        "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3@f9941",
-        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
-        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
-        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
-        "6a15991a-d396-4995-8b94-f73fb76385b0",
-        "6498955b-bb9e-4949-8bc7-692935537135@f9941"
-      ],
-      "dependScripts": [
-        "82abc76b-2e47-4e8c-9c60-3045dfd03cf5"
-      ]
-    }
+  "7dc27749-dc3e-4548-92dd-1aebfcff5506": {
+    "url": "db://assets/scripts/particle/Particle.ts",
+    "value": {}
   },
-  "c27e4fe2-0efe-4adb-b7f2-967a139180e8": {
+  "7d1cc73b-cafe-4ff4-94df-2943ad82f873": {
+    "url": "db://assets/scripts/common",
+    "value": {}
+  },
+  "22db3526-5b22-4a1f-b602-ae781d34f362": {
+    "url": "db://assets/scripts/proto",
+    "value": {}
+  },
+  "99796cb7-a9ce-4209-a431-5aa528b02be7": {
+    "url": "db://assets/scripts/common/base.ts",
+    "value": {}
+  },
+  "f74babdf-59df-477d-ae39-c717f50cd3ae": {
+    "url": "db://assets/scripts/common/enum.ts",
+    "value": {}
+  },
+  "4d46ba1a-448a-4fac-947e-858c5559261b": {
+    "url": "db://assets/scripts/common/index.ts",
+    "value": {}
+  },
+  "cdcab698-6f44-4bdb-8d87-1ebaa1076db9": {
+    "url": "db://assets/scripts/common/state.ts",
+    "value": {}
+  },
+  "7586383f-a048-4d0a-9ea1-a314047fac34": {
+    "url": "db://assets/scripts/common/utils.ts",
+    "value": {}
+  },
+  "fdc305cc-78c1-4b12-ba25-4cc694adda9a": {
     "url": "db://assets/scripts/proto/index.js",
     "value": {}
   },
-  "ca131057-9a3c-4259-b9e1-0bdec3787521": {
-    "url": "db://assets/resources/ui/闪烁.png",
+  "ba09e374-ccd3-43be-b798-715e4e81116c": {
+    "url": "db://assets/Scripts/Common",
     "value": {}
   },
-  "ca131057-9a3c-4259-b9e1-0bdec3787521@6c48a": {
-    "url": "db://assets/resources/ui/闪烁.png@6c48a",
-    "value": {
-      "depends": [
-        "ca131057-9a3c-4259-b9e1-0bdec3787521"
-      ]
-    }
-  },
-  "ca131057-9a3c-4259-b9e1-0bdec3787521@f9941": {
-    "url": "db://assets/resources/ui/闪烁.png@f9941",
-    "value": {
-      "depends": [
-        "ca131057-9a3c-4259-b9e1-0bdec3787521@6c48a"
-      ]
-    }
-  },
-  "6498955b-bb9e-4949-8bc7-692935537135": {
-    "url": "db://assets/resources/ui/星光.png",
-    "value": {
-      "depends": []
-    }
-  },
-  "6498955b-bb9e-4949-8bc7-692935537135@6c48a": {
-    "url": "db://assets/resources/ui/星光.png@6c48a",
-    "value": {
-      "depends": [
-        "6498955b-bb9e-4949-8bc7-692935537135"
-      ]
-    }
-  },
-  "6498955b-bb9e-4949-8bc7-692935537135@f9941": {
-    "url": "db://assets/resources/ui/星光.png@f9941",
-    "value": {
-      "depends": [
-        "6498955b-bb9e-4949-8bc7-692935537135@6c48a"
-      ]
-    }
-  },
-  "02a8b34e-a4c2-4334-a971-159197243204": {
-    "url": "db://assets/particle",
+  "2f9331bb-4af4-4ffa-a14e-34ff265e52cd": {
+    "url": "db://assets/Scripts/Common/Api.ts",
     "value": {}
   },
-  "6a15991a-d396-4995-8b94-f73fb76385b0": {
-    "url": "db://assets/particle/star_bg.plist",
+  "ccff5b01-380f-4cb3-b52c-51d1862c9b7c": {
+    "url": "db://assets/Scripts/Common/Binary.ts",
+    "value": {}
+  },
+  "d1769446-ab18-452e-8491-51dda70f6e91": {
+    "url": "db://assets/Scripts/Common/Enum.ts",
+    "value": {}
+  },
+  "2a7bdf4b-b85b-43ee-b69d-7f801d03ca83": {
+    "url": "db://assets/Scripts/Common/index.ts",
+    "value": {}
+  },
+  "9dd80ffd-2784-4c4a-893f-c55da9073cc6": {
+    "url": "db://assets/Scripts/Common/Model.ts",
+    "value": {}
+  },
+  "8c583b29-93d0-44ac-9272-af3777a9767d": {
+    "url": "db://assets/Scripts/Common/Msg.ts",
+    "value": {}
+  },
+  "b68d168d-9143-4683-870c-2f775b9e65fa": {
+    "url": "db://assets/Scripts/Common/State.ts",
+    "value": {}
+  },
+  "543dd517-d1f8-4ec8-b895-14680d42159a": {
+    "url": "db://assets/Scripts/Common/Utils.ts",
+    "value": {}
+  },
+  "26fcbae7-f889-4f01-92de-f8927d6e7c02": {
+    "url": "db://assets/scripts/common",
+    "value": {}
+  },
+  "c70f2f14-af9a-434a-aca9-5e35178b22ec": {
+    "url": "db://assets/scene",
+    "value": {}
+  },
+  "65992b5a-479c-4531-ae84-15bc9d295bbe": {
+    "url": "db://assets/resources",
+    "value": {}
+  },
+  "3fcb3be8-ce75-45e7-8b8c-e69d0c64cde1": {
+    "url": "db://assets/resources/font",
+    "value": {}
+  },
+  "7c11175b-2afc-401e-8b60-97d841391700": {
+    "url": "db://assets/resources/prefab",
+    "value": {}
+  },
+  "04945ddd-ca73-4151-874b-7e23c8f0428f": {
+    "url": "db://assets/resources/ui",
+    "value": {}
+  },
+  "bc54d86d-e9ba-43db-8ec9-b496b780bb7f": {
+    "url": "db://assets/resources/ui/bg",
+    "value": {}
+  },
+  "fed68314-383c-43cb-9d29-3468fb940e88": {
+    "url": "db://assets/resources/ui/buff",
+    "value": {}
+  },
+  "c22bc2c3-76a1-4781-a1d6-457aee8c95e7": {
+    "url": "db://assets/resources/ui/button",
+    "value": {}
+  },
+  "c7c6396b-c5f5-4f9a-9717-968e1ffce3de": {
+    "url": "db://assets/resources/ui/input",
+    "value": {}
+  },
+  "e22597b8-6247-4cd1-a343-40a9c2c33844": {
+    "url": "db://assets/resources/ui/lock",
+    "value": {}
+  },
+  "e27a39b5-bfb2-4622-b804-f44f9182e971": {
+    "url": "db://assets/resources/ui/pop",
+    "value": {}
+  },
+  "14003c39-8c9c-424d-9221-ff30cd9a0ecf": {
+    "url": "db://assets/resources/ui/progress",
     "value": {}
   },
   "1da97afc-74da-4633-aa54-007cbc59a98f": {
     "url": "db://assets/resources/prefab/bg_light.prefab",
     "value": {
       "depends": [
-        "6498955b-bb9e-4949-8bc7-692935537135@f9941"
+        "267103a7-e074-4ada-beab-8868df813467@f9941"
       ],
       "dependScripts": []
     }
   },
-  "13136a3a-10d0-4685-a0a2-a1d1ea5c733b": {
-    "url": "db://assets/scripts/scene",
+  "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a": {
+    "url": "db://assets/resources/ui/achievement.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "267103a7-e074-4ada-beab-8868df813467": {
+    "url": "db://assets/resources/ui/star.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "4726ac32-4674-47b3-b461-a34a593c7dc6": {
+    "url": "db://assets/resources/ui/bg/battle.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "932cc238-eac0-4574-8c88-bee53f157427": {
+    "url": "db://assets/resources/ui/bg/big screen - options.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "ec35ae2f-326c-4a1d-920f-1452a44a5268": {
+    "url": "db://assets/resources/ui/bg/divisorys.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a@6c48a": {
+    "url": "db://assets/resources/ui/achievement.png@6c48a",
+    "value": {
+      "depends": [
+        "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a"
+      ]
+    }
+  },
+  "4726ac32-4674-47b3-b461-a34a593c7dc6@6c48a": {
+    "url": "db://assets/resources/ui/bg/battle.png@6c48a",
+    "value": {
+      "depends": [
+        "4726ac32-4674-47b3-b461-a34a593c7dc6"
+      ]
+    }
+  },
+  "267103a7-e074-4ada-beab-8868df813467@6c48a": {
+    "url": "db://assets/resources/ui/star.png@6c48a",
+    "value": {
+      "depends": [
+        "267103a7-e074-4ada-beab-8868df813467"
+      ]
+    }
+  },
+  "4726ac32-4674-47b3-b461-a34a593c7dc6@f9941": {
+    "url": "db://assets/resources/ui/bg/battle.png@f9941",
+    "value": {
+      "depends": [
+        "4726ac32-4674-47b3-b461-a34a593c7dc6@6c48a"
+      ]
+    }
+  },
+  "388850e2-5b9b-46a7-8a65-94e13114cc30": {
+    "url": "db://assets/resources/ui/buff/32.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a@f9941": {
+    "url": "db://assets/resources/ui/achievement.png@f9941",
+    "value": {
+      "depends": [
+        "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a@6c48a"
+      ]
+    }
+  },
+  "e7d89394-392b-4f2c-9fab-0f42f08b7a02": {
+    "url": "db://assets/resources/ui/button/88.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "267103a7-e074-4ada-beab-8868df813467@f9941": {
+    "url": "db://assets/resources/ui/star.png@f9941",
+    "value": {
+      "depends": [
+        "267103a7-e074-4ada-beab-8868df813467@6c48a"
+      ]
+    }
+  },
+  "89c9a869-8ab7-4712-8d60-e055b44f1b8e": {
+    "url": "db://assets/resources/ui/button/exit bright 100.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "932cc238-eac0-4574-8c88-bee53f157427@6c48a": {
+    "url": "db://assets/resources/ui/bg/big screen - options.png@6c48a",
+    "value": {
+      "depends": [
+        "932cc238-eac0-4574-8c88-bee53f157427"
+      ]
+    }
+  },
+  "ec35ae2f-326c-4a1d-920f-1452a44a5268@6c48a": {
+    "url": "db://assets/resources/ui/bg/divisorys.png@6c48a",
+    "value": {
+      "depends": [
+        "ec35ae2f-326c-4a1d-920f-1452a44a5268"
+      ]
+    }
+  },
+  "388850e2-5b9b-46a7-8a65-94e13114cc30@6c48a": {
+    "url": "db://assets/resources/ui/buff/32.png@6c48a",
+    "value": {
+      "depends": [
+        "388850e2-5b9b-46a7-8a65-94e13114cc30"
+      ]
+    }
+  },
+  "932cc238-eac0-4574-8c88-bee53f157427@f9941": {
+    "url": "db://assets/resources/ui/bg/big screen - options.png@f9941",
+    "value": {
+      "depends": [
+        "932cc238-eac0-4574-8c88-bee53f157427@6c48a"
+      ]
+    }
+  },
+  "e7d89394-392b-4f2c-9fab-0f42f08b7a02@6c48a": {
+    "url": "db://assets/resources/ui/button/88.png@6c48a",
+    "value": {
+      "depends": [
+        "e7d89394-392b-4f2c-9fab-0f42f08b7a02"
+      ]
+    }
+  },
+  "cda602d6-3c11-4452-8408-37c4bc6f922e": {
+    "url": "db://assets/resources/ui/button/exit bright.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "388850e2-5b9b-46a7-8a65-94e13114cc30@f9941": {
+    "url": "db://assets/resources/ui/buff/32.png@f9941",
+    "value": {
+      "depends": [
+        "388850e2-5b9b-46a7-8a65-94e13114cc30@6c48a"
+      ]
+    }
+  },
+  "a6ee0c53-1b54-4097-b4d5-744acd8f5e3d": {
+    "url": "db://assets/resources/ui/button/exit.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "ec35ae2f-326c-4a1d-920f-1452a44a5268@f9941": {
+    "url": "db://assets/resources/ui/bg/divisorys.png@f9941",
+    "value": {
+      "depends": [
+        "ec35ae2f-326c-4a1d-920f-1452a44a5268@6c48a"
+      ]
+    }
+  },
+  "933bf7ea-3771-48a2-b224-1bfa7574b42d": {
+    "url": "db://assets/resources/ui/button/gou.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e7d89394-392b-4f2c-9fab-0f42f08b7a02@f9941": {
+    "url": "db://assets/resources/ui/button/88.png@f9941",
+    "value": {
+      "depends": [
+        "e7d89394-392b-4f2c-9fab-0f42f08b7a02@6c48a"
+      ]
+    }
+  },
+  "c87f208d-2722-42e9-a7c4-8e47481d7791": {
+    "url": "db://assets/resources/ui/button/home bright 100.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "89c9a869-8ab7-4712-8d60-e055b44f1b8e@6c48a": {
+    "url": "db://assets/resources/ui/button/exit bright 100.png@6c48a",
+    "value": {
+      "depends": [
+        "89c9a869-8ab7-4712-8d60-e055b44f1b8e"
+      ]
+    }
+  },
+  "89c9a869-8ab7-4712-8d60-e055b44f1b8e@f9941": {
+    "url": "db://assets/resources/ui/button/exit bright 100.png@f9941",
+    "value": {
+      "depends": [
+        "89c9a869-8ab7-4712-8d60-e055b44f1b8e@6c48a"
+      ]
+    }
+  },
+  "5a9deb93-8cd6-4946-95b4-887d7e98acbc": {
+    "url": "db://assets/resources/ui/button/home bright.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "cda602d6-3c11-4452-8408-37c4bc6f922e@6c48a": {
+    "url": "db://assets/resources/ui/button/exit bright.png@6c48a",
+    "value": {
+      "depends": [
+        "cda602d6-3c11-4452-8408-37c4bc6f922e"
+      ]
+    }
+  },
+  "933bf7ea-3771-48a2-b224-1bfa7574b42d@6c48a": {
+    "url": "db://assets/resources/ui/button/gou.png@6c48a",
+    "value": {
+      "depends": [
+        "933bf7ea-3771-48a2-b224-1bfa7574b42d"
+      ]
+    }
+  },
+  "a6ee0c53-1b54-4097-b4d5-744acd8f5e3d@6c48a": {
+    "url": "db://assets/resources/ui/button/exit.png@6c48a",
+    "value": {
+      "depends": [
+        "a6ee0c53-1b54-4097-b4d5-744acd8f5e3d"
+      ]
+    }
+  },
+  "c87f208d-2722-42e9-a7c4-8e47481d7791@6c48a": {
+    "url": "db://assets/resources/ui/button/home bright 100.png@6c48a",
+    "value": {
+      "depends": [
+        "c87f208d-2722-42e9-a7c4-8e47481d7791"
+      ]
+    }
+  },
+  "cda602d6-3c11-4452-8408-37c4bc6f922e@f9941": {
+    "url": "db://assets/resources/ui/button/exit bright.png@f9941",
+    "value": {
+      "depends": [
+        "cda602d6-3c11-4452-8408-37c4bc6f922e@6c48a"
+      ]
+    }
+  },
+  "0c773ca5-2011-4f7f-a56d-176ebb67ff6f": {
+    "url": "db://assets/resources/ui/button/home.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "933bf7ea-3771-48a2-b224-1bfa7574b42d@f9941": {
+    "url": "db://assets/resources/ui/button/gou.png@f9941",
+    "value": {
+      "depends": [
+        "933bf7ea-3771-48a2-b224-1bfa7574b42d@6c48a"
+      ]
+    }
+  },
+  "e111fc21-e04a-4c5c-b790-102e4c62549b": {
+    "url": "db://assets/resources/ui/button/jiaru.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "a6ee0c53-1b54-4097-b4d5-744acd8f5e3d@f9941": {
+    "url": "db://assets/resources/ui/button/exit.png@f9941",
+    "value": {
+      "depends": [
+        "a6ee0c53-1b54-4097-b4d5-744acd8f5e3d@6c48a"
+      ]
+    }
+  },
+  "006c293c-a9c3-477b-9752-37e9e609974e": {
+    "url": "db://assets/resources/ui/button/konglan.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "5a9deb93-8cd6-4946-95b4-887d7e98acbc@6c48a": {
+    "url": "db://assets/resources/ui/button/home bright.png@6c48a",
+    "value": {
+      "depends": [
+        "5a9deb93-8cd6-4946-95b4-887d7e98acbc"
+      ]
+    }
+  },
+  "c87f208d-2722-42e9-a7c4-8e47481d7791@f9941": {
+    "url": "db://assets/resources/ui/button/home bright 100.png@f9941",
+    "value": {
+      "depends": [
+        "c87f208d-2722-42e9-a7c4-8e47481d7791@6c48a"
+      ]
+    }
+  },
+  "39aea5e2-e0bb-49ad-a3df-aabfe52f0101": {
+    "url": "db://assets/resources/ui/button/movement buttons.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "5a9deb93-8cd6-4946-95b4-887d7e98acbc@f9941": {
+    "url": "db://assets/resources/ui/button/home bright.png@f9941",
+    "value": {
+      "depends": [
+        "5a9deb93-8cd6-4946-95b4-887d7e98acbc@6c48a"
+      ]
+    }
+  },
+  "59b274ef-6c70-4099-ad06-4350ea56059a": {
+    "url": "db://assets/resources/ui/button/save bright 100.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e111fc21-e04a-4c5c-b790-102e4c62549b@6c48a": {
+    "url": "db://assets/resources/ui/button/jiaru.png@6c48a",
+    "value": {
+      "depends": [
+        "e111fc21-e04a-4c5c-b790-102e4c62549b"
+      ]
+    }
+  },
+  "0c773ca5-2011-4f7f-a56d-176ebb67ff6f@6c48a": {
+    "url": "db://assets/resources/ui/button/home.png@6c48a",
+    "value": {
+      "depends": [
+        "0c773ca5-2011-4f7f-a56d-176ebb67ff6f"
+      ]
+    }
+  },
+  "006c293c-a9c3-477b-9752-37e9e609974e@6c48a": {
+    "url": "db://assets/resources/ui/button/konglan.png@6c48a",
+    "value": {
+      "depends": [
+        "006c293c-a9c3-477b-9752-37e9e609974e"
+      ]
+    }
+  },
+  "39aea5e2-e0bb-49ad-a3df-aabfe52f0101@6c48a": {
+    "url": "db://assets/resources/ui/button/movement buttons.png@6c48a",
+    "value": {
+      "depends": [
+        "39aea5e2-e0bb-49ad-a3df-aabfe52f0101"
+      ]
+    }
+  },
+  "e111fc21-e04a-4c5c-b790-102e4c62549b@f9941": {
+    "url": "db://assets/resources/ui/button/jiaru.png@f9941",
+    "value": {
+      "depends": [
+        "e111fc21-e04a-4c5c-b790-102e4c62549b@6c48a"
+      ]
+    }
+  },
+  "978412da-b565-40e7-97af-c1dc8283f2ba": {
+    "url": "db://assets/resources/ui/button/save bright.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "59b274ef-6c70-4099-ad06-4350ea56059a@6c48a": {
+    "url": "db://assets/resources/ui/button/save bright 100.png@6c48a",
+    "value": {
+      "depends": [
+        "59b274ef-6c70-4099-ad06-4350ea56059a"
+      ]
+    }
+  },
+  "0c773ca5-2011-4f7f-a56d-176ebb67ff6f@f9941": {
+    "url": "db://assets/resources/ui/button/home.png@f9941",
+    "value": {
+      "depends": [
+        "0c773ca5-2011-4f7f-a56d-176ebb67ff6f@6c48a"
+      ]
+    }
+  },
+  "006c293c-a9c3-477b-9752-37e9e609974e@f9941": {
+    "url": "db://assets/resources/ui/button/konglan.png@f9941",
+    "value": {
+      "depends": [
+        "006c293c-a9c3-477b-9752-37e9e609974e@6c48a"
+      ]
+    }
+  },
+  "f3681196-041a-4468-a143-522b64708c22": {
+    "url": "db://assets/resources/ui/button/save.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "13936920-91e0-413a-a7fb-403aeefaad88": {
+    "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "39aea5e2-e0bb-49ad-a3df-aabfe52f0101@f9941": {
+    "url": "db://assets/resources/ui/button/movement buttons.png@f9941",
+    "value": {
+      "depends": [
+        "39aea5e2-e0bb-49ad-a3df-aabfe52f0101@6c48a"
+      ]
+    }
+  },
+  "59b274ef-6c70-4099-ad06-4350ea56059a@f9941": {
+    "url": "db://assets/resources/ui/button/save bright 100.png@f9941",
+    "value": {
+      "depends": [
+        "59b274ef-6c70-4099-ad06-4350ea56059a@6c48a"
+      ]
+    }
+  },
+  "c18a3aa1-a0ed-4d68-8566-be5a505d9fce": {
+    "url": "db://assets/resources/ui/button/tiny screen - other things.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "6febb762-6cf5-4d1d-967e-db12ba2b1d3e": {
+    "url": "db://assets/resources/ui/button/tiny screen selected - other things.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "978412da-b565-40e7-97af-c1dc8283f2ba@6c48a": {
+    "url": "db://assets/resources/ui/button/save bright.png@6c48a",
+    "value": {
+      "depends": [
+        "978412da-b565-40e7-97af-c1dc8283f2ba"
+      ]
+    }
+  },
+  "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@6c48a": {
+    "url": "db://assets/resources/ui/button/tiny screen selected - other things.png@6c48a",
+    "value": {
+      "depends": [
+        "6febb762-6cf5-4d1d-967e-db12ba2b1d3e"
+      ]
+    }
+  },
+  "f3681196-041a-4468-a143-522b64708c22@6c48a": {
+    "url": "db://assets/resources/ui/button/save.png@6c48a",
+    "value": {
+      "depends": [
+        "f3681196-041a-4468-a143-522b64708c22"
+      ]
+    }
+  },
+  "c18a3aa1-a0ed-4d68-8566-be5a505d9fce@6c48a": {
+    "url": "db://assets/resources/ui/button/tiny screen - other things.png@6c48a",
+    "value": {
+      "depends": [
+        "c18a3aa1-a0ed-4d68-8566-be5a505d9fce"
+      ]
+    }
+  },
+  "13936920-91e0-413a-a7fb-403aeefaad88@6c48a": {
+    "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png@6c48a",
+    "value": {
+      "depends": [
+        "13936920-91e0-413a-a7fb-403aeefaad88"
+      ]
+    }
+  },
+  "978412da-b565-40e7-97af-c1dc8283f2ba@f9941": {
+    "url": "db://assets/resources/ui/button/save bright.png@f9941",
+    "value": {
+      "depends": [
+        "978412da-b565-40e7-97af-c1dc8283f2ba@6c48a"
+      ]
+    }
+  },
+  "fb331135-4580-4435-9343-5c6d7814b21a": {
+    "url": "db://assets/resources/ui/button/wenhao.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@f9941": {
+    "url": "db://assets/resources/ui/button/tiny screen selected - other things.png@f9941",
+    "value": {
+      "depends": [
+        "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@6c48a"
+      ]
+    }
+  },
+  "e7cd77de-6de4-4354-8dce-0dba043e99e3": {
+    "url": "db://assets/resources/ui/input/black_item.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "f3681196-041a-4468-a143-522b64708c22@f9941": {
+    "url": "db://assets/resources/ui/button/save.png@f9941",
+    "value": {
+      "depends": [
+        "f3681196-041a-4468-a143-522b64708c22@6c48a"
+      ]
+    }
+  },
+  "c18a3aa1-a0ed-4d68-8566-be5a505d9fce@f9941": {
+    "url": "db://assets/resources/ui/button/tiny screen - other things.png@f9941",
+    "value": {
+      "depends": [
+        "c18a3aa1-a0ed-4d68-8566-be5a505d9fce@6c48a"
+      ]
+    }
+  },
+  "adb06f1e-0fe8-49f1-83ea-74e7920aac68": {
+    "url": "db://assets/resources/ui/input/black_item_bold.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "43321085-61d6-4a44-8ab5-7d8e7a5193db": {
+    "url": "db://assets/resources/ui/input/grey_item.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "13936920-91e0-413a-a7fb-403aeefaad88@f9941": {
+    "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png@f9941",
+    "value": {
+      "depends": [
+        "13936920-91e0-413a-a7fb-403aeefaad88@6c48a"
+      ]
+    }
+  },
+  "34945a07-c0d8-48fc-b574-ffc91de5376b": {
+    "url": "db://assets/resources/ui/input/grey_item_bold.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb331135-4580-4435-9343-5c6d7814b21a@6c48a": {
+    "url": "db://assets/resources/ui/button/wenhao.png@6c48a",
+    "value": {
+      "depends": [
+        "fb331135-4580-4435-9343-5c6d7814b21a"
+      ]
+    }
+  },
+  "43321085-61d6-4a44-8ab5-7d8e7a5193db@6c48a": {
+    "url": "db://assets/resources/ui/input/grey_item.png@6c48a",
+    "value": {
+      "depends": [
+        "43321085-61d6-4a44-8ab5-7d8e7a5193db"
+      ]
+    }
+  },
+  "e7cd77de-6de4-4354-8dce-0dba043e99e3@6c48a": {
+    "url": "db://assets/resources/ui/input/black_item.png@6c48a",
+    "value": {
+      "depends": [
+        "e7cd77de-6de4-4354-8dce-0dba043e99e3"
+      ]
+    }
+  },
+  "adb06f1e-0fe8-49f1-83ea-74e7920aac68@6c48a": {
+    "url": "db://assets/resources/ui/input/black_item_bold.png@6c48a",
+    "value": {
+      "depends": [
+        "adb06f1e-0fe8-49f1-83ea-74e7920aac68"
+      ]
+    }
+  },
+  "fb331135-4580-4435-9343-5c6d7814b21a@f9941": {
+    "url": "db://assets/resources/ui/button/wenhao.png@f9941",
+    "value": {
+      "depends": [
+        "fb331135-4580-4435-9343-5c6d7814b21a@6c48a"
+      ]
+    }
+  },
+  "6f9a00bc-e103-47d8-89e9-114cf73ce73f": {
+    "url": "db://assets/resources/ui/lock/lock1.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "43321085-61d6-4a44-8ab5-7d8e7a5193db@f9941": {
+    "url": "db://assets/resources/ui/input/grey_item.png@f9941",
+    "value": {
+      "depends": [
+        "43321085-61d6-4a44-8ab5-7d8e7a5193db@6c48a"
+      ]
+    }
+  },
+  "cdf6b3ec-ce18-4546-b29b-9158db51702c": {
+    "url": "db://assets/resources/ui/lock/lock2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "34945a07-c0d8-48fc-b574-ffc91de5376b@6c48a": {
+    "url": "db://assets/resources/ui/input/grey_item_bold.png@6c48a",
+    "value": {
+      "depends": [
+        "34945a07-c0d8-48fc-b574-ffc91de5376b"
+      ]
+    }
+  },
+  "e7cd77de-6de4-4354-8dce-0dba043e99e3@f9941": {
+    "url": "db://assets/resources/ui/input/black_item.png@f9941",
+    "value": {
+      "depends": [
+        "e7cd77de-6de4-4354-8dce-0dba043e99e3@6c48a"
+      ]
+    }
+  },
+  "64a21c9e-0480-406f-b8cf-fc89b09b0773": {
+    "url": "db://assets/resources/ui/lock/lock3.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "adb06f1e-0fe8-49f1-83ea-74e7920aac68@f9941": {
+    "url": "db://assets/resources/ui/input/black_item_bold.png@f9941",
+    "value": {
+      "depends": [
+        "adb06f1e-0fe8-49f1-83ea-74e7920aac68@6c48a"
+      ]
+    }
+  },
+  "c7834226-d663-4217-9e8c-819b82d4c843": {
+    "url": "db://assets/resources/ui/lock/lock4.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "34945a07-c0d8-48fc-b574-ffc91de5376b@f9941": {
+    "url": "db://assets/resources/ui/input/grey_item_bold.png@f9941",
+    "value": {
+      "depends": [
+        "34945a07-c0d8-48fc-b574-ffc91de5376b@6c48a"
+      ]
+    }
+  },
+  "737a5c23-eac0-41e7-9cbf-8f1adb4211d6": {
+    "url": "db://assets/resources/ui/lock/lock5.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "6f9a00bc-e103-47d8-89e9-114cf73ce73f@6c48a": {
+    "url": "db://assets/resources/ui/lock/lock1.png@6c48a",
+    "value": {
+      "depends": [
+        "6f9a00bc-e103-47d8-89e9-114cf73ce73f"
+      ]
+    }
+  },
+  "cdf6b3ec-ce18-4546-b29b-9158db51702c@6c48a": {
+    "url": "db://assets/resources/ui/lock/lock2.png@6c48a",
+    "value": {
+      "depends": [
+        "cdf6b3ec-ce18-4546-b29b-9158db51702c"
+      ]
+    }
+  },
+  "c7834226-d663-4217-9e8c-819b82d4c843@6c48a": {
+    "url": "db://assets/resources/ui/lock/lock4.png@6c48a",
+    "value": {
+      "depends": [
+        "c7834226-d663-4217-9e8c-819b82d4c843"
+      ]
+    }
+  },
+  "6f9a00bc-e103-47d8-89e9-114cf73ce73f@f9941": {
+    "url": "db://assets/resources/ui/lock/lock1.png@f9941",
+    "value": {
+      "depends": [
+        "6f9a00bc-e103-47d8-89e9-114cf73ce73f@6c48a"
+      ]
+    }
+  },
+  "1e5ec892-2417-42c0-a786-7c3da1b3d5fd": {
+    "url": "db://assets/resources/ui/pop/inventory.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "64a21c9e-0480-406f-b8cf-fc89b09b0773@6c48a": {
+    "url": "db://assets/resources/ui/lock/lock3.png@6c48a",
+    "value": {
+      "depends": [
+        "64a21c9e-0480-406f-b8cf-fc89b09b0773"
+      ]
+    }
+  },
+  "cdf6b3ec-ce18-4546-b29b-9158db51702c@f9941": {
+    "url": "db://assets/resources/ui/lock/lock2.png@f9941",
+    "value": {
+      "depends": [
+        "cdf6b3ec-ce18-4546-b29b-9158db51702c@6c48a"
+      ]
+    }
+  },
+  "83b823ca-5e48-4d7f-abd9-194c4473c487": {
+    "url": "db://assets/resources/ui/pop/pop.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c7834226-d663-4217-9e8c-819b82d4c843@f9941": {
+    "url": "db://assets/resources/ui/lock/lock4.png@f9941",
+    "value": {
+      "depends": [
+        "c7834226-d663-4217-9e8c-819b82d4c843@6c48a"
+      ]
+    }
+  },
+  "af24ba2a-ed81-4e5a-a3c6-102c61a2c190": {
+    "url": "db://assets/resources/ui/progress/progress.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "737a5c23-eac0-41e7-9cbf-8f1adb4211d6@6c48a": {
+    "url": "db://assets/resources/ui/lock/lock5.png@6c48a",
+    "value": {
+      "depends": [
+        "737a5c23-eac0-41e7-9cbf-8f1adb4211d6"
+      ]
+    }
+  },
+  "64a21c9e-0480-406f-b8cf-fc89b09b0773@f9941": {
+    "url": "db://assets/resources/ui/lock/lock3.png@f9941",
+    "value": {
+      "depends": [
+        "64a21c9e-0480-406f-b8cf-fc89b09b0773@6c48a"
+      ]
+    }
+  },
+  "bc053846-b8ce-41f7-9c74-e0389522e0ce": {
+    "url": "db://assets/resources/ui/progress/progress_column.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "737a5c23-eac0-41e7-9cbf-8f1adb4211d6@f9941": {
+    "url": "db://assets/resources/ui/lock/lock5.png@f9941",
+    "value": {
+      "depends": [
+        "737a5c23-eac0-41e7-9cbf-8f1adb4211d6@6c48a"
+      ]
+    }
+  },
+  "a9638cc6-427a-43cc-9133-6a3486962220": {
+    "url": "db://assets/resources/ui/progress/volume control 1.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@6c48a": {
+    "url": "db://assets/resources/ui/progress/progress.png@6c48a",
+    "value": {
+      "depends": [
+        "af24ba2a-ed81-4e5a-a3c6-102c61a2c190"
+      ]
+    }
+  },
+  "1e5ec892-2417-42c0-a786-7c3da1b3d5fd@6c48a": {
+    "url": "db://assets/resources/ui/pop/inventory.png@6c48a",
+    "value": {
+      "depends": [
+        "1e5ec892-2417-42c0-a786-7c3da1b3d5fd"
+      ]
+    }
+  },
+  "83b823ca-5e48-4d7f-abd9-194c4473c487@6c48a": {
+    "url": "db://assets/resources/ui/pop/pop.png@6c48a",
+    "value": {
+      "depends": [
+        "83b823ca-5e48-4d7f-abd9-194c4473c487"
+      ]
+    }
+  },
+  "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@f9941": {
+    "url": "db://assets/resources/ui/progress/progress.png@f9941",
+    "value": {
+      "depends": [
+        "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@6c48a"
+      ]
+    }
+  },
+  "6bf186bb-3f28-46db-a2c7-7372537a8208": {
+    "url": "db://assets/resources/ui/progress/volume control 2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1e5ec892-2417-42c0-a786-7c3da1b3d5fd@f9941": {
+    "url": "db://assets/resources/ui/pop/inventory.png@f9941",
+    "value": {
+      "depends": [
+        "1e5ec892-2417-42c0-a786-7c3da1b3d5fd@6c48a"
+      ]
+    }
+  },
+  "dd01e41c-8e27-44c9-b0d8-d28f03794f29": {
+    "url": "db://assets/resources/ui/progress/volume control 3 button.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "bc053846-b8ce-41f7-9c74-e0389522e0ce@6c48a": {
+    "url": "db://assets/resources/ui/progress/progress_column.png@6c48a",
+    "value": {
+      "depends": [
+        "bc053846-b8ce-41f7-9c74-e0389522e0ce"
+      ]
+    }
+  },
+  "83b823ca-5e48-4d7f-abd9-194c4473c487@f9941": {
+    "url": "db://assets/resources/ui/pop/pop.png@f9941",
+    "value": {
+      "depends": [
+        "83b823ca-5e48-4d7f-abd9-194c4473c487@6c48a"
+      ]
+    }
+  },
+  "a9638cc6-427a-43cc-9133-6a3486962220@6c48a": {
+    "url": "db://assets/resources/ui/progress/volume control 1.png@6c48a",
+    "value": {
+      "depends": [
+        "a9638cc6-427a-43cc-9133-6a3486962220"
+      ]
+    }
+  },
+  "bc053846-b8ce-41f7-9c74-e0389522e0ce@f9941": {
+    "url": "db://assets/resources/ui/progress/progress_column.png@f9941",
+    "value": {
+      "depends": [
+        "bc053846-b8ce-41f7-9c74-e0389522e0ce@6c48a"
+      ]
+    }
+  },
+  "a9638cc6-427a-43cc-9133-6a3486962220@f9941": {
+    "url": "db://assets/resources/ui/progress/volume control 1.png@f9941",
+    "value": {
+      "depends": [
+        "a9638cc6-427a-43cc-9133-6a3486962220@6c48a"
+      ]
+    }
+  },
+  "6bf186bb-3f28-46db-a2c7-7372537a8208@6c48a": {
+    "url": "db://assets/resources/ui/progress/volume control 2.png@6c48a",
+    "value": {
+      "depends": [
+        "6bf186bb-3f28-46db-a2c7-7372537a8208"
+      ]
+    }
+  },
+  "dd01e41c-8e27-44c9-b0d8-d28f03794f29@6c48a": {
+    "url": "db://assets/resources/ui/progress/volume control 3 button.png@6c48a",
+    "value": {
+      "depends": [
+        "dd01e41c-8e27-44c9-b0d8-d28f03794f29"
+      ]
+    }
+  },
+  "6bf186bb-3f28-46db-a2c7-7372537a8208@f9941": {
+    "url": "db://assets/resources/ui/progress/volume control 2.png@f9941",
+    "value": {
+      "depends": [
+        "6bf186bb-3f28-46db-a2c7-7372537a8208@6c48a"
+      ]
+    }
+  },
+  "dd01e41c-8e27-44c9-b0d8-d28f03794f29@f9941": {
+    "url": "db://assets/resources/ui/progress/volume control 3 button.png@f9941",
+    "value": {
+      "depends": [
+        "dd01e41c-8e27-44c9-b0d8-d28f03794f29@6c48a"
+      ]
+    }
+  },
+  "761288a4-2032-4762-a8e1-96c83489e47c": {
+    "url": "db://assets/scripts",
     "value": {}
   },
-  "332c8d77-f9db-482e-8dba-305221c3cd21": {
-    "url": "db://assets/scripts/scene/HomeMgr.ts",
+  "a63616f9-1344-4a3f-86c9-8bd4a8b89da9": {
+    "url": "db://assets/scene/home.scene",
+    "value": {
+      "depends": [
+        "a63616f9-1344-4a3f-86c9-8bd4a8b89da9",
+        "932cc238-eac0-4574-8c88-bee53f157427@f9941"
+      ],
+      "dependScripts": [
+        "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
+      ]
+    }
+  },
+  "a88f3ba0-276f-43d9-b90c-1b5d2d80b9dd": {
+    "url": "db://assets/scripts/particle/ParticleSystem.ts",
+    "value": {}
+  },
+  "27ca5fb1-1af7-4614-8bb9-931a103b4f60": {
+    "url": "db://assets/scripts/particle/ParticleMgr.ts",
+    "value": {}
+  },
+  "4441231f-f97d-43ca-b275-ef7e432bae9b": {
+    "url": "db://assets/scripts/particle/test.ts",
+    "value": {}
+  },
+  "9f41f389-0e49-4163-85f8-f1d9c7b4b5e3": {
+    "url": "db://assets/scripts/global/ObjectPoolManager.ts",
     "value": {}
   }
 }

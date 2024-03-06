@@ -1,8 +1,7 @@
 {
-  "name": "xubodang",
-  "uuid": "a20ab0e4-2f37-4f9d-b14c-56a99b4f58a7",
+  "name": "client",
+  "uuid": "947e6549-72c5-4f1f-9c6b-e65dec188319",
   "creator": {
     "version": "3.8.1"
-  },
-  "type": "module"
+  }
 }

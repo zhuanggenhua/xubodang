@@ -14,12 +14,12 @@ System.register(["cc"], function (_export, _context) {
     execute: function () {
       _crd = true;
 
-      _cclegacy._RF.push({}, "3e47cWZp/1GjYBvFIn2zd92", "Particle", undefined);
+      _cclegacy._RF.push({}, "7dc27dJ3D5FSJLdGuv8/1UG", "Particle", undefined);
 
-      __checkObsolete__(['_decorator', 'Color', 'Component', 'instantiate', 'Node', 'Prefab', 'SpriteFrame']);
+      __checkObsolete__(['_decorator', 'Color', 'Component', 'Graphics', 'instantiate', 'Node', 'Prefab', 'SpriteFrame', 'Vec3']);
 
       _export("default", Particle = class Particle {
-        constructor(node) {
+        constructor() {
           this.markedForDeletion = false;
           this.size = 0;
           this.speedX = 0;
@@ -27,21 +27,20 @@ System.register(["cc"], function (_export, _context) {
           this.x = 0;
           this.y = 0;
           this.color = null;
-          this.node = node;
-          this.x = this.node.position.x;
-          this.y = this.node.position.y;
         }
 
-        update() {
-          this.move();
+        update(dt) {
+          this.move(dt);
           this.destroyed();
         }
 
-        move() {
+        move(dt) {
           // 粒子的移动
-          this.x -= this.speedX;
-          this.y -= this.speedY;
+          this.x -= this.speedX * dt;
+          this.y += this.speedY * dt;
         }
+
+        draw(graphics) {}
 
         destroyed() {
           // 粒子不断变小

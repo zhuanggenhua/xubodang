@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "f1551523-b004-4d6a-a9f6-7bc33b721fc8",
+  "uuid": "dd01e41c-8e27-44c9-b0d8-d28f03794f29",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "f1551523-b004-4d6a-a9f6-7bc33b721fc8@6c48a",
+      "uuid": "dd01e41c-8e27-44c9-b0d8-d28f03794f29@6c48a",
       "displayName": "volume control 3 button",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "f1551523-b004-4d6a-a9f6-7bc33b721fc8",
+        "imageUuidOrDatabaseUri": "dd01e41c-8e27-44c9-b0d8-d28f03794f29",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "f1551523-b004-4d6a-a9f6-7bc33b721fc8@f9941",
+      "uuid": "dd01e41c-8e27-44c9-b0d8-d28f03794f29@f9941",
       "displayName": "volume control 3 button",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "f1551523-b004-4d6a-a9f6-7bc33b721fc8@6c48a",
+        "imageUuidOrDatabaseUri": "dd01e41c-8e27-44c9-b0d8-d28f03794f29@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "f1551523-b004-4d6a-a9f6-7bc33b721fc8@f9941"
+    "redirect": "dd01e41c-8e27-44c9-b0d8-d28f03794f29@f9941"
   }
 }

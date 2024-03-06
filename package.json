@@ -1,10 +1,11 @@
 {
   "name": "game",
-  "repository": "https://gitee.com/sli97/cocos-nodejs-io-game.git",
+  "repository": "https://gitee.com/zhanggenhua/xubodang.git",
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "apps/*"
+    "apps/client",
+    "apps/server"
   ],
   "scripts": {
     "dev": "yarn workspace @game/server run dev"

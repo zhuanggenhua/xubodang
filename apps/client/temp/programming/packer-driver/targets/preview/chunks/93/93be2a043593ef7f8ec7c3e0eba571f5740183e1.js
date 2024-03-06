@@ -10,7 +10,7 @@ System.register(["cc"], function (_export, _context) {
     execute: function () {
       _crd = true;
 
-      _cclegacy._RF.push({}, "026e6TqibdMUIGlHCgawIcp", "index", undefined);
+      _cclegacy._RF.push({}, "7835c9GOF5CGJyNze/EzX72", "index", undefined);
 
       _export("FsmParamTypeEnum", FsmParamTypeEnum = /*#__PURE__*/function (FsmParamTypeEnum) {
         FsmParamTypeEnum["Number"] = "Number";

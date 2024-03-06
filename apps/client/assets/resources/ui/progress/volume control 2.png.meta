@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "7312b949-dee1-4f24-9384-f43b7b94fbef",
+  "uuid": "6bf186bb-3f28-46db-a2c7-7372537a8208",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "7312b949-dee1-4f24-9384-f43b7b94fbef@6c48a",
+      "uuid": "6bf186bb-3f28-46db-a2c7-7372537a8208@6c48a",
       "displayName": "volume control 2",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "7312b949-dee1-4f24-9384-f43b7b94fbef",
+        "imageUuidOrDatabaseUri": "6bf186bb-3f28-46db-a2c7-7372537a8208",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "7312b949-dee1-4f24-9384-f43b7b94fbef@f9941",
+      "uuid": "6bf186bb-3f28-46db-a2c7-7372537a8208@f9941",
       "displayName": "volume control 2",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "7312b949-dee1-4f24-9384-f43b7b94fbef@6c48a",
+        "imageUuidOrDatabaseUri": "6bf186bb-3f28-46db-a2c7-7372537a8208@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "7312b949-dee1-4f24-9384-f43b7b94fbef@f9941"
+    "redirect": "6bf186bb-3f28-46db-a2c7-7372537a8208@f9941"
   }
 }

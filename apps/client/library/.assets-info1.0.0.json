@@ -1,1176 +1,867 @@
 {
   "version": "1.0.0",
   "map": {
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources.meta": {
-      "time": 1709542738266.6028
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts.meta": {
+      "time": 1709690721116.1538
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources": {
-      "time": 1709605607930.836,
-      "uuid": "851e21c0-0eb2-4d34-901d-671b2523ee8d"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\base.meta": {
+      "time": 1709643147080.9233
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\prefab.meta": {
-      "time": 1709542798337.4912
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg.meta": {
+      "time": 1709643147105.2583
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\prefab": {
-      "time": 1709542798334.5,
-      "uuid": "af737579-4421-42c3-b079-521131dd0baf"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common.meta": {
+      "time": 1709690524000.3657
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\font.meta": {
-      "time": 1709542834394.9094
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum.meta": {
+      "time": 1709643147086.9075
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\font": {
-      "time": 1709555564271.4766,
-      "uuid": "13ab3322-383c-4ef2-b2c5-2ba1a7ef4b5f"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global.meta": {
+      "time": 1709643147100.2717
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui.meta": {
-      "time": 1709542813706.4358
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle.meta": {
+      "time": 1709643147109.6992
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui": {
-      "time": 1709605907415.7434,
-      "uuid": "c6bbb272-cae5-4d57-aeb2-107f89063ff1"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto.meta": {
+      "time": 1709643459560.8723
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\battle.png.meta": {
-      "time": 1709555224955.3652
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene.meta": {
+      "time": 1709642995976.843
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\black_item.png.meta": {
-      "time": 1709555224951.8489
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils.meta": {
+      "time": 1709642995977.8408
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\black_item_bold.png.meta": {
-      "time": 1709555225035.5547
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\skyCanvas.ts.meta": {
+      "time": 1709643147110.7273
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\cha.png.meta": {
-      "time": 1709555225013.6157
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\base.ts.meta": {
+      "time": 1709643459565.86
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\gou.png.meta": {
-      "time": 1709555224947.8608
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts.meta": {
+      "time": 1709643459568.852
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\grey_item.png.meta": {
-      "time": 1709555225245.6045
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts.meta": {
+      "time": 1709643459569.8767
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\grey_item_bold.png.meta": {
-      "time": 1709555225273.5295
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\state.ts.meta": {
+      "time": 1709643459571.843
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\gun_icon.png.meta": {
-      "time": 1709555225268.5427
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\utils.ts.meta": {
+      "time": 1709643459572.8416
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\jiaru.png.meta": {
-      "time": 1709555225322.582
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts.meta": {
+      "time": 1709643147102.2664
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\key.png.meta": {
-      "time": 1709555225330.0732
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts.meta": {
+      "time": 1709643147107.7056
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\konglan.png.meta": {
-      "time": 1709555225532.9712
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts.meta": {
+      "time": 1709643147113.6885
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop.png.meta": {
-      "time": 1709555225550.659
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\Particle.ts.meta": {
+      "time": 1709643147114.6863
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress.png.meta": {
-      "time": 1709555225501.115
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HomeMgr.ts.meta": {
+      "time": 1709642995978.8374
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress_column.png.meta": {
-      "time": 1709555225715.935
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\tool.ts.meta": {
+      "time": 1709642995980.8337
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\qi.png.meta": {
-      "time": 1709555225747.8494
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\quan.png.meta": {
-      "time": 1709555225973.5334
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\wenhao.png.meta": {
-      "time": 1709555225981.513
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\gou.png": {
-      "time": 1709553695753.2869,
-      "uuid": "1b58c9fa-849a-418c-b2da-fae1e60ebed7"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\black_item.png": {
-      "time": 1709553695765.1484,
-      "uuid": "d8dd3c4a-880b-490f-bb48-07bb4787372b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\battle.png": {
-      "time": 1709553695834.7188,
-      "uuid": "301b9017-c3cc-4683-8d39-12e6923626b8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\black_item_bold.png": {
-      "time": 1709553695838.7087,
-      "uuid": "f62b1eab-34e5-466e-adb6-cc534c551ef9"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\grey_item.png": {
-      "time": 1709553695775.6018,
-      "uuid": "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\grey_item_bold.png": {
-      "time": 1709553695806.5283,
-      "uuid": "721462cc-3a5f-434a-9950-0a7e3dd3ec25"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\jiaru.png": {
-      "time": 1709553695858.4746,
-      "uuid": "8d5cea6a-8d81-48e7-a016-a65dcafa414d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress.png": {
-      "time": 1709553695846.505,
-      "uuid": "127bab4a-0306-4b1f-b8c1-8eeb15b97685"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\konglan.png": {
-      "time": 1709553695848.5002,
-      "uuid": "fbc0f428-1006-4175-a1f6-e58429ebaafd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop.png": {
-      "time": 1709553695831.7268,
-      "uuid": "0d2d8935-a7c4-4709-8b5a-243e76da090b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress_column.png": {
-      "time": 1709553695854.4844,
-      "uuid": "f98d117b-8aeb-4620-bd32-c3dd06a80849"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\wenhao.png": {
-      "time": 1709553695778.5935,
-      "uuid": "71d99543-e683-47ac-81a9-e3a1544a087b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scene": {
-      "time": 1709557163856.433,
-      "uuid": "9220b7b2-bdd1-4e95-8b00-4622b08ea667"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scene.meta": {
-      "time": 1709557173217.0286
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg.meta": {
-      "time": 1709604852106.9705
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button.meta": {
-      "time": 1709604852116.9434
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input.meta": {
-      "time": 1709604852120.934
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop.meta": {
-      "time": 1709604852122.928
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress.meta": {
-      "time": 1709604852124.9224
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg\\battle.png": {
-      "time": 1709553695834.7188,
-      "uuid": "301b9017-c3cc-4683-8d39-12e6923626b8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg\\big screen - options.png": {
-      "time": 1624717246000,
-      "uuid": "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg\\divisorys.png": {
-      "time": 1624790834000,
-      "uuid": "3cbf6947-65b9-4e56-950f-e1e09ccf0995"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\exit bright 100.png": {
-      "time": 1624716988000,
-      "uuid": "a87e6135-317b-4d0c-8582-59ffcffdc92b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\exit bright.png": {
-      "time": 1624716616000,
-      "uuid": "36bf53b4-47df-4a7d-af1c-51150875b26e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\exit.png": {
-      "time": 1624716438000,
-      "uuid": "208f0bfe-11ed-46d6-a68f-8c2ef89e7724"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\gou.png": {
-      "time": 1709553695753.2869,
-      "uuid": "1b58c9fa-849a-418c-b2da-fae1e60ebed7"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\home bright 100.png": {
-      "time": 1624716968000,
-      "uuid": "4bad5947-7cd0-4cc6-8b04-20c30403b669"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\home bright.png": {
-      "time": 1624716632000,
-      "uuid": "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\home.png": {
-      "time": 1624716374000,
-      "uuid": "fdc11688-0a52-4073-b6f0-b938dab337c6"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\jiaru.png": {
-      "time": 1709553695858.4746,
-      "uuid": "8d5cea6a-8d81-48e7-a016-a65dcafa414d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\konglan.png": {
-      "time": 1709553695848.5002,
-      "uuid": "fbc0f428-1006-4175-a1f6-e58429ebaafd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\movement buttons.png": {
-      "time": 1624717648000,
-      "uuid": "dab03d54-0a8d-4998-8c97-fc6e462f2fe5"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\save bright 100.png": {
-      "time": 1624716942000,
-      "uuid": "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\save bright.png": {
-      "time": 1624716650000,
-      "uuid": "58021e64-8df3-4d74-9473-9a040ceebb47"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\save.png": {
-      "time": 1624716420000,
-      "uuid": "2cbcce42-4a80-4985-8329-c488616b2dbc"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\tiny screen - controls audio resolution.png": {
-      "time": 1624717366000,
-      "uuid": "d0b3880b-5953-40f1-882d-16f568df854f"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\tiny screen - other things.png": {
-      "time": 1624717502000,
-      "uuid": "90da9c89-73f3-41c1-a3de-3242a1971975"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\tiny screen selected - other things.png": {
-      "time": 1624719422000,
-      "uuid": "41bf19f3-c845-448f-acef-5899e0793101"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\wenhao.png": {
-      "time": 1709553695778.5935,
-      "uuid": "71d99543-e683-47ac-81a9-e3a1544a087b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\black_item.png": {
-      "time": 1709553695765.1484,
-      "uuid": "d8dd3c4a-880b-490f-bb48-07bb4787372b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\black_item_bold.png": {
-      "time": 1709553695838.7087,
-      "uuid": "f62b1eab-34e5-466e-adb6-cc534c551ef9"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\grey_item.png": {
-      "time": 1709553695775.6018,
-      "uuid": "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\grey_item_bold.png": {
-      "time": 1709553695806.5283,
-      "uuid": "721462cc-3a5f-434a-9950-0a7e3dd3ec25"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop\\inventory.png": {
-      "time": 1624714126000,
-      "uuid": "23c87243-3742-4eaf-aa20-2217925e6d7e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop\\pop.png": {
-      "time": 1709553695831.7268,
-      "uuid": "0d2d8935-a7c4-4709-8b5a-243e76da090b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\progress.png": {
-      "time": 1709553695846.505,
-      "uuid": "127bab4a-0306-4b1f-b8c1-8eeb15b97685"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\progress_column.png": {
-      "time": 1709553695854.4844,
-      "uuid": "f98d117b-8aeb-4620-bd32-c3dd06a80849"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\volume control 1.png": {
-      "time": 1624717752000,
-      "uuid": "58993453-051f-4e1b-a312-fc9fad802974"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\volume control 2.png": {
-      "time": 1624717834000,
-      "uuid": "7312b949-dee1-4f24-9384-f43b7b94fbef"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\volume control 3 button.png": {
-      "time": 1624717898000,
-      "uuid": "f1551523-b004-4d6a-a9f6-7bc33b721fc8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\home.scene.meta": {
-      "time": 1709557173147.409
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg\\battle.png.meta": {
-      "time": 1709555224955.3652
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\exit bright 100.png.meta": {
-      "time": 1709604872264.9075
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg\\divisorys.png.meta": {
-      "time": 1709604872270.892
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg\\big screen - options.png.meta": {
-      "time": 1709604872306.8662
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\exit bright.png.meta": {
-      "time": 1709604872319.3408
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\gou.png.meta": {
-      "time": 1709555224947.8608
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\exit.png.meta": {
-      "time": 1709604872414.2551
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\home bright 100.png.meta": {
-      "time": 1709604872419.2427
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\home bright.png.meta": {
-      "time": 1709604872443.1782
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\home.png.meta": {
-      "time": 1709604872461.6638
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\jiaru.png.meta": {
-      "time": 1709555225322.582
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\konglan.png.meta": {
-      "time": 1709555225532.9712
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\movement buttons.png.meta": {
-      "time": 1709604872508.3276
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\save bright 100.png.meta": {
-      "time": 1709604872576.6414
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\save.png.meta": {
-      "time": 1709604872657.6018
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\save bright.png.meta": {
-      "time": 1709604872678.8394
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\tiny screen - controls audio resolution.png.meta": {
-      "time": 1709604872702.7925
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\tiny screen - other things.png.meta": {
-      "time": 1709604872718.2944
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\wenhao.png.meta": {
-      "time": 1709555225981.513
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\black_item.png.meta": {
-      "time": 1709555224951.8489
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\tiny screen selected - other things.png.meta": {
-      "time": 1709604872820.4065
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\grey_item.png.meta": {
-      "time": 1709555225245.6045
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\black_item_bold.png.meta": {
-      "time": 1709555225035.5547
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input\\grey_item_bold.png.meta": {
-      "time": 1709555225273.5295
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop\\inventory.png.meta": {
-      "time": 1709604873034.6174
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop\\pop.png.meta": {
-      "time": 1709555225550.659
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\progress.png.meta": {
-      "time": 1709555225501.115
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\progress_column.png.meta": {
-      "time": 1709555225715.935
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\volume control 1.png.meta": {
-      "time": 1709604873136.135
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\volume control 2.png.meta": {
-      "time": 1709604873208.9395
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress\\volume control 3 button.png.meta": {
-      "time": 1709604873211.9316
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\buff.meta": {
-      "time": 1709605907412.7527
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock.meta": {
-      "time": 1709605907413.7493
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\buff": {
-      "time": 1709605907422.725,
-      "uuid": "7daab754-eb05-468e-b2bc-f076d39e2282"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock": {
-      "time": 1709605907432.698,
-      "uuid": "013e198a-d359-4286-9b3b-3fdc33a39678"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\achievement.png.meta": {
-      "time": 1709605907494.886
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\buff\\32.png.meta": {
-      "time": 1709605907523.6094
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\88.png.meta": {
-      "time": 1709605907543.9702
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock1.png.meta": {
-      "time": 1709605907562.291
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock2.png.meta": {
-      "time": 1709605907585.2302
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock3.png.meta": {
-      "time": 1709605907603.1816
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock4.png.meta": {
-      "time": 1709605907627.2048
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock5.png.meta": {
-      "time": 1709605907647.151
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\achievement.png": {
-      "time": 1709553695760.2686,
-      "uuid": "5aa93678-e6f3-4849-9033-47bfc0c38bea"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\buff\\32.png": {
-      "time": 1709553695780.556,
-      "uuid": "4626c67a-2b3a-4651-866c-3b94203665af"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button\\88.png": {
-      "time": 1709553695865.4543,
-      "uuid": "3125760c-7736-4eff-af03-70f611666a74"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock1.png": {
-      "time": 1709553695768.6487,
-      "uuid": "8bdc714c-df6f-4e78-b5d1-59ffabba2156"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock2.png": {
-      "time": 1709553695768.6487,
-      "uuid": "b2ecbc4d-fa18-4db9-a172-5666a6c92353"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock3.png": {
-      "time": 1709553695769.6467,
-      "uuid": "0e8808ad-a93e-41dc-8a82-cab54f10288e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock4.png": {
-      "time": 1709553695770.643,
-      "uuid": "214cbc66-62e2-45f3-8c3e-5883c8f6ef22"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\lock\\lock5.png": {
-      "time": 1709553695771.6184,
-      "uuid": "547b6e0d-9afa-406c-b58f-8866f364af22"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts.meta": {
-      "time": 1709605952687.4446
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts": {
-      "time": 1709611374312.1152,
-      "uuid": "d9f2f77a-4097-4277-9af9-c8836aaa3367"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\bg.meta": {
-      "time": 1709605968402.1665
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\bg": {
-      "time": 1709605990119.897,
-      "uuid": "9c1b3ba8-6da8-4c3a-8a19-da6e990696fd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\bg\\skyCanvas.ts.meta": {
-      "time": 1709605990121.8916
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\bg\\skyCanvas.ts": {
-      "time": 1709608928356.9727,
-      "uuid": "82abc76b-2e47-4e8c-9c60-3045dfd03cf5"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\base.meta": {
-      "time": 1709611374346.014
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\global.meta": {
-      "time": 1709611374348.0088
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\particle.meta": {
-      "time": 1709611374350.0027
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\utils.meta": {
-      "time": 1709611374352.9888
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\base\\Singleton.ts.meta": {
-      "time": 1709611374359.5989
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\global\\DataManager.ts.meta": {
-      "time": 1709611374363.8398
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\particle\\Particle.ts.meta": {
-      "time": 1709611374365.8347
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\particle\\ParticleSystem.ts.meta": {
-      "time": 1709611374368.8274
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\utils\\tool.ts.meta": {
-      "time": 1709611374369.8247
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\base": {
-      "time": 1709611374314.1096,
-      "uuid": "d98b271a-afec-49e2-a39c-c004acd6f5a9"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\global": {
-      "time": 1709611374315.1077,
-      "uuid": "e4f09c85-ab72-4715-b8b7-8bfb951dfe74"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\particle": {
-      "time": 1709611374318.1,
-      "uuid": "5bb3a3a5-c93d-4235-8b06-cd08129f271f"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\utils": {
-      "time": 1709611374319.0967,
-      "uuid": "8a545879-c059-45f8-8d8b-fa1ae29a18a7"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\global\\DataManager.ts": {
-      "time": 1709611367562.1846,
-      "uuid": "33b5f125-fe81-45bb-8e48-9c0228ed28d3"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\particle\\Particle.ts": {
-      "time": 1709610766941.8003,
-      "uuid": "3e47c599-a7fd-468d-806f-1489f6cddf76"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\utils\\tool.ts": {
-      "time": 1709610842666.7139,
-      "uuid": "dfbd2417-4ea9-4a2e-a665-1fa9146031e0"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources": {
-      "time": 1709605607930.836,
-      "uuid": "851e21c0-0eb2-4d34-901d-671b2523ee8d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene": {
-      "time": 1709629697460.1301,
-      "uuid": "9220b7b2-bdd1-4e95-8b00-4622b08ea667"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js.meta": {
+      "time": 1709643459576.8306
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts": {
-      "time": 1709632566205.4836,
-      "uuid": "d9f2f77a-4097-4277-9af9-c8836aaa3367"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\font": {
-      "time": 1709555564271.4766,
-      "uuid": "13ab3322-383c-4ef2-b2c5-2ba1a7ef4b5f"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab": {
-      "time": 1709632655269.3994,
-      "uuid": "af737579-4421-42c3-b079-521131dd0baf"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui": {
-      "time": 1709631746355.71,
-      "uuid": "c6bbb272-cae5-4d57-aeb2-107f89063ff1"
+      "time": 1709690523996.3767,
+      "uuid": "761288a4-2032-4762-a8e1-96c83489e47c"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\base": {
-      "time": 1709623067254.839,
-      "uuid": "d98b271a-afec-49e2-a39c-c004acd6f5a9"
+      "time": 1709643147074.9395,
+      "uuid": "5f4dcc52-0e8e-4323-8a07-eadb99272335"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg": {
-      "time": 1709605990119.897,
-      "uuid": "9c1b3ba8-6da8-4c3a-8a19-da6e990696fd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common": {
-      "time": 1709629680900.9524,
-      "uuid": "66fa76b1-3f89-4430-89d2-69c60e25f114"
+      "time": 1709643147094.2866,
+      "uuid": "81da83e4-4c6e-4f0d-a462-defb873c0270"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum": {
-      "time": 1709629680901.9502,
-      "uuid": "9c8c2c9a-8e92-437c-a274-5ec8621e8093"
+      "time": 1709643147083.9148,
+      "uuid": "3f98269b-2fec-4e08-8825-a3239e1a8788"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global": {
-      "time": 1709611374315.1077,
-      "uuid": "e4f09c85-ab72-4715-b8b7-8bfb951dfe74"
+      "time": 1709725717257.9065,
+      "uuid": "4307655f-c161-4dcb-9a41-25f5afa3771b"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle": {
-      "time": 1709629680903.9446,
-      "uuid": "5bb3a3a5-c93d-4235-8b06-cd08129f271f"
+      "time": 1709714229082.1504,
+      "uuid": "ed377966-fc0e-45dc-81ce-c5219e0d7666"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto": {
-      "time": 1709629697462.1187,
-      "uuid": "b6cc1cec-5dbb-44e9-8b1e-7337beb0d356"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene": {
+      "time": 1709643147076.9336,
+      "uuid": "2433da3a-de7f-4712-80a0-c1ba36c72aff"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils": {
-      "time": 1709611374319.0967,
-      "uuid": "8a545879-c059-45f8-8d8b-fa1ae29a18a7"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg": {
-      "time": 1709604871958.0222,
-      "uuid": "ded85ff7-e17b-4670-892a-99930b0b66d8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff": {
-      "time": 1709605907422.725,
-      "uuid": "7daab754-eb05-468e-b2bc-f076d39e2282"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button": {
-      "time": 1709605907423.7222,
-      "uuid": "1da9a5ee-607f-4589-99ba-529dee7d290e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input": {
-      "time": 1709603497345.4958,
-      "uuid": "e879ba79-37bf-4ebe-accf-f7e1c7617786"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock": {
-      "time": 1709605907432.698,
-      "uuid": "013e198a-d359-4286-9b3b-3fdc33a39678"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop": {
-      "time": 1709604871989.4648,
-      "uuid": "ad114b0c-6173-42a4-b7c2-818edb033f0a"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress": {
-      "time": 1709604871994.4517,
-      "uuid": "32fd90fc-ae19-4580-8595-09cd88640d47"
+      "time": 1709643147076.9336,
+      "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\skyCanvas.ts": {
       "time": 1709608928356.9727,
-      "uuid": "82abc76b-2e47-4e8c-9c60-3045dfd03cf5"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\base.ts": {
-      "time": 1693410653000,
-      "uuid": "ad7d9b15-02fb-4f0f-ad4f-8708e10b38ec"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts": {
-      "time": 1709626675933.708,
-      "uuid": "04c274f5-388d-4365-a7a1-7a25c5f0fe14"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts": {
-      "time": 1709622766409.3923,
-      "uuid": "43d7581d-a73c-4655-9fba-e0663f198732"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\state.ts": {
-      "time": 1709626731027.2422,
-      "uuid": "b912abcf-ab29-48ae-b6fa-749f083315f7"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\utils.ts": {
-      "time": 1709637717719.7659,
-      "uuid": "95427b26-97e6-4535-8e1e-754b1c16673c"
+      "uuid": "055f0ccc-c0aa-4c62-86d4-082b76a73306"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts": {
-      "time": 1709625737661.0159,
-      "uuid": "026e64ea-89b7-4c50-81a5-1c281ac08729"
+      "time": 1709695556741.0479,
+      "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts": {
-      "time": 1709633223166.5493,
-      "uuid": "33b5f125-fe81-45bb-8e48-9c0228ed28d3"
+      "time": 1709724148911.5583,
+      "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts": {
-      "time": 1709629102121.5452,
-      "uuid": "24d4b7ba-e5bb-46cf-a96f-2a380c6c9f8d"
+      "time": 1709729253678.313,
+      "uuid": "5465a5a1-3d0e-4305-9793-31c488986615"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\Particle.ts": {
-      "time": 1709629072954.8337,
-      "uuid": "3e47c599-a7fd-468d-806f-1489f6cddf76"
+      "time": 1709726618096.0508,
+      "uuid": "7dc27749-dc3e-4548-92dd-1aebfcff5506"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HomeMgr.ts": {
+      "time": 1709728753700.6821,
+      "uuid": "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\tool.ts": {
       "time": 1709610842666.7139,
-      "uuid": "dfbd2417-4ea9-4a2e-a665-1fa9146031e0"
+      "uuid": "b3ee90f8-b88b-4cff-a561-a2901ad38ec5"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources.meta": {
-      "time": 1709542738266.6028
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\base": {
+      "time": 1709643147074.9395,
+      "uuid": "5f4dcc52-0e8e-4323-8a07-eadb99272335"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg": {
+      "time": 1709643147094.2866,
+      "uuid": "81da83e4-4c6e-4f0d-a462-defb873c0270"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum": {
+      "time": 1709643147083.9148,
+      "uuid": "3f98269b-2fec-4e08-8825-a3239e1a8788"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\global": {
+      "time": 1709643147089.3074,
+      "uuid": "4307655f-c161-4dcb-9a41-25f5afa3771b"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle": {
+      "time": 1709643147098.2766,
+      "uuid": "ed377966-fc0e-45dc-81ce-c5219e0d7666"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\scene": {
+      "time": 1709643147076.9336,
+      "uuid": "2433da3a-de7f-4712-80a0-c1ba36c72aff"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils": {
+      "time": 1709643147076.9336,
+      "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg\\skyCanvas.ts": {
+      "time": 1709608928356.9727,
+      "uuid": "055f0ccc-c0aa-4c62-86d4-082b76a73306"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum\\index.ts": {
+      "time": 1709625737661.0159,
+      "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\global\\DataManager.ts": {
+      "time": 1709633223166.5493,
+      "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle\\LightParticle.ts": {
+      "time": 1709629102121.5452,
+      "uuid": "5465a5a1-3d0e-4305-9793-31c488986615"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle\\Particle.ts": {
+      "time": 1709629072954.8337,
+      "uuid": "7dc27749-dc3e-4548-92dd-1aebfcff5506"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\scene\\HomeMgr.ts": {
+      "time": 1709637555940.5623,
+      "uuid": "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils\\tool.ts": {
+      "time": 1709610842666.7139,
+      "uuid": "b3ee90f8-b88b-4cff-a561-a2901ad38ec5"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts.meta": {
+      "time": 1709642995975.8457
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\base.meta": {
+      "time": 1709643147080.9233
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg.meta": {
+      "time": 1709643147105.2583
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum.meta": {
+      "time": 1709643147086.9075
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\global.meta": {
+      "time": 1709643147100.2717
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle.meta": {
+      "time": 1709643147109.6992
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\scene.meta": {
+      "time": 1709642995976.843
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils.meta": {
+      "time": 1709642995977.8408
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg\\skyCanvas.ts.meta": {
+      "time": 1709643147110.7273
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum\\index.ts.meta": {
+      "time": 1709643147102.2664
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\global\\DataManager.ts.meta": {
+      "time": 1709643147107.7056
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle\\LightParticle.ts.meta": {
+      "time": 1709643147113.6885
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle\\Particle.ts.meta": {
+      "time": 1709643147114.6863
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\scene\\HomeMgr.ts.meta": {
+      "time": 1709642995978.8374
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils\\tool.ts.meta": {
+      "time": 1709642995980.8337
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common.meta": {
+      "time": 1709690524000.3657
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\base.ts.meta": {
+      "time": 1709643459565.86
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\enum.ts.meta": {
+      "time": 1709643459568.852
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\index.ts.meta": {
+      "time": 1709643459569.8767
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\state.ts.meta": {
+      "time": 1709643459571.843
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\utils.ts.meta": {
+      "time": 1709643459572.8416
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common": {
+      "time": 1709690519828.6238,
+      "uuid": "26fcbae7-f889-4f01-92de-f8927d6e7c02"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\base.ts": {
+      "time": 1693410653000,
+      "uuid": "99796cb7-a9ce-4209-a431-5aa528b02be7"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\enum.ts": {
+      "time": 1709626675933.708,
+      "uuid": "f74babdf-59df-477d-ae39-c717f50cd3ae"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\index.ts": {
+      "time": 1709638934564.9956,
+      "uuid": "4d46ba1a-448a-4fac-947e-858c5559261b"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\state.ts": {
+      "time": 1709626731027.2422,
+      "uuid": "cdcab698-6f44-4bdb-8d87-1ebaa1076db9"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\common\\utils.ts": {
+      "time": 1709640367220.0977,
+      "uuid": "7586383f-a048-4d0a-9ea1-a314047fac34"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene.meta": {
-      "time": 1709557173217.0286
+      "time": 1709690601505.821
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts.meta": {
-      "time": 1709605952687.4446
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene": {
+      "time": 1709690780711.9949,
+      "uuid": "c70f2f14-af9a-434a-aca9-5e35178b22ec"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources.meta": {
+      "time": 1709690661906.0603
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\font.meta": {
-      "time": 1709542834394.9094
+      "time": 1709690661907.0574
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab.meta": {
-      "time": 1709542798337.4912
+      "time": 1709690661908.0547
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui.meta": {
-      "time": 1709542813706.4358
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\base.meta": {
-      "time": 1709611374346.014
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg.meta": {
-      "time": 1709605968402.1665
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common.meta": {
-      "time": 1709629680922.626
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum.meta": {
-      "time": 1709629680931.6025
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global.meta": {
-      "time": 1709611374348.0088
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle.meta": {
-      "time": 1709611374350.0027
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto.meta": {
-      "time": 1709629680938.5522
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils.meta": {
-      "time": 1709611374352.9888
+      "time": 1709690661908.0547
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg.meta": {
-      "time": 1709629680947.0366
+      "time": 1709690661909.052
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff.meta": {
-      "time": 1709605907412.7527
+      "time": 1709690661911.6992
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button.meta": {
-      "time": 1709629680952.0227
+      "time": 1709690661912.9038
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input.meta": {
-      "time": 1709629680955.015
+      "time": 1709690661916.892
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock.meta": {
-      "time": 1709605907413.7493
+      "time": 1709690661917.8887
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop.meta": {
-      "time": 1709629680960.9988
+      "time": 1709690661919.8838
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress.meta": {
-      "time": 1709629680966.984
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\skyCanvas.ts.meta": {
-      "time": 1709605990121.8916
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\base.ts.meta": {
-      "time": 1709629680983.7512
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts.meta": {
-      "time": 1709629680985.746
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts.meta": {
-      "time": 1709629680987.7412
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\state.ts.meta": {
-      "time": 1709629680994.884
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\utils.ts.meta": {
-      "time": 1709629680998.8745
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts.meta": {
-      "time": 1709629681000.87
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts.meta": {
-      "time": 1709611374363.8398
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts.meta": {
-      "time": 1709629681002.8623
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\Particle.ts.meta": {
-      "time": 1709611374365.8347
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\tool.ts.meta": {
-      "time": 1709611374369.8247
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene": {
-      "time": 1709632450536.868,
-      "uuid": "ebf99b4f-7bc1-47d4-b2e6-181b740bc2ad"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\achievement.png": {
-      "time": 1709553695760.2686,
-      "uuid": "5aa93678-e6f3-4849-9033-47bfc0c38bea"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js": {
-      "time": 1709625450246.2085,
-      "uuid": "c27e4fe2-0efe-4adb-b7f2-967a139180e8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png": {
-      "time": 1709553695834.7188,
-      "uuid": "301b9017-c3cc-4683-8d39-12e6923626b8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\big screen - options.png": {
-      "time": 1624717246000,
-      "uuid": "7a9b15cb-0a6b-4ee1-80e6-9b8e0b6c73b3"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\divisorys.png": {
-      "time": 1624790834000,
-      "uuid": "3cbf6947-65b9-4e56-950f-e1e09ccf0995"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff\\32.png": {
-      "time": 1709553695780.556,
-      "uuid": "4626c67a-2b3a-4651-866c-3b94203665af"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\88.png": {
-      "time": 1709553695865.4543,
-      "uuid": "3125760c-7736-4eff-af03-70f611666a74"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright 100.png": {
-      "time": 1624716988000,
-      "uuid": "a87e6135-317b-4d0c-8582-59ffcffdc92b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright.png": {
-      "time": 1624716616000,
-      "uuid": "36bf53b4-47df-4a7d-af1c-51150875b26e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit.png": {
-      "time": 1624716438000,
-      "uuid": "208f0bfe-11ed-46d6-a68f-8c2ef89e7724"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\gou.png": {
-      "time": 1709553695753.2869,
-      "uuid": "1b58c9fa-849a-418c-b2da-fae1e60ebed7"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright 100.png": {
-      "time": 1624716968000,
-      "uuid": "4bad5947-7cd0-4cc6-8b04-20c30403b669"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright.png": {
-      "time": 1624716632000,
-      "uuid": "87c64cf4-b2d5-4f85-820c-21bc2a24b5bd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home.png": {
-      "time": 1624716374000,
-      "uuid": "fdc11688-0a52-4073-b6f0-b938dab337c6"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\jiaru.png": {
-      "time": 1709553695858.4746,
-      "uuid": "8d5cea6a-8d81-48e7-a016-a65dcafa414d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\konglan.png": {
-      "time": 1709553695848.5002,
-      "uuid": "fbc0f428-1006-4175-a1f6-e58429ebaafd"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\movement buttons.png": {
-      "time": 1624717648000,
-      "uuid": "dab03d54-0a8d-4998-8c97-fc6e462f2fe5"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright 100.png": {
-      "time": 1624716942000,
-      "uuid": "0a6db6e9-b9b1-46f0-bdbe-e69702ebde5d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright.png": {
-      "time": 1624716650000,
-      "uuid": "58021e64-8df3-4d74-9473-9a040ceebb47"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save.png": {
-      "time": 1624716420000,
-      "uuid": "2cbcce42-4a80-4985-8329-c488616b2dbc"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - controls audio resolution.png": {
-      "time": 1624717366000,
-      "uuid": "d0b3880b-5953-40f1-882d-16f568df854f"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - other things.png": {
-      "time": 1624717502000,
-      "uuid": "90da9c89-73f3-41c1-a3de-3242a1971975"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen selected - other things.png": {
-      "time": 1624719422000,
-      "uuid": "41bf19f3-c845-448f-acef-5899e0793101"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\wenhao.png": {
-      "time": 1709553695778.5935,
-      "uuid": "71d99543-e683-47ac-81a9-e3a1544a087b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item.png": {
-      "time": 1709553695765.1484,
-      "uuid": "d8dd3c4a-880b-490f-bb48-07bb4787372b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png": {
-      "time": 1709553695838.7087,
-      "uuid": "f62b1eab-34e5-466e-adb6-cc534c551ef9"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png": {
-      "time": 1709553695775.6018,
-      "uuid": "90dbb7ee-11ec-46a0-abfc-ae1c8dd89e44"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png": {
-      "time": 1709553695806.5283,
-      "uuid": "721462cc-3a5f-434a-9950-0a7e3dd3ec25"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock1.png": {
-      "time": 1709553695768.6487,
-      "uuid": "8bdc714c-df6f-4e78-b5d1-59ffabba2156"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock2.png": {
-      "time": 1709553695768.6487,
-      "uuid": "b2ecbc4d-fa18-4db9-a172-5666a6c92353"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock3.png": {
-      "time": 1709553695769.6467,
-      "uuid": "0e8808ad-a93e-41dc-8a82-cab54f10288e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock4.png": {
-      "time": 1709553695770.643,
-      "uuid": "214cbc66-62e2-45f3-8c3e-5883c8f6ef22"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock5.png": {
-      "time": 1709553695771.6184,
-      "uuid": "547b6e0d-9afa-406c-b58f-8866f364af22"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\inventory.png": {
-      "time": 1624714126000,
-      "uuid": "23c87243-3742-4eaf-aa20-2217925e6d7e"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\pop.png": {
-      "time": 1709553695831.7268,
-      "uuid": "0d2d8935-a7c4-4709-8b5a-243e76da090b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png": {
-      "time": 1709553695846.505,
-      "uuid": "127bab4a-0306-4b1f-b8c1-8eeb15b97685"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png": {
-      "time": 1709553695854.4844,
-      "uuid": "f98d117b-8aeb-4620-bd32-c3dd06a80849"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 1.png": {
-      "time": 1624717752000,
-      "uuid": "58993453-051f-4e1b-a312-fc9fad802974"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 2.png": {
-      "time": 1624717834000,
-      "uuid": "7312b949-dee1-4f24-9384-f43b7b94fbef"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 3 button.png": {
-      "time": 1624717898000,
-      "uuid": "f1551523-b004-4d6a-a9f6-7bc33b721fc8"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js.meta": {
-      "time": 1709629697515.9734
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene.meta": {
-      "time": 1709629697556.8645
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\achievement.png.meta": {
-      "time": 1709605907494.886
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png.meta": {
-      "time": 1709555224955.3652
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\big screen - options.png.meta": {
-      "time": 1709604872306.8662
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\divisorys.png.meta": {
-      "time": 1709604872270.892
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff\\32.png.meta": {
-      "time": 1709605907523.6094
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright 100.png.meta": {
-      "time": 1709604872264.9075
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit.png.meta": {
-      "time": 1709604872414.2551
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\88.png.meta": {
-      "time": 1709605907543.9702
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright.png.meta": {
-      "time": 1709604872319.3408
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\gou.png.meta": {
-      "time": 1709555224947.8608
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright 100.png.meta": {
-      "time": 1709604872419.2427
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright.png.meta": {
-      "time": 1709604872443.1782
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home.png.meta": {
-      "time": 1709604872461.6638
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\jiaru.png.meta": {
-      "time": 1709555225322.582
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\konglan.png.meta": {
-      "time": 1709555225532.9712
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright 100.png.meta": {
-      "time": 1709604872576.6414
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\movement buttons.png.meta": {
-      "time": 1709604872508.3276
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save.png.meta": {
-      "time": 1709604872657.6018
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright.png.meta": {
-      "time": 1709604872678.8394
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - other things.png.meta": {
-      "time": 1709604872718.2944
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - controls audio resolution.png.meta": {
-      "time": 1709604872702.7925
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen selected - other things.png.meta": {
-      "time": 1709604872820.4065
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\wenhao.png.meta": {
-      "time": 1709555225981.513
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item.png.meta": {
-      "time": 1709555224951.8489
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png.meta": {
-      "time": 1709555225035.5547
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png.meta": {
-      "time": 1709555225245.6045
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock1.png.meta": {
-      "time": 1709605907562.291
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png.meta": {
-      "time": 1709555225273.5295
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock2.png.meta": {
-      "time": 1709605907585.2302
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock3.png.meta": {
-      "time": 1709605907603.1816
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock5.png.meta": {
-      "time": 1709605907647.151
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock4.png.meta": {
-      "time": 1709605907627.2048
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\pop.png.meta": {
-      "time": 1709555225550.659
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\inventory.png.meta": {
-      "time": 1709604873034.6174
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png.meta": {
-      "time": 1709555225501.115
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 2.png.meta": {
-      "time": 1709604873208.9395
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png.meta": {
-      "time": 1709555225715.935
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 3 button.png.meta": {
-      "time": 1709604873211.9316
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 1.png.meta": {
-      "time": 1709604873136.135
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\星光.png.meta": {
-      "time": 1709631746387.6018
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\星光.png": {
-      "time": 1709631736421.01,
-      "uuid": "6498955b-bb9e-4949-8bc7-692935537135"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene.meta": {
-      "time": 1709632566207.4778
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene": {
-      "time": 1709632585076.8418,
-      "uuid": "13136a3a-10d0-4685-a0a2-a1d1ea5c733b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HomeMgr.ts.meta": {
-      "time": 1709632585079.8347
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HomeMgr.ts": {
-      "time": 1709637555940.5623,
-      "uuid": "332c8d77-f9db-482e-8dba-305221c3cd21"
+      "time": 1709690661921.879
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources": {
+      "time": 1709690661896.087,
+      "uuid": "65992b5a-479c-4531-ae84-15bc9d295bbe"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\font": {
+      "time": 1709555564271.4766,
+      "uuid": "3fcb3be8-ce75-45e7-8b8c-e69d0c64cde1"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab": {
+      "time": 1709690616471.6152,
+      "uuid": "7c11175b-2afc-401e-8b60-97d841391700"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui": {
+      "time": 1709690661926.798,
+      "uuid": "04945ddd-ca73-4151-874b-7e23c8f0428f"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg": {
+      "time": 1709690661931.7852,
+      "uuid": "bc54d86d-e9ba-43db-8ec9-b496b780bb7f"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff": {
+      "time": 1709690661933.7798,
+      "uuid": "fed68314-383c-43cb-9d29-3468fb940e88"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button": {
+      "time": 1709690661953.6858,
+      "uuid": "c22bc2c3-76a1-4781-a1d6-457aee8c95e7"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input": {
+      "time": 1709690661957.6748,
+      "uuid": "c7c6396b-c5f5-4f9a-9717-968e1ffce3de"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock": {
+      "time": 1709690661962.5085,
+      "uuid": "e22597b8-6247-4cd1-a343-40a9c2c33844"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop": {
+      "time": 1709690661968.4934,
+      "uuid": "e27a39b5-bfb2-4622-b804-f44f9182e971"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress": {
+      "time": 1709690661973.4792,
+      "uuid": "14003c39-8c9c-424d-9221-ff30cd9a0ecf"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\bg_light.prefab.meta": {
       "time": 1709632655277.3784
     },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\achievement.png.meta": {
+      "time": 1709690662158.5457
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\star.png.meta": {
+      "time": 1709690662163.532
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png.meta": {
+      "time": 1709690662155.5547
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\big screen - options.png.meta": {
+      "time": 1709690662255.5754
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\divisorys.png.meta": {
+      "time": 1709690662262.5562
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff\\32.png.meta": {
+      "time": 1709690662260.5615
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\88.png.meta": {
+      "time": 1709690662324.159
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright 100.png.meta": {
+      "time": 1709690662346.0996
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright.png.meta": {
+      "time": 1709690662665.868
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit.png.meta": {
+      "time": 1709690662673.8438
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\gou.png.meta": {
+      "time": 1709690662670.8525
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright 100.png.meta": {
+      "time": 1709690662677.8333
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright.png.meta": {
+      "time": 1709690662692.843
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home.png.meta": {
+      "time": 1709690662735.7158
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\jiaru.png.meta": {
+      "time": 1709690662720.7158
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\konglan.png.meta": {
+      "time": 1709690662736.7126
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\movement buttons.png.meta": {
+      "time": 1709690662742.6973
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright 100.png.meta": {
+      "time": 1709690662744.6914
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright.png.meta": {
+      "time": 1709690662781.2168
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save.png.meta": {
+      "time": 1709690662792.1863
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - controls audio resolution.png.meta": {
+      "time": 1709690662800.0645
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - other things.png.meta": {
+      "time": 1709690662794.0803
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen selected - other things.png.meta": {
+      "time": 1709690662789.1956
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\wenhao.png.meta": {
+      "time": 1709690662835.609
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item.png.meta": {
+      "time": 1709690662846.3367
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png.meta": {
+      "time": 1709690662851.3228
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png.meta": {
+      "time": 1709690662840.8413
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png.meta": {
+      "time": 1709690662856.309
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock1.png.meta": {
+      "time": 1709690662877.3833
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock2.png.meta": {
+      "time": 1709690662883.344
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock3.png.meta": {
+      "time": 1709690662895.45
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock4.png.meta": {
+      "time": 1709690662886.965
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock5.png.meta": {
+      "time": 1709690662906.3276
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\inventory.png.meta": {
+      "time": 1709690662928.6218
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\pop.png.meta": {
+      "time": 1709690662940.8445
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png.meta": {
+      "time": 1709690662925.6301
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png.meta": {
+      "time": 1709690662948.134
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 1.png.meta": {
+      "time": 1709690662953.989
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 2.png.meta": {
+      "time": 1709690662964.2825
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 3 button.png.meta": {
+      "time": 1709690662969.2693
+    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\bg_light.prefab": {
-      "time": 1709632655274.3875,
+      "time": 1709692536199.68,
       "uuid": "1da97afc-74da-4633-aa54-007cbc59a98f"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png": {
+      "time": 1709553695834.7188,
+      "uuid": "4726ac32-4674-47b3-b461-a34a593c7dc6"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\achievement.png": {
+      "time": 1709553695760.2686,
+      "uuid": "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\star.png": {
+      "time": 1709631736421.01,
+      "uuid": "267103a7-e074-4ada-beab-8868df813467"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\big screen - options.png": {
+      "time": 1624717246000,
+      "uuid": "932cc238-eac0-4574-8c88-bee53f157427"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff\\32.png": {
+      "time": 1709553695780.556,
+      "uuid": "388850e2-5b9b-46a7-8a65-94e13114cc30"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\divisorys.png": {
+      "time": 1624790834000,
+      "uuid": "ec35ae2f-326c-4a1d-920f-1452a44a5268"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\88.png": {
+      "time": 1709553695865.4543,
+      "uuid": "e7d89394-392b-4f2c-9fab-0f42f08b7a02"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright 100.png": {
+      "time": 1624716988000,
+      "uuid": "89c9a869-8ab7-4712-8d60-e055b44f1b8e"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit bright.png": {
+      "time": 1624716616000,
+      "uuid": "cda602d6-3c11-4452-8408-37c4bc6f922e"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\gou.png": {
+      "time": 1709553695753.2869,
+      "uuid": "933bf7ea-3771-48a2-b224-1bfa7574b42d"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\exit.png": {
+      "time": 1624716438000,
+      "uuid": "a6ee0c53-1b54-4097-b4d5-744acd8f5e3d"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright 100.png": {
+      "time": 1624716968000,
+      "uuid": "c87f208d-2722-42e9-a7c4-8e47481d7791"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home bright.png": {
+      "time": 1624716632000,
+      "uuid": "5a9deb93-8cd6-4946-95b4-887d7e98acbc"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\jiaru.png": {
+      "time": 1709553695858.4746,
+      "uuid": "e111fc21-e04a-4c5c-b790-102e4c62549b"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\home.png": {
+      "time": 1624716374000,
+      "uuid": "0c773ca5-2011-4f7f-a56d-176ebb67ff6f"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\konglan.png": {
+      "time": 1709553695848.5002,
+      "uuid": "006c293c-a9c3-477b-9752-37e9e609974e"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\movement buttons.png": {
+      "time": 1624717648000,
+      "uuid": "39aea5e2-e0bb-49ad-a3df-aabfe52f0101"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright 100.png": {
+      "time": 1624716942000,
+      "uuid": "59b274ef-6c70-4099-ad06-4350ea56059a"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save bright.png": {
+      "time": 1624716650000,
+      "uuid": "978412da-b565-40e7-97af-c1dc8283f2ba"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen selected - other things.png": {
+      "time": 1624719422000,
+      "uuid": "6febb762-6cf5-4d1d-967e-db12ba2b1d3e"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\save.png": {
+      "time": 1624716420000,
+      "uuid": "f3681196-041a-4468-a143-522b64708c22"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - other things.png": {
+      "time": 1624717502000,
+      "uuid": "c18a3aa1-a0ed-4d68-8566-be5a505d9fce"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\tiny screen - controls audio resolution.png": {
+      "time": 1624717366000,
+      "uuid": "13936920-91e0-413a-a7fb-403aeefaad88"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\wenhao.png": {
+      "time": 1709553695778.5935,
+      "uuid": "fb331135-4580-4435-9343-5c6d7814b21a"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png": {
+      "time": 1709553695775.6018,
+      "uuid": "43321085-61d6-4a44-8ab5-7d8e7a5193db"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item.png": {
+      "time": 1709553695765.1484,
+      "uuid": "e7cd77de-6de4-4354-8dce-0dba043e99e3"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png": {
+      "time": 1709553695838.7087,
+      "uuid": "adb06f1e-0fe8-49f1-83ea-74e7920aac68"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png": {
+      "time": 1709553695806.5283,
+      "uuid": "34945a07-c0d8-48fc-b574-ffc91de5376b"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock1.png": {
+      "time": 1709553695768.6487,
+      "uuid": "6f9a00bc-e103-47d8-89e9-114cf73ce73f"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock2.png": {
+      "time": 1709553695768.6487,
+      "uuid": "cdf6b3ec-ce18-4546-b29b-9158db51702c"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock4.png": {
+      "time": 1709553695770.643,
+      "uuid": "c7834226-d663-4217-9e8c-819b82d4c843"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock3.png": {
+      "time": 1709553695769.6467,
+      "uuid": "64a21c9e-0480-406f-b8cf-fc89b09b0773"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\lock\\lock5.png": {
+      "time": 1709553695771.6184,
+      "uuid": "737a5c23-eac0-41e7-9cbf-8f1adb4211d6"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png": {
+      "time": 1709553695846.505,
+      "uuid": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\inventory.png": {
+      "time": 1624714126000,
+      "uuid": "1e5ec892-2417-42c0-a786-7c3da1b3d5fd"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop\\pop.png": {
+      "time": 1709553695831.7268,
+      "uuid": "83b823ca-5e48-4d7f-abd9-194c4473c487"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png": {
+      "time": 1709553695854.4844,
+      "uuid": "bc053846-b8ce-41f7-9c74-e0389522e0ce"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 1.png": {
+      "time": 1624717752000,
+      "uuid": "a9638cc6-427a-43cc-9133-6a3486962220"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 2.png": {
+      "time": 1624717834000,
+      "uuid": "6bf186bb-3f28-46db-a2c7-7372537a8208"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 3 button.png": {
+      "time": 1624717898000,
+      "uuid": "dd01e41c-8e27-44c9-b0d8-d28f03794f29"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common": {
+      "time": 1709690519828.6238,
+      "uuid": "26fcbae7-f889-4f01-92de-f8927d6e7c02"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\base.ts": {
+      "time": 1693410653000,
+      "uuid": "99796cb7-a9ce-4209-a431-5aa528b02be7"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts": {
+      "time": 1709725004534.6697,
+      "uuid": "f74babdf-59df-477d-ae39-c717f50cd3ae"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts": {
+      "time": 1709638934564.9956,
+      "uuid": "4d46ba1a-448a-4fac-947e-858c5559261b"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\state.ts": {
+      "time": 1709712123111.4739,
+      "uuid": "cdcab698-6f44-4bdb-8d87-1ebaa1076db9"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\utils.ts": {
+      "time": 1709640367220.0977,
+      "uuid": "7586383f-a048-4d0a-9ea1-a314047fac34"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene.meta": {
+      "time": 1709690780717.978
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene": {
+      "time": 1709728865765.981,
+      "uuid": "a63616f9-1344-4a3f-86c9-8bd4a8b89da9"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\ParticleMgr.ts.meta": {
+      "time": 1709706013512.295
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\ParticleMgr.ts": {
+      "time": 1709725784320.5645,
+      "uuid": "27ca5fb1-1af7-4614-8bb9-931a103b4f60"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\test.ts.meta": {
+      "time": 1709714229084.1462
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\test.ts": {
+      "time": 1709718563531.8591,
+      "uuid": "4441231f-f97d-43ca-b275-ef7e432bae9b"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\ObjectPoolManager.ts.meta": {
+      "time": 1709725717260.9
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\ObjectPoolManager.ts": {
+      "time": 1709725212174.1711,
+      "uuid": "9f41f389-0e49-4163-85f8-f1d9c7b4b5e3"
     }
   },
   "missing": {
-    "af737579-4421-42c3-b079-521131dd0baf": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\folder",
-      "time": 1709542798334.5,
-      "removeTime": 1709542807799
+    "6fa0e14a-4e40-48f7-b2f1-60ff861c81a7": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts",
+      "time": 1709690523996.3767,
+      "removeTime": 1709690738571
     },
-    "c6bbb272-cae5-4d57-aeb2-107f89063ff1": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\texture",
-      "time": 1709542841705.3403,
-      "removeTime": 1709542857287
+    "2433da3a-de7f-4712-80a0-c1ba36c72aff": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\scene",
+      "time": 1709643147076.9336,
+      "removeTime": 1709643527053
     },
-    "3ea97e5e-fb30-43ad-ad34-ea2ceb38c66d": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\ui_theme.svg",
-      "time": 1709540041777.9033,
-      "removeTime": 1709543559073
+    "dbbb8ad9-c288-418b-b96a-c97d29f68160": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils",
+      "time": 1709643147076.9336,
+      "removeTime": 1709643527053
     },
-    "961a70a3-62f7-497e-afbd-d888250e75e8": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\ui-theme.png",
-      "time": 1709543544205.686,
-      "removeTime": 1709555221874
+    "dde21cef-c33f-4071-9bf4-a7a01dc92c23": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\scene\\HomeMgr.ts",
+      "time": 1709637555940.5623,
+      "removeTime": 1709643527053
     },
-    "85879d8e-7de4-47cb-8009-aef119c77392": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\font\\font.svg",
-      "time": 1709542100810.419,
-      "removeTime": 1709555564288
+    "b3ee90f8-b88b-4cff-a561-a2901ad38ec5": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils\\tool.ts",
+      "time": 1709610842666.7139,
+      "removeTime": 1709643527053
     },
-    "842b1325-c997-4c56-8a02-f44aa9918dab": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\cha.png",
-      "time": 1709553695845.5115,
-      "removeTime": 1709604873220
+    "5f4dcc52-0e8e-4323-8a07-eadb99272335": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\base",
+      "time": 1709643147074.9395,
+      "removeTime": 1709643527052
     },
-    "47bf824b-c737-48bb-9ac2-b1420fb5683d": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\gun_icon.png",
-      "time": 1709553695752.2888,
-      "removeTime": 1709604873223
+    "3f98269b-2fec-4e08-8825-a3239e1a8788": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum",
+      "time": 1709643147083.9148,
+      "removeTime": 1709643527052
     },
-    "4bd7bdc3-dbb9-4aa2-a97a-9cce0d57737a": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\key.png",
-      "time": 1709553695751.293,
-      "removeTime": 1709604873227
+    "7835cf46-385e-4218-9c8d-cdefc4cd7ef6": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum\\index.ts",
+      "time": 1709625737661.0159,
+      "removeTime": 1709643527053
     },
-    "ea645096-9400-459e-a365-cbd218cb95c2": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\qi.png",
-      "time": 1709553695763.2595,
-      "removeTime": 1709604873245
+    "4307655f-c161-4dcb-9a41-25f5afa3771b": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\global",
+      "time": 1709643147089.3074,
+      "removeTime": 1709643527052
     },
-    "e43fa69d-19cd-4215-951e-5b7a05e20fa4": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\quan.png",
-      "time": 1709553695750.2952,
-      "removeTime": 1709604873257
+    "f3a5020f-794f-45a8-a16b-fd40824a254d": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\global\\DataManager.ts",
+      "time": 1709633223166.5493,
+      "removeTime": 1709643527053
     },
-    "9c1b3ba8-6da8-4c3a-8a19-da6e990696fd": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\canvas",
-      "time": 1709605968398.6792,
-      "removeTime": 1709605973911
+    "81da83e4-4c6e-4f0d-a462-defb873c0270": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg",
+      "time": 1709643147094.2866,
+      "removeTime": 1709643527052
     },
-    "ebc25456-753f-40f0-b534-e2d9bc099c53": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\bg",
-      "time": 1709604871958.0222,
-      "removeTime": 1709629698050
+    "055f0ccc-c0aa-4c62-86d4-082b76a73306": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg\\skyCanvas.ts",
+      "time": 1709608928356.9727,
+      "removeTime": 1709643527053
     },
-    "dc5d83c2-da53-4e78-90f2-f8fea2e6d475": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\button",
-      "time": 1709604871979.2017,
-      "removeTime": 1709629698050
+    "ed377966-fc0e-45dc-81ce-c5219e0d7666": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle",
+      "time": 1709643147098.2766,
+      "removeTime": 1709643527053
     },
-    "0546806a-4717-4cb7-9f4c-8f54a097762e": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\input",
-      "time": 1709603497345.4958,
-      "removeTime": 1709629698050
+    "5465a5a1-3d0e-4305-9793-31c488986615": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle\\LightParticle.ts",
+      "time": 1709629102121.5452,
+      "removeTime": 1709643527053
     },
-    "bb97060a-aa21-443c-9958-c572414b0095": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\pop",
-      "time": 1709604871989.4648,
-      "removeTime": 1709629698050
+    "7dc27749-dc3e-4548-92dd-1aebfcff5506": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle\\Particle.ts",
+      "time": 1709629072954.8337,
+      "removeTime": 1709643527053
     },
-    "0921cab7-0fef-45ae-af6a-0e2575a47edd": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\resources\\ui\\progress",
-      "time": 1709604871994.4517,
-      "removeTime": 1709629698051
+    "7d1cc73b-cafe-4ff4-94df-2943ad82f873": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common",
+      "time": 1709643459556.484,
+      "removeTime": 1709645799036
     },
-    "6d3ab2b9-b577-44d1-a11a-8fe37214ce68": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\home.scene",
-      "time": 1709557173117.8354,
-      "removeTime": 1709629698054
+    "22db3526-5b22-4a1f-b602-ae781d34f362": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto",
+      "time": 1709643459574.8352,
+      "removeTime": 1709645799036
     },
-    "79b04743-8b1d-4ee4-bb1e-b804575c4da0": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\base\\Singleton.ts",
-      "time": 1709611152066.119,
-      "removeTime": 1709629698054
+    "99796cb7-a9ce-4209-a431-5aa528b02be7": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\base.ts",
+      "time": 1693410653000,
+      "removeTime": 1709645799037
     },
-    "41053c5e-d500-48ef-ac48-43bed6d82ced": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\assets\\scripts\\particle\\ParticleSystem.ts",
-      "time": 1709611229688.0415,
-      "removeTime": 1709629698055
+    "f74babdf-59df-477d-ae39-c717f50cd3ae": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts",
+      "time": 1709626675933.708,
+      "removeTime": 1709645799037
     },
-    "ca131057-9a3c-4259-b9e1-0bdec3787521": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\闪烁.png",
-      "time": 1709631674428.4836,
-      "removeTime": 1709631742606
+    "4d46ba1a-448a-4fac-947e-858c5559261b": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts",
+      "time": 1709638934564.9956,
+      "removeTime": 1709645799037
     },
-    "02a8b34e-a4c2-4334-a971-159197243204": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\particle",
-      "time": 1709631967948.6025,
-      "removeTime": 1709632493238
+    "cdcab698-6f44-4bdb-8d87-1ebaa1076db9": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\state.ts",
+      "time": 1709626731027.2422,
+      "removeTime": 1709645799037
     },
-    "6a15991a-d396-4995-8b94-f73fb76385b0": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\particle\\star_bg.plist",
-      "time": 1709632410075.6306,
-      "removeTime": 1709632493238
+    "7586383f-a048-4d0a-9ea1-a314047fac34": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\utils.ts",
+      "time": 1709640367220.0977,
+      "removeTime": 1709645799037
     },
-    "1da97afc-74da-4633-aa54-007cbc59a98f": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Particle2D.prefab",
-      "time": 1709632542813.6074,
-      "removeTime": 1709632655271
+    "fdc305cc-78c1-4b12-ba25-4cc694adda9a": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js",
+      "time": 1709643455889.2444,
+      "removeTime": 1709645799038
+    },
+    "ba09e374-ccd3-43be-b798-715e4e81116c": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common",
+      "time": 1709644776994.0923,
+      "removeTime": 1709690393802
+    },
+    "2f9331bb-4af4-4ffa-a14e-34ff265e52cd": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\Api.ts",
+      "time": 1709105593981.6235,
+      "removeTime": 1709690393802
+    },
+    "ccff5b01-380f-4cb3-b52c-51d1862c9b7c": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\Binary.ts",
+      "time": 1709194177416.1726,
+      "removeTime": 1709690393802
+    },
+    "d1769446-ab18-452e-8491-51dda70f6e91": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\Enum.ts",
+      "time": 1709213304559.919,
+      "removeTime": 1709690393802
+    },
+    "2a7bdf4b-b85b-43ee-b69d-7f801d03ca83": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\index.ts",
+      "time": 1709106476445.9634,
+      "removeTime": 1709690393802
+    },
+    "9dd80ffd-2784-4c4a-893f-c55da9073cc6": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\Model.ts",
+      "time": 1709123300819.3882,
+      "removeTime": 1709690393803
+    },
+    "8c583b29-93d0-44ac-9272-af3777a9767d": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\Msg.ts",
+      "time": 1709105555142.2278,
+      "removeTime": 1709690393803
+    },
+    "b68d168d-9143-4683-870c-2f775b9e65fa": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\State.ts",
+      "time": 1709198000638.8127,
+      "removeTime": 1709690393803
+    },
+    "543dd517-d1f8-4ec8-b895-14680d42159a": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\Common\\Utils.ts",
+      "time": 1709193075984.8247,
+      "removeTime": 1709690393803
+    },
+    "a88f3ba0-276f-43d9-b90c-1b5d2d80b9dd": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\ParticleSystem.ts",
+      "time": 1709697570383.578,
+      "removeTime": 1709706013503
     }
   }
 }

@@ -1,27 +1,26 @@
-import { _decorator, Color, Component, instantiate, Node, Prefab, SpriteFrame } from 'cc';
+import { _decorator, Color, Component, Graphics, instantiate, Node, Prefab, SpriteFrame, Vec3 } from 'cc'
 
 export default class Particle {
-  private markedForDeletion: boolean = false
+  markedForDeletion: boolean = false
   protected size: number = 0
   protected speedX: number = 0
   protected speedY: number = 0
   protected x: number = 0
   protected y: number = 0
   protected color: Color = null
-  constructor(protected node: Node) {
-    this.x = this.node.position.x
-    this.y = this.node.position.y
-  }
 
-  update() {
-    this.move()
+  constructor() {}
+
+  update(dt) {
+    this.move(dt)
     this.destroyed()
   }
-  move() {
+  move(dt) {
     // 粒子的移动
-    this.x -= this.speedX
-    this.y -= this.speedY
+    this.x -= this.speedX * dt
+    this.y += this.speedY * dt
   }
+  draw(graphics: Graphics) {}
   destroyed() {
     // 粒子不断变小
     this.size *= 0.95

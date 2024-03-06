@@ -10,7 +10,7 @@ System.register(["cc"], function (_export, _context) {
     execute: function () {
       _crd = true;
 
-      _cclegacy._RF.push({}, "dfbd2QXTqlKLqZlH6kUYDHg", "tool", undefined);
+      _cclegacy._RF.push({}, "b3ee9D4uItM/6VhopAa047F", "tool", undefined);
 
       _export("getRandomNumber", getRandomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1) + min);

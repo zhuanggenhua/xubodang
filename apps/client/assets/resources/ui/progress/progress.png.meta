@@ -2,7 +2,7 @@
   "ver": "1.0.26",
   "importer": "image",
   "imported": true,
-  "uuid": "127bab4a-0306-4b1f-b8c1-8eeb15b97685",
+  "uuid": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190",
   "files": [
     ".json",
     ".png"
@@ -10,14 +10,14 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "127bab4a-0306-4b1f-b8c1-8eeb15b97685@6c48a",
+      "uuid": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@6c48a",
       "displayName": "progress",
       "id": "6c48a",
       "name": "texture",
       "userData": {
         "wrapModeS": "clamp-to-edge",
         "wrapModeT": "clamp-to-edge",
-        "imageUuidOrDatabaseUri": "127bab4a-0306-4b1f-b8c1-8eeb15b97685",
+        "imageUuidOrDatabaseUri": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190",
         "isUuid": true,
         "visible": false,
         "minfilter": "linear",
@@ -34,7 +34,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "127bab4a-0306-4b1f-b8c1-8eeb15b97685@f9941",
+      "uuid": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@f9941",
       "displayName": "progress",
       "id": "f9941",
       "name": "spriteFrame",
@@ -114,7 +114,7 @@
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "127bab4a-0306-4b1f-b8c1-8eeb15b97685@6c48a",
+        "imageUuidOrDatabaseUri": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.12",
@@ -129,6 +129,6 @@
     "type": "sprite-frame",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "127bab4a-0306-4b1f-b8c1-8eeb15b97685@f9941"
+    "redirect": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190@f9941"
   }
 }
