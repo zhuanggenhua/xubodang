@@ -31,9 +31,6 @@
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils.meta": {
       "time": 1709642995977.8408
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\skyCanvas.ts.meta": {
-      "time": 1709643147110.7273
-    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\base.ts.meta": {
       "time": 1709643459565.86
     },
@@ -79,7 +76,7 @@
       "uuid": "5f4dcc52-0e8e-4323-8a07-eadb99272335"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg": {
-      "time": 1709643147094.2866,
+      "time": 1709731996727.774,
       "uuid": "81da83e4-4c6e-4f0d-a462-defb873c0270"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum": {
@@ -91,7 +88,7 @@
       "uuid": "4307655f-c161-4dcb-9a41-25f5afa3771b"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle": {
-      "time": 1709714229082.1504,
+      "time": 1709784042851.846,
       "uuid": "ed377966-fc0e-45dc-81ce-c5219e0d7666"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene": {
@@ -102,28 +99,24 @@
       "time": 1709643147076.9336,
       "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\skyCanvas.ts": {
-      "time": 1709608928356.9727,
-      "uuid": "055f0ccc-c0aa-4c62-86d4-082b76a73306"
-    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts": {
       "time": 1709695556741.0479,
       "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts": {
-      "time": 1709724148911.5583,
+      "time": 1709794505169.0503,
       "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts": {
-      "time": 1709729253678.313,
+      "time": 1709811315565.4932,
       "uuid": "5465a5a1-3d0e-4305-9793-31c488986615"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\Particle.ts": {
-      "time": 1709726618096.0508,
+      "time": 1709801689306.3474,
       "uuid": "7dc27749-dc3e-4548-92dd-1aebfcff5506"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HomeMgr.ts": {
-      "time": 1709728753700.6821,
+      "time": 1709811721320.2886,
       "uuid": "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\tool.ts": {
@@ -157,10 +150,6 @@
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\utils": {
       "time": 1709643147076.9336,
       "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg\\skyCanvas.ts": {
-      "time": 1709608928356.9727,
-      "uuid": "055f0ccc-c0aa-4c62-86d4-082b76a73306"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\enum\\index.ts": {
       "time": 1709625737661.0159,
@@ -672,29 +661,36 @@
       "time": 1709690780717.978
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene": {
-      "time": 1709728865765.981,
+      "time": 1709732359055.58,
       "uuid": "a63616f9-1344-4a3f-86c9-8bd4a8b89da9"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\ParticleMgr.ts.meta": {
       "time": 1709706013512.295
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\ParticleMgr.ts": {
-      "time": 1709725784320.5645,
+      "time": 1709811717287.3523,
       "uuid": "27ca5fb1-1af7-4614-8bb9-931a103b4f60"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\test.ts.meta": {
-      "time": 1709714229084.1462
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\test.ts": {
-      "time": 1709718563531.8591,
-      "uuid": "4441231f-f97d-43ca-b275-ef7e432bae9b"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\ObjectPoolManager.ts.meta": {
       "time": 1709725717260.9
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\ObjectPoolManager.ts": {
-      "time": 1709725212174.1711,
+      "time": 1709794426914.1938,
       "uuid": "9f41f389-0e49-4163-85f8-f1d9c7b4b5e3"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\bgCanvas.ts.meta": {
+      "time": 1709731996733.7578
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\bg\\bgCanvas.ts": {
+      "time": 1709608928356.9727,
+      "uuid": "41c99209-5cc4-4fba-9044-290ddeb43d22"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\FiveStarBg.ts.meta": {
+      "time": 1709714229084.1462
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\FiveStarBg.ts": {
+      "time": 1709797648879.3474,
+      "uuid": "4441231f-f97d-43ca-b275-ef7e432bae9b"
     }
   },
   "missing": {
@@ -756,7 +752,7 @@
     "055f0ccc-c0aa-4c62-86d4-082b76a73306": {
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\bg\\skyCanvas.ts",
       "time": 1709608928356.9727,
-      "removeTime": 1709643527053
+      "removeTime": 1709777615692
     },
     "ed377966-fc0e-45dc-81ce-c5219e0d7666": {
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\particle",
@@ -862,6 +858,16 @@
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\ParticleSystem.ts",
       "time": 1709697570383.578,
       "removeTime": 1709706013503
+    },
+    "4441231f-f97d-43ca-b275-ef7e432bae9b": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\test.ts",
+      "time": 1709783390033.614,
+      "removeTime": 1709783552170
+    },
+    "dc8e806b-b280-413f-b890-031916208ed1": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\test.ts",
+      "time": 1709783972035.6562,
+      "removeTime": 1709784042869
     }
   }
 }

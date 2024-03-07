@@ -40,11 +40,11 @@
     "value": {}
   },
   "81da83e4-4c6e-4f0d-a462-defb873c0270": {
-    "url": "db://assets/Scripts/bg",
+    "url": "db://assets/scripts/bg",
     "value": {}
   },
   "055f0ccc-c0aa-4c62-86d4-082b76a73306": {
-    "url": "db://assets/Scripts/bg/skyCanvas.ts",
+    "url": "db://assets/scripts/bg/skyCanvas.ts",
     "value": {}
   },
   "ed377966-fc0e-45dc-81ce-c5219e0d7666": {
@@ -1080,6 +1080,7 @@
         "932cc238-eac0-4574-8c88-bee53f157427@f9941"
       ],
       "dependScripts": [
+        "4441231f-f97d-43ca-b275-ef7e432bae9b",
         "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
       ]
     }
@@ -1093,11 +1094,19 @@
     "value": {}
   },
   "4441231f-f97d-43ca-b275-ef7e432bae9b": {
-    "url": "db://assets/scripts/particle/test.ts",
+    "url": "db://assets/scripts/particle/FiveStarBg.ts",
     "value": {}
   },
   "9f41f389-0e49-4163-85f8-f1d9c7b4b5e3": {
     "url": "db://assets/scripts/global/ObjectPoolManager.ts",
+    "value": {}
+  },
+  "41c99209-5cc4-4fba-9044-290ddeb43d22": {
+    "url": "db://assets/scripts/bg/bgCanvas.ts",
+    "value": {}
+  },
+  "dc8e806b-b280-413f-b890-031916208ed1": {
+    "url": "db://assets/scripts/particle/test.ts",
     "value": {}
   }
 }

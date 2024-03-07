@@ -16,23 +16,24 @@ export class LightParticle extends Particle {
   va: number
   curve: number
   borthX: number
+
+  isGather: boolean = false
   constructor() {
     super()
-    this.size = getRandomNumber(5, 7)
+    this.size = getRandomNumber(3, 5)
     // 粒子在宽度上散布
     this.borthX = getRandomNumber(0, mapW)
+    this.x = this.borthX
     this.y = this.y
-    console.log('??', this.x)
 
-    this.speedY = Math.random() * 20 + 40 //1-3  --这是向上的
+    this.speedY = Math.random() * 20 + 40 //40-60  --这是向上的
 
-    // 移动方式：基于sin
-    this.angle = 0
-    // 速度
-    this.va = Math.random() * 10 + 20 // 2 ~ 4
-
-    // 上下浮动范围的随机值  0.2 -- 0.3  --> 0.1 ~ 0.45
-    this.curve = Math.random() * 0.4
+    // // 移动方式：基于sin
+    // this.angle = 0
+    // // 速度
+    // this.va = Math.random() * 10 + 20 // 2 ~ 4
+    // // 上下浮动范围的随机值  0.2 -- 0.3  --> 0.1 ~ 0.45
+    // this.curve = Math.random() * 0.4
 
     // this.color = new Color(255, 242, 0, 200) // 金色
     this.color = new Color(255, 250, 101, 200) // 中金色
@@ -57,19 +58,33 @@ export class LightParticle extends Particle {
       .union()
       .repeatForever()
       .start()
+
+    this.randomMove()
+  }
+  randomMove() {
+    const swayAmount = 100 // 摆动幅度，根据实际情况调整
+    this.speedX = (Math.random() - 0.5) * swayAmount
+    // 无规律移动
+    this.schedule(() => {
+      // 是否收到牵引决定移动方式
+      if (this.isGather) return
+      tween(this)
+        .to(1, { speedX: (Math.random() - 0.5) * swayAmount })
+        .start()
+      // this.speedX += (Math.random() - 0.5) * swayAmount
+    }, 1)
   }
   update(dt) {
     super.update(dt)
   }
   move(dt) {
     // 粒子的移动
+    this.x += this.speedX * dt
     this.y += this.speedY * dt
-
-    this.angle += this.va * dt
-    // 基于sin函数图像的移动方式
-    const diffX = Math.sin((this.angle * Math.PI) / 180) * mapW * this.curve * 0.5
-    this.x = this.borthX + diffX
-    console.log('???', diffX)
+    // // 基于sin函数图像的移动方式
+    // this.angle += this.va * dt
+    // const diffX = Math.sin((this.angle * Math.PI) / 180) * mapW * this.curve * 0.5
+    // this.x = this.borthX + diffX
   }
   draw(graphics: Graphics) {
     graphics.fillColor = this.color2
@@ -83,6 +98,7 @@ export class LightParticle extends Particle {
     if (this.y > mapH) {
       this.markedForDeletion = true
       this.flickerTween.stop() // 在对象被销毁时，停止并清理 tween
+      this.flickerTween2.stop() // 在对象被销毁时，停止并清理 tween
     }
   }
 }

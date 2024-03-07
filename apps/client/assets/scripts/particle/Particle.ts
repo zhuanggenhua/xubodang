@@ -1,15 +1,17 @@
 import { _decorator, Color, Component, Graphics, instantiate, Node, Prefab, SpriteFrame, Vec3 } from 'cc'
 
-export default class Particle {
+export default class Particle extends Component {
   markedForDeletion: boolean = false
   protected size: number = 0
-  protected speedX: number = 0
-  protected speedY: number = 0
-  protected x: number = 0
-  protected y: number = 0
+  speedX: number = 0
+  speedY: number = 0
+  x: number = 0
+  y: number = 0
   protected color: Color = null
 
-  constructor() {}
+  constructor() {
+    super()
+  }
 
   update(dt) {
     this.move(dt)
@@ -17,7 +19,7 @@ export default class Particle {
   }
   move(dt) {
     // 粒子的移动
-    this.x -= this.speedX * dt
+    this.x += this.speedX * dt
     this.y += this.speedY * dt
   }
   draw(graphics: Graphics) {}

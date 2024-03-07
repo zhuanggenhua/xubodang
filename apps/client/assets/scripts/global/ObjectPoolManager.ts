@@ -24,7 +24,7 @@ export default class ObjectPoolManager extends Singleton {
     // 对象池节点初始化
     if (this.objectPool === null) {
       this.objectPool = new Node('ObjectPool');
-      this.objectPool.setParent(DataManager.Instance.stage || director.getScene());
+      this.objectPool.setParent(DataManager.Instance.stage);
     }
 
     // 实体对象列表初始化

@@ -2,6 +2,7 @@ import {
   _decorator,
   Color,
   Component,
+  EventTouch,
   GradientRange,
   Graphics,
   instantiate,
@@ -30,15 +31,31 @@ export class HomeMgr extends Component {
   onLoad() {
     this.particleMgr = this.canvas.addComponent(ParticleMgr)
     this.particleMgr.init(LightParticle, {
-        gap: 1,
+      gap: 0.5,
+      // max: 1,
     })
+
+    // this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this)
+    this.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this)
+    this.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this)
   }
-  onDestroy(){
+  onDestroy() {
     this.particleMgr.clear()
+    // this.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this)
+    this.node.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this)
+    this.node.off(Node.EventType.TOUCH_END, this.onTouchEnd, this)
   }
 
-  start() {
+  onTouchMove(event: EventTouch) {
+    // 辉光聚拢效果
+    const touch = event.touch
+    this.particleMgr.gather(touch.getLocation())
   }
+  onTouchEnd() {
+    this.particleMgr.offGather()
+  }
+
+  start() {}
 
   update(deltaTime: number) {
     this.particleMgr.update(deltaTime)

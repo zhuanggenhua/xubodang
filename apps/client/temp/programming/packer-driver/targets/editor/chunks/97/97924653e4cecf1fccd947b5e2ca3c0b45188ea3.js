@@ -62,26 +62,26 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.va = void 0;
           this.curve = void 0;
           this.borthX = void 0;
+          this.isGather = false;
           this.size = (_crd && getRandomNumber === void 0 ? (_reportPossibleCrUseOfgetRandomNumber({
             error: Error()
-          }), getRandomNumber) : getRandomNumber)(5, 7); // 粒子在宽度上散布
+          }), getRandomNumber) : getRandomNumber)(3, 5); // 粒子在宽度上散布
 
           this.borthX = (_crd && getRandomNumber === void 0 ? (_reportPossibleCrUseOfgetRandomNumber({
             error: Error()
           }), getRandomNumber) : getRandomNumber)(0, _crd && mapW === void 0 ? (_reportPossibleCrUseOfmapW({
             error: Error()
           }), mapW) : mapW);
+          this.x = this.borthX;
           this.y = this.y;
-          console.log('??', this.x);
-          this.speedY = Math.random() * 20 + 40; //1-3  --这是向上的
-          // 移动方式：基于sin
-
-          this.angle = 0; // 速度
-
-          this.va = Math.random() * 10 + 20; // 2 ~ 4
-          // 上下浮动范围的随机值  0.2 -- 0.3  --> 0.1 ~ 0.45
-
-          this.curve = Math.random() * 0.4; // this.color = new Color(255, 242, 0, 200) // 金色
+          this.speedY = Math.random() * 20 + 40; //40-60  --这是向上的
+          // // 移动方式：基于sin
+          // this.angle = 0
+          // // 速度
+          // this.va = Math.random() * 10 + 20 // 2 ~ 4
+          // // 上下浮动范围的随机值  0.2 -- 0.3  --> 0.1 ~ 0.45
+          // this.curve = Math.random() * 0.4
+          // this.color = new Color(255, 242, 0, 200) // 金色
 
           this.color = new Color(255, 250, 101, 200); // 中金色
           // 背景光环
@@ -112,6 +112,21 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }).delay(delay) // 闪烁完成后，延时1秒
           // 确保to按顺序执行
           .union().repeatForever().start();
+          this.randomMove();
+        }
+
+        randomMove() {
+          const swayAmount = 100; // 摆动幅度，根据实际情况调整
+
+          this.speedX = (Math.random() - 0.5) * swayAmount; // 无规律移动
+
+          this.schedule(() => {
+            // 是否收到牵引决定移动方式
+            if (this.isGather) return;
+            tween(this).to(1, {
+              speedX: (Math.random() - 0.5) * swayAmount
+            }).start(); // this.speedX += (Math.random() - 0.5) * swayAmount
+          }, 1);
         }
 
         update(dt) {
@@ -120,14 +135,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
         move(dt) {
           // 粒子的移动
-          this.y += this.speedY * dt;
-          this.angle += this.va * dt; // 基于sin函数图像的移动方式
-
-          const diffX = Math.sin(this.angle * Math.PI / 180) * (_crd && mapW === void 0 ? (_reportPossibleCrUseOfmapW({
-            error: Error()
-          }), mapW) : mapW) * this.curve * 0.5;
-          this.x = this.borthX + diffX;
-          console.log('???', diffX);
+          this.x += this.speedX * dt;
+          this.y += this.speedY * dt; // // 基于sin函数图像的移动方式
+          // this.angle += this.va * dt
+          // const diffX = Math.sin((this.angle * Math.PI) / 180) * mapW * this.curve * 0.5
+          // this.x = this.borthX + diffX
         }
 
         draw(graphics) {
@@ -145,6 +157,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), mapH) : mapH)) {
             this.markedForDeletion = true;
             this.flickerTween.stop(); // 在对象被销毁时，停止并清理 tween
+
+            this.flickerTween2.stop(); // 在对象被销毁时，停止并清理 tween
           }
         }
 

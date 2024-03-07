@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, Singleton, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, director, Singleton, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
 
   function _reportPossibleCrUseOfIRoom(extras) {
     _reporterNs.report("IRoom", "../common", _context.meta, extras);
@@ -20,6 +20,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       _cclegacy = _cc.cclegacy;
       __checkObsolete__ = _cc.__checkObsolete__;
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
+      director = _cc.director;
     }, function (_unresolved_2) {
       Singleton = _unresolved_2.Singleton;
     }],
@@ -28,7 +29,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
       _cclegacy._RF.push({}, "f3a50IPeU9FqKFr/UCCSiVN", "DataManager", undefined);
 
-      __checkObsolete__(['Prefab', 'SpriteFrame', 'Node']);
+      __checkObsolete__(['Prefab', 'SpriteFrame', 'Node', 'director']);
 
       PLAYER_SPEED = 100;
       BULLET_SPEED = 600;
@@ -47,7 +48,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           super(...arguments);
           this.myPlayerId = 1;
           this.roomInfo = void 0;
-          this.stage = void 0;
+          this.stage = director.getScene().getChildByName('Canvas');
           // actorMap: Map<number, ActorManager> = new Map();
           this.prefabMap = new Map();
           this.textureMap = new Map();

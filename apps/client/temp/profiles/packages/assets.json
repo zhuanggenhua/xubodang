@@ -2,7 +2,16 @@
   "state": {
     "expandUuids": [
       "db://assets",
-      "4307655f-c161-4dcb-9a41-25f5afa3771b"
+      "4307655f-c161-4dcb-9a41-25f5afa3771b",
+      "c70f2f14-af9a-434a-aca9-5e35178b22ec",
+      "65992b5a-479c-4531-ae84-15bc9d295bbe",
+      "7c11175b-2afc-401e-8b60-97d841391700",
+      "04945ddd-ca73-4151-874b-7e23c8f0428f",
+      "bc54d86d-e9ba-43db-8ec9-b496b780bb7f",
+      "761288a4-2032-4762-a8e1-96c83489e47c",
+      "2433da3a-de7f-4712-80a0-c1ba36c72aff",
+      "ed377966-fc0e-45dc-81ce-c5219e0d7666",
+      "f77a9beb-cef0-4f24-945b-cc6ceff305c7"
     ],
     "sortType": "name"
   }

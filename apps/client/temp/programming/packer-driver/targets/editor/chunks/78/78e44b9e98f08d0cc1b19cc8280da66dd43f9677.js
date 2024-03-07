@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, Particle, _crd;
+  var _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, Component, Particle, _crd;
 
   _export("default", void 0);
 
@@ -10,6 +10,7 @@ System.register(["cc"], function (_export, _context) {
       _cclegacy = _cc.cclegacy;
       __checkObsolete__ = _cc.__checkObsolete__;
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
+      Component = _cc.Component;
     }],
     execute: function () {
       _crd = true;
@@ -18,8 +19,9 @@ System.register(["cc"], function (_export, _context) {
 
       __checkObsolete__(['_decorator', 'Color', 'Component', 'Graphics', 'instantiate', 'Node', 'Prefab', 'SpriteFrame', 'Vec3']);
 
-      _export("default", Particle = class Particle {
+      _export("default", Particle = class Particle extends Component {
         constructor() {
+          super();
           this.markedForDeletion = false;
           this.size = 0;
           this.speedX = 0;
@@ -36,7 +38,7 @@ System.register(["cc"], function (_export, _context) {
 
         move(dt) {
           // 粒子的移动
-          this.x -= this.speedX * dt;
+          this.x += this.speedX * dt;
           this.y += this.speedY * dt;
         }
 

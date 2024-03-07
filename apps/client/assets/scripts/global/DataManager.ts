@@ -1,4 +1,4 @@
-import { Prefab, SpriteFrame, Node } from 'cc';
+import { Prefab, SpriteFrame, Node, director } from 'cc';
 import { IRoom, IState } from '../common';
 import { Singleton } from '../common/base';
 import Particle from '../particle/Particle';
@@ -24,8 +24,8 @@ export default class DataManager extends Singleton {
   myPlayerId: number = 1;
   roomInfo: IRoom;
 
-  stage: Node;
-  
+  stage: Node = director.getScene().getChildByName('Canvas');
+    
   // actorMap: Map<number, ActorManager> = new Map();
   prefabMap: Map<string, Prefab> = new Map();
   textureMap: Map<string, SpriteFrame[]> = new Map();

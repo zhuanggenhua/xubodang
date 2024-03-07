@@ -37,7 +37,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
 
       _cclegacy._RF.push({}, "dde21zvwz9AcZv0p6AdySwj", "HomeMgr", undefined);
 
-      __checkObsolete__(['_decorator', 'Color', 'Component', 'GradientRange', 'Graphics', 'instantiate', 'Node', 'ParticleSystem2D', 'Prefab', 'tween']);
+      __checkObsolete__(['_decorator', 'Color', 'Component', 'EventTouch', 'GradientRange', 'Graphics', 'instantiate', 'Node', 'ParticleSystem2D', 'Prefab', 'tween']);
 
       ({
         ccclass,
@@ -63,12 +63,35 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           this.particleMgr.init(_crd && LightParticle === void 0 ? (_reportPossibleCrUseOfLightParticle({
             error: Error()
           }), LightParticle) : LightParticle, {
-            gap: 1
+            gap: 0.5 // max: 1,
+
           });
+          this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
+          this.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+          this.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         }
 
         onDestroy() {
           this.particleMgr.clear();
+          this.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this);
+          this.node.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+          this.node.off(Node.EventType.TOUCH_END, this.onTouchEnd, this);
+        }
+
+        onTouchStart(event) {
+          // 辉光聚拢效果
+          var touch = event.touch;
+          this.particleMgr.gather(touch.getLocation());
+        }
+
+        onTouchMove(event) {
+          // 辉光聚拢效果
+          var touch = event.touch;
+          this.particleMgr.adsorb(touch.getLocation());
+        }
+
+        onTouchEnd() {
+          this.particleMgr.offGather();
         }
 
         start() {}

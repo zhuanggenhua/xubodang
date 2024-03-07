@@ -1,7 +1,8 @@
-import { _decorator, Color, Component, Graphics, instantiate, Node, Prefab, SpriteFrame, Vec3 } from 'cc'
+import { _decorator, Color, Component, Graphics, instantiate, Node, Prefab, SpriteFrame, Vec2, Vec3 } from 'cc'
 import { IParticleOptions } from '../common/state'
 import Particle from './Particle'
 import { getRandomNumber } from '../utils/tool'
+import { LightParticle } from './LightParticle'
 
 // 粒子系统
 export default class ParticleMgr extends Component {
@@ -75,5 +76,39 @@ export default class ParticleMgr extends Component {
 
   clear() {
     this.particles.forEach((particle) => (particle.markedForDeletion = true))
+  }
+
+  // 粒子聚拢效果
+  gather(point: Vec2) {
+    const gatherRadius = 200 // 定义聚拢半径
+    const gatherSpeed = 100 // 定义聚拢速度
+
+    // 找到触点周围的粒子
+    this.particles.forEach((particle) => {
+      // 计算粒子与触点的距离
+      const distance = Vec2.distance(new Vec2(particle.x, particle.y), point)
+      if (distance < gatherRadius) {
+        ;(particle as LightParticle).isGather = true
+        // 计算方向向量并归一化
+        let direction = new Vec2()
+        Vec2.subtract(direction, point, new Vec2(particle.x, particle.y))
+        direction = direction.normalize()
+
+        // 改变粒子速度，使其朝向触点
+        const diffSpeedX =
+          (Math.abs(Vec2.distance(new Vec2(particle.x, 0), new Vec2(point.x, 0))) / gatherRadius) * gatherSpeed
+        const diffSpeedY =
+          (Math.abs(Vec2.distance(new Vec2(0, particle.y), new Vec2(0, point.y))) / gatherRadius) * gatherSpeed
+        particle.speedX = direction.clone().multiplyScalar(diffSpeedX).x
+        particle.speedY = direction.clone().multiplyScalar(diffSpeedY).y
+      }
+    })
+  }
+  offGather() {
+    this.particles.forEach((particle) => {
+      ;(particle as LightParticle).isGather = false
+      // 重置y轴速度
+      particle.speedY = Math.random() * 20 + 40
+    })
   }
 }
