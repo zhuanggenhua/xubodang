@@ -5,7 +5,8 @@
         "version": "Windows 10 Pro"
     },
     "sceneListMap": {
-        "a63616f9-1344-4a3f-86c9-8bd4a8b89da9": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene"
+        "a63616f9-1344-4a3f-86c9-8bd4a8b89da9": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\home.scene",
+        "f192612f-1b28-411f-9573-dfcdbd69841a": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\Loading.scene"
     },
     "deviceMd5": "a71bfce4187a9b7a045951c098917077"
 }

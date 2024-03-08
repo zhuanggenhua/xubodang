@@ -4,11 +4,11 @@
     "value": {}
   },
   "2433da3a-de7f-4712-80a0-c1ba36c72aff": {
-    "url": "db://assets/Scripts/scene",
+    "url": "db://assets/scripts/scene",
     "value": {}
   },
   "dbbb8ad9-c288-418b-b96a-c97d29f68160": {
-    "url": "db://assets/Scripts/utils",
+    "url": "db://assets/scripts/utils",
     "value": {}
   },
   "dde21cef-c33f-4071-9bf4-a7a01dc92c23": {
@@ -16,7 +16,7 @@
     "value": {}
   },
   "b3ee90f8-b88b-4cff-a561-a2901ad38ec5": {
-    "url": "db://assets/Scripts/utils/tool.ts",
+    "url": "db://assets/scripts/utils/tool.ts",
     "value": {}
   },
   "5f4dcc52-0e8e-4323-8a07-eadb99272335": {
@@ -144,7 +144,7 @@
     "value": {}
   },
   "7c11175b-2afc-401e-8b60-97d841391700": {
-    "url": "db://assets/resources/prefab",
+    "url": "db://assets/prefab",
     "value": {}
   },
   "04945ddd-ca73-4151-874b-7e23c8f0428f": {
@@ -180,7 +180,7 @@
     "value": {}
   },
   "1da97afc-74da-4633-aa54-007cbc59a98f": {
-    "url": "db://assets/resources/prefab/bg_light.prefab",
+    "url": "db://assets/prefab/bg_light.prefab",
     "value": {
       "depends": [
         "267103a7-e074-4ada-beab-8868df813467@f9941"
@@ -190,9 +190,7 @@
   },
   "c31eeb7f-95cc-4eb0-afcf-59b8eccf823a": {
     "url": "db://assets/resources/ui/achievement.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "267103a7-e074-4ada-beab-8868df813467": {
     "url": "db://assets/resources/ui/star.png",
@@ -664,9 +662,7 @@
   },
   "fb331135-4580-4435-9343-5c6d7814b21a": {
     "url": "db://assets/resources/ui/button/wenhao.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@f9941": {
     "url": "db://assets/resources/ui/button/tiny screen selected - other things.png@f9941",
@@ -1073,15 +1069,23 @@
     "value": {}
   },
   "a63616f9-1344-4a3f-86c9-8bd4a8b89da9": {
-    "url": "db://assets/scene/home.scene",
+    "url": "db://assets/scene/Home.scene",
     "value": {
       "depends": [
         "a63616f9-1344-4a3f-86c9-8bd4a8b89da9",
-        "932cc238-eac0-4574-8c88-bee53f157427@f9941"
+        "932cc238-eac0-4574-8c88-bee53f157427@f9941",
+        "bc2670ca-9b49-4c3f-ba6e-76a21947725c",
+        "c18a3aa1-a0ed-4d68-8566-be5a505d9fce@f9941",
+        "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "b528a18f-2c70-4d7f-9adf-dbcea17aeec6@f9941",
+        "c4feeb18-99ce-4996-af66-6b5edd596d74@f9941",
+        "06c6e70b-b80d-48f7-842f-7b364f0c399e@f9941"
       ],
       "dependScripts": [
         "4441231f-f97d-43ca-b275-ef7e432bae9b",
-        "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
+        "dde21cef-c33f-4071-9bf4-a7a01dc92c23",
+        "1d75a798-9815-495d-ad9d-a4f6fe63072f"
       ]
     }
   },
@@ -1108,5 +1112,119 @@
   "dc8e806b-b280-413f-b890-031916208ed1": {
     "url": "db://assets/scripts/particle/test.ts",
     "value": {}
+  },
+  "03476cbf-cba0-4bf3-b1c4-d0b3db4c4dec": {
+    "url": "db://assets/scripts/ui",
+    "value": {}
+  },
+  "bc2670ca-9b49-4c3f-ba6e-76a21947725c": {
+    "url": "db://assets/resources/font/gudian.ttf",
+    "value": {
+      "depends": []
+    }
+  },
+  "1d75a798-9815-495d-ad9d-a4f6fe63072f": {
+    "url": "db://assets/scripts/ui/HomeUiMgr.ts",
+    "value": {}
+  },
+  "b528a18f-2c70-4d7f-9adf-dbcea17aeec6": {
+    "url": "db://assets/resources/ui/button/Setting.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b528a18f-2c70-4d7f-9adf-dbcea17aeec6@6c48a": {
+    "url": "db://assets/resources/ui/button/Setting.png@6c48a",
+    "value": {
+      "depends": [
+        "b528a18f-2c70-4d7f-9adf-dbcea17aeec6"
+      ]
+    }
+  },
+  "b528a18f-2c70-4d7f-9adf-dbcea17aeec6@f9941": {
+    "url": "db://assets/resources/ui/button/Setting.png@f9941",
+    "value": {
+      "depends": [
+        "b528a18f-2c70-4d7f-9adf-dbcea17aeec6@6c48a"
+      ]
+    }
+  },
+  "c4feeb18-99ce-4996-af66-6b5edd596d74": {
+    "url": "db://assets/resources/ui/button/Achievement.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c4feeb18-99ce-4996-af66-6b5edd596d74@6c48a": {
+    "url": "db://assets/resources/ui/button/Achievement.png@6c48a",
+    "value": {
+      "depends": [
+        "c4feeb18-99ce-4996-af66-6b5edd596d74"
+      ]
+    }
+  },
+  "c4feeb18-99ce-4996-af66-6b5edd596d74@f9941": {
+    "url": "db://assets/resources/ui/button/Achievement.png@f9941",
+    "value": {
+      "depends": [
+        "c4feeb18-99ce-4996-af66-6b5edd596d74@6c48a"
+      ]
+    }
+  },
+  "f192612f-1b28-411f-9573-dfcdbd69841a": {
+    "url": "db://assets/scene/Loading.scene",
+    "value": {
+      "depends": [
+        "f192612f-1b28-411f-9573-dfcdbd69841a",
+        "932cc238-eac0-4574-8c88-bee53f157427@f9941",
+        "24a704da-2867-446d-8d1a-5e920c75e09d@f9941",
+        "9fd900dd-221b-4f89-8f2c-fba34243c835@f9941"
+      ],
+      "dependScripts": [
+        "42957d10-6b13-4183-8650-5ec3f18c711e"
+      ]
+    }
+  },
+  "42957d10-6b13-4183-8650-5ec3f18c711e": {
+    "url": "db://assets/scripts/scene/LoadingMgr.ts",
+    "value": {}
+  },
+  "d95d3740-0b5b-4232-89ac-4e9bd7a9bd0a": {
+    "url": "db://assets/scripts/global/ResourceManager.ts",
+    "value": {}
+  },
+  "d2b13ef7-b42b-4770-a580-62570bd579f7": {
+    "url": "db://assets/scripts/global/FaderManager.ts",
+    "value": {}
+  },
+  "c6e581d1-5164-4ea9-af34-a1302802a6e9": {
+    "url": "db://assets/scripts/ui/DrawManager.ts",
+    "value": {}
+  },
+  "eb1ea03c-666d-41d4-ad4a-38502e844f47": {
+    "url": "db://assets/scripts/utils/index.ts",
+    "value": {}
+  },
+  "06c6e70b-b80d-48f7-842f-7b364f0c399e": {
+    "url": "db://assets/resources/ui/button/FeedBack.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "06c6e70b-b80d-48f7-842f-7b364f0c399e@6c48a": {
+    "url": "db://assets/resources/ui/button/FeedBack.png@6c48a",
+    "value": {
+      "depends": [
+        "06c6e70b-b80d-48f7-842f-7b364f0c399e"
+      ]
+    }
+  },
+  "06c6e70b-b80d-48f7-842f-7b364f0c399e@f9941": {
+    "url": "db://assets/resources/ui/button/FeedBack.png@f9941",
+    "value": {
+      "depends": [
+        "06c6e70b-b80d-48f7-842f-7b364f0c399e@6c48a"
+      ]
+    }
   }
 }

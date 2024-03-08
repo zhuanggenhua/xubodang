@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 25149.79580000043,
+      "mTimestamp": 21319.669200003147,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -173,7 +173,7 @@
           }
         },
         {
-          "value": "cce:/internal/x/cc-fu/profiler",
+          "value": "cce:/internal/x/cc-fu/spine",
           "resolved": "__unresolved_12",
           "loc": {
             "start": {
@@ -182,12 +182,12 @@
             },
             "end": {
               "line": 13,
-              "column": 46
+              "column": 43
             }
           }
         },
         {
-          "value": "cce:/internal/x/cc-fu/spine",
+          "value": "cce:/internal/x/cc-fu/tiled-map",
           "resolved": "__unresolved_13",
           "loc": {
             "start": {
@@ -196,12 +196,12 @@
             },
             "end": {
               "line": 14,
-              "column": 43
+              "column": 47
             }
           }
         },
         {
-          "value": "cce:/internal/x/cc-fu/tiled-map",
+          "value": "cce:/internal/x/cc-fu/tween",
           "resolved": "__unresolved_14",
           "loc": {
             "start": {
@@ -210,12 +210,12 @@
             },
             "end": {
               "line": 15,
-              "column": 47
+              "column": 43
             }
           }
         },
         {
-          "value": "cce:/internal/x/cc-fu/tween",
+          "value": "cce:/internal/x/cc-fu/ui",
           "resolved": "__unresolved_15",
           "loc": {
             "start": {
@@ -224,12 +224,12 @@
             },
             "end": {
               "line": 16,
-              "column": 43
+              "column": 40
             }
           }
         },
         {
-          "value": "cce:/internal/x/cc-fu/ui",
+          "value": "cce:/internal/x/cc-fu/video",
           "resolved": "__unresolved_16",
           "loc": {
             "start": {
@@ -238,12 +238,12 @@
             },
             "end": {
               "line": 17,
-              "column": 40
+              "column": 43
             }
           }
         },
         {
-          "value": "cce:/internal/x/cc-fu/video",
+          "value": "cce:/internal/x/cc-fu/webview",
           "resolved": "__unresolved_17",
           "loc": {
             "start": {
@@ -252,20 +252,6 @@
             },
             "end": {
               "line": 18,
-              "column": 43
-            }
-          }
-        },
-        {
-          "value": "cce:/internal/x/cc-fu/webview",
-          "resolved": "__unresolved_18",
-          "loc": {
-            "start": {
-              "line": 19,
-              "column": 14
-            },
-            "end": {
-              "line": 19,
               "column": 45
             }
           }
@@ -360,13 +346,6 @@
         {
           "resolved": {
             "type": "external",
-            "specifierOrURL": "cce:/internal/x/cc-fu/profiler"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "external",
             "specifierOrURL": "cce:/internal/x/cc-fu/spine"
           },
           "messages": []
@@ -409,7 +388,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 34144722.468299985,
+      "mTimestamp": 7777034.524900019,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -539,7 +518,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ObjectPoolManager.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/FaderManager.ts",
           "resolved": "__unresolved_9",
           "loc": {
             "start": {
@@ -548,12 +527,12 @@
             },
             "end": {
               "line": 13,
-              "column": 129
+              "column": 124
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/FiveStarBg.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ObjectPoolManager.ts",
           "resolved": "__unresolved_10",
           "loc": {
             "start": {
@@ -562,12 +541,12 @@
             },
             "end": {
               "line": 14,
-              "column": 124
+              "column": 129
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/LightParticle.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ResourceManager.ts",
           "resolved": "__unresolved_11",
           "loc": {
             "start": {
@@ -581,7 +560,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/Particle.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/FiveStarBg.ts",
           "resolved": "__unresolved_12",
           "loc": {
             "start": {
@@ -590,12 +569,12 @@
             },
             "end": {
               "line": 16,
-              "column": 122
+              "column": 124
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/ParticleMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/LightParticle.ts",
           "resolved": "__unresolved_13",
           "loc": {
             "start": {
@@ -604,12 +583,12 @@
             },
             "end": {
               "line": 17,
-              "column": 125
+              "column": 127
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HomeMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/Particle.ts",
           "resolved": "__unresolved_14",
           "loc": {
             "start": {
@@ -618,12 +597,12 @@
             },
             "end": {
               "line": 18,
-              "column": 118
+              "column": 122
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/tool.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/ParticleMgr.ts",
           "resolved": "__unresolved_15",
           "loc": {
             "start": {
@@ -632,7 +611,77 @@
             },
             "end": {
               "line": 19,
-              "column": 115
+              "column": 125
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HomeMgr.ts",
+          "resolved": "__unresolved_16",
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 7
+            },
+            "end": {
+              "line": 20,
+              "column": 118
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/LoadingMgr.ts",
+          "resolved": "__unresolved_17",
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 7
+            },
+            "end": {
+              "line": 21,
+              "column": 121
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/DrawManager.ts",
+          "resolved": "__unresolved_18",
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 7
+            },
+            "end": {
+              "line": 22,
+              "column": 119
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HomeUiMgr.ts",
+          "resolved": "__unresolved_19",
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 7
+            },
+            "end": {
+              "line": 23,
+              "column": 117
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts",
+          "resolved": "__unresolved_20",
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 7
+            },
+            "end": {
+              "line": 24,
+              "column": 116
             }
           }
         }
@@ -705,7 +754,21 @@
         {
           "resolved": {
             "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/FaderManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
             "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ObjectPoolManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ResourceManager.ts"
           },
           "messages": []
         },
@@ -747,7 +810,28 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/tool.ts"
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/LoadingMgr.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/DrawManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HomeUiMgr.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
           },
           "messages": []
         }
@@ -1041,7 +1125,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1709777586065,
+      "mTimestamp": 1709889006005,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -1658,7 +1742,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/enum/index.ts": {
       "mTimestamp": {
-        "mtime": 1709695556741.0479,
+        "mtime": 1709890638623.2615,
         "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
       },
       "chunkId": "93be2a043593ef7f8ec7c3e0eba571f5740183e1",
@@ -1680,7 +1764,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/DataManager.ts": {
       "mTimestamp": {
-        "mtime": 1709794505169.0503,
+        "mtime": 1709896347431.469,
         "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
       },
       "chunkId": "2d71218eb8a2789b58ddd21a37d422e3d5241369",
@@ -1700,11 +1784,11 @@
           "loc": {
             "start": {
               "line": 1,
-              "column": 52
+              "column": 58
             },
             "end": {
               "line": 1,
-              "column": 56
+              "column": 62
             }
           }
         },
@@ -1764,7 +1848,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/LightParticle.ts": {
       "mTimestamp": {
-        "mtime": 1709811315565.4932,
+        "mtime": 1709896180826.99,
         "uuid": "5465a5a1-3d0e-4305-9793-31c488986615"
       },
       "chunkId": "97924653e4cecf1fccd947b5e2ca3c0b45188ea3",
@@ -1807,7 +1891,7 @@
           }
         },
         {
-          "value": "../utils/tool",
+          "value": "../utils",
           "resolved": "__unresolved_2",
           "loc": {
             "start": {
@@ -1816,7 +1900,7 @@
             },
             "end": {
               "line": 3,
-              "column": 47
+              "column": 42
             }
           }
         },
@@ -1875,7 +1959,7 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/tool.ts"
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
           },
           "messages": []
         },
@@ -1942,7 +2026,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HomeMgr.ts": {
       "mTimestamp": {
-        "mtime": 1709811721320.2886,
+        "mtime": 1709896752079.5757,
         "uuid": "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
       },
       "chunkId": "82ed1d30da647f9c0b53b3bf27758537cd00189e",
@@ -1997,6 +2081,20 @@
               "column": 57
             }
           }
+        },
+        {
+          "value": "../global/FaderManager",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 25
+            },
+            "end": {
+              "line": 18,
+              "column": 49
+            }
+          }
         }
       ],
       "type": "esm",
@@ -2040,6 +2138,13 @@
           "resolved": {
             "type": "module",
             "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/LightParticle.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/FaderManager.ts"
           },
           "messages": []
         }
@@ -2174,7 +2279,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/ParticleMgr.ts": {
       "mTimestamp": {
-        "mtime": 1709811717287.3523,
+        "mtime": 1709896079992.5554,
         "uuid": "27ca5fb1-1af7-4614-8bb9-931a103b4f60"
       },
       "chunkId": "9105b9c8e7de5cc755f8d22714e137f3a761775c",
@@ -2203,7 +2308,7 @@
           }
         },
         {
-          "value": "../utils/tool",
+          "value": "../utils",
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
@@ -2212,7 +2317,7 @@
             },
             "end": {
               "line": 4,
-              "column": 47
+              "column": 42
             }
           }
         }
@@ -2250,7 +2355,7 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/tool.ts"
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
           },
           "messages": []
         }
@@ -2467,7 +2572,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/particle/FiveStarBg.ts": {
       "mTimestamp": {
-        "mtime": 1709797648879.3474,
+        "mtime": 1709888353124.1907,
         "uuid": "4441231f-f97d-43ca-b275-ef7e432bae9b"
       },
       "chunkId": "ff94c8fe76e6ca2b8f8eca03c7815346c9fc5a64",
@@ -2512,6 +2617,488 @@
           "resolved": {
             "type": "module",
             "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HomeUiMgr.ts": {
+      "mTimestamp": {
+        "mtime": 1709887834823.206,
+        "uuid": "1d75a798-9815-495d-ad9d-a4f6fe63072f"
+      },
+      "chunkId": "69c8a589784ed848c27298785e87c8b4c1847230",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 69
+            },
+            "end": {
+              "line": 1,
+              "column": 73
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/LoadingMgr.ts": {
+      "mTimestamp": {
+        "mtime": 1709891086555.6887,
+        "uuid": "42957d10-6b13-4183-8650-5ec3f18c711e"
+      },
+      "chunkId": "1aee7df9144676facf8670d8a03b90437eef39bf",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 85
+            },
+            "end": {
+              "line": 1,
+              "column": 89
+            }
+          }
+        },
+        {
+          "value": "../enum",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 26
+            },
+            "end": {
+              "line": 2,
+              "column": 35
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/enum/index.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ResourceManager.ts": {
+      "mTimestamp": {
+        "mtime": 1709896001951.297,
+        "uuid": "d95d3740-0b5b-4232-89ac-4e9bd7a9bd0a"
+      },
+      "chunkId": "c0561cf907e5fbc72272754b5bfd79ba13193ad5",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 58
+            },
+            "end": {
+              "line": 1,
+              "column": 62
+            }
+          }
+        },
+        {
+          "value": "../common/base",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 26
+            },
+            "end": {
+              "line": 2,
+              "column": 42
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/common/base.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/FaderManager.ts": {
+      "mTimestamp": {
+        "mtime": 1709896306601.442,
+        "uuid": "d2b13ef7-b42b-4770-a580-62570bd579f7"
+      },
+      "chunkId": "2d5fbccac5da066a3a59513421d2eb4b4712b075",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 35
+            },
+            "end": {
+              "line": 1,
+              "column": 39
+            }
+          }
+        },
+        {
+          "value": "../utils",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 29
+            },
+            "end": {
+              "line": 2,
+              "column": 39
+            }
+          }
+        },
+        {
+          "value": "../common/base",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 26
+            },
+            "end": {
+              "line": 3,
+              "column": 42
+            }
+          }
+        },
+        {
+          "value": "../ui/DrawManager",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 51
+            },
+            "end": {
+              "line": 4,
+              "column": 70
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/common/base.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/DrawManager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts": {
+      "mTimestamp": {
+        "mtime": 1709896226172.3538,
+        "uuid": "eb1ea03c-666d-41d4-ad4a-38502e844f47"
+      },
+      "chunkId": "fd5efcb36b0689112cdf3ed286ccf758b2d67d7d",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 42
+            },
+            "end": {
+              "line": 1,
+              "column": 46
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/DrawManager.ts": {
+      "mTimestamp": {
+        "mtime": 1709896471162.2292,
+        "uuid": "c6e581d1-5164-4ea9-af34-a1302802a6e9"
+      },
+      "chunkId": "6966ed6d50b7562a0ef01c68504f0717e2bc6c96",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 98
+            },
+            "end": {
+              "line": 1,
+              "column": 102
+            }
+          }
+        },
+        {
+          "value": "../global/DataManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 27
+            },
+            "end": {
+              "line": 2,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/DataManager.ts"
           },
           "messages": []
         }

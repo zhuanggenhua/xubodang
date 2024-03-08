@@ -1,7 +1,7 @@
 import { _decorator, Color, Component, Graphics, instantiate, Node, Prefab, SpriteFrame, Vec2, Vec3 } from 'cc'
 import { IParticleOptions } from '../common/state'
 import Particle from './Particle'
-import { getRandomNumber } from '../utils/tool'
+import { getRandomNumber } from '../utils'
 import { LightParticle } from './LightParticle'
 
 // 粒子系统
@@ -106,7 +106,11 @@ export default class ParticleMgr extends Component {
   }
   offGather() {
     this.particles.forEach((particle) => {
-      ;(particle as LightParticle).isGather = false
+      if ((particle as LightParticle).isGather) {
+        ;(particle as LightParticle).isGather = false
+        // 触摸结束立即移动
+        ;(particle as LightParticle).randomMove()
+      }
       // 重置y轴速度
       particle.speedY = Math.random() * 20 + 40
     })

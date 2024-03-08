@@ -73,10 +73,8 @@ System.register(["cc"], function (_export, _context) {
       }({}));
 
       _export("SceneEnum", SceneEnum = /*#__PURE__*/function (SceneEnum) {
-        SceneEnum["Login"] = "Login";
-        SceneEnum["Hall"] = "Hall";
-        SceneEnum["Room"] = "Room";
-        SceneEnum["Battle"] = "Battle";
+        SceneEnum["Home"] = "Home";
+        SceneEnum["Loading"] = "Loading";
         return SceneEnum;
       }({}));
 

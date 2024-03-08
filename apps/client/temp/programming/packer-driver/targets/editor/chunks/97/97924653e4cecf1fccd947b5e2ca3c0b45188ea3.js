@@ -8,7 +8,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
   }
 
   function _reportPossibleCrUseOfgetRandomNumber(extras) {
-    _reporterNs.report("getRandomNumber", "../utils/tool", _context.meta, extras);
+    _reporterNs.report("getRandomNumber", "../utils", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfmapH(extras) {
@@ -123,9 +123,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.schedule(() => {
             // 是否收到牵引决定移动方式
             if (this.isGather) return;
-            tween(this).to(1, {
+            tween(this) // @ts-ignore
+            .to(1, {
               speedX: (Math.random() - 0.5) * swayAmount
-            }).start(); // this.speedX += (Math.random() - 0.5) * swayAmount
+            }).start();
           }, 1);
         }
 

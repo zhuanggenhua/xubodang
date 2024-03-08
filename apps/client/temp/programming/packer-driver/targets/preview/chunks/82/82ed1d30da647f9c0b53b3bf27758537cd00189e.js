@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, ParticleMgr, LightParticle, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _crd, ccclass, property, blinkInterval, HomeMgr;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, ParticleMgr, LightParticle, FaderManager, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _crd, ccclass, property, blinkInterval, HomeMgr;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -15,6 +15,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
 
   function _reportPossibleCrUseOfLightParticle(extras) {
     _reporterNs.report("LightParticle", "../particle/LightParticle", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfFaderManager(extras) {
+    _reporterNs.report("FaderManager", "../global/FaderManager", _context.meta, extras);
   }
 
   return {
@@ -31,6 +35,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       ParticleMgr = _unresolved_2.default;
     }, function (_unresolved_3) {
       LightParticle = _unresolved_3.LightParticle;
+    }, function (_unresolved_4) {
+      FaderManager = _unresolved_4.default;
     }],
     execute: function () {
       _crd = true;
@@ -57,6 +63,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
         }
 
         onLoad() {
+          (_crd && FaderManager === void 0 ? (_reportPossibleCrUseOfFaderManager({
+            error: Error()
+          }), FaderManager) : FaderManager).Instance.fadeOut(1000);
           this.particleMgr = this.canvas.addComponent(_crd && ParticleMgr === void 0 ? (_reportPossibleCrUseOfParticleMgr({
             error: Error()
           }), ParticleMgr) : ParticleMgr);
@@ -65,29 +74,23 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           }), LightParticle) : LightParticle, {
             gap: 0.5 // max: 1,
 
-          });
-          this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
+          }); // this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this)
+
           this.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
           this.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         }
 
         onDestroy() {
-          this.particleMgr.clear();
-          this.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this);
+          this.particleMgr.clear(); // this.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this)
+
           this.node.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
           this.node.off(Node.EventType.TOUCH_END, this.onTouchEnd, this);
-        }
-
-        onTouchStart(event) {
-          // 辉光聚拢效果
-          var touch = event.touch;
-          this.particleMgr.gather(touch.getLocation());
         }
 
         onTouchMove(event) {
           // 辉光聚拢效果
           var touch = event.touch;
-          this.particleMgr.adsorb(touch.getLocation());
+          this.particleMgr.gather(touch.getLocation());
         }
 
         onTouchEnd() {

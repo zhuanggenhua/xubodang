@@ -91,18 +91,18 @@ export class FiveStarBg extends Component {
   drawMagicaCircl() {
     let graphics = this.graphics
     // 五芒星的五个顶点
-    let radius = 200 // 增大五芒星半径
+    let radius = 300 // 增大五芒星半径
 
     // 绘制外圈圆
     graphics.lineWidth = 10 // 线宽
     graphics.strokeColor = Color.WHITE // 线条颜色
-    let outerCircleRadius = radius * 1.1 // 外圈圆半径稍大于五芒星半径
+    let outerCircleRadius = radius * 1.07 // 外圈圆半径稍大于五芒星半径
     // graphics.circle(0, 0, outerCircleRadius)
     // graphics.stroke()
     let from = { angle: 0 }
     let to = { angle: 2 * Math.PI }
     tween(from)
-      .to(0.5, to, {
+      .to(1, to, {
         onUpdate: () => {
           // 更新角度
           // graphics.clear() // 清除之前的绘制
@@ -135,7 +135,7 @@ export class FiveStarBg extends Component {
     let drawState = { value: 0 }
     // 使用tween逐步改变drawState.value，从0改变到5（因为有5个顶点）
     tween(drawState)
-      .delay(0.5)
+      // .delay(0.5)
       .to(
         2,
         { value: 5 },

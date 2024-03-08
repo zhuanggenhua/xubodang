@@ -1,34 +1,35 @@
-import { Prefab, SpriteFrame, Node, director } from 'cc';
-import { IRoom, IState } from '../common';
-import { Singleton } from '../common/base';
-import Particle from '../particle/Particle';
+import { Prefab, SpriteFrame, Node, director, view } from 'cc'
+import { IRoom, IState } from '../common'
+import { Singleton } from '../common/base'
+import Particle from '../particle/Particle'
 
+const PLAYER_SPEED = 100
+const BULLET_SPEED = 600
 
-const PLAYER_SPEED = 100;
-const BULLET_SPEED = 600;
+const WEAPON_DAMAGE = 5
 
-const WEAPON_DAMAGE = 5;
-
-const PLAYER_RADIUS = 50;
-const BULLET_RADIUS = 10;
+const PLAYER_RADIUS = 50
+const BULLET_RADIUS = 10
 
 // 设计图尺寸
-export const mapW = 720;
-export const mapH = 1280;
+export const mapW = view.getVisibleSize().width
+export const mapH = view.getVisibleSize().height
+// export const mapW = 720;
+// export const mapH = 1280;
 
 export default class DataManager extends Singleton {
   static get Instance() {
-    return super.GetInstance<DataManager>();
+    return super.GetInstance<DataManager>()
   }
 
-  myPlayerId: number = 1;
-  roomInfo: IRoom;
+  myPlayerId: number = 1
+  roomInfo: IRoom
 
-  stage: Node = director.getScene().getChildByName('Canvas');
-    
+  stage: Node = director.getScene().getChildByName('Canvas')
+
   // actorMap: Map<number, ActorManager> = new Map();
-  prefabMap: Map<string, Prefab> = new Map();
-  textureMap: Map<string, SpriteFrame[]> = new Map();
+  prefabMap: Map<string, Prefab> = new Map()
+  textureMap: Map<string, SpriteFrame[]> = new Map()
   // bulletMap: Map<number, BulletManager> = new Map();
 
   // state: IState = {
@@ -37,6 +38,6 @@ export default class DataManager extends Singleton {
 
   // 执行动作
   // applyInput(input: IClientInput) {
-    
+
   // }
 }

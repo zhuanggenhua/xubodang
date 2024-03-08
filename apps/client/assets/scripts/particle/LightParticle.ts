@@ -1,6 +1,6 @@
 import { _decorator, Color, Component, Graphics, instantiate, Node, Prefab, SpriteFrame, tween, Tween, Vec3 } from 'cc'
 import Particle from './Particle'
-import { getRandomNumber } from '../utils/tool'
+import { getRandomNumber } from '../utils'
 import { mapH, mapW } from '../global/DataManager'
 
 // 光辉背景
@@ -69,9 +69,9 @@ export class LightParticle extends Particle {
       // 是否收到牵引决定移动方式
       if (this.isGather) return
       tween(this)
+        // @ts-ignore
         .to(1, { speedX: (Math.random() - 0.5) * swayAmount })
         .start()
-      // this.speedX += (Math.random() - 0.5) * swayAmount
     }, 1)
   }
   update(dt) {

@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, director, Singleton, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, director, view, Singleton, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
 
   function _reportPossibleCrUseOfIRoom(extras) {
     _reporterNs.report("IRoom", "../common", _context.meta, extras);
@@ -21,6 +21,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       __checkObsolete__ = _cc.__checkObsolete__;
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
       director = _cc.director;
+      view = _cc.view;
     }, function (_unresolved_2) {
       Singleton = _unresolved_2.Singleton;
     }],
@@ -29,7 +30,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
       _cclegacy._RF.push({}, "f3a50IPeU9FqKFr/UCCSiVN", "DataManager", undefined);
 
-      __checkObsolete__(['Prefab', 'SpriteFrame', 'Node', 'director']);
+      __checkObsolete__(['Prefab', 'SpriteFrame', 'Node', 'director', 'view']);
 
       PLAYER_SPEED = 100;
       BULLET_SPEED = 600;
@@ -37,9 +38,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       PLAYER_RADIUS = 50;
       BULLET_RADIUS = 10; // 设计图尺寸
 
-      _export("mapW", mapW = 720);
+      _export("mapW", mapW = view.getVisibleSize().width);
 
-      _export("mapH", mapH = 1280);
+      _export("mapH", mapH = view.getVisibleSize().height); // export const mapW = 720;
+      // export const mapH = 1280;
+
 
       _export("default", DataManager = class DataManager extends (_crd && Singleton === void 0 ? (_reportPossibleCrUseOfSingleton({
         error: Error()
