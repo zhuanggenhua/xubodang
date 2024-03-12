@@ -28,8 +28,8 @@ export enum EntityTypeEnum {
   ReConnect = "ReConnect",
 }
 
-
-export enum RpcFunc {
+// 接口枚举
+export enum ApiFunc {
   enterGame,
   listActor,
   createActor,
@@ -43,38 +43,38 @@ export enum RpcFunc {
   stateFromServer,
 }
 
-export const ProtoPathEnum: Record<RpcFunc, any> = {
-  [RpcFunc.enterGame]: {
+export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.enterGame]: {
     req: "game.EnterGameReq",
     res: "game.EnterGameRes",
   },
-  [RpcFunc.listActor]: {
+  [ApiFunc.listActor]: {
     req: "game.ListActorReq",
     res: "game.ListActorRes",
   },
-  [RpcFunc.createActor]: {
+  [ApiFunc.createActor]: {
     req: "game.CreateActorReq",
     res: "game.CreateActorRes",
   },
-  [RpcFunc.enterScene]: {
+  [ApiFunc.enterScene]: {
     req: "game.EnterSceneReq",
     res: "game.EnterSceneRes",
   },
-  [RpcFunc.changeScene]: {
+  [ApiFunc.changeScene]: {
     req: "game.ChangeSceneReq",
     res: "game.ChangeSceneRes",
   },
-  [RpcFunc.createReplication]: {
+  [ApiFunc.createReplication]: {
     req: "game.CreateReplicationReq",
     res: "game.CreateReplicationRes",
   },
-  [RpcFunc.leaveReplication]: {
+  [ApiFunc.leaveReplication]: {
     req: "game.LeaveReplicationReq",
     res: "game.LeaveReplicationRes",
   },
-  [RpcFunc.gap]: "",
-  [RpcFunc.inputFromClient]: "game.InputFromClient",
-  [RpcFunc.stateFromServer]: "game.StateFromServer",
+  [ApiFunc.gap]: "",
+  [ApiFunc.inputFromClient]: "game.InputFromClient",
+  [ApiFunc.stateFromServer]: "game.StateFromServer",
 };
 
 export enum ServerIdEnum {

@@ -1079,7 +1079,8 @@
         "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@f9941",
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
         "b528a18f-2c70-4d7f-9adf-dbcea17aeec6@f9941",
-        "c4feeb18-99ce-4996-af66-6b5edd596d74@f9941",
+        "6f38db2f-6017-4383-b358-2b419479dd2a@f9941",
+        "54f97c7f-f27c-4408-b246-9a4c23c0690a@f9941",
         "06c6e70b-b80d-48f7-842f-7b364f0c399e@f9941"
       ],
       "dependScripts": [
@@ -1151,9 +1152,7 @@
   },
   "c4feeb18-99ce-4996-af66-6b5edd596d74": {
     "url": "db://assets/resources/ui/button/Achievement.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "c4feeb18-99ce-4996-af66-6b5edd596d74@6c48a": {
     "url": "db://assets/resources/ui/button/Achievement.png@6c48a",
@@ -1224,6 +1223,864 @@
     "value": {
       "depends": [
         "06c6e70b-b80d-48f7-842f-7b364f0c399e@6c48a"
+      ]
+    }
+  },
+  "a08ae65a-6792-4789-8115-30ebc55c2955": {
+    "url": "db://assets/scripts/global/EventManager.ts",
+    "value": {}
+  },
+  "1222ee1c-ab60-41f0-a33b-d2da10206e33": {
+    "url": "db://assets/scripts/global/NetworkManager.ts",
+    "value": {}
+  },
+  "2225b838-e704-4677-96b0-9ab515b35c14": {
+    "url": "db://assets/resources/ui/button/King.png",
+    "value": {}
+  },
+  "2225b838-e704-4677-96b0-9ab515b35c14@6c48a": {
+    "url": "db://assets/resources/ui/button/King.png@6c48a",
+    "value": {
+      "depends": [
+        "2225b838-e704-4677-96b0-9ab515b35c14"
+      ]
+    }
+  },
+  "2225b838-e704-4677-96b0-9ab515b35c14@f9941": {
+    "url": "db://assets/resources/ui/button/King.png@f9941",
+    "value": {
+      "depends": [
+        "2225b838-e704-4677-96b0-9ab515b35c14@6c48a"
+      ]
+    }
+  },
+  "54f97c7f-f27c-4408-b246-9a4c23c0690a": {
+    "url": "db://assets/resources/ui/button/King.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "54f97c7f-f27c-4408-b246-9a4c23c0690a@6c48a": {
+    "url": "db://assets/resources/ui/button/King.png@6c48a",
+    "value": {
+      "depends": [
+        "54f97c7f-f27c-4408-b246-9a4c23c0690a"
+      ]
+    }
+  },
+  "54f97c7f-f27c-4408-b246-9a4c23c0690a@f9941": {
+    "url": "db://assets/resources/ui/button/King.png@f9941",
+    "value": {
+      "depends": [
+        "54f97c7f-f27c-4408-b246-9a4c23c0690a@6c48a"
+      ]
+    }
+  },
+  "6f38db2f-6017-4383-b358-2b419479dd2a": {
+    "url": "db://assets/resources/ui/button/Achievement.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "6f38db2f-6017-4383-b358-2b419479dd2a@6c48a": {
+    "url": "db://assets/resources/ui/button/Achievement.png@6c48a",
+    "value": {
+      "depends": [
+        "6f38db2f-6017-4383-b358-2b419479dd2a"
+      ]
+    }
+  },
+  "6f38db2f-6017-4383-b358-2b419479dd2a@f9941": {
+    "url": "db://assets/resources/ui/button/Achievement.png@f9941",
+    "value": {
+      "depends": [
+        "6f38db2f-6017-4383-b358-2b419479dd2a@6c48a"
+      ]
+    }
+  },
+  "75992987-f6bf-4bf5-8d26-682c9a607889": {
+    "url": "db://assets/scene/Hall.scene",
+    "value": {
+      "depends": [
+        "75992987-f6bf-4bf5-8d26-682c9a607889",
+        "932cc238-eac0-4574-8c88-bee53f157427@f9941",
+        "7a88d053-7f9b-4fd7-be17-d493fb337449@f9941",
+        "bc2670ca-9b49-4c3f-ba6e-76a21947725c",
+        "d18336fd-2ae8-4faa-8e51-bc1e87b036fb@f9941",
+        "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@f9941",
+        "c18a3aa1-a0ed-4d68-8566-be5a505d9fce@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
+        "eec5e8df-470e-4803-b298-17390d7d9d95@f9941",
+        "b730527c-3233-41c2-aaf7-7cdab58f9749@f9941",
+        "e0386bda-288e-453a-9b88-d82faa901173@f9941"
+      ],
+      "dependScripts": []
+    }
+  },
+  "7a88d053-7f9b-4fd7-be17-d493fb337449": {
+    "url": "db://assets/resources/ui/button/Back.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "7a88d053-7f9b-4fd7-be17-d493fb337449@6c48a": {
+    "url": "db://assets/resources/ui/button/Back.png@6c48a",
+    "value": {
+      "depends": [
+        "7a88d053-7f9b-4fd7-be17-d493fb337449"
+      ]
+    }
+  },
+  "7a88d053-7f9b-4fd7-be17-d493fb337449@f9941": {
+    "url": "db://assets/resources/ui/button/Back.png@f9941",
+    "value": {
+      "depends": [
+        "7a88d053-7f9b-4fd7-be17-d493fb337449@6c48a"
+      ]
+    }
+  },
+  "01274c07-88e7-46cd-9c98-acf393806ea3": {
+    "url": "db://assets/resources/ui/tag.png",
+    "value": {}
+  },
+  "01274c07-88e7-46cd-9c98-acf393806ea3@6c48a": {
+    "url": "db://assets/resources/ui/tag.png@6c48a",
+    "value": {
+      "depends": [
+        "01274c07-88e7-46cd-9c98-acf393806ea3"
+      ]
+    }
+  },
+  "01274c07-88e7-46cd-9c98-acf393806ea3@f9941": {
+    "url": "db://assets/resources/ui/tag.png@f9941",
+    "value": {
+      "depends": [
+        "01274c07-88e7-46cd-9c98-acf393806ea3@6c48a"
+      ]
+    }
+  },
+  "d18336fd-2ae8-4faa-8e51-bc1e87b036fb": {
+    "url": "db://assets/resources/ui/button/god-border.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "d18336fd-2ae8-4faa-8e51-bc1e87b036fb@6c48a": {
+    "url": "db://assets/resources/ui/button/god-border.png@6c48a",
+    "value": {
+      "depends": [
+        "d18336fd-2ae8-4faa-8e51-bc1e87b036fb"
+      ]
+    }
+  },
+  "d18336fd-2ae8-4faa-8e51-bc1e87b036fb@f9941": {
+    "url": "db://assets/resources/ui/button/god-border.png@f9941",
+    "value": {
+      "depends": [
+        "d18336fd-2ae8-4faa-8e51-bc1e87b036fb@6c48a"
+      ]
+    }
+  },
+  "6843d3d0-cffe-4c2e-bb86-df96e22f8bed": {
+    "url": "db://assets/scene/Battle.scene",
+    "value": {
+      "depends": [
+        "6843d3d0-cffe-4c2e-bb86-df96e22f8bed",
+        "4726ac32-4674-47b3-b461-a34a593c7dc6@f9941"
+      ],
+      "dependScripts": []
+    }
+  },
+  "2e905287-988b-4bcf-a2ef-b7afd6f8ec02": {
+    "url": "db://assets/scene/Battle2.scene",
+    "value": {
+      "depends": [
+        "2e905287-988b-4bcf-a2ef-b7afd6f8ec02",
+        "28afcd3b-a58c-4f4a-96ac-419d28c2f910@f9941",
+        "f5506ebb-64dc-48fc-9226-3ab7686b31ad@f9941",
+        "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200@f9941",
+        "39aea5e2-e0bb-49ad-a3df-aabfe52f0101@f9941",
+        "8d878745-a8d6-4b52-847c-e488466d38cc@f9941",
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941",
+        "932cc238-eac0-4574-8c88-bee53f157427@f9941"
+      ],
+      "dependScripts": []
+    }
+  },
+  "1c1de5fe-5665-4281-b71e-59ccdf9b690b": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框.png",
+    "value": {}
+  },
+  "1c1de5fe-5665-4281-b71e-59ccdf9b690b@6c48a": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框.png@6c48a",
+    "value": {
+      "depends": [
+        "1c1de5fe-5665-4281-b71e-59ccdf9b690b"
+      ]
+    }
+  },
+  "1c1de5fe-5665-4281-b71e-59ccdf9b690b@f9941": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框.png@f9941",
+    "value": {
+      "depends": [
+        "1c1de5fe-5665-4281-b71e-59ccdf9b690b@6c48a"
+      ]
+    }
+  },
+  "7629519b-cfa0-4cb7-a24b-5f43b152f11f": {
+    "url": "db://assets/resources/ui/bg/优化目标背景框.png",
+    "value": {}
+  },
+  "7629519b-cfa0-4cb7-a24b-5f43b152f11f@6c48a": {
+    "url": "db://assets/resources/ui/bg/优化目标背景框.png@6c48a",
+    "value": {
+      "depends": [
+        "7629519b-cfa0-4cb7-a24b-5f43b152f11f"
+      ]
+    }
+  },
+  "7629519b-cfa0-4cb7-a24b-5f43b152f11f@f9941": {
+    "url": "db://assets/resources/ui/bg/优化目标背景框.png@f9941",
+    "value": {
+      "depends": [
+        "7629519b-cfa0-4cb7-a24b-5f43b152f11f@6c48a"
+      ]
+    }
+  },
+  "f5506ebb-64dc-48fc-9226-3ab7686b31ad": {
+    "url": "db://assets/resources/ui/bg/优化目标背景框 (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "f5506ebb-64dc-48fc-9226-3ab7686b31ad@6c48a": {
+    "url": "db://assets/resources/ui/bg/优化目标背景框 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "f5506ebb-64dc-48fc-9226-3ab7686b31ad"
+      ]
+    }
+  },
+  "f5506ebb-64dc-48fc-9226-3ab7686b31ad@f9941": {
+    "url": "db://assets/resources/ui/bg/优化目标背景框 (1).png@f9941",
+    "value": {
+      "depends": [
+        "f5506ebb-64dc-48fc-9226-3ab7686b31ad@6c48a"
+      ]
+    }
+  },
+  "40585002-09fa-4c6f-bd8d-62af3c540bbb": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框 (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "40585002-09fa-4c6f-bd8d-62af3c540bbb@6c48a": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb"
+      ]
+    }
+  },
+  "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框 (1).png@f9941",
+    "value": {
+      "depends": [
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb@6c48a"
+      ]
+    }
+  },
+  "8d878745-a8d6-4b52-847c-e488466d38cc": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框 (2).png",
+    "value": {}
+  },
+  "8d878745-a8d6-4b52-847c-e488466d38cc@6c48a": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框 (2).png@6c48a",
+    "value": {
+      "depends": [
+        "8d878745-a8d6-4b52-847c-e488466d38cc"
+      ]
+    }
+  },
+  "8d878745-a8d6-4b52-847c-e488466d38cc@f9941": {
+    "url": "db://assets/resources/ui/bg/选中心率 背景框 (2).png@f9941",
+    "value": {
+      "depends": [
+        "8d878745-a8d6-4b52-847c-e488466d38cc@6c48a"
+      ]
+    }
+  },
+  "28afcd3b-a58c-4f4a-96ac-419d28c2f910": {
+    "url": "db://assets/resources/ui/bg/审批背景框.png",
+    "value": {}
+  },
+  "28afcd3b-a58c-4f4a-96ac-419d28c2f910@6c48a": {
+    "url": "db://assets/resources/ui/bg/审批背景框.png@6c48a",
+    "value": {
+      "depends": [
+        "28afcd3b-a58c-4f4a-96ac-419d28c2f910"
+      ]
+    }
+  },
+  "28afcd3b-a58c-4f4a-96ac-419d28c2f910@f9941": {
+    "url": "db://assets/resources/ui/bg/审批背景框.png@f9941",
+    "value": {
+      "depends": [
+        "28afcd3b-a58c-4f4a-96ac-419d28c2f910@6c48a"
+      ]
+    }
+  },
+  "8da74053-0a2d-474e-8a69-ad54df220e02": {
+    "url": "db://assets/resources/ui/bg/skimmer-hat.png",
+    "value": {}
+  },
+  "8da74053-0a2d-474e-8a69-ad54df220e02@6c48a": {
+    "url": "db://assets/resources/ui/bg/skimmer-hat.png@6c48a",
+    "value": {
+      "depends": [
+        "8da74053-0a2d-474e-8a69-ad54df220e02"
+      ]
+    }
+  },
+  "8da74053-0a2d-474e-8a69-ad54df220e02@f9941": {
+    "url": "db://assets/resources/ui/bg/skimmer-hat.png@f9941",
+    "value": {
+      "depends": [
+        "8da74053-0a2d-474e-8a69-ad54df220e02@6c48a"
+      ]
+    }
+  },
+  "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200": {
+    "url": "db://assets/resources/ui/bg/skimmer-hat (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200@6c48a": {
+    "url": "db://assets/resources/ui/bg/skimmer-hat (1).png@6c48a",
+    "value": {
+      "depends": [
+        "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200"
+      ]
+    }
+  },
+  "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200@f9941": {
+    "url": "db://assets/resources/ui/bg/skimmer-hat (1).png@f9941",
+    "value": {
+      "depends": [
+        "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200@6c48a"
+      ]
+    }
+  },
+  "28522336-b11c-4ea6-83d6-fbd781f2e86b": {
+    "url": "db://assets/resources/ui/bg/场景背景.png",
+    "value": {}
+  },
+  "28522336-b11c-4ea6-83d6-fbd781f2e86b@6c48a": {
+    "url": "db://assets/resources/ui/bg/场景背景.png@6c48a",
+    "value": {
+      "depends": [
+        "28522336-b11c-4ea6-83d6-fbd781f2e86b"
+      ]
+    }
+  },
+  "28522336-b11c-4ea6-83d6-fbd781f2e86b@f9941": {
+    "url": "db://assets/resources/ui/bg/场景背景.png@f9941",
+    "value": {
+      "depends": [
+        "28522336-b11c-4ea6-83d6-fbd781f2e86b@6c48a"
+      ]
+    }
+  },
+  "a984406f-3b27-46c0-b2bd-c4be175c7e29": {
+    "url": "db://assets/resources/ui/bg/日历背景.png",
+    "value": {}
+  },
+  "a984406f-3b27-46c0-b2bd-c4be175c7e29@6c48a": {
+    "url": "db://assets/resources/ui/bg/日历背景.png@6c48a",
+    "value": {
+      "depends": [
+        "a984406f-3b27-46c0-b2bd-c4be175c7e29"
+      ]
+    }
+  },
+  "a984406f-3b27-46c0-b2bd-c4be175c7e29@f9941": {
+    "url": "db://assets/resources/ui/bg/日历背景.png@f9941",
+    "value": {
+      "depends": [
+        "a984406f-3b27-46c0-b2bd-c4be175c7e29@6c48a"
+      ]
+    }
+  },
+  "176e84e4-a967-4aac-b64e-906385f0abc4": {
+    "url": "db://assets/resources/ui/bg/机构背景.png",
+    "value": {}
+  },
+  "176e84e4-a967-4aac-b64e-906385f0abc4@6c48a": {
+    "url": "db://assets/resources/ui/bg/机构背景.png@6c48a",
+    "value": {
+      "depends": [
+        "176e84e4-a967-4aac-b64e-906385f0abc4"
+      ]
+    }
+  },
+  "176e84e4-a967-4aac-b64e-906385f0abc4@f9941": {
+    "url": "db://assets/resources/ui/bg/机构背景.png@f9941",
+    "value": {
+      "depends": [
+        "176e84e4-a967-4aac-b64e-906385f0abc4@6c48a"
+      ]
+    }
+  },
+  "3112fc6e-7583-493c-8e34-424ec49f6f4f": {
+    "url": "db://assets/resources/ui/bg/背景默认.png",
+    "value": {}
+  },
+  "3112fc6e-7583-493c-8e34-424ec49f6f4f@6c48a": {
+    "url": "db://assets/resources/ui/bg/背景默认.png@6c48a",
+    "value": {
+      "depends": [
+        "3112fc6e-7583-493c-8e34-424ec49f6f4f"
+      ]
+    }
+  },
+  "3112fc6e-7583-493c-8e34-424ec49f6f4f@f9941": {
+    "url": "db://assets/resources/ui/bg/背景默认.png@f9941",
+    "value": {
+      "depends": [
+        "3112fc6e-7583-493c-8e34-424ec49f6f4f@6c48a"
+      ]
+    }
+  },
+  "bd10dfcb-280f-4c8e-9c4f-5b4cd41676e9": {
+    "url": "db://assets/resources/ui/bg/交易关闭.png",
+    "value": {}
+  },
+  "bd10dfcb-280f-4c8e-9c4f-5b4cd41676e9@6c48a": {
+    "url": "db://assets/resources/ui/bg/交易关闭.png@6c48a",
+    "value": {
+      "depends": [
+        "bd10dfcb-280f-4c8e-9c4f-5b4cd41676e9"
+      ]
+    }
+  },
+  "bd10dfcb-280f-4c8e-9c4f-5b4cd41676e9@f9941": {
+    "url": "db://assets/resources/ui/bg/交易关闭.png@f9941",
+    "value": {
+      "depends": [
+        "bd10dfcb-280f-4c8e-9c4f-5b4cd41676e9@6c48a"
+      ]
+    }
+  },
+  "f9c420f9-dd0b-4ef2-a3fc-777bfef6e002": {
+    "url": "db://assets/resources/ui/bg/交易关闭.png",
+    "value": {}
+  },
+  "f9c420f9-dd0b-4ef2-a3fc-777bfef6e002@6c48a": {
+    "url": "db://assets/resources/ui/bg/交易关闭.png@6c48a",
+    "value": {
+      "depends": [
+        "f9c420f9-dd0b-4ef2-a3fc-777bfef6e002"
+      ]
+    }
+  },
+  "f9c420f9-dd0b-4ef2-a3fc-777bfef6e002@f9941": {
+    "url": "db://assets/resources/ui/bg/交易关闭.png@f9941",
+    "value": {
+      "depends": [
+        "f9c420f9-dd0b-4ef2-a3fc-777bfef6e002@6c48a"
+      ]
+    }
+  },
+  "b7c2ace0-6174-4410-a73a-9f4ee25132d2": {
+    "url": "db://assets/resources/ui/bg/页面 1.png",
+    "value": {}
+  },
+  "b7c2ace0-6174-4410-a73a-9f4ee25132d2@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1.png@6c48a",
+    "value": {
+      "depends": [
+        "b7c2ace0-6174-4410-a73a-9f4ee25132d2"
+      ]
+    }
+  },
+  "b7c2ace0-6174-4410-a73a-9f4ee25132d2@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1.png@f9941",
+    "value": {
+      "depends": [
+        "b7c2ace0-6174-4410-a73a-9f4ee25132d2@6c48a"
+      ]
+    }
+  },
+  "a7675304-da0e-46b4-b87c-555d58cdf0fe": {
+    "url": "db://assets/resources/ui/bg/图钉.png",
+    "value": {}
+  },
+  "a7675304-da0e-46b4-b87c-555d58cdf0fe@6c48a": {
+    "url": "db://assets/resources/ui/bg/图钉.png@6c48a",
+    "value": {
+      "depends": [
+        "a7675304-da0e-46b4-b87c-555d58cdf0fe"
+      ]
+    }
+  },
+  "a7675304-da0e-46b4-b87c-555d58cdf0fe@f9941": {
+    "url": "db://assets/resources/ui/bg/图钉.png@f9941",
+    "value": {
+      "depends": [
+        "a7675304-da0e-46b4-b87c-555d58cdf0fe@6c48a"
+      ]
+    }
+  },
+  "25c33975-f2af-4572-abde-3691e2724dbb": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png",
+    "value": {}
+  },
+  "25c33975-f2af-4572-abde-3691e2724dbb@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "25c33975-f2af-4572-abde-3691e2724dbb"
+      ]
+    }
+  },
+  "25c33975-f2af-4572-abde-3691e2724dbb@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png@f9941",
+    "value": {
+      "depends": [
+        "25c33975-f2af-4572-abde-3691e2724dbb@6c48a"
+      ]
+    }
+  },
+  "3578573a-8ca9-471f-bcec-45354dc48ee1": {
+    "url": "db://assets/resources/ui/bg/页面 1 (2).png",
+    "value": {}
+  },
+  "3578573a-8ca9-471f-bcec-45354dc48ee1@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (2).png@6c48a",
+    "value": {
+      "depends": [
+        "3578573a-8ca9-471f-bcec-45354dc48ee1"
+      ]
+    }
+  },
+  "3578573a-8ca9-471f-bcec-45354dc48ee1@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (2).png@f9941",
+    "value": {
+      "depends": [
+        "3578573a-8ca9-471f-bcec-45354dc48ee1@6c48a"
+      ]
+    }
+  },
+  "cb1dc098-680b-40a6-8591-ead3986cfb79": {
+    "url": "db://assets/resources/ui/bg/页面 1 (3).png",
+    "value": {}
+  },
+  "cb1dc098-680b-40a6-8591-ead3986cfb79@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (3).png@6c48a",
+    "value": {
+      "depends": [
+        "cb1dc098-680b-40a6-8591-ead3986cfb79"
+      ]
+    }
+  },
+  "cb1dc098-680b-40a6-8591-ead3986cfb79@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (3).png@f9941",
+    "value": {
+      "depends": [
+        "cb1dc098-680b-40a6-8591-ead3986cfb79@6c48a"
+      ]
+    }
+  },
+  "9ff40712-9ed9-487b-a4d9-c48451c09f12": {
+    "url": "db://assets/resources/ui/bg/页面 1 (4).png",
+    "value": {}
+  },
+  "9ff40712-9ed9-487b-a4d9-c48451c09f12@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (4).png@6c48a",
+    "value": {
+      "depends": [
+        "9ff40712-9ed9-487b-a4d9-c48451c09f12"
+      ]
+    }
+  },
+  "9ff40712-9ed9-487b-a4d9-c48451c09f12@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (4).png@f9941",
+    "value": {
+      "depends": [
+        "9ff40712-9ed9-487b-a4d9-c48451c09f12@6c48a"
+      ]
+    }
+  },
+  "47ca18a7-18e3-4efd-9479-a8ec07ae7c0a": {
+    "url": "db://assets/resources/ui/icons",
+    "value": {}
+  },
+  "40ff1649-c424-446d-bb0e-dc0502a405e9": {
+    "url": "db://assets/resources/ui/icons/K8_左侧边栏_击剑.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "40ff1649-c424-446d-bb0e-dc0502a405e9@6c48a": {
+    "url": "db://assets/resources/ui/icons/K8_左侧边栏_击剑.png@6c48a",
+    "value": {
+      "depends": [
+        "40ff1649-c424-446d-bb0e-dc0502a405e9"
+      ]
+    }
+  },
+  "40ff1649-c424-446d-bb0e-dc0502a405e9@f9941": {
+    "url": "db://assets/resources/ui/icons/K8_左侧边栏_击剑.png@f9941",
+    "value": {
+      "depends": [
+        "40ff1649-c424-446d-bb0e-dc0502a405e9@6c48a"
+      ]
+    }
+  },
+  "eec5e8df-470e-4803-b298-17390d7d9d95": {
+    "url": "db://assets/resources/ui/icons/击剑.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "eec5e8df-470e-4803-b298-17390d7d9d95@6c48a": {
+    "url": "db://assets/resources/ui/icons/击剑.png@6c48a",
+    "value": {
+      "depends": [
+        "eec5e8df-470e-4803-b298-17390d7d9d95"
+      ]
+    }
+  },
+  "eec5e8df-470e-4803-b298-17390d7d9d95@f9941": {
+    "url": "db://assets/resources/ui/icons/击剑.png@f9941",
+    "value": {
+      "depends": [
+        "eec5e8df-470e-4803-b298-17390d7d9d95@6c48a"
+      ]
+    }
+  },
+  "24a8db93-3050-40d2-a542-51bc3a0968a3": {
+    "url": "db://assets/resources/ui/bg/页面 1 (5).png",
+    "value": {}
+  },
+  "24a8db93-3050-40d2-a542-51bc3a0968a3@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (5).png@6c48a",
+    "value": {
+      "depends": [
+        "24a8db93-3050-40d2-a542-51bc3a0968a3"
+      ]
+    }
+  },
+  "24a8db93-3050-40d2-a542-51bc3a0968a3@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (5).png@f9941",
+    "value": {
+      "depends": [
+        "24a8db93-3050-40d2-a542-51bc3a0968a3@6c48a"
+      ]
+    }
+  },
+  "8adc045f-bc76-40c3-ba4d-6feffd3e4233": {
+    "url": "db://assets/resources/ui/bg/页面 1 (6).png",
+    "value": {}
+  },
+  "8adc045f-bc76-40c3-ba4d-6feffd3e4233@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (6).png@6c48a",
+    "value": {
+      "depends": [
+        "8adc045f-bc76-40c3-ba4d-6feffd3e4233"
+      ]
+    }
+  },
+  "8adc045f-bc76-40c3-ba4d-6feffd3e4233@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (6).png@f9941",
+    "value": {
+      "depends": [
+        "8adc045f-bc76-40c3-ba4d-6feffd3e4233@6c48a"
+      ]
+    }
+  },
+  "71c802e7-07de-486b-be39-31f5e47080b8": {
+    "url": "db://assets/resources/ui/bg/页面 1 (7).png",
+    "value": {}
+  },
+  "71c802e7-07de-486b-be39-31f5e47080b8@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (7).png@6c48a",
+    "value": {
+      "depends": [
+        "71c802e7-07de-486b-be39-31f5e47080b8"
+      ]
+    }
+  },
+  "71c802e7-07de-486b-be39-31f5e47080b8@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (7).png@f9941",
+    "value": {
+      "depends": [
+        "71c802e7-07de-486b-be39-31f5e47080b8@6c48a"
+      ]
+    }
+  },
+  "5b96cee8-738f-4d90-a43f-c0bba867b045": {
+    "url": "db://assets/resources/ui/bg/页面 1 (8).png",
+    "value": {}
+  },
+  "5b96cee8-738f-4d90-a43f-c0bba867b045@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (8).png@6c48a",
+    "value": {
+      "depends": [
+        "5b96cee8-738f-4d90-a43f-c0bba867b045"
+      ]
+    }
+  },
+  "5b96cee8-738f-4d90-a43f-c0bba867b045@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (8).png@f9941",
+    "value": {
+      "depends": [
+        "5b96cee8-738f-4d90-a43f-c0bba867b045@6c48a"
+      ]
+    }
+  },
+  "afa0df70-0890-4f47-b82a-e6d2d453a16c": {
+    "url": "db://assets/resources/ui/bg/页面 1 (9).png",
+    "value": {}
+  },
+  "afa0df70-0890-4f47-b82a-e6d2d453a16c@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (9).png@6c48a",
+    "value": {
+      "depends": [
+        "afa0df70-0890-4f47-b82a-e6d2d453a16c"
+      ]
+    }
+  },
+  "afa0df70-0890-4f47-b82a-e6d2d453a16c@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (9).png@f9941",
+    "value": {
+      "depends": [
+        "afa0df70-0890-4f47-b82a-e6d2d453a16c@6c48a"
+      ]
+    }
+  },
+  "1bf3f202-03ad-42a3-afa0-4934902e166d": {
+    "url": "db://assets/resources/ui/bg/页面 1 (10).png",
+    "value": {}
+  },
+  "1bf3f202-03ad-42a3-afa0-4934902e166d@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (10).png@6c48a",
+    "value": {
+      "depends": [
+        "1bf3f202-03ad-42a3-afa0-4934902e166d"
+      ]
+    }
+  },
+  "1bf3f202-03ad-42a3-afa0-4934902e166d@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (10).png@f9941",
+    "value": {
+      "depends": [
+        "1bf3f202-03ad-42a3-afa0-4934902e166d@6c48a"
+      ]
+    }
+  },
+  "8a2bec76-6db0-4fe0-ab17-9a55a6bc7e4d": {
+    "url": "db://assets/resources/ui/bg/页面 1 (11).png",
+    "value": {}
+  },
+  "8a2bec76-6db0-4fe0-ab17-9a55a6bc7e4d@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (11).png@6c48a",
+    "value": {
+      "depends": [
+        "8a2bec76-6db0-4fe0-ab17-9a55a6bc7e4d"
+      ]
+    }
+  },
+  "8a2bec76-6db0-4fe0-ab17-9a55a6bc7e4d@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (11).png@f9941",
+    "value": {
+      "depends": [
+        "8a2bec76-6db0-4fe0-ab17-9a55a6bc7e4d@6c48a"
+      ]
+    }
+  },
+  "a997730e-68c3-45b5-a29c-baed8e5efb73": {
+    "url": "db://assets/resources/ui/bg/页面 1 (12).png",
+    "value": {}
+  },
+  "a997730e-68c3-45b5-a29c-baed8e5efb73@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (12).png@6c48a",
+    "value": {
+      "depends": [
+        "a997730e-68c3-45b5-a29c-baed8e5efb73"
+      ]
+    }
+  },
+  "a997730e-68c3-45b5-a29c-baed8e5efb73@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (12).png@f9941",
+    "value": {
+      "depends": [
+        "a997730e-68c3-45b5-a29c-baed8e5efb73@6c48a"
+      ]
+    }
+  },
+  "06fc12cc-b138-438a-a08f-07ddf9df5e11": {
+    "url": "db://assets/resources/ui/bg/页面 1 (13).png",
+    "value": {}
+  },
+  "06fc12cc-b138-438a-a08f-07ddf9df5e11@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (13).png@6c48a",
+    "value": {
+      "depends": [
+        "06fc12cc-b138-438a-a08f-07ddf9df5e11"
+      ]
+    }
+  },
+  "06fc12cc-b138-438a-a08f-07ddf9df5e11@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (13).png@f9941",
+    "value": {
+      "depends": [
+        "06fc12cc-b138-438a-a08f-07ddf9df5e11@6c48a"
+      ]
+    }
+  },
+  "722300e5-0d25-4ade-8a9f-dee5836c30e7": {
+    "url": "db://assets/resources/ui/bg/页面 1 (14).png",
+    "value": {}
+  },
+  "722300e5-0d25-4ade-8a9f-dee5836c30e7@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (14).png@6c48a",
+    "value": {
+      "depends": [
+        "722300e5-0d25-4ade-8a9f-dee5836c30e7"
+      ]
+    }
+  },
+  "722300e5-0d25-4ade-8a9f-dee5836c30e7@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (14).png@f9941",
+    "value": {
+      "depends": [
+        "722300e5-0d25-4ade-8a9f-dee5836c30e7@6c48a"
+      ]
+    }
+  },
+  "e0386bda-288e-453a-9b88-d82faa901173": {
+    "url": "db://assets/resources/ui/bg/页面 1 (15).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e0386bda-288e-453a-9b88-d82faa901173@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (15).png@6c48a",
+    "value": {
+      "depends": [
+        "e0386bda-288e-453a-9b88-d82faa901173"
+      ]
+    }
+  },
+  "e0386bda-288e-453a-9b88-d82faa901173@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (15).png@f9941",
+    "value": {
+      "depends": [
+        "e0386bda-288e-453a-9b88-d82faa901173@6c48a"
       ]
     }
   }

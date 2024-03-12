@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node ./src/index -e ts",
+    
     "gen-ws": "mkdirp ./src/common/idl/auto-gen-ws && pbjs -t json-module -w commonjs -o ./src/common/idl/auto-gen-ws/index.js ./src/common/idl/ws/*.proto",
     "gen-link": "ts-node ./src/common/idl/link.ts",
     "common": "yarn gen-ws && yarn gen-link",

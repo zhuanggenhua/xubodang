@@ -20,13 +20,13 @@ export class LightParticle extends Particle {
   isGather: boolean = false
   constructor() {
     super()
-    this.size = getRandomNumber(3, 5)
+    this.size = getRandomNumber(6, 9)
     // 粒子在宽度上散布
     this.borthX = getRandomNumber(0, mapW)
     this.x = this.borthX
     this.y = this.y
 
-    this.speedY = Math.random() * 20 + 40 //40-60  --这是向上的
+    this.speedY = Math.random() * 40 + 60 //40-60  --这是向上的
 
     // // 移动方式：基于sin
     // this.angle = 0
@@ -70,9 +70,9 @@ export class LightParticle extends Particle {
       if (this.isGather) return
       tween(this)
         // @ts-ignore
-        .to(1, { speedX: (Math.random() - 0.5) * swayAmount })
+        .to(2, { speedX: (Math.random() - 0.5) * swayAmount })
         .start()
-    }, 1)
+    }, 2)
   }
   update(dt) {
     super.update(dt)

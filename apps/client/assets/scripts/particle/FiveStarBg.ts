@@ -16,6 +16,9 @@ import {
 import DataManager from '../global/DataManager'
 const { ccclass, property } = _decorator
 
+
+const lineWidth = 15;
+const lineWidthBorder = 30;
 @ccclass('FiveStarBg')
 export class FiveStarBg extends Component {
   graphics: Graphics
@@ -56,7 +59,7 @@ export class FiveStarBg extends Component {
     this.graphics2.lineCap = Graphics.LineCap.ROUND
     this.graphics2.lineJoin = Graphics.LineJoin.ROUND
     this.graphics2.strokeColor = Color.WHITE // 线条颜色
-    this.graphics2.lineWidth = 10
+    this.graphics2.lineWidth = lineWidth
 
     this.graphics2.moveTo(this.lastPoint.x, this.lastPoint.y)
 
@@ -91,10 +94,10 @@ export class FiveStarBg extends Component {
   drawMagicaCircl() {
     let graphics = this.graphics
     // 五芒星的五个顶点
-    let radius = 300 // 增大五芒星半径
+    let radius = 400 // 增大五芒星半径
 
     // 绘制外圈圆
-    graphics.lineWidth = 10 // 线宽
+    graphics.lineWidth = lineWidth // 线宽
     graphics.strokeColor = Color.WHITE // 线条颜色
     let outerCircleRadius = radius * 1.07 // 外圈圆半径稍大于五芒星半径
     // graphics.circle(0, 0, outerCircleRadius)
@@ -127,7 +130,7 @@ export class FiveStarBg extends Component {
     }
 
     // 绘制五芒星
-    graphics.lineWidth = 10 // 线宽
+    graphics.lineWidth = lineWidth // 线宽
     graphics.strokeColor = Color.WHITE // 线条颜色
 
     const connectOrder = [0, 2, 4, 1, 3, 0] // 修正后的正确连接顺序
@@ -143,7 +146,7 @@ export class FiveStarBg extends Component {
           onUpdate: () => {
             graphics.lineCap = Graphics.LineCap.ROUND // 设置线条端点样式为圆形
             // 绘制五芒星的黑色轮廓
-            graphics.lineWidth = 20 // 线宽
+            graphics.lineWidth = lineWidthBorder // 线宽
             graphics.strokeColor = Color.BLACK // 线条颜色
 
             // 根据当前的绘制状态绘制线条
@@ -172,7 +175,7 @@ export class FiveStarBg extends Component {
             graphics.stroke() // 完成本次绘制
 
             // 绘制白五芒星
-            graphics.lineWidth = 10 // 线宽
+            graphics.lineWidth = lineWidth // 线宽
             graphics.strokeColor = Color.WHITE // 线条颜色
 
             graphics.moveTo(points[0].x, points[0].y) // 移动到起始顶点

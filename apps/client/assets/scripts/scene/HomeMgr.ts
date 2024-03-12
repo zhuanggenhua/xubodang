@@ -16,6 +16,7 @@ import { getRandomNumber } from '../utils'
 import ParticleMgr from '../particle/ParticleMgr'
 import { LightParticle } from '../particle/LightParticle'
 import FaderManager from '../global/FaderManager'
+import NetworkManager from '../global/NetworkManager'
 const { ccclass, property } = _decorator
 
 const blinkInterval = 1 // 闪烁间隔时间（秒）
@@ -58,7 +59,10 @@ export class HomeMgr extends Component {
     this.particleMgr.offGather()
   }
 
-  start() {}
+  async start() {
+    // await NetworkManager.Instance.connect();
+    console.log("服务连接成功！");
+  }
 
   update(deltaTime: number) {
     this.particleMgr.update(deltaTime)

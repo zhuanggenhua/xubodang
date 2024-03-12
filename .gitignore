@@ -159,12 +159,12 @@ Thumbs.db
 .vscode/
 
 # 忽略编译后自动生成的grpc idl文件和symlink同步的ws idl文件
-auto-gen-grpc
-auto-gen-ws
+# auto-gen-grpc
+# auto-gen-ws
 
-apps/client/assets/scripts/common
-apps/client/assets/scripts/proto
-apps/server/**/*.js
+# apps/client/assets/scripts/common
+# apps/client/assets/scripts/proto
+# apps/server/**/*.js
 
 
 #///////////////////////////

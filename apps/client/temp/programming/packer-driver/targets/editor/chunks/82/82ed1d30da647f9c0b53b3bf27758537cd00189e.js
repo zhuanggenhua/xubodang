@@ -97,7 +97,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.particleMgr.offGather();
         }
 
-        start() {}
+        async start() {
+          // await NetworkManager.Instance.connect();
+          console.log("服务连接成功！");
+        }
 
         update(deltaTime) {
           this.particleMgr.update(deltaTime);
