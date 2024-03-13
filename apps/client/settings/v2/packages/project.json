@@ -7,5 +7,20 @@
       "height": 1920,
       "fitWidth": false
     }
+  },
+  "sorting-layer": {
+    "layers": [
+      {
+        "id": 0,
+        "name": "default",
+        "value": 0
+      },
+      {
+        "id": 1,
+        "name": "Sorting Layer 1",
+        "value": 1
+      }
+    ],
+    "increaseId": 1
   }
 }

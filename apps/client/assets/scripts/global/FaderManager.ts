@@ -3,7 +3,7 @@ import { createUINode } from '../utils'
 import { Singleton } from '../common/base'
 import { DEFAULT_FADE_DURATION, DrawManager } from '../ui/DrawManager'
 
-// 用单例封装DrawManager
+// 场景过渡
 export default class FaderManager extends Singleton {
   static get Instance() {
     return super.GetInstance<FaderManager>()

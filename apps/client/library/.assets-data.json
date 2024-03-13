@@ -1306,16 +1306,21 @@
         "932cc238-eac0-4574-8c88-bee53f157427@f9941",
         "7a88d053-7f9b-4fd7-be17-d493fb337449@f9941",
         "bc2670ca-9b49-4c3f-ba6e-76a21947725c",
-        "d18336fd-2ae8-4faa-8e51-bc1e87b036fb@f9941",
+        "b5ae898a-ad62-47f0-acdc-3f51927ad36f@f9941",
         "6febb762-6cf5-4d1d-967e-db12ba2b1d3e@f9941",
         "c18a3aa1-a0ed-4d68-8566-be5a505d9fce@f9941",
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
         "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
         "eec5e8df-470e-4803-b298-17390d7d9d95@f9941",
+        "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a@f9941",
         "b730527c-3233-41c2-aaf7-7cdab58f9749@f9941",
-        "e0386bda-288e-453a-9b88-d82faa901173@f9941"
+        "cfbd2237-6100-43b3-b9df-9eee48d1df7a@f9941",
+        "1aa06443-c987-4ccc-b87d-0fecd5c5649e@f9941",
+        "89c9a869-8ab7-4712-8d60-e055b44f1b8e@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "1b03f5f7-11be-44bc-aa1c-c3f1985157fc"
+      ]
     }
   },
   "7a88d053-7f9b-4fd7-be17-d493fb337449": {
@@ -1387,6 +1392,7 @@
     "value": {
       "depends": [
         "6843d3d0-cffe-4c2e-bb86-df96e22f8bed",
+        "514514e9-0d4c-4b2c-a359-3274dca0b277@f9941",
         "4726ac32-4674-47b3-b461-a34a593c7dc6@f9941"
       ],
       "dependScripts": []
@@ -2064,9 +2070,7 @@
   },
   "e0386bda-288e-453a-9b88-d82faa901173": {
     "url": "db://assets/resources/ui/bg/页面 1 (15).png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "e0386bda-288e-453a-9b88-d82faa901173@6c48a": {
     "url": "db://assets/resources/ui/bg/页面 1 (15).png@6c48a",
@@ -2081,6 +2085,530 @@
     "value": {
       "depends": [
         "e0386bda-288e-453a-9b88-d82faa901173@6c48a"
+      ]
+    }
+  },
+  "0d172af4-bcf1-4a03-b608-7bdef37a1d64": {
+    "url": "db://assets/resources/ui/bg/页面 1 (17).png",
+    "value": {}
+  },
+  "0d172af4-bcf1-4a03-b608-7bdef37a1d64@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (17).png@6c48a",
+    "value": {
+      "depends": [
+        "0d172af4-bcf1-4a03-b608-7bdef37a1d64"
+      ]
+    }
+  },
+  "0d172af4-bcf1-4a03-b608-7bdef37a1d64@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (17).png@f9941",
+    "value": {
+      "depends": [
+        "0d172af4-bcf1-4a03-b608-7bdef37a1d64@6c48a"
+      ]
+    }
+  },
+  "c81c1d3a-64fd-412c-8943-f1d61b5b6299": {
+    "url": "db://assets/resources/ui/icons/100x40.png",
+    "value": {}
+  },
+  "c81c1d3a-64fd-412c-8943-f1d61b5b6299@6c48a": {
+    "url": "db://assets/resources/ui/icons/100x40.png@6c48a",
+    "value": {
+      "depends": [
+        "c81c1d3a-64fd-412c-8943-f1d61b5b6299"
+      ]
+    }
+  },
+  "c81c1d3a-64fd-412c-8943-f1d61b5b6299@f9941": {
+    "url": "db://assets/resources/ui/icons/100x40.png@f9941",
+    "value": {
+      "depends": [
+        "c81c1d3a-64fd-412c-8943-f1d61b5b6299@6c48a"
+      ]
+    }
+  },
+  "8ba06035-b09b-4b64-a173-0131ba21f241": {
+    "url": "db://assets/resources/ui/bg/页面 1 (18).png",
+    "value": {}
+  },
+  "8ba06035-b09b-4b64-a173-0131ba21f241@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (18).png@6c48a",
+    "value": {
+      "depends": [
+        "8ba06035-b09b-4b64-a173-0131ba21f241"
+      ]
+    }
+  },
+  "8ba06035-b09b-4b64-a173-0131ba21f241@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (18).png@f9941",
+    "value": {
+      "depends": [
+        "8ba06035-b09b-4b64-a173-0131ba21f241@6c48a"
+      ]
+    }
+  },
+  "b5ae898a-ad62-47f0-acdc-3f51927ad36f": {
+    "url": "db://assets/resources/ui/icons/100x40 (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b5ae898a-ad62-47f0-acdc-3f51927ad36f@6c48a": {
+    "url": "db://assets/resources/ui/icons/100x40 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "b5ae898a-ad62-47f0-acdc-3f51927ad36f"
+      ]
+    }
+  },
+  "b5ae898a-ad62-47f0-acdc-3f51927ad36f@f9941": {
+    "url": "db://assets/resources/ui/icons/100x40 (1).png@f9941",
+    "value": {
+      "depends": [
+        "b5ae898a-ad62-47f0-acdc-3f51927ad36f@6c48a"
+      ]
+    }
+  },
+  "cfbd2237-6100-43b3-b9df-9eee48d1df7a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (19).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "cfbd2237-6100-43b3-b9df-9eee48d1df7a@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (19).png@6c48a",
+    "value": {
+      "depends": [
+        "cfbd2237-6100-43b3-b9df-9eee48d1df7a"
+      ]
+    }
+  },
+  "cfbd2237-6100-43b3-b9df-9eee48d1df7a@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (19).png@f9941",
+    "value": {
+      "depends": [
+        "cfbd2237-6100-43b3-b9df-9eee48d1df7a@6c48a"
+      ]
+    }
+  },
+  "548a459c-5b14-4ce5-a2d2-28b260d6be1d": {
+    "url": "db://assets/resources/ui/icons/页面 1 (20).png",
+    "value": {}
+  },
+  "548a459c-5b14-4ce5-a2d2-28b260d6be1d@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (20).png@6c48a",
+    "value": {
+      "depends": [
+        "548a459c-5b14-4ce5-a2d2-28b260d6be1d"
+      ]
+    }
+  },
+  "548a459c-5b14-4ce5-a2d2-28b260d6be1d@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (20).png@f9941",
+    "value": {
+      "depends": [
+        "548a459c-5b14-4ce5-a2d2-28b260d6be1d@6c48a"
+      ]
+    }
+  },
+  "5096ed95-a209-4f55-a58c-ee59d4130b0c": {
+    "url": "db://assets/resources/ui/icons/页面 1 (21).png",
+    "value": {}
+  },
+  "5096ed95-a209-4f55-a58c-ee59d4130b0c@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (21).png@6c48a",
+    "value": {
+      "depends": [
+        "5096ed95-a209-4f55-a58c-ee59d4130b0c"
+      ]
+    }
+  },
+  "5096ed95-a209-4f55-a58c-ee59d4130b0c@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (21).png@f9941",
+    "value": {
+      "depends": [
+        "5096ed95-a209-4f55-a58c-ee59d4130b0c@6c48a"
+      ]
+    }
+  },
+  "2045d00e-b2cb-4d79-b4a7-9187ad66dd18": {
+    "url": "db://assets/resources/ui/icons/页面 1 (22).png",
+    "value": {}
+  },
+  "2045d00e-b2cb-4d79-b4a7-9187ad66dd18@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (22).png@6c48a",
+    "value": {
+      "depends": [
+        "2045d00e-b2cb-4d79-b4a7-9187ad66dd18"
+      ]
+    }
+  },
+  "2045d00e-b2cb-4d79-b4a7-9187ad66dd18@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (22).png@f9941",
+    "value": {
+      "depends": [
+        "2045d00e-b2cb-4d79-b4a7-9187ad66dd18@6c48a"
+      ]
+    }
+  },
+  "511f27d4-b119-43f8-893f-cbe678885b0c": {
+    "url": "db://assets/resources/ui/icons/页面 1 (23).png",
+    "value": {}
+  },
+  "511f27d4-b119-43f8-893f-cbe678885b0c@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (23).png@6c48a",
+    "value": {
+      "depends": [
+        "511f27d4-b119-43f8-893f-cbe678885b0c"
+      ]
+    }
+  },
+  "511f27d4-b119-43f8-893f-cbe678885b0c@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (23).png@f9941",
+    "value": {
+      "depends": [
+        "511f27d4-b119-43f8-893f-cbe678885b0c@6c48a"
+      ]
+    }
+  },
+  "1ccc61aa-6cee-48be-b26f-30eabc60eb31": {
+    "url": "db://assets/resources/ui/icons/页面 1 (24).png",
+    "value": {}
+  },
+  "1ccc61aa-6cee-48be-b26f-30eabc60eb31@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (24).png@6c48a",
+    "value": {
+      "depends": [
+        "1ccc61aa-6cee-48be-b26f-30eabc60eb31"
+      ]
+    }
+  },
+  "1ccc61aa-6cee-48be-b26f-30eabc60eb31@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (24).png@f9941",
+    "value": {
+      "depends": [
+        "1ccc61aa-6cee-48be-b26f-30eabc60eb31@6c48a"
+      ]
+    }
+  },
+  "1bd9952c-1d7d-4885-8380-71b7d5e77358": {
+    "url": "db://assets/resources/ui/icons/页面 1 (25).png",
+    "value": {}
+  },
+  "1bd9952c-1d7d-4885-8380-71b7d5e77358@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (25).png@6c48a",
+    "value": {
+      "depends": [
+        "1bd9952c-1d7d-4885-8380-71b7d5e77358"
+      ]
+    }
+  },
+  "1bd9952c-1d7d-4885-8380-71b7d5e77358@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (25).png@f9941",
+    "value": {
+      "depends": [
+        "1bd9952c-1d7d-4885-8380-71b7d5e77358@6c48a"
+      ]
+    }
+  },
+  "c16dd561-7a73-431c-905e-e58651dcb824": {
+    "url": "db://assets/resources/ui/icons/页面 1 (26).png",
+    "value": {}
+  },
+  "c16dd561-7a73-431c-905e-e58651dcb824@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (26).png@6c48a",
+    "value": {
+      "depends": [
+        "c16dd561-7a73-431c-905e-e58651dcb824"
+      ]
+    }
+  },
+  "c16dd561-7a73-431c-905e-e58651dcb824@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (26).png@f9941",
+    "value": {
+      "depends": [
+        "c16dd561-7a73-431c-905e-e58651dcb824@6c48a"
+      ]
+    }
+  },
+  "0fe467d4-339f-4afa-b7f6-8914860e5833": {
+    "url": "db://assets/resources/ui/icons/页面 1 (27).png",
+    "value": {}
+  },
+  "0fe467d4-339f-4afa-b7f6-8914860e5833@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (27).png@6c48a",
+    "value": {
+      "depends": [
+        "0fe467d4-339f-4afa-b7f6-8914860e5833"
+      ]
+    }
+  },
+  "0fe467d4-339f-4afa-b7f6-8914860e5833@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (27).png@f9941",
+    "value": {
+      "depends": [
+        "0fe467d4-339f-4afa-b7f6-8914860e5833@6c48a"
+      ]
+    }
+  },
+  "567ab368-6e8c-4578-ba6a-54dc6a0373dc": {
+    "url": "db://assets/resources/ui/icons/页面 1 (28).png",
+    "value": {}
+  },
+  "567ab368-6e8c-4578-ba6a-54dc6a0373dc@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (28).png@6c48a",
+    "value": {
+      "depends": [
+        "567ab368-6e8c-4578-ba6a-54dc6a0373dc"
+      ]
+    }
+  },
+  "567ab368-6e8c-4578-ba6a-54dc6a0373dc@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (28).png@f9941",
+    "value": {
+      "depends": [
+        "567ab368-6e8c-4578-ba6a-54dc6a0373dc@6c48a"
+      ]
+    }
+  },
+  "7b3ee7b3-6185-4287-9020-8f356cddb654": {
+    "url": "db://assets/resources/ui/icons/页面 1 (29).png",
+    "value": {}
+  },
+  "7b3ee7b3-6185-4287-9020-8f356cddb654@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (29).png@6c48a",
+    "value": {
+      "depends": [
+        "7b3ee7b3-6185-4287-9020-8f356cddb654"
+      ]
+    }
+  },
+  "7b3ee7b3-6185-4287-9020-8f356cddb654@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (29).png@f9941",
+    "value": {
+      "depends": [
+        "7b3ee7b3-6185-4287-9020-8f356cddb654@6c48a"
+      ]
+    }
+  },
+  "199342c1-6404-4bfe-8ac2-92ef59f02396": {
+    "url": "db://assets/resources/ui/icons/页面 1 (30).png",
+    "value": {}
+  },
+  "199342c1-6404-4bfe-8ac2-92ef59f02396@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (30).png@6c48a",
+    "value": {
+      "depends": [
+        "199342c1-6404-4bfe-8ac2-92ef59f02396"
+      ]
+    }
+  },
+  "199342c1-6404-4bfe-8ac2-92ef59f02396@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (30).png@f9941",
+    "value": {
+      "depends": [
+        "199342c1-6404-4bfe-8ac2-92ef59f02396@6c48a"
+      ]
+    }
+  },
+  "8026844e-d779-4c52-8b2d-ec8c790013d0": {
+    "url": "db://assets/resources/ui/icons/页面 1 (31).png",
+    "value": {}
+  },
+  "8026844e-d779-4c52-8b2d-ec8c790013d0@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (31).png@6c48a",
+    "value": {
+      "depends": [
+        "8026844e-d779-4c52-8b2d-ec8c790013d0"
+      ]
+    }
+  },
+  "8026844e-d779-4c52-8b2d-ec8c790013d0@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (31).png@f9941",
+    "value": {
+      "depends": [
+        "8026844e-d779-4c52-8b2d-ec8c790013d0@6c48a"
+      ]
+    }
+  },
+  "2ff61421-028e-42c7-9742-38ec149d4e8a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (32).png",
+    "value": {}
+  },
+  "2ff61421-028e-42c7-9742-38ec149d4e8a@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (32).png@6c48a",
+    "value": {
+      "depends": [
+        "2ff61421-028e-42c7-9742-38ec149d4e8a"
+      ]
+    }
+  },
+  "2ff61421-028e-42c7-9742-38ec149d4e8a@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (32).png@f9941",
+    "value": {
+      "depends": [
+        "2ff61421-028e-42c7-9742-38ec149d4e8a@6c48a"
+      ]
+    }
+  },
+  "7c88b35c-9636-477b-8af6-469d2539c56d": {
+    "url": "db://assets/resources/ui/icons/页面 1 (33).png",
+    "value": {}
+  },
+  "7c88b35c-9636-477b-8af6-469d2539c56d@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (33).png@6c48a",
+    "value": {
+      "depends": [
+        "7c88b35c-9636-477b-8af6-469d2539c56d"
+      ]
+    }
+  },
+  "7c88b35c-9636-477b-8af6-469d2539c56d@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (33).png@f9941",
+    "value": {
+      "depends": [
+        "7c88b35c-9636-477b-8af6-469d2539c56d@6c48a"
+      ]
+    }
+  },
+  "9421b388-f73e-42b5-8a85-850e2e5f1ddb": {
+    "url": "db://assets/resources/ui/icons/页面 1 (34).png",
+    "value": {}
+  },
+  "9421b388-f73e-42b5-8a85-850e2e5f1ddb@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (34).png@6c48a",
+    "value": {
+      "depends": [
+        "9421b388-f73e-42b5-8a85-850e2e5f1ddb"
+      ]
+    }
+  },
+  "9421b388-f73e-42b5-8a85-850e2e5f1ddb@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (34).png@f9941",
+    "value": {
+      "depends": [
+        "9421b388-f73e-42b5-8a85-850e2e5f1ddb@6c48a"
+      ]
+    }
+  },
+  "e28d3969-717a-4452-9507-1d25e8be087e": {
+    "url": "db://assets/resources/ui/icons/icon_pk.png",
+    "value": {}
+  },
+  "e28d3969-717a-4452-9507-1d25e8be087e@6c48a": {
+    "url": "db://assets/resources/ui/icons/icon_pk.png@6c48a",
+    "value": {
+      "depends": [
+        "e28d3969-717a-4452-9507-1d25e8be087e"
+      ]
+    }
+  },
+  "e28d3969-717a-4452-9507-1d25e8be087e@f9941": {
+    "url": "db://assets/resources/ui/icons/icon_pk.png@f9941",
+    "value": {
+      "depends": [
+        "e28d3969-717a-4452-9507-1d25e8be087e@6c48a"
+      ]
+    }
+  },
+  "514514e9-0d4c-4b2c-a359-3274dca0b277": {
+    "url": "db://assets/resources/ui/icons/icon_pk (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "514514e9-0d4c-4b2c-a359-3274dca0b277@6c48a": {
+    "url": "db://assets/resources/ui/icons/icon_pk (1).png@6c48a",
+    "value": {
+      "depends": [
+        "514514e9-0d4c-4b2c-a359-3274dca0b277"
+      ]
+    }
+  },
+  "514514e9-0d4c-4b2c-a359-3274dca0b277@f9941": {
+    "url": "db://assets/resources/ui/icons/icon_pk (1).png@f9941",
+    "value": {
+      "depends": [
+        "514514e9-0d4c-4b2c-a359-3274dca0b277@6c48a"
+      ]
+    }
+  },
+  "99f89b3d-b987-4615-ab11-82e8dc38e0a2": {
+    "url": "db://assets/scripts/global/PanelTransition.ts",
+    "value": {}
+  },
+  "2c56d80f-16f6-4693-9cd4-b6a2ea7d8c76": {
+    "url": "db://assets/scripts/ui/PanelTransition.ts",
+    "value": {}
+  },
+  "1aa06443-c987-4ccc-b87d-0fecd5c5649e": {
+    "url": "db://assets/resources/ui/icons/下拉 (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1aa06443-c987-4ccc-b87d-0fecd5c5649e@6c48a": {
+    "url": "db://assets/resources/ui/icons/下拉 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "1aa06443-c987-4ccc-b87d-0fecd5c5649e"
+      ]
+    }
+  },
+  "1aa06443-c987-4ccc-b87d-0fecd5c5649e@f9941": {
+    "url": "db://assets/resources/ui/icons/下拉 (1).png@f9941",
+    "value": {
+      "depends": [
+        "1aa06443-c987-4ccc-b87d-0fecd5c5649e@6c48a"
+      ]
+    }
+  },
+  "1b03f5f7-11be-44bc-aa1c-c3f1985157fc": {
+    "url": "db://assets/scripts/ui/HallUiMgr.ts",
+    "value": {}
+  },
+  "99719b45-0ea5-4e04-94f8-9b21cec0d89f": {
+    "url": "db://assets/resources/ui/icons/页面 1 (35).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "99719b45-0ea5-4e04-94f8-9b21cec0d89f@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1 (35).png@6c48a",
+    "value": {
+      "depends": [
+        "99719b45-0ea5-4e04-94f8-9b21cec0d89f"
+      ]
+    }
+  },
+  "99719b45-0ea5-4e04-94f8-9b21cec0d89f@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1 (35).png@f9941",
+    "value": {
+      "depends": [
+        "99719b45-0ea5-4e04-94f8-9b21cec0d89f@6c48a"
+      ]
+    }
+  },
+  "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a": {
+    "url": "db://assets/resources/ui/icons/便签bg.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a@6c48a": {
+    "url": "db://assets/resources/ui/icons/便签bg.png@6c48a",
+    "value": {
+      "depends": [
+        "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a"
+      ]
+    }
+  },
+  "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a@f9941": {
+    "url": "db://assets/resources/ui/icons/便签bg.png@f9941",
+    "value": {
+      "depends": [
+        "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a@6c48a"
       ]
     }
   }
