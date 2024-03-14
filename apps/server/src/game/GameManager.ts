@@ -1,5 +1,5 @@
 import { Singleton } from '../common/common/base'
-import { Logger, Inject } from '../common'
+import { Logger, Inject, ApiFunc } from '../common'
 import { MyServer } from '../common/core/MyServer'
 import { Connection } from '../common/core/Connection'
 import { getTime } from '../utils'
@@ -40,6 +40,15 @@ export class GameManager extends Singleton {
       console.log(`${getTime()}走人|人数|${server.connections.size}`)
       if (connection.playerId) {
         PlayerManager.Instance.removePlayer(connection.playerId)
+      }
+    })
+
+    // 注册api
+    server.setApi(ApiFunc.signIn, (connection: Connection) => {
+      const player = PlayerManager.Instance.createPlayer(connection)
+
+      return {
+        playerId: player.id,
       }
     })
   }

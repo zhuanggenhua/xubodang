@@ -7,6 +7,28 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
 .addJSON({
   game: {
     nested: {
+      LoginReq: {
+        fields: {
+          uuid: {
+            type: "string",
+            id: 1
+          }
+        }
+      },
+      LoginRes: {
+        fields: {}
+      },
+      SignInReq: {
+        fields: {}
+      },
+      SignInRes: {
+        fields: {
+          uuid: {
+            type: "string",
+            id: 1
+          }
+        }
+      },
       EnterGameReq: {
         fields: {
           token: {

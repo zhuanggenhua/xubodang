@@ -194,9 +194,7 @@
   },
   "267103a7-e074-4ada-beab-8868df813467": {
     "url": "db://assets/resources/ui/star.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "4726ac32-4674-47b3-b461-a34a593c7dc6": {
     "url": "db://assets/resources/ui/bg/battle.png",
@@ -2570,9 +2568,7 @@
   },
   "99719b45-0ea5-4e04-94f8-9b21cec0d89f": {
     "url": "db://assets/resources/ui/icons/页面 1 (35).png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "99719b45-0ea5-4e04-94f8-9b21cec0d89f@6c48a": {
     "url": "db://assets/resources/ui/icons/页面 1 (35).png@6c48a",
@@ -2611,5 +2607,9 @@
         "86ef22ee-83c9-4e82-8c3b-80d6bfc4bf5a@6c48a"
       ]
     }
+  },
+  "d5fb97ff-666b-4ccd-89ec-328a87e70c3b": {
+    "url": "db://assets/scripts/common",
+    "value": {}
   }
 }

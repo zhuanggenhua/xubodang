@@ -9,6 +9,7 @@ import {
   Node,
   ParticleSystem2D,
   Prefab,
+  sys,
   tween,
 } from 'cc'
 import { mapH, mapW } from '../global/DataManager'
@@ -17,6 +18,7 @@ import ParticleMgr from '../particle/ParticleMgr'
 import { LightParticle } from '../particle/LightParticle'
 import FaderManager from '../global/FaderManager'
 import NetworkManager from '../global/NetworkManager'
+import { ApiFunc } from '../common'
 const { ccclass, property } = _decorator
 
 const blinkInterval = 1 // 闪烁间隔时间（秒）
@@ -60,8 +62,9 @@ export class HomeMgr extends Component {
   }
 
   async start() {
-    // await NetworkManager.Instance.connect();
+    await NetworkManager.Instance.connect();
     console.log("服务连接成功！");
+    
   }
 
   update(deltaTime: number) {

@@ -2,7 +2,7 @@ import { ApiFunc, EntityTypeEnum } from '../common'
 import { Singleton } from '../common/base'
 import { EventEnum } from '../enum'
 import DataManager from './DataManager'
-import { instantiate } from 'cc'
+import { instantiate, sys } from 'cc'
 import EventManager, { IItem } from './EventManager'
 
 const TIMEOUT = 5000
@@ -34,9 +34,22 @@ export default class NetworkManager extends Singleton {
       this.ws = new WebSocket(`ws://localhost:${this.port}`)
       // 设置传输的二进制类型
       this.ws.binaryType = 'arraybuffer'
-      this.ws.onopen = () => {
+      this.ws.onopen = async () => {
         resolve(true)
         this.isConnected = true
+
+        // 登录或注册
+        // 通过uuid标记用户唯一性
+        let uuid = sys.localStorage.getItem('uuid')
+        if (uuid) {
+          // 登录
+          NetworkManager.Instance.callApi(ApiFunc.login, { uuid })
+        } else {
+          // 注册
+          let { playerId } = await NetworkManager.Instance.callApi(ApiFunc.signIn)
+          console.log('playerId', playerId);
+          sys.localStorage.setItem('uuid', playerId)
+        }
       }
       this.ws.onclose = () => {
         this.isConnected = false
@@ -72,15 +85,17 @@ export default class NetworkManager extends Singleton {
       await this.connectServer()
     }
   }
+  // 断线重连
   async reconnect() {
-    const prefab = DataManager.Instance.prefabMap.get(EntityTypeEnum.ReConnect)
-    const reconnect = instantiate(prefab)
-    reconnect.setParent(DataManager.Instance.stage)
+    // const prefab = DataManager.Instance.prefabMap.get(EntityTypeEnum.ReConnect)
+    // const reconnect = instantiate(prefab)
+    // reconnect.setParent(DataManager.Instance.stage)
     await this.connectServer()
   }
 
+  // 有返回值的属于api，没有的属于msg
   // keyof创建IModel['api']所有键组成的联合类型
-  callApi(name: ApiFunc, data: any) {
+  callApi(name: ApiFunc, data: any = {}): any {
     return new Promise((resolve, reject) => {
       try {
         // 超时处理

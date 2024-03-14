@@ -2,6 +2,18 @@ syntax = "proto3";
 
 package game;
 
+// 登录注册
+message LoginReq {
+  string uuid = 1;
+}
+message LoginRes {
+}
+message SignInReq {
+}
+message SignInRes {
+  string uuid = 1;
+}
+
 // 进入游戏
 message EnterGameReq {
   string token = 1;
@@ -9,6 +21,7 @@ message EnterGameReq {
 
 message EnterGameRes {
   EnterGameResData data = 1;
+  //optional: 该字段可以没有
   optional string error = 2;
 }
 
@@ -27,6 +40,7 @@ message ListActorRes {
 }
 
 message ListActorResData{
+  //repeated 可重复字段，相当于数组
   repeated IActor actors = 1;
 }
 

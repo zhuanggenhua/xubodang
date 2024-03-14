@@ -26,10 +26,13 @@ export enum EntityTypeEnum {
   JoyStick = "JoyStick",
   Shoot = "Shoot",
   ReConnect = "ReConnect",
+  Particle = "Particle",
 }
 
-// 接口枚举
+
 export enum ApiFunc {
+  signIn,
+  login,
   enterGame,
   listActor,
   createActor,
@@ -44,6 +47,14 @@ export enum ApiFunc {
 }
 
 export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.login]: {
+    req: "game.LoginReq",
+    res: "game.LoginRes",
+  },
+  [ApiFunc.signIn]: {
+    req: "game.SignInReq",
+    res: "game.SignInRes",
+  },
   [ApiFunc.enterGame]: {
     req: "game.EnterGameReq",
     res: "game.EnterGameRes",

@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, ParticleMgr, LightParticle, FaderManager, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _crd, ccclass, property, blinkInterval, HomeMgr;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, ParticleMgr, LightParticle, FaderManager, NetworkManager, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _crd, ccclass, property, blinkInterval, HomeMgr;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -21,6 +21,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("FaderManager", "../global/FaderManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfNetworkManager(extras) {
+    _reporterNs.report("NetworkManager", "../global/NetworkManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -37,13 +41,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       LightParticle = _unresolved_3.LightParticle;
     }, function (_unresolved_4) {
       FaderManager = _unresolved_4.default;
+    }, function (_unresolved_5) {
+      NetworkManager = _unresolved_5.default;
     }],
     execute: function () {
       _crd = true;
 
       _cclegacy._RF.push({}, "dde21zvwz9AcZv0p6AdySwj", "HomeMgr", undefined);
 
-      __checkObsolete__(['_decorator', 'Color', 'Component', 'EventTouch', 'GradientRange', 'Graphics', 'instantiate', 'Node', 'ParticleSystem2D', 'Prefab', 'tween']);
+      __checkObsolete__(['_decorator', 'Color', 'Component', 'EventTouch', 'GradientRange', 'Graphics', 'instantiate', 'Node', 'ParticleSystem2D', 'Prefab', 'sys', 'tween']);
 
       ({
         ccclass,
@@ -98,7 +104,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         async start() {
-          // await NetworkManager.Instance.connect();
+          await (_crd && NetworkManager === void 0 ? (_reportPossibleCrUseOfNetworkManager({
+            error: Error()
+          }), NetworkManager) : NetworkManager).Instance.connect();
           console.log("服务连接成功！");
         }
 
