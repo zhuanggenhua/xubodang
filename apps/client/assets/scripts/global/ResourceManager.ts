@@ -6,27 +6,27 @@ export class ResourceManager extends Singleton {
     return super.GetInstance<ResourceManager>()
   }
 
-  loadRes(path: string, type: typeof SpriteFrame = SpriteFrame) {
-    return new Promise<SpriteFrame>((resolve, reject) => {
-      resources.load<SpriteFrame>(path, type, (err, res) => {
+  loadRes<T extends Asset>(path: string, type: new (...args: any[]) => T) {
+    return new Promise<T>((resolve, reject) => {
+      resources.load(path, type, (err, res) => {
         if (err) {
-          reject(err)
-          return
+          reject(err);
+          return;
         }
-        resolve(res)
-      })
-    })
+        resolve(res);
+      });
+    });
   }
 
-  loadDir(path: string, type: typeof SpriteFrame = SpriteFrame) {
-    return new Promise<SpriteFrame[]>((resolve, reject) => {
-      resources.loadDir<SpriteFrame>(path, type, (err, res) => {
+  loadDir<T extends Asset>(path: string, type: new (...args: any[]) => T) {
+    return new Promise<T[]>((resolve, reject) => {
+      resources.loadDir(path, type, (err, res) => {
         if (err) {
-          reject(err)
-          return
+          reject(err);
+          return;
         }
-        resolve(res)
-      })
-    })
+        resolve(res);
+      });
+    });
   }
 }

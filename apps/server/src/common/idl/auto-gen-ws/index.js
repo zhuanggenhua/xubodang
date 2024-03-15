@@ -7,24 +7,129 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
 .addJSON({
   game: {
     nested: {
+      IPlayer: {
+        fields: {
+          id: {
+            type: "string",
+            id: 1
+          },
+          nickname: {
+            type: "string",
+            id: 2
+          },
+          godname: {
+            type: "string",
+            id: 3
+          },
+          rid: {
+            type: "int32",
+            id: 4
+          }
+        }
+      },
       LoginReq: {
         fields: {
-          uuid: {
-            type: "string",
+          player: {
+            type: "IPlayer",
             id: 1
           }
         }
       },
       LoginRes: {
-        fields: {}
+        oneofs: {
+          _state: {
+            oneof: [
+              "state"
+            ]
+          }
+        },
+        fields: {
+          state: {
+            type: "int32",
+            id: 1,
+            options: {
+              proto3_optional: true
+            }
+          }
+        }
       },
       SignInReq: {
         fields: {}
       },
       SignInRes: {
         fields: {
-          uuid: {
+          player: {
+            type: "IPlayer",
+            id: 1
+          }
+        }
+      },
+      IRoom: {
+        fields: {
+          id: {
+            type: "int32",
+            id: 1
+          },
+          roomName: {
             type: "string",
+            id: 2
+          },
+          life: {
+            type: "int32",
+            id: 3
+          },
+          mode: {
+            type: "string",
+            id: 4
+          },
+          hasPwd: {
+            type: "bool",
+            id: 6
+          },
+          pwd: {
+            type: "string",
+            id: 7
+          },
+          players: {
+            rule: "repeated",
+            type: "IPlayer",
+            id: 5
+          }
+        }
+      },
+      RoomList: {
+        fields: {
+          rooms: {
+            rule: "repeated",
+            type: "IRoom",
+            id: 1
+          }
+        }
+      },
+      RoomCreateReq: {
+        fields: {
+          roomName: {
+            type: "string",
+            id: 1
+          },
+          pwd: {
+            type: "string",
+            id: 2
+          },
+          life: {
+            type: "int32",
+            id: 3
+          },
+          mode: {
+            type: "string",
+            id: 4
+          }
+        }
+      },
+      RoomCreateRes: {
+        fields: {
+          room: {
+            type: "IRoom",
             id: 1
           }
         }

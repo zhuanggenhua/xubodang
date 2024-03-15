@@ -1,4 +1,5 @@
-import { ApiFunc, ProtoPathEnum } from "./enum";
+// @ts-ignore
+import { ApiFunc, ProtoPathEnum } from "./enum.ts";
 
 /***
  * 根据消息类型获取生成coder需要的path

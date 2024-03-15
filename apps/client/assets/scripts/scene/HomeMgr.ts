@@ -9,19 +9,19 @@ import {
   Node,
   ParticleSystem2D,
   Prefab,
+  SpriteFrame,
   sys,
   tween,
 } from 'cc'
-import { mapH, mapW } from '../global/DataManager'
+import DataManager, { mapH, mapW } from '../global/DataManager'
 import { getRandomNumber } from '../utils'
 import ParticleMgr from '../particle/ParticleMgr'
 import { LightParticle } from '../particle/LightParticle'
 import FaderManager from '../global/FaderManager'
 import NetworkManager from '../global/NetworkManager'
-import { ApiFunc } from '../common'
+import { FramePathEnum, PrefabPathEnum, TexturePathEnum } from '../enum'
+import { ResourceManager } from '../global/ResourceManager'
 const { ccclass, property } = _decorator
-
-const blinkInterval = 1 // 闪烁间隔时间（秒）
 
 @ccclass('HomeMgr')
 export class HomeMgr extends Component {
@@ -33,6 +33,7 @@ export class HomeMgr extends Component {
   particleMgr: ParticleMgr
 
   onLoad() {
+    this.loadRes()
     FaderManager.Instance.fadeOut(1000)
 
     this.particleMgr = this.canvas.addComponent(ParticleMgr)
@@ -45,6 +46,24 @@ export class HomeMgr extends Component {
     this.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this)
     this.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this)
   }
+  // 加载资源
+  async loadRes() {
+    const list = []
+    for (const type in PrefabPathEnum) {
+      const p = ResourceManager.Instance.loadRes(PrefabPathEnum[type], Prefab).then((prefab) => {
+        DataManager.Instance.prefabMap.set(type, prefab)
+      })
+      list.push(p)
+    }
+    for (const type in TexturePathEnum) {
+      const p = ResourceManager.Instance.loadDir(TexturePathEnum[type], SpriteFrame).then((spriteFrames) => {
+        DataManager.Instance.textureMap.set(type, spriteFrames)
+      })
+      list.push(p)
+    }
+    await Promise.all(list)
+  }
+
   onDestroy() {
     this.particleMgr.clear()
     // this.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this)
@@ -61,11 +80,7 @@ export class HomeMgr extends Component {
     this.particleMgr.offGather()
   }
 
-  async start() {
-    await NetworkManager.Instance.connect();
-    console.log("服务连接成功！");
-    
-  }
+  start() {}
 
   update(deltaTime: number) {
     this.particleMgr.update(deltaTime)

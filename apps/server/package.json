@@ -9,7 +9,7 @@
     "gen-link": "ts-node ./src/common/idl/link.ts",
     "common": "yarn gen-ws && yarn gen-link",
     "game": "ts-node ./src/index",
-    "start": "yarn common && yarn game"
+    "start": "yarn common && yarn dev"
   },
   "keywords": [],
   "author": "",

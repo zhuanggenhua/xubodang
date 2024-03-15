@@ -2,16 +2,48 @@ syntax = "proto3";
 
 package game;
 
+
+message IPlayer {
+  string id = 1;
+  string nickname = 2;
+  string godname = 3;
+  int32 rid = 4;
+}
 // 登录注册
 message LoginReq {
-  string uuid = 1;
+  IPlayer player = 1;
 }
 message LoginRes {
+  optional int32 state = 1;
 }
 message SignInReq {
 }
 message SignInRes {
-  string uuid = 1;
+  IPlayer player = 1;
+}
+
+
+// 房间列表
+message IRoom {
+  int32 id = 1;
+  string roomName = 2;
+  int32 life = 3;
+  string mode = 4;
+  bool hasPwd = 6;
+  string pwd = 7;
+  repeated IPlayer players = 5;
+}
+message RoomList {  
+  repeated IRoom rooms = 1;
+}
+message RoomCreateReq {
+  string roomName = 1;
+  string pwd = 2;
+  int32 life = 3;
+  string mode = 4;
+}
+message RoomCreateRes {
+  IRoom room = 1;
 }
 
 // 进入游戏
@@ -21,7 +53,7 @@ message EnterGameReq {
 
 message EnterGameRes {
   EnterGameResData data = 1;
-  //optional: 该字段可以没有
+  //optional: 该字段可以没有 
   optional string error = 2;
 }
 
@@ -139,4 +171,3 @@ message StateFromServer {
   State state = 1;
   repeated InputFromClient input = 2;
 }
-

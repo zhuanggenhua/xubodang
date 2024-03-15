@@ -4,6 +4,8 @@
         "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
         "version": "Windows 10 Pro"
     },
-    "sceneListMap": {},
+    "sceneListMap": {
+        "75992987-f6bf-4bf5-8d26-682c9a607889": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\Hall.scene"
+    },
     "deviceMd5": "a71bfce4187a9b7a045951c098917077"
 }

@@ -37,6 +37,7 @@ System.register(["cc"], function (_export, _context) {
         EventEnum["BulletBorn"] = "BulletBorn";
         EventEnum["ExplosionBorn"] = "ExplosionBorn";
         EventEnum["RoomJoin"] = "RoomJoin";
+        EventEnum["RoomCreate"] = "RoomCreate";
         EventEnum["GameStart"] = "GameStart";
         EventEnum["GameEnd"] = "GameEnd";
         EventEnum["ClientSync"] = "ClientSync";
@@ -45,36 +46,29 @@ System.register(["cc"], function (_export, _context) {
       }({}));
 
       _export("PrefabPathEnum", PrefabPathEnum = /*#__PURE__*/function (PrefabPathEnum) {
-        PrefabPathEnum["Map1"] = "prefab/Map1";
-        PrefabPathEnum["Actor1"] = "prefab/Actor";
-        PrefabPathEnum["Actor2"] = "prefab/Actor";
-        PrefabPathEnum["Weapon1"] = "prefab/Weapon1";
-        PrefabPathEnum["Weapon2"] = "prefab/Weapon2";
-        PrefabPathEnum["Bullet1"] = "prefab/Bullet1";
-        PrefabPathEnum["Bullet2"] = "prefab/Bullet2";
-        PrefabPathEnum["Explosion"] = "prefab/Explosion";
-        PrefabPathEnum["ReConnect"] = "prefab/ReConnect";
+        PrefabPathEnum["Room"] = "prefab/Room";
         return PrefabPathEnum;
       }({}));
 
       _export("TexturePathEnum", TexturePathEnum = /*#__PURE__*/function (TexturePathEnum) {
-        TexturePathEnum["Actor1Idle"] = "texture/actor/actor1/idle";
-        TexturePathEnum["Actor1Run"] = "texture/actor/actor1/run";
-        TexturePathEnum["Actor2Idle"] = "texture/actor/actor2/idle";
-        TexturePathEnum["Actor2Run"] = "texture/actor/actor2/run";
-        TexturePathEnum["Weapon1Idle"] = "texture/weapon/weapon1/idle";
-        TexturePathEnum["Weapon1Attack"] = "texture/weapon/weapon1/attack";
-        TexturePathEnum["Weapon2Idle"] = "texture/weapon/weapon2/idle";
-        TexturePathEnum["Weapon2Attack"] = "texture/weapon/weapon2/attack";
-        TexturePathEnum["Bullet1Idle"] = "texture/bullet/bullet1";
-        TexturePathEnum["Bullet2Idle"] = "texture/bullet/bullet2";
-        TexturePathEnum["ExplosionIdle"] = "texture/explosion";
         return TexturePathEnum;
-      }({}));
+      }({})); // Actor1Idle = 'texture/actor/actor1/idle',
+      // Actor1Run = 'texture/actor/actor1/run',
+      // Actor2Idle = 'texture/actor/actor2/idle',
+      // Actor2Run = 'texture/actor/actor2/run',
+      // Weapon1Idle = 'texture/weapon/weapon1/idle',
+      // Weapon1Attack = 'texture/weapon/weapon1/attack',
+      // Weapon2Idle = 'texture/weapon/weapon2/idle',
+      // Weapon2Attack = 'texture/weapon/weapon2/attack',
+      // Bullet1Idle = 'texture/bullet/bullet1',
+      // Bullet2Idle = 'texture/bullet/bullet2',
+      // ExplosionIdle = 'texture/explosion',
+
 
       _export("SceneEnum", SceneEnum = /*#__PURE__*/function (SceneEnum) {
         SceneEnum["Home"] = "Home";
         SceneEnum["Loading"] = "Loading";
+        SceneEnum["Battle"] = "Battle";
         return SceneEnum;
       }({}));
 

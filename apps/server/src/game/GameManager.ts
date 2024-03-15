@@ -4,6 +4,7 @@ import { MyServer } from '../common/core/MyServer'
 import { Connection } from '../common/core/Connection'
 import { getTime } from '../utils'
 import PlayerManager from './PlayerManager'
+import RoomManager from './RoomManager'
 
 export class GameManager extends Singleton {
   static get Instance() {
@@ -44,11 +45,39 @@ export class GameManager extends Singleton {
     })
 
     // 注册api
+    // 登录注册
+    server.setApi(ApiFunc.login, (connection: Connection, { player: playerInfo }) => {
+      const player = PlayerManager.Instance.createPlayer(connection, playerInfo)
+      // 如果还在房间，就跳转战斗
+      if (player.rid !== -1) {
+      }
+      connection.sendMsg(ApiFunc.RoomList, { rooms: RoomManager.Instance.getRoomsView() })
+      return {
+        state: player.state,
+      }
+    })
     server.setApi(ApiFunc.signIn, (connection: Connection) => {
       const player = PlayerManager.Instance.createPlayer(connection)
-
+      const playerInfo = PlayerManager.Instance.getPlayerView(player)
+      connection.sendMsg(ApiFunc.RoomList, { rooms: RoomManager.Instance.getRoomsView() })
       return {
-        playerId: player.id,
+        player: playerInfo,
+      }
+    })
+
+    server.setApi(ApiFunc.RoomCreate, (connection: Connection, data) => {
+      if (connection.playerId) {
+        const room = RoomManager.Instance.joinRoom(RoomManager.Instance.createRoom(data).id, connection.playerId)
+        if (room) {
+          RoomManager.Instance.syncRooms()
+          return {
+            room: RoomManager.Instance.getRoomView(room),
+          }
+        } else {
+          throw new Error('ApiRoomCreate room不存在')
+        }
+      } else {
+        throw new Error('ApiRoomCreate 玩家未登录')
       }
     })
   }

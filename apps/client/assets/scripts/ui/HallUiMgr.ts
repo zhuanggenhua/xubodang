@@ -1,4 +1,21 @@
-import { _decorator, Component, EventTouch, find, Label, Node, tween, UIOpacity, UITransform, v2, v3, Widget } from 'cc'
+import {
+  _decorator,
+  Component,
+  EditBox,
+  EventTouch,
+  find,
+  Label,
+  Node,
+  tween,
+  UIOpacity,
+  UITransform,
+  v2,
+  v3,
+  Widget,
+} from 'cc'
+import EventManager from '../global/EventManager'
+import { EventEnum } from '../enum'
+import { RoomMode } from '../common'
 const { ccclass, property } = _decorator
 
 @ccclass('HallUiMgr')
@@ -8,28 +25,41 @@ export class HallUiMgr extends Component {
   @property(Node)
   createHome: Node = null
 
-  oldSelectRoom: Node = null
+  
 
   activeSelect: Node = null
   oldSelectChild: Node = null
 
-  handlerRoomClick(event: EventTouch) {
-    const room = event.target
-    if (this.oldSelectRoom === room) {
-      // 进入房间
-    } else {
-      // 取消之前选中的
-      if (this.oldSelectRoom) {
-        const widget = this.oldSelectRoom.getChildByName('Tip').getComponent(Widget)
-        tween(widget).to(0.1, { left: -180 }).start()
-      }
-      // 选中状态
-      this.oldSelectRoom = room
-      const widget = this.oldSelectRoom.getChildByName('Tip').getComponent(Widget)
-      tween(widget).to(0.1, { left: 0 }).start()
-    }
-  }
+  // 创建房间
+  handlerRoomCreate(event: EventTouch) {
+    const modalBox = this.createHome.getChildByName('ModalBox')
+    const roomName = modalBox.getChildByName('RoomName').getChildByName('EditBox').getComponent(EditBox).string
+    const pwd = modalBox.getChildByName('Pwd').getChildByName('EditBox').getComponent(EditBox).string
+    const life = modalBox
+      .getChildByName('Life')
+      .getChildByName('Select')
+      .getChildByName('SelectActive')
+      .getChildByName('Label')
+      .getComponent(Label).string
+    const mode = modalBox
+      .getChildByName('Mode')
+      .getChildByName('Select')
+      .getChildByName('SelectActive')
+      .getChildByName('Label')
+      .getComponent(Label).string
 
+    if (!roomName || roomName == '') {
+      modalBox.getChildByName('RoomName').getChildByName('EditBox').getComponent(EditBox).placeholder = '请输入房间名'
+      return
+    }
+    EventManager.Instance.emit(EventEnum.RoomCreate, {
+      roomName,
+      pwd,
+      life,
+      mode,
+    })
+  }
+  // 点击创建房间按钮
   handlerCreateRoomClick(event: EventTouch) {
     if (!this.createHome.active) {
       // 打开创建房间模态框
@@ -81,16 +111,16 @@ export class HallUiMgr extends Component {
     selectActive.getChildByName('Label').getComponent(Label).string = label.string
 
     switch (label.string) {
-      case '标准':
+      case RoomMode.normal:
         this.selectDesc.getComponent(Label).string = ''
         break
-      case '怀旧':
+      case RoomMode.old:
         this.selectDesc.getComponent(Label).string = '只有最原始的能力'
         break
-      case '限制':
+      case RoomMode.limit:
         this.selectDesc.getComponent(Label).string = '不允许使用崇高假身'
         break
-      case '无限':
+      case RoomMode.infinite:
         this.selectDesc.getComponent(Label).string = '没有时间限制'
         break
     }

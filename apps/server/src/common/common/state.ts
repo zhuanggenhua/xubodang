@@ -1,4 +1,5 @@
-import { EntityTypeEnum, InputTypeEnum } from "./enum";
+// @ts-ignore
+import { EntityTypeEnum, InputTypeEnum } from "./enum.ts";
 
 export interface IActor {
   id: number;
