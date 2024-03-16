@@ -80,5 +80,12 @@ export class GameManager extends Singleton {
         throw new Error('ApiRoomCreate 玩家未登录')
       }
     })
+
+    server.setApi(ApiFunc.RoomListByName, (connection: Connection, data) => {
+      // console.log('??', data);
+      connection.sendMsg(ApiFunc.RoomList, {
+        rooms: RoomManager.Instance.getRoomsView().filter((room) => room.roomName.includes(data.roomName)),
+      })
+    })
   }
 }

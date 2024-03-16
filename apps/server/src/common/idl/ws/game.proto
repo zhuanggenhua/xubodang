@@ -45,6 +45,11 @@ message RoomCreateReq {
 message RoomCreateRes {
   IRoom room = 1;
 }
+message RoomListByNameReq {
+  string roomName = 1;
+}
+message RoomListByNameRes {
+}
 
 // 进入游戏
 message EnterGameReq {

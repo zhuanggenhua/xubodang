@@ -1,10 +1,11 @@
-import { ApiFunc, EntityTypeEnum, getProtoPathByApiFunc } from '../common'
+import { ApiFunc, getProtoPathByApiFunc } from '../common'
 import { Singleton } from '../common/base'
 import { EventEnum } from '../enum'
 import DataManager from './DataManager'
 import { instantiate, sys } from 'cc'
 import EventManager, { IItem } from './EventManager'
 import protoRoot from '../proto/index.js'
+import { createErrorTip, destroyTip } from '../utils'
 
 const TIMEOUT = 5000
 
@@ -62,6 +63,7 @@ export default class NetworkManager extends Singleton {
   connected = false
 
   isConnected = false
+  host = '192.168.1.123'
   port = 9876
   ws: WebSocket
   private map: Map<ApiFunc, Array<IItem>> = new Map()
@@ -73,7 +75,7 @@ export default class NetworkManager extends Singleton {
         return
       }
 
-      this.ws = new WebSocket(`ws://localhost:${this.port}`)
+      this.ws = new WebSocket(`ws://${this.host}:${this.port}`)
       // 设置传输的二进制类型
       this.ws.binaryType = 'arraybuffer'
 
@@ -145,17 +147,16 @@ export default class NetworkManager extends Singleton {
     if (this.connected) return
     this.connected = true
     this.connectServer()
-
-    // 弹窗
-    // const prefab = DataManager.Instance.prefabMap.get(EntityTypeEnum.ReConnect)
-    // const reconnect = instantiate(prefab)
-    // reconnect.setParent(DataManager.Instance.stage)
   }
   async connectServer() {
     if (!(await NetworkManager.Instance.connect().catch(() => false))) {
-      await new Promise((resolve) => setTimeout(resolve, 1000)) //防止无限 递归
+      // 弹窗
+      createErrorTip('连接中...')
+      await new Promise((resolve) => setTimeout(resolve, 2000)) //防止无限 递归
       await this.connectServer()
     } else {
+      destroyTip()
+      console.log("服务连接成功！");
       this.connected = false
     }
   }

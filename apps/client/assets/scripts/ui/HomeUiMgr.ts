@@ -9,9 +9,8 @@ export class HomeUiMgr extends Component {
       case 'singleStart':
         console.log('单机模式')
         break
-      case 'singleStart':
+      case 'Hall':
         if (!NetworkManager.Instance.isConnected) {
-          // todo 友好的弹窗提示
           console.log('未连接！')
           NetworkManager.Instance.connect()
         }

@@ -2,6 +2,8 @@ import { Prefab, SpriteFrame, Node, director, view } from 'cc'
 import { IRoom, IState } from '../common'
 import { Singleton } from '../common/base'
 import Particle from '../particle/Particle'
+import { PrefabPathEnum, TexturePathEnum } from '../enum'
+import { ResourceManager } from './ResourceManager'
 
 const PLAYER_SPEED = 100
 const BULLET_SPEED = 600
@@ -21,6 +23,7 @@ export default class DataManager extends Singleton {
   static get Instance() {
     return super.GetInstance<DataManager>()
   }
+
 
   myPlayerId: number = 1
   roomInfo: IRoom

@@ -19,7 +19,7 @@ import ParticleMgr from '../particle/ParticleMgr'
 import { LightParticle } from '../particle/LightParticle'
 import FaderManager from '../global/FaderManager'
 import NetworkManager from '../global/NetworkManager'
-import { FramePathEnum, PrefabPathEnum, TexturePathEnum } from '../enum'
+import {  PrefabPathEnum, TexturePathEnum } from '../enum'
 import { ResourceManager } from '../global/ResourceManager'
 const { ccclass, property } = _decorator
 

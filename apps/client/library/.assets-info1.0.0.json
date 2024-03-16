@@ -72,11 +72,11 @@
       "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts": {
-      "time": 1710473347932.4434,
+      "time": 1710580220823.079,
       "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts": {
-      "time": 1710473311009.2432,
+      "time": 1710576179953.1836,
       "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts": {
@@ -88,7 +88,7 @@
       "uuid": "7dc27749-dc3e-4548-92dd-1aebfcff5506"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HomeMgr.ts": {
-      "time": 1710473318346.5693,
+      "time": 1710576188539.8303,
       "uuid": "dde21cef-c33f-4071-9bf4-a7a01dc92c23"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\Scripts\\base": {
@@ -579,7 +579,7 @@
       "time": 1709863845426.7395
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui": {
-      "time": 1710417784572.964,
+      "time": 1710582871264.2366,
       "uuid": "03476cbf-cba0-4bf3-b1c4-d0b3db4c4dec"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\font\\gudian.ttf.meta": {
@@ -593,7 +593,7 @@
       "time": 1709885309154.8408
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\HomeUiMgr.ts": {
-      "time": 1709903123459.3923,
+      "time": 1710577218757.1682,
       "uuid": "1d75a798-9815-495d-ad9d-a4f6fe63072f"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\Setting.png.meta": {
@@ -649,7 +649,7 @@
       "uuid": "c6e581d1-5164-4ea9-af34-a1302802a6e9"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\index.ts": {
-      "time": 1709896226172.3538,
+      "time": 1710581612193.744,
       "uuid": "eb1ea03c-666d-41d4-ad4a-38502e844f47"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\FeedBack.png.meta": {
@@ -670,7 +670,7 @@
       "uuid": "a08ae65a-6792-4789-8115-30ebc55c2955"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\NetworkManager.ts": {
-      "time": 1710421212133.724,
+      "time": 1710581738791.1758,
       "uuid": "1222ee1c-ab60-41f0-a33b-d2da10206e33"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\King.png.meta": {
@@ -691,7 +691,7 @@
       "time": 1709949558427.76
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\Hall.scene": {
-      "time": 1710473689123.0088,
+      "time": 1710590797977.564,
       "uuid": "75992987-f6bf-4bf5-8d26-682c9a607889"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\Back.png.meta": {
@@ -730,7 +730,7 @@
       "uuid": "f5506ebb-64dc-48fc-9226-3ab7686b31ad"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\选中心率 背景框 (1).png.meta": {
-      "time": 1710310462073.158
+      "time": 1710574643927.9146
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\选中心率 背景框 (1).png": {
       "time": 1709969150905.8726,
@@ -747,7 +747,7 @@
       "time": 1710233153066.2756
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons": {
-      "time": 1710471862045.7063,
+      "time": 1710557193057.9646,
       "uuid": "47ca18a7-18e3-4efd-9479-a8ec07ae7c0a"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\100x40 (1).png.meta": {
@@ -782,7 +782,7 @@
       "time": 1710313008825.6504
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\HallUiMgr.ts": {
-      "time": 1710468819906.077,
+      "time": 1710590593066.4937,
       "uuid": "1b03f5f7-11be-44bc-aa1c-c3f1985157fc"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\便签bg.png.meta": {
@@ -797,7 +797,7 @@
       "uuid": "22db3526-5b22-4a1f-b602-ae781d34f362"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js": {
-      "time": 1710472124117.9124,
+      "time": 1710589950256.1604,
       "uuid": "fdc305cc-78c1-4b12-ba25-4cc694adda9a"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common.meta": {
@@ -827,7 +827,7 @@
       "uuid": "99796cb7-a9ce-4209-a431-5aa528b02be7"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts": {
-      "time": 1710418296008.8267,
+      "time": 1710589839375.6582,
       "uuid": "f74babdf-59df-477d-ae39-c717f50cd3ae"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts": {
@@ -846,28 +846,28 @@
       "time": 1710410214687.9558
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HallManager.ts": {
-      "time": 1710472231281.1123,
+      "time": 1710590917729.1416,
       "uuid": "121926aa-ba72-4cfd-a113-fe8350879f4d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\RoomItemManager.ts.meta": {
       "time": 1710417784575.9568
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\RoomItemManager.ts": {
-      "time": 1710473663861.9983,
+      "time": 1710590787829.298,
       "uuid": "46f7c716-41a2-4925-b5c5-d9cf54a03a41"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab.meta": {
       "time": 1709690661908.0547
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab": {
-      "time": 1710419687189.1116,
+      "time": 1710576840578.7166,
       "uuid": "7c11175b-2afc-401e-8b60-97d841391700"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Room.prefab.meta": {
       "time": 1710419687195.095
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Room.prefab": {
-      "time": 1710473682555.166,
+      "time": 1710590795942.1243,
       "uuid": "5d295644-b8e4-4a91-92af-7afa1f5fa507"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\bg_light.prefab.meta": {
@@ -897,6 +897,41 @@
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\lock.png": {
       "time": 1710471854009.4373,
       "uuid": "ca4b2687-9563-4912-b2b7-60c2a6177999"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\退出.png.meta": {
+      "time": 1710557193093.0845
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\退出.png": {
+      "time": 1710557183463.2764,
+      "uuid": "0cc07904-5bd1-4461-8827-7ad8ee1b2339"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Tip.prefab.meta": {
+      "time": 1710576706344.131
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Tip.prefab": {
+      "time": 1710576706341.1392,
+      "uuid": "385f185a-8a74-4eaa-96e9-54ca23473de4"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\ErrTip.prefab.meta": {
+      "time": 1710576840584.7017
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\ErrTip.prefab": {
+      "time": 1710577180390.12,
+      "uuid": "aa0cf0ef-9cf2-403f-b7ae-0a72b76f5dac"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\TipMgr.ts.meta": {
+      "time": 1710577115680.8032
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\TipMgr.ts": {
+      "time": 1710577137458.1387,
+      "uuid": "14329466-e705-49aa-be6f-bb7f707ebc7d"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\InputMgr.ts.meta": {
+      "time": 1710582871267.2317
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\InputMgr.ts": {
+      "time": 1710590390046.9475,
+      "uuid": "35e32523-6dab-4da9-b361-623c6401e9ea"
     }
   },
   "missing": {
@@ -1439,6 +1474,16 @@
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\锁.png",
       "time": 1710471854009.4373,
       "removeTime": 1710471862047
+    },
+    "385f185a-8a74-4eaa-96e9-54ca23473de4": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\ErrTip.prefab",
+      "time": 1710574728492.4595,
+      "removeTime": 1710576706335
+    },
+    "aa0cf0ef-9cf2-403f-b7ae-0a72b76f5dac": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Tip-001.prefab",
+      "time": 1710576828237.1233,
+      "removeTime": 1710576840580
     }
   }
 }

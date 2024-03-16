@@ -1,70 +1,91 @@
-import { Component, Prefab, _decorator, director, instantiate,Node } from "cc";
-import { SceneEnum, EventEnum } from "../enum";
-import DataManager from "../global/DataManager";
-import EventManager from "../global/EventManager";
-import NetworkManager from "../global/NetworkManager";
-import { ApiFunc, IRoom } from "../common";
-import { RoomItemManager } from "../ui/RoomItemManager";
+import { Component, Prefab, _decorator, director, instantiate, Node, SpriteFrame, screen } from 'cc'
+import { SceneEnum, EventEnum, PrefabPathEnum, TexturePathEnum } from '../enum'
+import DataManager, { mapH, mapW } from '../global/DataManager'
+import EventManager from '../global/EventManager'
+import NetworkManager from '../global/NetworkManager'
+import { ApiFunc, IRoom } from '../common'
+import { RoomItemManager } from '../ui/RoomItemManager'
+import { ResourceManager } from '../global/ResourceManager'
 
-const { ccclass, property } = _decorator;
+const { ccclass, property } = _decorator
 
 @ccclass('HallManager')
 export class HallManager extends Component {
   @property(Node)
-  roomContainer: Node = null;
+  roomContainer: Node = null
 
   @property(Prefab)
-  roomPrefab: Prefab = null;
+  roomPrefab: Prefab = null
 
   onLoad() {
     // director.preloadScene(SceneEnum.Battle);
-    EventManager.Instance.on(EventEnum.RoomCreate, this.handleCreateRoom, this);
-    EventManager.Instance.on(EventEnum.RoomJoin, this.handleJoinRoom, this);
+    EventManager.Instance.on(EventEnum.RoomCreate, this.handleCreateRoom, this)
+    EventManager.Instance.on(EventEnum.RoomJoin, this.handleJoinRoom, this)
     // 接收房间广播
-    NetworkManager.Instance.listenMsg(ApiFunc.RoomList, this.renderRooms, this);
+    NetworkManager.Instance.listenMsg(ApiFunc.RoomList, this.renderRooms, this)
+    
+    // screen.requestFullScreen() //全屏
+    this.loadRes()
+  }
+  // test
+  async loadRes() {
+    const list = []
+    for (const type in PrefabPathEnum) {
+      const p = ResourceManager.Instance.loadRes(PrefabPathEnum[type], Prefab).then((prefab) => {
+        DataManager.Instance.prefabMap.set(type, prefab)
+      })
+      list.push(p)
+    }
+    for (const type in TexturePathEnum) {
+      const p = ResourceManager.Instance.loadDir(TexturePathEnum[type], SpriteFrame).then((spriteFrames) => {
+        DataManager.Instance.textureMap.set(type, spriteFrames)
+      })
+      list.push(p)
+    }
+    await Promise.all(list)
   }
 
   onDestroy() {
-    EventManager.Instance.off(EventEnum.RoomCreate, this.handleCreateRoom, this);
-    EventManager.Instance.off(EventEnum.RoomJoin, this.handleJoinRoom, this);
-    NetworkManager.Instance.unlistenMsg(ApiFunc.RoomList, this.renderRooms, this);
+    EventManager.Instance.off(EventEnum.RoomCreate, this.handleCreateRoom, this)
+    EventManager.Instance.off(EventEnum.RoomJoin, this.handleJoinRoom, this)
+    NetworkManager.Instance.unlistenMsg(ApiFunc.RoomList, this.renderRooms, this)
   }
 
   async start() {
-    await NetworkManager.Instance.connect();
-    console.log("服务连接成功！");
-    this.roomContainer.destroyAllChildren();
+    setTimeout(async () => {
+      await NetworkManager.Instance.connect().catch(() => false)
+    }, 1000)
+    this.roomContainer.destroyAllChildren()
   }
 
+  renderRooms = ({ rooms }) => {
+    // 暂无数据
+    if(rooms.length == 0){
+      return
+    }
 
-  renderRooms = ({rooms}) => {
-    console.log('rooms',rooms);
-    
-    
     for (const item of this.roomContainer.children) {
-      item.active = false;
+      item.active = false
     }
     while (this.roomContainer.children.length < rooms.length) {
-      const roomItem = instantiate(this.roomPrefab);
-      roomItem.active = false;
-      roomItem.setParent(this.roomContainer);
+      const roomItem = instantiate(this.roomPrefab)
+      roomItem.active = false
+      roomItem.setParent(this.roomContainer)
     }
 
     for (let i = 0; i < rooms.length; i++) {
-      const data = rooms[i];
-      const node = this.roomContainer.children[i];
-      const roomItemManager = node.getComponent(RoomItemManager);
-      roomItemManager.init(data);
-      node.active = true;
+      const data = rooms[i]
+      const node = this.roomContainer.children[i]
+      const roomItemManager = node.getComponent(RoomItemManager)
+      roomItemManager.init(data)
     }
-  };
+  }
 
   async handleCreateRoom(roomInfo: IRoom) {
-    const res = await NetworkManager.Instance.callApi(ApiFunc.RoomCreate,roomInfo);
-    console.log('room',res);
-    
+    const res = await NetworkManager.Instance.callApi(ApiFunc.RoomCreate, roomInfo)
+    console.log('room', res)
 
-    DataManager.Instance.roomInfo = res.room;
+    DataManager.Instance.roomInfo = res.room
     // director.loadScene(SceneEnum.Room);
   }
 
@@ -74,7 +95,6 @@ export class HallManager extends Component {
     //   console.log(error);
     //   return;
     // }
-
     // DataManager.Instance.roomInfo = res.room;
     // director.loadScene(SceneEnum.Room);
   }

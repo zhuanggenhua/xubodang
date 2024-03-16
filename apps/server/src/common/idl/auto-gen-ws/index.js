@@ -134,6 +134,17 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
           }
         }
       },
+      RoomListByNameReq: {
+        fields: {
+          roomName: {
+            type: "string",
+            id: 1
+          }
+        }
+      },
+      RoomListByNameRes: {
+        fields: {}
+      },
       EnterGameReq: {
         fields: {
           token: {

@@ -34,6 +34,7 @@ export enum InputTypeEnum {
   TimePast,
 }
 export enum EntityTypeEnum {
+  
   Map1 = 'Map1',
   Actor1 = 'Actor1',
   Actor2 = 'Actor2',
@@ -44,7 +45,6 @@ export enum EntityTypeEnum {
   Explosion = 'Explosion',
   JoyStick = 'JoyStick',
   Shoot = 'Shoot',
-  ReConnect = 'ReConnect',
   Particle = 'Particle',
 }
 
@@ -59,6 +59,7 @@ export enum ApiFunc {
   createReplication,
   leaveReplication,
   RoomCreate,
+  RoomListByName,
   gap = 100,
   // 从100继续，这是api和msg的分界线
   inputFromClient,
@@ -67,6 +68,10 @@ export enum ApiFunc {
 }
 
 export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.RoomListByName]: {
+    req: 'game.RoomListByNameReq',
+    res: 'game.RoomListByNameRes',
+  },
   [ApiFunc.login]: {
     req: 'game.LoginReq',
     res: 'game.LoginRes',

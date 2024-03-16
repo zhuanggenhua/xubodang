@@ -1317,7 +1317,8 @@
       ],
       "dependScripts": [
         "1b03f5f7-11be-44bc-aa1c-c3f1985157fc",
-        "121926aa-ba72-4cfd-a113-fe8350879f4d"
+        "121926aa-ba72-4cfd-a113-fe8350879f4d",
+        "35e32523-6dab-4da9-b361-623c6401e9ea"
       ]
     }
   },
@@ -2658,5 +2659,55 @@
         "ca4b2687-9563-4912-b2b7-60c2a6177999@6c48a"
       ]
     }
+  },
+  "0cc07904-5bd1-4461-8827-7ad8ee1b2339": {
+    "url": "db://assets/resources/ui/icons/退出.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "0cc07904-5bd1-4461-8827-7ad8ee1b2339@6c48a": {
+    "url": "db://assets/resources/ui/icons/退出.png@6c48a",
+    "value": {
+      "depends": [
+        "0cc07904-5bd1-4461-8827-7ad8ee1b2339"
+      ]
+    }
+  },
+  "0cc07904-5bd1-4461-8827-7ad8ee1b2339@f9941": {
+    "url": "db://assets/resources/ui/icons/退出.png@f9941",
+    "value": {
+      "depends": [
+        "0cc07904-5bd1-4461-8827-7ad8ee1b2339@6c48a"
+      ]
+    }
+  },
+  "385f185a-8a74-4eaa-96e9-54ca23473de4": {
+    "url": "db://assets/resources/prefab/Tip.prefab",
+    "value": {
+      "depends": [
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941"
+      ],
+      "dependScripts": []
+    }
+  },
+  "aa0cf0ef-9cf2-403f-b7ae-0a72b76f5dac": {
+    "url": "db://assets/resources/prefab/ErrTip.prefab",
+    "value": {
+      "depends": [
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941"
+      ],
+      "dependScripts": [
+        "14329466-e705-49aa-be6f-bb7f707ebc7d"
+      ]
+    }
+  },
+  "14329466-e705-49aa-be6f-bb7f707ebc7d": {
+    "url": "db://assets/scripts/ui/TipMgr.ts",
+    "value": {}
+  },
+  "35e32523-6dab-4da9-b361-623c6401e9ea": {
+    "url": "db://assets/scripts/ui/InputMgr.ts",
+    "value": {}
   }
 }

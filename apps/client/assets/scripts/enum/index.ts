@@ -1,3 +1,8 @@
+
+export enum TipEnum{
+  ErrTip = 'ErrTip',
+}
+
 export enum FsmParamTypeEnum {
   Number = 'Number',
   Trigger = 'Trigger',
@@ -29,6 +34,7 @@ export enum EventEnum {
 
 export enum PrefabPathEnum {
   Room = 'prefab/Room',
+  ErrTip = 'prefab/ErrTip',
   // Map1 = 'prefab/Map1',
   // Actor1 = 'prefab/Actor',
   // Actor2 = 'prefab/Actor',

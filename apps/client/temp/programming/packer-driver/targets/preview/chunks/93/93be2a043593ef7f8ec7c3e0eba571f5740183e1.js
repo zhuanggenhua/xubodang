@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, FsmParamTypeEnum, ParamsNameEnum, EntityStateEnum, EventEnum, PrefabPathEnum, TexturePathEnum, SceneEnum;
+  var _cclegacy, _crd, TipEnum, FsmParamTypeEnum, ParamsNameEnum, EntityStateEnum, EventEnum, PrefabPathEnum, TexturePathEnum, SceneEnum;
 
   return {
     setters: [function (_cc) {
@@ -11,6 +11,11 @@ System.register(["cc"], function (_export, _context) {
       _crd = true;
 
       _cclegacy._RF.push({}, "7835c9GOF5CGJyNze/EzX72", "index", undefined);
+
+      _export("TipEnum", TipEnum = /*#__PURE__*/function (TipEnum) {
+        TipEnum["ErrTip"] = "ErrTip";
+        return TipEnum;
+      }({}));
 
       _export("FsmParamTypeEnum", FsmParamTypeEnum = /*#__PURE__*/function (FsmParamTypeEnum) {
         FsmParamTypeEnum["Number"] = "Number";
@@ -47,6 +52,7 @@ System.register(["cc"], function (_export, _context) {
 
       _export("PrefabPathEnum", PrefabPathEnum = /*#__PURE__*/function (PrefabPathEnum) {
         PrefabPathEnum["Room"] = "prefab/Room";
+        PrefabPathEnum["ErrTip"] = "prefab/ErrTip";
         return PrefabPathEnum;
       }({}));
 

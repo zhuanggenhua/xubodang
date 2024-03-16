@@ -25,8 +25,6 @@ export class HallUiMgr extends Component {
   @property(Node)
   createHome: Node = null
 
-  
-
   activeSelect: Node = null
   oldSelectChild: Node = null
 
@@ -61,6 +59,14 @@ export class HallUiMgr extends Component {
   }
   // 点击创建房间按钮
   handlerCreateRoomClick(event: EventTouch) {
+    // 给房间名一个初始值
+    const roomNameEdit = this.createHome
+      .getChildByName('ModalBox')
+      .getChildByName('RoomName')
+      .getChildByName('EditBox')
+      .getComponent(EditBox)
+    if (roomNameEdit.string == '') roomNameEdit.string = '房间' + Math.floor(1000 + Math.random() * 9000)
+
     if (!this.createHome.active) {
       // 打开创建房间模态框
       this.createHome.active = true
@@ -76,6 +82,7 @@ export class HallUiMgr extends Component {
         .to(0.1, { scale: v3(1, 1, 1) })
         .start()
     } else {
+      // 关闭模态框
       const modalBox = this.createHome.getChildByName('ModalBox')
       const opacity = modalBox.getComponent(UIOpacity)
       tween(opacity).to(0.1, { opacity: 0 }).start()

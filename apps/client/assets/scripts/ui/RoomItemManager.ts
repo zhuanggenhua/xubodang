@@ -40,9 +40,13 @@ export class RoomItemManager extends Component {
         stateFrame.spriteFrame = this.twoFrame
       }
     }
-    // const label = this.getComponent(Label);
-    // label.string = `房间id:${id},当前人数:${players.length}`;
-    // this.node.active = true;
+
+    this.node.getChildByName('RoomName').getComponent(Label).string = roomName
+    this.node.getChildByName('Life').getComponent(Label).string = life
+    this.node.getChildByName('Mode').getComponent(Label).string = mode
+
+
+    this.node.active = true;
   }
 
   handleClick() {
