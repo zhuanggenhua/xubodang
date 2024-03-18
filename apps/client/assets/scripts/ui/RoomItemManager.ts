@@ -1,7 +1,11 @@
 import { _decorator, Component, Node, Label, Widget, tween, Sprite, SpriteFrame } from 'cc'
 import { EventEnum } from '../enum'
 import EventManager from '../global/EventManager'
-import { RoomMode } from '../common'
+import { ApiFunc, RoomMode } from '../common'
+import NetworkManager from '../global/NetworkManager'
+import DataManager from '../global/DataManager'
+import { createErrorTip } from '../utils'
+import { HallUiMgr } from './HallUiMgr'
 const { ccclass, property } = _decorator
 
 @ccclass('RoomItemManager')
@@ -19,7 +23,6 @@ export class RoomItemManager extends Component {
   @property(SpriteFrame)
   twoFrame: SpriteFrame = null
 
-
   isActive: boolean = false
 
   init({ id, roomName, life, mode, hasPwd, players }) {
@@ -31,12 +34,12 @@ export class RoomItemManager extends Component {
 
     // 设置状态
     const stateFrame = this.node.getChildByName('State').getComponent(Sprite)
-    if(hasPwd){
+    if (hasPwd) {
       stateFrame.spriteFrame = this.lockFrame
-    }else{
-      if(players.length == 1){
+    } else {
+      if (players.length == 1) {
         stateFrame.spriteFrame = this.oneFrame
-      }else if(players.length == 2){
+      } else if (players.length == 2) {
         stateFrame.spriteFrame = this.twoFrame
       }
     }
@@ -45,8 +48,7 @@ export class RoomItemManager extends Component {
     this.node.getChildByName('Life').getComponent(Label).string = life
     this.node.getChildByName('Mode').getComponent(Label).string = mode
 
-
-    this.node.active = true;
+    this.node.active = true
   }
 
   handleClick() {
@@ -57,7 +59,17 @@ export class RoomItemManager extends Component {
       item.getComponent(RoomItemManager).offCheck()
     }
     if (this.isActive) {
+      // 输入密码
+      if(this.hasPwd){
+        DataManager.Instance.stage.getComponent(HallUiMgr).nowRid = this.id
+        DataManager.Instance.stage.getChildByName('InputPwd').active = true
+        return
+      }
       // 进入房间
+      EventManager.Instance.emit(EventEnum.RoomJoin, {
+        rid: this.id,
+        pwd: '',
+      })
     } else {
       // 选中状态
       this.isActive = true

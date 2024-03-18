@@ -6,6 +6,7 @@ import NetworkManager from '../global/NetworkManager'
 import { ApiFunc, IRoom } from '../common'
 import { RoomItemManager } from '../ui/RoomItemManager'
 import { ResourceManager } from '../global/ResourceManager'
+import { createErrorTip } from '../utils'
 
 const { ccclass, property } = _decorator
 
@@ -18,12 +19,12 @@ export class HallManager extends Component {
   roomPrefab: Prefab = null
 
   onLoad() {
-    // director.preloadScene(SceneEnum.Battle);
+    // director.preloadScene(SceneEnum.CheckActor);
     EventManager.Instance.on(EventEnum.RoomCreate, this.handleCreateRoom, this)
     EventManager.Instance.on(EventEnum.RoomJoin, this.handleJoinRoom, this)
     // 接收房间广播
     NetworkManager.Instance.listenMsg(ApiFunc.RoomList, this.renderRooms, this)
-    
+
     // screen.requestFullScreen() //全屏
     this.loadRes()
   }
@@ -60,7 +61,7 @@ export class HallManager extends Component {
 
   renderRooms = ({ rooms }) => {
     // 暂无数据
-    if(rooms.length == 0){
+    if (rooms.length == 0) {
       return
     }
 
@@ -86,16 +87,17 @@ export class HallManager extends Component {
     console.log('room', res)
 
     DataManager.Instance.roomInfo = res.room
-    // director.loadScene(SceneEnum.Room);
+    // director.loadScene(SceneEnum.CheckActor);
   }
 
-  async handleJoinRoom(rid: number) {
-    // const { success, res, error } = await NetworkManager.Instance.callApi(ApiMsgEnum.ApiRoomJoin, { rid });
-    // if (!success) {
-    //   console.log(error);
-    //   return;
-    // }
-    // DataManager.Instance.roomInfo = res.room;
-    // director.loadScene(SceneEnum.Room);
+  async handleJoinRoom(data) {
+    const res = await NetworkManager.Instance.callApi(ApiFunc.ApiRoomJoin, data)
+    
+    if (res.error === '') {
+      console.log('进入房间')
+      DataManager.Instance.roomInfo = res.room
+    } else {
+      createErrorTip(res.error)
+    }
   }
 }

@@ -64,5 +64,6 @@ export enum TexturePathEnum {}
 export enum SceneEnum {
   Home = 'Home',
   Loading = 'Loading',
+  CheckActor = 'CheckActor',
   Battle = 'Battle',
 }

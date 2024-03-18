@@ -25,7 +25,7 @@ export default class DataManager extends Singleton {
   }
 
 
-  myPlayerId: number = 1
+  playerId: number = -1
   roomInfo: IRoom
 
   stage: Node = director.getScene().getChildByName('Canvas')

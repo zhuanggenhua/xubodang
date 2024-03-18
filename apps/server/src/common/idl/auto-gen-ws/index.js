@@ -106,6 +106,14 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
           }
         }
       },
+      MsgRoom: {
+        fields: {
+          room: {
+            type: "IRoom",
+            id: 1
+          }
+        }
+      },
       RoomCreateReq: {
         fields: {
           roomName: {
@@ -144,6 +152,40 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
       },
       RoomListByNameRes: {
         fields: {}
+      },
+      ApiRoomJoinReq: {
+        oneofs: {
+          _pwd: {
+            oneof: [
+              "pwd"
+            ]
+          }
+        },
+        fields: {
+          rid: {
+            type: "int32",
+            id: 1
+          },
+          pwd: {
+            type: "string",
+            id: 2,
+            options: {
+              proto3_optional: true
+            }
+          }
+        }
+      },
+      ApiRoomJoinRes: {
+        fields: {
+          room: {
+            type: "IRoom",
+            id: 1
+          },
+          error: {
+            type: "string",
+            id: 2
+          }
+        }
       },
       EnterGameReq: {
         fields: {

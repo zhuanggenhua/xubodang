@@ -93,13 +93,17 @@ export default class NetworkManager extends Singleton {
         let player = sys.localStorage.getItem('player')
         player = JSON.parse(player)
         if (player && player.id !== '') {
+          DataManager.Instance.playerId = player.id
           // 登录
           NetworkManager.Instance.callApi(ApiFunc.login, { player })
         } else {
           // 注册
           let { player } = await NetworkManager.Instance.callApi(ApiFunc.signIn)
           console.log('player', player)
-          if (player.id) sys.localStorage.setItem('player', JSON.stringify(player))
+          if (player.id) {
+            DataManager.Instance.playerId = player.id
+            sys.localStorage.setItem('player', JSON.stringify(player))
+          }
         }
       }
       this.ws.onclose = () => {
@@ -156,7 +160,7 @@ export default class NetworkManager extends Singleton {
       await this.connectServer()
     } else {
       destroyTip()
-      console.log("服务连接成功！");
+      console.log('服务连接成功！')
       this.connected = false
     }
   }

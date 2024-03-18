@@ -82,10 +82,37 @@ export class GameManager extends Singleton {
     })
 
     server.setApi(ApiFunc.RoomListByName, (connection: Connection, data) => {
-      // console.log('??', data);
       connection.sendMsg(ApiFunc.RoomList, {
         rooms: RoomManager.Instance.getRoomsView().filter((room) => room.roomName.includes(data.roomName)),
       })
+    })
+    server.setApi(ApiFunc.ApiRoomJoin, (connection: Connection, data) => {
+      const { rid, pwd } = data
+      if(pwd && pwd !== ''){
+        if(pwd !== RoomManager.Instance.getRoomById(rid).pwd){
+          return {
+            room: null,
+            error: '密码错误'
+          }
+        }
+      }
+
+      const room = RoomManager.Instance.joinRoom(rid, connection.playerId)
+      if (room) {
+        // 这是给房间外的人发送的
+        RoomManager.Instance.syncRooms()
+        // 同步房间内玩家的 房间信息
+        RoomManager.Instance.syncRoom(room.id)
+        return {
+          room: RoomManager.Instance.getRoomView(room),
+          error: ''
+        }
+      } else {
+        return {
+          room: null,
+          error: '房间不存在'
+        }
+      }
     })
   }
 }

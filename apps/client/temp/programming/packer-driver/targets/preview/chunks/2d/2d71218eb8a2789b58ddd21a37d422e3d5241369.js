@@ -49,7 +49,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       }), Singleton) : Singleton) {
         constructor() {
           super(...arguments);
-          this.myPlayerId = 1;
+          this.playerId = -1;
           this.roomInfo = void 0;
           this.stage = director.getScene().getChildByName('Canvas');
           // actorMap: Map<number, ActorManager> = new Map();

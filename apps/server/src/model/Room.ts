@@ -47,9 +47,9 @@ export default class Room {
 
   sync() {
     for (const player of this.players) {
-      // player.connection.sendMsg(ApiMsgEnum.MsgRoom, {
-      //   room: RoomManager.Instance.getRoomView(this),
-      // });
+      player.connection.sendMsg(ApiFunc.MsgRoom, {
+        room: RoomManager.Instance.getRoomView(this),
+      });
     }
   }
 

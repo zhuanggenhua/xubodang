@@ -36,6 +36,9 @@ message IRoom {
 message RoomList {  
   repeated IRoom rooms = 1;
 }
+message MsgRoom {  
+  IRoom room = 1;
+}
 message RoomCreateReq {
   string roomName = 1;
   string pwd = 2;
@@ -49,6 +52,14 @@ message RoomListByNameReq {
   string roomName = 1;
 }
 message RoomListByNameRes {
+}
+message ApiRoomJoinReq {
+  int32 rid = 1;
+  optional string pwd = 2;
+}
+message ApiRoomJoinRes {
+  IRoom room = 1;
+  string error = 2;
 }
 
 // 进入游戏

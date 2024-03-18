@@ -64,7 +64,7 @@
       "uuid": "ed377966-fc0e-45dc-81ce-c5219e0d7666"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene": {
-      "time": 1710410214684.963,
+      "time": 1710593206529.7896,
       "uuid": "2433da3a-de7f-4712-80a0-c1ba36c72aff"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils": {
@@ -72,11 +72,11 @@
       "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts": {
-      "time": 1710580220823.079,
+      "time": 1710593540495.7502,
       "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts": {
-      "time": 1710576179953.1836,
+      "time": 1710591784578.0615,
       "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts": {
@@ -268,7 +268,7 @@
       "uuid": "04945ddd-ca73-4151-874b-7e23c8f0428f"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg": {
-      "time": 1710300064980.7559,
+      "time": 1710594418054.9126,
       "uuid": "bc54d86d-e9ba-43db-8ec9-b496b780bb7f"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff": {
@@ -670,7 +670,7 @@
       "uuid": "a08ae65a-6792-4789-8115-30ebc55c2955"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\NetworkManager.ts": {
-      "time": 1710581738791.1758,
+      "time": 1710591884212.855,
       "uuid": "1222ee1c-ab60-41f0-a33b-d2da10206e33"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\King.png.meta": {
@@ -691,7 +691,7 @@
       "time": 1709949558427.76
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\Hall.scene": {
-      "time": 1710590797977.564,
+      "time": 1710765347503.8447,
       "uuid": "75992987-f6bf-4bf5-8d26-682c9a607889"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\Back.png.meta": {
@@ -729,13 +729,6 @@
       "time": 1709968985607.5786,
       "uuid": "f5506ebb-64dc-48fc-9226-3ab7686b31ad"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\选中心率 背景框 (1).png.meta": {
-      "time": 1710574643927.9146
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\选中心率 背景框 (1).png": {
-      "time": 1709969150905.8726,
-      "uuid": "40585002-09fa-4c6f-bd8d-62af3c540bbb"
-    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\skimmer-hat (1).png.meta": {
       "time": 1709969532509.8992
     },
@@ -747,7 +740,7 @@
       "time": 1710233153066.2756
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons": {
-      "time": 1710557193057.9646,
+      "time": 1710594580654.7336,
       "uuid": "47ca18a7-18e3-4efd-9479-a8ec07ae7c0a"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\100x40 (1).png.meta": {
@@ -782,7 +775,7 @@
       "time": 1710313008825.6504
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\HallUiMgr.ts": {
-      "time": 1710590593066.4937,
+      "time": 1710764506764.626,
       "uuid": "1b03f5f7-11be-44bc-aa1c-c3f1985157fc"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\便签bg.png.meta": {
@@ -797,7 +790,7 @@
       "uuid": "22db3526-5b22-4a1f-b602-ae781d34f362"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js": {
-      "time": 1710589950256.1604,
+      "time": 1710764456665.5342,
       "uuid": "fdc305cc-78c1-4b12-ba25-4cc694adda9a"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common.meta": {
@@ -827,7 +820,7 @@
       "uuid": "99796cb7-a9ce-4209-a431-5aa528b02be7"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts": {
-      "time": 1710589839375.6582,
+      "time": 1710592941381.9253,
       "uuid": "f74babdf-59df-477d-ae39-c717f50cd3ae"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts": {
@@ -846,14 +839,14 @@
       "time": 1710410214687.9558
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HallManager.ts": {
-      "time": 1710590917729.1416,
+      "time": 1710764794158.6292,
       "uuid": "121926aa-ba72-4cfd-a113-fe8350879f4d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\RoomItemManager.ts.meta": {
       "time": 1710417784575.9568
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\RoomItemManager.ts": {
-      "time": 1710590787829.298,
+      "time": 1710764664186.824,
       "uuid": "46f7c716-41a2-4925-b5c5-d9cf54a03a41"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab.meta": {
@@ -930,8 +923,36 @@
       "time": 1710582871267.2317
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\InputMgr.ts": {
-      "time": 1710590390046.9475,
+      "time": 1710595213191.3733,
       "uuid": "35e32523-6dab-4da9-b361-623c6401e9ea"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\CheckActor.ts.meta": {
+      "time": 1710593206532.2922
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\CheckActor.ts": {
+      "time": 1710593305343.83,
+      "uuid": "32496e82-c1a6-455e-b552-0404d3ec291d"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\kuang.png.meta": {
+      "time": 1710594418084.2563
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\kuang.png": {
+      "time": 1709969150905.8726,
+      "uuid": "40585002-09fa-4c6f-bd8d-62af3c540bbb"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\框选.png.meta": {
+      "time": 1710594572489.3882
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\框选.png": {
+      "time": 1710594570110.7698,
+      "uuid": "b149802e-a417-442e-8b39-1a020bf07850"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\边框.png.meta": {
+      "time": 1710594580680.4224
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\边框.png": {
+      "time": 1710594576880.836,
+      "uuid": "3787b018-f93c-4c2b-961e-ef30739e275e"
     }
   },
   "missing": {
@@ -1484,6 +1505,11 @@
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Tip-001.prefab",
       "time": 1710576828237.1233,
       "removeTime": 1710576840580
+    },
+    "40585002-09fa-4c6f-bd8d-62af3c540bbb": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\选中心率 背景框 (1).png",
+      "time": 1709969150905.8726,
+      "removeTime": 1710594418056
     }
   }
 }

@@ -68,8 +68,6 @@ export default class RoomManager extends Singleton {
   }
 
   getRoomsView(rooms: Set<Room> = this.rooms) {
-    console.log('??',this.rooms);
-    
     return [...rooms].map((room) => this.getRoomView(room))
   }
 

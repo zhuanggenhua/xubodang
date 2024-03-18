@@ -60,14 +60,20 @@ export enum ApiFunc {
   leaveReplication,
   RoomCreate,
   RoomListByName,
+  ApiRoomJoin,
   gap = 100,
   // 从100继续，这是api和msg的分界线
   inputFromClient,
   stateFromServer,
   RoomList,
+  MsgRoom,
 }
 
 export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.ApiRoomJoin]: {
+    req: 'game.ApiRoomJoinReq',
+    res: 'game.ApiRoomJoinRes',
+  },
   [ApiFunc.RoomListByName]: {
     req: 'game.RoomListByNameReq',
     res: 'game.RoomListByNameRes',
@@ -116,6 +122,7 @@ export const ProtoPathEnum: Record<ApiFunc, any> = {
   [ApiFunc.inputFromClient]: 'game.InputFromClient',
   [ApiFunc.stateFromServer]: 'game.StateFromServer',
   [ApiFunc.RoomList]: 'game.RoomList',
+  [ApiFunc.MsgRoom]: 'game.MsgRoom',
 }
 
 export enum ServerIdEnum {

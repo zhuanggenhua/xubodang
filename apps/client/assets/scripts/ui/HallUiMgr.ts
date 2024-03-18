@@ -28,6 +28,15 @@ export class HallUiMgr extends Component {
   activeSelect: Node = null
   oldSelectChild: Node = null
 
+  nowRid: number
+
+  handlerRoomJoin(event: EventTouch) {
+    const pwd = event.target.parent.getChildByName('Pwd').getChildByName('EditBox').getComponent(EditBox).string
+    EventManager.Instance.emit(EventEnum.RoomJoin, {
+      rid: this.nowRid,
+      pwd,
+    })
+  }
   // 创建房间
   handlerRoomCreate(event: EventTouch) {
     const modalBox = this.createHome.getChildByName('ModalBox')

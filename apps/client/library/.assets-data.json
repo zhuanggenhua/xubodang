@@ -1313,6 +1313,7 @@
         "cfbd2237-6100-43b3-b9df-9eee48d1df7a@f9941",
         "1aa06443-c987-4ccc-b87d-0fecd5c5649e@f9941",
         "89c9a869-8ab7-4712-8d60-e055b44f1b8e@f9941",
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941",
         "5d295644-b8e4-4a91-92af-7afa1f5fa507"
       ],
       "dependScripts": [
@@ -1476,13 +1477,13 @@
     }
   },
   "40585002-09fa-4c6f-bd8d-62af3c540bbb": {
-    "url": "db://assets/resources/ui/bg/选中心率 背景框 (1).png",
+    "url": "db://assets/resources/ui/bg/kuang.png",
     "value": {
       "depends": []
     }
   },
   "40585002-09fa-4c6f-bd8d-62af3c540bbb@6c48a": {
-    "url": "db://assets/resources/ui/bg/选中心率 背景框 (1).png@6c48a",
+    "url": "db://assets/resources/ui/bg/kuang.png@6c48a",
     "value": {
       "depends": [
         "40585002-09fa-4c6f-bd8d-62af3c540bbb"
@@ -1490,7 +1491,7 @@
     }
   },
   "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941": {
-    "url": "db://assets/resources/ui/bg/选中心率 背景框 (1).png@f9941",
+    "url": "db://assets/resources/ui/bg/kuang.png@f9941",
     "value": {
       "depends": [
         "40585002-09fa-4c6f-bd8d-62af3c540bbb@6c48a"
@@ -2709,5 +2710,53 @@
   "35e32523-6dab-4da9-b361-623c6401e9ea": {
     "url": "db://assets/scripts/ui/InputMgr.ts",
     "value": {}
+  },
+  "32496e82-c1a6-455e-b552-0404d3ec291d": {
+    "url": "db://assets/scripts/scene/CheckActor.ts",
+    "value": {}
+  },
+  "b149802e-a417-442e-8b39-1a020bf07850": {
+    "url": "db://assets/resources/ui/icons/框选.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b149802e-a417-442e-8b39-1a020bf07850@6c48a": {
+    "url": "db://assets/resources/ui/icons/框选.png@6c48a",
+    "value": {
+      "depends": [
+        "b149802e-a417-442e-8b39-1a020bf07850"
+      ]
+    }
+  },
+  "b149802e-a417-442e-8b39-1a020bf07850@f9941": {
+    "url": "db://assets/resources/ui/icons/框选.png@f9941",
+    "value": {
+      "depends": [
+        "b149802e-a417-442e-8b39-1a020bf07850@6c48a"
+      ]
+    }
+  },
+  "3787b018-f93c-4c2b-961e-ef30739e275e": {
+    "url": "db://assets/resources/ui/icons/边框.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "3787b018-f93c-4c2b-961e-ef30739e275e@6c48a": {
+    "url": "db://assets/resources/ui/icons/边框.png@6c48a",
+    "value": {
+      "depends": [
+        "3787b018-f93c-4c2b-961e-ef30739e275e"
+      ]
+    }
+  },
+  "3787b018-f93c-4c2b-961e-ef30739e275e@f9941": {
+    "url": "db://assets/resources/ui/icons/边框.png@f9941",
+    "value": {
+      "depends": [
+        "3787b018-f93c-4c2b-961e-ef30739e275e@6c48a"
+      ]
+    }
   }
 }
