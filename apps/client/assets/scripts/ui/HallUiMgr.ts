@@ -86,9 +86,9 @@ export class HallUiMgr extends Component {
 
       tween(opacity).to(0.1, { opacity: 255 }).start()
       // z轴必须是1，不然无法点击
-      modalBox.setScale(0.2, 0.2, 1)
+      modalBox.setScale(0.1, 0.1, 0.1)
       tween(modalBox)
-        .to(0.1, { scale: v3(1, 1, 1) })
+        .to(0.2, { scale: v3(1, 1, 1) })
         .start()
     } else {
       // 关闭模态框
@@ -96,7 +96,7 @@ export class HallUiMgr extends Component {
       const opacity = modalBox.getComponent(UIOpacity)
       tween(opacity).to(0.1, { opacity: 0 }).start()
       tween(modalBox)
-        .to(0.1, { scale: v3(0.2, 0.2, 1) })
+        .to(0.2, { scale: v3(0.1, 0.1, 0.1) })
         .call(() => {
           this.createHome.active = false
         })

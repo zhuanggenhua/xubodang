@@ -198,9 +198,7 @@
   },
   "4726ac32-4674-47b3-b461-a34a593c7dc6": {
     "url": "db://assets/resources/ui/bg/battle.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "932cc238-eac0-4574-8c88-bee53f157427": {
     "url": "db://assets/resources/ui/bg/big screen - options.png",
@@ -760,9 +758,7 @@
   },
   "6f9a00bc-e103-47d8-89e9-114cf73ce73f": {
     "url": "db://assets/resources/ui/lock/lock1.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "43321085-61d6-4a44-8ab5-7d8e7a5193db@f9941": {
     "url": "db://assets/resources/ui/input/grey_item.png@f9941",
@@ -774,9 +770,7 @@
   },
   "cdf6b3ec-ce18-4546-b29b-9158db51702c": {
     "url": "db://assets/resources/ui/lock/lock2.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "34945a07-c0d8-48fc-b574-ffc91de5376b@6c48a": {
     "url": "db://assets/resources/ui/input/grey_item_bold.png@6c48a",
@@ -796,9 +790,7 @@
   },
   "64a21c9e-0480-406f-b8cf-fc89b09b0773": {
     "url": "db://assets/resources/ui/lock/lock3.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "adb06f1e-0fe8-49f1-83ea-74e7920aac68@f9941": {
     "url": "db://assets/resources/ui/input/black_item_bold.png@f9941",
@@ -810,9 +802,7 @@
   },
   "c7834226-d663-4217-9e8c-819b82d4c843": {
     "url": "db://assets/resources/ui/lock/lock4.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "34945a07-c0d8-48fc-b574-ffc91de5376b@f9941": {
     "url": "db://assets/resources/ui/input/grey_item_bold.png@f9941",
@@ -824,9 +814,7 @@
   },
   "737a5c23-eac0-41e7-9cbf-8f1adb4211d6": {
     "url": "db://assets/resources/ui/lock/lock5.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "6f9a00bc-e103-47d8-89e9-114cf73ce73f@6c48a": {
     "url": "db://assets/resources/ui/lock/lock1.png@6c48a",
@@ -862,9 +850,7 @@
   },
   "1e5ec892-2417-42c0-a786-7c3da1b3d5fd": {
     "url": "db://assets/resources/ui/pop/inventory.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "64a21c9e-0480-406f-b8cf-fc89b09b0773@6c48a": {
     "url": "db://assets/resources/ui/lock/lock3.png@6c48a",
@@ -884,9 +870,7 @@
   },
   "83b823ca-5e48-4d7f-abd9-194c4473c487": {
     "url": "db://assets/resources/ui/pop/pop.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "c7834226-d663-4217-9e8c-819b82d4c843@f9941": {
     "url": "db://assets/resources/ui/lock/lock4.png@f9941",
@@ -1078,7 +1062,7 @@
         "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
         "b528a18f-2c70-4d7f-9adf-dbcea17aeec6@f9941",
         "6f38db2f-6017-4383-b358-2b419479dd2a@f9941",
-        "54f97c7f-f27c-4408-b246-9a4c23c0690a@f9941",
+        "7bb366fe-1ec9-4743-af41-52268ecd3f25@f9941",
         "06c6e70b-b80d-48f7-842f-7b364f0c399e@f9941"
       ],
       "dependScripts": [
@@ -1254,9 +1238,7 @@
   },
   "54f97c7f-f27c-4408-b246-9a4c23c0690a": {
     "url": "db://assets/resources/ui/button/King.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "54f97c7f-f27c-4408-b246-9a4c23c0690a@6c48a": {
     "url": "db://assets/resources/ui/button/King.png@6c48a",
@@ -1312,6 +1294,7 @@
         "b730527c-3233-41c2-aaf7-7cdab58f9749@f9941",
         "cfbd2237-6100-43b3-b9df-9eee48d1df7a@f9941",
         "1aa06443-c987-4ccc-b87d-0fecd5c5649e@f9941",
+        "a1fddd44-aafd-48ed-a27e-dbb544847a1d@f9941",
         "89c9a869-8ab7-4712-8d60-e055b44f1b8e@f9941",
         "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941",
         "5d295644-b8e4-4a91-92af-7afa1f5fa507"
@@ -1392,27 +1375,26 @@
     "value": {
       "depends": [
         "6843d3d0-cffe-4c2e-bb86-df96e22f8bed",
-        "514514e9-0d4c-4b2c-a359-3274dca0b277@f9941",
-        "4726ac32-4674-47b3-b461-a34a593c7dc6@f9941"
+        "24a704da-2867-446d-8d1a-5e920c75e09d@f9941",
+        "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
+        "b5ae898a-ad62-47f0-acdc-3f51927ad36f@f9941",
+        "bf432935-bdea-487e-90d1-302afb608ed0@f9941",
+        "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "3715fa97-df60-42d2-83ff-2a08ed09313d@f9941",
+        "01126b53-29e9-4e3c-8034-3677fb132be3@f9941",
+        "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941",
+        "dcc13f21-cddc-4e35-92c5-37edc836acd1@f9941",
+        "75253da2-ea7a-4d6b-be58-835dd1227be4@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "34e62257-5095-45f6-bbba-1d505ec2e650"
+      ]
     }
   },
   "2e905287-988b-4bcf-a2ef-b7afd6f8ec02": {
     "url": "db://assets/scene/Battle2.scene",
-    "value": {
-      "depends": [
-        "2e905287-988b-4bcf-a2ef-b7afd6f8ec02",
-        "28afcd3b-a58c-4f4a-96ac-419d28c2f910@f9941",
-        "f5506ebb-64dc-48fc-9226-3ab7686b31ad@f9941",
-        "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200@f9941",
-        "39aea5e2-e0bb-49ad-a3df-aabfe52f0101@f9941",
-        "8d878745-a8d6-4b52-847c-e488466d38cc@f9941",
-        "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941",
-        "932cc238-eac0-4574-8c88-bee53f157427@f9941"
-      ],
-      "dependScripts": []
-    }
+    "value": {}
   },
   "1c1de5fe-5665-4281-b71e-59ccdf9b690b": {
     "url": "db://assets/resources/ui/bg/选中心率 背景框.png",
@@ -1560,9 +1542,7 @@
   },
   "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200": {
     "url": "db://assets/resources/ui/bg/skimmer-hat (1).png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "40bfd4d9-b0c7-4b8c-90fd-d6ce8a4be200@6c48a": {
     "url": "db://assets/resources/ui/bg/skimmer-hat (1).png@6c48a",
@@ -2149,13 +2129,13 @@
     }
   },
   "b5ae898a-ad62-47f0-acdc-3f51927ad36f": {
-    "url": "db://assets/resources/ui/icons/100x40 (1).png",
+    "url": "db://assets/resources/ui/icons/round.png",
     "value": {
       "depends": []
     }
   },
   "b5ae898a-ad62-47f0-acdc-3f51927ad36f@6c48a": {
-    "url": "db://assets/resources/ui/icons/100x40 (1).png@6c48a",
+    "url": "db://assets/resources/ui/icons/round.png@6c48a",
     "value": {
       "depends": [
         "b5ae898a-ad62-47f0-acdc-3f51927ad36f"
@@ -2163,7 +2143,7 @@
     }
   },
   "b5ae898a-ad62-47f0-acdc-3f51927ad36f@f9941": {
-    "url": "db://assets/resources/ui/icons/100x40 (1).png@f9941",
+    "url": "db://assets/resources/ui/icons/round.png@f9941",
     "value": {
       "depends": [
         "b5ae898a-ad62-47f0-acdc-3f51927ad36f@6c48a"
@@ -2171,13 +2151,13 @@
     }
   },
   "cfbd2237-6100-43b3-b9df-9eee48d1df7a": {
-    "url": "db://assets/resources/ui/bg/页面 1 (19).png",
+    "url": "db://assets/resources/ui/bg/RoomList.png",
     "value": {
       "depends": []
     }
   },
   "cfbd2237-6100-43b3-b9df-9eee48d1df7a@6c48a": {
-    "url": "db://assets/resources/ui/bg/页面 1 (19).png@6c48a",
+    "url": "db://assets/resources/ui/bg/RoomList.png@6c48a",
     "value": {
       "depends": [
         "cfbd2237-6100-43b3-b9df-9eee48d1df7a"
@@ -2185,7 +2165,7 @@
     }
   },
   "cfbd2237-6100-43b3-b9df-9eee48d1df7a@f9941": {
-    "url": "db://assets/resources/ui/bg/页面 1 (19).png@f9941",
+    "url": "db://assets/resources/ui/bg/RoomList.png@f9941",
     "value": {
       "depends": [
         "cfbd2237-6100-43b3-b9df-9eee48d1df7a@6c48a"
@@ -2717,9 +2697,7 @@
   },
   "b149802e-a417-442e-8b39-1a020bf07850": {
     "url": "db://assets/resources/ui/icons/框选.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "b149802e-a417-442e-8b39-1a020bf07850@6c48a": {
     "url": "db://assets/resources/ui/icons/框选.png@6c48a",
@@ -2739,9 +2717,7 @@
   },
   "3787b018-f93c-4c2b-961e-ef30739e275e": {
     "url": "db://assets/resources/ui/icons/边框.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "3787b018-f93c-4c2b-961e-ef30739e275e@6c48a": {
     "url": "db://assets/resources/ui/icons/边框.png@6c48a",
@@ -2756,6 +2732,1108 @@
     "value": {
       "depends": [
         "3787b018-f93c-4c2b-961e-ef30739e275e@6c48a"
+      ]
+    }
+  },
+  "0d86e69f-235c-4419-b808-8d685d8c1470": {
+    "url": "db://assets/resources/ui/skills",
+    "value": {}
+  },
+  "01126b53-29e9-4e3c-8034-3677fb132be3": {
+    "url": "db://assets/resources/ui/skills/saber-slash.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "01126b53-29e9-4e3c-8034-3677fb132be3@6c48a": {
+    "url": "db://assets/resources/ui/skills/saber-slash.png@6c48a",
+    "value": {
+      "depends": [
+        "01126b53-29e9-4e3c-8034-3677fb132be3"
+      ]
+    }
+  },
+  "01126b53-29e9-4e3c-8034-3677fb132be3@f9941": {
+    "url": "db://assets/resources/ui/skills/saber-slash.png@f9941",
+    "value": {
+      "depends": [
+        "01126b53-29e9-4e3c-8034-3677fb132be3@6c48a"
+      ]
+    }
+  },
+  "961ff2e3-09bc-446f-a2f3-e6c58169736d": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-1.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "961ff2e3-09bc-446f-a2f3-e6c58169736d@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-1.png@6c48a",
+    "value": {
+      "depends": [
+        "961ff2e3-09bc-446f-a2f3-e6c58169736d"
+      ]
+    }
+  },
+  "961ff2e3-09bc-446f-a2f3-e6c58169736d@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-1.png@f9941",
+    "value": {
+      "depends": [
+        "961ff2e3-09bc-446f-a2f3-e6c58169736d@6c48a"
+      ]
+    }
+  },
+  "17567dd8-960b-4f3e-aca7-7e3d0734a043": {
+    "url": "db://assets/resources/ui/icons/count",
+    "value": {}
+  },
+  "f6a17d8b-e8fd-4b10-bb1d-cdb1a2ec9186": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "f6a17d8b-e8fd-4b10-bb1d-cdb1a2ec9186@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-2.png@6c48a",
+    "value": {
+      "depends": [
+        "f6a17d8b-e8fd-4b10-bb1d-cdb1a2ec9186"
+      ]
+    }
+  },
+  "f6a17d8b-e8fd-4b10-bb1d-cdb1a2ec9186@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-2.png@f9941",
+    "value": {
+      "depends": [
+        "f6a17d8b-e8fd-4b10-bb1d-cdb1a2ec9186@6c48a"
+      ]
+    }
+  },
+  "74137e69-629e-4131-ba82-adbb20d97548": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-3.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "74137e69-629e-4131-ba82-adbb20d97548@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-3.png@6c48a",
+    "value": {
+      "depends": [
+        "74137e69-629e-4131-ba82-adbb20d97548"
+      ]
+    }
+  },
+  "74137e69-629e-4131-ba82-adbb20d97548@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-3.png@f9941",
+    "value": {
+      "depends": [
+        "74137e69-629e-4131-ba82-adbb20d97548@6c48a"
+      ]
+    }
+  },
+  "70ef41bb-4513-4137-a182-7e0594d8e21b": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-4.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "70ef41bb-4513-4137-a182-7e0594d8e21b@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-4.png@6c48a",
+    "value": {
+      "depends": [
+        "70ef41bb-4513-4137-a182-7e0594d8e21b"
+      ]
+    }
+  },
+  "70ef41bb-4513-4137-a182-7e0594d8e21b@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-4.png@f9941",
+    "value": {
+      "depends": [
+        "70ef41bb-4513-4137-a182-7e0594d8e21b@6c48a"
+      ]
+    }
+  },
+  "d0fb3feb-6b45-4984-b4ad-b2efaf765bdc": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-5.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "d0fb3feb-6b45-4984-b4ad-b2efaf765bdc@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-5.png@6c48a",
+    "value": {
+      "depends": [
+        "d0fb3feb-6b45-4984-b4ad-b2efaf765bdc"
+      ]
+    }
+  },
+  "d0fb3feb-6b45-4984-b4ad-b2efaf765bdc@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-5.png@f9941",
+    "value": {
+      "depends": [
+        "d0fb3feb-6b45-4984-b4ad-b2efaf765bdc@6c48a"
+      ]
+    }
+  },
+  "fb1afb1d-1631-485b-ae11-9aee412b130a": {
+    "url": "db://assets/resources/ui/skills/ancient-sword.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "fb1afb1d-1631-485b-ae11-9aee412b130a@6c48a": {
+    "url": "db://assets/resources/ui/skills/ancient-sword.png@6c48a",
+    "value": {
+      "depends": [
+        "fb1afb1d-1631-485b-ae11-9aee412b130a"
+      ]
+    }
+  },
+  "fb1afb1d-1631-485b-ae11-9aee412b130a@f9941": {
+    "url": "db://assets/resources/ui/skills/ancient-sword.png@f9941",
+    "value": {
+      "depends": [
+        "fb1afb1d-1631-485b-ae11-9aee412b130a@6c48a"
+      ]
+    }
+  },
+  "df413413-63cf-4167-aa8f-06ec29f911df": {
+    "url": "db://assets/resources/ui/skills/shield/round-shield.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "df413413-63cf-4167-aa8f-06ec29f911df@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/round-shield.png@6c48a",
+    "value": {
+      "depends": [
+        "df413413-63cf-4167-aa8f-06ec29f911df"
+      ]
+    }
+  },
+  "df413413-63cf-4167-aa8f-06ec29f911df@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/round-shield.png@f9941",
+    "value": {
+      "depends": [
+        "df413413-63cf-4167-aa8f-06ec29f911df@6c48a"
+      ]
+    }
+  },
+  "b019e6b1-40ba-4832-9d63-83c24733cfa3": {
+    "url": "db://assets/resources/ui/skills/floor-hatch.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b019e6b1-40ba-4832-9d63-83c24733cfa3@6c48a": {
+    "url": "db://assets/resources/ui/skills/floor-hatch.png@6c48a",
+    "value": {
+      "depends": [
+        "b019e6b1-40ba-4832-9d63-83c24733cfa3"
+      ]
+    }
+  },
+  "b019e6b1-40ba-4832-9d63-83c24733cfa3@f9941": {
+    "url": "db://assets/resources/ui/skills/floor-hatch.png@f9941",
+    "value": {
+      "depends": [
+        "b019e6b1-40ba-4832-9d63-83c24733cfa3@6c48a"
+      ]
+    }
+  },
+  "d49cd7be-aa75-4c15-bd96-d762f929ae6d": {
+    "url": "db://assets/resources/ui/skills/unstable-projectile.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "d49cd7be-aa75-4c15-bd96-d762f929ae6d@6c48a": {
+    "url": "db://assets/resources/ui/skills/unstable-projectile.png@6c48a",
+    "value": {
+      "depends": [
+        "d49cd7be-aa75-4c15-bd96-d762f929ae6d"
+      ]
+    }
+  },
+  "d49cd7be-aa75-4c15-bd96-d762f929ae6d@f9941": {
+    "url": "db://assets/resources/ui/skills/unstable-projectile.png@f9941",
+    "value": {
+      "depends": [
+        "d49cd7be-aa75-4c15-bd96-d762f929ae6d@6c48a"
+      ]
+    }
+  },
+  "dcc13f21-cddc-4e35-92c5-37edc836acd1": {
+    "url": "db://assets/resources/ui/button/fangkuang.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "dcc13f21-cddc-4e35-92c5-37edc836acd1@6c48a": {
+    "url": "db://assets/resources/ui/button/fangkuang.png@6c48a",
+    "value": {
+      "depends": [
+        "dcc13f21-cddc-4e35-92c5-37edc836acd1"
+      ]
+    }
+  },
+  "dcc13f21-cddc-4e35-92c5-37edc836acd1@f9941": {
+    "url": "db://assets/resources/ui/button/fangkuang.png@f9941",
+    "value": {
+      "depends": [
+        "dcc13f21-cddc-4e35-92c5-37edc836acd1@6c48a"
+      ]
+    }
+  },
+  "22072198-61ae-43b8-94c5-8ea1ad40d0ee": {
+    "url": "db://assets/resources/ui/pop/页面 1.png",
+    "value": {}
+  },
+  "22072198-61ae-43b8-94c5-8ea1ad40d0ee@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1.png@6c48a",
+    "value": {
+      "depends": [
+        "22072198-61ae-43b8-94c5-8ea1ad40d0ee"
+      ]
+    }
+  },
+  "22072198-61ae-43b8-94c5-8ea1ad40d0ee@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1.png@f9941",
+    "value": {
+      "depends": [
+        "22072198-61ae-43b8-94c5-8ea1ad40d0ee@6c48a"
+      ]
+    }
+  },
+  "53b03ad8-4b5d-4344-80d6-a2a1fe8a7c9b": {
+    "url": "db://assets/resources/ui/pop/页面 1 (1).png",
+    "value": {}
+  },
+  "53b03ad8-4b5d-4344-80d6-a2a1fe8a7c9b@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "53b03ad8-4b5d-4344-80d6-a2a1fe8a7c9b"
+      ]
+    }
+  },
+  "53b03ad8-4b5d-4344-80d6-a2a1fe8a7c9b@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (1).png@f9941",
+    "value": {
+      "depends": [
+        "53b03ad8-4b5d-4344-80d6-a2a1fe8a7c9b@6c48a"
+      ]
+    }
+  },
+  "18d96332-bb56-42e8-a1f6-e40a694fa466": {
+    "url": "db://assets/resources/ui/pop/页面 1 (2).png",
+    "value": {}
+  },
+  "18d96332-bb56-42e8-a1f6-e40a694fa466@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (2).png@6c48a",
+    "value": {
+      "depends": [
+        "18d96332-bb56-42e8-a1f6-e40a694fa466"
+      ]
+    }
+  },
+  "18d96332-bb56-42e8-a1f6-e40a694fa466@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (2).png@f9941",
+    "value": {
+      "depends": [
+        "18d96332-bb56-42e8-a1f6-e40a694fa466@6c48a"
+      ]
+    }
+  },
+  "9e764aea-e4c0-40cb-84f7-cd57e95ce3da": {
+    "url": "db://assets/resources/ui/pop/页面 1 (3).png",
+    "value": {}
+  },
+  "9e764aea-e4c0-40cb-84f7-cd57e95ce3da@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (3).png@6c48a",
+    "value": {
+      "depends": [
+        "9e764aea-e4c0-40cb-84f7-cd57e95ce3da"
+      ]
+    }
+  },
+  "9e764aea-e4c0-40cb-84f7-cd57e95ce3da@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (3).png@f9941",
+    "value": {
+      "depends": [
+        "9e764aea-e4c0-40cb-84f7-cd57e95ce3da@6c48a"
+      ]
+    }
+  },
+  "03855d27-c94f-403e-af06-b2013bf3cd31": {
+    "url": "db://assets/resources/ui/pop/页面 1 (4).png",
+    "value": {}
+  },
+  "03855d27-c94f-403e-af06-b2013bf3cd31@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (4).png@6c48a",
+    "value": {
+      "depends": [
+        "03855d27-c94f-403e-af06-b2013bf3cd31"
+      ]
+    }
+  },
+  "03855d27-c94f-403e-af06-b2013bf3cd31@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (4).png@f9941",
+    "value": {
+      "depends": [
+        "03855d27-c94f-403e-af06-b2013bf3cd31@6c48a"
+      ]
+    }
+  },
+  "a1fddd44-aafd-48ed-a27e-dbb544847a1d": {
+    "url": "db://assets/resources/ui/pop/页面 1 (5).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "a1fddd44-aafd-48ed-a27e-dbb544847a1d@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (5).png@6c48a",
+    "value": {
+      "depends": [
+        "a1fddd44-aafd-48ed-a27e-dbb544847a1d"
+      ]
+    }
+  },
+  "a1fddd44-aafd-48ed-a27e-dbb544847a1d@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (5).png@f9941",
+    "value": {
+      "depends": [
+        "a1fddd44-aafd-48ed-a27e-dbb544847a1d@6c48a"
+      ]
+    }
+  },
+  "6e2def76-3ef4-4d01-9084-b5eeff1412ac": {
+    "url": "db://assets/resources/ui/sprite/crash.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "6e2def76-3ef4-4d01-9084-b5eeff1412ac@6c48a": {
+    "url": "db://assets/resources/ui/sprite/crash.png@6c48a",
+    "value": {
+      "depends": [
+        "6e2def76-3ef4-4d01-9084-b5eeff1412ac"
+      ]
+    }
+  },
+  "6e2def76-3ef4-4d01-9084-b5eeff1412ac@f9941": {
+    "url": "db://assets/resources/ui/sprite/crash.png@f9941",
+    "value": {
+      "depends": [
+        "6e2def76-3ef4-4d01-9084-b5eeff1412ac@6c48a"
+      ]
+    }
+  },
+  "609bf7c8-a7e2-4df0-b750-f60cadd2e5e0": {
+    "url": "db://assets/resources/ui/sprite/fire.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "609bf7c8-a7e2-4df0-b750-f60cadd2e5e0@6c48a": {
+    "url": "db://assets/resources/ui/sprite/fire.png@6c48a",
+    "value": {
+      "depends": [
+        "609bf7c8-a7e2-4df0-b750-f60cadd2e5e0"
+      ]
+    }
+  },
+  "609bf7c8-a7e2-4df0-b750-f60cadd2e5e0@f9941": {
+    "url": "db://assets/resources/ui/sprite/fire.png@f9941",
+    "value": {
+      "depends": [
+        "609bf7c8-a7e2-4df0-b750-f60cadd2e5e0@6c48a"
+      ]
+    }
+  },
+  "bf432935-bdea-487e-90d1-302afb608ed0": {
+    "url": "db://assets/resources/ui/icons/heart.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "bf432935-bdea-487e-90d1-302afb608ed0@6c48a": {
+    "url": "db://assets/resources/ui/icons/heart.png@6c48a",
+    "value": {
+      "depends": [
+        "bf432935-bdea-487e-90d1-302afb608ed0"
+      ]
+    }
+  },
+  "bf432935-bdea-487e-90d1-302afb608ed0@f9941": {
+    "url": "db://assets/resources/ui/icons/heart.png@f9941",
+    "value": {
+      "depends": [
+        "bf432935-bdea-487e-90d1-302afb608ed0@6c48a"
+      ]
+    }
+  },
+  "f9a17ec5-60ec-46ea-9103-a9e1ac4a149a": {
+    "url": "db://assets/resources/ui/pop/页面 1.png",
+    "value": {}
+  },
+  "f9a17ec5-60ec-46ea-9103-a9e1ac4a149a@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1.png@6c48a",
+    "value": {
+      "depends": [
+        "f9a17ec5-60ec-46ea-9103-a9e1ac4a149a"
+      ]
+    }
+  },
+  "f9a17ec5-60ec-46ea-9103-a9e1ac4a149a@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1.png@f9941",
+    "value": {
+      "depends": [
+        "f9a17ec5-60ec-46ea-9103-a9e1ac4a149a@6c48a"
+      ]
+    }
+  },
+  "d7e0e171-a761-4544-98c9-3d6bccc1a672": {
+    "url": "db://assets/resources/ui/pop/页面 1 (1).png",
+    "value": {}
+  },
+  "d7e0e171-a761-4544-98c9-3d6bccc1a672@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "d7e0e171-a761-4544-98c9-3d6bccc1a672"
+      ]
+    }
+  },
+  "d7e0e171-a761-4544-98c9-3d6bccc1a672@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (1).png@f9941",
+    "value": {
+      "depends": [
+        "d7e0e171-a761-4544-98c9-3d6bccc1a672@6c48a"
+      ]
+    }
+  },
+  "18dbb8bd-3cff-4330-87cd-ca49101d6744": {
+    "url": "db://assets/resources/ui/pop/页面 1 (2).png",
+    "value": {}
+  },
+  "18dbb8bd-3cff-4330-87cd-ca49101d6744@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (2).png@6c48a",
+    "value": {
+      "depends": [
+        "18dbb8bd-3cff-4330-87cd-ca49101d6744"
+      ]
+    }
+  },
+  "18dbb8bd-3cff-4330-87cd-ca49101d6744@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (2).png@f9941",
+    "value": {
+      "depends": [
+        "18dbb8bd-3cff-4330-87cd-ca49101d6744@6c48a"
+      ]
+    }
+  },
+  "e2e2968b-cfc4-457f-9a24-c3e6b4910d88": {
+    "url": "db://assets/resources/ui/pop/页面 1 (3).png",
+    "value": {}
+  },
+  "e2e2968b-cfc4-457f-9a24-c3e6b4910d88@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (3).png@6c48a",
+    "value": {
+      "depends": [
+        "e2e2968b-cfc4-457f-9a24-c3e6b4910d88"
+      ]
+    }
+  },
+  "e2e2968b-cfc4-457f-9a24-c3e6b4910d88@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (3).png@f9941",
+    "value": {
+      "depends": [
+        "e2e2968b-cfc4-457f-9a24-c3e6b4910d88@6c48a"
+      ]
+    }
+  },
+  "3c13b1b6-2e84-4ab7-b0f8-5715d739fa4e": {
+    "url": "db://assets/resources/ui/pop/页面 1 (4).png",
+    "value": {}
+  },
+  "3c13b1b6-2e84-4ab7-b0f8-5715d739fa4e@6c48a": {
+    "url": "db://assets/resources/ui/pop/页面 1 (4).png@6c48a",
+    "value": {
+      "depends": [
+        "3c13b1b6-2e84-4ab7-b0f8-5715d739fa4e"
+      ]
+    }
+  },
+  "3c13b1b6-2e84-4ab7-b0f8-5715d739fa4e@f9941": {
+    "url": "db://assets/resources/ui/pop/页面 1 (4).png@f9941",
+    "value": {
+      "depends": [
+        "3c13b1b6-2e84-4ab7-b0f8-5715d739fa4e@6c48a"
+      ]
+    }
+  },
+  "c9f54ae6-17ae-4527-9ed2-dd8e9aa33c6f": {
+    "url": "db://assets/resources/ui/sprite",
+    "value": {}
+  },
+  "ca5ba6dd-3b23-4a65-b540-6088d5109ad8": {
+    "url": "db://assets/resources/ui/icons/hand",
+    "value": {}
+  },
+  "f705b7dc-b24f-478e-a748-c2cbef51a53b": {
+    "url": "db://assets/resources/ui/icons/hand/back10.png",
+    "value": {}
+  },
+  "f705b7dc-b24f-478e-a748-c2cbef51a53b@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/back10.png@6c48a",
+    "value": {
+      "depends": [
+        "f705b7dc-b24f-478e-a748-c2cbef51a53b"
+      ]
+    }
+  },
+  "f705b7dc-b24f-478e-a748-c2cbef51a53b@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/back10.png@f9941",
+    "value": {
+      "depends": [
+        "f705b7dc-b24f-478e-a748-c2cbef51a53b@6c48a"
+      ]
+    }
+  },
+  "1e4e669b-824b-47a6-933c-b747a6178db4": {
+    "url": "db://assets/resources/ui/bg/battle.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1e4e669b-824b-47a6-933c-b747a6178db4@6c48a": {
+    "url": "db://assets/resources/ui/bg/battle.png@6c48a",
+    "value": {
+      "depends": [
+        "1e4e669b-824b-47a6-933c-b747a6178db4"
+      ]
+    }
+  },
+  "1e4e669b-824b-47a6-933c-b747a6178db4@f9941": {
+    "url": "db://assets/resources/ui/bg/battle.png@f9941",
+    "value": {
+      "depends": [
+        "1e4e669b-824b-47a6-933c-b747a6178db4@6c48a"
+      ]
+    }
+  },
+  "8c1c0523-e050-46b9-b782-ad5d40ac9fdc": {
+    "url": "db://assets/resources/ui/icons/hand/back16-1@2x.png",
+    "value": {}
+  },
+  "8c1c0523-e050-46b9-b782-ad5d40ac9fdc@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/back16-1@2x.png@6c48a",
+    "value": {
+      "depends": [
+        "8c1c0523-e050-46b9-b782-ad5d40ac9fdc"
+      ]
+    }
+  },
+  "8c1c0523-e050-46b9-b782-ad5d40ac9fdc@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/back16-1@2x.png@f9941",
+    "value": {
+      "depends": [
+        "8c1c0523-e050-46b9-b782-ad5d40ac9fdc@6c48a"
+      ]
+    }
+  },
+  "34e62257-5095-45f6-bbba-1d505ec2e650": {
+    "url": "db://assets/scripts/scene/BattleMgr.ts",
+    "value": {}
+  },
+  "809ff708-8f1e-4f56-9c40-488666b7c226": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png",
+    "value": {}
+  },
+  "809ff708-8f1e-4f56-9c40-488666b7c226@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "809ff708-8f1e-4f56-9c40-488666b7c226"
+      ]
+    }
+  },
+  "809ff708-8f1e-4f56-9c40-488666b7c226@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png@f9941",
+    "value": {
+      "depends": [
+        "809ff708-8f1e-4f56-9c40-488666b7c226@6c48a"
+      ]
+    }
+  },
+  "46efc243-a5d3-4a59-becf-e8b604505e87": {
+    "url": "db://assets/resources/ui/icons/hand/palm10@2x.png",
+    "value": {}
+  },
+  "46efc243-a5d3-4a59-becf-e8b604505e87@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/palm10@2x.png@6c48a",
+    "value": {
+      "depends": [
+        "46efc243-a5d3-4a59-becf-e8b604505e87"
+      ]
+    }
+  },
+  "46efc243-a5d3-4a59-becf-e8b604505e87@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/palm10@2x.png@f9941",
+    "value": {
+      "depends": [
+        "46efc243-a5d3-4a59-becf-e8b604505e87@6c48a"
+      ]
+    }
+  },
+  "489b5d79-c0bb-45a0-ad32-88d0c3e1d41b": {
+    "url": "db://assets/resources/ui/icons/hand/palm10.png",
+    "value": {}
+  },
+  "489b5d79-c0bb-45a0-ad32-88d0c3e1d41b@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/palm10.png@6c48a",
+    "value": {
+      "depends": [
+        "489b5d79-c0bb-45a0-ad32-88d0c3e1d41b"
+      ]
+    }
+  },
+  "489b5d79-c0bb-45a0-ad32-88d0c3e1d41b@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/palm10.png@f9941",
+    "value": {
+      "depends": [
+        "489b5d79-c0bb-45a0-ad32-88d0c3e1d41b@6c48a"
+      ]
+    }
+  },
+  "08dce3cc-c7ce-420a-8b7e-38d97753543e": {
+    "url": "db://assets/resources/ui/icons/hand/back14@2x.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "08dce3cc-c7ce-420a-8b7e-38d97753543e@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/back14@2x.png@6c48a",
+    "value": {
+      "depends": [
+        "08dce3cc-c7ce-420a-8b7e-38d97753543e"
+      ]
+    }
+  },
+  "08dce3cc-c7ce-420a-8b7e-38d97753543e@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/back14@2x.png@f9941",
+    "value": {
+      "depends": [
+        "08dce3cc-c7ce-420a-8b7e-38d97753543e@6c48a"
+      ]
+    }
+  },
+  "10eea0f0-0fce-4fb1-b563-c93f358e9c72": {
+    "url": "db://assets/resources/ui/icons/hand/back16@2x.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "10eea0f0-0fce-4fb1-b563-c93f358e9c72@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/back16@2x.png@6c48a",
+    "value": {
+      "depends": [
+        "10eea0f0-0fce-4fb1-b563-c93f358e9c72"
+      ]
+    }
+  },
+  "10eea0f0-0fce-4fb1-b563-c93f358e9c72@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/back16@2x.png@f9941",
+    "value": {
+      "depends": [
+        "10eea0f0-0fce-4fb1-b563-c93f358e9c72@6c48a"
+      ]
+    }
+  },
+  "75253da2-ea7a-4d6b-be58-835dd1227be4": {
+    "url": "db://assets/resources/ui/icons/hand/one.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "75253da2-ea7a-4d6b-be58-835dd1227be4@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/one.png@6c48a",
+    "value": {
+      "depends": [
+        "75253da2-ea7a-4d6b-be58-835dd1227be4"
+      ]
+    }
+  },
+  "75253da2-ea7a-4d6b-be58-835dd1227be4@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/one.png@f9941",
+    "value": {
+      "depends": [
+        "75253da2-ea7a-4d6b-be58-835dd1227be4@6c48a"
+      ]
+    }
+  },
+  "26ea5a01-2a09-444b-b825-05c907b24351": {
+    "url": "db://assets/resources/ui/icons/hand/palm12@2x.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "26ea5a01-2a09-444b-b825-05c907b24351@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/palm12@2x.png@6c48a",
+    "value": {
+      "depends": [
+        "26ea5a01-2a09-444b-b825-05c907b24351"
+      ]
+    }
+  },
+  "26ea5a01-2a09-444b-b825-05c907b24351@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/palm12@2x.png@f9941",
+    "value": {
+      "depends": [
+        "26ea5a01-2a09-444b-b825-05c907b24351@6c48a"
+      ]
+    }
+  },
+  "ef30e4ce-15d4-40b0-af4f-9bb83438153f": {
+    "url": "db://assets/resources/ui/icons/hand/back10@2x.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "ef30e4ce-15d4-40b0-af4f-9bb83438153f@6c48a": {
+    "url": "db://assets/resources/ui/icons/hand/back10@2x.png@6c48a",
+    "value": {
+      "depends": [
+        "ef30e4ce-15d4-40b0-af4f-9bb83438153f"
+      ]
+    }
+  },
+  "ef30e4ce-15d4-40b0-af4f-9bb83438153f@f9941": {
+    "url": "db://assets/resources/ui/icons/hand/back10@2x.png@f9941",
+    "value": {
+      "depends": [
+        "ef30e4ce-15d4-40b0-af4f-9bb83438153f@6c48a"
+      ]
+    }
+  },
+  "45ae566f-ea81-4654-bf48-5a22ac8f5363": {
+    "url": "db://assets/resources/ui/bg/页面 1 (2).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "45ae566f-ea81-4654-bf48-5a22ac8f5363@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (2).png@6c48a",
+    "value": {
+      "depends": [
+        "45ae566f-ea81-4654-bf48-5a22ac8f5363"
+      ]
+    }
+  },
+  "45ae566f-ea81-4654-bf48-5a22ac8f5363@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (2).png@f9941",
+    "value": {
+      "depends": [
+        "45ae566f-ea81-4654-bf48-5a22ac8f5363@6c48a"
+      ]
+    }
+  },
+  "0f31ccb8-4775-44d4-a46f-8d1c3e80f491": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-6.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "0f31ccb8-4775-44d4-a46f-8d1c3e80f491@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-6.png@6c48a",
+    "value": {
+      "depends": [
+        "0f31ccb8-4775-44d4-a46f-8d1c3e80f491"
+      ]
+    }
+  },
+  "0f31ccb8-4775-44d4-a46f-8d1c3e80f491@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-6.png@f9941",
+    "value": {
+      "depends": [
+        "0f31ccb8-4775-44d4-a46f-8d1c3e80f491@6c48a"
+      ]
+    }
+  },
+  "3715fa97-df60-42d2-83ff-2a08ed09313d": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-0.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "3715fa97-df60-42d2-83ff-2a08ed09313d@6c48a": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-0.png@6c48a",
+    "value": {
+      "depends": [
+        "3715fa97-df60-42d2-83ff-2a08ed09313d"
+      ]
+    }
+  },
+  "3715fa97-df60-42d2-83ff-2a08ed09313d@f9941": {
+    "url": "db://assets/resources/ui/icons/count/inverted-dice-0.png@f9941",
+    "value": {
+      "depends": [
+        "3715fa97-df60-42d2-83ff-2a08ed09313d@6c48a"
+      ]
+    }
+  },
+  "4b0ced49-3f72-46c6-8cb1-5c8a3a9330d7": {
+    "url": "db://assets/resources/ui/skills/shield/shield-reflect.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "4b0ced49-3f72-46c6-8cb1-5c8a3a9330d7@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/shield-reflect.png@6c48a",
+    "value": {
+      "depends": [
+        "4b0ced49-3f72-46c6-8cb1-5c8a3a9330d7"
+      ]
+    }
+  },
+  "4b0ced49-3f72-46c6-8cb1-5c8a3a9330d7@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/shield-reflect.png@f9941",
+    "value": {
+      "depends": [
+        "4b0ced49-3f72-46c6-8cb1-5c8a3a9330d7@6c48a"
+      ]
+    }
+  },
+  "e859aba1-7eb0-44e1-8bbc-977ceb78b7fa": {
+    "url": "db://assets/resources/ui/skills/shield/spartan.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e859aba1-7eb0-44e1-8bbc-977ceb78b7fa@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/spartan.png@6c48a",
+    "value": {
+      "depends": [
+        "e859aba1-7eb0-44e1-8bbc-977ceb78b7fa"
+      ]
+    }
+  },
+  "e859aba1-7eb0-44e1-8bbc-977ceb78b7fa@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/spartan.png@f9941",
+    "value": {
+      "depends": [
+        "e859aba1-7eb0-44e1-8bbc-977ceb78b7fa@6c48a"
+      ]
+    }
+  },
+  "b4543dc7-a7b5-4eb4-b390-57c67b787246": {
+    "url": "db://assets/resources/ui/skills/shield/shield-impact.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "b4543dc7-a7b5-4eb4-b390-57c67b787246@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/shield-impact.png@6c48a",
+    "value": {
+      "depends": [
+        "b4543dc7-a7b5-4eb4-b390-57c67b787246"
+      ]
+    }
+  },
+  "b4543dc7-a7b5-4eb4-b390-57c67b787246@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/shield-impact.png@f9941",
+    "value": {
+      "depends": [
+        "b4543dc7-a7b5-4eb4-b390-57c67b787246@6c48a"
+      ]
+    }
+  },
+  "3c903b55-69b1-404d-8382-cace7da90b84": {
+    "url": "db://assets/resources/ui/skills/shield/shield-echoes.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "3c903b55-69b1-404d-8382-cace7da90b84@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/shield-echoes.png@6c48a",
+    "value": {
+      "depends": [
+        "3c903b55-69b1-404d-8382-cace7da90b84"
+      ]
+    }
+  },
+  "3c903b55-69b1-404d-8382-cace7da90b84@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/shield-echoes.png@f9941",
+    "value": {
+      "depends": [
+        "3c903b55-69b1-404d-8382-cace7da90b84@6c48a"
+      ]
+    }
+  },
+  "37d9f091-2da0-494d-8969-0100226f0d66": {
+    "url": "db://assets/resources/ui/skills/shield/heart-shield.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "37d9f091-2da0-494d-8969-0100226f0d66@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/heart-shield.png@6c48a",
+    "value": {
+      "depends": [
+        "37d9f091-2da0-494d-8969-0100226f0d66"
+      ]
+    }
+  },
+  "37d9f091-2da0-494d-8969-0100226f0d66@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/heart-shield.png@f9941",
+    "value": {
+      "depends": [
+        "37d9f091-2da0-494d-8969-0100226f0d66@6c48a"
+      ]
+    }
+  },
+  "c82bfed6-b7a0-4954-81d9-fa7022c5a6e8": {
+    "url": "db://assets/resources/ui/skills/shield/spiked-shield.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c82bfed6-b7a0-4954-81d9-fa7022c5a6e8@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/spiked-shield.png@6c48a",
+    "value": {
+      "depends": [
+        "c82bfed6-b7a0-4954-81d9-fa7022c5a6e8"
+      ]
+    }
+  },
+  "c82bfed6-b7a0-4954-81d9-fa7022c5a6e8@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/spiked-shield.png@f9941",
+    "value": {
+      "depends": [
+        "c82bfed6-b7a0-4954-81d9-fa7022c5a6e8@6c48a"
+      ]
+    }
+  },
+  "c2de9bc0-5e25-4ab6-bb6b-c8464fe639e6": {
+    "url": "db://assets/resources/ui/skills/shield",
+    "value": {}
+  },
+  "7ca3c6dc-8901-4231-badb-01ee7b9391fc": {
+    "url": "db://assets/resources/ui/skills/shield/shield-bash.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "7ca3c6dc-8901-4231-badb-01ee7b9391fc@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/shield-bash.png@6c48a",
+    "value": {
+      "depends": [
+        "7ca3c6dc-8901-4231-badb-01ee7b9391fc"
+      ]
+    }
+  },
+  "7ca3c6dc-8901-4231-badb-01ee7b9391fc@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/shield-bash.png@f9941",
+    "value": {
+      "depends": [
+        "7ca3c6dc-8901-4231-badb-01ee7b9391fc@6c48a"
+      ]
+    }
+  },
+  "e5472ac4-9d9a-4c8d-b66c-2d1c055ff14c": {
+    "url": "db://assets/resources/ui/skills/shield/magic-shield.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e5472ac4-9d9a-4c8d-b66c-2d1c055ff14c@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/magic-shield.png@6c48a",
+    "value": {
+      "depends": [
+        "e5472ac4-9d9a-4c8d-b66c-2d1c055ff14c"
+      ]
+    }
+  },
+  "e5472ac4-9d9a-4c8d-b66c-2d1c055ff14c@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/magic-shield.png@f9941",
+    "value": {
+      "depends": [
+        "e5472ac4-9d9a-4c8d-b66c-2d1c055ff14c@6c48a"
+      ]
+    }
+  },
+  "e229f99f-7d79-4163-8a37-d11aa97bcfcb": {
+    "url": "db://assets/scene/Choose.scene",
+    "value": {}
+  },
+  "1f917658-6b53-4870-ba1b-8b9f9e3ed268": {
+    "url": "db://assets/scripts/scene/ChooseMgr.ts",
+    "value": {}
+  },
+  "7bb366fe-1ec9-4743-af41-52268ecd3f25": {
+    "url": "db://assets/resources/ui/icons/排行榜_排名.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "7bb366fe-1ec9-4743-af41-52268ecd3f25@6c48a": {
+    "url": "db://assets/resources/ui/icons/排行榜_排名.png@6c48a",
+    "value": {
+      "depends": [
+        "7bb366fe-1ec9-4743-af41-52268ecd3f25"
+      ]
+    }
+  },
+  "7bb366fe-1ec9-4743-af41-52268ecd3f25@f9941": {
+    "url": "db://assets/resources/ui/icons/排行榜_排名.png@f9941",
+    "value": {
+      "depends": [
+        "7bb366fe-1ec9-4743-af41-52268ecd3f25@6c48a"
+      ]
+    }
+  },
+  "a57aac80-b3f8-4a39-813f-91dbb75d478b": {
+    "url": "db://assets/resources/ui/icons/科幻方框.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "a57aac80-b3f8-4a39-813f-91dbb75d478b@6c48a": {
+    "url": "db://assets/resources/ui/icons/科幻方框.png@6c48a",
+    "value": {
+      "depends": [
+        "a57aac80-b3f8-4a39-813f-91dbb75d478b"
+      ]
+    }
+  },
+  "a57aac80-b3f8-4a39-813f-91dbb75d478b@f9941": {
+    "url": "db://assets/resources/ui/icons/科幻方框.png@f9941",
+    "value": {
+      "depends": [
+        "a57aac80-b3f8-4a39-813f-91dbb75d478b@6c48a"
+      ]
+    }
+  },
+  "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484": {
+    "url": "db://assets/resources/ui/icons/框-VS.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484@6c48a": {
+    "url": "db://assets/resources/ui/icons/框-VS.png@6c48a",
+    "value": {
+      "depends": [
+        "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484"
+      ]
+    }
+  },
+  "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484@f9941": {
+    "url": "db://assets/resources/ui/icons/框-VS.png@f9941",
+    "value": {
+      "depends": [
+        "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484@6c48a"
       ]
     }
   }

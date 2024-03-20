@@ -25,6 +25,8 @@ export const createErrorTip = (msg: string) => {
     const node = instantiate(prefab)
     node.getChildByName('Tip').getChildByName('Label').getComponent(Label).string = msg
     node.setParent(DataManager.Instance.stage)
+  }else{
+    DataManager.Instance.stage.getChildByName('ErrTip').getChildByName('Tip').getChildByName('Label').getComponent(Label).string = msg
   }
 }
 export const destroyTip = (type: TipEnum = TipEnum.ErrTip) => {

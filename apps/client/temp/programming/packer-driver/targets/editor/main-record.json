@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 15228.192599996924,
+      "mTimestamp": 14729.107299983501,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -640,7 +640,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 5573638.4538,
+      "mTimestamp": 34319.72169998288,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -896,7 +896,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/CheckActor.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/BattleMgr.ts",
           "resolved": "__unresolved_18",
           "loc": {
             "start": {
@@ -905,31 +905,31 @@
             },
             "end": {
               "line": 5,
-              "column": 2515
+              "column": 2514
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HallManager.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/CheckActor.ts",
           "resolved": "__unresolved_19",
           "loc": {
             "start": {
               "line": 5,
-              "column": 2531
+              "column": 2530
             },
             "end": {
               "line": 5,
-              "column": 2646
+              "column": 2644
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HomeMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/ChooseMgr.ts",
           "resolved": "__unresolved_20",
           "loc": {
             "start": {
               "line": 5,
-              "column": 2662
+              "column": 2660
             },
             "end": {
               "line": 5,
@@ -938,7 +938,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/LoadingMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HallManager.ts",
           "resolved": "__unresolved_21",
           "loc": {
             "start": {
@@ -947,17 +947,17 @@
             },
             "end": {
               "line": 5,
-              "column": 2903
+              "column": 2904
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/DrawManager.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HomeMgr.ts",
           "resolved": "__unresolved_22",
           "loc": {
             "start": {
               "line": 5,
-              "column": 2919
+              "column": 2920
             },
             "end": {
               "line": 5,
@@ -966,7 +966,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HallUiMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/LoadingMgr.ts",
           "resolved": "__unresolved_23",
           "loc": {
             "start": {
@@ -975,77 +975,105 @@
             },
             "end": {
               "line": 5,
-              "column": 3157
+              "column": 3161
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/DrawManager.ts",
+          "resolved": "__unresolved_24",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 3177
+            },
+            "end": {
+              "line": 5,
+              "column": 3289
+            }
+          }
+        },
+        {
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HallUiMgr.ts",
+          "resolved": "__unresolved_25",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 3305
+            },
+            "end": {
+              "line": 5,
+              "column": 3415
             }
           }
         },
         {
           "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HomeUiMgr.ts",
-          "resolved": "__unresolved_24",
+          "resolved": "__unresolved_26",
           "loc": {
             "start": {
               "line": 5,
-              "column": 3173
+              "column": 3431
             },
             "end": {
               "line": 5,
-              "column": 3283
+              "column": 3541
             }
           }
         },
         {
           "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/InputMgr.ts",
-          "resolved": "__unresolved_25",
+          "resolved": "__unresolved_27",
           "loc": {
             "start": {
               "line": 5,
-              "column": 3299
+              "column": 3557
             },
             "end": {
               "line": 5,
-              "column": 3408
+              "column": 3666
             }
           }
         },
         {
           "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/RoomItemManager.ts",
-          "resolved": "__unresolved_26",
+          "resolved": "__unresolved_28",
           "loc": {
             "start": {
               "line": 5,
-              "column": 3424
+              "column": 3682
             },
             "end": {
               "line": 5,
-              "column": 3540
+              "column": 3798
             }
           }
         },
         {
           "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/TipMgr.ts",
-          "resolved": "__unresolved_27",
+          "resolved": "__unresolved_29",
           "loc": {
             "start": {
               "line": 5,
-              "column": 3556
+              "column": 3814
             },
             "end": {
               "line": 5,
-              "column": 3663
+              "column": 3921
             }
           }
         },
         {
           "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts",
-          "resolved": "__unresolved_28",
+          "resolved": "__unresolved_30",
           "loc": {
             "start": {
               "line": 5,
-              "column": 3679
+              "column": 3937
             },
             "end": {
               "line": 5,
-              "column": 3788
+              "column": 4046
             }
           }
         }
@@ -1181,7 +1209,21 @@
         {
           "resolved": {
             "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/BattleMgr.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
             "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/CheckActor.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/ChooseMgr.ts"
           },
           "messages": []
         },
@@ -1539,7 +1581,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1710759470194,
+      "mTimestamp": 1710932791569,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -1727,7 +1769,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts": {
       "mTimestamp": {
-        "mtime": 1710581612193.744,
+        "mtime": 1710841350892.6028,
         "uuid": "eb1ea03c-666d-41d4-ad4a-38502e844f47"
       },
       "chunkId": "fd5efcb36b0689112cdf3ed286ccf758b2d67d7d",
@@ -1916,7 +1958,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/NetworkManager.ts": {
       "mTimestamp": {
-        "mtime": 1710591884212.855,
+        "mtime": 1710842250893.168,
         "uuid": "1222ee1c-ab60-41f0-a33b-d2da10206e33"
       },
       "chunkId": "16ba3fbfa208b862083d5d0ada27e0686eb81b8d",
@@ -2740,7 +2782,7 @@
       ]
     },
     "cce:/internal/ml/cjs-loader.mjs": {
-      "mTimestamp": 1710759470194,
+      "mTimestamp": 1710932791569,
       "chunkId": "a0d063530de23ddade53e1a935bf64c81277c061",
       "imports": [],
       "type": "esm",
@@ -6540,7 +6582,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/HallUiMgr.ts": {
       "mTimestamp": {
-        "mtime": 1710764506764.626,
+        "mtime": 1710829706942.061,
         "uuid": "1b03f5f7-11be-44bc-aa1c-c3f1985157fc"
       },
       "chunkId": "ea90a5cce2a308651cddf3df153aaa361a5ca9a1",
@@ -6750,7 +6792,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HallManager.ts": {
       "mTimestamp": {
-        "mtime": 1710764794158.6292,
+        "mtime": 1710841995443.441,
         "uuid": "121926aa-ba72-4cfd-a113-fe8350879f4d"
       },
       "chunkId": "c4884f77bb9dd14e3347499d92174a0fb2d7710d",
@@ -7306,6 +7348,110 @@
             "end": {
               "line": 1,
               "column": 58
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/BattleMgr.ts": {
+      "mTimestamp": {
+        "mtime": 1710840981534.8142,
+        "uuid": "34e62257-5095-45f6-bbba-1d505ec2e650"
+      },
+      "chunkId": "e2fdfe4e5523a707f9179c07283a2ca589c07015",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 52
+            },
+            "end": {
+              "line": 1,
+              "column": 56
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/ChooseMgr.ts": {
+      "mTimestamp": {
+        "mtime": 1710927759286.6194,
+        "uuid": "1f917658-6b53-4870-ba1b-8b9f9e3ed268"
+      },
+      "chunkId": "36941781075554c60989b1bb8d5f2493f4ed5418",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 44
+            },
+            "end": {
+              "line": 1,
+              "column": 48
             }
           }
         }

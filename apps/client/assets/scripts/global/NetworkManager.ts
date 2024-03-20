@@ -19,6 +19,8 @@ class HeartCheck extends Singleton {
   static get Instance() {
     return super.GetInstance<HeartCheck>()
   }
+
+
   ws: WebSocket
   timeout = 2 * 1000 // 每2s向服务端发送一次消息
   serverTimeout = 10 * 1000 // 10s收不到服务端消息算超时
@@ -55,10 +57,13 @@ class HeartCheck extends Singleton {
   }
 }
 
+
+// 网络管理类
 export default class NetworkManager extends Singleton {
   static get Instance() {
     return super.GetInstance<NetworkManager>()
   }
+  loadingCount: number = 0//重连动画
 
   connected = false
 
@@ -107,12 +112,15 @@ export default class NetworkManager extends Singleton {
         }
       }
       this.ws.onclose = () => {
+        console.log('???开启连接');
         this.isConnected = false
         reject(false)
         this.reconnect()
       }
       this.ws.onerror = (e) => {
+        console.log('???开启连接');
         this.isConnected = false
+        reject(false)
         console.log('ws错误', e)
       }
       this.ws.onmessage = (e) => {
@@ -155,8 +163,14 @@ export default class NetworkManager extends Singleton {
   async connectServer() {
     if (!(await NetworkManager.Instance.connect().catch(() => false))) {
       // 弹窗
-      createErrorTip('连接中...')
-      await new Promise((resolve) => setTimeout(resolve, 2000)) //防止无限 递归
+      if(this.loadingCount < 3) {
+        this.loadingCount++
+      }else{
+        this.loadingCount = 0
+      }
+      let dots = '.'.repeat(this.loadingCount);
+      createErrorTip('连接中' + dots)
+      await new Promise((resolve) => setTimeout(resolve, 1000)) //防止无限 递归
       await this.connectServer()
     } else {
       destroyTip()

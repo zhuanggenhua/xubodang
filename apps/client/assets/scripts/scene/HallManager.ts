@@ -18,15 +18,19 @@ export class HallManager extends Component {
   @property(Prefab)
   roomPrefab: Prefab = null
 
-  onLoad() {
+  async onLoad() {
     // director.preloadScene(SceneEnum.CheckActor);
     EventManager.Instance.on(EventEnum.RoomCreate, this.handleCreateRoom, this)
     EventManager.Instance.on(EventEnum.RoomJoin, this.handleJoinRoom, this)
     // 接收房间广播
     NetworkManager.Instance.listenMsg(ApiFunc.RoomList, this.renderRooms, this)
+    
+    await NetworkManager.Instance.connect().catch(() => false)
+    this.roomContainer.destroyAllChildren()
 
     // screen.requestFullScreen() //全屏
     this.loadRes()
+
   }
   // test
   async loadRes() {
@@ -53,10 +57,7 @@ export class HallManager extends Component {
   }
 
   async start() {
-    setTimeout(async () => {
-      await NetworkManager.Instance.connect().catch(() => false)
-    }, 1000)
-    this.roomContainer.destroyAllChildren()
+      
   }
 
   renderRooms = ({ rooms }) => {
