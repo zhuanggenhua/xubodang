@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TipEnum, FsmParamTypeEnum, ParamsNameEnum, EntityStateEnum, EventEnum, PrefabPathEnum, TexturePathEnum, SceneEnum;
+  var _cclegacy, _crd, TipEnum, FsmParamTypeEnum, ParamsNameEnum, EntityStateEnum, EventEnum, PrefabPathEnum, TexturePathEnum, SceneEnum, SkillPathEnum;
 
   return {
     setters: [function (_cc) {
@@ -45,7 +45,6 @@ System.register(["cc"], function (_export, _context) {
         EventEnum["RoomCreate"] = "RoomCreate";
         EventEnum["GameStart"] = "GameStart";
         EventEnum["GameEnd"] = "GameEnd";
-        EventEnum["ClientSync"] = "ClientSync";
         EventEnum["ReConnect"] = "ReConnect";
         return EventEnum;
       }({}));
@@ -53,6 +52,7 @@ System.register(["cc"], function (_export, _context) {
       _export("PrefabPathEnum", PrefabPathEnum = /*#__PURE__*/function (PrefabPathEnum) {
         PrefabPathEnum["Room"] = "prefab/Room";
         PrefabPathEnum["ErrTip"] = "prefab/ErrTip";
+        PrefabPathEnum["Heart"] = "prefab/Heart";
         return PrefabPathEnum;
       }({}));
 
@@ -74,9 +74,32 @@ System.register(["cc"], function (_export, _context) {
       _export("SceneEnum", SceneEnum = /*#__PURE__*/function (SceneEnum) {
         SceneEnum["Home"] = "Home";
         SceneEnum["Loading"] = "Loading";
-        SceneEnum["CheckActor"] = "CheckActor";
         SceneEnum["Battle"] = "Battle";
+        SceneEnum["Hall"] = "Hall";
         return SceneEnum;
+      }({}));
+
+      _export("SkillPathEnum", SkillPathEnum = /*#__PURE__*/function (SkillPathEnum) {
+        SkillPathEnum["xu"] = "base/xu";
+        SkillPathEnum["kan"] = "base/kan";
+        SkillPathEnum["jump"] = "base/jump";
+        SkillPathEnum["dang"] = "base/round-shield";
+        SkillPathEnum["heartShield"] = "shield/heart-shield";
+        SkillPathEnum["spade"] = "shield/spade";
+        SkillPathEnum["crossbow"] = "shield/crossbow";
+        SkillPathEnum["shieldReflect"] = "shield/shield-reflect";
+        SkillPathEnum["spikedShield"] = "shield/spiked-shield";
+        SkillPathEnum["shieldImpact"] = "shield/shield-impact";
+        SkillPathEnum["spartan"] = "shield/spartan";
+        SkillPathEnum["shieldEchoes"] = "shield/shield-echoes";
+        SkillPathEnum["crenulatedShield"] = "shield/crenulated-shield";
+        SkillPathEnum["floorHatch"] = "shield/floor-hatch";
+        SkillPathEnum["enrage"] = "shield/enrage";
+        SkillPathEnum["swordTie"] = "shield/sword-tie";
+        SkillPathEnum["ancientSword"] = "shield/ancient-sword";
+        SkillPathEnum["unstableProjectile"] = "shield/unstable-projectile";
+        SkillPathEnum["shieldBash"] = "shield/shield-bash";
+        return SkillPathEnum;
       }({}));
 
       _cclegacy._RF.pop();

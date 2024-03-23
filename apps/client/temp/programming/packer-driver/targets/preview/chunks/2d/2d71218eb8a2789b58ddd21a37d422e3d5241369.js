@@ -3,6 +3,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
   var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, director, view, Singleton, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
 
+  function _reportPossibleCrUseOfIPlayer(extras) {
+    _reporterNs.report("IPlayer", "../common", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfIRoom(extras) {
     _reporterNs.report("IRoom", "../common", _context.meta, extras);
   }
@@ -49,12 +53,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       }), Singleton) : Singleton) {
         constructor() {
           super(...arguments);
-          this.playerId = -1;
+          this.setting = null;
+          this.player = void 0;
           this.roomInfo = void 0;
           this.stage = director.getScene().getChildByName('Canvas');
           // actorMap: Map<number, ActorManager> = new Map();
           this.prefabMap = new Map();
           this.textureMap = new Map();
+          this.skillMap = new Map();
         }
 
         static get Instance() {
@@ -66,6 +72,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         // 执行动作
         // applyInput(input: IClientInput) {
         // }
+        // 渲染生命值
 
 
       });

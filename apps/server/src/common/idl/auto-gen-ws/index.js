@@ -187,6 +187,12 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
           }
         }
       },
+      ApiRoomLeaveReq: {
+        fields: {}
+      },
+      ApiRoomLeaveRes: {
+        fields: {}
+      },
       EnterGameReq: {
         fields: {
           token: {

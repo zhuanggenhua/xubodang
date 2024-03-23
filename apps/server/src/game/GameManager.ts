@@ -51,7 +51,6 @@ export class GameManager extends Singleton {
       // 如果还在房间，就跳转战斗
       if (player.rid !== -1) {
       }
-      connection.sendMsg(ApiFunc.RoomList, { rooms: RoomManager.Instance.getRoomsView() })
       return {
         state: player.state,
       }
@@ -59,7 +58,6 @@ export class GameManager extends Singleton {
     server.setApi(ApiFunc.signIn, (connection: Connection) => {
       const player = PlayerManager.Instance.createPlayer(connection)
       const playerInfo = PlayerManager.Instance.getPlayerView(player)
-      connection.sendMsg(ApiFunc.RoomList, { rooms: RoomManager.Instance.getRoomsView() })
       return {
         player: playerInfo,
       }
@@ -83,35 +81,64 @@ export class GameManager extends Singleton {
 
     server.setApi(ApiFunc.RoomListByName, (connection: Connection, data) => {
       connection.sendMsg(ApiFunc.RoomList, {
-        rooms: RoomManager.Instance.getRoomsView().filter((room) => room.roomName.includes(data.roomName)),
+        rooms: RoomManager.Instance.getRoomsView().filter((room) => room.roomName.includes(data.roomName || '')),
       })
     })
+
     server.setApi(ApiFunc.ApiRoomJoin, (connection: Connection, data) => {
       const { rid, pwd } = data
-      if(pwd && pwd !== ''){
-        if(pwd !== RoomManager.Instance.getRoomById(rid).pwd){
+      if (pwd && pwd !== '') {
+        if (pwd !== RoomManager.Instance.getRoomById(rid).pwd) {
           return {
             room: null,
-            error: '密码错误'
+            error: '密码错误',
           }
         }
       }
 
       const room = RoomManager.Instance.joinRoom(rid, connection.playerId)
       if (room) {
+        if (room.players.size > 2) {
+          return {
+            room: null,
+            error: '人数已满',
+          }
+        }
         // 这是给房间外的人发送的
         RoomManager.Instance.syncRooms()
         // 同步房间内玩家的 房间信息
         RoomManager.Instance.syncRoom(room.id)
         return {
           room: RoomManager.Instance.getRoomView(room),
-          error: ''
+          error: '',
         }
       } else {
         return {
           room: null,
-          error: '房间不存在'
+          error: '房间不存在',
         }
+      }
+    })
+
+    server.setApi(ApiFunc.ApiRoomLeave, (connection: Connection, data) => {
+      if (connection.playerId) {
+        const player = PlayerManager.Instance.getPlayerById(connection.playerId)
+        if (player) {
+          const rid = player.rid
+          if (rid) {
+            RoomManager.Instance.leaveRoom(rid, player.id)
+
+            RoomManager.Instance.syncRooms()
+            RoomManager.Instance.syncRoom(rid)
+            return {}
+          } else {
+            throw new Error('ApiRoomLeave 玩家不在房间')
+          }
+        } else {
+          throw new Error('ApiRoomLeave 玩家不存在')
+        }
+      } else {
+        throw new Error('ApiRoomLeave 玩家未登录')
       }
     })
   }

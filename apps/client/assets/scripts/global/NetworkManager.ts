@@ -20,7 +20,6 @@ class HeartCheck extends Singleton {
     return super.GetInstance<HeartCheck>()
   }
 
-
   ws: WebSocket
   timeout = 2 * 1000 // 每2s向服务端发送一次消息
   serverTimeout = 10 * 1000 // 10s收不到服务端消息算超时
@@ -57,15 +56,14 @@ class HeartCheck extends Singleton {
   }
 }
 
-
 // 网络管理类
 export default class NetworkManager extends Singleton {
   static get Instance() {
     return super.GetInstance<NetworkManager>()
   }
-  loadingCount: number = 0//重连动画
+  loadingCount: number = 0 //重连动画
 
-  connected = false
+  connected = false //是否正在连接，用来防止重复连接
 
   isConnected = false
   host = '192.168.1.123'
@@ -98,7 +96,7 @@ export default class NetworkManager extends Singleton {
         let player = sys.localStorage.getItem('player')
         player = JSON.parse(player)
         if (player && player.id !== '') {
-          DataManager.Instance.playerId = player.id
+          DataManager.Instance.player = player
           // 登录
           NetworkManager.Instance.callApi(ApiFunc.login, { player })
         } else {
@@ -106,19 +104,20 @@ export default class NetworkManager extends Singleton {
           let { player } = await NetworkManager.Instance.callApi(ApiFunc.signIn)
           console.log('player', player)
           if (player.id) {
-            DataManager.Instance.playerId = player.id
+            DataManager.Instance.player = player
             sys.localStorage.setItem('player', JSON.stringify(player))
           }
         }
       }
       this.ws.onclose = () => {
-        console.log('???开启连接');
+        // 处理离开房间
+        NetworkManager.Instance.callApi(ApiFunc.ApiRoomLeave)
+
         this.isConnected = false
         reject(false)
         this.reconnect()
       }
       this.ws.onerror = (e) => {
-        console.log('???开启连接');
         this.isConnected = false
         reject(false)
         console.log('ws错误', e)
@@ -143,6 +142,7 @@ export default class NetworkManager extends Singleton {
 
           if (this.map.has(name)) {
             this.map.get(name).forEach(({ cb, ctx }) => {
+              console.log('收到消息', name, data)
               cb.call(ctx, data)
             })
           }
@@ -161,15 +161,16 @@ export default class NetworkManager extends Singleton {
     this.connectServer()
   }
   async connectServer() {
+    // 弹窗
+    if (this.loadingCount < 3) {
+      this.loadingCount++
+    } else {
+      this.loadingCount = 0
+    }
+    let dots = '.'.repeat(this.loadingCount)
+    createErrorTip('连接中' + dots)
+
     if (!(await NetworkManager.Instance.connect().catch(() => false))) {
-      // 弹窗
-      if(this.loadingCount < 3) {
-        this.loadingCount++
-      }else{
-        this.loadingCount = 0
-      }
-      let dots = '.'.repeat(this.loadingCount);
-      createErrorTip('连接中' + dots)
       await new Promise((resolve) => setTimeout(resolve, 1000)) //防止无限 递归
       await this.connectServer()
     } else {

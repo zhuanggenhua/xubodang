@@ -1300,6 +1300,7 @@
         "5d295644-b8e4-4a91-92af-7afa1f5fa507"
       ],
       "dependScripts": [
+        "6d6e8544-a896-464d-aee5-b5214ea303b1",
         "1b03f5f7-11be-44bc-aa1c-c3f1985157fc",
         "121926aa-ba72-4cfd-a113-fe8350879f4d",
         "35e32523-6dab-4da9-b361-623c6401e9ea"
@@ -1378,16 +1379,27 @@
         "24a704da-2867-446d-8d1a-5e920c75e09d@f9941",
         "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
         "b5ae898a-ad62-47f0-acdc-3f51927ad36f@f9941",
-        "bf432935-bdea-487e-90d1-302afb608ed0@f9941",
-        "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484@f9941",
+        "514514e9-0d4c-4b2c-a359-3274dca0b277@f9941",
+        "bc2670ca-9b49-4c3f-ba6e-76a21947725c",
         "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
         "3715fa97-df60-42d2-83ff-2a08ed09313d@f9941",
         "01126b53-29e9-4e3c-8034-3677fb132be3@f9941",
         "40585002-09fa-4c6f-bd8d-62af3c540bbb@f9941",
         "dcc13f21-cddc-4e35-92c5-37edc836acd1@f9941",
-        "75253da2-ea7a-4d6b-be58-835dd1227be4@f9941"
+        "961ff2e3-09bc-446f-a2f3-e6c58169736d@f9941",
+        "f6a17d8b-e8fd-4b10-bb1d-cdb1a2ec9186@f9941",
+        "74137e69-629e-4131-ba82-adbb20d97548@f9941",
+        "70ef41bb-4513-4137-a182-7e0594d8e21b@f9941",
+        "75253da2-ea7a-4d6b-be58-835dd1227be4@f9941",
+        "7a88d053-7f9b-4fd7-be17-d493fb337449@f9941",
+        "188ce2eb-3887-4758-a2e5-f3f2fca108c5@f9941",
+        "006da948-5b56-4740-a159-078269485cbb@f9941",
+        "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d@f9941",
+        "00f0f8f7-ef15-4a01-bdc2-024d73693d40@f9941",
+        "016bd0a9-b526-4a95-aecf-1d55f43b5a69@f9941"
       ],
       "dependScripts": [
+        "6d6e8544-a896-464d-aee5-b5214ea303b1",
         "34e62257-5095-45f6-bbba-1d505ec2e650"
       ]
     }
@@ -2740,13 +2752,13 @@
     "value": {}
   },
   "01126b53-29e9-4e3c-8034-3677fb132be3": {
-    "url": "db://assets/resources/ui/skills/saber-slash.png",
+    "url": "db://assets/resources/ui/skills/base/kan.png",
     "value": {
       "depends": []
     }
   },
   "01126b53-29e9-4e3c-8034-3677fb132be3@6c48a": {
-    "url": "db://assets/resources/ui/skills/saber-slash.png@6c48a",
+    "url": "db://assets/resources/ui/skills/base/kan.png@6c48a",
     "value": {
       "depends": [
         "01126b53-29e9-4e3c-8034-3677fb132be3"
@@ -2754,7 +2766,7 @@
     }
   },
   "01126b53-29e9-4e3c-8034-3677fb132be3@f9941": {
-    "url": "db://assets/resources/ui/skills/saber-slash.png@f9941",
+    "url": "db://assets/resources/ui/skills/base/kan.png@f9941",
     "value": {
       "depends": [
         "01126b53-29e9-4e3c-8034-3677fb132be3@6c48a"
@@ -2876,13 +2888,13 @@
     }
   },
   "fb1afb1d-1631-485b-ae11-9aee412b130a": {
-    "url": "db://assets/resources/ui/skills/ancient-sword.png",
+    "url": "db://assets/resources/ui/skills/shield/ancient-sword.png",
     "value": {
       "depends": []
     }
   },
   "fb1afb1d-1631-485b-ae11-9aee412b130a@6c48a": {
-    "url": "db://assets/resources/ui/skills/ancient-sword.png@6c48a",
+    "url": "db://assets/resources/ui/skills/shield/ancient-sword.png@6c48a",
     "value": {
       "depends": [
         "fb1afb1d-1631-485b-ae11-9aee412b130a"
@@ -2890,7 +2902,7 @@
     }
   },
   "fb1afb1d-1631-485b-ae11-9aee412b130a@f9941": {
-    "url": "db://assets/resources/ui/skills/ancient-sword.png@f9941",
+    "url": "db://assets/resources/ui/skills/shield/ancient-sword.png@f9941",
     "value": {
       "depends": [
         "fb1afb1d-1631-485b-ae11-9aee412b130a@6c48a"
@@ -2898,13 +2910,13 @@
     }
   },
   "df413413-63cf-4167-aa8f-06ec29f911df": {
-    "url": "db://assets/resources/ui/skills/shield/round-shield.png",
+    "url": "db://assets/resources/ui/skills/base/round-shield.png",
     "value": {
       "depends": []
     }
   },
   "df413413-63cf-4167-aa8f-06ec29f911df@6c48a": {
-    "url": "db://assets/resources/ui/skills/shield/round-shield.png@6c48a",
+    "url": "db://assets/resources/ui/skills/base/round-shield.png@6c48a",
     "value": {
       "depends": [
         "df413413-63cf-4167-aa8f-06ec29f911df"
@@ -2912,7 +2924,7 @@
     }
   },
   "df413413-63cf-4167-aa8f-06ec29f911df@f9941": {
-    "url": "db://assets/resources/ui/skills/shield/round-shield.png@f9941",
+    "url": "db://assets/resources/ui/skills/base/round-shield.png@f9941",
     "value": {
       "depends": [
         "df413413-63cf-4167-aa8f-06ec29f911df@6c48a"
@@ -2920,13 +2932,13 @@
     }
   },
   "b019e6b1-40ba-4832-9d63-83c24733cfa3": {
-    "url": "db://assets/resources/ui/skills/floor-hatch.png",
+    "url": "db://assets/resources/ui/skills/shield/floor-hatch.png",
     "value": {
       "depends": []
     }
   },
   "b019e6b1-40ba-4832-9d63-83c24733cfa3@6c48a": {
-    "url": "db://assets/resources/ui/skills/floor-hatch.png@6c48a",
+    "url": "db://assets/resources/ui/skills/shield/floor-hatch.png@6c48a",
     "value": {
       "depends": [
         "b019e6b1-40ba-4832-9d63-83c24733cfa3"
@@ -2934,7 +2946,7 @@
     }
   },
   "b019e6b1-40ba-4832-9d63-83c24733cfa3@f9941": {
-    "url": "db://assets/resources/ui/skills/floor-hatch.png@f9941",
+    "url": "db://assets/resources/ui/skills/shield/floor-hatch.png@f9941",
     "value": {
       "depends": [
         "b019e6b1-40ba-4832-9d63-83c24733cfa3@6c48a"
@@ -2942,13 +2954,13 @@
     }
   },
   "d49cd7be-aa75-4c15-bd96-d762f929ae6d": {
-    "url": "db://assets/resources/ui/skills/unstable-projectile.png",
+    "url": "db://assets/resources/ui/skills/shield/unstable-projectile.png",
     "value": {
       "depends": []
     }
   },
   "d49cd7be-aa75-4c15-bd96-d762f929ae6d@6c48a": {
-    "url": "db://assets/resources/ui/skills/unstable-projectile.png@6c48a",
+    "url": "db://assets/resources/ui/skills/shield/unstable-projectile.png@6c48a",
     "value": {
       "depends": [
         "d49cd7be-aa75-4c15-bd96-d762f929ae6d"
@@ -2956,7 +2968,7 @@
     }
   },
   "d49cd7be-aa75-4c15-bd96-d762f929ae6d@f9941": {
-    "url": "db://assets/resources/ui/skills/unstable-projectile.png@f9941",
+    "url": "db://assets/resources/ui/skills/shield/unstable-projectile.png@f9941",
     "value": {
       "depends": [
         "d49cd7be-aa75-4c15-bd96-d762f929ae6d@6c48a"
@@ -3836,5 +3848,520 @@
         "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484@6c48a"
       ]
     }
+  },
+  "a8b83a52-51b7-4883-a4a3-c54c7a465e86": {
+    "url": "db://assets/resources/ui/icons/页面 1.png",
+    "value": {}
+  },
+  "a8b83a52-51b7-4883-a4a3-c54c7a465e86@6c48a": {
+    "url": "db://assets/resources/ui/icons/页面 1.png@6c48a",
+    "value": {
+      "depends": [
+        "a8b83a52-51b7-4883-a4a3-c54c7a465e86"
+      ]
+    }
+  },
+  "a8b83a52-51b7-4883-a4a3-c54c7a465e86@f9941": {
+    "url": "db://assets/resources/ui/icons/页面 1.png@f9941",
+    "value": {
+      "depends": [
+        "a8b83a52-51b7-4883-a4a3-c54c7a465e86@6c48a"
+      ]
+    }
+  },
+  "6d6e8544-a896-464d-aee5-b5214ea303b1": {
+    "url": "db://assets/scripts/ui/ButtonMgr.ts",
+    "value": {}
+  },
+  "2fca8f3c-24b9-48bb-9f8c-c43a581ea3ef": {
+    "url": "db://assets/scripts/global/SceneManager.ts",
+    "value": {}
+  },
+  "26c45de4-db74-4783-8635-55ac78e17ce7": {
+    "url": "db://assets/resources/prefab/Heart.prefab",
+    "value": {
+      "depends": [
+        "bf432935-bdea-487e-90d1-302afb608ed0@f9941"
+      ],
+      "dependScripts": []
+    }
+  },
+  "4a844870-1ed9-4109-a430-4398cd76cda0": {
+    "url": "db://assets/scripts/utils/biz.ts",
+    "value": {}
+  },
+  "36c934d0-dcac-4922-8add-2f3247c88ca0": {
+    "url": "db://assets/scripts/config",
+    "value": {}
+  },
+  "eaf66616-f57a-4606-a261-24d48e75d9db": {
+    "url": "db://assets/scripts/config/readme.md",
+    "value": {
+      "depends": []
+    }
+  },
+  "4b2a2198-fad8-4948-8e4b-f7373d6b390c": {
+    "url": "db://assets/scripts/config/actor.json",
+    "value": {}
+  },
+  "5893def4-71e6-43ec-93b0-11f6cbcb2142": {
+    "url": "db://assets/resources/ui/skills/base",
+    "value": {}
+  },
+  "4e471d6c-34d8-4d36-8e0d-212bec1973c8": {
+    "url": "db://assets/resources/ui/skills/shield/spade.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "4e471d6c-34d8-4d36-8e0d-212bec1973c8@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/spade.png@6c48a",
+    "value": {
+      "depends": [
+        "4e471d6c-34d8-4d36-8e0d-212bec1973c8"
+      ]
+    }
+  },
+  "4e471d6c-34d8-4d36-8e0d-212bec1973c8@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/spade.png@f9941",
+    "value": {
+      "depends": [
+        "4e471d6c-34d8-4d36-8e0d-212bec1973c8@6c48a"
+      ]
+    }
+  },
+  "105e4782-81b8-467c-9079-41ca907d25ea": {
+    "url": "db://assets/resources/ui/skills/shield/crenulated-shield.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "105e4782-81b8-467c-9079-41ca907d25ea@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/crenulated-shield.png@6c48a",
+    "value": {
+      "depends": [
+        "105e4782-81b8-467c-9079-41ca907d25ea"
+      ]
+    }
+  },
+  "105e4782-81b8-467c-9079-41ca907d25ea@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/crenulated-shield.png@f9941",
+    "value": {
+      "depends": [
+        "105e4782-81b8-467c-9079-41ca907d25ea@6c48a"
+      ]
+    }
+  },
+  "53964576-99c7-417d-b0d3-58ad063350f3": {
+    "url": "db://assets/resources/ui/skills/shield/bowman.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "53964576-99c7-417d-b0d3-58ad063350f3@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/bowman.png@6c48a",
+    "value": {
+      "depends": [
+        "53964576-99c7-417d-b0d3-58ad063350f3"
+      ]
+    }
+  },
+  "53964576-99c7-417d-b0d3-58ad063350f3@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/bowman.png@f9941",
+    "value": {
+      "depends": [
+        "53964576-99c7-417d-b0d3-58ad063350f3@6c48a"
+      ]
+    }
+  },
+  "c00ea99e-2030-4b7d-9145-c0565d8e520d": {
+    "url": "db://assets/resources/ui/skills/base/sprint.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "c00ea99e-2030-4b7d-9145-c0565d8e520d@6c48a": {
+    "url": "db://assets/resources/ui/skills/base/sprint.png@6c48a",
+    "value": {
+      "depends": [
+        "c00ea99e-2030-4b7d-9145-c0565d8e520d"
+      ]
+    }
+  },
+  "c00ea99e-2030-4b7d-9145-c0565d8e520d@f9941": {
+    "url": "db://assets/resources/ui/skills/base/sprint.png@f9941",
+    "value": {
+      "depends": [
+        "c00ea99e-2030-4b7d-9145-c0565d8e520d@6c48a"
+      ]
+    }
+  },
+  "eeb81432-b73b-464f-bc1f-3253ddddd5b6": {
+    "url": "db://assets/resources/ui/skills/base/jump.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "eeb81432-b73b-464f-bc1f-3253ddddd5b6@6c48a": {
+    "url": "db://assets/resources/ui/skills/base/jump.png@6c48a",
+    "value": {
+      "depends": [
+        "eeb81432-b73b-464f-bc1f-3253ddddd5b6"
+      ]
+    }
+  },
+  "eeb81432-b73b-464f-bc1f-3253ddddd5b6@f9941": {
+    "url": "db://assets/resources/ui/skills/base/jump.png@f9941",
+    "value": {
+      "depends": [
+        "eeb81432-b73b-464f-bc1f-3253ddddd5b6@6c48a"
+      ]
+    }
+  },
+  "5d2da399-666f-4b46-a38b-1f3fc8b64c56": {
+    "url": "db://assets/resources/ui/skills/base/xu.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "5d2da399-666f-4b46-a38b-1f3fc8b64c56@6c48a": {
+    "url": "db://assets/resources/ui/skills/base/xu.png@6c48a",
+    "value": {
+      "depends": [
+        "5d2da399-666f-4b46-a38b-1f3fc8b64c56"
+      ]
+    }
+  },
+  "5d2da399-666f-4b46-a38b-1f3fc8b64c56@f9941": {
+    "url": "db://assets/resources/ui/skills/base/xu.png@f9941",
+    "value": {
+      "depends": [
+        "5d2da399-666f-4b46-a38b-1f3fc8b64c56@6c48a"
+      ]
+    }
+  },
+  "e8a49ce5-c02d-4e7f-a62f-e5d6c9e3a48a": {
+    "url": "db://assets/resources/ui/skills/shield/crossbow.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e8a49ce5-c02d-4e7f-a62f-e5d6c9e3a48a@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/crossbow.png@6c48a",
+    "value": {
+      "depends": [
+        "e8a49ce5-c02d-4e7f-a62f-e5d6c9e3a48a"
+      ]
+    }
+  },
+  "e8a49ce5-c02d-4e7f-a62f-e5d6c9e3a48a@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/crossbow.png@f9941",
+    "value": {
+      "depends": [
+        "e8a49ce5-c02d-4e7f-a62f-e5d6c9e3a48a@6c48a"
+      ]
+    }
+  },
+  "1fd5a9ee-4630-4dfa-89f9-3c3e9135b2f9": {
+    "url": "db://assets/resources/ui/skills/shield/enrage.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "1fd5a9ee-4630-4dfa-89f9-3c3e9135b2f9@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/enrage.png@6c48a",
+    "value": {
+      "depends": [
+        "1fd5a9ee-4630-4dfa-89f9-3c3e9135b2f9"
+      ]
+    }
+  },
+  "1fd5a9ee-4630-4dfa-89f9-3c3e9135b2f9@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/enrage.png@f9941",
+    "value": {
+      "depends": [
+        "1fd5a9ee-4630-4dfa-89f9-3c3e9135b2f9@6c48a"
+      ]
+    }
+  },
+  "aba9e8b9-32d8-4ed2-b24f-6574af751f33": {
+    "url": "db://assets/resources/ui/skills/shield/sword-tie.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "aba9e8b9-32d8-4ed2-b24f-6574af751f33@6c48a": {
+    "url": "db://assets/resources/ui/skills/shield/sword-tie.png@6c48a",
+    "value": {
+      "depends": [
+        "aba9e8b9-32d8-4ed2-b24f-6574af751f33"
+      ]
+    }
+  },
+  "aba9e8b9-32d8-4ed2-b24f-6574af751f33@f9941": {
+    "url": "db://assets/resources/ui/skills/shield/sword-tie.png@f9941",
+    "value": {
+      "depends": [
+        "aba9e8b9-32d8-4ed2-b24f-6574af751f33@6c48a"
+      ]
+    }
+  },
+  "03de73e7-b33d-405c-8980-a738beb4cb44": {
+    "url": "db://assets/scripts/config/actor.ts",
+    "value": {}
+  },
+  "fa26cc31-b1f4-478f-b209-1fa6dc46bf5b": {
+    "url": "db://assets/resources/prefab/SkillItem.prefab",
+    "value": {}
+  },
+  "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43": {
+    "url": "db://assets/scripts/ui/SkillItemManager.ts",
+    "value": {}
+  },
+  "c593331c-83d8-4d26-b30d-f0510383d9dd": {
+    "url": "db://assets/resources/ui/skills/superman",
+    "value": {}
+  },
+  "dbb9f798-4f25-4f8a-b2f2-578563787a93": {
+    "url": "db://assets/resources/ui/skills/superman/aura.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "dbb9f798-4f25-4f8a-b2f2-578563787a93@6c48a": {
+    "url": "db://assets/resources/ui/skills/superman/aura.png@6c48a",
+    "value": {
+      "depends": [
+        "dbb9f798-4f25-4f8a-b2f2-578563787a93"
+      ]
+    }
+  },
+  "dbb9f798-4f25-4f8a-b2f2-578563787a93@f9941": {
+    "url": "db://assets/resources/ui/skills/superman/aura.png@f9941",
+    "value": {
+      "depends": [
+        "dbb9f798-4f25-4f8a-b2f2-578563787a93@6c48a"
+      ]
+    }
+  },
+  "9e208d7d-a6f4-4b89-baf9-82d0bf4448f4": {
+    "url": "db://assets/resources/ui/icons/skill",
+    "value": {}
+  },
+  "6ccc0098-9456-4175-a742-76582584f4f3": {
+    "url": "db://assets/resources/ui/icons/skill/攻击.png",
+    "value": {}
+  },
+  "6ccc0098-9456-4175-a742-76582584f4f3@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/攻击.png@6c48a",
+    "value": {
+      "depends": [
+        "6ccc0098-9456-4175-a742-76582584f4f3"
+      ]
+    }
+  },
+  "6ccc0098-9456-4175-a742-76582584f4f3@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/攻击.png@f9941",
+    "value": {
+      "depends": [
+        "6ccc0098-9456-4175-a742-76582584f4f3@6c48a"
+      ]
+    }
+  },
+  "dbe4186c-61ee-4930-83c2-854283e795d1": {
+    "url": "db://assets/resources/ui/icons/skill/精准搜索.png",
+    "value": {}
+  },
+  "dbe4186c-61ee-4930-83c2-854283e795d1@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/精准搜索.png@6c48a",
+    "value": {
+      "depends": [
+        "dbe4186c-61ee-4930-83c2-854283e795d1"
+      ]
+    }
+  },
+  "dbe4186c-61ee-4930-83c2-854283e795d1@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/精准搜索.png@f9941",
+    "value": {
+      "depends": [
+        "dbe4186c-61ee-4930-83c2-854283e795d1@6c48a"
+      ]
+    }
+  },
+  "3ab04f09-af62-4ea4-a405-458bec25c4f9": {
+    "url": "db://assets/resources/ui/icons/skill/lbs -location.png",
+    "value": {}
+  },
+  "3ab04f09-af62-4ea4-a405-458bec25c4f9@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/lbs -location.png@6c48a",
+    "value": {
+      "depends": [
+        "3ab04f09-af62-4ea4-a405-458bec25c4f9"
+      ]
+    }
+  },
+  "3ab04f09-af62-4ea4-a405-458bec25c4f9@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/lbs -location.png@f9941",
+    "value": {
+      "depends": [
+        "3ab04f09-af62-4ea4-a405-458bec25c4f9@6c48a"
+      ]
+    }
+  },
+  "006da948-5b56-4740-a159-078269485cbb": {
+    "url": "db://assets/resources/ui/icons/skill/攻击 (2).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "006da948-5b56-4740-a159-078269485cbb@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/攻击 (2).png@6c48a",
+    "value": {
+      "depends": [
+        "006da948-5b56-4740-a159-078269485cbb"
+      ]
+    }
+  },
+  "006da948-5b56-4740-a159-078269485cbb@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/攻击 (2).png@f9941",
+    "value": {
+      "depends": [
+        "006da948-5b56-4740-a159-078269485cbb@6c48a"
+      ]
+    }
+  },
+  "188ce2eb-3887-4758-a2e5-f3f2fca108c5": {
+    "url": "db://assets/resources/ui/icons/skill/攻击 (3).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "188ce2eb-3887-4758-a2e5-f3f2fca108c5@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/攻击 (3).png@6c48a",
+    "value": {
+      "depends": [
+        "188ce2eb-3887-4758-a2e5-f3f2fca108c5"
+      ]
+    }
+  },
+  "188ce2eb-3887-4758-a2e5-f3f2fca108c5@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/攻击 (3).png@f9941",
+    "value": {
+      "depends": [
+        "188ce2eb-3887-4758-a2e5-f3f2fca108c5@6c48a"
+      ]
+    }
+  },
+  "00f0f8f7-ef15-4a01-bdc2-024d73693d40": {
+    "url": "db://assets/resources/ui/icons/skill/防御.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "00f0f8f7-ef15-4a01-bdc2-024d73693d40@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/防御.png@6c48a",
+    "value": {
+      "depends": [
+        "00f0f8f7-ef15-4a01-bdc2-024d73693d40"
+      ]
+    }
+  },
+  "00f0f8f7-ef15-4a01-bdc2-024d73693d40@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/防御.png@f9941",
+    "value": {
+      "depends": [
+        "00f0f8f7-ef15-4a01-bdc2-024d73693d40@6c48a"
+      ]
+    }
+  },
+  "277db4dd-d30a-4972-80c8-f5e709cfff0d": {
+    "url": "db://assets/resources/ui/icons/skill/闪电速度.png",
+    "value": {}
+  },
+  "277db4dd-d30a-4972-80c8-f5e709cfff0d@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/闪电速度.png@6c48a",
+    "value": {
+      "depends": [
+        "277db4dd-d30a-4972-80c8-f5e709cfff0d"
+      ]
+    }
+  },
+  "277db4dd-d30a-4972-80c8-f5e709cfff0d@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/闪电速度.png@f9941",
+    "value": {
+      "depends": [
+        "277db4dd-d30a-4972-80c8-f5e709cfff0d@6c48a"
+      ]
+    }
+  },
+  "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d": {
+    "url": "db://assets/resources/ui/icons/skill/速度.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d@6c48a": {
+    "url": "db://assets/resources/ui/icons/skill/速度.png@6c48a",
+    "value": {
+      "depends": [
+        "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d"
+      ]
+    }
+  },
+  "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d@f9941": {
+    "url": "db://assets/resources/ui/icons/skill/速度.png@f9941",
+    "value": {
+      "depends": [
+        "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d@6c48a"
+      ]
+    }
+  },
+  "e0521a06-2658-426f-a97e-39237fe15c2f": {
+    "url": "db://assets/resources/ui/bg/页面 1.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "e0521a06-2658-426f-a97e-39237fe15c2f@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1.png@6c48a",
+    "value": {
+      "depends": [
+        "e0521a06-2658-426f-a97e-39237fe15c2f"
+      ]
+    }
+  },
+  "e0521a06-2658-426f-a97e-39237fe15c2f@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1.png@f9941",
+    "value": {
+      "depends": [
+        "e0521a06-2658-426f-a97e-39237fe15c2f@6c48a"
+      ]
+    }
+  },
+  "016bd0a9-b526-4a95-aecf-1d55f43b5a69": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png",
+    "value": {
+      "depends": []
+    }
+  },
+  "016bd0a9-b526-4a95-aecf-1d55f43b5a69@6c48a": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png@6c48a",
+    "value": {
+      "depends": [
+        "016bd0a9-b526-4a95-aecf-1d55f43b5a69"
+      ]
+    }
+  },
+  "016bd0a9-b526-4a95-aecf-1d55f43b5a69@f9941": {
+    "url": "db://assets/resources/ui/bg/页面 1 (1).png@f9941",
+    "value": {
+      "depends": [
+        "016bd0a9-b526-4a95-aecf-1d55f43b5a69@6c48a"
+      ]
+    }
+  },
+  "5a24338a-c172-48d5-a1a5-b58068dc190c": {
+    "url": "db://assets/scripts/ui/SkillButtonMgr.ts",
+    "value": {}
   }
 }

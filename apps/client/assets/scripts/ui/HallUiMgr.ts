@@ -130,14 +130,14 @@ export class HallUiMgr extends Component {
       case RoomMode.normal:
         this.selectDesc.getComponent(Label).string = ''
         break
-      case RoomMode.old:
-        this.selectDesc.getComponent(Label).string = '只有最原始的能力'
+      case RoomMode.challenge:
+        this.selectDesc.getComponent(Label).string = '崇高假身可以携带自定义能力'
         break
       case RoomMode.limit:
-        this.selectDesc.getComponent(Label).string = '不允许使用崇高假身'
+        this.selectDesc.getComponent(Label).string = '不能使用崇高假身'
         break
       case RoomMode.infinite:
-        this.selectDesc.getComponent(Label).string = '没有时间限制'
+        this.selectDesc.getComponent(Label).string = '没有任何限制'
         break
     }
   }

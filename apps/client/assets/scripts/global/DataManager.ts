@@ -1,5 +1,5 @@
 import { Prefab, SpriteFrame, Node, director, view } from 'cc'
-import { IRoom, IState } from '../common'
+import { IPlayer, IRoom } from '../common'
 import { Singleton } from '../common/base'
 import Particle from '../particle/Particle'
 import { PrefabPathEnum, TexturePathEnum } from '../enum'
@@ -24,8 +24,9 @@ export default class DataManager extends Singleton {
     return super.GetInstance<DataManager>()
   }
 
+  setting: any = null
 
-  playerId: number = -1
+  player: IPlayer
   roomInfo: IRoom
 
   stage: Node = director.getScene().getChildByName('Canvas')
@@ -33,6 +34,7 @@ export default class DataManager extends Singleton {
   // actorMap: Map<number, ActorManager> = new Map();
   prefabMap: Map<string, Prefab> = new Map()
   textureMap: Map<string, SpriteFrame[]> = new Map()
+  skillMap: Map<string, SpriteFrame> = new Map()
   // bulletMap: Map<number, BulletManager> = new Map();
 
   // state: IState = {
@@ -43,4 +45,6 @@ export default class DataManager extends Singleton {
   // applyInput(input: IClientInput) {
 
   // }
+
+  // 渲染生命值
 }

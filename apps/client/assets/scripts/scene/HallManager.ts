@@ -1,12 +1,12 @@
-import { Component, Prefab, _decorator, director, instantiate, Node, SpriteFrame, screen } from 'cc'
-import { SceneEnum, EventEnum, PrefabPathEnum, TexturePathEnum } from '../enum'
+import { Component, Prefab, _decorator, director, instantiate, Node, SpriteFrame, screen, Label } from 'cc'
+import { SceneEnum, EventEnum, PrefabPathEnum, TexturePathEnum, SkillPathEnum } from '../enum'
 import DataManager, { mapH, mapW } from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import NetworkManager from '../global/NetworkManager'
 import { ApiFunc, IRoom } from '../common'
 import { RoomItemManager } from '../ui/RoomItemManager'
 import { ResourceManager } from '../global/ResourceManager'
-import { createErrorTip } from '../utils'
+import { createErrorTip, getSkillPath } from '../utils'
 
 const { ccclass, property } = _decorator
 
@@ -19,22 +19,25 @@ export class HallManager extends Component {
   roomPrefab: Prefab = null
 
   async onLoad() {
-    // director.preloadScene(SceneEnum.CheckActor);
+    //应该放在场景管理类一起处理
+    DataManager.Instance.stage = director.getScene().getChildByName('Canvas')
+    director.preloadScene(SceneEnum.Battle)
+
     EventManager.Instance.on(EventEnum.RoomCreate, this.handleCreateRoom, this)
     EventManager.Instance.on(EventEnum.RoomJoin, this.handleJoinRoom, this)
     // 接收房间广播
     NetworkManager.Instance.listenMsg(ApiFunc.RoomList, this.renderRooms, this)
-    
+
     await NetworkManager.Instance.connect().catch(() => false)
     this.roomContainer.destroyAllChildren()
 
     // screen.requestFullScreen() //全屏
     this.loadRes()
-
   }
   // test
   async loadRes() {
     const list = []
+    // 注意取得时候不能用枚举，懒得改了
     for (const type in PrefabPathEnum) {
       const p = ResourceManager.Instance.loadRes(PrefabPathEnum[type], Prefab).then((prefab) => {
         DataManager.Instance.prefabMap.set(type, prefab)
@@ -44,6 +47,13 @@ export class HallManager extends Component {
     for (const type in TexturePathEnum) {
       const p = ResourceManager.Instance.loadDir(TexturePathEnum[type], SpriteFrame).then((spriteFrames) => {
         DataManager.Instance.textureMap.set(type, spriteFrames)
+      })
+      list.push(p)
+    }
+
+    for (const type in SkillPathEnum) {
+      const p = ResourceManager.Instance.loadRes(getSkillPath(SkillPathEnum[type]), SpriteFrame).then((spriteFrame) => {
+        DataManager.Instance.skillMap.set(SkillPathEnum[type], spriteFrame)
       })
       list.push(p)
     }
@@ -57,7 +67,26 @@ export class HallManager extends Component {
   }
 
   async start() {
-      
+    this.syncRooms()
+  }
+  // 同步房间信息，以及用户名设置
+  async syncRooms() {
+    // 进入房间就请求一次
+    if (NetworkManager.Instance.isConnected === false) {
+      await new Promise((resolve) => setTimeout(resolve, 1000)) //防止无限 递归
+      await this.syncRooms()
+    }
+    NetworkManager.Instance.callApi(ApiFunc.RoomListByName, { roomName: '' })
+
+    const { nickname, godname } = DataManager.Instance.player
+    const username = DataManager.Instance.stage.getChildByName('UserName')
+    username.getChildByName('NickName').getComponent(Label).string = nickname
+    if (godname) {
+      username.getChildByName('Tag').getChildByName('GodName').getComponent(Label).string = godname
+      username.getChildByName('Tag').active = true
+    } else {
+      username.getChildByName('Tag').active = false
+    }
   }
 
   renderRooms = ({ rooms }) => {
@@ -85,18 +114,18 @@ export class HallManager extends Component {
 
   async handleCreateRoom(roomInfo: IRoom) {
     const res = await NetworkManager.Instance.callApi(ApiFunc.RoomCreate, roomInfo)
-    console.log('room', res)
 
     DataManager.Instance.roomInfo = res.room
-    // director.loadScene(SceneEnum.CheckActor);
+    director.loadScene(SceneEnum.Battle)
   }
 
   async handleJoinRoom(data) {
     const res = await NetworkManager.Instance.callApi(ApiFunc.ApiRoomJoin, data)
-    
+
     if (res.error === '') {
       console.log('进入房间')
       DataManager.Instance.roomInfo = res.room
+      director.loadScene(SceneEnum.Battle)
     } else {
       createErrorTip(res.error)
     }

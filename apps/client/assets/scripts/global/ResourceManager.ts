@@ -10,23 +10,23 @@ export class ResourceManager extends Singleton {
     return new Promise<T>((resolve, reject) => {
       resources.load(path, type, (err, res) => {
         if (err) {
-          reject(err);
-          return;
+          reject(err)
+          return
         }
-        resolve(res);
-      });
-    });
+        resolve(res)
+      })
+    })
   }
 
   loadDir<T extends Asset>(path: string, type: new (...args: any[]) => T) {
     return new Promise<T[]>((resolve, reject) => {
       resources.loadDir(path, type, (err, res) => {
         if (err) {
-          reject(err);
-          return;
+          reject(err)
+          return
         }
-        resolve(res);
-      });
-    });
+        resolve(res)
+      })
+    })
   }
 }

@@ -5,9 +5,9 @@ export enum ConnectStateEnum {
 }
 
 // 房间模式
-export enum RoomMode{
+export enum RoomMode {
   normal = '标准',
-  old = '怀旧',
+  challenge = '挑战',
   limit = '限制',
   infinite = '无限',
 }
@@ -34,7 +34,6 @@ export enum InputTypeEnum {
   TimePast,
 }
 export enum EntityTypeEnum {
-  
   Map1 = 'Map1',
   Actor1 = 'Actor1',
   Actor2 = 'Actor2',
@@ -61,6 +60,7 @@ export enum ApiFunc {
   RoomCreate,
   RoomListByName,
   ApiRoomJoin,
+  ApiRoomLeave,
   gap = 100,
   // 从100继续，这是api和msg的分界线
   inputFromClient,
@@ -70,6 +70,10 @@ export enum ApiFunc {
 }
 
 export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.ApiRoomLeave]: {
+    req: 'game.ApiRoomLeaveReq',
+    res: 'game.ApiRoomLeaveRes',
+  },
   [ApiFunc.ApiRoomJoin]: {
     req: 'game.ApiRoomJoinReq',
     res: 'game.ApiRoomJoinRes',
@@ -147,4 +151,29 @@ export enum ServerPort {
   AuthRpc = 3001,
   Gateway = 4000,
   Game = 5000,
+}
+
+export interface ISkill {
+  name?: string
+  type?: number[]
+  desc?: string
+  damage?: number
+  speed?: number
+  target?: number
+  range?: number[]
+  longrang?: boolean
+  pierce?: boolean
+  location?: number
+  defense?: number
+  power?: number
+  particle?: string
+}
+
+export interface IActorSkills {
+  [key: number]: ISkill[];
+}
+export interface IActor {
+  actorName: string;
+  prompt: string[];
+  skills: IActorSkills;
 }

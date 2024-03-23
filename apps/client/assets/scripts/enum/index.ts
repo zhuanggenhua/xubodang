@@ -1,5 +1,4 @@
-
-export enum TipEnum{
+export enum TipEnum {
   ErrTip = 'ErrTip',
 }
 
@@ -28,13 +27,13 @@ export enum EventEnum {
   RoomCreate = 'RoomCreate',
   GameStart = 'GameStart',
   GameEnd = 'GameEnd',
-  ClientSync = 'ClientSync',
   ReConnect = 'ReConnect',
 }
 
 export enum PrefabPathEnum {
   Room = 'prefab/Room',
   ErrTip = 'prefab/ErrTip',
+  Heart = 'prefab/Heart',
   // Map1 = 'prefab/Map1',
   // Actor1 = 'prefab/Actor',
   // Actor2 = 'prefab/Actor',
@@ -64,6 +63,28 @@ export enum TexturePathEnum {}
 export enum SceneEnum {
   Home = 'Home',
   Loading = 'Loading',
-  CheckActor = 'CheckActor',
   Battle = 'Battle',
+  Hall = 'Hall',
+}
+
+export enum SkillPathEnum {
+  xu = 'base/xu',
+  kan = 'base/kan',
+  jump = 'base/jump',
+  dang = 'base/round-shield',
+  heartShield = 'shield/heart-shield',
+  spade = 'shield/spade',
+  crossbow = 'shield/crossbow',
+  shieldReflect = 'shield/shield-reflect',
+  spikedShield = 'shield/spiked-shield',
+  shieldImpact = 'shield/shield-impact',
+  spartan = 'shield/spartan',
+  shieldEchoes = 'shield/shield-echoes',
+  crenulatedShield = 'shield/crenulated-shield',
+  floorHatch = 'shield/floor-hatch',
+  enrage = 'shield/enrage',
+  swordTie = 'shield/sword-tie',
+  ancientSword = 'shield/ancient-sword',
+  unstableProjectile = 'shield/unstable-projectile',
+  shieldBash = 'shield/shield-bash',
 }

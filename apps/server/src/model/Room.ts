@@ -1,4 +1,4 @@
-import { IClientInput, IState, EntityTypeEnum, InputTypeEnum, ApiFunc, RoomMode } from '../common'
+import { IClientInput, EntityTypeEnum, InputTypeEnum, ApiFunc, RoomMode } from '../common'
 import { Connection } from '../common/core/Connection'
 import PlayerManager from '../game/PlayerManager'
 import RoomManager from '../game/RoomManager'
@@ -12,8 +12,13 @@ export default class Room {
   private pendingInput: Array<IClientInput> = []
   private lastPlayerFrameIdMap: Map<number, number> = new Map()
 
-  constructor(public id: number, public roomName: String, public pwd: String, public life: number, public mode: RoomMode) {
-  }
+  constructor(
+    public id: number,
+    public roomName: String,
+    public pwd: String,
+    public life: number,
+    public mode: RoomMode,
+  ) {}
 
   join(uid: number) {
     const player = PlayerManager.Instance.getPlayerById(uid)
@@ -49,7 +54,7 @@ export default class Room {
     for (const player of this.players) {
       player.connection.sendMsg(ApiFunc.MsgRoom, {
         room: RoomManager.Instance.getRoomView(this),
-      });
+      })
     }
   }
 

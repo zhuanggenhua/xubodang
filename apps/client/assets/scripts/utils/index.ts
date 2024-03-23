@@ -1,6 +1,9 @@
-import { UITransform, Node, Layers, instantiate, Label } from 'cc'
+import { UITransform, Node, Layers, instantiate, Label, Color } from 'cc'
 import DataManager from '../global/DataManager'
 import { PrefabPathEnum, TipEnum } from '../enum'
+import { IPlayer } from '../common'
+
+export * from './biz'
 
 export const getRandomNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -25,10 +28,19 @@ export const createErrorTip = (msg: string) => {
     const node = instantiate(prefab)
     node.getChildByName('Tip').getChildByName('Label').getComponent(Label).string = msg
     node.setParent(DataManager.Instance.stage)
-  }else{
-    DataManager.Instance.stage.getChildByName('ErrTip').getChildByName('Tip').getChildByName('Label').getComponent(Label).string = msg
+  } else {
+    DataManager.Instance.stage
+      .getChildByName('ErrTip')
+      .getChildByName('Tip')
+      .getChildByName('Label')
+      .getComponent(Label).string = msg
   }
 }
 export const destroyTip = (type: TipEnum = TipEnum.ErrTip) => {
   if (DataManager.Instance.stage.getChildByName(type)) DataManager.Instance.stage.getChildByName(type).destroy()
 }
+
+// 生成弹窗
+export const createPopTip = (msg: string) => {}
+
+

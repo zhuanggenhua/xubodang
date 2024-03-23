@@ -1,18 +1,6 @@
 // @ts-ignore
 import { EntityTypeEnum, InputTypeEnum } from "./enum.ts";
 
-export interface IActor {
-  id: number;
-  nickname: string;
-  type: EntityTypeEnum;
-  weaponType: EntityTypeEnum;
-  bulletType: EntityTypeEnum;
-
-  //动态数据
-  hp: number;
-  position: IVec2;
-  direction: IVec2;
-}
 
 export interface IBullet {
   id: number;
@@ -29,12 +17,7 @@ export interface IVec2 {
   y: number;
 }
 
-export interface IState {
-  actors: IActor[];
-  bullets: IBullet[];
-  nextBulletId: number;
-  seed: number;
-}
+
 
 export type IClientInput = IActorMove | IWeaponShoot | ITimePast;
 

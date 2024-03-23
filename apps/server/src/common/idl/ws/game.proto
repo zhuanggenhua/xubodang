@@ -61,6 +61,10 @@ message ApiRoomJoinRes {
   IRoom room = 1;
   string error = 2;
 }
+message ApiRoomLeaveReq {
+}
+message ApiRoomLeaveRes {
+}
 
 // 进入游戏
 message EnterGameReq {
