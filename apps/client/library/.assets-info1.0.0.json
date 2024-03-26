@@ -72,11 +72,11 @@
       "uuid": "dbbb8ad9-c288-418b-b96a-c97d29f68160"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\enum\\index.ts": {
-      "time": 1711195455888.6377,
+      "time": 1711419006602.9292,
       "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\DataManager.ts": {
-      "time": 1711193524332.726,
+      "time": 1711436139984.5715,
       "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\particle\\LightParticle.ts": {
@@ -265,7 +265,7 @@
       "uuid": "04945ddd-ca73-4151-874b-7e23c8f0428f"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg": {
-      "time": 1711198737106.7048,
+      "time": 1711360495609.63,
       "uuid": "bc54d86d-e9ba-43db-8ec9-b496b780bb7f"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\buff": {
@@ -277,7 +277,7 @@
       "uuid": "c22bc2c3-76a1-4781-a1d6-457aee8c95e7"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input": {
-      "time": 1709690661957.6748,
+      "time": 1711360408201.234,
       "uuid": "c7c6396b-c5f5-4f9a-9717-968e1ffce3de"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\pop": {
@@ -285,7 +285,7 @@
       "uuid": "e27a39b5-bfb2-4622-b804-f44f9182e971"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress": {
-      "time": 1709690661973.4792,
+      "time": 1711360424407.0854,
       "uuid": "14003c39-8c9c-424d-9221-ff30cd9a0ecf"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\big screen - options.png.meta": {
@@ -350,21 +350,6 @@
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item.png.meta": {
       "time": 1709690662846.3367
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png.meta": {
-      "time": 1709690662851.3228
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png.meta": {
-      "time": 1709967786200.9604
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png.meta": {
-      "time": 1709690662856.309
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png.meta": {
-      "time": 1709690662925.6301
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png.meta": {
-      "time": 1709690662948.134
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 1.png.meta": {
       "time": 1709690662953.989
@@ -455,29 +440,9 @@
       "time": 1624717366000,
       "uuid": "13936920-91e0-413a-a7fb-403aeefaad88"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png": {
-      "time": 1709553695775.6018,
-      "uuid": "43321085-61d6-4a44-8ab5-7d8e7a5193db"
-    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item.png": {
       "time": 1709553695765.1484,
       "uuid": "e7cd77de-6de4-4354-8dce-0dba043e99e3"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png": {
-      "time": 1709553695838.7087,
-      "uuid": "adb06f1e-0fe8-49f1-83ea-74e7920aac68"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png": {
-      "time": 1709553695806.5283,
-      "uuid": "34945a07-c0d8-48fc-b574-ffc91de5376b"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png": {
-      "time": 1709553695846.505,
-      "uuid": "af24ba2a-ed81-4e5a-a3c6-102c61a2c190"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png": {
-      "time": 1709553695854.4844,
-      "uuid": "bc053846-b8ce-41f7-9c74-e0389522e0ce"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\volume control 1.png": {
       "time": 1624717752000,
@@ -516,7 +481,7 @@
       "time": 1709863845426.7395
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui": {
-      "time": 1711200515342.563,
+      "time": 1711424091653.0833,
       "uuid": "03476cbf-cba0-4bf3-b1c4-d0b3db4c4dec"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\font\\gudian.ttf.meta": {
@@ -586,7 +551,7 @@
       "uuid": "c6e581d1-5164-4ea9-af34-a1302802a6e9"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\index.ts": {
-      "time": 1711001767933.0232,
+      "time": 1711437410523.0632,
       "uuid": "eb1ea03c-666d-41d4-ad4a-38502e844f47"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\FeedBack.png.meta": {
@@ -607,7 +572,7 @@
       "uuid": "a08ae65a-6792-4789-8115-30ebc55c2955"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\global\\NetworkManager.ts": {
-      "time": 1711195796465.5403,
+      "time": 1711422476688.7173,
       "uuid": "1222ee1c-ab60-41f0-a33b-d2da10206e33"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\Achievement.png.meta": {
@@ -621,7 +586,7 @@
       "time": 1709949558427.76
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\Hall.scene": {
-      "time": 1711200678518.366,
+      "time": 1711434267309.6755,
       "uuid": "75992987-f6bf-4bf5-8d26-682c9a607889"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\button\\Back.png.meta": {
@@ -642,7 +607,7 @@
       "time": 1709956339291.4731
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scene\\Battle.scene": {
-      "time": 1711200746611.1794,
+      "time": 1711436744839.4556,
       "uuid": "6843d3d0-cffe-4c2e-bb86-df96e22f8bed"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\优化目标背景框 (1).png.meta": {
@@ -656,7 +621,7 @@
       "time": 1710233153066.2756
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons": {
-      "time": 1711197345786.5881,
+      "time": 1711360392530.136,
       "uuid": "47ca18a7-18e3-4efd-9479-a8ec07ae7c0a"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\icon_pk (1).png.meta": {
@@ -692,7 +657,7 @@
       "uuid": "22db3526-5b22-4a1f-b602-ae781d34f362"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\proto\\index.js": {
-      "time": 1710938386094.5693,
+      "time": 1711423975116.5369,
       "uuid": "fdc305cc-78c1-4b12-ba25-4cc694adda9a"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common.meta": {
@@ -722,7 +687,7 @@
       "uuid": "99796cb7-a9ce-4209-a431-5aa528b02be7"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\enum.ts": {
-      "time": 1711193622985.4036,
+      "time": 1711437667409.0256,
       "uuid": "f74babdf-59df-477d-ae39-c717f50cd3ae"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\common\\index.ts": {
@@ -741,7 +706,7 @@
       "time": 1710410214687.9558
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\HallManager.ts": {
-      "time": 1711195823854.297,
+      "time": 1711436184147.481,
       "uuid": "121926aa-ba72-4cfd-a113-fe8350879f4d"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\RoomItemManager.ts.meta": {
@@ -755,7 +720,7 @@
       "time": 1709690661908.0547
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab": {
-      "time": 1711162168922.344,
+      "time": 1711418312757.0786,
       "uuid": "7c11175b-2afc-401e-8b60-97d841391700"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Room.prefab.meta": {
@@ -933,18 +898,11 @@
       "time": 1710839258162.3933,
       "uuid": "ca5ba6dd-3b23-4a65-b540-6088d5109ad8"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png.meta": {
-      "time": 1710834775160.703
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png": {
-      "time": 1710832107239.235,
-      "uuid": "1e4e669b-824b-47a6-933c-b747a6178db4"
-    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\BattleMgr.ts.meta": {
       "time": 1710835055877.2412
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\BattleMgr.ts": {
-      "time": 1711200090573.1987,
+      "time": 1711436666083.6167,
       "uuid": "34e62257-5095-45f6-bbba-1d505ec2e650"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\round.png.meta": {
@@ -1094,13 +1052,6 @@
       "time": 1710926677290.9766,
       "uuid": "c4ad7ac3-e3ea-4be2-bf60-05d51aef4484"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\科幻方框.png.meta": {
-      "time": 1710928991705.6323
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\科幻方框.png": {
-      "time": 1710926781908.0332,
-      "uuid": "a57aac80-b3f8-4a39-813f-91dbb75d478b"
-    },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\ButtonMgr.ts.meta": {
       "time": 1710933874146.3765
     },
@@ -1119,7 +1070,7 @@
       "time": 1711001923453.7668
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\utils\\biz.ts": {
-      "time": 1711195719267.4333,
+      "time": 1711435087948.984,
       "uuid": "4a844870-1ed9-4109-a430-4398cd76cda0"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\config.meta": {
@@ -1133,7 +1084,7 @@
       "time": 1711006579379.085
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\config\\readme.md": {
-      "time": 1711074139701.8174,
+      "time": 1711437705609.3955,
       "uuid": "eaf66616-f57a-4606-a261-24d48e75d9db"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\skills\\base.meta": {
@@ -1238,7 +1189,7 @@
       "time": 1711106018351.7239
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\config\\actor.ts": {
-      "time": 1711199061048.404,
+      "time": 1711437658347.6255,
       "uuid": "03de73e7-b33d-405c-8980-a738beb4cb44"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\skills\\shield\\unstable-projectile.png.meta": {
@@ -1247,13 +1198,6 @@
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\skills\\shield\\unstable-projectile.png": {
       "time": 1710768567480.9104,
       "uuid": "d49cd7be-aa75-4c15-bd96-d762f929ae6d"
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillItemManager.ts.meta": {
-      "time": 1711110278730.76
-    },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillItemManager.ts": {
-      "time": 1711200822169.9097,
-      "uuid": "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43"
     },
     "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\skills\\superman.meta": {
       "time": 1711110621602.8914
@@ -1318,12 +1262,19 @@
       "time": 1711198735169.9226,
       "uuid": "016bd0a9-b526-4a95-aecf-1d55f43b5a69"
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillButtonMgr.ts.meta": {
-      "time": 1711200515345.5547
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillUiMgr.ts.meta": {
+      "time": 1711110278730.76
     },
-    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillButtonMgr.ts": {
-      "time": 1711200316763.8115,
-      "uuid": "5a24338a-c172-48d5-a1a5-b58068dc190c"
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillUiMgr.ts": {
+      "time": 1711423523021.3706,
+      "uuid": "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43"
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Prompt.prefab.meta": {
+      "time": 1711418312764.0596
+    },
+    "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\prefab\\Prompt.prefab": {
+      "time": 1711437276641.9014,
+      "uuid": "1f53b3fb-973d-4518-8ffa-29668c5901a8"
     }
   },
   "missing": {
@@ -2018,9 +1969,9 @@
       "removeTime": 1710833303685
     },
     "1e4e669b-824b-47a6-933c-b747a6178db4": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battl.png",
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png",
       "time": 1710832107239.235,
-      "removeTime": 1710834775009
+      "removeTime": 1711360495627
     },
     "4726ac32-4674-47b3-b461-a34a593c7dc6": {
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\bg\\battle.png",
@@ -2113,9 +2064,9 @@
       "removeTime": 1710927912597
     },
     "a57aac80-b3f8-4a39-813f-91dbb75d478b": {
-      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\方框.png",
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\科幻方框.png",
       "time": 1710926781908.0332,
-      "removeTime": 1710928991678
+      "removeTime": 1711360392576
     },
     "32496e82-c1a6-455e-b552-0404d3ec291d": {
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\scene\\CheckActor.ts",
@@ -2206,6 +2157,41 @@
       "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\icons\\skill\\闪电速度.png",
       "time": 1711197622068.6243,
       "removeTime": 1711197692062
+    },
+    "adb06f1e-0fe8-49f1-83ea-74e7920aac68": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\black_item_bold.png",
+      "time": 1709553695838.7087,
+      "removeTime": 1711360408148
+    },
+    "43321085-61d6-4a44-8ab5-7d8e7a5193db": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item.png",
+      "time": 1709553695775.6018,
+      "removeTime": 1711360408177
+    },
+    "34945a07-c0d8-48fc-b574-ffc91de5376b": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\input\\grey_item_bold.png",
+      "time": 1709553695806.5283,
+      "removeTime": 1711360408212
+    },
+    "bc053846-b8ce-41f7-9c74-e0389522e0ce": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress_column.png",
+      "time": 1709553695854.4844,
+      "removeTime": 1711360424418
+    },
+    "af24ba2a-ed81-4e5a-a3c6-102c61a2c190": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\resources\\ui\\progress\\progress.png",
+      "time": 1709553695846.505,
+      "removeTime": 1711360424534
+    },
+    "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillItemManager.ts",
+      "time": 1711360806564.386,
+      "removeTime": 1711360848664
+    },
+    "5a24338a-c172-48d5-a1a5-b58068dc190c": {
+      "path": "C:\\Users\\Admin\\Desktop\\zgh-temp\\test\\gtest\\ctest\\xubodang\\apps\\client\\assets\\scripts\\ui\\SkillButtonMgr.ts",
+      "time": 1711360898610.4802,
+      "removeTime": 1711424091690
     }
   }
 }

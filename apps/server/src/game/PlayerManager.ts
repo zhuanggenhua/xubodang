@@ -29,6 +29,7 @@ export default class PlayerManager extends Singleton {
       const godname = ''
       player = new Player(connection, { id, nickname, godname })
     }
+    connection.playerId = player.id //绑定连接与玩家，用于退出
     this.players.add(player)
     this.idMapPlayer.set(player.id, player)
     return player

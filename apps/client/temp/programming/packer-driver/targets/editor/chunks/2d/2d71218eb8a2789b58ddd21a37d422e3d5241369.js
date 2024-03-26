@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, director, view, Singleton, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, Prefab, SpriteFrame, director, view, Singleton, PrefabPathEnum, SkillPathEnum, TexturePathEnum, ResourceManager, getSkillPath, DataManager, _crd, PLAYER_SPEED, BULLET_SPEED, WEAPON_DAMAGE, PLAYER_RADIUS, BULLET_RADIUS, mapW, mapH;
 
   function _reportPossibleCrUseOfIPlayer(extras) {
     _reporterNs.report("IPlayer", "../common", _context.meta, extras);
@@ -15,6 +15,26 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("Singleton", "../common/base", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfPrefabPathEnum(extras) {
+    _reporterNs.report("PrefabPathEnum", "../enum", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfSkillPathEnum(extras) {
+    _reporterNs.report("SkillPathEnum", "../enum", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfTexturePathEnum(extras) {
+    _reporterNs.report("TexturePathEnum", "../enum", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfResourceManager(extras) {
+    _reporterNs.report("ResourceManager", "./ResourceManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfgetSkillPath(extras) {
+    _reporterNs.report("getSkillPath", "../utils", _context.meta, extras);
+  }
+
   _export("default", void 0);
 
   return {
@@ -24,10 +44,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       _cclegacy = _cc.cclegacy;
       __checkObsolete__ = _cc.__checkObsolete__;
       __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
+      Prefab = _cc.Prefab;
+      SpriteFrame = _cc.SpriteFrame;
       director = _cc.director;
       view = _cc.view;
     }, function (_unresolved_2) {
       Singleton = _unresolved_2.Singleton;
+    }, function (_unresolved_3) {
+      PrefabPathEnum = _unresolved_3.PrefabPathEnum;
+      SkillPathEnum = _unresolved_3.SkillPathEnum;
+      TexturePathEnum = _unresolved_3.TexturePathEnum;
+    }, function (_unresolved_4) {
+      ResourceManager = _unresolved_4.ResourceManager;
+    }, function (_unresolved_5) {
+      getSkillPath = _unresolved_5.getSkillPath;
     }],
     execute: function () {
       _crd = true;
@@ -53,9 +83,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       }), Singleton) : Singleton) {
         constructor(...args) {
           super(...args);
+          this.mode = 'single';
           this.setting = null;
-          this.player = void 0;
-          this.roomInfo = void 0;
+          this.player = {
+            nickname: '游客'
+          };
+          this.roomInfo = {
+            life: 5
+          };
           this.stage = director.getScene().getChildByName('Canvas');
           // actorMap: Map<number, ActorManager> = new Map();
           this.prefabMap = new Map();
@@ -65,15 +100,63 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
         static get Instance() {
           return super.GetInstance();
-        } // bulletMap: Map<number, BulletManager> = new Map();
+        }
+
+        // bulletMap: Map<number, BulletManager> = new Map();
         // state: IState = {
         //   seed: 1, //伪随机种子
         // };
         // 执行动作
         // applyInput(input: IClientInput) {
         // }
-        // 渲染生命值
+        async loadRes() {
+          const list = []; // 注意取得时候不能用枚举，懒得改了
 
+          for (const type in _crd && PrefabPathEnum === void 0 ? (_reportPossibleCrUseOfPrefabPathEnum({
+            error: Error()
+          }), PrefabPathEnum) : PrefabPathEnum) {
+            const p = (_crd && ResourceManager === void 0 ? (_reportPossibleCrUseOfResourceManager({
+              error: Error()
+            }), ResourceManager) : ResourceManager).Instance.loadRes((_crd && PrefabPathEnum === void 0 ? (_reportPossibleCrUseOfPrefabPathEnum({
+              error: Error()
+            }), PrefabPathEnum) : PrefabPathEnum)[type], Prefab).then(prefab => {
+              DataManager.Instance.prefabMap.set(type, prefab);
+            });
+            list.push(p);
+          }
+
+          for (const type in _crd && TexturePathEnum === void 0 ? (_reportPossibleCrUseOfTexturePathEnum({
+            error: Error()
+          }), TexturePathEnum) : TexturePathEnum) {
+            const p = (_crd && ResourceManager === void 0 ? (_reportPossibleCrUseOfResourceManager({
+              error: Error()
+            }), ResourceManager) : ResourceManager).Instance.loadDir((_crd && TexturePathEnum === void 0 ? (_reportPossibleCrUseOfTexturePathEnum({
+              error: Error()
+            }), TexturePathEnum) : TexturePathEnum)[type], SpriteFrame).then(spriteFrames => {
+              DataManager.Instance.textureMap.set(type, spriteFrames);
+            });
+            list.push(p);
+          }
+
+          for (const type in _crd && SkillPathEnum === void 0 ? (_reportPossibleCrUseOfSkillPathEnum({
+            error: Error()
+          }), SkillPathEnum) : SkillPathEnum) {
+            const p = (_crd && ResourceManager === void 0 ? (_reportPossibleCrUseOfResourceManager({
+              error: Error()
+            }), ResourceManager) : ResourceManager).Instance.loadRes((_crd && getSkillPath === void 0 ? (_reportPossibleCrUseOfgetSkillPath({
+              error: Error()
+            }), getSkillPath) : getSkillPath)((_crd && SkillPathEnum === void 0 ? (_reportPossibleCrUseOfSkillPathEnum({
+              error: Error()
+            }), SkillPathEnum) : SkillPathEnum)[type]), SpriteFrame).then(spriteFrame => {
+              DataManager.Instance.skillMap.set((_crd && SkillPathEnum === void 0 ? (_reportPossibleCrUseOfSkillPathEnum({
+                error: Error()
+              }), SkillPathEnum) : SkillPathEnum)[type], spriteFrame);
+            });
+            list.push(p);
+          }
+
+          await Promise.all(list);
+        }
 
       });
 

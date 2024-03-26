@@ -33,6 +33,7 @@ export enum EventEnum {
 export enum PrefabPathEnum {
   Room = 'prefab/Room',
   ErrTip = 'prefab/ErrTip',
+  Prompt = 'prefab/Prompt',
   Heart = 'prefab/Heart',
   // Map1 = 'prefab/Map1',
   // Actor1 = 'prefab/Actor',

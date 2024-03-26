@@ -118,6 +118,9 @@ export default class NetworkManager extends Singleton {
         this.reconnect()
       }
       this.ws.onerror = (e) => {
+        // 处理离开房间
+        NetworkManager.Instance.callApi(ApiFunc.ApiRoomLeave)
+
         this.isConnected = false
         reject(false)
         console.log('ws错误', e)
@@ -190,6 +193,9 @@ export default class NetworkManager extends Singleton {
         //   resolve({ success: false, error: new Error('timeout') })
         //   this.unlistenMsg(name as any, cb, null)
         // }, TIMEOUT)
+        if (this.isConnected === false) {
+          return
+        }
 
         // 回调处理
         //  模仿http 只接收一次
@@ -208,6 +214,9 @@ export default class NetworkManager extends Singleton {
   }
 
   async sendMsg(name: ApiFunc, data: any) {
+    if (this.isConnected === false) {
+      return
+    }
     // 根据name生成对应的编码器并编码生成TypeArray
     const path = getProtoPathByApiFunc(name, 'req')
     const coder = protoRoot.lookup(path)

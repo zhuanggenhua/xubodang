@@ -52,6 +52,7 @@ System.register(["cc"], function (_export, _context) {
       _export("PrefabPathEnum", PrefabPathEnum = /*#__PURE__*/function (PrefabPathEnum) {
         PrefabPathEnum["Room"] = "prefab/Room";
         PrefabPathEnum["ErrTip"] = "prefab/ErrTip";
+        PrefabPathEnum["Prompt"] = "prefab/Prompt";
         PrefabPathEnum["Heart"] = "prefab/Heart";
         return PrefabPathEnum;
       }({}));

@@ -1,7 +1,7 @@
-import { UITransform, Node, Layers, instantiate, Label, Color } from 'cc'
+import { UITransform, Node, Layers, instantiate, Label, Color, Vec3 } from 'cc'
 import DataManager from '../global/DataManager'
 import { PrefabPathEnum, TipEnum } from '../enum'
-import { IPlayer } from '../common'
+import { IPlayer, ISkill } from '../common'
 
 export * from './biz'
 
@@ -40,7 +40,53 @@ export const destroyTip = (type: TipEnum = TipEnum.ErrTip) => {
   if (DataManager.Instance.stage.getChildByName(type)) DataManager.Instance.stage.getChildByName(type).destroy()
 }
 
-// 生成弹窗
-export const createPopTip = (msg: string) => {}
+// 生成提示
+export const createPrompt = (skillNode: Node, skill: ISkill) => {
+  let node = DataManager.Instance.stage.getChildByName('Prompt')
+  if (!node) {
+    const prefab = DataManager.Instance.prefabMap.get('Prompt')
+    node = instantiate(prefab)
+    node.setParent(DataManager.Instance.stage)
+  }
 
+  node.getChildByName('Name').getComponent(Label).string = skill.name
+  node.getChildByName('Desc').getComponent(Label).string = skill.desc
+  const skillDesc = node.getChildByName('SkillDesc')
+  skillDesc.getChildByName('Attack').getChildByName('Label').getComponent(Label).string =
+    skill.damage?.toString() || '0'
+  skillDesc.getChildByName('Sheild').getChildByName('Label').getComponent(Label).string =
+    skill.defense?.toString() || '0'
 
+  let range = '无'
+  if (skill.range?.length === 1) range = rangMap[skill.range[0]]
+  if (skill.range?.length === 2) range = `${rangMap[skill.range[0]]}-${rangMap[skill.range[1]]}`
+  if (skill.range?.length === 3) range = '全范围'
+  if (skill.type.indexOf(4) !== -1) range = '自身' //持续效果默认自身
+  if (skill.target === 1) range = '自身'
+
+  skillDesc.getChildByName('Range').getChildByName('Label').getComponent(Label).string = range
+
+  skillDesc.getChildByName('Speed').getChildByName('Label').getComponent(Label).string = skill.speed === 0 ? '慢' : '快'
+
+  let effect = '效果：无'
+  if (skill.pierce) effect += '、穿透'
+  if (skill.type.indexOf(4) !== -1) effect += '、持续'
+  if (effect.length > 4) effect = effect.replace('无、', '')
+  node.getChildByName('Effect').getComponent(Label).string = effect
+
+  // 位置
+  const transform = skillNode.getComponent(UITransform)
+  const worldPos = new Vec3(0, 0, 0)
+  skillNode.getWorldPosition(worldPos)
+
+  // 获取按钮节点转场景相对坐标
+  const scenePos = DataManager.Instance.stage.getComponent(UITransform).convertToNodeSpaceAR(worldPos)
+  node.setPosition(scenePos.x, scenePos.y + transform.height / 2)
+
+  node.active = true
+}
+export const rangMap = {
+  0: '地面',
+  1: '天空',
+  2: '地下',
+}

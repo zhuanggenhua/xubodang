@@ -692,15 +692,11 @@
   },
   "adb06f1e-0fe8-49f1-83ea-74e7920aac68": {
     "url": "db://assets/resources/ui/input/black_item_bold.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "43321085-61d6-4a44-8ab5-7d8e7a5193db": {
     "url": "db://assets/resources/ui/input/grey_item.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "13936920-91e0-413a-a7fb-403aeefaad88@f9941": {
     "url": "db://assets/resources/ui/button/tiny screen - controls audio resolution.png@f9941",
@@ -712,9 +708,7 @@
   },
   "34945a07-c0d8-48fc-b574-ffc91de5376b": {
     "url": "db://assets/resources/ui/input/grey_item_bold.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "fb331135-4580-4435-9343-5c6d7814b21a@6c48a": {
     "url": "db://assets/resources/ui/button/wenhao.png@6c48a",
@@ -882,9 +876,7 @@
   },
   "af24ba2a-ed81-4e5a-a3c6-102c61a2c190": {
     "url": "db://assets/resources/ui/progress/progress.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "737a5c23-eac0-41e7-9cbf-8f1adb4211d6@6c48a": {
     "url": "db://assets/resources/ui/lock/lock5.png@6c48a",
@@ -904,9 +896,7 @@
   },
   "bc053846-b8ce-41f7-9c74-e0389522e0ce": {
     "url": "db://assets/resources/ui/progress/progress_column.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "737a5c23-eac0-41e7-9cbf-8f1adb4211d6@f9941": {
     "url": "db://assets/resources/ui/lock/lock5.png@f9941",
@@ -1399,6 +1389,7 @@
         "016bd0a9-b526-4a95-aecf-1d55f43b5a69@f9941"
       ],
       "dependScripts": [
+        "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43",
         "6d6e8544-a896-464d-aee5-b5214ea303b1",
         "34e62257-5095-45f6-bbba-1d505ec2e650"
       ]
@@ -3315,9 +3306,7 @@
   },
   "1e4e669b-824b-47a6-933c-b747a6178db4": {
     "url": "db://assets/resources/ui/bg/battle.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "1e4e669b-824b-47a6-933c-b747a6178db4@6c48a": {
     "url": "db://assets/resources/ui/bg/battle.png@6c48a",
@@ -3807,9 +3796,7 @@
   },
   "a57aac80-b3f8-4a39-813f-91dbb75d478b": {
     "url": "db://assets/resources/ui/icons/科幻方框.png",
-    "value": {
-      "depends": []
-    }
+    "value": {}
   },
   "a57aac80-b3f8-4a39-813f-91dbb75d478b@6c48a": {
     "url": "db://assets/resources/ui/icons/科幻方框.png@6c48a",
@@ -4115,7 +4102,7 @@
     "value": {}
   },
   "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43": {
-    "url": "db://assets/scripts/ui/SkillItemManager.ts",
+    "url": "db://assets/scripts/ui/SkillUiMgr.ts",
     "value": {}
   },
   "c593331c-83d8-4d26-b30d-f0510383d9dd": {
@@ -4363,5 +4350,19 @@
   "5a24338a-c172-48d5-a1a5-b58068dc190c": {
     "url": "db://assets/scripts/ui/SkillButtonMgr.ts",
     "value": {}
+  },
+  "1f53b3fb-973d-4518-8ffa-29668c5901a8": {
+    "url": "db://assets/resources/prefab/Prompt.prefab",
+    "value": {
+      "depends": [
+        "bc2670ca-9b49-4c3f-ba6e-76a21947725c",
+        "188ce2eb-3887-4758-a2e5-f3f2fca108c5@f9941",
+        "006da948-5b56-4740-a159-078269485cbb@f9941",
+        "00f0f8f7-ef15-4a01-bdc2-024d73693d40@f9941",
+        "d2566d98-1de8-4cc5-9b50-4fd2c6f7128d@f9941",
+        "016bd0a9-b526-4a95-aecf-1d55f43b5a69@f9941"
+      ],
+      "dependScripts": []
+    }
   }
 }

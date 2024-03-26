@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 27001.072499990463,
+      "mTimestamp": 24744.33129990101,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -388,7 +388,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 41043164.20479995,
+      "mTimestamp": 19726073.848199964,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -798,7 +798,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillButtonMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillUiMgr.ts",
           "resolved": "__unresolved_29",
           "loc": {
             "start": {
@@ -807,12 +807,12 @@
             },
             "end": {
               "line": 33,
-              "column": 122
+              "column": 118
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillItemManager.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/TipMgr.ts",
           "resolved": "__unresolved_30",
           "loc": {
             "start": {
@@ -821,12 +821,12 @@
             },
             "end": {
               "line": 34,
-              "column": 124
+              "column": 114
             }
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/TipMgr.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/biz.ts",
           "resolved": "__unresolved_31",
           "loc": {
             "start": {
@@ -840,7 +840,7 @@
           }
         },
         {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/biz.ts",
+          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts",
           "resolved": "__unresolved_32",
           "loc": {
             "start": {
@@ -849,20 +849,6 @@
             },
             "end": {
               "line": 36,
-              "column": 114
-            }
-          }
-        },
-        {
-          "value": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts",
-          "resolved": "__unresolved_33",
-          "loc": {
-            "start": {
-              "line": 37,
-              "column": 7
-            },
-            "end": {
-              "line": 37,
               "column": 116
             }
           }
@@ -1076,14 +1062,7 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillButtonMgr.ts"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillItemManager.ts"
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillUiMgr.ts"
           },
           "messages": []
         },
@@ -1170,7 +1149,7 @@
       "resolutions": []
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/common/enum.ts": {
-      "mTimestamp": 1711193622985.4036,
+      "mTimestamp": 1711437667409.0256,
       "chunkId": "44305c2a791fe309049d1477e8ed05a17dd54bdc",
       "imports": [],
       "type": "esm",
@@ -1287,7 +1266,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/enum/index.ts": {
       "mTimestamp": {
-        "mtime": 1711195455888.6377,
+        "mtime": 1711419006602.9292,
         "uuid": "7835cf46-385e-4218-9c8d-cdefc4cd7ef6"
       },
       "chunkId": "93be2a043593ef7f8ec7c3e0eba571f5740183e1",
@@ -1309,7 +1288,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/DataManager.ts": {
       "mTimestamp": {
-        "mtime": 1711193524332.726,
+        "mtime": 1711436139984.5715,
         "uuid": "f3a5020f-794f-45a8-a16b-fd40824a254d"
       },
       "chunkId": "2d71218eb8a2789b58ddd21a37d422e3d5241369",
@@ -1350,6 +1329,48 @@
               "column": 42
             }
           }
+        },
+        {
+          "value": "../enum",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 63
+            },
+            "end": {
+              "line": 5,
+              "column": 72
+            }
+          }
+        },
+        {
+          "value": "./ResourceManager",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 32
+            },
+            "end": {
+              "line": 6,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../utils",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 29
+            },
+            "end": {
+              "line": 7,
+              "column": 39
+            }
+          }
         }
       ],
       "type": "esm",
@@ -1388,11 +1409,32 @@
             "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/common/base.ts"
           },
           "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/enum/index.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ResourceManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
+          },
+          "messages": []
         }
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1711159782487,
+      "mTimestamp": 1711418106471,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -1580,7 +1622,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts": {
       "mTimestamp": {
-        "mtime": 1711001767933.0232,
+        "mtime": 1711437410523.0632,
         "uuid": "eb1ea03c-666d-41d4-ad4a-38502e844f47"
       },
       "chunkId": "fd5efcb36b0689112cdf3ed286ccf758b2d67d7d",
@@ -1600,11 +1642,11 @@
           "loc": {
             "start": {
               "line": 1,
-              "column": 69
+              "column": 75
             },
             "end": {
               "line": 1,
-              "column": 73
+              "column": 79
             }
           }
         },
@@ -1790,7 +1832,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/NetworkManager.ts": {
       "mTimestamp": {
-        "mtime": 1711195796465.5403,
+        "mtime": 1711422476688.7173,
         "uuid": "1222ee1c-ab60-41f0-a33b-d2da10206e33"
       },
       "chunkId": "16ba3fbfa208b862083d5d0ada27e0686eb81b8d",
@@ -2460,7 +2502,7 @@
       ]
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/proto/index.mjs?cjs=&original=.js": {
-      "mTimestamp": 1710938386094.5693,
+      "mTimestamp": 1711423975116.5369,
       "chunkId": "66858f443f31df183a4fc57410af57a64810977d",
       "imports": [
         {
@@ -2564,7 +2606,7 @@
       ]
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/server/src/common/idl/auto-gen-ws/index.js": {
-      "mTimestamp": 1710938386094.5693,
+      "mTimestamp": 1711423975116.5369,
       "chunkId": "af61245ca4fbe6f8b688ae3ea83b73d7e1d83e99",
       "imports": [
         {
@@ -2614,7 +2656,7 @@
       ]
     },
     "cce:/internal/ml/cjs-loader.mjs": {
-      "mTimestamp": 1711159782487,
+      "mTimestamp": 1711418106471,
       "chunkId": "a0d063530de23ddade53e1a935bf64c81277c061",
       "imports": [],
       "type": "esm",
@@ -6624,7 +6666,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/HallManager.ts": {
       "mTimestamp": {
-        "mtime": 1711195823854.297,
+        "mtime": 1711436184147.481,
         "uuid": "121926aa-ba72-4cfd-a113-fe8350879f4d"
       },
       "chunkId": "c4884f77bb9dd14e3347499d92174a0fb2d7710d",
@@ -6737,22 +6779,8 @@
           }
         },
         {
-          "value": "../global/ResourceManager",
-          "resolved": "__unresolved_7",
-          "loc": {
-            "start": {
-              "line": 8,
-              "column": 32
-            },
-            "end": {
-              "line": 8,
-              "column": 59
-            }
-          }
-        },
-        {
           "value": "../utils",
-          "resolved": "__unresolved_8",
+          "resolved": "__unresolved_7",
           "loc": {
             "start": {
               "line": 9,
@@ -6834,13 +6862,6 @@
           "resolved": {
             "type": "module",
             "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/RoomItemManager.ts"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/ResourceManager.ts"
           },
           "messages": []
         },
@@ -7211,7 +7232,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/scene/BattleMgr.ts": {
       "mTimestamp": {
-        "mtime": 1711200090573.1987,
+        "mtime": 1711436666083.6167,
         "uuid": "34e62257-5095-45f6-bbba-1d505ec2e650"
       },
       "chunkId": "e2fdfe4e5523a707f9179c07283a2ca589c07015",
@@ -7230,12 +7251,12 @@
           "value": "cc",
           "loc": {
             "start": {
-              "line": 1,
-              "column": 110
+              "line": 13,
+              "column": 7
             },
             "end": {
-              "line": 1,
-              "column": 114
+              "line": 13,
+              "column": 11
             }
           }
         },
@@ -7244,11 +7265,11 @@
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
-              "line": 2,
+              "line": 14,
               "column": 24
             },
             "end": {
-              "line": 2,
+              "line": 14,
               "column": 47
             }
           }
@@ -7258,11 +7279,11 @@
           "resolved": "__unresolved_2",
           "loc": {
             "start": {
-              "line": 5,
+              "line": 17,
               "column": 41
             },
             "end": {
-              "line": 5,
+              "line": 17,
               "column": 52
             }
           }
@@ -7272,54 +7293,40 @@
           "resolved": "__unresolved_3",
           "loc": {
             "start": {
-              "line": 6,
+              "line": 18,
               "column": 27
             },
             "end": {
-              "line": 6,
+              "line": 18,
               "column": 53
             }
           }
         },
         {
-          "value": "../utils",
+          "value": "../config/actor",
           "resolved": "__unresolved_4",
           "loc": {
             "start": {
-              "line": 7,
-              "column": 30
-            },
-            "end": {
-              "line": 7,
-              "column": 40
-            }
-          }
-        },
-        {
-          "value": "../ui/SkillItemManager",
-          "resolved": "__unresolved_5",
-          "loc": {
-            "start": {
-              "line": 8,
-              "column": 33
-            },
-            "end": {
-              "line": 8,
-              "column": 57
-            }
-          }
-        },
-        {
-          "value": "../config/actor",
-          "resolved": "__unresolved_6",
-          "loc": {
-            "start": {
-              "line": 9,
+              "line": 19,
               "column": 19
             },
             "end": {
-              "line": 9,
+              "line": 19,
               "column": 36
+            }
+          }
+        },
+        {
+          "value": "../ui/SkillUiMgr",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 27
+            },
+            "end": {
+              "line": 20,
+              "column": 45
             }
           }
         }
@@ -7378,21 +7385,14 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillItemManager.ts"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
             "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/config/actor.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillUiMgr.ts"
           },
           "messages": []
         }
@@ -7578,7 +7578,7 @@
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/biz.ts": {
       "mTimestamp": {
-        "mtime": 1711195719267.4333,
+        "mtime": 1711435087948.984,
         "uuid": "4a844870-1ed9-4109-a430-4398cd76cda0"
       },
       "chunkId": "88f34c621b5b0406c4d6ed3e9276b5416da4004c",
@@ -7592,19 +7592,6 @@
         },
         {
           "value": "cc"
-        },
-        {
-          "value": "cc",
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 29
-            },
-            "end": {
-              "line": 1,
-              "column": 33
-            }
-          }
         }
       ],
       "type": "esm",
@@ -7629,19 +7616,12 @@
             "url": "cce:/internal/x/cc"
           },
           "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/x/cc"
-          },
-          "messages": []
         }
       ]
     },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/config/actor.ts": {
       "mTimestamp": {
-        "mtime": 1711199061048.404,
+        "mtime": 1711437658347.6255,
         "uuid": "03de73e7-b33d-405c-8980-a738beb4cb44"
       },
       "chunkId": "15d32efd768d157a19d7c5895a4dc01e6bc00da2",
@@ -7693,93 +7673,9 @@
         }
       ]
     },
-    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillItemManager.ts": {
-      "mTimestamp": {
-        "mtime": 1711200822169.9097,
-        "uuid": "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43"
-      },
-      "chunkId": "3d966b9fbd522ab54ba64f8ce2548f3b5f175910",
-      "imports": [
-        {
-          "value": "cce:/internal/code-quality/cr.mjs",
-          "resolved": "__unresolved_0"
-        },
-        {
-          "value": "cc"
-        },
-        {
-          "value": "cc"
-        },
-        {
-          "value": "cc",
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 95
-            },
-            "end": {
-              "line": 1,
-              "column": 99
-            }
-          }
-        },
-        {
-          "value": "../global/DataManager",
-          "resolved": "__unresolved_1",
-          "loc": {
-            "start": {
-              "line": 6,
-              "column": 24
-            },
-            "end": {
-              "line": 6,
-              "column": 47
-            }
-          }
-        }
-      ],
-      "type": "esm",
-      "resolutions": [
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/code-quality/cr.mjs"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/x/cc"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/x/cc"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "cce:/internal/x/cc"
-          },
-          "messages": []
-        },
-        {
-          "resolved": {
-            "type": "module",
-            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/DataManager.ts"
-          },
-          "messages": []
-        }
-      ]
-    },
     "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillButtonMgr.ts": {
       "mTimestamp": {
-        "mtime": 1711200316763.8115,
+        "mtime": 1711360898610.4802,
         "uuid": "5a24338a-c172-48d5-a1a5-b58068dc190c"
       },
       "chunkId": "50fb8253e2843a96960580bada725883c83e96bf",
@@ -7835,6 +7731,111 @@
           "resolved": {
             "type": "module",
             "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/ui/SkillUiMgr.ts": {
+      "mTimestamp": {
+        "mtime": 1711423523021.3706,
+        "uuid": "d5e64eb5-dc0b-4af4-93e8-0a0ea469bc43"
+      },
+      "chunkId": "2c75c2650955550fecda41e3d049e3476978ea51",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 7
+            },
+            "end": {
+              "line": 14,
+              "column": 11
+            }
+          }
+        },
+        {
+          "value": "../global/DataManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 24
+            },
+            "end": {
+              "line": 19,
+              "column": 47
+            }
+          }
+        },
+        {
+          "value": "../utils",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 45
+            },
+            "end": {
+              "line": 20,
+              "column": 55
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/global/DataManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///C:/Users/Admin/Desktop/zgh-temp/test/gtest/ctest/xubodang/apps/client/assets/scripts/utils/index.ts"
           },
           "messages": []
         }

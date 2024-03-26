@@ -19,15 +19,7 @@ export const attrMap = {
   },
 }
 
-export const setPlayerName = (label: Label, player: IPlayer) => {
-  if (player?.godname && player?.godname !== '') {
-    label.string = player?.godname
-    // 神名是金色
-    label.color = new Color('#FFD700')
-  } else {
-    label.string = player?.nickname
-  }
-}
+
 
 export const getSkillPath = (skill: SkillPathEnum) => {
   return `ui/skills/${skill}/spriteFrame`

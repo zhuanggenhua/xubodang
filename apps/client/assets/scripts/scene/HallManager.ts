@@ -32,33 +32,9 @@ export class HallManager extends Component {
     this.roomContainer.destroyAllChildren()
 
     // screen.requestFullScreen() //全屏
-    this.loadRes()
+    DataManager.Instance.loadRes()
   }
   // test
-  async loadRes() {
-    const list = []
-    // 注意取得时候不能用枚举，懒得改了
-    for (const type in PrefabPathEnum) {
-      const p = ResourceManager.Instance.loadRes(PrefabPathEnum[type], Prefab).then((prefab) => {
-        DataManager.Instance.prefabMap.set(type, prefab)
-      })
-      list.push(p)
-    }
-    for (const type in TexturePathEnum) {
-      const p = ResourceManager.Instance.loadDir(TexturePathEnum[type], SpriteFrame).then((spriteFrames) => {
-        DataManager.Instance.textureMap.set(type, spriteFrames)
-      })
-      list.push(p)
-    }
-
-    for (const type in SkillPathEnum) {
-      const p = ResourceManager.Instance.loadRes(getSkillPath(SkillPathEnum[type]), SpriteFrame).then((spriteFrame) => {
-        DataManager.Instance.skillMap.set(SkillPathEnum[type], spriteFrame)
-      })
-      list.push(p)
-    }
-    await Promise.all(list)
-  }
 
   onDestroy() {
     EventManager.Instance.off(EventEnum.RoomCreate, this.handleCreateRoom, this)
@@ -117,6 +93,7 @@ export class HallManager extends Component {
 
     DataManager.Instance.roomInfo = res.room
     director.loadScene(SceneEnum.Battle)
+    DataManager.Instance.mode = 'network'
   }
 
   async handleJoinRoom(data) {
@@ -126,6 +103,7 @@ export class HallManager extends Component {
       console.log('进入房间')
       DataManager.Instance.roomInfo = res.room
       director.loadScene(SceneEnum.Battle)
+      DataManager.Instance.mode = 'network'
     } else {
       createErrorTip(res.error)
     }

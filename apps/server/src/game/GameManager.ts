@@ -37,9 +37,19 @@ export class GameManager extends Singleton {
       console.log(`${getTime()}来人|人数|${server.connections.size}`)
     })
 
+    // 处理客户端关闭连接
     server.on('DisConnect', (connection: Connection) => {
       console.log(`${getTime()}走人|人数|${server.connections.size}`)
       if (connection.playerId) {
+        const player = PlayerManager.Instance.getPlayerById(connection.playerId)
+        const rid = player.rid
+        if (rid !== -1) {
+          RoomManager.Instance.leaveRoom(rid, player.id)
+          RoomManager.Instance.syncRooms()
+          RoomManager.Instance.syncRoom(rid)
+          return {}
+        }
+
         PlayerManager.Instance.removePlayer(connection.playerId)
       }
     })
@@ -125,9 +135,8 @@ export class GameManager extends Singleton {
         const player = PlayerManager.Instance.getPlayerById(connection.playerId)
         if (player) {
           const rid = player.rid
-          if (rid) {
+          if (rid !== -1) {
             RoomManager.Instance.leaveRoom(rid, player.id)
-
             RoomManager.Instance.syncRooms()
             RoomManager.Instance.syncRoom(rid)
             return {}

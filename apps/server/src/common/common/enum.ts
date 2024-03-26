@@ -13,19 +13,19 @@ export enum RoomMode {
 }
 
 export interface IPlayer {
-  id: number
+  id?: number
   nickname: string
-  godname: string
-  rid: number
+  godname?: string
+  rid?: number
 }
 
 export interface IRoom {
-  id: number
-  roomName: string
+  id?: number
+  roomName?: string
   life: number
-  mode: RoomMode
-  hasPwd: boolean
-  players: Array<IPlayer>
+  mode?: RoomMode
+  hasPwd?: boolean
+  players?: Array<IPlayer>
 }
 
 export enum InputTypeEnum {
@@ -161,6 +161,7 @@ export interface ISkill {
   speed?: number
   target?: number
   range?: number[]
+  rangPill?: boolean
   longrang?: boolean
   pierce?: boolean
   location?: number
@@ -170,10 +171,10 @@ export interface ISkill {
 }
 
 export interface IActorSkills {
-  [key: number]: ISkill[];
+  [key: number]: ISkill[]
 }
 export interface IActor {
-  actorName: string;
-  prompt: string[];
-  skills: IActorSkills;
+  actorName: string
+  prompt: string[]
+  skills: IActorSkills
 }
