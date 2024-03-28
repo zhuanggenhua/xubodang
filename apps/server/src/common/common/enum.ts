@@ -26,6 +26,8 @@ export interface IRoom {
   mode?: RoomMode
   hasPwd?: boolean
   players?: Array<IPlayer>
+
+  turn?: number //回合数
 }
 
 export enum InputTypeEnum {
@@ -34,17 +36,17 @@ export enum InputTypeEnum {
   TimePast,
 }
 export enum EntityTypeEnum {
-  Map1 = 'Map1',
+  // Map1 = 'Map1',
   Actor1 = 'Actor1',
-  Actor2 = 'Actor2',
-  Weapon1 = 'Weapon1',
-  Weapon2 = 'Weapon2',
-  Bullet1 = 'Bullet1',
-  Bullet2 = 'Bullet2',
-  Explosion = 'Explosion',
-  JoyStick = 'JoyStick',
-  Shoot = 'Shoot',
-  Particle = 'Particle',
+  // Actor2 = 'Actor2',
+  // Weapon1 = 'Weapon1',
+  // Weapon2 = 'Weapon2',
+  // Bullet1 = 'Bullet1',
+  // Bullet2 = 'Bullet2',
+  // Explosion = 'Explosion',
+  // JoyStick = 'JoyStick',
+  // Shoot = 'Shoot',
+  // Particle = 'Particle',
 }
 
 export enum ApiFunc {

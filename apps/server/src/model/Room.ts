@@ -18,6 +18,7 @@ export default class Room {
     public pwd: String,
     public life: number,
     public mode: RoomMode,
+    public turn: number = 0,
   ) {}
 
   join(uid: number) {

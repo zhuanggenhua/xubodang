@@ -1,10 +1,11 @@
 import { Prefab, SpriteFrame, Node, director, view } from 'cc'
 import { IPlayer, IRoom } from '../common'
 import { Singleton } from '../common/base'
-import Particle from '../particle/Particle'
 import { PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
 import { ResourceManager } from './ResourceManager'
 import { getSkillPath } from '../utils'
+import { ActorManager } from '../entity/actor/ActorManager'
+import Invoker from '../utils/Skill'
 
 const PLAYER_SPEED = 100
 const BULLET_SPEED = 600
@@ -21,7 +22,7 @@ export const mapH = view.getVisibleSize().height
 // export const mapH = 1280;
 
 export default class DataManager extends Singleton {
-  static get Instance() {
+  static get Instance() {    
     return super.GetInstance<DataManager>()
   }
 
@@ -30,10 +31,13 @@ export default class DataManager extends Singleton {
   setting: any = null
 
   player: IPlayer = {
+    id: 1,
     nickname: '游客',
   }
+  otherPlayer: IPlayer = null
   roomInfo: IRoom = {
     life: 5,
+    turn: 0,
   }
 
   stage: Node = director.getScene().getChildByName('Canvas')
@@ -42,16 +46,15 @@ export default class DataManager extends Singleton {
   prefabMap: Map<string, Prefab> = new Map()
   textureMap: Map<string, SpriteFrame[]> = new Map()
   skillMap: Map<SkillPathEnum, SpriteFrame> = new Map()
+  actors: Map<number, ActorManager> = new Map()
   // bulletMap: Map<number, BulletManager> = new Map();
 
-  // state: IState = {
-  //   seed: 1, //伪随机种子
-  // };
-
-  // 执行动作
-  // applyInput(input: IClientInput) {
-
-  // }
+  get actor1() {
+    return this.actors.get(this.player.id)
+  }
+  get actor2() {
+    return this.actors.get(this.otherPlayer.id)
+  }
 
   async loadRes() {
     const list = []

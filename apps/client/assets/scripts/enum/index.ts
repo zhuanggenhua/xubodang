@@ -28,6 +28,9 @@ export enum EventEnum {
   GameStart = 'GameStart',
   GameEnd = 'GameEnd',
   ReConnect = 'ReConnect',
+  useSkill = 'useSkill',
+  updateSkillItem = 'updateSkillItem',
+  handlerNextTurn = 'handlerNextTurn',
 }
 
 export enum PrefabPathEnum {
@@ -69,6 +72,12 @@ export enum SceneEnum {
 }
 
 export enum SkillPathEnum {
+  activeSprite = 'fangkuang',
+  handNormal = 'hand/hand-normal',
+  handXu = 'hand/hand-xu',
+  handTwo = 'hand/hand-two',
+  handFour = 'hand/hand-four',
+  handCenter = 'hand/hand-center',
   xu = 'base/xu',
   kan = 'base/kan',
   jump = 'base/jump',

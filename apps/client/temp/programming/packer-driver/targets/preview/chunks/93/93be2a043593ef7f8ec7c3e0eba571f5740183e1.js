@@ -46,6 +46,9 @@ System.register(["cc"], function (_export, _context) {
         EventEnum["GameStart"] = "GameStart";
         EventEnum["GameEnd"] = "GameEnd";
         EventEnum["ReConnect"] = "ReConnect";
+        EventEnum["useSkill"] = "useSkill";
+        EventEnum["updateSkillItem"] = "updateSkillItem";
+        EventEnum["handlerNextTurn"] = "handlerNextTurn";
         return EventEnum;
       }({}));
 
@@ -81,6 +84,12 @@ System.register(["cc"], function (_export, _context) {
       }({}));
 
       _export("SkillPathEnum", SkillPathEnum = /*#__PURE__*/function (SkillPathEnum) {
+        SkillPathEnum["activeSprite"] = "fangkuang";
+        SkillPathEnum["handNormal"] = "hand/hand-normal";
+        SkillPathEnum["handXu"] = "hand/hand-xu";
+        SkillPathEnum["handTwo"] = "hand/hand-two";
+        SkillPathEnum["handFour"] = "hand/hand-four";
+        SkillPathEnum["handCenter"] = "hand/hand-center";
         SkillPathEnum["xu"] = "base/xu";
         SkillPathEnum["kan"] = "base/kan";
         SkillPathEnum["jump"] = "base/jump";

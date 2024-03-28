@@ -35,6 +35,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("getSkillPath", "../utils", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfActorManager(extras) {
+    _reporterNs.report("ActorManager", "../entity/actor/ActorManager", _context.meta, extras);
+  }
+
   _export("default", void 0);
 
   return {
@@ -86,16 +90,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.mode = 'single';
           this.setting = null;
           this.player = {
+            id: 1,
             nickname: '游客'
           };
+          this.otherPlayer = null;
           this.roomInfo = {
-            life: 5
+            life: 5,
+            turn: 0
           };
           this.stage = director.getScene().getChildByName('Canvas');
           // actorMap: Map<number, ActorManager> = new Map();
           this.prefabMap = new Map();
           this.textureMap = new Map();
           this.skillMap = new Map();
+          this.actors = new Map();
         }
 
         static get Instance() {
@@ -103,12 +111,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         // bulletMap: Map<number, BulletManager> = new Map();
-        // state: IState = {
-        //   seed: 1, //伪随机种子
-        // };
-        // 执行动作
-        // applyInput(input: IClientInput) {
-        // }
+        get actor1() {
+          return this.actors.get(this.player.id);
+        }
+
+        get actor2() {
+          return this.actors.get(this.otherPlayer.id);
+        }
+
         async loadRes() {
           const list = []; // 注意取得时候不能用枚举，懒得改了
 

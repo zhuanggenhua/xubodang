@@ -1,4 +1,4 @@
-import { UITransform, Node, Layers, instantiate, Label, Color, Vec3 } from 'cc'
+import { UITransform, Node, Layers, instantiate, Label, Color, Vec3, SpriteFrame } from 'cc'
 import DataManager from '../global/DataManager'
 import { PrefabPathEnum, TipEnum } from '../enum'
 import { IPlayer, ISkill } from '../common'
@@ -34,10 +34,18 @@ export const createErrorTip = (msg: string) => {
       .getChildByName('Tip')
       .getChildByName('Label')
       .getComponent(Label).string = msg
+
+    DataManager.Instance.stage.getChildByName('ErrTip').active = true
   }
 }
 export const destroyTip = (type: TipEnum = TipEnum.ErrTip) => {
-  if (DataManager.Instance.stage.getChildByName(type)) DataManager.Instance.stage.getChildByName(type).destroy()
+  if (DataManager.Instance.stage.getChildByName(type)) DataManager.Instance.stage.getChildByName(type).active = false
+}
+
+export const rangMap = {
+  0: '地面',
+  1: '天空',
+  2: '地下',
 }
 
 // 生成提示
@@ -85,8 +93,12 @@ export const createPrompt = (skillNode: Node, skill: ISkill) => {
 
   node.active = true
 }
-export const rangMap = {
-  0: '地面',
-  1: '天空',
-  2: '地下',
+export const destroyPromt = () => {
+  if (DataManager.Instance.stage.getChildByName('Prompt'))
+    DataManager.Instance.stage.getChildByName('Prompt').active = false
 }
+
+const INDEX_REG = /\((\d+)\)/;
+const getNumberWithinString = (str: string) => parseInt(str.match(INDEX_REG)?.[1] || '0');
+export const sortSpriteFrame = (spriteFrame: Array<SpriteFrame>) =>
+  spriteFrame.sort((a, b) => getNumberWithinString(a.name) - getNumberWithinString(b.name));

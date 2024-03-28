@@ -11,31 +11,63 @@ import {
   Prefab,
   EventHandler,
   Input,
+  instantiate,
+  Vec3,
+  UITransform,
+  UIOpacity,
+  EventTouch,
+  view,
+  v3,
+  v2,
+  SystemEvent,
+  systemEvent,
+  Quat,
 } from 'cc'
 import { EventEnum, SkillPathEnum } from '../enum'
 import EventManager from '../global/EventManager'
 import { ApiFunc, IActor, ISkill, RoomMode } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import DataManager from '../global/DataManager'
-import { createErrorTip, createPrompt } from '../utils'
+import { createErrorTip, createPrompt, destroyPromt } from '../utils'
 import { HallUiMgr } from './HallUiMgr'
+import Ai from '../ai/Ai'
 const { ccclass, property } = _decorator
 
 @ccclass('SkillUiMgr')
 export class SkillUiMgr extends Component {
+  @property(Node)
+  private hands: Node = null
+  // 落点
+  @property(Node)
+  private downPoint: Node = null
+
   private skillNodes: Node[] = []
   private skillItemNodes: Node[] = []
-  private prompt: Prefab = null
+
+  private activeSkill: Node = null
+  private dragNode: Node = null // 触摸拖动的对象
+  private entryHand: boolean = false //进入手势区域
+  private isDisable: boolean = false
+  private normalSprite: SpriteFrame = null
+
   // 能级
   // 显隐
 
   // 维护当前能级的所有技能
 
   // 绑定事件
+  beforeDestroy() {
+    EventManager.Instance.off(EventEnum.updateSkillItem, this.updateSkillItem, this)
+    EventManager.Instance.off(EventEnum.handlerNextTurn, this.handlerNextTurn, this)
+  }
   init(actor: IActor) {
+    EventManager.Instance.on(EventEnum.updateSkillItem, this.updateSkillItem, this)
+    EventManager.Instance.on(EventEnum.handlerNextTurn, this.handlerNextTurn, this)
+
     const skills = actor.skills
-    Object.keys(skills).forEach((key, index) => {
-      const skillItemNode = this.node.children[index]
+    Object.keys(skills).forEach((key, itemIndex) => {
+      const skillItemNode = this.node.children[itemIndex]
+      if (itemIndex !== 0) skillItemNode.getComponent(UIOpacity).opacity = 100
       this.skillItemNodes.push(skillItemNode) //保存起来方便管理
 
       skills[key].forEach((skill, index) => {
@@ -50,37 +82,183 @@ export class SkillUiMgr extends Component {
         this.node.active = true
 
         //   绑定点击事件()
-        let button = skillNode.getComponent(Button)
-        const normalSprite = button.normalSprite
+        this.normalSprite = skillNode.getComponent(Sprite).spriteFrame
+        const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.activeSprite)
+        skillNode.on(Input.EventType.TOUCH_END, (event: EventTouch) => {
+          console.log('?????',this.isDisable);
+          console.log(this);
+          
+          if (this.isDisable || DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex)
+            return
+          skillNode.getComponent(UIOpacity).opacity = 255
+          
 
-        // const clickEventHandler = new EventHandler()
-        // clickEventHandler.target = this.node // 这个 node 节点是你的事件处理代码组件所属的节点
-        // clickEventHandler.component = 'SkillUiMgr' // 这个是脚本类名
-        // clickEventHandler.handler = 'callback'
-        // clickEventHandler.customEventData = 'foobar'
-
-        // button.clickEvents.push(clickEventHandler)
-        skillNode.on(
-          Button.EventType.CLICK,
-          (event: Button) => {
-            // 第一次按下
+          // 第二次按下
+          if (this.activeSkill == skillNode) {
             // 排他
             this.skillNodes.forEach((node) => {
-              node.getComponent(Sprite).spriteFrame = normalSprite
-              node.getComponent(Button).normalSprite = normalSprite
+              node.getComponent(Sprite).spriteFrame = this.normalSprite
             })
 
             // 设置按钮为按下状态的样式
-            skillNode.getComponent(Sprite).spriteFrame = button.pressedSprite
-            button.normalSprite = button.pressedSprite
+            skillNode.getComponent(Sprite).spriteFrame = activeSprite
 
-            // 设置提示框
-            createPrompt(skillNode, skill)
-          },
-          this,
-        )
+            // 触发技能，执行逻辑
+            this.activeSkill = null
+            skillNode.getComponent(Sprite).spriteFrame = this.normalSprite
+            destroyPromt()
+
+            this.handlerCheck(skillNode, skill, itemIndex)
+            return
+          }
+          this.activeSkill = skillNode
+
+          // 设置提示框
+          createPrompt(skillNode, skill)
+        },this)
 
         // 技能绑定拖动动画
+        const skillTransform = skillNode.getComponent(UITransform)
+        skillNode.on(Input.EventType.TOUCH_START, (event) => {
+          if (this.isDisable || DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex)
+            return
+          // 创建新节点并设置为拖动对象
+          this.dragNode?.destroy()
+          this.dragNode = instantiate(skillNode)
+          this.dragNode.getComponent(Widget).destroy()
+          this.dragNode.setParent(DataManager.Instance.stage)
+
+          // 获取原节点世界坐标
+          const worldPos = new Vec3(0, 0, 0)
+          skillNode.getWorldPosition(worldPos)
+          // 将世界坐标转换为新父节点的局部坐标
+          let localPosition = DataManager.Instance.stage.getComponent(UITransform).convertToNodeSpaceAR(worldPos)
+          this.dragNode.setPosition(localPosition.x, localPosition.y)
+          // 隐藏原按钮
+          skillNode.getComponent(UIOpacity).opacity = 0
+        })
+        skillNode.on(Input.EventType.TOUCH_MOVE, (event: EventTouch) => {
+          if (this.dragNode) {
+            // 要除以缩放比
+            const scaleY = view.getScaleY()
+            const scaleX = view.getScaleX()
+
+            let delta = event.getDelta() // 获取拖动的距离差值
+            this.dragNode.setPosition(
+              this.dragNode.position.x + delta.x / scaleX,
+              this.dragNode.position.y + delta.y / scaleY,
+            )
+
+            // 获取触摸点位置
+            // let touchPos = DataManager.Instance.stage
+            //   .getComponent(UITransform)
+            //   .convertToNodeSpaceAR(v3(event.getLocation().x, event.getLocation().y, 0))
+            // 判断技能是否进入手势
+            if (
+              this.hands
+                .getComponent(UITransform)
+                .getBoundingBox()
+                .contains(v2(this.dragNode.position.x, this.dragNode.position.y))
+            ) {
+              this.entryHand = true
+
+              // #region
+              // 改变手势
+              const hand1 = this.hands.children[0]
+              const hand2 = this.hands.children[1]
+              if (skill.type.indexOf(0) !== -1) {
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
+              } else if (skill.type.indexOf(1) !== -1) {
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handTwo)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handTwo)
+              } else if (skill.type.indexOf(2) !== -1) {
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handFour)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handFour)
+              } else if (skill.type.indexOf(3) !== -1) {
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
+              } else if (skill.type.indexOf(4) !== -1) {
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
+              } else if (skill.type.indexOf(5) !== -1) {
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
+              }
+              // #endregion
+            } else {
+              this.entryHand = false
+            }
+          }
+        })
+        skillNode.on(Input.EventType.TOUCH_CANCEL, (event: EventTouch) => {
+          if (this.dragNode) {
+            if (this.entryHand) {
+              // 旋转，缩放，下落
+              tween(this.dragNode)
+                .to(0.5, { scale: v3(0.1, 0.1, 1), eulerAngles: v3(0, 0, 360), position: this.downPoint.position })
+                .call(() => {
+                  this.dragNode.destroy()
+                  this.dragNode = null
+
+                  // 触发选中效果
+                  this.handlerCheck(skillNode, skill, itemIndex)
+                })
+                .start()
+            } else {
+              this.dragNode.destroy()
+              this.dragNode = null
+              skillNode.getComponent(UIOpacity).opacity = 255
+            }
+          }
+        })
+      })
+    })
+  }
+
+  handlerCheck(skillNode: Node, skill: ISkill, power: number) {
+    EventManager.Instance.emit(EventEnum.useSkill, skill, power)
+    if (DataManager.Instance.mode === 'single') {
+      Ai.Instance.excute()
+    }
+
+    this.isDisable = true
+    // 除了选中的都变灰
+    this.skillNodes.forEach((item) => {
+      if (item == skillNode) return
+      item.getComponent(UIOpacity).opacity = 100
+    })
+  }
+
+  updateSkillItem(power: number) {
+    this.skillItemNodes.forEach((item, index) => {
+      if (index > power) item.getComponent(UIOpacity).opacity = 100
+      else item.getComponent(UIOpacity).opacity = 255
+    })
+  }
+
+  handlerNextTurn() {
+    // 都结算完就进入下一回合
+    DataManager.Instance.roomInfo.turn += 1
+    DataManager.Instance.actors.forEach((actor) => {
+      actor.skill = null
+    })
+
+    // 必须异步才能改到，奇妙……
+    setTimeout(() => {
+      this.isDisable = false
+    });
+    
+    // 技能栏透明度
+    this.updateSkillItem(DataManager.Instance.actor1.power)
+
+    // 技能透明度变回
+    // 除了选中的都变灰
+    this.activeSkill = null
+    setTimeout(() => {
+      this.skillNodes.forEach((item) => {
+        item.getComponent(Sprite).spriteFrame = this.normalSprite
+        item.getComponent(UIOpacity).opacity = 255
       })
     })
   }

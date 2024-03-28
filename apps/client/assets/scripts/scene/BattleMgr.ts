@@ -14,29 +14,33 @@ import {
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { EventEnum, PrefabPathEnum, SkillPathEnum } from '../enum'
-import { ApiFunc, IActor, IPlayer } from '../common'
+import { ApiFunc, IActor, IPlayer, ISkill } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
 import { SkillUiMgr } from '../ui/SkillUiMgr'
+import { destroyPromt } from '../utils'
+import { ActorManager } from '../entity/actor/ActorManager'
+import Ai from '../ai/Ai'
+import Invoker from '../utils/Skill'
+import Skill from '../utils/Skill'
 const { ccclass, property } = _decorator
 
 @ccclass('BattleMgr')
 export class BattleMgr extends Component {
   @property(Node)
   skillContainer: Node = null
-  @property(Node)
-  prompt: Node = null
 
   bg: Node
   hearts1: Node
   hearts2: Node
-  otherPlayer: IPlayer = null
+  
 
   async onLoad() {
     await DataManager.Instance.loadRes() //temp
 
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
+    EventManager.Instance.on(EventEnum.useSkill, this.useSkill, this)
 
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
     this.setPlayerName(this.bg.getChildByName('Name1').getComponent(Label), DataManager.Instance.player)
@@ -51,36 +55,73 @@ export class BattleMgr extends Component {
     this.node.on(
       Input.EventType.TOUCH_START,
       () => {
-        const prompt = DataManager.Instance.stage.getChildByName('Prompt')
-        if (prompt) prompt.active = false
-      },
-      this,
-    )
-    this.node.getChildByName('ScrollView').on(
-      Input.EventType.TOUCH_START,
-      () => {
-        const prompt = DataManager.Instance.stage.getChildByName('Prompt')
-        if (prompt) prompt.active = false
+        destroyPromt()
       },
       this,
     )
   }
-  start() {}
+  beforeDestroy() {
+    EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
+    NetworkManager.Instance.unlistenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
+  }
+  start() {
+    // test
+    this.createActor('soldier')
+    if (DataManager.Instance.mode === 'single') {
+      Ai.Instance.setActor('soldier')
+      this.createActor('soldier', Ai.Instance.id)
+    }
+  }
 
+  createActor(type, id: number = DataManager.Instance.player.id) {
+    const actor = new ActorManager()
+    actor.init(id, type, DataManager.Instance.roomInfo?.life)
+    DataManager.Instance.actors.set(id, actor)
+    if (DataManager.Instance.actors.size === 2) {
+      this.startGame()
+    }
+  }
+  startGame() {}
+
+  useSkill(skill: ISkill, power: number, id: number = DataManager.Instance.player.id) {
+    DataManager.Instance.actors.get(id).skill = new Skill(skill, id)
+    DataManager.Instance.actors.get(id).power -= power
+
+    // 两个角色都就绪才执行
+    let ready = true
+    DataManager.Instance.actors.forEach((actor) => {
+      if (!actor.skill) {
+        ready = false
+      }
+    })
+
+    if (ready) {
+      // test
+      DataManager.Instance.actor1.skill.powerHandler()
+      DataManager.Instance.actor2.skill.powerHandler()
+      console.log(DataManager.Instance.actors.get(DataManager.Instance.player.id).power, DataManager.Instance.actor2.power);
+
+      EventManager.Instance.emit(EventEnum.handlerNextTurn)
+    }
+  }
+  
+
+  //#region
   // 渲染其他玩家
-  renderPlayers({ room } = { room: DataManager.Instance.roomInfo }) {    
+  renderPlayers({ room } = { room: DataManager.Instance.roomInfo }) {
     if (DataManager.Instance.mode === 'network') {
       const players = room.players
-      this.otherPlayer = players.find((p) => p.id !== DataManager.Instance.player.id)
+      DataManager.Instance.otherPlayer = players.find((p) => p.id !== DataManager.Instance.player.id)
     } else if (DataManager.Instance.mode === 'single') {
       // 单人模式
-      this.otherPlayer = {
+      DataManager.Instance.otherPlayer = {
+        id: Ai.Instance.id,
         nickname: '机器人',
       }
     }
 
-    if (this.otherPlayer) {
-      this.setPlayerName(this.bg.getChildByName('Name2').getComponent(Label), this.otherPlayer)
+    if (DataManager.Instance.otherPlayer) {
+      this.setPlayerName(this.bg.getChildByName('Name2').getComponent(Label), DataManager.Instance.otherPlayer)
       this.setHeart(this.hearts2)
       this.bg.getChildByName('Label').active = false
       this.bg.getChildByName('Name2').active = true
@@ -115,9 +156,10 @@ export class BattleMgr extends Component {
     }
   }
 
-  renderSkills = (actor: IActor) => {
-    this.skillContainer.getComponent(SkillUiMgr).init(actor)
+  renderSkills(actor: IActor) {
+    this.skillContainer.getComponent(SkillUiMgr).init(JSON.parse(JSON.stringify(actor)))
   }
+  // #endregion
 
   update(deltaTime: number) {}
 }

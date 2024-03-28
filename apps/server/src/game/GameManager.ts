@@ -108,7 +108,7 @@ export class GameManager extends Singleton {
 
       const room = RoomManager.Instance.joinRoom(rid, connection.playerId)
       if (room) {
-        if (room.players.size > 2) {
+        if (room.players.size > 2 || room.turn > 0) {
           return {
             room: null,
             error: '人数已满',

@@ -31,6 +31,7 @@ message IRoom {
   string mode = 4;
   bool hasPwd = 6;
   string pwd = 7;
+  int32 turn = 8;
   repeated IPlayer players = 5;
 }
 message RoomList {  

@@ -48,7 +48,7 @@ const actors: { [key: string]: IActor } = {
           type: [1, 2],
           desc: '治疗并防御',
           damage: -1,
-          defense: 2,
+          defense: 3,
           target: 1,
           speed: 1,
           longrang: false,

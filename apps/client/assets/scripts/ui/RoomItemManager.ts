@@ -25,7 +25,7 @@ export class RoomItemManager extends Component {
 
   isActive: boolean = false
 
-  init({ id, roomName, life, mode, hasPwd, players }) {
+  init({ id, roomName, life, mode, hasPwd, players, turn }) {
     this.id = id
     this.roomName = roomName
     this.life = life
@@ -37,10 +37,10 @@ export class RoomItemManager extends Component {
     if (hasPwd) {
       stateFrame.spriteFrame = this.lockFrame
     } else {
-      if (players.length == 1) {
-        stateFrame.spriteFrame = this.oneFrame
-      } else if (players.length == 2) {
+      if (players.length == 2 || turn > 0) {
         stateFrame.spriteFrame = this.twoFrame
+      } else if (players.length == 1) {
+        stateFrame.spriteFrame = this.oneFrame
       }
     }
 
