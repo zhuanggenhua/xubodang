@@ -115,6 +115,11 @@ package-lock.json
 /temp/
 /local/
 /build/
+apps/client/library/
+apps/client/temp/
+apps/client/local/
+apps/client/build/
+apps/client/profiles/
 
 #/////////////////////////////////////////////////////////////////////////////
 # npm files

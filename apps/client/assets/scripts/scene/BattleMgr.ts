@@ -33,7 +33,7 @@ export class BattleMgr extends Component {
   hearts2: Node
 
   async onLoad() {
-    await DataManager.Instance.loadRes() //temp
+    await DataManager.Instance.loadRes()  //temp
 
     DataManager.Instance.battle = this.Battle.getComponent(BattleCanvas)
 
