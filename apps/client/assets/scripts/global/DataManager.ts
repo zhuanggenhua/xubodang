@@ -5,7 +5,7 @@ import { PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
 import { ResourceManager } from './ResourceManager'
 import { getSkillPath } from '../utils'
 import { ActorManager } from '../entity/actor/ActorManager'
-import Invoker from '../utils/Skill'
+import { BattleCanvas } from '../ui/BattleCanvas'
 
 const PLAYER_SPEED = 100
 const BULLET_SPEED = 600
@@ -41,6 +41,7 @@ export default class DataManager extends Singleton {
   }
 
   stage: Node = director.getScene().getChildByName('Canvas')
+  battle: BattleCanvas = null
 
   // actorMap: Map<number, ActorManager> = new Map();
   prefabMap: Map<string, Prefab> = new Map()
@@ -49,6 +50,7 @@ export default class DataManager extends Singleton {
   actors: Map<number, ActorManager> = new Map()
   // bulletMap: Map<number, BulletManager> = new Map();
 
+  // actor1 表示玩家  2表示对方
   get actor1() {
     return this.actors.get(this.player.id)
   }

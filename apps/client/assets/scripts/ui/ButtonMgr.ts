@@ -1,8 +1,5 @@
-import { _decorator, Component, director, EventTouch, Node } from 'cc'
-import DataManager from '../global/DataManager'
-import { EventEnum, SceneEnum } from '../enum'
-import EventManager from '../global/EventManager'
-import { createPopTip } from '../utils'
+import { _decorator, Component, director, EventTouch } from 'cc'
+import { SceneEnum } from '../enum'
 import NetworkManager from '../global/NetworkManager'
 import { ApiFunc } from '../common'
 const { ccclass, property } = _decorator

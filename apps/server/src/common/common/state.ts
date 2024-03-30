@@ -1,6 +1,14 @@
 // @ts-ignore
 import { EntityTypeEnum, InputTypeEnum } from "./enum.ts";
 
+export interface IParticleOptions {
+  duration?: number; // 
+  gap?: number;
+  max?: number;
+  min?: number;
+  maxRange?: number;
+  minRange?: number;
+}
 
 export interface IBullet {
   id: number;

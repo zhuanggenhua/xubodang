@@ -2,41 +2,40 @@ import {
   _decorator,
   Color,
   Component,
-  director,
   Input,
   instantiate,
   Label,
   Node,
-  Prefab,
-  screen,
-  UITransform,
 } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
-import { EventEnum, PrefabPathEnum, SkillPathEnum } from '../enum'
+import { EventEnum } from '../enum'
 import { ApiFunc, IActor, IPlayer, ISkill } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
 import { SkillUiMgr } from '../ui/SkillUiMgr'
-import { destroyPromt } from '../utils'
+import { destroyPromt, isPlayer } from '../utils'
 import { ActorManager } from '../entity/actor/ActorManager'
 import Ai from '../ai/Ai'
-import Invoker from '../utils/Skill'
 import Skill from '../utils/Skill'
+import { BattleCanvas } from '../ui/BattleCanvas'
 const { ccclass, property } = _decorator
 
 @ccclass('BattleMgr')
 export class BattleMgr extends Component {
   @property(Node)
   skillContainer: Node = null
+  @property(Node)
+  Battle: Node = null
 
   bg: Node
   hearts1: Node
   hearts2: Node
-  
 
   async onLoad() {
     await DataManager.Instance.loadRes() //temp
+
+    DataManager.Instance.battle = this.Battle.getComponent(BattleCanvas)
 
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
@@ -74,9 +73,17 @@ export class BattleMgr extends Component {
   }
 
   createActor(type, id: number = DataManager.Instance.player.id) {
-    const actor = new ActorManager()
-    actor.init(id, type, DataManager.Instance.roomInfo?.life)
-    DataManager.Instance.actors.set(id, actor)
+    let prefab = null
+    if (isPlayer(id)) {
+      prefab = DataManager.Instance.prefabMap.get('Actor1')
+    } else {
+      prefab = DataManager.Instance.prefabMap.get('Actor2')
+    }
+    const actor = instantiate(prefab)
+    const actorMgr = actor.addComponent(ActorManager)
+    
+    actorMgr.init(id, type, DataManager.Instance.roomInfo?.life)
+    DataManager.Instance.actors.set(id, actorMgr)
     if (DataManager.Instance.actors.size === 2) {
       this.startGame()
     }
@@ -99,12 +106,14 @@ export class BattleMgr extends Component {
       // test
       DataManager.Instance.actor1.skill.powerHandler()
       DataManager.Instance.actor2.skill.powerHandler()
-      console.log(DataManager.Instance.actors.get(DataManager.Instance.player.id).power, DataManager.Instance.actor2.power);
+      console.log(
+        DataManager.Instance.actors.get(DataManager.Instance.player.id).power,
+        DataManager.Instance.actor2.power,
+      )
 
       EventManager.Instance.emit(EventEnum.handlerNextTurn)
     }
   }
-  
 
   //#region
   // 渲染其他玩家
@@ -163,3 +172,4 @@ export class BattleMgr extends Component {
 
   update(deltaTime: number) {}
 }
+

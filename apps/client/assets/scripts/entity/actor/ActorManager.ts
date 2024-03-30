@@ -1,11 +1,10 @@
-import { _decorator, Component, instantiate, Node, ProgressBar, tween, Tween, Vec3, warn } from 'cc'
+import { _decorator, Tween, Vec3 } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
-import { EntityTypeEnum, IActor, InputTypeEnum, IPlayer, ISkill } from '../../common'
-import { EntityStateEnum, EventEnum } from '../../enum'
+import { EntityTypeEnum, ISkill } from '../../common'
+import { EntityStateEnum } from '../../enum'
 import DataManager from '../../global/DataManager'
-import EventManager from '../../global/EventManager'
-import { ActorStateMachine } from './ActorStateMachine'
 import Skill from '../../utils/Skill'
+import { isPlayer } from '../../utils'
 
 const { ccclass, property } = _decorator
 
@@ -23,6 +22,8 @@ export class ActorManager extends EntityManager {
   // direction: IVec2;
   skill: Skill = null
 
+  initPosition: Vec3 = new Vec3(0, 0)
+
   private tw: Tween<unknown>
 
   // private wm: WeaponManager;
@@ -35,11 +36,19 @@ export class ActorManager extends EntityManager {
 
     this.state = EntityStateEnum.Idle
 
-    // this.node.active = false
+    if (isPlayer(id)) {
+      this.initPosition = new Vec3(DataManager.Instance.battle.width / 5, DataManager.Instance.battle.round)
+    } else {
+      this.initPosition = new Vec3(
+        DataManager.Instance.battle.width - DataManager.Instance.battle.width / 5,
+        DataManager.Instance.battle.round,
+      )
+    }
+    this.resetPosition()
+  }
+  resetPosition() {
+    this.node.setPosition(this.initPosition)
   }
 
- 
-
-  
   useSkill(skill: ISkill) {}
 }

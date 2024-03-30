@@ -57,6 +57,9 @@ System.register(["cc"], function (_export, _context) {
         PrefabPathEnum["ErrTip"] = "prefab/ErrTip";
         PrefabPathEnum["Prompt"] = "prefab/Prompt";
         PrefabPathEnum["Heart"] = "prefab/Heart";
+        PrefabPathEnum["Cloud"] = "prefab/Cloud";
+        PrefabPathEnum["Actor1"] = "prefab/Actor1";
+        PrefabPathEnum["Actor2"] = "prefab/Actor2";
         return PrefabPathEnum;
       }({}));
 

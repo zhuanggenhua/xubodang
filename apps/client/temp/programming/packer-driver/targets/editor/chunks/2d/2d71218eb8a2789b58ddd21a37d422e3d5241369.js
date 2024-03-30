@@ -39,6 +39,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("ActorManager", "../entity/actor/ActorManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfBattleCanvas(extras) {
+    _reporterNs.report("BattleCanvas", "../ui/BattleCanvas", _context.meta, extras);
+  }
+
   _export("default", void 0);
 
   return {
@@ -99,6 +103,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             turn: 0
           };
           this.stage = director.getScene().getChildByName('Canvas');
+          this.battle = null;
           // actorMap: Map<number, ActorManager> = new Map();
           this.prefabMap = new Map();
           this.textureMap = new Map();
@@ -111,6 +116,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         // bulletMap: Map<number, BulletManager> = new Map();
+        // actor1 表示玩家  2表示对方
         get actor1() {
           return this.actors.get(this.player.id);
         }

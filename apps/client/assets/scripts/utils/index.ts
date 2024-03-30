@@ -1,7 +1,7 @@
-import { UITransform, Node, Layers, instantiate, Label, Color, Vec3, SpriteFrame } from 'cc'
+import { UITransform, Node, Layers, instantiate, Label, Vec3, SpriteFrame } from 'cc'
 import DataManager from '../global/DataManager'
-import { PrefabPathEnum, TipEnum } from '../enum'
-import { IPlayer, ISkill } from '../common'
+import { TipEnum } from '../enum'
+import { ISkill } from '../common'
 
 export * from './biz'
 
@@ -98,7 +98,11 @@ export const destroyPromt = () => {
     DataManager.Instance.stage.getChildByName('Prompt').active = false
 }
 
-const INDEX_REG = /\((\d+)\)/;
-const getNumberWithinString = (str: string) => parseInt(str.match(INDEX_REG)?.[1] || '0');
+const INDEX_REG = /\((\d+)\)/
+const getNumberWithinString = (str: string) => parseInt(str.match(INDEX_REG)?.[1] || '0')
 export const sortSpriteFrame = (spriteFrame: Array<SpriteFrame>) =>
-  spriteFrame.sort((a, b) => getNumberWithinString(a.name) - getNumberWithinString(b.name));
+  spriteFrame.sort((a, b) => getNumberWithinString(a.name) - getNumberWithinString(b.name))
+
+export function isPlayer(id) {
+  return DataManager.Instance.player.id === id
+}
