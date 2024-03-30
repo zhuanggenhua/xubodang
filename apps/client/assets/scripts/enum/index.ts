@@ -11,12 +11,15 @@ export enum ParamsNameEnum {
   Idle = 'Idle',
   Run = 'Run',
   Attack = 'Attack',
+  Xu = 'Xu',
+  Kan = 'Kan',
 }
 
 export enum EntityStateEnum {
   Idle = 'Idle',
   Run = 'Run',
   Attack = 'Attack',
+  Xu = 'Xu',
 }
 
 export enum EventEnum {
@@ -31,6 +34,7 @@ export enum EventEnum {
   useSkill = 'useSkill',
   updateSkillItem = 'updateSkillItem',
   handlerNextTurn = 'handlerNextTurn',
+  SCREEN_SHAKE = 'SCREEN_SHAKE',
 }
 
 export enum PrefabPathEnum {
@@ -52,15 +56,12 @@ export enum PrefabPathEnum {
   // Shoot = "prefab/Shoot",
 }
 
-export enum TexturePathEnum {}
-// Actor1Idle = 'texture/actor/actor1/idle',
-// Actor1Run = 'texture/actor/actor1/run',
-// Actor2Idle = 'texture/actor/actor2/idle',
-// Actor2Run = 'texture/actor/actor2/run',
-// Weapon1Idle = 'texture/weapon/weapon1/idle',
-// Weapon1Attack = 'texture/weapon/weapon1/attack',
-// Weapon2Idle = 'texture/weapon/weapon2/idle',
-// Weapon2Attack = 'texture/weapon/weapon2/attack',
+export enum TexturePathEnum {
+  ActorIdle = 'texture/actor/base/idle',
+  ActorXu = 'texture/actor/base/xu',
+  ActorRun = 'texture/actor/base/run',
+  ActorKan = 'texture/actor/base/kan',
+}
 // Bullet1Idle = 'texture/bullet/bullet1',
 // Bullet2Idle = 'texture/bullet/bullet2',
 // ExplosionIdle = 'texture/explosion',
@@ -71,31 +72,37 @@ export enum SceneEnum {
   Battle = 'Battle',
   Hall = 'Hall',
 }
+export enum SHAKE_TYPE_ENUM {
+  TOP = 'TOP',
+  BOTTOM = 'BOTTOM',
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT',
+}
 
 export enum SkillPathEnum {
-  activeSprite = 'fangkuang',
-  handNormal = 'hand/hand-normal',
-  handXu = 'hand/hand-xu',
-  handTwo = 'hand/hand-two',
-  handFour = 'hand/hand-four',
-  handCenter = 'hand/hand-center',
-  xu = 'base/xu',
-  kan = 'base/kan',
-  jump = 'base/jump',
-  dang = 'base/round-shield',
-  heartShield = 'shield/heart-shield',
-  spade = 'shield/spade',
-  crossbow = 'shield/crossbow',
-  shieldReflect = 'shield/shield-reflect',
-  spikedShield = 'shield/spiked-shield',
-  shieldImpact = 'shield/shield-impact',
-  spartan = 'shield/spartan',
-  shieldEchoes = 'shield/shield-echoes',
-  crenulatedShield = 'shield/crenulated-shield',
-  floorHatch = 'shield/floor-hatch',
-  enrage = 'shield/enrage',
-  swordTie = 'shield/sword-tie',
-  ancientSword = 'shield/ancient-sword',
-  unstableProjectile = 'shield/unstable-projectile',
-  shieldBash = 'shield/shield-bash',
+  ActiveSprite = 'fangkuang',
+  HandNormal = 'hand/hand-normal',
+  HandXu = 'hand/hand-xu',
+  HandTwo = 'hand/hand-two',
+  HandFour = 'hand/hand-four',
+  HandCenter = 'hand/hand-center',
+  Xu = 'base/xu',
+  Kan = 'base/kan',
+  Jump = 'base/jump',
+  Dang = 'base/round-shield',
+  HeartShield = 'shield/heart-shield',
+  Spade = 'shield/spade',
+  Crossbow = 'shield/crossbow',
+  ShieldReflect = 'shield/shield-reflect',
+  SpikedShield = 'shield/spiked-shield',
+  ShieldImpact = 'shield/shield-impact',
+  Spartan = 'shield/spartan',
+  ShieldEchoes = 'shield/shield-echoes',
+  CrenulatedShield = 'shield/crenulated-shield',
+  FloorHatch = 'shield/floor-hatch',
+  Enrage = 'shield/enrage',
+  SwordTie = 'shield/sword-tie',
+  AncientSword = 'shield/ancient-sword',
+  UnstableProjectile = 'shield/unstable-projectile',
+  ShieldBash = 'shield/shield-bash',
 }

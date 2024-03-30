@@ -31,8 +31,9 @@ export const getInitParamsNumber = () => {
  * 流动图
  * 1.entity的state或者direction改变触发setter
  * 2.setter里触发fsm的setParams方法
- * 3.setParams执行run方法（run方法由子类重写）
+ * 3.setParams执行状态机的run方法（run方法由子类重写）
  * 4.run方法会更改currentState，然后触发currentState的setter
+ * 5. 最后触发currentState的run方法，也就是执行state对象的动画方法
  * 5-1.如果currentState是子状态机，继续执行他的run方法，run方法又会设置子状态机的currentState，触发子状态run方法
  * 5-2.如果是子状态，run方法就是播放动画
  */
@@ -55,6 +56,7 @@ export default abstract class StateMachine extends Component {
   }
 
   setParams(paramName: string, value: ParamsValueType) {
+    
     if (this.params.has(paramName)) {
       this.params.get(paramName).value = value
       this.run()

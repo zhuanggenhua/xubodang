@@ -10,14 +10,14 @@ export class BattleCanvas extends Component {
   round: number = 0
   width: number = 0
   height: number = 0
-  async start() {
-    await DataManager.Instance.loadRes() //temp
+  async onLoad() {
     this.graphics = this.node.addComponent(Graphics)
     const tran = this.node.getComponent(UITransform)
     this.height = tran.height
-    this.round = tran.height / 3
+    this.round = tran.height / 4
     this.width = tran.width
 
+    await DataManager.Instance.loadRes() //temp
     // 设置线条颜色
     this.graphics.strokeColor = Color.BLACK // 可以改为你想要的颜色
     this.graphics.fillColor = Color.BLACK
@@ -36,7 +36,7 @@ export class BattleCanvas extends Component {
 
       const tran = cloud.getComponent(UITransform)
       cloud.setPosition(
-        getRandomNumber(i * (this.width / count + tran.width / 2), (i + 1) * (this.width / count - tran.width / 2)),
+        getRandomNumber(i * (this.width / count) + tran.width / 2, (i + 1) * (this.width / count) - tran.width / 2),
         getRandomNumber(this.height / 1.25, this.height - tran.height / 2),
       )
     }
@@ -44,7 +44,7 @@ export class BattleCanvas extends Component {
 
   generaRound() {
     // 开始绘制路径
-    this.graphics.moveTo(0, this.round / 2) // 起始点
+    this.graphics.moveTo(0, this.round) // 起始点
 
     // 生成2到4之间的随机石头数量
     let stoneCount = Math.floor(Math.random() * 3) + 2 // 随机生成2到4个石头
@@ -62,17 +62,17 @@ export class BattleCanvas extends Component {
       startX = Math.min(Math.max(startX, 10), this.width - 20)
 
       // 画到当前石头的起始位置
-      this.graphics.lineTo(startX, this.round / 2)
+      this.graphics.lineTo(startX, this.round)
 
       // 画石头（半圆形）
-      this.graphics.arc(startX + 10, this.round / 2, 10, 0, Math.PI, true)
+      this.graphics.arc(startX + 5, this.round, 5, 0, Math.PI, true)
 
       // 更新上一个石头的结束位置，考虑随机偏移
       lastX = startX + 20 + randomOffset
     }
 
     // 从最后一个石头的位置画到节点的右端
-    this.graphics.lineTo(this.width, this.round / 2)
+    this.graphics.lineTo(this.width, this.round)
 
     // 描边和填充来显示图形
     this.graphics.stroke()

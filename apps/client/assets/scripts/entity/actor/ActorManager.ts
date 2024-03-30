@@ -1,10 +1,12 @@
-import { _decorator, Tween, Vec3 } from 'cc'
+import { _decorator, Tween, UITransform, Vec3 } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
 import { EntityTypeEnum, ISkill } from '../../common'
-import { EntityStateEnum } from '../../enum'
+import { EntityStateEnum, EventEnum, ParamsNameEnum } from '../../enum'
 import DataManager from '../../global/DataManager'
 import Skill from '../../utils/Skill'
 import { isPlayer } from '../../utils'
+import { ActorStateMachine } from './ActorStateMachine'
+import EventManager from '../../global/EventManager'
 
 const { ccclass, property } = _decorator
 
@@ -21,6 +23,7 @@ export class ActorManager extends EntityManager {
   // position: IVec2;
   // direction: IVec2;
   skill: Skill = null
+  tran: UITransform
 
   initPosition: Vec3 = new Vec3(0, 0)
 
@@ -30,21 +33,27 @@ export class ActorManager extends EntityManager {
   init(id, type, hp) {
     this.id = id
     this.hpMax = hp
+    this.tran = this.node.getComponent(UITransform)
 
-    // this.fsm = this.addComponent(ActorStateMachine)
-    // this.fsm.init(type)
+    this.fsm = this.addComponent(ActorStateMachine)
+    this.fsm.init(type)
 
-    this.state = EntityStateEnum.Idle
-
+    this.state = ParamsNameEnum.Idle
+    
+    const offsetX = DataManager.Instance.battleCanvas.width / 5
     if (isPlayer(id)) {
-      this.initPosition = new Vec3(DataManager.Instance.battle.width / 5, DataManager.Instance.battle.round)
+      this.initPosition = new Vec3(offsetX, DataManager.Instance.battleCanvas.round + this.tran.height/2)
     } else {
       this.initPosition = new Vec3(
-        DataManager.Instance.battle.width - DataManager.Instance.battle.width / 5,
-        DataManager.Instance.battle.round,
+        DataManager.Instance.battleCanvas.width - offsetX,
+        DataManager.Instance.battleCanvas.round + this.tran.height/2,
       )
     }
     this.resetPosition()
+  }
+
+  onAttackShake(type: EventEnum) {
+    EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, type)
   }
   resetPosition() {
     this.node.setPosition(this.initPosition)

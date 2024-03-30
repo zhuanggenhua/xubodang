@@ -1,16 +1,8 @@
-import {
-  _decorator,
-  Color,
-  Component,
-  Input,
-  instantiate,
-  Label,
-  Node,
-} from 'cc'
+import { _decorator, Color, Component, Input, instantiate, Label, Node } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { EventEnum } from '../enum'
-import { ApiFunc, IActor, IPlayer, ISkill } from '../common'
+import { ApiFunc, EntityTypeEnum, IActor, IPlayer, ISkill } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
 import { SkillUiMgr } from '../ui/SkillUiMgr'
@@ -19,6 +11,7 @@ import { ActorManager } from '../entity/actor/ActorManager'
 import Ai from '../ai/Ai'
 import Skill from '../utils/Skill'
 import { BattleCanvas } from '../ui/BattleCanvas'
+import { ShakeManager } from '../utils/ShakeManager'
 const { ccclass, property } = _decorator
 
 @ccclass('BattleMgr')
@@ -32,15 +25,20 @@ export class BattleMgr extends Component {
   hearts1: Node
   hearts2: Node
 
-  async onLoad() {
-    await DataManager.Instance.loadRes()  //temp
-
-    DataManager.Instance.battle = this.Battle.getComponent(BattleCanvas)
+  onLoad() {
+    DataManager.Instance.battleCanvas = this.Battle.getComponent(BattleCanvas)
+    this.Battle.addComponent(ShakeManager)
 
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
     EventManager.Instance.on(EventEnum.useSkill, this.useSkill, this)
-
+  }
+  beforeDestroy() {
+    EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
+    NetworkManager.Instance.unlistenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
+  }
+  async start() {
+    await DataManager.Instance.loadRes() //temp
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
     this.setPlayerName(this.bg.getChildByName('Name1').getComponent(Label), DataManager.Instance.player)
     this.hearts1 = this.bg.getChildByName('Hearts1')
@@ -58,17 +56,11 @@ export class BattleMgr extends Component {
       },
       this,
     )
-  }
-  beforeDestroy() {
-    EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
-    NetworkManager.Instance.unlistenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
-  }
-  start() {
     // test
-    this.createActor('soldier')
+    this.createActor(EntityTypeEnum.Actor)
     if (DataManager.Instance.mode === 'single') {
       Ai.Instance.setActor('soldier')
-      this.createActor('soldier', Ai.Instance.id)
+      this.createActor(EntityTypeEnum.Actor, Ai.Instance.id)
     }
   }
 
@@ -80,8 +72,9 @@ export class BattleMgr extends Component {
       prefab = DataManager.Instance.prefabMap.get('Actor2')
     }
     const actor = instantiate(prefab)
+    actor.setParent(this.Battle)
     const actorMgr = actor.addComponent(ActorManager)
-    
+
     actorMgr.init(id, type, DataManager.Instance.roomInfo?.life)
     DataManager.Instance.actors.set(id, actorMgr)
     if (DataManager.Instance.actors.size === 2) {
@@ -106,6 +99,8 @@ export class BattleMgr extends Component {
       // test
       DataManager.Instance.actor1.skill.powerHandler()
       DataManager.Instance.actor2.skill.powerHandler()
+      DataManager.Instance.actor1.skill.attackHandler()
+      DataManager.Instance.actor2.skill.attackHandler()
       console.log(
         DataManager.Instance.actors.get(DataManager.Instance.player.id).power,
         DataManager.Instance.actor2.power,
@@ -172,4 +167,3 @@ export class BattleMgr extends Component {
 
   update(deltaTime: number) {}
 }
-

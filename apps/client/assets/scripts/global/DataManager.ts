@@ -41,7 +41,7 @@ export default class DataManager extends Singleton {
   }
 
   stage: Node = director.getScene().getChildByName('Canvas')
-  battle: BattleCanvas = null
+  battleCanvas: BattleCanvas = null
 
   // actorMap: Map<number, ActorManager> = new Map();
   prefabMap: Map<string, Prefab> = new Map()

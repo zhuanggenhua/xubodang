@@ -37,7 +37,7 @@ export enum InputTypeEnum {
 }
 export enum EntityTypeEnum {
   // Map1 = 'Map1',
-  Actor1 = 'Actor1',
+  Actor = 'Actor',
   // Actor2 = 'Actor2',
   // Weapon1 = 'Weapon1',
   // Weapon2 = 'Weapon2',
