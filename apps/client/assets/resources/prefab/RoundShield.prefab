@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Actor1",
+    "_name": "RoundShield",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Actor1",
+    "_name": "RoundShield",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -32,8 +32,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -304.92,
-      "y": -23.915,
+      "x": 61.173,
+      "y": -7.647,
       "z": 0
     },
     "_lrot": {
@@ -73,8 +73,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200,
-      "height": 200
+      "width": 100,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -85,7 +85,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "c7M6GU2FhIxJOYURp0OFka"
+    "fileId": "c3qDWIqgZCNpR1rb2YnFn3"
   },
   {
     "__type__": "cc.Sprite",
@@ -104,13 +104,13 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "ed30d2f1-2626-45fc-b511-e59bdc26d679@f9941",
+      "__uuid__": "29ca8270-3308-4851-9647-e0282f39a313@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -130,7 +130,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "f12rCoqH9Mi7p7hEMl1tXv"
+    "fileId": "e25IWtd2JPK6L162lfoeAQ"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -140,8 +140,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "e0gWHWO6BEXKB+yDBIcCtL",
-    "instance": null,
+    "fileId": "a2dI+b8UlDl5t9v62STuJI",
     "targetOverrides": null
   }
 ]

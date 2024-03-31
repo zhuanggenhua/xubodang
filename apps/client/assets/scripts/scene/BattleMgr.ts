@@ -27,6 +27,7 @@ export class BattleMgr extends Component {
 
   onLoad() {
     DataManager.Instance.battleCanvas = this.Battle.getComponent(BattleCanvas)
+    this.Battle.destroyAllChildren()
     this.Battle.addComponent(ShakeManager)
 
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)

@@ -21,7 +21,7 @@ export class ActorStateMachine extends StateMachine {
 
   initAnimationEvent() {
     const reset = () => {
-      const whiteList = [ParamsNameEnum.Xu, 'turn', 'attack']
+      const whiteList = [ParamsNameEnum.Xu, ParamsNameEnum.Jump, 'attack']
       const name = this.animationComponent.defaultClip.name
       // 白名单内的动画结束后都要转为静止动画
       if (whiteList.some((v) => name.includes(v))) {
@@ -65,6 +65,10 @@ export class ActorStateMachine extends StateMachine {
           params: [SHAKE_TYPE_ENUM.RIGHT],
         },
       ]),
+    )
+    this.stateMachines.set(
+      ParamsNameEnum.Jump,
+      new State(this, `${this.type}${ParamsNameEnum.Jump}`, AnimationClip.WrapMode.Normal, [], null, 4),
     )
   }
 

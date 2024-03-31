@@ -268,6 +268,6 @@ export class SkillUiMgr extends Component {
         })
       })
 
-    }, 0.1)
+    }, 500)
   }
 }

@@ -1,5 +1,5 @@
 import { IActor } from '../common'
-import { SkillPathEnum } from '../enum'
+import { ParamsNameEnum, PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
 
 const actors: { [key: string]: IActor } = {
   soldier: {
@@ -12,13 +12,14 @@ const actors: { [key: string]: IActor } = {
           name: '砍',
           type: [1],
           desc: '贫弱的攻击',
-          damage: 1,
+          damage: 2,
           speed: 0,
           target: 0,
           range: [0],
           longrang: false,
           pierce: false,
           particle: SkillPathEnum.Kan,
+          animal: ParamsNameEnum.Kan, //默认和particle一致
         },
         {
           name: '跳',
@@ -33,6 +34,7 @@ const actors: { [key: string]: IActor } = {
           desc: '举盾防御',
           defense: 2,
           particle: SkillPathEnum.Dang,
+          shield: SkillPathEnum.RoundShieldFrame,
         },
         {
           name: '蓄',
@@ -79,16 +81,17 @@ const actors: { [key: string]: IActor } = {
           name: '反射盾',
           type: [2, 5],
           desc: '防御并反弹远程弹丸攻击',
-          defense: 2,
+          defense: 3,
           particle: SkillPathEnum.ShieldReflect,
         },
       ],
       2: [
         {
           name: '尖刺盾',
-          type: [2, 4],
-          desc: '你的防御将对近战攻击造成反伤',
+          type: [2, 4, 5],
+          desc: '你的防御更加严密并且将对近战攻击造成1反伤',
           damage: 1,
+          defense: 1,
           target: 0,
           particle: SkillPathEnum.SpikedShield,
         },
@@ -142,7 +145,7 @@ const actors: { [key: string]: IActor } = {
         {
           name: '嗜血狂暴',
           type: [4, 5],
-          desc: '你的近战攻击伤害+1，并且会恢复你的生命，但是未命中会降低生命',
+          desc: '你的攻击伤害+1，并且近战会恢复你的生命，但是未命中会降低生命',
           damage: 1,
           particle: SkillPathEnum.Enrage,
         },

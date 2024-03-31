@@ -5,6 +5,11 @@ import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'
 
+/**
+ * 添加技能：
+ * 在TexturePathEnum配置资源路径
+ * 在actorMgr配置新State状态机
+ */
 // 执行器，用于延时结算数据
 export default class Skill {
   get otherSkill() {
@@ -22,20 +27,26 @@ export default class Skill {
   }
 
   setSkillState() {
-    this.actor.state = ParamsNameEnum[this.getKeyByValue(this.skill.particle)]
+    this.actor.state = this.skill.animal || ParamsNameEnum[this.getKeyByValue(this.skill.particle)]
   }
   // temp 临时获取key
   getKeyByValue(value, object = SkillPathEnum) {
     return Object.keys(object).find((key) => object[key] === value)
   }
 
+  damage: number
+  defense: number
   constructor(public skill: ISkill, public id: number) {
     this.tigerLength = skill.type.length
+    this.damage = skill.damage
+    this.defense = skill.defense
   }
   onDestroy() {
     // 在对象销毁前取消事件注册
     EventManager.Instance.off(EventEnum.attackFinal, this.attackFinal, this)
     EventManager.Instance.off(EventEnum.powerFinal, this.powerFinal, this)
+    EventManager.Instance.off(EventEnum.defenseFinal, this.defenseFinal, this)
+    EventManager.Instance.off(EventEnum.missFinal, this.missFinal, this)
   }
 
   excute() {
@@ -50,6 +61,11 @@ export default class Skill {
           this.attackHandler()
           break
         case 2:
+          EventManager.Instance.on(EventEnum.defenseFinal, this.defenseFinal, this)
+          this.defenseHandler()
+          break
+        case 3:
+          EventManager.Instance.on(EventEnum.missFinal, this.missFinal, this)
           this.defenseHandler()
           break
       }
@@ -64,10 +80,16 @@ export default class Skill {
       EventManager.Instance.emit(EventEnum.handlerNextTurn)
     }
   }
+
+  // 在动画后结算伤害
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
       console.log('attack')
-      EventManager.Instance.emit(EventEnum.updateHp, this.id)
+      // 盾牌碎裂
+      const damage = this.otherActor.shieldBreak(this.damage || 0)
+      this.otherActor.hp -= damage
+      // 同时防御结束
+      EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, damage)
       this.tiger()
     }
   }
@@ -79,8 +101,17 @@ export default class Skill {
         EventManager.Instance.emit(EventEnum.updateSkillItem, DataManager.Instance.actors.get(this.id).power)
     }
   }
+  defenseFinal(actor: ActorManager, damage) {
+    if (actor === this.actor) {
+      console.log('defense')
+      this.tiger()
+    }
+  }
+  missFinal(){
 
-  //   每拥有的一种类型都对应一种处理
+  }
+
+  //   每拥有的一种类型都对应一种处理, 等动画执行触发结算时，都是修正好的数值了
   // 蓄力
   powerHandler() {
     const power = this.skill.power
@@ -91,7 +122,12 @@ export default class Skill {
       }
     }
   }
-  defenseHandler: Function = null
+  defenseHandler() {
+    // 在角色面前生成盾牌
+    if (this.skill.shield) {
+      this.actor.generateShield(this.skill.shield, this.defense)
+    }
+  }
   attackHandler() {
     const otherSkill = this.otherSkill.skill
 
@@ -102,6 +138,7 @@ export default class Skill {
     if (this.skill.target === 1) {
       // 目标是自己
       DataManager.Instance.actor1.hp -= this.skill.damage
+      return
     } else {
       if (!this.skill.longrang) {
         if (!this.otherSkill.skill.location || this.otherSkill.skill.location == 0) {
@@ -114,11 +151,11 @@ export default class Skill {
           // 不在范围，骂街
         }
       }
-
-      this.otherActor.hp -= this.skill.damage
     }
   }
-  missHandler: Function = null
+  missHandler(){
+    this.setSkillState()
+  }
   specialHandler: Function = null
 
   reset() {

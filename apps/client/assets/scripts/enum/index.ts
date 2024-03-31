@@ -13,6 +13,7 @@ export enum ParamsNameEnum {
   Attack = 'Attack',
   Xu = 'Xu',
   Kan = 'Kan',
+  Jump = 'Jump',
 }
 
 export enum EntityStateEnum {
@@ -38,6 +39,8 @@ export enum EventEnum {
   attackFinal = 'attackFinal',
   updateHp = 'updateHp',
   powerFinal = 'powerFinal',
+  defenseFinal = 'defenseFinal',
+  missFinal = 'missFinal',
   onPower = 'onPower',
 }
 
@@ -47,9 +50,9 @@ export enum PrefabPathEnum {
   Prompt = 'prefab/Prompt',
   Heart = 'prefab/Heart',
   Cloud = 'prefab/Cloud',
-  // Map1 = 'prefab/Map1',
   Actor1 = 'prefab/Actor1',
   Actor2 = 'prefab/Actor2',
+  RoundShield = 'prefab/RoundShield',
   // Weapon1 = 'prefab/Weapon1',
   // Weapon2 = 'prefab/Weapon2',
   // Bullet1 = 'prefab/Bullet1',
@@ -65,6 +68,7 @@ export enum TexturePathEnum {
   ActorXu = 'texture/actor/base/xu',
   ActorRun = 'texture/actor/base/run',
   ActorKan = 'texture/actor/base/kan',
+  ActorJump = 'texture/actor/base/jump',
 }
 // Bullet1Idle = 'texture/bullet/bullet1',
 // Bullet2Idle = 'texture/bullet/bullet2',
@@ -90,6 +94,7 @@ export enum SkillPathEnum {
   HandTwo = 'hand/hand-two',
   HandFour = 'hand/hand-four',
   HandCenter = 'hand/hand-center',
+  RoundShieldFrame = 'shieldFrame/round-shield',
   Xu = 'base/xu',
   Kan = 'base/kan',
   Jump = 'base/jump',
