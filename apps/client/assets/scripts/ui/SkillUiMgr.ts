@@ -74,7 +74,7 @@ export class SkillUiMgr extends Component {
 
         //   绑定点击事件()
         this.normalSprite = skillNode.getComponent(Sprite).spriteFrame
-        const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.activeSprite)
+        const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
         skillNode.on(
           Input.EventType.TOUCH_END,
           (event: EventTouch) => {
@@ -157,23 +157,23 @@ export class SkillUiMgr extends Component {
               const hand1 = this.hands.children[0]
               const hand2 = this.hands.children[1]
               if (skill.type.indexOf(0) !== -1) {
-                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
-                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandXu)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandXu)
               } else if (skill.type.indexOf(1) !== -1) {
-                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handTwo)
-                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handTwo)
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandTwo)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandTwo)
               } else if (skill.type.indexOf(2) !== -1) {
-                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handFour)
-                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handFour)
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandFour)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandFour)
               } else if (skill.type.indexOf(3) !== -1) {
-                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
-                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandCenter)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandCenter)
               } else if (skill.type.indexOf(4) !== -1) {
-                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
-                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handXu)
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandXu)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandXu)
               } else if (skill.type.indexOf(5) !== -1) {
-                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
-                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.handCenter)
+                hand1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandCenter)
+                hand2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.HandCenter)
               }
               // #endregion
             } else {
@@ -231,29 +231,43 @@ export class SkillUiMgr extends Component {
     })
   }
 
+  keys: number[] = []
   handlerNextTurn() {
-    // 都结算完就进入下一回合
-    DataManager.Instance.roomInfo.turn += 1
-    DataManager.Instance.actors.forEach((actor) => {
-      actor.skill = null
-    })
+    // 虎符校验，都结算完就进入下一回合
+    this.keys.push(1)
+    if (this.keys.length < 2) {
+      return
+    } else {
+      this.keys = []
+    }
 
-    // 必须异步才能改到，奇妙……
-    setTimeout(() => {
-      this.isDisable = false
-    })
-
-    // 技能栏透明度
-    this.updateSkillItem(DataManager.Instance.actor1.power)
-
-    // 技能透明度变回
-    this.activeSkill.getComponent(UIOpacity).opacity = 100 //处理不变回问题
-    this.activeSkill = null
-    setTimeout(() => {
-      this.skillNodes.forEach((item) => {
-        item.getComponent(Sprite).spriteFrame = this.normalSprite
-        item.getComponent(UIOpacity).opacity = 255
+    this.scheduleOnce(() => {
+      DataManager.Instance.roomInfo.turn += 1
+      DataManager.Instance.actors.forEach((actor) => {
+        actor.skill?.onDestroy()
+        actor.skill = null
+        // 重置位置
+        actor.reset()
       })
-    })
+
+      // 必须异步才能改到，奇妙……
+      setTimeout(() => {
+        this.isDisable = false
+      })
+
+      // 技能栏透明度
+      this.updateSkillItem(DataManager.Instance.actor1.power)
+
+      // 技能透明度变回
+      if (this.activeSkill) this.activeSkill.getComponent(UIOpacity).opacity = 100 //处理不变回问题
+      this.activeSkill = null
+      setTimeout(() => {
+        this.skillNodes.forEach((item) => {
+          item.getComponent(Sprite).spriteFrame = this.normalSprite
+          item.getComponent(UIOpacity).opacity = 255
+        })
+      })
+
+    }, 0.1)
   }
 }

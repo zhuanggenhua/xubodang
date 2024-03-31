@@ -3,6 +3,7 @@ import { ISkill } from '../common'
 import { EventEnum, ParamsNameEnum, SkillPathEnum } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
+import { ActorManager } from '../entity/actor/ActorManager'
 
 // 执行器，用于延时结算数据
 export default class Skill {
@@ -20,12 +21,63 @@ export default class Skill {
     return DataManager.Instance.actors.get(this.otherSkill.id)
   }
 
-  constructor(public skill: ISkill, public id: number) {}
+  setSkillState() {
+    this.actor.state = ParamsNameEnum[this.getKeyByValue(this.skill.particle)]
+  }
+  // temp 临时获取key
+  getKeyByValue(value, object = SkillPathEnum) {
+    return Object.keys(object).find((key) => object[key] === value)
+  }
 
-  excute() {}
+  constructor(public skill: ISkill, public id: number) {
+    this.tigerLength = skill.type.length
+  }
+  onDestroy() {
+    // 在对象销毁前取消事件注册
+    EventManager.Instance.off(EventEnum.attackFinal, this.attackFinal, this)
+    EventManager.Instance.off(EventEnum.powerFinal, this.powerFinal, this)
+  }
 
-  getSkillState() {
-    return SkillPathEnum[this.skill.particle]
+  excute() {
+    this.skill.type.forEach((type) => {
+      switch (type) {
+        case 0:
+          this.powerHandler()
+          EventManager.Instance.on(EventEnum.powerFinal, this.powerFinal, this)
+          break
+        case 1:
+          EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
+          this.attackHandler()
+          break
+        case 2:
+          this.defenseHandler()
+          break
+      }
+    })
+  }
+  // 虎符  在这里等所有动作执行完进入下一轮
+  tigerLength: number = 0
+  tiger() {
+    this.tigerLength--
+    if (this.tigerLength <= 0) {
+      console.log('下一轮', this.tigerLength)
+      EventManager.Instance.emit(EventEnum.handlerNextTurn)
+    }
+  }
+  attackFinal(actor: ActorManager) {
+    if (actor === this.actor) {
+      console.log('attack')
+      EventManager.Instance.emit(EventEnum.updateHp, this.id)
+      this.tiger()
+    }
+  }
+  powerFinal(actor: ActorManager) {
+    if (actor === this.actor) {
+      console.log('power')
+      this.tiger()
+      if (isPlayer(this.id))
+        EventManager.Instance.emit(EventEnum.updateSkillItem, DataManager.Instance.actors.get(this.id).power)
+    }
   }
 
   //   每拥有的一种类型都对应一种处理
@@ -35,17 +87,12 @@ export default class Skill {
     if (power) {
       if (this.actor.power < 6) {
         this.actor.power += power
-        this.actor.state = this.getSkillState()
+        this.setSkillState()
       }
-
-      if (isPlayer(this.id))
-        EventManager.Instance.emit(EventEnum.updateSkillItem, DataManager.Instance.actors.get(this.id).power)
     }
   }
   defenseHandler: Function = null
   attackHandler() {
-    this.actor.state = ParamsNameEnum.Kan
-
     const otherSkill = this.otherSkill.skill
 
     if (this.skill.speed === 1) {
@@ -56,15 +103,19 @@ export default class Skill {
       // 目标是自己
       DataManager.Instance.actor1.hp -= this.skill.damage
     } else {
-      // 如果是近战，就移动
       if (!this.skill.longrang) {
-        // 近战攻击，进入移动
+        if (!this.otherSkill.skill.location || this.otherSkill.skill.location == 0) {
+          // 近战攻击，进入移动  反正就两个角色，不用事件系统更方便
+          this.actor.state = ParamsNameEnum.Run
+          this.actor.move(this.otherActor.node, () => {
+            this.setSkillState()
+          })
+        } else {
+          // 不在范围，骂街
+        }
       }
-      // this.actor.move()
-      // if(this.otherSkill.skill.type.indexOf(3) == -1){
-      //   // 没有闪避，直接结算伤害
-      // }
-      DataManager.Instance.actor2.hp -= this.skill.damage
+
+      this.otherActor.hp -= this.skill.damage
     }
   }
   missHandler: Function = null

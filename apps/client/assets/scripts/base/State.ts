@@ -1,9 +1,11 @@
-import { animation, AnimationClip, Component, Sprite, SpriteFrame } from 'cc'
+import { animation,Animation, AnimationClip, Component, Sprite, SpriteFrame } from 'cc'
 
 import StateMachine from './StateMachine'
 import { ResourceManager } from '../global/ResourceManager'
 import { sortSpriteFrame } from '../utils'
 import DataManager from '../global/DataManager'
+import { EventEnum } from '../enum'
+import EventManager from '../global/EventManager'
 
 /***
  * 帧间隔
@@ -15,13 +17,13 @@ export const ANIMATION_SPEED = 1 / 12
  */
 export default class State extends Component {
   private animationClip: AnimationClip
-  
+
   constructor(
     private fsm: StateMachine,
     private path: string,
     private wrapMode: AnimationClip.WrapMode = AnimationClip.WrapMode.Normal,
-    private events: Array<AnimationClip.IEvent> = [],//帧事件
-    private time: number = null,// 设置定时动画
+    private events: Array<AnimationClip.IEvent> = [], //帧事件
+    private time: number = null, // 设置定时动画
     private speed: number = ANIMATION_SPEED,
     private force: boolean = false,
   ) {

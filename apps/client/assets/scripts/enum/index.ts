@@ -35,6 +35,10 @@ export enum EventEnum {
   updateSkillItem = 'updateSkillItem',
   handlerNextTurn = 'handlerNextTurn',
   SCREEN_SHAKE = 'SCREEN_SHAKE',
+  attackFinal = 'attackFinal',
+  updateHp = 'updateHp',
+  powerFinal = 'powerFinal',
+  onPower = 'onPower',
 }
 
 export enum PrefabPathEnum {

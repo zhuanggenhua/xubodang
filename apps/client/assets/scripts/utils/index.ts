@@ -107,3 +107,150 @@ export const sortSpriteFrame = (spriteFrame: Array<SpriteFrame>) => {
 export function isPlayer(id) {
   return DataManager.Instance.player.id === id
 }
+
+// 碰撞检测
+export const checkCollision = (enemyNode, playerNode, type = 'rect') => {
+  const enemyTran = enemyNode.getComponent(UITransform)
+  const playerTran = playerNode.getComponent(UITransform)
+
+  // 缩小碰撞盒
+  const tempTran = {
+    width: enemyTran.width / 1.4,
+    height: enemyTran.height / 1.4,
+  }
+  const enemy = {
+    x: enemyNode.position.x - tempTran.width / 2,
+    y: enemyNode.position.y - tempTran.height / 2,
+    width: tempTran.width,
+    height: tempTran.height,
+  }
+
+  const player = {
+    x: playerNode.position.x - tempTran.width / 2,
+    y: playerNode.position.y - tempTran.height / 2,
+    width: tempTran.width,
+    height: tempTran.height,
+  }
+
+  // 画碰撞盒
+  const context = DataManager.Instance.battleCanvas.graphics
+  context.clear()
+  context.rect(player.x, player.y, player.width, player.height)
+  context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
+  context.stroke()
+  
+
+  if (type === 'rect') {
+    // 矩形碰撞检测
+    if (
+      enemy.x < player.x + player.width &&
+      enemy.x + enemy.width > player.x &&
+      enemy.y < player.y + player.height &&
+      enemy.y + enemy.height > player.y
+    ) {
+      return true
+    } else {
+      return false
+    }
+  } else if (type === 'circle') {
+    // 圆形碰撞检测
+    const dx = enemy.x + enemy.width / 2 - (player.x + player.width / 2)
+    const dy = enemy.y + enemy.height / 2 - (player.y + player.height / 2)
+    const distance = Math.sqrt(dx * dx + dy * dy) // 计算距离
+    if (distance < enemy.width / 3 + player.width / 3) {
+      return true
+    } else {
+      return false
+    }
+  } else if (type === 'separation') {
+    // 分离轴碰撞检测
+    // 获取多边形的所有边的法线
+    function getNormals(polygon) {
+      let normals = []
+      for (let i = 0; i < polygon.length; i++) {
+        let p1 = polygon[i]
+        let p2 = polygon[i + 1 == polygon.length ? 0 : i + 1]
+        let edge = { x: p2.x - p1.x, y: p2.y - p1.y }
+        let normal = { x: -edge.y, y: edge.x }
+        normals.push(normal)
+      }
+      return normals
+    }
+
+    // 计算多边形在轴上的投影
+    function project(polygon, axis) {
+      let min = Infinity
+      let max = -Infinity
+      for (let i = 0; i < polygon.length; i++) {
+        let dot = polygon[i].x * axis.x + polygon[i].y * axis.y
+        if (dot < min) min = dot
+        if (dot > max) max = dot
+      }
+      return { min, max }
+    }
+
+    // 检测两个多边形的投影是否有重叠
+    function overlap(proj1, proj2) {
+      return !(proj1.max < proj2.min || proj2.max < proj1.min)
+    }
+
+    // 碰撞检测
+    function checkCollision(polygonA, polygonB) {
+      let axes = getNormals(polygonA).concat(getNormals(polygonB))
+      for (let i = 0; i < axes.length; i++) {
+        let axis = axes[i]
+        let proj1 = project(polygonA, axis)
+        let proj2 = project(polygonB, axis)
+        if (!overlap(proj1, proj2)) {
+          return false
+        }
+      }
+      return true // 所有轴都有重叠
+    }
+
+    let pillar = player
+    // 计算旋转后的四个顶点坐标
+    function rotatePoint(cx, cy, angle, px, py) {
+      let s = Math.sin(angle)
+      let c = Math.cos(angle)
+      // translate point back to origin:
+      px -= cx
+      py -= cy
+      // rotate point
+      let xnew = px * c - py * s
+      let ynew = px * s + py * c
+      // translate point back:
+      px = xnew + cx
+      py = ynew + cy
+      return { x: px, y: py }
+    }
+    function calculateRotatedPoints(x, y, x2, y2, lineH, deg) {
+      let angle = (deg * Math.PI) / 180
+      let w = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y))
+
+      // 旋转前的四个顶点
+      let p1 = { x, y: y - lineH / 2 }
+      let p2 = { x: x + w, y: p1.y }
+      let p3 = { x: x + w, y: y + lineH / 2 }
+      let p4 = { x, y: p3.y }
+
+      // 旋转所有四个顶点
+      let rp1 = rotatePoint(x, y, angle, p1.x, p1.y)
+      let rp2 = rotatePoint(x, y, angle, p2.x, p2.y)
+      let rp3 = rotatePoint(x, y, angle, p3.x, p3.y)
+      let rp4 = rotatePoint(x, y, angle, p4.x, p4.y)
+
+      return [rp1, rp2, rp3, rp4]
+    }
+
+    // let pillarVertices = calculateRotatedPoints(pillar.x, pillar.y, pillar.x2, pillar.y2, pillar.lineH, pillar.deg)
+
+    // let enemyVertices = [
+    //   { x: enemy.x, y: enemy.y },
+    //   { x: enemy.x, y: enemy.y + enemy.height },
+    //   { x: enemy.x + enemy.width, y: enemy.y + enemy.height },
+    //   { x: enemy.x + enemy.width, y: enemy.y },
+    // ]
+    // return checkCollision(pillarVertices, enemyVertices)
+  }
+}

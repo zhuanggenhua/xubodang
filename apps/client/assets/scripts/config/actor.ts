@@ -6,6 +6,7 @@ const actors: { [key: string]: IActor } = {
     actorName: '战士',
     prompt: [],
     skills: {
+      // 这里应该只持有技能编号比较好
       0: [
         {
           name: '砍',

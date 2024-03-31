@@ -32,6 +32,7 @@ export class BattleMgr extends Component {
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
     EventManager.Instance.on(EventEnum.useSkill, this.useSkill, this)
+    EventManager.Instance.on(EventEnum.updateHp, this.setHeart, this)
   }
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
@@ -41,9 +42,10 @@ export class BattleMgr extends Component {
     await DataManager.Instance.loadRes() //temp
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
     this.setPlayerName(this.bg.getChildByName('Name1').getComponent(Label), DataManager.Instance.player)
+
     this.hearts1 = this.bg.getChildByName('Hearts1')
-    this.setHeart(this.hearts1)
     this.hearts2 = this.bg.getChildByName('Hearts2')
+    this.setHeart()
     this.renderPlayers()
 
     // 渲染当前选中角色技能，默认是战士
@@ -97,16 +99,13 @@ export class BattleMgr extends Component {
 
     if (ready) {
       // test
-      DataManager.Instance.actor1.skill.powerHandler()
-      DataManager.Instance.actor2.skill.powerHandler()
-      DataManager.Instance.actor1.skill.attackHandler()
-      DataManager.Instance.actor2.skill.attackHandler()
+      DataManager.Instance.actor1.skill.excute()
+      DataManager.Instance.actor2.skill.excute()
       console.log(
+        '当前能量',
         DataManager.Instance.actors.get(DataManager.Instance.player.id).power,
         DataManager.Instance.actor2.power,
       )
-
-      EventManager.Instance.emit(EventEnum.handlerNextTurn)
     }
   }
 
@@ -126,7 +125,7 @@ export class BattleMgr extends Component {
 
     if (DataManager.Instance.otherPlayer) {
       this.setPlayerName(this.bg.getChildByName('Name2').getComponent(Label), DataManager.Instance.otherPlayer)
-      this.setHeart(this.hearts2)
+      this.setHeart(DataManager.Instance.otherPlayer.id)
       this.bg.getChildByName('Label').active = false
       this.bg.getChildByName('Name2').active = true
       this.hearts2.active = true
@@ -148,7 +147,16 @@ export class BattleMgr extends Component {
     }
   }
 
-  setHeart(hearts: Node, count: number = DataManager.Instance.roomInfo?.life) {
+  setHeart(id: number = DataManager.Instance.player.id) {
+    let hearts = null
+    if (isPlayer(id)) {
+      hearts = this.hearts1
+    } else {
+      hearts = this.hearts2
+    }
+    
+    let count = DataManager.Instance.actors?.get(id)?.hp || DataManager.Instance.roomInfo?.life
+
     const prefab = DataManager.Instance.prefabMap.get('Heart')
 
     if (count > DataManager.Instance.roomInfo?.life) count = DataManager.Instance.roomInfo.life
