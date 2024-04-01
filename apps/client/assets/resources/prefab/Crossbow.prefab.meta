@@ -2,12 +2,12 @@
   "ver": "1.1.49",
   "importer": "prefab",
   "imported": true,
-  "uuid": "33bfdf8c-53b8-4ee2-ab2e-d7758d0ba2da",
+  "uuid": "12e12983-6906-4bf8-8a99-e7ddf846013f",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Actor2"
+    "syncNodeName": "Crossbow"
   }
 }

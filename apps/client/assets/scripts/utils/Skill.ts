@@ -1,5 +1,5 @@
 import { isPlayer } from './index'
-import { ISkill } from '../common'
+import { EntityTypeEnum, ISkill } from '../common'
 import { EventEnum, ParamsNameEnum, SkillPathEnum } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
@@ -27,6 +27,7 @@ export default class Skill {
   }
 
   setSkillState() {
+    console.log('设置状态', ParamsNameEnum[this.getKeyByValue(this.skill.particle)])
     this.actor.state = this.skill.animal || ParamsNameEnum[this.getKeyByValue(this.skill.particle)]
   }
   // temp 临时获取key
@@ -66,7 +67,7 @@ export default class Skill {
           break
         case 3:
           EventManager.Instance.on(EventEnum.missFinal, this.missFinal, this)
-          this.defenseHandler()
+          this.missHandler()
           break
       }
     })
@@ -86,10 +87,11 @@ export default class Skill {
     if (actor === this.actor) {
       console.log('attack')
       // 盾牌碎裂
-      const damage = this.otherActor.shieldBreak(this.damage || 0)
-      this.otherActor.hp -= damage
+      this.damage = this.otherActor.shieldBreak(this.damage || 0)
+
+      this.otherActor.hp -= this.damage
       // 同时防御结束
-      EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, damage)
+      EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, this.damage)
       this.tiger()
     }
   }
@@ -107,20 +109,16 @@ export default class Skill {
       this.tiger()
     }
   }
-  missFinal(){
-
-  }
+  missFinal() {}
 
   //   每拥有的一种类型都对应一种处理, 等动画执行触发结算时，都是修正好的数值了
   // 蓄力
   powerHandler() {
     const power = this.skill.power
-    if (power) {
-      if (this.actor.power < 6) {
-        this.actor.power += power
-        this.setSkillState()
-      }
+    if (this.actor.power < 6) {
+      this.actor.power += power
     }
+    this.setSkillState()
   }
   defenseHandler() {
     // 在角色面前生成盾牌
@@ -132,7 +130,11 @@ export default class Skill {
     const otherSkill = this.otherSkill.skill
 
     if (this.skill.speed === 1) {
-      // 快速攻击  立即触发动画
+      // 快速攻击（一般是射击）  立即触发动画
+      this.setSkillState()
+      if (this.skill.bullet) {
+        this.actor.shoot(this.otherActor.node, this.skill.bullet)
+      }
     }
 
     if (this.skill.target === 1) {
@@ -153,8 +155,9 @@ export default class Skill {
       }
     }
   }
-  missHandler(){
+  missHandler() {
     this.setSkillState()
+    this.tiger()
   }
   specialHandler: Function = null
 

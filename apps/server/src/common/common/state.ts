@@ -10,15 +10,6 @@ export interface IParticleOptions {
   minRange?: number;
 }
 
-export interface IBullet {
-  id: number;
-  owner: number;
-  type: EntityTypeEnum;
-
-  //动态数据    
-  position: IVec2;
-  direction: IVec2;
-}
 
 export interface IVec2 {
   x: number;

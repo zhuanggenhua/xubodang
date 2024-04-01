@@ -1,4 +1,4 @@
-import { _decorator, Color, Component, Input, instantiate, Label, Node } from 'cc'
+import { _decorator, Color, Component, Input, instantiate, Label, Node, Vec3 } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { EventEnum } from '../enum'
@@ -68,13 +68,12 @@ export class BattleMgr extends Component {
   }
 
   createActor(type, id: number = DataManager.Instance.player.id) {
-    let prefab = null
-    if (isPlayer(id)) {
-      prefab = DataManager.Instance.prefabMap.get('Actor1')
-    } else {
-      prefab = DataManager.Instance.prefabMap.get('Actor2')
-    }
+    let prefab =  DataManager.Instance.prefabMap.get('Actor1')
     const actor = instantiate(prefab)
+    if (!isPlayer(id)) {
+      // 左右翻转
+      actor.setScale(new Vec3(-1, 1, 1))
+    }
     actor.setParent(this.Battle)
     const actorMgr = actor.addComponent(ActorManager)
 

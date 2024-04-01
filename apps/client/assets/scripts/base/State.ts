@@ -32,7 +32,7 @@ export default class State extends Component {
     const track = new animation.ObjectTrack()
     track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame')
     const spriteFrames = DataManager.Instance.textureMap.get(this.path)
-
+    
     // 添加关键帧 --每个二元组有两个元素：时间戳（单位为秒）和相应的SpriteFrame对象
     const frames: Array<[number, SpriteFrame]> = sortSpriteFrame(spriteFrames).map((item, index) => [
       index * this.speed,
@@ -44,7 +44,7 @@ export default class State extends Component {
     //动画添加轨道
     this.animationClip = new AnimationClip()
     this.animationClip.name = this.path
-    this.animationClip.duration = frames.length * ANIMATION_SPEED
+    this.animationClip.duration = frames.length * this.speed
     this.animationClip.addTrack(track)
     this.animationClip.wrapMode = this.wrapMode
 

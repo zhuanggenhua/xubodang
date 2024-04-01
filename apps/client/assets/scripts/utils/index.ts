@@ -1,7 +1,7 @@
 import { UITransform, Node, Layers, instantiate, Label, Vec3, SpriteFrame } from 'cc'
 import DataManager from '../global/DataManager'
 import { TipEnum } from '../enum'
-import { ISkill } from '../common'
+import { EntityTypeEnum, ISkill } from '../common'
 
 export * from './biz'
 
@@ -108,37 +108,61 @@ export function isPlayer(id) {
   return DataManager.Instance.player.id === id
 }
 
+export const rad2Angle = (rad: number) => (rad * 180) / Math.PI
+
+// 节点坐标转对应节点的相对坐标
+export const getNodePos = (node: Node, target: Node) => {
+  // 获取原节点世界坐标
+  const worldPos = new Vec3(0, 0, 0)
+  node.getWorldPosition(worldPos)
+  // 将世界坐标转换为新父节点的局部坐标
+  return target.getComponent(UITransform).convertToNodeSpaceAR(worldPos)
+}
+
 // 碰撞检测
-export const checkCollision = (enemyNode, playerNode, type = 'rect') => {
-  const enemyTran = enemyNode.getComponent(UITransform)
-  const playerTran = playerNode.getComponent(UITransform)
+export const checkCollision = (myNode, targetNode, entityType: EntityTypeEnum[] = [EntityTypeEnum.Actor, EntityTypeEnum.Actor], type = 'rect') => {
+  const myTran = myNode.getComponent(UITransform)
+  const targetTran = targetNode.getComponent(UITransform)
 
   // 缩小碰撞盒
-  const tempTran = {
-    width: enemyTran.width / 1.4,
-    height: enemyTran.height / 1.4,
+  const getOffsetTransform = (tran, type: EntityTypeEnum) => {
+    if (type === EntityTypeEnum.Actor) {
+      return {
+        width: tran.width / 3,
+        height: tran.height / 1.4,
+      }
+    }
+    if (type === EntityTypeEnum.Crossbow) {
+      return {
+        width: tran.width / 1.5,
+        height: tran.height,
+      }
+    }
+    return tran
   }
+  let offsetMyTran = entityType[0] ? getOffsetTransform(myTran, entityType[0]) : myTran
+  let offsetTargetTran = entityType[1] ? getOffsetTransform(targetTran, entityType[1]) : targetTran
+
   const enemy = {
-    x: enemyNode.position.x - tempTran.width / 2,
-    y: enemyNode.position.y - tempTran.height / 2,
-    width: tempTran.width,
-    height: tempTran.height,
+    x: myNode.position.x - offsetMyTran.width / 2,
+    y: myNode.position.y - offsetMyTran.height / 2,
+    width: offsetMyTran.width,
+    height: offsetMyTran.height,
   }
 
   const player = {
-    x: playerNode.position.x - tempTran.width / 2,
-    y: playerNode.position.y - tempTran.height / 2,
-    width: tempTran.width,
-    height: tempTran.height,
+    x: targetNode.position.x - offsetTargetTran.width / 2,
+    y: targetNode.position.y - offsetTargetTran.height / 2,
+    width: offsetTargetTran.width,
+    height: offsetTargetTran.height,
   }
 
-  // 画碰撞盒
-  const context = DataManager.Instance.battleCanvas.graphics
-  context.clear()
-  context.rect(player.x, player.y, player.width, player.height)
-  context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
-  context.stroke()
-  
+  // // 画碰撞盒
+  // const context = DataManager.Instance.battleCanvas.graphics
+  // context.clear()
+  // context.rect(player.x, player.y, player.width, player.height)
+  // context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
+  // context.stroke()
 
   if (type === 'rect') {
     // 矩形碰撞检测

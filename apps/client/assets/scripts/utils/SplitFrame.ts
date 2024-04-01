@@ -24,62 +24,61 @@ export default class SplitFrame extends Component {
     const tran = this.node.getComponent(UITransform)
     const sprite: Sprite = this.node.getComponent(Sprite)!
     const originalSpriteFrame: SpriteFrame = sprite.spriteFrame!
-
+  
     // 获取原始SpriteFrame的尺寸
     const originalWidth = originalSpriteFrame.rect.width
     const originalHeight = originalSpriteFrame.rect.height
     const originalX = originalSpriteFrame.rect.x
     const originalY = originalSpriteFrame.rect.y
-
-    // 克隆原始SpriteFrame并调整其rect属性以显示上半部分
-    const topSpriteFrame = originalSpriteFrame.clone()
-    topSpriteFrame.rect = new Rect(originalX, originalY + originalHeight / 2, originalWidth, originalHeight / 2)
-
-    // 克隆原始SpriteFrame并调整其rect属性以显示下半部分
-    const bottomSpriteFrame = originalSpriteFrame.clone()
-    bottomSpriteFrame.rect = new Rect(originalX, originalY, originalWidth, originalHeight / 2)
-
-    // 这里才是下半部分
-    // 创建上半部分的节点并设置SpriteFrame
-    const topNode = new Node()
-    const topTran = topNode.addComponent(UITransform)
-    topTran.setContentSize(tran.width, tran.height / 2)
-    const topSprite = topNode.addComponent(Sprite)
-    topSprite.color = sprite.color
-    topSprite.sizeMode = Sprite.SizeMode.CUSTOM
-    topSprite.spriteFrame = topSpriteFrame
-    this.node.parent!.addChild(topNode)
-    topNode.setPosition(this.node.position.x, this.node.position.y - topTran.height / 2)
-
-    // 创建下半部分的节点并设置SpriteFrame
-    const bottomNode = new Node()
-    const bottomTran = bottomNode.addComponent(UITransform)
-    bottomTran.setContentSize(tran.width, tran.height / 2)
-    const bottomSprite = bottomNode.addComponent(Sprite)
-    bottomSprite.color = sprite.color
-    bottomSprite.sizeMode = Sprite.SizeMode.CUSTOM
-    bottomSprite.spriteFrame = bottomSpriteFrame
-    this.node.parent!.addChild(bottomNode)
-    bottomNode.setPosition(this.node.position.x, this.node.position.y + bottomTran.height / 2)
-
+  
+    // 克隆原始SpriteFrame并调整其rect属性以显示左半部分
+    const leftSpriteFrame = originalSpriteFrame.clone()
+    leftSpriteFrame.rect = new Rect(originalX, originalY, originalWidth / 2, originalHeight)
+  
+    // 克隆原始SpriteFrame并调整其rect属性以显示右半部分
+    const rightSpriteFrame = originalSpriteFrame.clone()
+    rightSpriteFrame.rect = new Rect(originalX + originalWidth / 2, originalY, originalWidth / 2, originalHeight)
+  
+    // 创建左半部分的节点并设置SpriteFrame
+    const leftNode = new Node()
+    const leftTran = leftNode.addComponent(UITransform)
+    leftTran.setContentSize(tran.width / 2, tran.height)
+    const leftSprite = leftNode.addComponent(Sprite)
+    leftSprite.color = sprite.color
+    leftSprite.sizeMode = Sprite.SizeMode.CUSTOM
+    leftSprite.spriteFrame = leftSpriteFrame
+    this.node.parent!.addChild(leftNode)
+    leftNode.setPosition(this.node.position.x - leftTran.width / 2, this.node.position.y)
+  
+    // 创建右半部分的节点并设置SpriteFrame
+    const rightNode = new Node()
+    const rightTran = rightNode.addComponent(UITransform)
+    rightTran.setContentSize(tran.width / 2, tran.height)
+    const rightSprite = rightNode.addComponent(Sprite)
+    rightSprite.color = sprite.color
+    rightSprite.sizeMode = Sprite.SizeMode.CUSTOM
+    rightSprite.spriteFrame = rightSpriteFrame
+    this.node.parent!.addChild(rightNode)
+    rightNode.setPosition(this.node.position.x + rightTran.width / 2, this.node.position.y)
+  
     // 可以选择隐藏原始节点
     this.node.destroy()
-
-    // 上下移动
-    tween(topNode)
-      .to(0.5, { position: new Vec3(topNode.position.x, topNode.position.y - topTran.height / 4) }, { easing: 'cubicIn' })
+  
+    // 左右移动
+    tween(leftNode)
+      .to(0.1, { position: new Vec3(leftNode.position.x - leftTran.width / 5, leftNode.position.y) }, { easing: 'cubicIn' })
       .call(() => {
-        topNode.destroy()
+        leftNode.destroy()
       })
       .start()
-    tween(bottomNode)
+    tween(rightNode)
       .to(
-        0.5,
-        { position: new Vec3(bottomNode.position.x, bottomNode.position.y + topTran.height / 4) },
+        0.1,
+        { position: new Vec3(rightNode.position.x + rightTran.width / 5, rightNode.position.y) },
         { easing: 'cubicIn' },
       )
       .call(() => {
-        bottomNode.destroy()
+        rightNode.destroy()
       })
       .start()
   }

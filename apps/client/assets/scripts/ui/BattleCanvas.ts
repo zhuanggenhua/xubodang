@@ -29,7 +29,7 @@ export class BattleCanvas extends Component {
   generateClouds() {
     const cloudpre = DataManager.Instance.prefabMap.get('Cloud')
 
-    const count = getRandomNumber(3, 4)
+    const count = getRandomNumber(2, 4)
     for (let i = 0; i < count; i++) {
       const cloud = instantiate(cloudpre)
       cloud.parent = this.node

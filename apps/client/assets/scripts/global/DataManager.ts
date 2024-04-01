@@ -80,6 +80,6 @@ export default class DataManager extends Singleton {
       })
       list.push(p)
     }
-    await Promise.all(list)
+    await Promise.all(list)    
   }
 }

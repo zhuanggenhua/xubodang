@@ -212,6 +212,7 @@ export class SkillUiMgr extends Component {
 
   handlerCheck(skillNode: Node, skill: ISkill, power: number) {
     EventManager.Instance.emit(EventEnum.useSkill, skill, power)
+    
     if (DataManager.Instance.mode === 'single') {
       Ai.Instance.excute()
     }
@@ -267,7 +268,6 @@ export class SkillUiMgr extends Component {
           item.getComponent(UIOpacity).opacity = 255
         })
       })
-
-    }, 500)
+    }, 0.1)
   }
 }

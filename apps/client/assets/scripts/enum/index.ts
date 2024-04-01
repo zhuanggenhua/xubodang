@@ -7,21 +7,6 @@ export enum FsmParamTypeEnum {
   Trigger = 'Trigger',
 }
 
-export enum ParamsNameEnum {
-  Idle = 'Idle',
-  Run = 'Run',
-  Attack = 'Attack',
-  Xu = 'Xu',
-  Kan = 'Kan',
-  Jump = 'Jump',
-}
-
-export enum EntityStateEnum {
-  Idle = 'Idle',
-  Run = 'Run',
-  Attack = 'Attack',
-  Xu = 'Xu',
-}
 
 export enum EventEnum {
   WeaponShoot = 'WeaponShoot',
@@ -51,16 +36,8 @@ export enum PrefabPathEnum {
   Heart = 'prefab/Heart',
   Cloud = 'prefab/Cloud',
   Actor1 = 'prefab/Actor1',
-  Actor2 = 'prefab/Actor2',
   RoundShield = 'prefab/RoundShield',
-  // Weapon1 = 'prefab/Weapon1',
-  // Weapon2 = 'prefab/Weapon2',
-  // Bullet1 = 'prefab/Bullet1',
-  // Bullet2 = 'prefab/Bullet2',
-  // Explosion = 'prefab/Explosion',
-  // ReConnect = 'prefab/ReConnect',
-  // JoyStick = "prefab/JoyStick",
-  // Shoot = "prefab/Shoot",
+  Crossbow = 'prefab/Crossbow',
 }
 
 export enum TexturePathEnum {
@@ -69,23 +46,32 @@ export enum TexturePathEnum {
   ActorRun = 'texture/actor/base/run',
   ActorKan = 'texture/actor/base/kan',
   ActorJump = 'texture/actor/base/jump',
+  ActorCrossbow = 'texture/actor/soldier/Crossbow',
+  CrossbowIdle = 'texture/bullet/arrow',
 }
-// Bullet1Idle = 'texture/bullet/bullet1',
-// Bullet2Idle = 'texture/bullet/bullet2',
-// ExplosionIdle = 'texture/explosion',
 
-export enum SceneEnum {
-  Home = 'Home',
-  Loading = 'Loading',
-  Battle = 'Battle',
-  Hall = 'Hall',
+export enum ParamsNameEnum {
+  Idle = 'Idle',
+  Run = 'Run',
+  Attack = 'Attack',
+  Xu = 'Xu',
+  Kan = 'Kan',
+  Jump = 'Jump',
+  Crossbow = 'Crossbow',
+  Defend = 'Defend',  
+  Crouch = 'Crouch',  
+  Roll = 'Roll',      
+  Dash = 'Dash',      
+  Death = 'Death',    
+  Revive = 'Revive',  
+  UseItem = 'UseItem',
+  Interact = 'Interact', 
+  CastSpell = 'CastSpell', 
+  Block = 'Block',     
+  Stun = 'Stun',       
+  Dodge = 'Dodge',     
 }
-export enum SHAKE_TYPE_ENUM {
-  TOP = 'TOP',
-  BOTTOM = 'BOTTOM',
-  LEFT = 'LEFT',
-  RIGHT = 'RIGHT',
-}
+
 
 export enum SkillPathEnum {
   ActiveSprite = 'fangkuang',
@@ -115,3 +101,18 @@ export enum SkillPathEnum {
   UnstableProjectile = 'shield/unstable-projectile',
   ShieldBash = 'shield/shield-bash',
 }
+
+export enum SceneEnum {
+  Home = 'Home',
+  Loading = 'Loading',
+  Battle = 'Battle',
+  Hall = 'Hall',
+}
+export enum SHAKE_TYPE_ENUM {
+  TOP = 'TOP',
+  BOTTOM = 'BOTTOM',
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT',
+}
+
+

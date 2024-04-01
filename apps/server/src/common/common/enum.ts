@@ -1,4 +1,4 @@
-import { ParamsNameEnum, PrefabPathEnum, SkillPathEnum } from '../enum'
+import { ParamsNameEnum, PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
 
 // 玩家当前联网状态，用于随机匹配、断线重连
 export enum ConnectStateEnum {
@@ -38,17 +38,8 @@ export enum InputTypeEnum {
   TimePast,
 }
 export enum EntityTypeEnum {
-  // Map1 = 'Map1',
   Actor = 'Actor',
-  // Actor2 = 'Actor2',
-  // Weapon1 = 'Weapon1',
-  // Weapon2 = 'Weapon2',
-  // Bullet1 = 'Bullet1',
-  // Bullet2 = 'Bullet2',
-  // Explosion = 'Explosion',
-  // JoyStick = 'JoyStick',
-  // Shoot = 'Shoot',
-  // Particle = 'Particle',
+  Crossbow = 'Crossbow',
 }
 
 export enum ApiFunc {
@@ -164,8 +155,8 @@ export interface ISkill {
   damage?: number
   speed?: number
   target?: number
-  range?: number[]
-  rangPill?: boolean
+  range?: string[]
+  bullet?: EntityTypeEnum
   longrang?: boolean
   pierce?: boolean
   location?: number
