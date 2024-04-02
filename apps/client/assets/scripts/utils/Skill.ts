@@ -1,17 +1,18 @@
 import { isPlayer } from './index'
 import { EntityTypeEnum, ISkill } from '../common'
-import { EventEnum, ParamsNameEnum, SkillPathEnum } from '../enum'
+import { EventEnum, MissType, ParamsNameEnum, SkillPathEnum } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'
+import { Component } from 'cc'
 
 /**
  * 添加技能：
  * 在TexturePathEnum配置资源路径
  * 在actorMgr配置新State状态机
  */
-// 执行器，用于延时结算数据
-export default class Skill {
+// 执行器，用于拆分数据结算
+export default class Skill extends Component {
   get otherSkill() {
     if (isPlayer(this.id)) {
       return DataManager.Instance.actor2.skill
@@ -38,6 +39,7 @@ export default class Skill {
   damage: number
   defense: number
   constructor(public skill: ISkill, public id: number) {
+    super()
     this.tigerLength = skill.type.length
     this.damage = skill.damage
     this.defense = skill.defense
@@ -86,14 +88,35 @@ export default class Skill {
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
       console.log('attack')
-      // 盾牌碎裂
-      this.damage = this.otherActor.shieldBreak(this.damage || 0)
-
-      this.otherActor.hp -= this.damage
       // 同时防御结束
       EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, this.damage)
+
+      // 处理闪避
+      if (!this.miss()) {
+        // 盾牌碎裂
+        this.damage = this.otherActor.shieldBreak(this.damage || 0)
+        this.otherActor.hp -= this.damage
+      }
+
       this.tiger()
     }
+  }
+  // 判断是否被闪避
+  miss() {
+    // 闪避弹丸类型
+    if (this.skill.bullet && this.otherSkill.skill.missType === MissType.Bullet) {
+      return true
+    }
+
+    let tag = true
+    this.skill.range.forEach((range) => {
+      let location = this.otherSkill.skill.location || '0'
+      if (range.includes(location.toString())) {
+        //只要包含了，就没有被闪避，当然在missType后判断
+        tag = false
+      }
+    })
+    return tag
   }
   powerFinal(actor: ActorManager) {
     if (actor === this.actor) {
@@ -106,10 +129,19 @@ export default class Skill {
   defenseFinal(actor: ActorManager, damage) {
     if (actor === this.actor) {
       console.log('defense')
+      // 盾牌碎裂,等动画播完再下回合
+      if (damage >= 0) {
+        // this.scheduleOnce(() => {
+          this.tiger()
+        // }, 0.1 * DataManager.Instance.animalTime)
+      }
+    }
+  }
+  missFinal(actor: ActorManager) {
+    if (actor === this.actor) {
       this.tiger()
     }
   }
-  missFinal() {}
 
   //   每拥有的一种类型都对应一种处理, 等动画执行触发结算时，都是修正好的数值了
   // 蓄力
@@ -143,21 +175,20 @@ export default class Skill {
       return
     } else {
       if (!this.skill.longrang) {
-        if (!this.otherSkill.skill.location || this.otherSkill.skill.location == 0) {
-          // 近战攻击，进入移动  反正就两个角色，不用事件系统更方便
-          this.actor.state = ParamsNameEnum.Run
-          this.actor.move(this.otherActor.node, () => {
-            this.setSkillState()
-          })
-        } else {
-          // 不在范围，骂街
-        }
+        // if (!this.otherSkill.skill.location || this.otherSkill.skill.location == 0) {
+        // 近战攻击，进入移动  反正就两个角色，不用事件系统更方便
+        this.actor.state = ParamsNameEnum.Run
+        this.actor.move(this.otherActor.node, () => {
+          this.setSkillState()
+        })
+        // } else {
+        //   // 不在范围，骂街
+        // }
       }
     }
   }
   missHandler() {
     this.setSkillState()
-    this.tiger()
   }
   specialHandler: Function = null
 

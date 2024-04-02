@@ -5,6 +5,7 @@ import { EntityTypeEnum } from '../../common'
 import { ParamsNameEnum, SHAKE_TYPE_ENUM, EventEnum } from '../../enum'
 import { ActorManager } from './ActorManager'
 import EventManager from '../../global/EventManager'
+import DataManager from '../../global/DataManager'
 
 const { ccclass } = _decorator
 
@@ -54,7 +55,14 @@ export class ActorStateMachine extends StateMachine {
     )
     this.stateMachines.set(
       ParamsNameEnum.Xu,
-      new State(this, `${this.type}${ParamsNameEnum.Xu}`, AnimationClip.WrapMode.Loop, [], 0.4),
+      new State(
+        this,
+        `${this.type}${ParamsNameEnum.Xu}`,
+        AnimationClip.WrapMode.Loop,
+        [],
+        ANIMATION_SPEED,
+        0.3 * DataManager.Instance.animalTime,
+      ),
     )
     this.stateMachines.set(
       ParamsNameEnum.Kan,
@@ -79,13 +87,28 @@ export class ActorStateMachine extends StateMachine {
             params: [],
           },
         ],
-        null,
         1 / 4,
       ),
     )
     this.stateMachines.set(
       ParamsNameEnum.Crossbow,
       new State(this, `${this.type}${ParamsNameEnum.Crossbow}`, AnimationClip.WrapMode.Loop),
+    )
+    this.stateMachines.set(
+      ParamsNameEnum.Spade,
+      new State(
+        this,
+        `${this.type}${ParamsNameEnum.Spade}`,
+        AnimationClip.WrapMode.Loop,
+        [
+          {
+            frame: ANIMATION_SPEED * 1, // 第 2帧时触发事件
+            func: 'onSpade', // 事件触发时调用的函数名称
+            params: [],
+          },
+        ],
+        // 1/4
+      ),
     )
   }
 

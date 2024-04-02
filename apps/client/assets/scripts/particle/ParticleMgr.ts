@@ -3,6 +3,7 @@ import { IParticleOptions } from '../common/state'
 import Particle from './Particle'
 import { getRandomNumber } from '../utils'
 import { LightParticle } from './LightParticle'
+const { ccclass, property } = _decorator
 
 // 粒子系统
 export default class ParticleMgr extends Component {
@@ -17,19 +18,16 @@ export default class ParticleMgr extends Component {
     this.particle = particle
     this.options = options
 
-    this.graphics = this.node.addComponent(Graphics)
+    this.graphics = this.node.getComponent(Graphics) || this.node.addComponent(Graphics)   
 
-    // 两种类型，一种持续生成，一种一次性生成, 没有间隔就是一次性
     if (!this.options.gap) {
       this.generateParticles()
     }
 
-    // 存在大小范围
     if (this.options.maxRange && this.options.minRange) {
       this.options.max = getRandomNumber(this.options.minRange, this.options.maxRange)
     }
 
-    // 有生命周期就在生命结束时清除
     if (this.options.duration) {
       this.scheduleOnce(() => {
         this.clear()
@@ -45,6 +43,7 @@ export default class ParticleMgr extends Component {
     if (this.options.gap) {
       if (this.timer > this.options.gap) {
         this.addParticles()
+        // this.generateParticles()
         this.timer = 0
       } else {
         this.timer += dt
@@ -55,7 +54,9 @@ export default class ParticleMgr extends Component {
   }
   generateParticles() {
     for (let i = 0; i < this.options.max; i++) {
-      this.particles.push(new this.particle())
+      const particle = new this.particle()
+      if(this.options.other) particle.init(this.options.other)
+      this.particles.push(particle)
     }
   }
   addParticles() {
@@ -63,7 +64,9 @@ export default class ParticleMgr extends Component {
       // 清除超出上限的粒子
       this.particles.length = this.options.max
     }
-    this.particles.push(new this.particle())
+    const particle = new this.particle()
+    if(this.options.other) particle.init(this.options.other)
+    this.particles.push(particle)
   }
   updateParticles(dt) {
     this.particles.forEach((particle) => {

@@ -12,6 +12,7 @@ export default class Particle extends Component {
   constructor() {
     super()
   }
+  init(params){}
 
   update(dt) {
     this.move(dt)

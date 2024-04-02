@@ -8,9 +8,9 @@ import { EventEnum } from '../enum'
 import EventManager from '../global/EventManager'
 
 /***
- * 帧间隔
+ * 帧间隔,越大播放速度越快，一秒12帧
  */
-export const ANIMATION_SPEED = 1 / 12
+export const ANIMATION_SPEED = 1 / 8
 
 /***
  * 状态（每组动画的承载容器，持有SpriteAnimation组件执行播放）
@@ -23,11 +23,12 @@ export default class State extends Component {
     private path: string,
     private wrapMode: AnimationClip.WrapMode = AnimationClip.WrapMode.Normal,
     private events: Array<AnimationClip.IEvent> = [], //帧事件
-    private time: number = null, // 设置定时动画
     private speed: number = ANIMATION_SPEED,
+    private time: number = null, // 设置定时动画
     private force: boolean = false,
   ) {
     super()
+    this.speed /= DataManager.Instance.animalTime
     //生成动画轨道属性
     const track = new animation.ObjectTrack()
     track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame')

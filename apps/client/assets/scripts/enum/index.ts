@@ -47,6 +47,8 @@ export enum TexturePathEnum {
   ActorKan = 'texture/actor/base/kan',
   ActorJump = 'texture/actor/base/jump',
   ActorCrossbow = 'texture/actor/soldier/Crossbow',
+  ActorSpade = 'texture/actor/soldier/Spade',
+  
   CrossbowIdle = 'texture/bullet/arrow',
 }
 
@@ -58,18 +60,28 @@ export enum ParamsNameEnum {
   Kan = 'Kan',
   Jump = 'Jump',
   Crossbow = 'Crossbow',
-  Defend = 'Defend',  
-  Crouch = 'Crouch',  
-  Roll = 'Roll',      
-  Dash = 'Dash',      
-  Death = 'Death',    
-  Revive = 'Revive',  
-  UseItem = 'UseItem',
-  Interact = 'Interact', 
-  CastSpell = 'CastSpell', 
-  Block = 'Block',     
-  Stun = 'Stun',       
-  Dodge = 'Dodge',     
+  Spade = 'Spade',  
+  ActiveSprite = 'ActiveSprite',
+  HandNormal = 'HandNormal',
+  HandXu = 'HandXu',
+  HandTwo = 'HandTwo',
+  HandFour = 'HandFour',
+  HandCenter = 'HandCenter',
+  RoundShieldFrame = 'RoundShieldFrame',  //生成盾牌的图片
+  Dang = 'Dang',
+  HeartShield = 'HeartShield',
+  ShieldReflect = 'ShieldReflect',
+  SpikedShield = 'SpikedShield',
+  ShieldImpact = 'ShieldImpact',
+  Spartan = 'Spartan',
+  ShieldEchoes = 'ShieldEchoes',
+  CrenulatedShield = 'CrenulatedShield',
+  FloorHatch = 'FloorHatch',
+  Enrage = 'Enrage',
+  SwordTie = 'SwordTie',
+  AncientSword = 'AncientSword',
+  UnstableProjectile = 'UnstableProjectile',
+  ShieldBash = 'ShieldBash',   
 }
 
 
@@ -80,7 +92,7 @@ export enum SkillPathEnum {
   HandTwo = 'hand/hand-two',
   HandFour = 'hand/hand-four',
   HandCenter = 'hand/hand-center',
-  RoundShieldFrame = 'shieldFrame/round-shield',
+  RoundShieldFrame = 'shieldFrame/round-shield', 
   Xu = 'base/xu',
   Kan = 'base/kan',
   Jump = 'base/jump',
@@ -115,4 +127,8 @@ export enum SHAKE_TYPE_ENUM {
   RIGHT = 'RIGHT',
 }
 
+export enum MissType{
+  Round, //近战
+  Bullet, //远程弹丸攻击
+}
 

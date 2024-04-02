@@ -9,6 +9,7 @@ import { ActorStateMachine } from './ActorStateMachine'
 import EventManager from '../../global/EventManager'
 import { BulletManager } from '../Bullet/BulletManager'
 import SplitFrame from '../../utils/SplitFrame'
+import { holeRadius } from '../../ui/BattleCanvas'
 
 const { ccclass, property } = _decorator
 
@@ -16,6 +17,7 @@ const { ccclass, property } = _decorator
 export class ActorManager extends EntityManager {
   id: number
   bulletType: EntityTypeEnum
+  count: number = 0 //计数用
 
   //动态数据
   _hp: number = 0
@@ -32,13 +34,13 @@ export class ActorManager extends EntityManager {
   // position: IVec2;
   // direction: IVec2;
   skill: Skill = null
-  tran: UITransform
 
   shields = []
 
   initPosition: Vec3 = new Vec3(0, 0)
 
   private tw: Tween<unknown>
+  private tran: UITransform
 
   // private wm: WeaponManager;
   init(id, type: EntityTypeEnum, hp) {
@@ -72,6 +74,7 @@ export class ActorManager extends EntityManager {
   generateShield(shield: SkillPathEnum, defense: number) {
     const prefab = DataManager.Instance.prefabMap.get('RoundShield')
     const roundShield = instantiate(prefab)
+    // 图片是动态的
     roundShield.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(shield)
 
     roundShield.parent = this.node.getChildByName('Rubbish')
@@ -81,6 +84,8 @@ export class ActorManager extends EntityManager {
       defense,
       node: roundShield,
     })
+    console.log('护盾', this.shields);
+    
   }
   shieldBreak(damage: number) {
     for (let i = 0; i < this.shields.length; i++) {
@@ -103,7 +108,10 @@ export class ActorManager extends EntityManager {
     const bullet = instantiate(prefab)
     // bullet.addComponent(UITransform).setContentSize(100, 20)
     bullet.setParent(this.node.parent)
-    bullet.setPosition(this.node.position.x + 100, this.node.position.y)
+    bullet.setPosition(
+      isPlayer(this.id) ? this.node.position.x + 100 : this.node.position.x - 100,
+      this.node.position.y,
+    )
     const bulletManager = bullet.addComponent(BulletManager)
     bulletManager.init(this)
     bulletManager.move(targetNode)
@@ -111,11 +119,12 @@ export class ActorManager extends EntityManager {
   move(targetNode: Node, callback: Function) {
     const tw = tween(this.node)
       .to(
-        0.4,
+        0.4 * DataManager.Instance.animalTime,
         { position: targetNode.position },
         {
           onUpdate: (target, ratio) => {
-            // 这里可以调用你的碰撞检测方法
+            // 闪避，则不处理碰撞
+            if (this.skill.miss()) return
             // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
             if (checkCollision(this.node, targetNode)) {
               // 如果检测到碰撞，可以通过 tween.stop() 停止移动
@@ -131,7 +140,8 @@ export class ActorManager extends EntityManager {
 
   onJump() {
     const jumpHeight = 200 // 跳跃高度为头顶100像素
-    const duration = 1 // 跳跃动作持续时间为1秒
+    const duration = 0.5 // 跳跃动作持续时间为1秒
+
     tween(this.node)
       .sequence(
         // 向上跳跃
@@ -147,6 +157,9 @@ export class ActorManager extends EntityManager {
           { easing: 'quadIn' },
         ),
       )
+      .call(() => {
+        EventManager.Instance.emit(EventEnum.missFinal, this)
+      })
       .start() // 开始执行tween
   }
 
@@ -156,6 +169,33 @@ export class ActorManager extends EntityManager {
   }
   onPower(type: EventEnum) {
     EventManager.Instance.emit(EventEnum.powerFinal, this)
+  }
+  onSpade() {
+    // 只挖三次
+    if (this.count < 3) {
+      if (this.count === 0) {
+        DataManager.Instance.battleCanvas.drawHole(this.node.position.x)
+      } else {
+        DataManager.Instance.battleCanvas.drawHole(this.node.position.x, this.node.position.y - this.tran.height / 2.5)
+      }
+
+      tween(this.node)
+        .to(
+          0.1 * DataManager.Instance.animalTime,
+          { position: v3(this.node.position.x, this.node.position.y - holeRadius, this.node.position.z) },
+          { easing: 'quadIn' },
+        )
+        .call(() => {
+          if (this.count === 2) {
+            this.count = 0
+            this.state = ParamsNameEnum.Idle
+            EventManager.Instance.emit(EventEnum.missFinal, this)
+          }
+        })
+        .start()
+
+      this.count++
+    }
   }
   reset() {
     this.state = ParamsNameEnum.Idle

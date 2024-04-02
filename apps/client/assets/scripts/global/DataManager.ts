@@ -21,10 +21,13 @@ export const mapH = view.getVisibleSize().height
 // export const mapW = 720;
 // export const mapH = 1280;
 
+
 export default class DataManager extends Singleton {
   static get Instance() {    
     return super.GetInstance<DataManager>()
   }
+  // 动画播放速度
+  animalTime = 2
 
   mode: 'single' | 'network' | 'teach' = 'single'
 
@@ -81,5 +84,7 @@ export default class DataManager extends Singleton {
       list.push(p)
     }
     await Promise.all(list)    
+    console.log('数据中心',this);
+    
   }
 }

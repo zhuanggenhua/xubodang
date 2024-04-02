@@ -1,5 +1,5 @@
 import { EntityTypeEnum, IActor } from '../common'
-import { ParamsNameEnum, PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
+import { MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
 
 const actors: { [key: string]: IActor } = {
   soldier: {
@@ -26,6 +26,7 @@ const actors: { [key: string]: IActor } = {
           type: [3],
           desc: '躲避射击',
           particle: SkillPathEnum.Jump,
+          missType: MissType.Bullet
         },
         {
           name: '挡',
@@ -56,6 +57,7 @@ const actors: { [key: string]: IActor } = {
           longrang: false,
           pierce: false,
           particle: SkillPathEnum.HeartShield,
+          shield: SkillPathEnum.RoundShieldFrame,
         },
         {
           name: '挖地',
@@ -129,7 +131,7 @@ const actors: { [key: string]: IActor } = {
         {
           name: '城墙',
           type: [3, 4, 5],
-          desc: '筑起城墙，坚守不退！(将砍替换为十字弩，无法跳跃，但受到的远程伤害-1，同时视为在空中)',
+          desc: '筑起城墙，坚守不退！(将十字弩替换为火油十字弩，无法跳跃，但受到的远程伤害-1，同时视为在空中)',
           location: 1,
           particle: SkillPathEnum.CrenulatedShield,
         },

@@ -1,7 +1,7 @@
 import { Tween, tween, Node, Vec3, _decorator, instantiate, IVec2, Vec2, UITransform } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
 import { EntityTypeEnum } from '../../common'
-import { EventEnum, ParamsNameEnum, SHAKE_TYPE_ENUM } from '../../enum'
+import { EventEnum, MissType, ParamsNameEnum, SHAKE_TYPE_ENUM } from '../../enum'
 import DataManager from '../../global/DataManager'
 import EventManager from '../../global/EventManager'
 import ObjectPoolManager from '../../global/ObjectPoolManager'
@@ -38,6 +38,7 @@ export class BulletManager extends EntityManager {
     const tempPosition = new Vec3(targetNode.position)
     const actorTran = this.actor.node.getComponent(UITransform)
     tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
+    tempPosition.x += isPlayer(this.actor.id) ? 200 : -200
     // 设置方向
     const directionVec2 = new Vec2(
       tempPosition.x - this.actor.node.position.x,
@@ -54,10 +55,12 @@ export class BulletManager extends EntityManager {
 
     const tw = tween(this.node)
       .to(
-        0.4,
+        0.3 * DataManager.Instance.animalTime,
         { position: tempPosition },
         {
           onUpdate: (target, ratio) => {
+            // 闪避，则不处理碰撞
+            if (this.actor.skill.miss()) return
             // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
             const tempNode = new Node()
             tempNode.position = this.node.position
@@ -68,16 +71,11 @@ export class BulletManager extends EntityManager {
               console.log('子弹碰撞')
               tw.stop()
 
-              EventManager.Instance.emit(
-                EventEnum.SCREEN_SHAKE,
-                isPlayer(this.actor.id) ? SHAKE_TYPE_ENUM.RIGHT : SHAKE_TYPE_ENUM.LEFT,
-              )
-
-              EventManager.Instance.emit(EventEnum.attackFinal, this.actor)
+              this.actor.onAttack()
 
               if (callback) callback()
               // 箭矢驻留
-              if (this.actor.skill.damage > 0 && this.actor.skill.skill.bullet === EntityTypeEnum.Crossbow) {
+              if (this.actor.skill?.damage > 0 && this.actor.skill.skill?.bullet === EntityTypeEnum.Crossbow) {
                 this.node.setPosition(getNodePos(this.node, this.actor.skill.otherActor.node))
                 this.node.setParent(this.actor.skill.otherActor.node)
                 // 避免翻转影响
@@ -90,6 +88,9 @@ export class BulletManager extends EntityManager {
           },
         },
       )
+      .call(() => {
+        this.actor.onAttack()
+      })
       .start() // 开始执行tween
   }
 }
