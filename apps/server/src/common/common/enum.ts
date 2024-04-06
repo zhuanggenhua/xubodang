@@ -1,4 +1,4 @@
-import { MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
+import { MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
 
 // 玩家当前联网状态，用于随机匹配、断线重连
 export enum ConnectStateEnum {
@@ -168,6 +168,7 @@ export interface ISkill {
   animal?: ParamsNameEnum
   shield?: SkillPathEnum //护盾图片
   missType?: MissType //闪避的类型
+  special?: Special//特效类型
 }
 
 export interface IActorSkills {

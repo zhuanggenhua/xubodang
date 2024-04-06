@@ -20,6 +20,7 @@ export class ActorManager extends EntityManager {
   count: number = 0 //计数用
 
   //动态数据
+  lastHp: number = 0
   _hp: number = 0
   get hp() {
     return this._hp
@@ -34,6 +35,12 @@ export class ActorManager extends EntityManager {
   // position: IVec2;
   // direction: IVec2;
   skill: Skill = null
+  get otherSkill() {
+    return this.skill.otherSkill
+  }
+  get otherActor() {
+    return this.skill.otherActor
+  }
 
   shields = []
 
@@ -47,6 +54,7 @@ export class ActorManager extends EntityManager {
     this.id = id
     this.hpMax = hp
     this.hp = hp
+    this.lastHp = hp
     this.tran = this.node.getComponent(UITransform)
 
     this.fsm = this.addComponent(ActorStateMachine)
@@ -84,8 +92,7 @@ export class ActorManager extends EntityManager {
       defense,
       node: roundShield,
     })
-    console.log('护盾', this.shields);
-    
+    console.log('护盾', this.shields)
   }
   shieldBreak(damage: number) {
     for (let i = 0; i < this.shields.length; i++) {
@@ -103,7 +110,7 @@ export class ActorManager extends EntityManager {
     return damage
   }
 
-  shoot(targetNode: Node, bulletEnum: EntityTypeEnum) {
+  shoot(target: ActorManager, bulletEnum: EntityTypeEnum) {
     const prefab = DataManager.Instance.prefabMap.get(bulletEnum)
     const bullet = instantiate(prefab)
     // bullet.addComponent(UITransform).setContentSize(100, 20)
@@ -114,6 +121,12 @@ export class ActorManager extends EntityManager {
     )
     const bulletManager = bullet.addComponent(BulletManager)
     bulletManager.init(this)
+    // 目标是对方或者盾牌
+    let targetNode = target.node
+    if (target.shields.length > 0) {
+      targetNode = target.shields[target.shields.length - 1].node
+    }
+
     bulletManager.move(targetNode)
   }
   move(targetNode: Node, callback: Function) {

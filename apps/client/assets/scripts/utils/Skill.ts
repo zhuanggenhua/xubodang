@@ -1,6 +1,6 @@
 import { isPlayer } from './index'
 import { EntityTypeEnum, ISkill } from '../common'
-import { EventEnum, MissType, ParamsNameEnum, SkillPathEnum } from '../enum'
+import { EventEnum, MissType, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'
@@ -41,7 +41,7 @@ export default class Skill extends Component {
   constructor(public skill: ISkill, public id: number) {
     super()
     this.tigerLength = skill.type.length
-    this.damage = skill.damage
+
     this.defense = skill.defense
   }
   onDestroy() {
@@ -50,6 +50,7 @@ export default class Skill extends Component {
     EventManager.Instance.off(EventEnum.powerFinal, this.powerFinal, this)
     EventManager.Instance.off(EventEnum.defenseFinal, this.defenseFinal, this)
     EventManager.Instance.off(EventEnum.missFinal, this.missFinal, this)
+    EventManager.Instance.off(EventEnum.specialFinal, this.specialFinal, this)
   }
 
   excute() {
@@ -71,6 +72,14 @@ export default class Skill extends Component {
           EventManager.Instance.on(EventEnum.missFinal, this.missFinal, this)
           this.missHandler()
           break
+        // case 3:
+        //   EventManager.Instance.on(EventEnum.missFinal, this.missFinal, this)
+        //   this.missHandler()
+        //   break
+        case 5:
+          EventManager.Instance.on(EventEnum.specialFinal, this.specialFinal, this)
+          this.specialHandler()
+          break
       }
     })
   }
@@ -78,7 +87,7 @@ export default class Skill extends Component {
   tigerLength: number = 0
   tiger() {
     this.tigerLength--
-    if (this.tigerLength <= 0) {
+    if (this.tigerLength === 0) {
       console.log('下一轮', this.tigerLength)
       EventManager.Instance.emit(EventEnum.handlerNextTurn)
     }
@@ -88,9 +97,8 @@ export default class Skill extends Component {
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
       console.log('attack')
-      // 同时防御结束
-      EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, this.damage)
 
+      this.damage = this.skill.damage
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
@@ -99,6 +107,8 @@ export default class Skill extends Component {
       }
 
       this.tiger()
+      // 同时防御结束
+      EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, this.damage)
     }
   }
   // 判断是否被闪避
@@ -132,12 +142,17 @@ export default class Skill extends Component {
       // 盾牌碎裂,等动画播完再下回合
       if (damage >= 0) {
         // this.scheduleOnce(() => {
-          this.tiger()
+        this.tiger()
         // }, 0.1 * DataManager.Instance.animalTime)
       }
     }
   }
   missFinal(actor: ActorManager) {
+    if (actor === this.actor) {
+      this.tiger()
+    }
+  }
+  specialFinal(actor: ActorManager) {
     if (actor === this.actor) {
       this.tiger()
     }
@@ -165,13 +180,14 @@ export default class Skill extends Component {
       // 快速攻击（一般是射击）  立即触发动画
       this.setSkillState()
       if (this.skill.bullet) {
-        this.actor.shoot(this.otherActor.node, this.skill.bullet)
+        this.actor.shoot(this.otherActor, this.skill.bullet)
       }
     }
 
     if (this.skill.target === 1) {
       // 目标是自己
       DataManager.Instance.actor1.hp -= this.skill.damage
+      this.tiger()
       return
     } else {
       if (!this.skill.longrang) {
@@ -190,7 +206,15 @@ export default class Skill extends Component {
   missHandler() {
     this.setSkillState()
   }
-  specialHandler: Function = null
+  specialHandler() {
+    switch (this.skill.special) {
+      case Special.Reflect:
+        //bullet存在就代表是远程弹丸攻击
+        if (this.otherSkill.skill.bullet) {
+          EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
+        }
+    }
+  }
 
   reset() {
     this.powerHandler = null

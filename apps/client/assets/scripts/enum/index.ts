@@ -23,10 +23,11 @@ export enum EventEnum {
   SCREEN_SHAKE = 'SCREEN_SHAKE',
   attackFinal = 'attackFinal',
   updateHp = 'updateHp',
+  onPower = 'onPower',
   powerFinal = 'powerFinal',
   defenseFinal = 'defenseFinal',
   missFinal = 'missFinal',
-  onPower = 'onPower',
+  specialFinal = 'specialFinal',
 }
 
 export enum PrefabPathEnum {
@@ -84,7 +85,7 @@ export enum ParamsNameEnum {
   ShieldBash = 'ShieldBash',   
 }
 
-
+// 和技能相关的图片路径
 export enum SkillPathEnum {
   ActiveSprite = 'fangkuang',
   HandNormal = 'hand/hand-normal',
@@ -93,6 +94,9 @@ export enum SkillPathEnum {
   HandFour = 'hand/hand-four',
   HandCenter = 'hand/hand-center',
   RoundShieldFrame = 'shieldFrame/round-shield', 
+  HeartShieldFrame = 'shieldFrame/heart-shield', 
+  SpikedShieldFrame = 'shieldFrame/spiked-shield', 
+  ShieldReflectFrame = 'shieldFrame/shield', 
   Xu = 'base/xu',
   Kan = 'base/kan',
   Jump = 'base/jump',
@@ -130,5 +134,10 @@ export enum SHAKE_TYPE_ENUM {
 export enum MissType{
   Round, //近战
   Bullet, //远程弹丸攻击
+}
+
+// 特殊技能
+export enum Special {
+  Reflect, //反射
 }
 

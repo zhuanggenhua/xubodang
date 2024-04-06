@@ -120,7 +120,12 @@ export const getNodePos = (node: Node, target: Node) => {
 }
 
 // 碰撞检测
-export const checkCollision = (myNode, targetNode, entityType: EntityTypeEnum[] = [EntityTypeEnum.Actor, EntityTypeEnum.Actor], type = 'rect') => {
+export const checkCollision = (
+  myNode,
+  targetNode,
+  entityType: EntityTypeEnum[] = [EntityTypeEnum.Actor, EntityTypeEnum.Actor],
+  type = 'rect',
+) => {
   const myTran = myNode.getComponent(UITransform)
   const targetTran = targetNode.getComponent(UITransform)
 
@@ -150,19 +155,22 @@ export const checkCollision = (myNode, targetNode, entityType: EntityTypeEnum[] 
     height: offsetMyTran.height,
   }
 
+  // 在同一个父节点下才有意义
+  let truePosition = targetNode.position
+  if (myNode.parent != targetNode.parent) truePosition = getNodePos(targetNode, myNode.parent)
   const player = {
-    x: targetNode.position.x - offsetTargetTran.width / 2,
-    y: targetNode.position.y - offsetTargetTran.height / 2,
+    x: truePosition.x - offsetTargetTran.width / 2,
+    y: truePosition.y - offsetTargetTran.height / 2,
     width: offsetTargetTran.width,
     height: offsetTargetTran.height,
   }
 
-  // // 画碰撞盒
-  // const context = DataManager.Instance.battleCanvas.graphics
-  // context.clear()
-  // context.rect(player.x, player.y, player.width, player.height)
-  // context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
-  // context.stroke()
+  // 画碰撞盒
+  const context = DataManager.Instance.battleCanvas.graphics
+  context.clear()
+  context.rect(player.x, player.y, player.width, player.height)
+  context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
+  context.stroke()
 
   if (type === 'rect') {
     // 矩形碰撞检测

@@ -1,4 +1,4 @@
-import { _decorator, Color, Component, Input, instantiate, Label, Node, Vec3 } from 'cc'
+import { _decorator, Color, Component, Input, instantiate, Label, Node, Sprite, tween, UIOpacity, Vec3 } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { EventEnum } from '../enum'
@@ -68,7 +68,7 @@ export class BattleMgr extends Component {
   }
 
   createActor(type, id: number = DataManager.Instance.player.id) {
-    let prefab =  DataManager.Instance.prefabMap.get('Actor1')
+    let prefab = DataManager.Instance.prefabMap.get('Actor1')
     const actor = instantiate(prefab)
     if (!isPlayer(id)) {
       // 左右翻转
@@ -154,7 +154,7 @@ export class BattleMgr extends Component {
     } else {
       hearts = this.hearts2
     }
-    
+
     let count = DataManager.Instance.actors?.get(id)?.hp || DataManager.Instance.roomInfo?.life
 
     const prefab = DataManager.Instance.prefabMap.get('Heart')
@@ -166,6 +166,15 @@ export class BattleMgr extends Component {
       const heart = instantiate(prefab)
       heart.setParent(hearts)
     }
+
+    // 受伤闪烁
+    if (DataManager.Instance.actors?.get(id)?.hp < DataManager.Instance.actors?.get(id)?.lastHp) {
+      const opacity = hearts.getComponent(UIOpacity) || hearts.addComponent(UIOpacity)
+      tween(opacity)
+        .sequence(tween().to(0.1, { opacity: 0 }), tween().to(0.1, { opacity: 255 }))
+        .start()
+    }
+    if (DataManager.Instance.actors?.get(id)?.lastHp) DataManager.Instance.actors.get(id).lastHp = count
   }
 
   renderSkills(actor: IActor) {

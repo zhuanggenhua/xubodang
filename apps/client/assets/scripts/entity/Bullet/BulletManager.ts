@@ -1,7 +1,7 @@
 import { Tween, tween, Node, Vec3, _decorator, instantiate, IVec2, Vec2, UITransform } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
 import { EntityTypeEnum } from '../../common'
-import { EventEnum, MissType, ParamsNameEnum, SHAKE_TYPE_ENUM } from '../../enum'
+import { EventEnum, MissType, ParamsNameEnum, SHAKE_TYPE_ENUM, Special } from '../../enum'
 import DataManager from '../../global/DataManager'
 import EventManager from '../../global/EventManager'
 import ObjectPoolManager from '../../global/ObjectPoolManager'
@@ -34,11 +34,16 @@ export class BulletManager extends EntityManager {
   }
 
   move(targetNode: Node, callback?: Function) {
-    // 带点随机
-    const tempPosition = new Vec3(targetNode.position)
+    // 真正的目标位置，带点随机
+    // new Vec3(targetNode.position)
+    const tempPosition = getNodePos(targetNode, DataManager.Instance.battleCanvas.node)
+
     const actorTran = this.actor.node.getComponent(UITransform)
-    tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
-    tempPosition.x += isPlayer(this.actor.id) ? 200 : -200
+    // 回调意味着反弹
+    if (!callback) {
+      tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
+      tempPosition.x += isPlayer(this.actor.id) ? 200 : -200
+    }
     // 设置方向
     const directionVec2 = new Vec2(
       tempPosition.x - this.actor.node.position.x,
@@ -58,30 +63,52 @@ export class BulletManager extends EntityManager {
         0.3 * DataManager.Instance.animalTime,
         { position: tempPosition },
         {
+          //  target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
           onUpdate: (target, ratio) => {
             // 闪避，则不处理碰撞
             if (this.actor.skill.miss()) return
-            // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
+            // 重新设置箭矢的宽高
             const tempNode = new Node()
+            tempNode.parent = this.node.parent
             tempNode.position = this.node.position
             const tran = this.node.getComponent(UITransform)
             tempNode.addComponent(UITransform).setContentSize(tran.height, tran.width)
+
             if (checkCollision(tempNode, targetNode, [EntityTypeEnum.Crossbow, EntityTypeEnum.Actor])) {
               // 如果检测到碰撞，可以通过 tween.stop() 停止移动
               console.log('子弹碰撞')
               tw.stop()
 
-              this.actor.onAttack()
-
               if (callback) callback()
-              // 箭矢驻留
-              if (this.actor.skill?.damage > 0 && this.actor.skill.skill?.bullet === EntityTypeEnum.Crossbow) {
-                this.node.setPosition(getNodePos(this.node, this.actor.skill.otherActor.node))
-                this.node.setParent(this.actor.skill.otherActor.node)
-                // 避免翻转影响
-                if (isPlayer(this.actor.id)) this.node.scale = new Vec3(1, -1, 1)
-                return
+              else this.actor.onAttack()
+
+              // 打到人身上
+              if (targetNode.getComponent(ActorManager)) {
+                // 箭矢驻留
+                if (this.actor.skill.skill?.bullet === EntityTypeEnum.Crossbow) {
+                  this.node.setPosition(getNodePos(this.node, this.actor.skill.otherActor.node))
+                  this.node.setParent(this.actor.skill.otherActor.node)
+                  // 避免翻转影响
+                  if (isPlayer(this.actor.id)) this.node.scale = new Vec3(1, -this.node.scale.y, 1)
+                  return
+                }
+              } else {
+                // 如果是反射盾
+                if (this.actor.otherSkill.skill.special === Special.Reflect) {
+                  if (this.actor.skill.skill?.bullet) {
+                    this.node.scale = new Vec3(1, -this.node.scale.y, 1)
+
+                    this.move(this.actor.shields[this.actor.shields.length - 1]?.node || this.actor.node, () => {
+                      this.actor.otherActor.skill.skill = this.actor.skill.skill                      
+                      this.actor.otherActor.onAttack()
+                    })
+                    return
+                  }
+
+                  EventManager.Instance.emit(EventEnum.specialFinal, this.actor.otherActor)
+                }
               }
+              console.log('DSFasfafsdf')
 
               this.node.destroy()
             }
@@ -89,7 +116,8 @@ export class BulletManager extends EntityManager {
         },
       )
       .call(() => {
-        this.actor.onAttack()
+        if (callback) callback()
+        else this.actor.onAttack()
       })
       .start() // 开始执行tween
   }

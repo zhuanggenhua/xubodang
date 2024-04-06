@@ -1,5 +1,5 @@
 import { EntityTypeEnum, IActor } from '../common'
-import { MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
+import { MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
 
 const actors: { [key: string]: IActor } = {
   soldier: {
@@ -57,7 +57,7 @@ const actors: { [key: string]: IActor } = {
           longrang: false,
           pierce: false,
           particle: SkillPathEnum.HeartShield,
-          shield: SkillPathEnum.RoundShieldFrame,
+          shield: SkillPathEnum.HeartShieldFrame,
         },
         {
           name: '挖地',
@@ -76,25 +76,29 @@ const actors: { [key: string]: IActor } = {
           longrang: true,
           pierce: false,
           particle: SkillPathEnum.Crossbow,
-          bullet: EntityTypeEnum.Crossbow, //bullet存在就代表是远程弹丸攻击
+          bullet: EntityTypeEnum.Crossbow,
         },
         {
           name: '反射盾',
           type: [2, 5],
+          special: Special.Reflect,
           desc: '防御并反弹远程弹丸攻击',
           defense: 3,
           particle: SkillPathEnum.ShieldReflect,
+          shield: SkillPathEnum.ShieldReflectFrame,
         },
       ],
       2: [
         {
           name: '尖刺盾',
           type: [2, 4, 5],
+          special: Special.Reflect,
           desc: '你的防御更加严密并且将对近战攻击造成1反伤',
           damage: 1,
           defense: 1,
           target: 0,
           particle: SkillPathEnum.SpikedShield,
+          shield: SkillPathEnum.SpikedShieldFrame,
         },
         {
           name: '蓄力一击',
