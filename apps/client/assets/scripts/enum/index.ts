@@ -116,6 +116,21 @@ export enum SkillPathEnum {
   AncientSword = 'shield/ancient-sword',
   UnstableProjectile = 'shield/unstable-projectile',
   ShieldBash = 'shield/shield-bash',
+  
+  
+  Wood = 'animeMan/wood',
+  Dodging = 'animeMan/dodging',
+  bo = 'animeMan/hypersonic-bolt',
+  gengzongbo = 'animeMan/ink-swirl',
+  RelationshipBounds = 'animeMan/relationship-bounds',
+  tianzhao = 'animeMan/tianzhao',
+  xielunyan = 'animeMan/paranoia',
+  aura = 'animeMan/aura',
+  qigong = 'animeMan/sinusoidal-beam',
+  yuanqidan = 'animeMan/explosion-rays',
+  weishou = 'animeMan/bubbling-beam',
+  jiewangquan = 'animeMan/mighty-force',
+  luoshengmen = 'animeMan/magic-gate',
 }
 
 export enum SceneEnum {

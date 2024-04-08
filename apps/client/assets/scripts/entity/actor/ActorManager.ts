@@ -94,10 +94,16 @@ export class ActorManager extends EntityManager {
     })
     console.log('护盾', this.shields)
   }
-  shieldBreak(damage: number) {
+  shieldBreak(damage: number, broken: number = 0) {
     for (let i = 0; i < this.shields.length; i++) {
       const shield = this.shields[i]
-      damage -= shield.defense
+
+      // 先计算破甲
+      broken -= shield.defense
+      if (broken <= 0) {
+        shield.defense -= broken
+        damage -= shield.defense
+      }
 
       if (damage >= 0) {
         const split = shield.node.addComponent(SplitFrame)

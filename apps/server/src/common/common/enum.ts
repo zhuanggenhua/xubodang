@@ -155,6 +155,7 @@ export interface ISkill {
   type?: number[]
   desc?: string
   damage?: number
+  broken?: number//对护盾伤害
   speed?: number
   target?: number
   range?: string[]

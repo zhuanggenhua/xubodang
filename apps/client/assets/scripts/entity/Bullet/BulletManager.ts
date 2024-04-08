@@ -108,7 +108,6 @@ export class BulletManager extends EntityManager {
                   EventManager.Instance.emit(EventEnum.specialFinal, this.actor.otherActor)
                 }
               }
-              console.log('DSFasfafsdf')
 
               this.node.destroy()
             }

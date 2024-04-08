@@ -40,9 +40,6 @@ export default class Skill extends Component {
   defense: number
   constructor(public skill: ISkill, public id: number) {
     super()
-    this.tigerLength = skill.type.length
-
-    this.defense = skill.defense
   }
   onDestroy() {
     // 在对象销毁前取消事件注册
@@ -54,6 +51,8 @@ export default class Skill extends Component {
   }
 
   excute() {
+    this.tigerLength = this.skill.type.length
+    this.defense = this.skill.defense
     this.skill.type.forEach((type) => {
       switch (type) {
         case 0:
@@ -102,7 +101,7 @@ export default class Skill extends Component {
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
-        this.damage = this.otherActor.shieldBreak(this.damage || 0)
+        this.damage = this.otherActor.shieldBreak(this.damage || 0, this.skill.broken || 0)
         this.otherActor.hp -= this.damage
       }
 
