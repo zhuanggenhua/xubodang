@@ -34,16 +34,16 @@ export class BulletManager extends EntityManager {
   }
 
   move(targetNode: Node, callback?: Function) {
+    if (callback) callback()
     // 真正的目标位置，带点随机
     // new Vec3(targetNode.position)
     const tempPosition = getNodePos(targetNode, DataManager.Instance.battleCanvas.node)
 
     const actorTran = this.actor.node.getComponent(UITransform)
-    // 回调意味着反弹
-    if (!callback) {
-      tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
-      tempPosition.x += isPlayer(this.actor.id) ? 200 : -200
-    }
+
+    tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
+    tempPosition.x += isPlayer(this.actor.id) ? 200 : -200
+
     // 设置方向
     const directionVec2 = new Vec2(
       tempPosition.x - this.actor.node.position.x,
@@ -79,8 +79,7 @@ export class BulletManager extends EntityManager {
               console.log('子弹碰撞')
               tw.stop()
 
-              if (callback) callback()
-              else this.actor.onAttack()
+              this.actor.onAttack()
 
               // 打到人身上
               if (targetNode.getComponent(ActorManager)) {
@@ -96,11 +95,13 @@ export class BulletManager extends EntityManager {
                 // 如果是反射盾
                 if (this.actor.otherSkill.skill.special === Special.Reflect) {
                   if (this.actor.skill.skill?.bullet) {
-                    this.node.scale = new Vec3(1, -this.node.scale.y, 1)
+                    // 设置方向的时候就会翻转
+                    // this.node.scale = new Vec3(1, -this.node.scale.y, 1)
 
                     this.move(this.actor.shields[this.actor.shields.length - 1]?.node || this.actor.node, () => {
-                      this.actor.otherActor.skill.skill = this.actor.skill.skill                      
-                      this.actor.otherActor.onAttack()
+                      this.actor.otherActor.skill.skill = this.actor.skill.skill
+                      this.actor = this.actor.otherActor
+                      // this.actor.otherActor.onAttack()
                     })
                     return
                   }
@@ -116,7 +117,7 @@ export class BulletManager extends EntityManager {
       )
       .call(() => {
         if (callback) callback()
-        else this.actor.onAttack()
+        this.actor.onAttack()
       })
       .start() // 开始执行tween
   }

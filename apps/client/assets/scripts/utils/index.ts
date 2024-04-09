@@ -108,6 +108,10 @@ export function isPlayer(id) {
   return DataManager.Instance.player.id === id
 }
 
+export function isEmpty(obj: Object): boolean {
+  return Object.keys(obj).length === 0 && obj.constructor === Object;
+}
+
 export const rad2Angle = (rad: number) => (rad * 180) / Math.PI
 
 // 节点坐标转对应节点的相对坐标
@@ -166,11 +170,11 @@ export const checkCollision = (
   }
 
   // 画碰撞盒
-  const context = DataManager.Instance.battleCanvas.graphics
-  context.clear()
-  context.rect(player.x, player.y, player.width, player.height)
-  context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
-  context.stroke()
+  // const context = DataManager.Instance.battleCanvas.graphics
+  // context.clear()
+  // context.rect(player.x, player.y, player.width, player.height)
+  // context.rect(enemy.x, enemy.y, enemy.width, enemy.height)
+  // context.stroke()
 
   if (type === 'rect') {
     // 矩形碰撞检测

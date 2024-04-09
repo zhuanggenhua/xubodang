@@ -5,6 +5,7 @@ const actors: { [key: string]: IActor } = {
   soldier: {
     actorName: '战士',
     prompt: [],
+    // 之后改为只存技能序号
     skills: {
       // 这里应该只持有技能编号比较好
       0: [
@@ -305,7 +306,7 @@ const actors: { [key: string]: IActor } = {
           name: '龟波气功',
           type: [4],
           desc: '',
-          damage: 4,
+          damage: 3,
           particle: SkillPathEnum.qigong,
         },
       ],
@@ -326,11 +327,11 @@ const actors: { [key: string]: IActor } = {
           particle: SkillPathEnum.luoshengmen,
         },
         {
-          name: '波动拳?',
-          type: [4, 5],
-          desc: '你的攻击伤害+1，并且近战会恢复你的生命，但是未命中会降低生命',
-          damage: 1,
-          particle: SkillPathEnum.Enrage,
+          name: '龟波气功',
+          type: [4],
+          desc: '',
+          damage: 5,
+          particle: SkillPathEnum.qigong,
         },
         {
           name: '影分身',
@@ -348,27 +349,99 @@ const actors: { [key: string]: IActor } = {
           name: '元气弹',
           type: [1],
           desc: 'ex-咖喱棒！',
-          damage: 5,
+          damage: 4,
           speed: 0,
-          range: ['01'],
+          range: ['012'],
           longrang: true,
           particle: SkillPathEnum.yuanqidan,
         },
         {
           name: '赛亚人变身',
           type: [5],
-          desc: '保留一格气，波类技能伤害翻倍',
+          desc: '保留两格气，波类技能升级',
           particle: SkillPathEnum.aura,
         },
         {
           name: '尾兽玉',
           type: [1, 2],
           range: ['0'],
-          desc: '带盾撞人，获得防御量的伤害加成',
-          damage: 2,
+          desc: '快速远距离单体攻击',
+          damage: 6,
           defense: 2,
           particle: SkillPathEnum.weishou,
         },
+      ],
+    },
+  },
+  joker: {
+    actorName: '小丑',
+    prompt: [],
+    skills: {
+      // 这里应该只持有技能编号比较好
+      0: [
+        {},
+        {
+          name: '蓄',
+          type: [0],
+          desc: '获得一点能量',
+          power: 1,
+          target: 1,
+          particle: SkillPathEnum.Xu,
+        },
+
+        {},
+        {},
+      ],
+      1: [
+        {},
+        {
+          name: '血祭',
+          type: [3],
+          desc: '一血换三气，易伤，受到攻击受到额外一点伤害',
+          particle: SkillPathEnum.Dodging,
+        },
+        {},
+        {},
+      ],
+      2: [
+        {},
+        {
+          name: '小丑喇叭',
+          type: [1],
+          desc: '偏斜所有攻击',
+          damage: 2,
+          speed: 0,
+          target: 0,
+          range: ['0'],
+          longrang: false,
+          pierce: true,
+          particle: SkillPathEnum.xielunyan,
+        },
+        {},
+        {},
+      ],
+      3: [
+        {},
+        {
+          name: '射击',
+          type: [0, 4, 5],
+          desc: '每重都有两点防御力',
+          power: 0,
+          damage: 4,
+          particle: SkillPathEnum.luoshengmen,
+        },
+        {},
+        {},
+      ],
+      4: [
+        {},
+        {
+          name: '狂欢夜',
+          type: [5],
+          desc: '小丑喇叭不消耗气',
+          particle: SkillPathEnum.aura,
+        },
+        {},
       ],
     },
   },

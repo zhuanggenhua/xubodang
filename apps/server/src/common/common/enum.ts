@@ -177,6 +177,6 @@ export interface IActorSkills {
 }
 export interface IActor {
   actorName: string
-  prompt: string[]
+  prompt?: string[]
   skills: IActorSkills
 }

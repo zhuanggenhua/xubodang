@@ -28,6 +28,8 @@ export enum EventEnum {
   defenseFinal = 'defenseFinal',
   missFinal = 'missFinal',
   specialFinal = 'specialFinal',
+  renderSkills = 'renderSkills',
+  createActor = 'createActor',
 }
 
 export enum PrefabPathEnum {
@@ -39,6 +41,7 @@ export enum PrefabPathEnum {
   Actor1 = 'prefab/Actor1',
   RoundShield = 'prefab/RoundShield',
   Crossbow = 'prefab/Crossbow',
+  ActorIcon = 'prefab/ActorIcon',
 }
 
 export enum TexturePathEnum {
@@ -88,15 +91,20 @@ export enum ParamsNameEnum {
 // 和技能相关的图片路径
 export enum SkillPathEnum {
   ActiveSprite = 'fangkuang',
+  NormalSprite = 'kuang',
+  addBlack = 'addBlack',
   HandNormal = 'hand/hand-normal',
   HandXu = 'hand/hand-xu',
   HandTwo = 'hand/hand-two',
   HandFour = 'hand/hand-four',
   HandCenter = 'hand/hand-center',
+
+  // 动态的盾牌图标
   RoundShieldFrame = 'shieldFrame/round-shield', 
   HeartShieldFrame = 'shieldFrame/heart-shield', 
   SpikedShieldFrame = 'shieldFrame/spiked-shield', 
   ShieldReflectFrame = 'shieldFrame/shield', 
+
   Xu = 'base/xu',
   Kan = 'base/kan',
   Jump = 'base/jump',
@@ -117,7 +125,7 @@ export enum SkillPathEnum {
   UnstableProjectile = 'shield/unstable-projectile',
   ShieldBash = 'shield/shield-bash',
   
-  
+  // 动漫人
   Wood = 'animeMan/wood',
   Dodging = 'animeMan/dodging',
   bo = 'animeMan/hypersonic-bolt',
@@ -131,6 +139,12 @@ export enum SkillPathEnum {
   weishou = 'animeMan/bubbling-beam',
   jiewangquan = 'animeMan/mighty-force',
   luoshengmen = 'animeMan/magic-gate',
+
+  // 角色图标  根据key去找对应角色数据
+  soldier = 'actor/soldier',
+  animeMan = 'actor/animeMan',
+  joker = 'actor/joker',
+  me = 'actor/me',
 }
 
 export enum SceneEnum {

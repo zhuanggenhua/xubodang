@@ -12,6 +12,7 @@ import Ai from '../ai/Ai'
 import Skill from '../utils/Skill'
 import { BattleCanvas } from '../ui/BattleCanvas'
 import { ShakeManager } from '../utils/ShakeManager'
+import { ChooseMgr } from '../ui/ChooseMgr'
 const { ccclass, property } = _decorator
 
 @ccclass('BattleMgr')
@@ -22,6 +23,7 @@ export class BattleMgr extends Component {
   Battle: Node = null
 
   bg: Node
+  choose: Node
   hearts1: Node
   hearts2: Node
 
@@ -34,14 +36,28 @@ export class BattleMgr extends Component {
     // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
     EventManager.Instance.on(EventEnum.useSkill, this.useSkill, this)
     EventManager.Instance.on(EventEnum.updateHp, this.setHeart, this)
+    EventManager.Instance.on(EventEnum.renderSkills, this.renderSkills, this)
+    EventManager.Instance.on(EventEnum.createActor, this.createActor, this)
   }
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
+    EventManager.Instance.off(EventEnum.updateHp, this.setHeart, this)
+    EventManager.Instance.off(EventEnum.renderSkills, this.renderSkills, this)
+    EventManager.Instance.off(EventEnum.createActor, this.createActor, this)
+
     NetworkManager.Instance.unlistenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
   }
   async start() {
+    // temp
+    actors.me = {
+      actorName: '崇高假身',
+      skills: [],
+    }
     await DataManager.Instance.loadRes() //temp
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
+    this.choose = this.bg.getChildByName('ChooseActor')
+    this.choose.addComponent(ChooseMgr)
+
     this.setPlayerName(this.bg.getChildByName('Name1').getComponent(Label), DataManager.Instance.player)
 
     this.hearts1 = this.bg.getChildByName('Hearts1')
@@ -50,7 +66,7 @@ export class BattleMgr extends Component {
     this.renderPlayers()
 
     // 渲染当前选中角色技能，默认是战士
-    this.renderSkills(actors.soldier)
+    // this.renderSkills(actors.joker)
     // 点击任何地方都会隐藏提示框
     this.node.on(
       Input.EventType.TOUCH_START,
@@ -60,14 +76,14 @@ export class BattleMgr extends Component {
       this,
     )
     // test
-    this.createActor(EntityTypeEnum.Actor)
-    if (DataManager.Instance.mode === 'single') {
-      Ai.Instance.setActor('soldier')
-      this.createActor(EntityTypeEnum.Actor, Ai.Instance.id)
-    }
+    // this.createActor()
+    // if (DataManager.Instance.mode === 'single') {
+    //   Ai.Instance.setActor('soldier')
+    //   this.createActor(Ai.Instance.id)
+    // }
   }
 
-  createActor(type, id: number = DataManager.Instance.player.id) {
+  createActor(id: number = DataManager.Instance.player.id) {
     let prefab = DataManager.Instance.prefabMap.get('Actor1')
     const actor = instantiate(prefab)
     if (!isPlayer(id)) {
@@ -77,13 +93,23 @@ export class BattleMgr extends Component {
     actor.setParent(this.Battle)
     const actorMgr = actor.addComponent(ActorManager)
 
-    actorMgr.init(id, type, DataManager.Instance.roomInfo?.life)
+    actorMgr.init(id, EntityTypeEnum.Actor, DataManager.Instance.roomInfo?.life)
     DataManager.Instance.actors.set(id, actorMgr)
     if (DataManager.Instance.actors.size === 2) {
       this.startGame()
     }
   }
-  startGame() {}
+  startGame() {
+    tween(this.choose.getComponent(UIOpacity))
+      .to(0.5, { opacity: 0 })
+      .call(() => {
+        this.choose.active = false
+      })
+      .start()
+    tween(this.Battle.parent.getComponent(UIOpacity)).to(0.5, { opacity: 255 }).start()
+
+    this.skillContainer.getComponent(SkillUiMgr).startGame()
+  }
 
   useSkill(skill: ISkill, power: number, id: number = DataManager.Instance.player.id) {
     DataManager.Instance.actors.get(id).skill = new Skill(skill, id)

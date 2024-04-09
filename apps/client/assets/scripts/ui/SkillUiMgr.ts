@@ -20,7 +20,7 @@ import { EventEnum, SkillPathEnum } from '../enum'
 import EventManager from '../global/EventManager'
 import { IActor, ISkill } from '../common'
 import DataManager from '../global/DataManager'
-import { createPrompt, destroyPromt } from '../utils'
+import { createPrompt, destroyPromt, isEmpty } from '../utils'
 import Ai from '../ai/Ai'
 const { ccclass, property } = _decorator
 
@@ -39,21 +39,26 @@ export class SkillUiMgr extends Component {
   private dragNode: Node = null // 触摸拖动的对象
   private entryHand: boolean = false //进入手势区域
   private isDisable: boolean = false
-  private normalSprite: SpriteFrame = null
-
-  // 能级
-  // 显隐
-
-  // 维护当前能级的所有技能
+  private isStart: boolean = false
+  startGame() {
+    this.isStart = true
+  }
 
   // 绑定事件
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.updateSkillItem, this.updateSkillItem, this)
     EventManager.Instance.off(EventEnum.handlerNextTurn, this.handlerNextTurn, this)
   }
-  init(actor: IActor) {
+  onLoad() {
     EventManager.Instance.on(EventEnum.updateSkillItem, this.updateSkillItem, this)
     EventManager.Instance.on(EventEnum.handlerNextTurn, this.handlerNextTurn, this)
+  }
+  init(actor: IActor) {
+    // 把显示与绑定事件分开性能更好，不过也不用考虑性能
+    this.skillItemNodes = []
+    this.skillNodes = []
+    const normalSprite = DataManager.Instance.skillMap.get(SkillPathEnum.NormalSprite)
+    const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
 
     const skills = actor.skills
     Object.keys(skills).forEach((key, itemIndex) => {
@@ -69,47 +74,57 @@ export class SkillUiMgr extends Component {
         this.skillNodes.push(skillNode) //保存起来方便管理
         const icon = skillNode.getChildByName('SkillIcon')
 
-        icon.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(skill.particle)
         this.node.active = true
+        if (isEmpty(skill)) {
+          skillNode.getComponent(Sprite).spriteFrame = null
+          icon.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.addBlack)
+          return
+        }
+        skillNode.getComponent(Sprite).spriteFrame = normalSprite
+        icon.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(skill.particle)
 
         //   绑定点击事件()
-        this.normalSprite = skillNode.getComponent(Sprite).spriteFrame
-        const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
+        skillNode.off(Input.EventType.TOUCH_END)
         skillNode.on(
           Input.EventType.TOUCH_END,
           (event: EventTouch) => {
             if (this.isDisable) return
             skillNode.getComponent(UIOpacity).opacity = 255
+            // 处理旋转下落的
+            this.handlerTouchEnd(skillNode, skill, itemIndex)
 
+            // 设置提示框
+            createPrompt(skillNode, skill)
+
+            if (!this.isStart) return //未开始不实际使用
             // 第二次按下
             if (this.activeSkill == skillNode) {
               if (DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex) return
               // 排他
               this.skillNodes.forEach((node) => {
-                node.getComponent(Sprite).spriteFrame = this.normalSprite
+                node.getComponent(Sprite).spriteFrame = normalSprite
               })
 
               // 设置按钮为按下状态的样式
               skillNode.getComponent(Sprite).spriteFrame = activeSprite
 
               // 触发技能，执行逻辑
-              skillNode.getComponent(Sprite).spriteFrame = this.normalSprite
+              skillNode.getComponent(Sprite).spriteFrame = normalSprite
               destroyPromt()
 
               this.handlerCheck(skillNode, skill, itemIndex)
               return
             }
             this.activeSkill = skillNode
-
-            // 设置提示框
-            createPrompt(skillNode, skill)
           },
           this,
         )
 
         // 技能绑定拖动动画
         const skillTransform = skillNode.getComponent(UITransform)
+        skillNode.off(Input.EventType.TOUCH_START)
         skillNode.on(Input.EventType.TOUCH_START, (event) => {
+          if (!this.isStart) return
           if (this.isDisable || DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex)
             return
           // 创建新节点并设置为拖动对象
@@ -127,6 +142,7 @@ export class SkillUiMgr extends Component {
           // 隐藏原按钮
           skillNode.getComponent(UIOpacity).opacity = 0
         })
+        skillNode.off(Input.EventType.TOUCH_MOVE)
         skillNode.on(Input.EventType.TOUCH_MOVE, (event: EventTouch) => {
           if (this.dragNode) {
             // 要除以缩放比
@@ -181,8 +197,8 @@ export class SkillUiMgr extends Component {
             }
           }
         })
+        skillNode.off(Input.EventType.TOUCH_CANCEL)
         skillNode.on(Input.EventType.TOUCH_CANCEL, this.handlerTouchEnd(skillNode, skill, itemIndex))
-        skillNode.on(Input.EventType.TOUCH_END, this.handlerTouchEnd(skillNode, skill, itemIndex))
       })
     })
   }
@@ -227,6 +243,8 @@ export class SkillUiMgr extends Component {
 
   updateSkillItem(power: number) {
     this.skillItemNodes.forEach((item, index) => {
+      console.log('当前能量', power, index)
+
       if (index > power) item.getComponent(UIOpacity).opacity = 100
       else item.getComponent(UIOpacity).opacity = 255
     })
@@ -245,7 +263,7 @@ export class SkillUiMgr extends Component {
     this.scheduleOnce(() => {
       // 恢复场景
       DataManager.Instance.battleCanvas.reset()
-      
+
       DataManager.Instance.roomInfo.turn += 1
       DataManager.Instance.actors.forEach((actor) => {
         actor.skill?.onDestroy()
@@ -267,10 +285,10 @@ export class SkillUiMgr extends Component {
       this.activeSkill = null
       setTimeout(() => {
         this.skillNodes.forEach((item) => {
-          item.getComponent(Sprite).spriteFrame = this.normalSprite
+          item.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.NormalSprite)
           item.getComponent(UIOpacity).opacity = 255
         })
       })
-    }, 0.1 * DataManager.Instance.animalTime)
+    }, 0.01 * DataManager.Instance.animalTime)
   }
 }

@@ -28,6 +28,7 @@ export default class Skill extends Component {
   }
 
   setSkillState() {
+    // 确保SkillPathEnum和ParamsNameEnum 的key是一致的
     console.log('设置状态', ParamsNameEnum[this.getKeyByValue(this.skill.particle)])
     this.actor.state = this.skill.animal || ParamsNameEnum[this.getKeyByValue(this.skill.particle)]
   }
@@ -95,19 +96,22 @@ export default class Skill extends Component {
   // 在动画后结算伤害
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('attack')
+      console.log('attack结束')
 
       this.damage = this.skill.damage
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
+        console.log('伤害', this.damage)
         this.damage = this.otherActor.shieldBreak(this.damage || 0, this.skill.broken || 0)
+        console.log('最终伤害', this.damage)
+
         this.otherActor.hp -= this.damage
       }
 
-      this.tiger()
       // 同时防御结束
       EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, this.damage)
+      this.tiger()
     }
   }
   // 判断是否被闪避
@@ -129,20 +133,20 @@ export default class Skill extends Component {
   }
   powerFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('power')
-      this.tiger()
+      console.log('power结束')
       if (isPlayer(this.id))
         EventManager.Instance.emit(EventEnum.updateSkillItem, DataManager.Instance.actors.get(this.id).power)
+      this.tiger()
     }
   }
   defenseFinal(actor: ActorManager, damage) {
     if (actor === this.actor) {
-      console.log('defense')
+      console.log('defense结束')
       // 盾牌碎裂,等动画播完再下回合
       if (damage >= 0) {
-        // this.scheduleOnce(() => {
-        this.tiger()
-        // }, 0.1 * DataManager.Instance.animalTime)
+        this.scheduleOnce(() => {
+          this.tiger()
+        }, 0.1 * DataManager.Instance.animalTime)
       }
     }
   }

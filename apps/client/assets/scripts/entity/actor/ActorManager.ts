@@ -101,8 +101,8 @@ export class ActorManager extends EntityManager {
       // 先计算破甲
       broken -= shield.defense
       if (broken <= 0) {
-        shield.defense -= broken
-        damage -= shield.defense
+        damage += broken //修正攻击伤害
+        broken = 0
       }
 
       if (damage >= 0) {
