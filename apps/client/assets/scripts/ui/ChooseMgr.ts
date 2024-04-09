@@ -34,7 +34,7 @@ export class ChooseMgr extends Component {
 
   // 绑定事件
   beforeDestroy() {}
-  onLoad() {
+  start() {
     this.label1 = this.node.getChildByName('Label1').getComponent(Label)
     this.label2 = this.node.getChildByName('Label2').getComponent(Label)
 
@@ -62,8 +62,9 @@ export class ChooseMgr extends Component {
           // 设置按钮为按下状态的样式
           actorNode.getComponent(Button).normalSprite = activeSprite
           this.active = actor
-          EventManager.Instance.emit(EventEnum.renderSkills, actors[actor])
           this.label1.string = actors[actor].actorName
+          EventManager.Instance.emit(EventEnum.renderSkills, actors[actor])
+          EventManager.Instance.emit(EventEnum.renderChart, actors[actor], 'Graphics1')
         },
         this,
       )
@@ -73,8 +74,16 @@ export class ChooseMgr extends Component {
         actorNode.getComponent(Button).normalSprite = activeSprite
         this.active = actor
         EventManager.Instance.emit(EventEnum.renderSkills, actors[actor])
+        EventManager.Instance.emit(EventEnum.renderChart, actors[actor], 'Graphics1')
       }
     })
+
+    // 单人模式，ai直接选择
+    if (DataManager.Instance.mode === 'single') {
+      Ai.Instance.setActor('soldier')
+      EventManager.Instance.emit(EventEnum.createActor, Ai.Instance.id)
+      EventManager.Instance.emit(EventEnum.renderChart, actors['soldier'], 'Graphics2')
+    }
   }
 
   handlerReady(event: EventTouch) {
@@ -83,10 +92,6 @@ export class ChooseMgr extends Component {
     this.isDisable = true
     EventManager.Instance.emit(EventEnum.createActor)
     EventManager.Instance.emit(EventEnum.renderSkills, actors[this.active])
-    if (DataManager.Instance.mode === 'single') {
-      // 单人模式，直接进入
-      Ai.Instance.setActor('soldier')
-      EventManager.Instance.emit(EventEnum.createActor, Ai.Instance.id)
-    }
+    EventManager.Instance.emit(EventEnum.renderChart, actors[this.active], 'Graphics1')
   }
 }

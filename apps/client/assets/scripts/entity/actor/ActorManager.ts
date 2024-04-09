@@ -79,6 +79,8 @@ export class ActorManager extends EntityManager {
     EventManager.Instance.off(EventEnum.onPower, this.onPower, this)
   }
 
+  // todo 受伤闪白
+
   generateShield(shield: SkillPathEnum, defense: number) {
     const prefab = DataManager.Instance.prefabMap.get('RoundShield')
     const roundShield = instantiate(prefab)

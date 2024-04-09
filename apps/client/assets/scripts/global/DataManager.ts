@@ -1,4 +1,4 @@
-import { Prefab, SpriteFrame, Node, director, view } from 'cc'
+import { Prefab, SpriteFrame, Node, director, view, Font } from 'cc'
 import { IPlayer, IRoom } from '../common'
 import { Singleton } from '../common/base'
 import { PrefabPathEnum, SkillPathEnum, TexturePathEnum } from '../enum'
@@ -21,13 +21,14 @@ export const mapH = view.getVisibleSize().height
 // export const mapW = 720;
 // export const mapH = 1280;
 
-
 export default class DataManager extends Singleton {
-  static get Instance() {    
+  static get Instance() {
     return super.GetInstance<DataManager>()
   }
   // 动画播放速度
   animalTime = 2
+
+  fontFamily: Font = null
 
   mode: 'single' | 'network' | 'teach' = 'single'
 
@@ -83,8 +84,15 @@ export default class DataManager extends Singleton {
       })
       list.push(p)
     }
-    await Promise.all(list)    
-    console.log('数据中心',this);
-    
+
+    // 字体
+    const p = ResourceManager.Instance.loadRes('font/gudian', Font).then((font) => {
+      
+      DataManager.Instance.fontFamily = font
+    })
+    list.push(p)
+
+    await Promise.all(list)
+    console.log('数据中心', this)
   }
 }

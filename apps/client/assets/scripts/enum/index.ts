@@ -30,6 +30,7 @@ export enum EventEnum {
   specialFinal = 'specialFinal',
   renderSkills = 'renderSkills',
   createActor = 'createActor',
+  renderChart = 'renderChart',
 }
 
 export enum PrefabPathEnum {
@@ -163,6 +164,8 @@ export enum SHAKE_TYPE_ENUM {
 export enum MissType{
   Round, //近战
   Bullet, //远程弹丸攻击
+  All, 
+  Single
 }
 
 // 特殊技能

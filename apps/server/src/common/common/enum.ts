@@ -170,6 +170,7 @@ export interface ISkill {
   shield?: SkillPathEnum //护盾图片
   missType?: MissType //闪避的类型
   special?: Special//特效类型
+  turn?: number//持续回合
 }
 
 export interface IActorSkills {

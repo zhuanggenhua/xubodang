@@ -13,6 +13,7 @@ import Skill from '../utils/Skill'
 import { BattleCanvas } from '../ui/BattleCanvas'
 import { ShakeManager } from '../utils/ShakeManager'
 import { ChooseMgr } from '../ui/ChooseMgr'
+import { RadarChart } from '../ui/RadarChart'
 const { ccclass, property } = _decorator
 
 @ccclass('BattleMgr')
@@ -56,6 +57,8 @@ export class BattleMgr extends Component {
     await DataManager.Instance.loadRes() //temp
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
     this.choose = this.bg.getChildByName('ChooseActor')
+    this.choose.getChildByName('Graphics1').addComponent(RadarChart)
+    this.choose.getChildByName('Graphics2').addComponent(RadarChart)
     this.choose.addComponent(ChooseMgr)
 
     this.setPlayerName(this.bg.getChildByName('Name1').getComponent(Label), DataManager.Instance.player)
