@@ -1,6 +1,6 @@
 import { isPlayer } from './index'
 import { EntityTypeEnum, ISkill } from '../common'
-import { EventEnum, MissType, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
+import { BuffEnum, EventEnum, MissType, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'
@@ -9,7 +9,7 @@ import { Component } from 'cc'
 /**
  * 添加技能：
  * 在TexturePathEnum配置资源路径
- * 在actorMgr配置新State状态机
+ * 在ActorStateMachine配置新State状态机
  */
 // 执行器，用于拆分数据结算
 export default class Skill extends Component {
@@ -57,8 +57,8 @@ export default class Skill extends Component {
     this.skill.type.forEach((type) => {
       switch (type) {
         case 0:
-          this.powerHandler()
           EventManager.Instance.on(EventEnum.powerFinal, this.powerFinal, this)
+          this.powerHandler()
           break
         case 1:
           EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
@@ -72,10 +72,10 @@ export default class Skill extends Component {
           EventManager.Instance.on(EventEnum.missFinal, this.missFinal, this)
           this.missHandler()
           break
-        // case 3:
-        //   EventManager.Instance.on(EventEnum.missFinal, this.missFinal, this)
-        //   this.missHandler()
-        //   break
+        case 4:
+          EventManager.Instance.on(EventEnum.continueFinal, this.continueFinal, this)
+          this.continueHandler()
+          break
         case 5:
           EventManager.Instance.on(EventEnum.specialFinal, this.specialFinal, this)
           this.specialHandler()
@@ -107,6 +107,13 @@ export default class Skill extends Component {
         console.log('最终伤害', this.damage)
 
         this.otherActor.hp -= this.damage
+      }
+      if (this.damage > 0) {
+        if (this.actor.buffs.has(BuffEnum.blood)) {
+          this.actor.hp += this.damage
+        }
+        // 波类攻击才闪白
+        // EventManager.Instance.emit(EventEnum.flicker, this.otherActor)
       }
 
       // 同时防御结束
@@ -155,6 +162,11 @@ export default class Skill extends Component {
       this.tiger()
     }
   }
+  continueFinal(actor: ActorManager) {
+    if (actor === this.actor) {
+      this.tiger()
+    }
+  }
   specialFinal(actor: ActorManager) {
     if (actor === this.actor) {
       this.tiger()
@@ -173,6 +185,9 @@ export default class Skill extends Component {
   defenseHandler() {
     // 在角色面前生成盾牌
     if (this.skill.shield) {
+      if (this.actor.buffs.has(BuffEnum.solid)) {
+        this.defense++
+      }
       this.actor.generateShield(this.skill.shield, this.defense)
     }
   }
@@ -209,6 +224,9 @@ export default class Skill extends Component {
   missHandler() {
     this.setSkillState()
   }
+  continueHandler() {
+    this.actor.setBuffer(this.skill)
+  }
   specialHandler() {
     switch (this.skill.special) {
       case Special.Reflect:
@@ -216,6 +234,11 @@ export default class Skill extends Component {
         if (this.otherSkill.skill.bullet) {
           EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
         }
+        break
+      default:
+        // 没有特殊情况直接结束
+        EventManager.Instance.emit(EventEnum.specialFinal, this.actor)
+        break
     }
   }
 

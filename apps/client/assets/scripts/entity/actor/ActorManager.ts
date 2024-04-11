@@ -1,10 +1,34 @@
-import { _decorator, tween, Tween, UITransform, Vec3, Node, instantiate, SpriteFrame, Sprite, Rect, v3 } from 'cc'
+import {
+  _decorator,
+  tween,
+  Tween,
+  UITransform,
+  Vec3,
+  Node,
+  instantiate,
+  SpriteFrame,
+  Sprite,
+  Rect,
+  v3,
+  UIOpacity,
+  v2,
+  Size,
+  Color,
+} from 'cc'
 import { EntityManager } from '../../base/EntityManager'
 import { EntityTypeEnum, ISkill } from '../../common'
-import { EventEnum, ParamsNameEnum, SHAKE_TYPE_ENUM, SkillPathEnum, TexturePathEnum } from '../../enum'
+import {
+  BuffEnum,
+  EventEnum,
+  ParamsNameEnum,
+  SHAKE_TYPE_ENUM,
+  SkillPathEnum,
+  Special,
+  TexturePathEnum,
+} from '../../enum'
 import DataManager from '../../global/DataManager'
 import Skill from '../../utils/Skill'
-import { checkCollision, isPlayer } from '../../utils'
+import { checkCollision, createUINode, isPlayer } from '../../utils'
 import { ActorStateMachine } from './ActorStateMachine'
 import EventManager from '../../global/EventManager'
 import { BulletManager } from '../Bullet/BulletManager'
@@ -19,6 +43,7 @@ export class ActorManager extends EntityManager {
   bulletType: EntityTypeEnum
   count: number = 0 //计数用
 
+  isMove: boolean = false
   //动态数据
   lastHp: number = 0
   _hp: number = 0
@@ -26,12 +51,15 @@ export class ActorManager extends EntityManager {
     return this._hp
   }
   set hp(hp) {
+    if (hp < 0) hp = 0
+    if (hp > this.hpMax) hp = this.hpMax
+    
     this._hp = hp
     EventManager.Instance.emit(EventEnum.updateHp, this.id)
   }
   hpMax: number
   power: number = 5
-  buffs: any[] = []
+  buffs: Set<BuffEnum> = new Set()
   // position: IVec2;
   // direction: IVec2;
   skill: Skill = null
@@ -48,6 +76,13 @@ export class ActorManager extends EntityManager {
 
   private tw: Tween<unknown>
   private tran: UITransform
+
+  beforeDestroy() {
+    EventManager.Instance.off(EventEnum.flicker, this.flicker, this)
+  }
+  protected onLoad(): void {
+    EventManager.Instance.on(EventEnum.flicker, this.flicker, this)
+  }
 
   // private wm: WeaponManager;
   init(id, type: EntityTypeEnum, hp) {
@@ -79,7 +114,44 @@ export class ActorManager extends EntityManager {
     EventManager.Instance.off(EventEnum.onPower, this.onPower, this)
   }
 
-  // todo 受伤闪白
+  setBuffer(skill: ISkill) {
+    skill.buff.forEach((buff) => {
+      if (this.buffs.has(buff)) return
+      this.buffs.add(buff)
+    })
+    // 渲染
+    const prefab = DataManager.Instance.prefabMap.get('Buff')
+    const buff = instantiate(prefab).getChildByName('Icon')
+    // 图片是动态的
+    buff.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(skill.particle)
+    buff.getComponent(Sprite).color = new Color('#000000')
+    buff.parent = this.node.getChildByName('Buffs')
+    EventManager.Instance.emit(EventEnum.continueFinal, this)
+
+    // buff动画
+    const newNode = createUINode()
+    const newNodeSprite = newNode.addComponent(Sprite)
+    newNodeSprite.spriteFrame = DataManager.Instance.skillMap.get(skill.particle)
+    newNodeSprite.color = new Color('#000000')
+    newNode.setParent(this.node.getChildByName('Rubbish'))
+    newNode.getComponent(UITransform).setContentSize(new Size(100, 100))
+    const opacity = newNode.addComponent(UIOpacity)
+    tween(opacity).to(0.5, { opacity: 0 }).start()
+    const newPosition = new Vec3(0, 100, 0)
+    tween(newNode)
+      .to(0.5, { position: newPosition })
+      .call(() => {
+        newNode.destroy()
+      })
+      .start()
+  }
+
+  // 受伤闪白
+  flicker(actor: ActorManager) {
+    if (actor === this) {
+      tween(this.node.getComponent(UIOpacity)).to(0.1, { opacity: 0 }).to(0.1, { opacity: 255 }).start()
+    }
+  }
 
   generateShield(shield: SkillPathEnum, defense: number) {
     const prefab = DataManager.Instance.prefabMap.get('RoundShield')
@@ -97,6 +169,10 @@ export class ActorManager extends EntityManager {
     console.log('护盾', this.shields)
   }
   shieldBreak(damage: number, broken: number = 0) {
+    if (this.shields.length === 0) return damage
+    if (this.buffs.has(BuffEnum.spine)) {
+      this.otherActor.hp--
+    }
     for (let i = 0; i < this.shields.length; i++) {
       const shield = this.shields[i]
 
@@ -138,6 +214,7 @@ export class ActorManager extends EntityManager {
     bulletManager.move(targetNode)
   }
   move(targetNode: Node, callback: Function) {
+    this.isMove = true
     const tw = tween(this.node)
       .to(
         0.4 * DataManager.Instance.animalTime,
@@ -156,6 +233,7 @@ export class ActorManager extends EntityManager {
           },
         },
       )
+      .call(() => (this.isMove = false))
       .start() // 开始执行tween
   }
 

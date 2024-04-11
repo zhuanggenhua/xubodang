@@ -78,7 +78,12 @@ export const createPrompt = (skillNode: Node, skill: ISkill) => {
 
   let effect = '效果：无'
   if (skill.pierce) effect += '、穿透'
-  if (skill.type.indexOf(4) !== -1) effect += '、持续'
+  if (skill.buff) {
+    skill.buff.forEach((buff) => {
+      effect += `、${buff}`
+    })
+  }
+  if (skill.special) effect += `、${skill.special}`
   if (effect.length > 4) effect = effect.replace('无、', '')
   node.getChildByName('Effect').getComponent(Label).string = effect
 
@@ -109,7 +114,7 @@ export function isPlayer(id) {
 }
 
 export function isEmpty(obj: Object): boolean {
-  return Object.keys(obj).length === 0 && obj.constructor === Object;
+  return Object.keys(obj).length === 0 && obj.constructor === Object
 }
 
 export const rad2Angle = (rad: number) => (rad * 180) / Math.PI

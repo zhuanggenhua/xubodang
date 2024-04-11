@@ -68,8 +68,6 @@ export class BattleMgr extends Component {
     this.setHeart()
     this.renderPlayers()
 
-    // 渲染当前选中角色技能，默认是战士
-    // this.renderSkills(actors.joker)
     // 点击任何地方都会隐藏提示框
     this.node.on(
       Input.EventType.TOUCH_START,
@@ -79,11 +77,13 @@ export class BattleMgr extends Component {
       this,
     )
     // test
-    // this.createActor()
-    // if (DataManager.Instance.mode === 'single') {
-    //   Ai.Instance.setActor('soldier')
-    //   this.createActor(Ai.Instance.id)
-    // }
+    // 渲染当前选中角色技能，默认是战士
+    this.renderSkills(actors.soldier)
+    this.createActor()
+    if (DataManager.Instance.mode === 'single') {
+      Ai.Instance.setActor('soldier')
+      this.createActor(Ai.Instance.id)
+    }
   }
 
   createActor(id: number = DataManager.Instance.player.id) {
@@ -184,7 +184,12 @@ export class BattleMgr extends Component {
       hearts = this.hearts2
     }
 
-    let count = DataManager.Instance.actors?.get(id)?.hp || DataManager.Instance.roomInfo?.life
+    let count = 0
+    if (DataManager.Instance.actors?.get(id)?.hp) {
+      count = DataManager.Instance.actors?.get(id)?.hp
+    } else {
+      count = DataManager.Instance.roomInfo?.life
+    }
 
     const prefab = DataManager.Instance.prefabMap.get('Heart')
 

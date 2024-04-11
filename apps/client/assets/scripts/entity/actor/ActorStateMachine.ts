@@ -75,6 +75,26 @@ export class ActorStateMachine extends StateMachine {
       ]),
     )
     this.stateMachines.set(
+      ParamsNameEnum.ShieldImpact,
+      new State(this, `${this.type}${ParamsNameEnum.ShieldImpact}`, AnimationClip.WrapMode.Normal, [
+        {
+          frame: ANIMATION_SPEED * 1, // 第 2帧时触发事件
+          func: 'onAttack', // 事件触发时调用的函数名称
+          params: [],
+        },
+      ]),
+    )
+    this.stateMachines.set(
+      ParamsNameEnum.ShieldBash,
+      new State(this, `${this.type}${ParamsNameEnum.ShieldImpact}`, AnimationClip.WrapMode.Normal, [
+        {
+          frame: ANIMATION_SPEED * 1, // 第 2帧时触发事件
+          func: 'onAttack', // 事件触发时调用的函数名称
+          params: [],
+        },
+      ]),
+    )
+    this.stateMachines.set(
       ParamsNameEnum.Jump,
       new State(
         this,

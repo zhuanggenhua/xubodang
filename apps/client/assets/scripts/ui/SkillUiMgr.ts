@@ -72,7 +72,7 @@ export class SkillUiMgr extends Component {
         const skillNode = skillItemNode.getChildByName('Skills').children[index]
 
         this.skillNodes.push(skillNode) //保存起来方便管理
-        const icon = skillNode.getChildByName('SkillIcon')
+        const icon = skillNode.getChildByName('SkillIcon-001')
 
         this.node.active = true
         if (isEmpty(skill)) {
@@ -289,6 +289,6 @@ export class SkillUiMgr extends Component {
           item.getComponent(UIOpacity).opacity = 255
         })
       })
-    }, 0.01 * DataManager.Instance.animalTime)
+    }, 0.05 * DataManager.Instance.animalTime)
   }
 }

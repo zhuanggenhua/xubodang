@@ -7,7 +7,6 @@ export enum FsmParamTypeEnum {
   Trigger = 'Trigger',
 }
 
-
 export enum EventEnum {
   WeaponShoot = 'WeaponShoot',
   BulletBorn = 'BulletBorn',
@@ -26,11 +25,13 @@ export enum EventEnum {
   onPower = 'onPower',
   powerFinal = 'powerFinal',
   defenseFinal = 'defenseFinal',
+  continueFinal = 'continueFinal',
   missFinal = 'missFinal',
   specialFinal = 'specialFinal',
   renderSkills = 'renderSkills',
   createActor = 'createActor',
   renderChart = 'renderChart',
+  flicker = 'flicker',
 }
 
 export enum PrefabPathEnum {
@@ -43,6 +44,7 @@ export enum PrefabPathEnum {
   RoundShield = 'prefab/RoundShield',
   Crossbow = 'prefab/Crossbow',
   ActorIcon = 'prefab/ActorIcon',
+  Buff = 'prefab/Buff',
 }
 
 export enum TexturePathEnum {
@@ -53,7 +55,8 @@ export enum TexturePathEnum {
   ActorJump = 'texture/actor/base/jump',
   ActorCrossbow = 'texture/actor/soldier/Crossbow',
   ActorSpade = 'texture/actor/soldier/Spade',
-  
+  ActorShieldImpact = 'texture/actor/soldier/ciji',
+
   CrossbowIdle = 'texture/bullet/arrow',
 }
 
@@ -65,28 +68,9 @@ export enum ParamsNameEnum {
   Kan = 'Kan',
   Jump = 'Jump',
   Crossbow = 'Crossbow',
-  Spade = 'Spade',  
-  ActiveSprite = 'ActiveSprite',
-  HandNormal = 'HandNormal',
-  HandXu = 'HandXu',
-  HandTwo = 'HandTwo',
-  HandFour = 'HandFour',
-  HandCenter = 'HandCenter',
-  RoundShieldFrame = 'RoundShieldFrame',  //生成盾牌的图片
-  Dang = 'Dang',
-  HeartShield = 'HeartShield',
-  ShieldReflect = 'ShieldReflect',
-  SpikedShield = 'SpikedShield',
+  Spade = 'Spade',
   ShieldImpact = 'ShieldImpact',
-  Spartan = 'Spartan',
-  ShieldEchoes = 'ShieldEchoes',
-  CrenulatedShield = 'CrenulatedShield',
-  FloorHatch = 'FloorHatch',
-  Enrage = 'Enrage',
-  SwordTie = 'SwordTie',
-  AncientSword = 'AncientSword',
-  UnstableProjectile = 'UnstableProjectile',
-  ShieldBash = 'ShieldBash',   
+  ShieldBash = 'ShieldBash',
 }
 
 // 和技能相关的图片路径
@@ -101,10 +85,9 @@ export enum SkillPathEnum {
   HandCenter = 'hand/hand-center',
 
   // 动态的盾牌图标
-  RoundShieldFrame = 'shieldFrame/round-shield', 
-  HeartShieldFrame = 'shieldFrame/heart-shield', 
-  SpikedShieldFrame = 'shieldFrame/spiked-shield', 
-  ShieldReflectFrame = 'shieldFrame/shield', 
+  RoundShieldFrame = 'shieldFrame/round-shield',
+  HeartShieldFrame = 'shieldFrame/heart-shield',
+  ShieldReflectFrame = 'shieldFrame/shield',
 
   Xu = 'base/xu',
   Kan = 'base/kan',
@@ -125,7 +108,7 @@ export enum SkillPathEnum {
   AncientSword = 'shield/ancient-sword',
   UnstableProjectile = 'shield/unstable-projectile',
   ShieldBash = 'shield/shield-bash',
-  
+
   // 动漫人
   Wood = 'animeMan/wood',
   Dodging = 'animeMan/dodging',
@@ -136,6 +119,8 @@ export enum SkillPathEnum {
   xielunyan = 'animeMan/paranoia',
   aura = 'animeMan/aura',
   qigong = 'animeMan/sinusoidal-beam',
+  qigongpao = 'animeMan/qigongpao',
+  sun = 'animeMan/sun',
   yuanqidan = 'animeMan/explosion-rays',
   weishou = 'animeMan/bubbling-beam',
   jiewangquan = 'animeMan/mighty-force',
@@ -161,15 +146,20 @@ export enum SHAKE_TYPE_ENUM {
   RIGHT = 'RIGHT',
 }
 
-export enum MissType{
+export enum MissType {
   Round, //近战
   Bullet, //远程弹丸攻击
-  All, 
-  Single
+  All,
+  Single,
 }
 
 // 特殊技能
 export enum Special {
-  Reflect, //反射
+  Reflect = '反射', //反射
 }
-
+// 持续效果
+export enum BuffEnum {
+  spine = '尖刺', //尖刺
+  solid = '坚固', //坚固
+  blood = '吸血', //吸血
+}

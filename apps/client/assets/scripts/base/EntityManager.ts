@@ -1,5 +1,5 @@
 import { _decorator, Component, UITransform, Sprite } from 'cc'
-import { EntityStateEnum, ParamsNameEnum } from '../enum';
+import {  ParamsNameEnum } from '../enum';
 import StateMachine from './StateMachine';
 
 const { ccclass } = _decorator

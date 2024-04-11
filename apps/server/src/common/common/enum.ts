@@ -1,4 +1,4 @@
-import { MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
+import { BuffEnum, MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
 
 // 玩家当前联网状态，用于随机匹配、断线重连
 export enum ConnectStateEnum {
@@ -41,7 +41,6 @@ export enum EntityTypeEnum {
   Actor = 'Actor',
   Crossbow = 'Crossbow',
   RoundShield = 'RoundShield',
-
 }
 
 export enum ApiFunc {
@@ -155,7 +154,7 @@ export interface ISkill {
   type?: number[]
   desc?: string
   damage?: number
-  broken?: number//对护盾伤害
+  broken?: number //对护盾伤害
   speed?: number
   target?: number
   range?: string[]
@@ -169,8 +168,8 @@ export interface ISkill {
   animal?: ParamsNameEnum
   shield?: SkillPathEnum //护盾图片
   missType?: MissType //闪避的类型
-  special?: Special//特效类型
-  turn?: number//持续回合
+  special?: Special //特效类型
+  buff?: BuffEnum[] //持续回合
 }
 
 export interface IActorSkills {
