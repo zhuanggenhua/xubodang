@@ -24,14 +24,25 @@ export class BattleCanvas extends Component {
     this.width = tran.width
 
     await DataManager.Instance.loadRes() //temp
-    
+
     this.graphics.lineWidth = 10
     this.generaRound()
     this.generateClouds()
+    this.drawTrap()
   }
-  reset(){
+  reset() {
     this.graphics.clear()
     this.generaRound()
+  }
+
+  // 陷阱
+  drawTrap() {
+    this.graphics.strokeColor = new Color('#6B6B6B')
+    this.graphics.fillColor = new Color('#6B6B6B')
+    // +10是补正石头
+    this.graphics.rect(this.width / 2 - 100, 0, this.width / 2 + 100, this.round + 10)
+    this.graphics.stroke()
+    this.graphics.fill()
   }
 
   // 挖掘

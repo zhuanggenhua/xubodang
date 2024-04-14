@@ -116,8 +116,14 @@ export default class Skill extends Component {
         // EventManager.Instance.emit(EventEnum.flicker, this.otherActor)
       }
 
-      // 同时防御结束
-      EventManager.Instance.emit(EventEnum.defenseFinal, this.otherActor, this.damage)
+      // 盾牌碎裂,等动画播完再下回合
+      if (this.damage >= 0 && this.otherActor.shields.length > 0) {
+        this.scheduleOnce(() => {
+          this.tiger()
+        }, 0.1 * DataManager.Instance.animalTime)
+        return
+      }
+
       this.tiger()
     }
   }
@@ -149,12 +155,7 @@ export default class Skill extends Component {
   defenseFinal(actor: ActorManager, damage) {
     if (actor === this.actor) {
       console.log('defense结束')
-      // 盾牌碎裂,等动画播完再下回合
-      if (damage >= 0) {
-        this.scheduleOnce(() => {
-          this.tiger()
-        }, 0.1 * DataManager.Instance.animalTime)
-      }
+      this.tiger()
     }
   }
   missFinal(actor: ActorManager) {
@@ -190,6 +191,8 @@ export default class Skill extends Component {
       }
       this.actor.generateShield(this.skill.shield, this.defense)
     }
+    // 直接防御结束
+    EventManager.Instance.emit(EventEnum.defenseFinal, this.actor)
   }
   attackHandler() {
     const otherSkill = this.otherSkill.skill
@@ -212,7 +215,7 @@ export default class Skill extends Component {
         // if (!this.otherSkill.skill.location || this.otherSkill.skill.location == 0) {
         // 近战攻击，进入移动  反正就两个角色，不用事件系统更方便
         this.actor.state = ParamsNameEnum.Run
-        this.actor.move(this.otherActor.node, () => {
+        this.actor.move(this.otherActor, () => {
           this.setSkillState()
         })
         // } else {
@@ -233,6 +236,8 @@ export default class Skill extends Component {
         //bullet存在就代表是远程弹丸攻击
         if (this.otherSkill.skill.bullet) {
           EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
+        } else {
+          EventManager.Instance.emit(EventEnum.specialFinal, this.actor)
         }
         break
       default:

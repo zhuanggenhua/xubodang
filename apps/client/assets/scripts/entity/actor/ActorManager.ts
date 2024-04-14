@@ -28,7 +28,7 @@ import {
 } from '../../enum'
 import DataManager from '../../global/DataManager'
 import Skill from '../../utils/Skill'
-import { checkCollision, createUINode, isPlayer } from '../../utils'
+import { checkCollision, createUINode, getNodePos, isPlayer } from '../../utils'
 import { ActorStateMachine } from './ActorStateMachine'
 import EventManager from '../../global/EventManager'
 import { BulletManager } from '../Bullet/BulletManager'
@@ -53,7 +53,7 @@ export class ActorManager extends EntityManager {
   set hp(hp) {
     if (hp < 0) hp = 0
     if (hp > this.hpMax) hp = this.hpMax
-    
+
     this._hp = hp
     EventManager.Instance.emit(EventEnum.updateHp, this.id)
   }
@@ -159,8 +159,16 @@ export class ActorManager extends EntityManager {
     // 图片是动态的
     roundShield.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(shield)
 
-    roundShield.parent = this.node.getChildByName('Rubbish')
-    roundShield.setPosition(50, 0)
+    let offsetX = 50
+    if (this.buffs.has(BuffEnum.retain) && this.node.getChildByName('Shields').children.length < 8) {
+      roundShield.parent = this.node.getChildByName('Shields')
+      if (this.node.getChildByName('Shields').children.length > 1) {
+        offsetX += 20 * this.node.getChildByName('Shields').children.length
+      }
+    } else {
+      roundShield.parent = this.node.getChildByName('Rubbish')
+    }
+    roundShield.setPosition(offsetX, 0)
     // 保存护盾
     this.shields.push({
       defense,
@@ -176,22 +184,30 @@ export class ActorManager extends EntityManager {
     for (let i = 0; i < this.shields.length; i++) {
       const shield = this.shields[i]
 
-      // 先计算破甲
-      broken -= shield.defense
-      if (broken <= 0) {
+      // 两种情况，一种直接破甲一种未破甲，将伤害叠加到攻击上
+      if (broken >= shield.defense) {
+        broken -= shield.defense
+        // 穿甲大于防御直接破防
+        this.removeShield(shield)
+        continue
+      } else {
         damage += broken //修正攻击伤害
-        broken = 0
-      }
-
-      if (damage >= 0) {
-        const split = shield.node.addComponent(SplitFrame)
-        split.init()
-
-        this.shields.splice(this.shields.indexOf(shield), 1)
+        damage -= shield.defense
+        if (damage >= 0) {
+          this.removeShield(shield)
+        } else {
+          if (damage < 0) damage = 0
+          return damage
+        }
       }
     }
-    if (damage < 0) damage = 0
+
     return damage
+  }
+  removeShield(shield) {
+    const split = shield.node.addComponent(SplitFrame)
+    split.init()
+    this.shields.splice(this.shields.indexOf(shield), 1)
   }
 
   shoot(target: ActorManager, bulletEnum: EntityTypeEnum) {
@@ -213,18 +229,19 @@ export class ActorManager extends EntityManager {
 
     bulletManager.move(targetNode)
   }
-  move(targetNode: Node, callback: Function) {
+  move(target: ActorManager, callback: Function) {
     this.isMove = true
     const tw = tween(this.node)
       .to(
-        0.4 * DataManager.Instance.animalTime,
-        { position: targetNode.position },
+        0.2 * DataManager.Instance.animalTime,
+        { position: target.node.position },
         {
-          onUpdate: (target, ratio) => {
+          // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
+          onUpdate: (target1, ratio) => {
             // 闪避，则不处理碰撞
             if (this.skill.miss()) return
-            // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
-            if (checkCollision(this.node, targetNode)) {
+            // 优先计算护盾的碰撞
+            if (checkCollision(this.node, target.shields[target.shields.length - 1]?.node || target.node)) {
               // 如果检测到碰撞，可以通过 tween.stop() 停止移动
               console.log('碰撞')
               tw.stop()

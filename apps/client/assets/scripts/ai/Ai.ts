@@ -21,7 +21,7 @@ export default class Ai extends Singleton {
     const actor = DataManager.Instance.actors.get(this.id)
     
     const skills = this.actor.skills
-    EventManager.Instance.emit(EventEnum.useSkill, skills[1][2], 0, this.id)
+    EventManager.Instance.emit(EventEnum.useSkill, skills[0][0], 0, this.id)
     // switch (actor.power) {
     //   case 0:
     //     break
