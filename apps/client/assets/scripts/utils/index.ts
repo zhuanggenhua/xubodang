@@ -166,7 +166,10 @@ export const checkCollision = (
 
   // 在同一个父节点下才有意义
   let truePosition = targetNode.position
-  if (myNode.parent != targetNode.parent) truePosition = getNodePos(targetNode, myNode.parent)
+
+  if (myNode.parent != targetNode.parent) {
+    truePosition = getNodePos(targetNode, myNode.parent)
+  }
   const player = {
     x: truePosition.x - offsetTargetTran.width / 2,
     y: truePosition.y - offsetTargetTran.height / 2,

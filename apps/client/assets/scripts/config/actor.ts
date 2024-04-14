@@ -135,6 +135,7 @@ const actors: { [key: string]: IActor } = {
         {
           name: '盾墙',
           type: [4],
+          buff: [BuffEnum.retain],
           desc: '你将保留护盾',
           particle: SkillPathEnum.ShieldEchoes,
         },
@@ -147,7 +148,8 @@ const actors: { [key: string]: IActor } = {
         },
         {
           name: '陷阱',
-          type: [0, 4, 5],
+          type: [0, 4],
+          buff: [BuffEnum.trap],
           desc: '假装蓄力并且放下陷阱。(陷阱将持续存在直到阻拦对方地面近战攻击，同时只能存在一个)',
           power: 0,
           damage: 2,

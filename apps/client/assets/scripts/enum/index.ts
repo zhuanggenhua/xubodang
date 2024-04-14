@@ -162,4 +162,6 @@ export enum BuffEnum {
   spine = '尖刺', //尖刺
   solid = '坚固', //坚固
   blood = '吸血', //吸血
+  retain = '护盾保留', //吸血
+  trap = '陷阱', //吸血
 }
