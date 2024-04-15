@@ -79,9 +79,11 @@ export class BattleMgr extends Component {
     // test
     // 渲染当前选中角色技能，默认是战士
     this.renderSkills(actors.soldier)
+    // this.renderSkills(actors.animeMan)
     this.createActor()
     if (DataManager.Instance.mode === 'single') {
-      Ai.Instance.setActor('soldier')
+      Ai.Instance.setActor('animeMan')
+      // Ai.Instance.setActor('soldier')
       this.createActor(Ai.Instance.id)
     }
   }

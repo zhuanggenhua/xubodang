@@ -42,8 +42,10 @@ export class BulletManager extends EntityManager {
 
     const actorTran = this.actor.node.getComponent(UITransform)
 
+    let offsetX = 200
+    if (this.type == EntityTypeEnum.Bo) offsetX = 50
+    tempPosition.x += isPlayer(this.actor.id) ? offsetX : -offsetX
     tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
-    tempPosition.x += isPlayer(this.actor.id) ? 200 : -200
 
     // 设置方向
     const directionVec2 = new Vec2(
@@ -135,9 +137,18 @@ export class BulletManager extends EntityManager {
         },
       )
       .call(() => {
+        // 跟踪波处理
+        if (this.actor.skill.skill.special === Special.gengzongbo) {
+          this.move(
+            this.actor.otherActor.shields[this.actor.otherActor.shields.length - 1]?.node || this.actor.otherActor.node,
+          )
+          return
+        }
+
         tempNode.destroy()
         if (callback) callback()
         this.actor.onAttack()
+        if (this.type != EntityTypeEnum.Crossbow) this.node.destroy()
       })
       .start() // 开始执行tween
   }

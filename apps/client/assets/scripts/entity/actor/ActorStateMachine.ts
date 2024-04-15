@@ -26,7 +26,7 @@ export class ActorStateMachine extends StateMachine {
 
   initAnimationEvent() {
     const reset = () => {
-      const whiteList = [ParamsNameEnum.Xu]
+      const whiteList = [ParamsNameEnum.Xu, ParamsNameEnum.Bo]
       const name = this.animationComponent.defaultClip.name
       // 白名单内的动画结束后都要转为静止动画
       if (whiteList.some((v) => name.includes(v))) {
@@ -164,6 +164,19 @@ export class ActorStateMachine extends StateMachine {
     this.stateMachines.set(
       ParamsNameEnum.AncientSwordAttack,
       new State(this, `${this.type}${ParamsNameEnum.AncientSwordAttack}`, AnimationClip.WrapMode.Normal, [], 1 / 6),
+    )
+
+    // 动漫人
+    this.stateMachines.set(
+      ParamsNameEnum.Bo,
+      new State(
+        this,
+        `${this.type}${ParamsNameEnum.Bo}`,
+        AnimationClip.WrapMode.Loop,
+        [],
+        ANIMATION_SPEED,
+        0.2 * DataManager.Instance.animalTime,
+      ),
     )
   }
 

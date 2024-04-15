@@ -41,7 +41,9 @@ export enum EntityTypeEnum {
   Actor = 'Actor',
   RoundShield = 'RoundShield',
   Crossbow = 'Crossbow',
+  Bo = 'Bo',
   Sword = 'Sword',
+  Explosion = 'Explosion',
 }
 
 export enum ApiFunc {

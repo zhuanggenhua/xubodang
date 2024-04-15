@@ -55,7 +55,7 @@ export default class Skill extends Component {
   excute() {
     this.tigerLength = this.skill.type.length
     this.defense = this.skill.defense
-    
+
     if (this.actor.buffs.has(BuffEnum.loopSword)) {
       this.tigerLength++
       this.actor.shoot(this.otherActor, EntityTypeEnum.Sword, () => {
@@ -129,6 +129,13 @@ export default class Skill extends Component {
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
       console.log('attack结束')
+
+      switch (this.otherSkill.skill.missType) {
+        case MissType.Single:
+          // 烟雾动画
+          EventManager.Instance.emit(EventEnum.missSingle, this.otherActor)
+      }
+
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
@@ -159,12 +166,25 @@ export default class Skill extends Component {
   }
   // 判断是否被闪避
   miss() {
+    if (this.skill.special === Special.gengzongbo) {
+      return false
+    }
     // 闪避弹丸类型
     if (this.skill.bullet && this.otherSkill.skill.missType === MissType.Bullet) {
       return true
     }
 
     let tag = true
+
+    // 单范围闪避
+    switch (this.otherSkill.skill.missType) {
+      case MissType.Single:
+        this.skill.range.forEach((range) => {
+          if (range.length > 1) tag = false
+        })
+        return tag //不判断基本情况
+    }
+
     // 默认只能打地面
     if (!this.skill.range) this.skill.range = ['0']
     this.skill.range.forEach((range) => {
@@ -174,6 +194,7 @@ export default class Skill extends Component {
         tag = false
       }
     })
+
     return tag
   }
   powerFinal(actor: ActorManager) {
@@ -265,6 +286,10 @@ export default class Skill extends Component {
   }
   missHandler() {
     this.setSkillState()
+    switch (this.skill.missType) {
+      case MissType.Single:
+        EventManager.Instance.emit(EventEnum.missFinal, this.actor)
+    }
   }
   continueHandler() {
     if (this.skill.buff?.indexOf(BuffEnum.trap) !== -1) {

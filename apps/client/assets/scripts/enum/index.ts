@@ -32,6 +32,7 @@ export enum EventEnum {
   renderChart = 'renderChart',
   flicker = 'flicker',
   moveBack = 'moveBack',
+  missSingle = 'missSingle',
 }
 
 export enum PrefabPathEnum {
@@ -46,6 +47,8 @@ export enum PrefabPathEnum {
   Sword = 'prefab/Sword',
   ActorIcon = 'prefab/ActorIcon',
   Buff = 'prefab/Buff',
+  Wood = 'prefab/Wood',
+  Bo = 'prefab/Bo',
 }
 
 export enum TexturePathEnum {
@@ -60,9 +63,12 @@ export enum TexturePathEnum {
   ActorAncientSwordAttack = 'texture/actor/soldier/gali',
   ActorAncientSwordIdle = 'texture/actor/soldier/galiIdle',
 
+  ActorBo = 'texture/actor/animeMan/bo',
+
   // 子弹
   CrossbowIdle = 'texture/bullet/arrow',
   SwordIdle = 'texture/bullet/sword',
+  BoIdle = 'texture/bullet/bo',
 }
 
 export enum ParamsNameEnum {
@@ -73,6 +79,7 @@ export enum ParamsNameEnum {
   Jump = 'Jump',
   Spade = 'Spade',
   Crossbow = 'Crossbow',
+  Bo = 'Bo',
   ShieldImpact = 'ShieldImpact',
   AncientSwordAttack = 'AncientSwordAttack',
   AncientSwordIdle = 'AncientSwordIdle',
@@ -162,6 +169,7 @@ export enum MissType {
 export enum Special {
   Reflect = '反射', //反射  
   spartan = '斯巴达',
+  gengzongbo = '追踪',
 }
 // 持续效果
 export enum BuffEnum {

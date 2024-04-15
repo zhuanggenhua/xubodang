@@ -25,7 +25,7 @@ export default class Ai extends Singleton {
     //   EventManager.Instance.emit(EventEnum.useSkill, skills[3][0], 0, this.id)
     // else EventManager.Instance.emit(EventEnum.useSkill, skills[1][3], 0, this.id)
 
-    EventManager.Instance.emit(EventEnum.useSkill, skills[0][0], 0, this.id)
+    EventManager.Instance.emit(EventEnum.useSkill, skills[1][2], 0, this.id)
 
     // switch (actor.power) {
     //   case 0:

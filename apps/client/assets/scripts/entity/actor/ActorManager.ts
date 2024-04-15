@@ -21,6 +21,7 @@ import {
   BuffEnum,
   EventEnum,
   ParamsNameEnum,
+  PrefabPathEnum,
   SHAKE_TYPE_ENUM,
   SkillPathEnum,
   Special,
@@ -80,10 +81,12 @@ export class ActorManager extends EntityManager {
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.flicker, this.flicker, this)
     EventManager.Instance.off(EventEnum.moveBack, this.moveBack, this)
+    EventManager.Instance.off(EventEnum.missSingle, this.onMissSingle, this)
   }
   protected onLoad(): void {
     EventManager.Instance.on(EventEnum.flicker, this.flicker, this)
     EventManager.Instance.on(EventEnum.moveBack, this.moveBack, this)
+    EventManager.Instance.on(EventEnum.missSingle, this.onMissSingle, this)
   }
 
   // private wm: WeaponManager;
@@ -240,6 +243,8 @@ export class ActorManager extends EntityManager {
     const bullet = instantiate(prefab)
     // bullet.addComponent(UITransform).setContentSize(100, 20)
     bullet.setParent(this.node.parent)
+
+   
     bullet.setPosition(
       isPlayer(this.id) ? this.node.position.x + 100 : this.node.position.x - 100,
       this.node.position.y,
@@ -256,10 +261,14 @@ export class ActorManager extends EntityManager {
   }
   move(target: ActorManager, callback: Function) {
     this.isMove = true
+    let targetPosition = target.node.position
+    // 处理咖喱棒变形
+    if (this.otherActor.skill.skill.animal === ParamsNameEnum.AncientSwordIdle)
+      targetPosition = new Vec3(target.node.position.x, target.node.position.y - 50, this.node.position.z)
     const tw = tween(this.node)
       .to(
         0.2 * DataManager.Instance.animalTime,
-        { position: target.node.position },
+        { position: targetPosition },
         {
           // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
           onUpdate: (target1, ratio) => {
@@ -308,6 +317,22 @@ export class ActorManager extends EntityManager {
     }
   }
 
+  onMissSingle(actor: ActorManager) {
+    if (actor === this) {
+      // 用木头替换
+      this.node.getComponent(UIOpacity).opacity = 0
+      const prefab = DataManager.Instance.prefabMap.get('Wood')
+      const wood = instantiate(prefab)
+      wood.setParent(this.node.parent)
+      wood.setPosition(this.node.position)
+
+      this.scheduleOnce(() => {
+        this.node.getComponent(UIOpacity).opacity = 255
+        wood.destroy()
+      }, 0.2)
+    }
+  }
+
   onJump() {
     const jumpHeight = 200 // 跳跃高度为头顶100像素
     const duration = 0.5 // 跳跃动作持续时间为1秒
@@ -336,6 +361,9 @@ export class ActorManager extends EntityManager {
   onAttack() {
     EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, isPlayer(this.id) ? SHAKE_TYPE_ENUM.RIGHT : SHAKE_TYPE_ENUM.LEFT)
     EventManager.Instance.emit(EventEnum.attackFinal, this)
+    this.scheduleOnce(() => {
+      this.node.setPosition(this.initPosition)
+    }, 0.05)
   }
 
   onSpade() {
