@@ -134,6 +134,14 @@ export default class Skill extends Component {
         // EventManager.Instance.emit(EventEnum.flicker, this.otherActor)
       }
 
+      // 盾牌碎裂,等动画播完再下回合
+      if (this.damage >= 0 && this.otherActor.shields.length > 0) {
+        this.scheduleOnce(() => {
+          this.tiger()
+        }, 0.1 * DataManager.Instance.animalTime)
+        return
+      }
+
       this.tiger()
     }
   }

@@ -25,9 +25,11 @@ export class BattleCanvas extends Component {
 
     await DataManager.Instance.loadRes() //temp
 
+
     this.graphics.lineWidth = 10
     this.generaRound()
     this.generateClouds()
+    this.drawTrap()
   }
   reset() {
     this.graphics.clear()
