@@ -28,6 +28,7 @@ const actors: { [key: string]: IActor } = {
           desc: '躲避弹丸攻击',
           particle: SkillPathEnum.Jump,
           missType: MissType.Bullet,
+          animal: ParamsNameEnum.Jump,
         },
         {
           name: '挡',
@@ -44,6 +45,7 @@ const actors: { [key: string]: IActor } = {
           power: 1,
           target: 1,
           particle: SkillPathEnum.Xu,
+          animal: ParamsNameEnum.Xu,
         },
       ],
       1: [
@@ -66,6 +68,7 @@ const actors: { [key: string]: IActor } = {
           desc: '临时避难所，躲避大部分攻击',
           location: 2,
           particle: SkillPathEnum.Spade,
+          animal: ParamsNameEnum.Spade,
         },
         {
           name: '十字弩',
@@ -78,6 +81,7 @@ const actors: { [key: string]: IActor } = {
           pierce: false,
           particle: SkillPathEnum.Crossbow,
           bullet: EntityTypeEnum.Crossbow,
+          animal: ParamsNameEnum.Crossbow,
         },
         {
           name: '反射盾',
@@ -111,6 +115,7 @@ const actors: { [key: string]: IActor } = {
           range: ['0'],
           longrang: false,
           particle: SkillPathEnum.ShieldImpact,
+          animal: ParamsNameEnum.ShieldImpact,
         },
         {
           name: '嗜血',
@@ -129,6 +134,7 @@ const actors: { [key: string]: IActor } = {
           defense: 2,
           particle: SkillPathEnum.ShieldBash,
           shield: SkillPathEnum.RoundShieldFrame,
+          animal: ParamsNameEnum.ShieldImpact,
         },
       ],
       3: [
@@ -154,6 +160,7 @@ const actors: { [key: string]: IActor } = {
           power: 0,
           damage: 2,
           particle: SkillPathEnum.FloorHatch,
+          animal: ParamsNameEnum.Xu,
         },
         {
           name: '无限剑制',
@@ -174,6 +181,7 @@ const actors: { [key: string]: IActor } = {
           range: ['01'],
           longrang: true,
           particle: SkillPathEnum.AncientSword,
+          animal: ParamsNameEnum.AncientSwordIdle,
         },
         {
           name: '火星撞地球',
@@ -183,7 +191,9 @@ const actors: { [key: string]: IActor } = {
         },
         {
           name: '化身斯巴达',
-          type: [1, 2, 4],
+          type: [4, 5],
+          buff: [BuffEnum.spartan],
+          special: Special.spartan,
           desc: '获得一点伤害减免，同时近战伤害+1',
           damage: 1,
           defense: 1,
@@ -217,6 +227,7 @@ const actors: { [key: string]: IActor } = {
           desc: '躲避弹丸攻击',
           particle: SkillPathEnum.Jump,
           missType: MissType.Bullet,
+          animal: ParamsNameEnum.Jump,
         },
         {
           name: '挡',
@@ -233,6 +244,7 @@ const actors: { [key: string]: IActor } = {
           power: 1,
           target: 1,
           particle: SkillPathEnum.Xu,
+          animal: ParamsNameEnum.Xu,
         },
       ],
       1: [

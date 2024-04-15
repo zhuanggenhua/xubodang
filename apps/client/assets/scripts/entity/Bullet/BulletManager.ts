@@ -62,7 +62,7 @@ export class BulletManager extends EntityManager {
     let shootSpeed = 0.3
     switch (this.type) {
       case EntityTypeEnum.Sword:
-        shootSpeed = 0.1
+        shootSpeed = 0.2
         offsetRange = -45
         break
     }
@@ -135,6 +135,7 @@ export class BulletManager extends EntityManager {
         },
       )
       .call(() => {
+        tempNode.destroy()
         if (callback) callback()
         this.actor.onAttack()
       })

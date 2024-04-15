@@ -75,13 +75,15 @@ export class ActorManager extends EntityManager {
   initPosition: Vec3 = new Vec3(0, 0)
 
   private tw: Tween<unknown>
-  private tran: UITransform
+  tran: UITransform
 
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.flicker, this.flicker, this)
+    EventManager.Instance.off(EventEnum.moveBack, this.moveBack, this)
   }
   protected onLoad(): void {
     EventManager.Instance.on(EventEnum.flicker, this.flicker, this)
+    EventManager.Instance.on(EventEnum.moveBack, this.moveBack, this)
   }
 
   // private wm: WeaponManager;
@@ -157,6 +159,18 @@ export class ActorManager extends EntityManager {
       tween(this.node.getComponent(UIOpacity)).to(0.1, { opacity: 0 }).to(0.1, { opacity: 255 }).start()
     }
   }
+  // 击退
+  moveBack(actor: ActorManager, offsetX, offsetY = 0) {
+    if (actor === this) {
+      const { x, y } = this.node.position
+      if (isPlayer(this.id)) offsetX = -offsetX
+      console.log('击退', offsetX, offsetY)
+
+      tween(this.node)
+        .to(0.2, { position: new Vec3(x + offsetX, y + offsetY, this.node.position.z) }, { easing: 'sineOut' })
+        .start()
+    }
+  }
 
   generateShield(shield: SkillPathEnum, skill: ISkill) {
     const prefab = DataManager.Instance.prefabMap.get('RoundShield')
@@ -177,18 +191,20 @@ export class ActorManager extends EntityManager {
     // 保存护盾
     this.shields.push({
       defense: skill.defense,
-      special: skill.special || null,
       node: roundShield,
     })
     console.log('护盾', this.shields)
   }
   shieldBreak(damage: number, broken: number = 0) {
     if (this.shields.length === 0) return damage
-    if (this.buffs.has(BuffEnum.spine)) {
+    if (this.buffs.has(BuffEnum.spine) && !this.otherSkill.skill.longrang) {
       this.otherActor.hp--
     }
-    for (let i = 0; i < this.shields.length; i++) {
+    for (let i = this.shields.length - 1; i >= 0; i--) {
       const shield = this.shields[i]
+      if (this.buffs.has(BuffEnum.solid)) {
+        shield.defense++
+      }
 
       // 两种情况，一种直接破甲一种未破甲，将伤害叠加到攻击上
       if (broken >= shield.defense) {
@@ -198,7 +214,10 @@ export class ActorManager extends EntityManager {
         continue
       } else {
         damage += broken //修正攻击伤害
-        damage -= shield.defense
+        // 累计护盾收到的伤害
+        const tempDefense = shield.defense
+        shield.defense -= damage
+        damage -= tempDefense
         if (damage >= 0) {
           this.removeShield(shield)
         } else {
@@ -349,9 +368,17 @@ export class ActorManager extends EntityManager {
   reset() {
     this.state = ParamsNameEnum.Idle
     this.node.setPosition(this.initPosition)
+    this.tran.setContentSize(200, 200)
     this.node.getChildByName('Rubbish').destroyAllChildren()
     this.node.eulerAngles = new Vec3(0, 0, 0)
     if (!this.buffs.has(BuffEnum.retain)) this.shields = []
+    else {
+      // 保留护盾重置为最基础的
+      this.shields.forEach((item) => {
+        if (item.defense > 2) item.defense = 2
+        item.node.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.RoundShieldFrame)
+      })
+    }
   }
 
   useSkill(skill: ISkill) {}

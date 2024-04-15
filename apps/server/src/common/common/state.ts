@@ -8,7 +8,7 @@ export interface IParticleOptions {
   min?: number;
   maxRange?: number;// 最大数量存在大小范围
   minRange?: number;
-  other?: any;
+  other?: any;//给粒子初始化的数据
 }
 
 

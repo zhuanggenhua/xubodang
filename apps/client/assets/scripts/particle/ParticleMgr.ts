@@ -3,6 +3,7 @@ import { IParticleOptions } from '../common/state'
 import Particle from './Particle'
 import { getRandomNumber } from '../utils'
 import { LightParticle } from './LightParticle'
+import EventManager from '../global/EventManager'
 const { ccclass, property } = _decorator
 
 // 粒子系统
@@ -14,11 +15,15 @@ export default class ParticleMgr extends Component {
   private particle: { new (): Particle } // 改为接收一个构造函数
   private options: IParticleOptions = {}
 
+  protected onDestroy(): void {
+    this.clear()
+  }
+
   init(particle, options: IParticleOptions = {}) {
     this.particle = particle
     this.options = options
 
-    this.graphics = this.node.getComponent(Graphics) || this.node.addComponent(Graphics)   
+    this.graphics = this.node.getComponent(Graphics) || this.node.addComponent(Graphics)
 
     if (!this.options.gap) {
       this.generateParticles()
@@ -55,7 +60,7 @@ export default class ParticleMgr extends Component {
   generateParticles() {
     for (let i = 0; i < this.options.max; i++) {
       const particle = new this.particle()
-      if(this.options.other) particle.init(this.options.other)
+      if (this.options.other) particle.init(this.options.other)
       this.particles.push(particle)
     }
   }
@@ -65,7 +70,7 @@ export default class ParticleMgr extends Component {
       this.particles.length = this.options.max
     }
     const particle = new this.particle()
-    if(this.options.other) particle.init(this.options.other)
+    if (this.options.other) particle.init(this.options.other)
     this.particles.push(particle)
   }
   updateParticles(dt) {
@@ -75,9 +80,11 @@ export default class ParticleMgr extends Component {
     })
     // 删除销毁的粒子
     this.particles = this.particles.filter((particle) => !particle.markedForDeletion)
+    if (this.particles.length == 0 && !this.options.gap) this.destroy()
   }
 
   clear() {
+    this.graphics.clear()
     this.particles.forEach((particle) => (particle.markedForDeletion = true))
   }
 

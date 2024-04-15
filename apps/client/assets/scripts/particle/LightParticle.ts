@@ -18,6 +18,10 @@ export class LightParticle extends Particle {
   borthX: number
 
   isGather: boolean = false
+  init(params: any): void {
+      const {y} = params
+      this.y = y
+  }
   constructor() {
     super()
     this.size = getRandomNumber(6, 9)

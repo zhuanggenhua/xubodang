@@ -29,8 +29,8 @@ export default class Skill extends Component {
 
   setSkillState() {
     // 确保SkillPathEnum和ParamsNameEnum 的key是一致的
-    console.log('设置状态', ParamsNameEnum[this.getKeyByValue(this.skill.particle)])
-    this.actor.state = this.skill.animal || ParamsNameEnum[this.getKeyByValue(this.skill.particle)]
+    console.log('设置状态', this.skill.animal, ParamsNameEnum[this.getKeyByValue(this.skill.particle)])
+    this.actor.state = this.skill.animal
   }
   // temp 临时获取key
   getKeyByValue(value, object = SkillPathEnum) {
@@ -55,10 +55,30 @@ export default class Skill extends Component {
   excute() {
     this.tigerLength = this.skill.type.length
     this.defense = this.skill.defense
-
+    
     if (this.actor.buffs.has(BuffEnum.loopSword)) {
       this.tigerLength++
       this.actor.shoot(this.otherActor, EntityTypeEnum.Sword, () => {
+        console.log('attack结束')
+        const skill = { damage: 1 }
+        // 处理闪避
+        if (!this.miss()) {
+          // 盾牌碎裂
+          console.log('伤害', skill.damage)
+          const damage = this.otherActor.shieldBreak(skill.damage || 0)
+          console.log('最终伤害', damage)
+
+          this.otherActor.hp -= damage
+
+          // 盾牌碎裂,等动画播完再下回合
+          if (damage >= 0 && this.otherActor.shields.length > 0) {
+            this.scheduleOnce(() => {
+              this.tiger()
+            }, 0.1 * DataManager.Instance.animalTime)
+            return
+          }
+        }
+
         this.tiger()
       })
     }
@@ -113,13 +133,13 @@ export default class Skill extends Component {
       if (!this.miss()) {
         // 盾牌碎裂
         console.log('伤害', this.skill.damage)
-        this.skill.damage = this.otherActor.shieldBreak(this.skill.damage || 0, this.skill.broken || 0)
-        console.log('最终伤害', this.skill.damage)
+        const damage = this.otherActor.shieldBreak(this.skill.damage || 0, this.skill.broken || 0)
+        console.log('最终伤害', damage)
 
-        this.otherActor.hp -= this.skill.damage
+        this.otherActor.hp -= damage
 
         // 盾牌碎裂,等动画播完再下回合
-        if (this.skill.damage >= 0 && this.otherActor.shields.length > 0) {
+        if (damage >= 0 && this.otherActor.shields.length > 0) {
           this.scheduleOnce(() => {
             this.tiger()
           }, 0.1 * DataManager.Instance.animalTime)
@@ -132,14 +152,6 @@ export default class Skill extends Component {
         }
         // 波类攻击才闪白
         // EventManager.Instance.emit(EventEnum.flicker, this.otherActor)
-      }
-
-      // 盾牌碎裂,等动画播完再下回合
-      if (this.damage >= 0 && this.otherActor.shields.length > 0) {
-        this.scheduleOnce(() => {
-          this.tiger()
-        }, 0.1 * DataManager.Instance.animalTime)
-        return
       }
 
       this.tiger()
@@ -205,17 +217,22 @@ export default class Skill extends Component {
     this.setSkillState()
   }
   defenseHandler() {
+    if (this.actor.buffs.has(BuffEnum.spartan)) {
+      this.otherSkill.damage -= 1
+    }
+
     // 在角色面前生成盾牌
     if (this.skill.shield) {
-      if (this.actor.buffs.has(BuffEnum.solid)) {
-        this.skill.defense++
-      }
       this.actor.generateShield(this.skill.shield, this.skill)
     }
     // 直接防御结束
     EventManager.Instance.emit(EventEnum.defenseFinal, this.actor)
   }
   attackHandler() {
+    if (this.actor.buffs.has(BuffEnum.spartan)) {
+      this.skill.damage += 1
+    }
+
     if (this.skill.speed === 1) {
       // 快速攻击（一般是射击）  立即触发动画
       this.setSkillState()
@@ -240,6 +257,9 @@ export default class Skill extends Component {
         // } else {
         //   // 不在范围，骂街
         // }
+      } else {
+        // 远距离慢速攻击
+        this.setSkillState()
       }
     }
   }
@@ -248,7 +268,7 @@ export default class Skill extends Component {
   }
   continueHandler() {
     if (this.skill.buff?.indexOf(BuffEnum.trap) !== -1) {
-      this.actor.state = ParamsNameEnum.Xu
+      this.setSkillState()
     }
     this.actor.setBuffer(this.skill)
   }
@@ -263,6 +283,8 @@ export default class Skill extends Component {
           EventManager.Instance.emit(EventEnum.specialFinal, this.actor)
         }
         break
+      case Special.spartan:
+        this.actor.node.getChildByName('solider').active = true
       default:
         // 没有特殊情况直接结束
         EventManager.Instance.emit(EventEnum.specialFinal, this.actor)

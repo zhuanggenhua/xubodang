@@ -40,7 +40,7 @@ export default class DataManager extends Singleton {
   }
   otherPlayer: IPlayer = null
   roomInfo: IRoom = {
-    life: 5,
+    life: 9,
     turn: 0,
   }
 

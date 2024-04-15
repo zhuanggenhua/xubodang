@@ -1,8 +1,10 @@
 import { _decorator, Color, Component, Graphics, instantiate, Node, UITransform } from 'cc'
 import DataManager from '../global/DataManager'
-import { getRandomNumber } from '../utils'
+import { createUINode, getRandomNumber } from '../utils'
 import ParticleMgr from '../particle/ParticleMgr'
 import { GroundSplash } from '../particle/GroundSplash'
+import { LightParticle } from '../particle/LightParticle'
+import { LightPillar } from '../particle/LightPillar'
 const { ccclass, property } = _decorator
 
 export const holeRadius = 100
@@ -16,6 +18,12 @@ export class BattleCanvas extends Component {
   round: number = 0
   width: number = 0
   height: number = 0
+  get particleMgr() {
+    const canvas3 = this.node.getChildByName('canvas3') || createUINode('canvas3')
+    canvas3.parent = this.node
+    const particleMgr = canvas3.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
+    return particleMgr
+  }
   async onLoad() {
     this.graphics = this.node.getComponent(Graphics)
     const tran = this.node.getComponent(UITransform)
@@ -25,11 +33,9 @@ export class BattleCanvas extends Component {
 
     await DataManager.Instance.loadRes() //temp
 
-
     this.graphics.lineWidth = 10
     this.generaRound()
     this.generateClouds()
-    this.drawTrap()
   }
   reset() {
     this.graphics.clear()
@@ -45,7 +51,7 @@ export class BattleCanvas extends Component {
     this.graphics.rect(start, 0, 400, this.round + 10)
     this.graphics.stroke()
     this.graphics.fill()
-    
+
     // 绘制尖刺
     const spikeWidth = 20 // 尖刺的宽度
     const spikeHeight = 30 // 尖刺的高度
@@ -61,6 +67,32 @@ export class BattleCanvas extends Component {
       this.graphics.stroke() // 描边尖刺
       this.graphics.fill() // 填充尖刺
     }
+  }
+
+  // 光辉效果，咖喱棒准备
+  drawLight(time: number = 2) {
+    const particleMgr = this.particleMgr
+    // const particleMgr = this.canvas2.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
+    particleMgr.init(LightParticle, {
+      gap: 0.2,
+      other: {
+        y: this.round,
+      },
+    })
+
+    this.scheduleOnce(() => {
+      particleMgr.destroy()
+    }, time)
+  }
+  drawLightPillar() {
+    // const particleMgr = this.particleMgr
+    // particleMgr.init(LightPillar, {
+    //   max: 1,
+    //   other: {
+    //     x: 0,
+    //     y: this.round,
+    //   },
+    // })
   }
 
   // 挖掘
@@ -80,7 +112,10 @@ export class BattleCanvas extends Component {
     this.graphics.fill()
 
     // 触发粒子特效
-    const particleMgr = this.canvas2.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
+    const canvas3 = this.node.getChildByName('canvas3') || createUINode('canvas3')
+    canvas3.parent = this.node
+    const particleMgr = canvas3.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
+    // const particleMgr = this.canvas2.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
     particleMgr.init(GroundSplash, {
       // gap: 1,
       max: 6,

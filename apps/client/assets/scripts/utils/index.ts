@@ -80,11 +80,10 @@ export const createPrompt = (skillNode: Node, skill: ISkill) => {
   if (skill.pierce) effect += '、穿透'
   if (skill.buff) {
     skill.buff.forEach((buff) => {
-      if (buff === '') return
       effect += `、${buff}`
     })
   }
-  if (skill.special) effect += `、${skill.special}`
+  // if (skill.special) effect += `、${skill.special}`
   if (effect.length > 4) effect = effect.replace('无、', '')
   node.getChildByName('Effect').getComponent(Label).string = effect
 

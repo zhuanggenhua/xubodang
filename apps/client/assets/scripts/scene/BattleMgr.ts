@@ -116,7 +116,8 @@ export class BattleMgr extends Component {
 
   useSkill(skill: ISkill, power: number, id: number = DataManager.Instance.player.id) {
     DataManager.Instance.actors.get(id).skill = new Skill(skill, id)
-    DataManager.Instance.actors.get(id).power -= power
+    // test
+    // DataManager.Instance.actors.get(id).power -= power
 
     // 两个角色都就绪才执行
     let ready = true

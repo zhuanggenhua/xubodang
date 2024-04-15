@@ -31,6 +31,7 @@ export enum EventEnum {
   createActor = 'createActor',
   renderChart = 'renderChart',
   flicker = 'flicker',
+  moveBack = 'moveBack',
 }
 
 export enum PrefabPathEnum {
@@ -56,6 +57,8 @@ export enum TexturePathEnum {
   ActorCrossbow = 'texture/actor/soldier/Crossbow',
   ActorSpade = 'texture/actor/soldier/Spade',
   ActorShieldImpact = 'texture/actor/soldier/ciji',
+  ActorAncientSwordAttack = 'texture/actor/soldier/gali',
+  ActorAncientSwordIdle = 'texture/actor/soldier/galiIdle',
 
   // 子弹
   CrossbowIdle = 'texture/bullet/arrow',
@@ -65,14 +68,14 @@ export enum TexturePathEnum {
 export enum ParamsNameEnum {
   Idle = 'Idle',
   Run = 'Run',
-  Attack = 'Attack',
   Xu = 'Xu',
   Kan = 'Kan',
-  Crossbow = 'Crossbow',
   Jump = 'Jump',
   Spade = 'Spade',
+  Crossbow = 'Crossbow',
   ShieldImpact = 'ShieldImpact',
-  ShieldBash = 'ShieldBash',
+  AncientSwordAttack = 'AncientSwordAttack',
+  AncientSwordIdle = 'AncientSwordIdle',
 }
 
 // 和技能相关的图片路径
@@ -157,7 +160,8 @@ export enum MissType {
 
 // 特殊技能
 export enum Special {
-  Reflect = '反射', //反射
+  Reflect = '反射', //反射  
+  spartan = '斯巴达',
 }
 // 持续效果
 export enum BuffEnum {
@@ -166,5 +170,6 @@ export enum BuffEnum {
   blood = '吸血', //吸血
   retain = '护盾保留', //吸血
   trap = '陷阱', //吸血
-  loopSword = '', //无限
+  loopSword = '无限', //无限
+  spartan = '斯巴达', //斯巴达
 }
