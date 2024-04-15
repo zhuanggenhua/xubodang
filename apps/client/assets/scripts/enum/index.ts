@@ -22,7 +22,6 @@ export enum EventEnum {
   SCREEN_SHAKE = 'SCREEN_SHAKE',
   attackFinal = 'attackFinal',
   updateHp = 'updateHp',
-  onPower = 'onPower',
   powerFinal = 'powerFinal',
   defenseFinal = 'defenseFinal',
   continueFinal = 'continueFinal',
@@ -43,6 +42,7 @@ export enum PrefabPathEnum {
   Actor1 = 'prefab/Actor1',
   RoundShield = 'prefab/RoundShield',
   Crossbow = 'prefab/Crossbow',
+  Sword = 'prefab/Sword',
   ActorIcon = 'prefab/ActorIcon',
   Buff = 'prefab/Buff',
 }
@@ -57,7 +57,9 @@ export enum TexturePathEnum {
   ActorSpade = 'texture/actor/soldier/Spade',
   ActorShieldImpact = 'texture/actor/soldier/ciji',
 
+  // 子弹
   CrossbowIdle = 'texture/bullet/arrow',
+  SwordIdle = 'texture/bullet/sword',
 }
 
 export enum ParamsNameEnum {
@@ -66,8 +68,8 @@ export enum ParamsNameEnum {
   Attack = 'Attack',
   Xu = 'Xu',
   Kan = 'Kan',
-  Jump = 'Jump',
   Crossbow = 'Crossbow',
+  Jump = 'Jump',
   Spade = 'Spade',
   ShieldImpact = 'ShieldImpact',
   ShieldBash = 'ShieldBash',
@@ -164,4 +166,5 @@ export enum BuffEnum {
   blood = '吸血', //吸血
   retain = '护盾保留', //吸血
   trap = '陷阱', //吸血
+  loopSword = '', //无限
 }

@@ -28,7 +28,6 @@ export class BattleCanvas extends Component {
     this.graphics.lineWidth = 10
     this.generaRound()
     this.generateClouds()
-    this.drawTrap()
   }
   reset() {
     this.graphics.clear()
@@ -40,9 +39,26 @@ export class BattleCanvas extends Component {
     this.graphics.strokeColor = new Color('#6B6B6B')
     this.graphics.fillColor = new Color('#6B6B6B')
     // +10是补正石头
-    this.graphics.rect(this.width / 2 - 100, 0, this.width / 2 + 100, this.round + 10)
+    const start = this.width / 2 - 200
+    this.graphics.rect(start, 0, 400, this.round + 10)
     this.graphics.stroke()
     this.graphics.fill()
+    
+    // 绘制尖刺
+    const spikeWidth = 20 // 尖刺的宽度
+    const spikeHeight = 30 // 尖刺的高度
+    const numSpikes = 400 / spikeWidth // 根据画布宽度计算尖刺数量
+    this.graphics.strokeColor = Color.BLACK
+    this.graphics.fillColor = Color.BLACK
+
+    for (let i = 0; i < numSpikes; i++) {
+      this.graphics.moveTo(start + i * spikeWidth, 0) // 移动到每个尖刺的起始位置
+      this.graphics.lineTo(start + i * spikeWidth + spikeWidth / 2, spikeHeight) // 画到尖刺的顶点
+      this.graphics.lineTo(start + (i + 1) * spikeWidth, 0) // 画回尖刺的终点
+      this.graphics.close() // 关闭路径
+      this.graphics.stroke() // 描边尖刺
+      this.graphics.fill() // 填充尖刺
+    }
   }
 
   // 挖掘

@@ -44,16 +44,25 @@ export default class Skill extends Component {
   }
   onDestroy() {
     // 在对象销毁前取消事件注册
-    EventManager.Instance.off(EventEnum.attackFinal, this.attackFinal, this)
     EventManager.Instance.off(EventEnum.powerFinal, this.powerFinal, this)
+    EventManager.Instance.off(EventEnum.attackFinal, this.attackFinal, this)
     EventManager.Instance.off(EventEnum.defenseFinal, this.defenseFinal, this)
     EventManager.Instance.off(EventEnum.missFinal, this.missFinal, this)
+    EventManager.Instance.off(EventEnum.continueFinal, this.continueFinal, this)
     EventManager.Instance.off(EventEnum.specialFinal, this.specialFinal, this)
   }
 
   excute() {
     this.tigerLength = this.skill.type.length
     this.defense = this.skill.defense
+
+    if (this.actor.buffs.has(BuffEnum.loopSword)) {
+      this.tigerLength++
+      this.actor.shoot(this.otherActor, EntityTypeEnum.Sword, () => {
+        this.tiger()
+      })
+    }
+
     this.skill.type.forEach((type) => {
       switch (type) {
         case 0:
@@ -61,8 +70,11 @@ export default class Skill extends Component {
           this.powerHandler()
           break
         case 1:
+          // 用命令模式加队列，也可以达到分步骤执行效果
           EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
-          this.attackHandler()
+          setTimeout(() => {
+            this.attackHandler()
+          })
           break
         case 2:
           EventManager.Instance.on(EventEnum.defenseFinal, this.defenseFinal, this)
@@ -97,31 +109,29 @@ export default class Skill extends Component {
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
       console.log('attack结束')
-
-      this.damage = this.skill.damage
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
-        console.log('伤害', this.damage)
-        this.damage = this.otherActor.shieldBreak(this.damage || 0, this.skill.broken || 0)
-        console.log('最终伤害', this.damage)
+        console.log('伤害', this.skill.damage)
+        this.skill.damage = this.otherActor.shieldBreak(this.skill.damage || 0, this.skill.broken || 0)
+        console.log('最终伤害', this.skill.damage)
 
-        this.otherActor.hp -= this.damage
+        this.otherActor.hp -= this.skill.damage
+
+        // 盾牌碎裂,等动画播完再下回合
+        if (this.skill.damage >= 0 && this.otherActor.shields.length > 0) {
+          this.scheduleOnce(() => {
+            this.tiger()
+          }, 0.1 * DataManager.Instance.animalTime)
+          return
+        }
       }
-      if (this.damage > 0) {
+      if (this.skill.damage > 0 && !this.miss()) {
         if (this.actor.buffs.has(BuffEnum.blood)) {
-          this.actor.hp += this.damage
+          this.actor.hp += this.skill.damage
         }
         // 波类攻击才闪白
         // EventManager.Instance.emit(EventEnum.flicker, this.otherActor)
-      }
-
-      // 盾牌碎裂,等动画播完再下回合
-      if (this.damage >= 0 && this.otherActor.shields.length > 0) {
-        this.scheduleOnce(() => {
-          this.tiger()
-        }, 0.1 * DataManager.Instance.animalTime)
-        return
       }
 
       this.tiger()
@@ -135,6 +145,8 @@ export default class Skill extends Component {
     }
 
     let tag = true
+    // 默认只能打地面
+    if (!this.skill.range) this.skill.range = ['0']
     this.skill.range.forEach((range) => {
       let location = this.otherSkill.skill.location || '0'
       if (range.includes(location.toString())) {
@@ -181,22 +193,21 @@ export default class Skill extends Component {
     if (this.actor.power < 6) {
       this.actor.power += power
     }
+
     this.setSkillState()
   }
   defenseHandler() {
     // 在角色面前生成盾牌
     if (this.skill.shield) {
       if (this.actor.buffs.has(BuffEnum.solid)) {
-        this.defense++
+        this.skill.defense++
       }
-      this.actor.generateShield(this.skill.shield, this.defense)
+      this.actor.generateShield(this.skill.shield, this.skill)
     }
     // 直接防御结束
     EventManager.Instance.emit(EventEnum.defenseFinal, this.actor)
   }
   attackHandler() {
-    const otherSkill = this.otherSkill.skill
-
     if (this.skill.speed === 1) {
       // 快速攻击（一般是射击）  立即触发动画
       this.setSkillState()
@@ -228,6 +239,9 @@ export default class Skill extends Component {
     this.setSkillState()
   }
   continueHandler() {
+    if (this.skill.buff?.indexOf(BuffEnum.trap) !== -1) {
+      this.actor.state = ParamsNameEnum.Xu
+    }
     this.actor.setBuffer(this.skill)
   }
   specialHandler() {
@@ -235,6 +249,7 @@ export default class Skill extends Component {
       case Special.Reflect:
         //bullet存在就代表是远程弹丸攻击
         if (this.otherSkill.skill.bullet) {
+          // 这里让盾墙只能保留普通护盾
           EventManager.Instance.on(EventEnum.attackFinal, this.attackFinal, this)
         } else {
           EventManager.Instance.emit(EventEnum.specialFinal, this.actor)

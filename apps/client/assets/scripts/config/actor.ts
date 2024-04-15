@@ -158,6 +158,7 @@ const actors: { [key: string]: IActor } = {
         {
           name: '无限剑制',
           type: [4],
+          buff: [BuffEnum.loopSword],
           desc: '每回合发出一次快速飞剑攻击',
           damage: 1,
           particle: SkillPathEnum.SwordTie,

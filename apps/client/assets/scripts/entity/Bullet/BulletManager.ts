@@ -24,6 +24,7 @@ export class BulletManager extends EntityManager {
   private tw: Tween<any>
   private targetPos: Vec3
 
+  // 添加子弹： 在TexturePathEnum添加状态参数，在PrefabPathEnum添加预制体
   init(actor, type = EntityTypeEnum.Crossbow) {
     this.actor = actor
     this.type = type
@@ -33,8 +34,8 @@ export class BulletManager extends EntityManager {
     this.state = ParamsNameEnum.Idle
   }
 
-  move(targetNode: Node, callback?: Function) {
-    if (callback) callback()
+  move(targetNode: Node, callback?: Function, callbackStart?: Function) {
+    if (callbackStart) callbackStart()
     // 真正的目标位置，带点随机
     // new Vec3(targetNode.position)
     const tempPosition = getNodePos(targetNode, DataManager.Instance.battleCanvas.node)
@@ -53,14 +54,29 @@ export class BulletManager extends EntityManager {
     const side = Math.sqrt(x * x + y * y)
     //   当点在第二象限时,使用-y获取第四象限的对应角度，然后加180得到第二象限的角度
     this.angle = x > 0 ? rad2Angle(Math.asin(y / side)) : rad2Angle(Math.asin(-y / side)) + 180
+    if (isPlayer(this.actor.id)) console.log('玩家角度', this.angle)
+    else console.log('敌人角度', this.angle)
 
-    // 修正方向
+    // 修正方向   不同预制体初始方向不同
+    let offsetRange = -90
+    let shootSpeed = 0.3
+    switch (this.type) {
+      case EntityTypeEnum.Sword:
+        shootSpeed = 0.1
+        offsetRange = -45
+        break
+    }
+
     // this.angle += Math.random() * 20 - 10
-    this.node.setRotationFromEuler(0, 0, this.angle - 90)
+    this.node.setRotationFromEuler(0, 0, this.angle + offsetRange)
 
+    const tempNode = new Node()
+    tempNode.parent = this.node.parent
+    const tran = this.node.getComponent(UITransform)
+    tempNode.addComponent(UITransform).setContentSize(tran.height, tran.width)
     const tw = tween(this.node)
       .to(
-        0.3 * DataManager.Instance.animalTime,
+        shootSpeed * DataManager.Instance.animalTime,
         { position: tempPosition },
         {
           //  target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
@@ -68,13 +84,11 @@ export class BulletManager extends EntityManager {
             // 闪避，则不处理碰撞
             if (this.actor.skill.miss()) return
             // 重新设置箭矢的宽高
-            const tempNode = new Node()
-            tempNode.parent = this.node.parent
             tempNode.position = this.node.position
-            const tran = this.node.getComponent(UITransform)
-            tempNode.addComponent(UITransform).setContentSize(tran.height, tran.width)
 
             if (checkCollision(tempNode, targetNode, [EntityTypeEnum.Crossbow, EntityTypeEnum.Actor])) {
+              tempNode.destroy()
+              if (callback) callback()
               // 如果检测到碰撞，可以通过 tween.stop() 停止移动
               console.log('子弹碰撞')
               tw.stop()
@@ -98,11 +112,16 @@ export class BulletManager extends EntityManager {
                     // 设置方向的时候就会翻转
                     // this.node.scale = new Vec3(1, -this.node.scale.y, 1)
 
-                    this.move(this.actor.shields[this.actor.shields.length - 1]?.node || this.actor.node, () => {
-                      this.actor.otherActor.skill.skill = this.actor.skill.skill
-                      this.actor = this.actor.otherActor
-                      // this.actor.otherActor.onAttack()
-                    })
+                    this.move(
+                      this.actor.shields[this.actor.shields.length - 1]?.node || this.actor.node,
+                      () => {},
+                      () => {
+                        // 用回调修正攻击者
+                        this.actor.otherActor.skill.skill = this.actor.skill.skill
+                        this.actor = this.actor.otherActor
+                        // this.actor.otherActor.onAttack()
+                      },
+                    )
                     return
                   }
 

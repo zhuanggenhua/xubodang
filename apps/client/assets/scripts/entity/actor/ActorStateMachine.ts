@@ -11,9 +11,11 @@ const { ccclass } = _decorator
 
 @ccclass('ActorStateMachine')
 export class ActorStateMachine extends StateMachine {
-  init(type: EntityTypeEnum) {
+  actor: ActorManager
+  init(type: EntityTypeEnum, actor: ActorManager) {
     // actor 有不同类型
     this.type = type
+    this.actor = actor
     this.animationComponent = this.node.addComponent(Animation)
     this.initParams()
     this.initStateMachines()
@@ -22,7 +24,7 @@ export class ActorStateMachine extends StateMachine {
 
   initAnimationEvent() {
     const reset = () => {
-      const whiteList = [ParamsNameEnum.Xu, 'attack']
+      const whiteList = [ParamsNameEnum.Xu]
       const name = this.animationComponent.defaultClip.name
       // 白名单内的动画结束后都要转为静止动画
       if (whiteList.some((v) => name.includes(v))) {
@@ -30,7 +32,7 @@ export class ActorStateMachine extends StateMachine {
       }
       // xu的事件
       if ([ParamsNameEnum.Xu].some((v) => name.includes(v))) {
-        EventManager.Instance.emit(EventEnum.onPower)
+        EventManager.Instance.emit(EventEnum.powerFinal, this.actor)
       }
     }
     // this.animationComponent.on(Animation.EventType.FINISHED, reset)
@@ -61,7 +63,7 @@ export class ActorStateMachine extends StateMachine {
         AnimationClip.WrapMode.Loop,
         [],
         ANIMATION_SPEED,
-        0.3 * DataManager.Instance.animalTime,
+        0.2 * DataManager.Instance.animalTime,
       ),
     )
     this.stateMachines.set(

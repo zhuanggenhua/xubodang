@@ -80,6 +80,7 @@ export const createPrompt = (skillNode: Node, skill: ISkill) => {
   if (skill.pierce) effect += '、穿透'
   if (skill.buff) {
     skill.buff.forEach((buff) => {
+      if (buff === '') return
       effect += `、${buff}`
     })
   }

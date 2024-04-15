@@ -89,14 +89,16 @@ export class SkillUiMgr extends Component {
           Input.EventType.TOUCH_END,
           (event: EventTouch) => {
             if (this.isDisable) return
-            skillNode.getComponent(UIOpacity).opacity = 255
+            // skillNode.getComponent(UIOpacity).opacity = 255
             // 处理旋转下落的
-            this.handlerTouchEnd(skillNode, skill, itemIndex)
+
+            this.handlerTouchEnd(skillNode, skill, itemIndex)()
 
             // 设置提示框
             createPrompt(skillNode, skill)
 
             if (!this.isStart) return //未开始不实际使用
+            if (skillNode.getComponent(UIOpacity).opacity === 100) return //变灰的无法使用
             // 第二次按下
             if (this.activeSkill == skillNode) {
               if (DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex) return
@@ -139,6 +141,7 @@ export class SkillUiMgr extends Component {
           // 将世界坐标转换为新父节点的局部坐标
           let localPosition = DataManager.Instance.stage.getComponent(UITransform).convertToNodeSpaceAR(worldPos)
           this.dragNode.setPosition(localPosition.x, localPosition.y)
+
           // 隐藏原按钮
           skillNode.getComponent(UIOpacity).opacity = 0
         })
@@ -242,9 +245,8 @@ export class SkillUiMgr extends Component {
   }
 
   updateSkillItem(power: number) {
+    console.log('当前能量, 所需能量', power)
     this.skillItemNodes.forEach((item, index) => {
-      console.log('当前能量', power, index)
-
       if (index > power) item.getComponent(UIOpacity).opacity = 100
       else item.getComponent(UIOpacity).opacity = 255
     })
@@ -261,12 +263,17 @@ export class SkillUiMgr extends Component {
     }
 
     this.scheduleOnce(() => {
+      console.log('重置')
+
       // 恢复场景
       DataManager.Instance.battleCanvas.reset()
 
       DataManager.Instance.roomInfo.turn += 1
       DataManager.Instance.actors.forEach((actor) => {
-        actor.skill?.onDestroy()
+        actor.skill.onDestroy()
+        // if (actor.skill && actor.skill.destroy) {
+        //   actor.skill.destroy()
+        // }
         actor.skill = null
         // 重置位置
         actor.reset()
@@ -289,6 +296,9 @@ export class SkillUiMgr extends Component {
           item.getComponent(UIOpacity).opacity = 255
         })
       })
+
+      console.log('当前轮次', DataManager.Instance.roomInfo.turn);
+      
     }, 0.05 * DataManager.Instance.animalTime)
   }
 }

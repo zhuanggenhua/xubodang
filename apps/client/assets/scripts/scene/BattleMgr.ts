@@ -185,7 +185,7 @@ export class BattleMgr extends Component {
     }
 
     let count = 0
-    if (DataManager.Instance.actors?.get(id)?.hp) {
+    if (DataManager.Instance.actors?.get(id)) {
       count = DataManager.Instance.actors?.get(id)?.hp
     } else {
       count = DataManager.Instance.roomInfo?.life
