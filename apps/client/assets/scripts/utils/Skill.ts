@@ -1,10 +1,10 @@
-import { isPlayer } from './index'
+import { isPlayer, setPrefab } from './index'
 import { EntityTypeEnum, ISkill } from '../common'
 import { BuffEnum, EventEnum, MissType, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'
-import { Component } from 'cc'
+import { Component, instantiate, Node, v3 } from 'cc'
 
 /**
  * 添加技能：
@@ -59,8 +59,8 @@ export default class Skill extends Component {
     if (this.actor.buffs.has(BuffEnum.loopSword)) {
       this.tigerLength++
       this.actor.shoot(this.otherActor, EntityTypeEnum.Sword, () => {
-        console.log('attack结束')
-        const skill = { damage: 1 }
+        console.log('飞剑结束')
+        const skill: ISkill = { damage: 1, range: ['0', '1'], type: [1] }
         // 处理闪避
         if (!this.miss()) {
           // 盾牌碎裂
@@ -81,6 +81,27 @@ export default class Skill extends Component {
 
         this.tiger()
       })
+    }
+
+    if (this.skill.special === Special.copy) {
+      this.actor.node.getChildByName('eyes').active = true
+      this.scheduleOnce(() => {
+        this.actor.node.getChildByName('eyes').active = false
+      }, 0.1 * DataManager.Instance.animalTime)
+      this.skill = this.otherSkill.skill
+    }
+
+    if (this.actor.buffs.has(BuffEnum.clone)) {
+      if (this.actor.actorClone[0]) {
+        this.skill.power += this.skill.power
+        this.skill.damage += this.skill.damage
+        this.skill.defense += this.skill.defense
+      }
+      if (this.actor.actorClone[1]) {
+        this.skill.power += this.skill.power
+        this.skill.damage += this.skill.damage
+        this.skill.defense += this.skill.defense
+      }
     }
 
     this.skill.type.forEach((type) => {
@@ -130,20 +151,76 @@ export default class Skill extends Component {
     if (actor === this.actor) {
       console.log('attack结束')
 
+      const otherActor = this.otherActor
       switch (this.otherSkill.skill.missType) {
         case MissType.Single:
-          // 烟雾动画
-          EventManager.Instance.emit(EventEnum.missSingle, this.otherActor)
+          otherActor.state = ParamsNameEnum.clone
+          // 替身动画
+          EventManager.Instance.emit(EventEnum.missSingle, otherActor)
       }
-
+      console.log('伤害',this.miss())
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
         console.log('伤害', this.skill.damage)
-        const damage = this.otherActor.shieldBreak(this.skill.damage || 0, this.skill.broken || 0)
-        console.log('最终伤害', damage)
+        let damage
+        if (this.skill.pierce) {
+          // 穿透，直接造成伤害
+          this.otherActor.hp -= this.skill.damage
+          this.tiger()
+          return
+        } else {
+          damage = this.otherActor.shieldBreak(this.skill.damage || 0, this.skill.broken || 0)
+        }
+        // 分身
+        if (this.otherActor.buffs.has(BuffEnum.clone) && damage > 0) {
+          if (this.otherActor.actorClone[0]) {
+            const otherActor = this.otherActor.actorClone[0]
+            otherActor.getComponent(ActorManager).state = ParamsNameEnum.clone
+            this.otherActor.actorClone[0] = null
+            this.scheduleOnce(() => {
+              otherActor.destroy()
+            }, 0.1 * DataManager.Instance.animalTime)
+            damage -= 1
+          }
+          if (this.otherActor.actorClone[1] && damage > 0) {
+            const otherActor = this.otherActor.actorClone[1]
+            otherActor.getComponent(ActorManager).state = ParamsNameEnum.clone
+            this.otherActor.actorClone[1] = null
+            this.scheduleOnce(() => {
+              otherActor.destroy()
+            }, 0.1 * DataManager.Instance.animalTime)
+            damage -= 1
+          }
+        }
 
+        console.log('最终伤害', damage)
         this.otherActor.hp -= damage
+        // 吸血
+        if (this.actor.buffs.has(BuffEnum.blood) && !this.skill.longrang) {
+          if (this.skill.damage > 0 && !this.miss()) {
+            this.actor.hp += this.skill.damage
+          }
+        }
+
+        
+        if (damage > 0) {
+          if (this.skill.animal == ParamsNameEnum.AncientSwordIdle) {
+            // 没有动画，用闪白将就下
+            EventManager.Instance.emit(EventEnum.flicker, this.actor.otherActor)
+            EventManager.Instance.emit(EventEnum.moveBack, this.actor.otherActor, 200, 0)
+          }
+          if (this.skill.animal == ParamsNameEnum.QiGong) {
+            EventManager.Instance.emit(EventEnum.moveBack, this.otherActor, 200, 0)
+            this.scheduleOnce(() => {
+              console.log('????????????????????');
+              
+              this.tiger()
+            }, 0.2 * DataManager.Instance.animalTime)
+            return
+          }
+        }
+        console.log('asdfafsd????????????????????');
 
         // 盾牌碎裂,等动画播完再下回合
         if (damage >= 0 && this.otherActor.shields.length > 0) {
@@ -153,31 +230,32 @@ export default class Skill extends Component {
           return
         }
       }
-      if (this.skill.damage > 0 && !this.miss()) {
-        if (this.actor.buffs.has(BuffEnum.blood)) {
-          this.actor.hp += this.skill.damage
-        }
-        // 波类攻击才闪白
-        // EventManager.Instance.emit(EventEnum.flicker, this.otherActor)
-      }
 
       this.tiger()
     }
   }
+
   // 判断是否被闪避
   miss() {
+    // 闪避所有
+    if (this.otherSkill.skill.missType === MissType.All) {
+      return true
+    }
+    // 不可被闪避
     if (this.skill.special === Special.gengzongbo) {
       return false
     }
     // 闪避弹丸类型
-    if (this.skill.bullet && this.otherSkill.skill.missType === MissType.Bullet) {
-      return true
-    }
+    // if (this.skill.bullet && this.otherSkill.skill.missType === MissType.Bullet) {
+    //   return true
+    // }
 
     let tag = true
 
     // 单范围闪避
     switch (this.otherSkill.skill.missType) {
+      case MissType.Bullet:
+        if (!this.skill.longrang) break
       case MissType.Single:
         this.skill.range.forEach((range) => {
           if (range.length > 1) tag = false
@@ -187,9 +265,10 @@ export default class Skill extends Component {
 
     // 默认只能打地面
     if (!this.skill.range) this.skill.range = ['0']
+    if (this.actor.buffs.has(BuffEnum.fly)) this.skill.range.push('1')
     this.skill.range.forEach((range) => {
-      let location = this.otherSkill.skill.location || '0'
-      if (range.includes(location.toString())) {
+      let location = this.otherActor.location || '0'
+      if (range.includes(location)) {
         //只要包含了，就没有被闪避，当然在missType后判断
         tag = false
       }
@@ -246,22 +325,75 @@ export default class Skill extends Component {
     if (this.skill.shield) {
       this.actor.generateShield(this.skill.shield, this.skill)
     }
+
+    if (this.skill.special === Special.door) {
+      this.setSkillState()
+      return
+    }
     // 直接防御结束
     EventManager.Instance.emit(EventEnum.defenseFinal, this.actor)
   }
   attackHandler() {
+    if (this.skill.special === Special.qigongpao) {
+      this.setSkillState()
+    }
+
+    if (this.skill.special === Special.fire) {
+      this.actor.node.getChildByName('eyes').active = true
+      this.scheduleOnce(() => {
+        let fire
+        if (this.otherActor.isMove) {
+          fire = setPrefab('Fire', this.otherActor.node)
+        } else {
+          fire = setPrefab('Fire', this.otherActor.node.parent)
+          fire.setPosition(this.otherActor.node.position)
+        }
+        this.scheduleOnce(() => {
+          fire.destroy()
+          this.actor.node.getChildByName('eyes').active = false
+          EventManager.Instance.emit(EventEnum.attackFinal, this.actor)
+        }, 0.2 * DataManager.Instance.animalTime)
+      }, 0.1 * DataManager.Instance.animalTime)
+      return
+    }
+
+    if (this.actor.buffs.has(BuffEnum.saiya) && this.skill.name.includes('龟波气功')) {
+      this.skill.damage += 2
+    }
     if (this.actor.buffs.has(BuffEnum.spartan)) {
       this.skill.damage += 1
     }
+    if (this.actor.buffs.has(BuffEnum.shuangbei)) {
+      this.skill.damage *= 2
+      this.actor.hp--
+    }
 
-    if (this.skill.speed === 1) {
-      // 快速攻击（一般是射击）  立即触发动画
+    if (this.skill.special === Special.sun) {
       this.setSkillState()
-      if (this.skill.bullet) {
+      this.scheduleOnce(() => {
+        // 太阳特效
+        const sun = setPrefab('Sun', this.actor.node)
+        this.scheduleOnce(() => {
+          sun.destroy()
+          this.actor.move(this.otherActor, () => {
+            this.actor.state = ParamsNameEnum.Kan
+          })
+        }, 0.2 * DataManager.Instance.animalTime)
+      }, 0.1 * DataManager.Instance.animalTime)
+      return
+    }
+
+    // 远程弹丸
+    if (this.skill.bullet) {
+      if (this.skill.speed === 1) {
+        // 快速攻击（一般是射击）  立即触发动画
+        this.setSkillState()
         this.actor.shoot(this.otherActor, this.skill.bullet)
+        return
       }
     }
 
+    // 近距离
     if (this.skill.target === 1) {
       // 目标是自己
       DataManager.Instance.actor1.hp -= this.skill.damage
@@ -271,7 +403,7 @@ export default class Skill extends Component {
       if (!this.skill.longrang) {
         // if (!this.otherSkill.skill.location || this.otherSkill.skill.location == 0) {
         // 近战攻击，进入移动  反正就两个角色，不用事件系统更方便
-        this.actor.state = ParamsNameEnum.Run
+
         this.actor.move(this.otherActor, () => {
           this.setSkillState()
         })
@@ -279,23 +411,63 @@ export default class Skill extends Component {
         //   // 不在范围，骂街
         // }
       } else {
-        // 远距离慢速攻击
+        //慢速远程
         this.setSkillState()
       }
     }
   }
   missHandler() {
-    this.setSkillState()
+    // 闪避的时机
+    if (this.otherSkill.skill.animal == ParamsNameEnum.QiGong) {
+      this.scheduleOnce(() => {
+        this.setSkillState()
+      }, 0.2 * DataManager.Instance.animalTime)
+    } else {
+      this.setSkillState()
+    }
+    if (this.skill.location) this.actor.location = this.skill.location
     switch (this.skill.missType) {
       case MissType.Single:
+      case MissType.All:
         EventManager.Instance.emit(EventEnum.missFinal, this.actor)
     }
   }
   continueHandler() {
+    this.actor.setBuffer(this.skill)
+
+    if (this.skill.buff?.indexOf(BuffEnum.saiya) !== -1) {
+      this.setSkillState()
+    }
+
+    if (this.skill.buff?.indexOf(BuffEnum.clone) !== -1) {
+      if (this.actor.actorClone[0]) {
+        this.actor.actorClone[0].destroy()
+        this.actor.actorClone[0] = null
+      }
+      if (this.actor.actorClone[1]) {
+        this.actor.actorClone[1].destroy()
+        this.actor.actorClone[1] = null
+      }
+
+      let clone1 = instantiate<Node>(this.actor.node)
+      clone1.setParent(this.actor.node)
+      clone1.setPosition(v3(0, 0))
+      clone1.getComponent(ActorManager).isClone = true
+      clone1.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1)
+      this.actor.actorClone[0] = clone1
+      let clone2 = instantiate<Node>(this.actor.node)
+      clone2.setParent(this.actor.node)
+      clone2.setPosition(v3(0, 0))
+      clone2.getComponent(ActorManager).isClone = true
+      clone2.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1)
+      this.actor.actorClone[1] = clone2
+
+      this.setSkillState()
+    }
+
     if (this.skill.buff?.indexOf(BuffEnum.trap) !== -1) {
       this.setSkillState()
     }
-    this.actor.setBuffer(this.skill)
   }
   specialHandler() {
     switch (this.skill.special) {
@@ -310,6 +482,9 @@ export default class Skill extends Component {
         break
       case Special.spartan:
         this.actor.node.getChildByName('solider').active = true
+      case Special.saiya:
+        this.actor.node.getChildByName('saiya').active = true
+      // this.actor.
       default:
         // 没有特殊情况直接结束
         EventManager.Instance.emit(EventEnum.specialFinal, this.actor)

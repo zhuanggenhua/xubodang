@@ -34,7 +34,6 @@ export class HallManager extends Component {
     // screen.requestFullScreen() //全屏
     DataManager.Instance.loadRes()
   }
-  // test
 
   onDestroy() {
     EventManager.Instance.off(EventEnum.RoomCreate, this.handleCreateRoom, this)

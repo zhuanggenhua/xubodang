@@ -43,7 +43,7 @@ export enum EntityTypeEnum {
   Crossbow = 'Crossbow',
   Bo = 'Bo',
   Sword = 'Sword',
-  Explosion = 'Explosion',
+  Yu = 'Yu',
 }
 
 export enum ApiFunc {
@@ -164,7 +164,7 @@ export interface ISkill {
   bullet?: EntityTypeEnum
   longrang?: boolean
   pierce?: boolean
-  location?: number
+  location?: '0' | '1' | '2'
   defense?: number
   power?: number
   particle?: SkillPathEnum

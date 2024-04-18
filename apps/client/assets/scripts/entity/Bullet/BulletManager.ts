@@ -67,6 +67,9 @@ export class BulletManager extends EntityManager {
         shootSpeed = 0.2
         offsetRange = -45
         break
+      case EntityTypeEnum.Yu:
+        shootSpeed = 0.2
+        break
     }
 
     // this.angle += Math.random() * 20 - 10
@@ -138,7 +141,7 @@ export class BulletManager extends EntityManager {
       )
       .call(() => {
         // 跟踪波处理
-        if (this.actor.skill.skill.special === Special.gengzongbo) {
+        if (this.actor.skill.skill.special === Special.gengzongbo && !this.actor.skill.miss()) {
           this.move(
             this.actor.otherActor.shields[this.actor.otherActor.shields.length - 1]?.node || this.actor.otherActor.node,
           )

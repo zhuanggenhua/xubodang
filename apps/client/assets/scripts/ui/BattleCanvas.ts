@@ -5,6 +5,7 @@ import ParticleMgr from '../particle/ParticleMgr'
 import { GroundSplash } from '../particle/GroundSplash'
 import { LightParticle } from '../particle/LightParticle'
 import { LightPillar } from '../particle/LightPillar'
+import { Door } from '../particle/Door'
 const { ccclass, property } = _decorator
 
 export const holeRadius = 100
@@ -18,12 +19,7 @@ export class BattleCanvas extends Component {
   round: number = 0
   width: number = 0
   height: number = 0
-  get particleMgr() {
-    const canvas3 = this.node.getChildByName('canvas3') || createUINode('canvas3')
-    canvas3.parent = this.node
-    const particleMgr = canvas3.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
-    return particleMgr
-  }
+
   async onLoad() {
     this.graphics = this.node.getComponent(Graphics)
     const tran = this.node.getComponent(UITransform)
@@ -71,7 +67,9 @@ export class BattleCanvas extends Component {
 
   // 光辉效果，咖喱棒准备
   drawLight(time: number = 2) {
-    const particleMgr = this.particleMgr
+    const canvas3 = this.node.getChildByName('canvas6') || createUINode('canvas6')
+    canvas3.parent = this.node
+    const particleMgr = canvas3.getComponent(ParticleMgr) || canvas3.addComponent(ParticleMgr)
     // const particleMgr = this.canvas2.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
     particleMgr.init(LightParticle, {
       gap: 0.2,
@@ -84,13 +82,16 @@ export class BattleCanvas extends Component {
       particleMgr.destroy()
     }, time)
   }
-  drawLightPillar() {
-    // const particleMgr = this.particleMgr
-    // particleMgr.init(LightPillar, {
+
+  drawMen(isPlayer) {
+    // const canvas3 = this.node.getChildByName('canvas7') || createUINode('canvas7')
+    // canvas3.parent = this.node
+    // const particleMgr = canvas3.getComponent(ParticleMgr) || canvas3.addComponent(ParticleMgr)
+    // // const particleMgr = this.canvas2.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
+    // particleMgr.init(Door, {
     //   max: 1,
     //   other: {
-    //     x: 0,
-    //     y: this.round,
+    //     isPlayer,
     //   },
     // })
   }
@@ -112,9 +113,9 @@ export class BattleCanvas extends Component {
     this.graphics.fill()
 
     // 触发粒子特效
-    const canvas3 = this.node.getChildByName('canvas3') || createUINode('canvas3')
+    const canvas3 = this.node.getChildByName('canvas4') || createUINode('canvas4')
     canvas3.parent = this.node
-    const particleMgr = canvas3.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
+    const particleMgr = canvas3.getComponent(ParticleMgr) || canvas3.addComponent(ParticleMgr)
     // const particleMgr = this.canvas2.getComponent(ParticleMgr) || this.canvas2.addComponent(ParticleMgr)
     particleMgr.init(GroundSplash, {
       // gap: 1,

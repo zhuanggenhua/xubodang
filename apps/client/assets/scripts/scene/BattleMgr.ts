@@ -1,7 +1,7 @@
 import { _decorator, Color, Component, Input, instantiate, Label, Node, Sprite, tween, UIOpacity, Vec3 } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
-import { EventEnum } from '../enum'
+import { BuffEnum, EventEnum } from '../enum'
 import { ApiFunc, EntityTypeEnum, IActor, IPlayer, ISkill } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
@@ -78,8 +78,8 @@ export class BattleMgr extends Component {
     )
     // test
     // 渲染当前选中角色技能，默认是战士
-    this.renderSkills(actors.soldier)
-    // this.renderSkills(actors.animeMan)
+    // this.renderSkills(actors.soldier)
+    this.renderSkills(actors.animeMan)
     this.createActor()
     if (DataManager.Instance.mode === 'single') {
       Ai.Instance.setActor('animeMan')
@@ -118,8 +118,11 @@ export class BattleMgr extends Component {
 
   useSkill(skill: ISkill, power: number, id: number = DataManager.Instance.player.id) {
     DataManager.Instance.actors.get(id).skill = new Skill(skill, id)
-    // test
-    // DataManager.Instance.actors.get(id).power -= power
+    if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.saiya) && skill.name.includes('波')) {
+      power--
+    }
+    DataManager.Instance.actors.get(id).power -= power
+    console.log('释放后能量', power)
 
     // 两个角色都就绪才执行
     let ready = true
@@ -133,11 +136,6 @@ export class BattleMgr extends Component {
       // test
       DataManager.Instance.actor1.skill.excute()
       DataManager.Instance.actor2.skill.excute()
-      console.log(
-        '当前能量',
-        DataManager.Instance.actors.get(DataManager.Instance.player.id).power,
-        DataManager.Instance.actor2.power,
-      )
     }
   }
 

@@ -49,6 +49,9 @@ export enum PrefabPathEnum {
   Buff = 'prefab/Buff',
   Wood = 'prefab/Wood',
   Bo = 'prefab/Bo',
+  Fire = 'prefab/Fire',
+  Sun = 'prefab/Sun',
+  Yu = 'prefab/Yu',
 }
 
 export enum TexturePathEnum {
@@ -64,11 +67,19 @@ export enum TexturePathEnum {
   ActorAncientSwordIdle = 'texture/actor/soldier/galiIdle',
 
   ActorBo = 'texture/actor/animeMan/bo',
+  ActorSun = 'texture/actor/animeMan/sun',
+  ActorWuKong = 'texture/actor/animeMan/wukong',
+  ActorQiGong = 'texture/actor/animeMan/qigong',
+  Actorqigongpao = 'texture/actor/animeMan/qigongpao',
+  Actorclone = 'texture/actor/animeMan/clone',
+  Actoryuanqidan = 'texture/actor/animeMan/yuanqidan',
+  Actormen = 'texture/actor/animeMan/men',
 
   // 子弹
   CrossbowIdle = 'texture/bullet/arrow',
   SwordIdle = 'texture/bullet/sword',
   BoIdle = 'texture/bullet/bo',
+  YuIdle = 'texture/bullet/bo',
 }
 
 export enum ParamsNameEnum {
@@ -79,10 +90,18 @@ export enum ParamsNameEnum {
   Jump = 'Jump',
   Spade = 'Spade',
   Crossbow = 'Crossbow',
-  Bo = 'Bo',
   ShieldImpact = 'ShieldImpact',
   AncientSwordAttack = 'AncientSwordAttack',
   AncientSwordIdle = 'AncientSwordIdle',
+
+  Bo = 'Bo',
+  Sun = 'Sun',
+  WuKong = 'WuKong',
+  QiGong = 'QiGong',
+  qigongpao = 'qigongpao',
+  clone = 'clone',
+  yuanqidan = 'yuanqidan',
+  men = 'men',
 }
 
 // 和技能相关的图片路径
@@ -167,9 +186,15 @@ export enum MissType {
 
 // 特殊技能
 export enum Special {
-  Reflect = '反射', //反射  
+  Reflect = '反射', //反射
   spartan = '斯巴达',
   gengzongbo = '追踪',
+  fire = '火',
+  sun = '打断',
+  copy = '复制',
+  qigongpao = '气功',
+  saiya = '赛亚人',
+  door = '门',
 }
 // 持续效果
 export enum BuffEnum {
@@ -180,4 +205,8 @@ export enum BuffEnum {
   trap = '陷阱', //吸血
   loopSword = '无限', //无限
   spartan = '斯巴达', //斯巴达
+  fly = '滞空',
+  shuangbei = '双倍',
+  clone = '分身',
+  saiya = '赛亚人',
 }

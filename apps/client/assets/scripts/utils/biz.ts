@@ -1,6 +1,7 @@
-import { Color, Label } from 'cc'
+import { Color, Label, instantiate } from 'cc'
 import { IPlayer } from '../common'
 import { SkillPathEnum } from '../enum'
+import DataManager from '../global/DataManager'
 
 // 属性值映射
 export const attrMap = {
@@ -19,8 +20,13 @@ export const attrMap = {
   },
 }
 
-
-
 export const getSkillPath = (skill: SkillPathEnum) => {
   return `ui/skills/${skill}/spriteFrame`
+}
+
+export const setPrefab = (name, node) => {
+  const prefab = DataManager.Instance.prefabMap.get(name)
+  const fire = instantiate(prefab)
+  fire.setParent(node)
+  return fire
 }

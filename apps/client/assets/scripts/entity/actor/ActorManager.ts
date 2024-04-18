@@ -14,6 +14,7 @@ import {
   v2,
   Size,
   Color,
+  Prefab,
 } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
 import { EntityTypeEnum, ISkill } from '../../common'
@@ -72,11 +73,14 @@ export class ActorManager extends EntityManager {
   }
 
   shields = []
+  actorClone: Node[] = [null, null]
 
   initPosition: Vec3 = new Vec3(0, 0)
+  flyPosition: Vec3 = new Vec3(0, 0)
 
   private tw: Tween<unknown>
   tran: UITransform
+  location: '0' | '1' | '2' = '0'
 
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.flicker, this.flicker, this)
@@ -87,6 +91,20 @@ export class ActorManager extends EntityManager {
     EventManager.Instance.on(EventEnum.flicker, this.flicker, this)
     EventManager.Instance.on(EventEnum.moveBack, this.moveBack, this)
     EventManager.Instance.on(EventEnum.missSingle, this.onMissSingle, this)
+  }
+
+  isClone: boolean = false
+  set state(newState) {
+    super.state = newState // 调用父类的 setter
+    // 这里可以添加额外的处理逻辑
+    if (this.buffs.has(BuffEnum.clone) && !this.isClone) {
+      this.actorClone.forEach((node) => {
+        if (node) {
+          const actor = node.getComponent(ActorManager)
+          actor.state = newState
+        }
+      })
+    }
   }
 
   // private wm: WeaponManager;
@@ -102,6 +120,8 @@ export class ActorManager extends EntityManager {
 
     this.state = ParamsNameEnum.Idle
 
+    if (this.isClone) return
+
     const offsetX = DataManager.Instance.battleCanvas.width / 5
     if (isPlayer(id)) {
       this.initPosition = new Vec3(offsetX, DataManager.Instance.battleCanvas.round + this.tran.height / 2)
@@ -111,6 +131,7 @@ export class ActorManager extends EntityManager {
         DataManager.Instance.battleCanvas.round + this.tran.height / 2,
       )
     }
+    this.flyPosition = new Vec3(this.initPosition.x, this.initPosition.y + 150)
     this.reset()
   }
   onDestroy() {}
@@ -124,7 +145,11 @@ export class ActorManager extends EntityManager {
       this.buffs.add(buff)
     })
     // 陷阱类不渲染
-    if (skill.buff.indexOf(BuffEnum.trap) !== -1) {
+    if (
+      skill.buff.indexOf(BuffEnum.trap) !== -1 ||
+      skill.buff.indexOf(BuffEnum.fly) !== -1 ||
+      skill.buff.indexOf(BuffEnum.clone) !== -1
+    ) {
       EventManager.Instance.emit(EventEnum.continueFinal, this)
       return
     }
@@ -165,12 +190,16 @@ export class ActorManager extends EntityManager {
   // 击退
   moveBack(actor: ActorManager, offsetX, offsetY = 0) {
     if (actor === this) {
+      if (this.otherActor.skill.miss()) return
       const { x, y } = this.node.position
       if (isPlayer(this.id)) offsetX = -offsetX
       console.log('击退', offsetX, offsetY)
 
       tween(this.node)
         .to(0.2, { position: new Vec3(x + offsetX, y + offsetY, this.node.position.z) }, { easing: 'sineOut' })
+        .call(() => {
+          if (!this.isMove) this.node.position = this.location == '0' ? this.initPosition : this.flyPosition
+        })
         .start()
     }
   }
@@ -238,17 +267,25 @@ export class ActorManager extends EntityManager {
     this.shields.splice(this.shields.indexOf(shield), 1)
   }
 
-  shoot(target: ActorManager, bulletEnum: EntityTypeEnum, callback?: Function) {
-    const prefab = DataManager.Instance.prefabMap.get(bulletEnum)
-    const bullet = instantiate(prefab)
-    // bullet.addComponent(UITransform).setContentSize(100, 20)
-    bullet.setParent(this.node.parent)
+  shoot(target: ActorManager, bulletEnum: EntityTypeEnum | Node, callback?: Function) {
+    let bullet
 
-   
-    bullet.setPosition(
-      isPlayer(this.id) ? this.node.position.x + 100 : this.node.position.x - 100,
-      this.node.position.y,
-    )
+    if (bulletEnum instanceof Node) {
+      // 处理元气弹
+      // bulletEnum 是 Prefab
+      bullet = bulletEnum
+      bulletEnum = EntityTypeEnum.Bo
+    } else {
+      const prefab = DataManager.Instance.prefabMap.get(bulletEnum)
+      bullet = instantiate(prefab)
+      // bullet.addComponent(UITransform).setContentSize(100, 20)
+      bullet.setParent(this.node.parent)
+      bullet.setPosition(
+        isPlayer(this.id) ? this.node.position.x + 100 : this.node.position.x - 100,
+        this.node.position.y,
+      )
+    }
+
     const bulletManager = bullet.addComponent(BulletManager)
     bulletManager.init(this, bulletEnum)
     // 目标是对方或者盾牌
@@ -260,11 +297,17 @@ export class ActorManager extends EntityManager {
     bulletManager.move(targetNode, callback || function () {})
   }
   move(target: ActorManager, callback: Function) {
+    this.state = ParamsNameEnum.Run
     this.isMove = true
-    let targetPosition = target.node.position
+
+    let targetPosition
+    if (this.buffs.has(BuffEnum.fly)) {
+      targetPosition = target.node.position
+    }
+    targetPosition = target.initPosition
     // 处理咖喱棒变形
     if (this.otherActor.skill.skill.animal === ParamsNameEnum.AncientSwordIdle)
-      targetPosition = new Vec3(target.node.position.x, target.node.position.y - 50, this.node.position.z)
+      targetPosition = new Vec3(targetPosition.x, targetPosition.y - 50, targetPosition.z)
     const tw = tween(this.node)
       .to(
         0.2 * DataManager.Instance.animalTime,
@@ -272,19 +315,25 @@ export class ActorManager extends EntityManager {
         {
           // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
           onUpdate: (target1, ratio) => {
-            // 闪避，则不处理碰撞
-            if (this.skill.miss()) return
+            // // 闪避，则不处理碰撞
+            // if (this.skill.miss()) return
             // 优先计算护盾的碰撞
             if (checkCollision(this.node, target.shields[target.shields.length - 1]?.node || target.node)) {
-              // 如果检测到碰撞，可以通过 tween.stop() 停止移动
               console.log('碰撞')
-              tw.stop()
+              this.isMove = false
+              // 如果检测到碰撞，可以通过 tween.stop() 停止移动
+              tw.stop() //stop了就不会触发call
               callback()
+              this.resetPosition()
             }
           },
         },
       )
-      .call(() => (this.isMove = false))
+      .call(() => {
+        this.isMove = false
+        this.resetPosition()
+        callback()
+      })
       .start() // 开始执行tween
 
     // 如果有陷阱
@@ -333,21 +382,37 @@ export class ActorManager extends EntityManager {
     }
   }
 
+  onFly() {
+    if (this.node.position.y == this.initPosition.y) {
+      this.node.position = this.flyPosition
+      this.location = '1'
+    } else {
+      this.node.position = this.initPosition
+      this.location = '0'
+    }
+    this.state = ParamsNameEnum.Idle
+
+    EventManager.Instance.emit(EventEnum.missFinal, this)
+  }
   onJump() {
+    if (this.buffs.has(BuffEnum.fly)) {
+      this.onFly()
+      return
+    }
     const jumpHeight = 200 // 跳跃高度为头顶100像素
-    const duration = 0.5 // 跳跃动作持续时间为1秒
+    const duration = 0.25 // 跳跃动作持续时间为1秒
 
     tween(this.node)
       .sequence(
         // 向上跳跃
         tween().to(
-          duration / 2,
+          (duration / 2) * DataManager.Instance.animalTime,
           { position: v3(this.node.position.x, this.node.position.y + jumpHeight, this.node.position.z) },
           { easing: 'quadOut' },
         ),
         // 落回原点
         tween().to(
-          duration / 2,
+          (duration / 2) * DataManager.Instance.animalTime,
           { position: v3(this.node.position.x, this.node.position.y, this.node.position.z) },
           { easing: 'quadIn' },
         ),
@@ -359,11 +424,16 @@ export class ActorManager extends EntityManager {
   }
 
   onAttack() {
-    EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, isPlayer(this.id) ? SHAKE_TYPE_ENUM.RIGHT : SHAKE_TYPE_ENUM.LEFT)
     EventManager.Instance.emit(EventEnum.attackFinal, this)
-    this.scheduleOnce(() => {
-      this.node.setPosition(this.initPosition)
-    }, 0.05)
+    if (!this.skill.miss())
+      EventManager.Instance.emit(
+        EventEnum.SCREEN_SHAKE,
+        isPlayer(this.id) ? SHAKE_TYPE_ENUM.RIGHT : SHAKE_TYPE_ENUM.LEFT,
+      )
+    this.state = ParamsNameEnum.Idle
+    // this.scheduleOnce(() => {
+    //   this.node.setPosition(this.initPosition)
+    // }, 0.05)
   }
 
   onSpade() {
@@ -393,9 +463,38 @@ export class ActorManager extends EntityManager {
       this.count++
     }
   }
+
+  onClone() {
+    // let clone1 = instantiate<Node>(this.node)
+    // clone1.setParent(this.node)
+    // clone1.setPosition(v3(0, 0))
+    // clone1.getComponent(ActorManager).isClone = true
+    // clone1.getComponent(ActorManager).init(this.id, EntityTypeEnum.Actor, 1)
+    // this.actorClone[0] = clone1
+    // let clone2 = instantiate<Node>(this.node)
+    // clone2.setParent(this.node)
+    // clone2.setPosition(v3(0, 0))
+    // clone2.getComponent(ActorManager).isClone = true
+    // clone2.getComponent(ActorManager).init(this.id, EntityTypeEnum.Actor, 1)
+    // this.actorClone[1] = clone2
+
+    tween(this.actorClone[0])
+      .to(0.1, { position: v3(50, 0) })
+      .start()
+    tween(this.actorClone[1])
+      .to(0.1, { position: v3(-50, 0) })
+      .start()
+  }
+
   reset() {
     this.state = ParamsNameEnum.Idle
-    this.node.setPosition(this.initPosition)
+    if (this.buffs.has(BuffEnum.fly)) {
+      this.location = '1'
+      this.node.setPosition(this.flyPosition)
+    } else {
+      this.location = '0'
+      this.node.setPosition(this.initPosition)
+    }
     this.tran.setContentSize(200, 200)
     this.node.getChildByName('Rubbish').destroyAllChildren()
     this.node.eulerAngles = new Vec3(0, 0, 0)
@@ -408,6 +507,9 @@ export class ActorManager extends EntityManager {
       })
     }
   }
-
-  useSkill(skill: ISkill) {}
+  resetPosition() {
+    this.scheduleOnce(() => {
+      this.node.position = this.location == '0' ? this.initPosition : this.flyPosition
+    }, 0.2 * DataManager.Instance.animalTime)
+  }
 }
