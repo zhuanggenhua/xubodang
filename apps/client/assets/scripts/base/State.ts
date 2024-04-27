@@ -35,7 +35,6 @@ export default class State extends Component {
     track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame')
     const spriteFrames = DataManager.Instance.textureMap.get(this.path)
 
-    console.log('spriteFrames', spriteFrames, this.path);
     
 
     // 添加关键帧 --每个二元组有两个元素：时间戳（单位为秒）和相应的SpriteFrame对象

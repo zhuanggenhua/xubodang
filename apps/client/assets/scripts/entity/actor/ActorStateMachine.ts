@@ -3,7 +3,7 @@ import State, { ANIMATION_SPEED } from '../../base/State'
 import StateMachine, { getInitParamsTrigger } from '../../base/StateMachine'
 import { EntityTypeEnum } from '../../common'
 import { ParamsNameEnum, SHAKE_TYPE_ENUM, EventEnum, Special } from '../../enum'
-import { ActorManager } from './ActorManager'
+import { ActorManager, flyHeight } from './ActorManager'
 import EventManager from '../../global/EventManager'
 import DataManager from '../../global/DataManager'
 import { createUINode, isPlayer, rad2Angle, setPrefab } from '../../utils'
@@ -41,6 +41,11 @@ export class ActorStateMachine extends StateMachine {
 
         // 气功炮
         if (this.actor.skill.skill.special == Special.qigongpao) {
+          // 不影响其他canvans
+          const canvas2 = this.node.getChildByName('canvas2')
+          canvas2.setParent(this.actor.node.parent)
+          canvas2.setPosition(this.actor.node.position)
+
           this.scheduleOnce(() => {
             this.actor.state = ParamsNameEnum.WuKong
             this.scheduleOnce(() => {
@@ -71,6 +76,9 @@ export class ActorStateMachine extends StateMachine {
                   this.scheduleOnce(() => {
                     this.actor.node.position =
                       this.actor.location == '0' ? this.actor.initPosition : this.actor.flyPosition
+
+                    canvas2.setParent(this.actor.node)
+                    canvas2.setPosition(v3(0, 0))
                   }, 0.2 * DataManager.Instance.animalTime)
                 }, 0.2 * DataManager.Instance.animalTime)
               }, 0.2 * DataManager.Instance.animalTime)
@@ -90,7 +98,6 @@ export class ActorStateMachine extends StateMachine {
         this.actor.state = ParamsNameEnum.AncientSwordAttack
       }
       if (name.includes(ParamsNameEnum.AncientSwordAttack)) {
-        
         this.scheduleOnce(() => {
           this.actor.onAttack()
         }, 0.1 * DataManager.Instance.animalTime)
@@ -116,15 +123,15 @@ export class ActorStateMachine extends StateMachine {
         if (!isPlayer(this.actor.id)) {
           angle += 180
           // 对空和对地都要修正
-          // if (this.actor.location == '1' && this.actor.otherActor.location == '0') {
-          //   angle -= 30
-          // }
-          // if (this.actor.otherActor.location == '1' && this.actor.location == '0') {
-          //   angle += 30
-          // }
+          if (this.actor.location == '1' && this.actor.otherActor.location == '0') {
+            angle -= 30
+          }
+          if (this.actor.otherActor.location == '1' && this.actor.location == '0') {
+            angle += 30
+          }
         }
 
-        const canvas = this.node.getChildByName('canvas')
+        const canvas = this.node.getChildByName('canvas2')
         const particleMgr = canvas.getComponent(ParticleMgr) || canvas.addComponent(ParticleMgr)
         particleMgr.init(LightPillar, {
           max: 1,
@@ -136,8 +143,6 @@ export class ActorStateMachine extends StateMachine {
             particleMgr,
           },
         })
-
-        
       }
     }
     // this.animationComponent.on(Animation.EventType.FINISHED, reset)
@@ -148,8 +153,15 @@ export class ActorStateMachine extends StateMachine {
 
       if (name.includes(ParamsNameEnum.AncientSwordIdle)) {
         // 光粒子
+        // 不能让其他canvas受到影响
+        console.log('???', this.actor.node.children);
+        this.actor.node.children.forEach((child) => {
+          
+          if (child.name.includes('canvas')) child.position.add(v3(0, -50, 0))
+        })
+        // 角色的锚点应该在脚下！
         this.actor.node.setPosition(this.actor.node.position.add(v3(0, 50, 0)))
-        this.actor.tran.setContentSize(300, 300)
+        this.actor.tran.setContentSize(200, 300)
         DataManager.Instance.battleCanvas.drawLight()
       }
 
@@ -184,12 +196,14 @@ export class ActorStateMachine extends StateMachine {
       // 三重罗生门
       if (name.includes(ParamsNameEnum.men)) {
         // DataManager.Instance.battleCanvas.drawMen(isPlayer(this.actor.id))
-        const canvas = this.node.getChildByName('canvas')
+        const canvas = this.node.getChildByName('canvas3')
         const particleMgr = canvas.getComponent(ParticleMgr) || canvas.addComponent(ParticleMgr)
+        const offsetY = this.actor.tran.height / 2
         particleMgr.init(Door, {
           max: 1,
           other: {
             actor: this.actor,
+            y: this.actor.location == '0' ? -offsetY : -offsetY - flyHeight,
           },
         })
       }

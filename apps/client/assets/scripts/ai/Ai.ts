@@ -13,22 +13,23 @@ export default class Ai extends Singleton {
   id: number = -1
   actor: IActor
 
-  setActor(type) {
-    this.actor = actors[type]
+  setActor(actor: IActor) {
+    this.actor = actor
   }
 
   excute() {
     const actor = DataManager.Instance.actors.get(this.id)
 
     const skills = this.actor.skills
-    // if (DataManager.Instance.roomInfo.turn === 0) {
-    //   EventManager.Instance.emit(EventEnum.useSkill, skills[2][2], 0, this.id)
-    //   return
-    // }
+    if (DataManager.Instance.roomInfo.turn === 0) {
+      EventManager.Instance.emit(EventEnum.useSkill, skills[1][2], 0, this.id)
+      // EventManager.Instance.emit(EventEnum.useSkill, skills[2][3], 0, this.id)
+      // EventManager.Instance.emit(EventEnum.useSkill, skills[2][2], 0, this.id)
+      return
+    }
     // else EventManager.Instance.emit(EventEnum.useSkill, skills[1][3], 0, this.id)
 
-    EventManager.Instance.emit(EventEnum.useSkill, skills[2][3], 0, this.id)
-    // EventManager.Instance.emit(EventEnum.useSkill, skills[0][0], 0, this.id)
+    EventManager.Instance.emit(EventEnum.useSkill, skills[1][2], 0, this.id)
 
     // switch (actor.power) {
     //   case 0:

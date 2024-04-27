@@ -7,6 +7,7 @@ export interface IItem {
   ctx: unknown;
 }
 
+// ctx会导致引用未解除，需要手动销毁事件，除非是component自动调用onDestroy
 export default class EventManager extends Singleton {
   static get Instance() {
     return super.GetInstance<EventManager>();

@@ -1,7 +1,9 @@
-import { UITransform, Node, Layers, instantiate, Label, Vec3, SpriteFrame } from 'cc'
+import { UITransform, Node, Layers, instantiate, Label, Vec3, SpriteFrame, v3, log } from 'cc'
 import DataManager from '../global/DataManager'
-import { TipEnum } from '../enum'
+import { BuffEnum, Special, TipEnum } from '../enum'
 import { EntityTypeEnum, ISkill } from '../common'
+import { ActorManager } from '../entity/actor/ActorManager'
+import { doorOffsetX } from '../particle/Door'
 
 export * from './biz'
 
@@ -126,6 +128,33 @@ export const getNodePos = (node: Node, target: Node) => {
   node.getWorldPosition(worldPos)
   // 将世界坐标转换为新父节点的局部坐标
   return target.getComponent(UITransform).convertToNodeSpaceAR(worldPos)
+}
+
+export const getCollisionNode = (target: ActorManager, damage: number = 0) => { 
+  if (target.buffs.has(BuffEnum.door) && target.doorHp > 0  && target?.otherActor?.skill.skill.special !== Special.qigongpao) {
+    // 根据伤害和门的血量决定碰撞对象
+    const hp = target.doorHp - damage
+    const node = createUINode()
+    node.setParent(target.node)
+    const offsetX = doorOffsetX
+    const offsetY = target.tran.height / 2
+    if (hp > 4) {
+      node.setPosition(v3(offsetX * 3, target.location == '0' ? -offsetY : -offsetY - 150))
+    }
+    else if (hp > 2) {
+      node.setPosition(v3(offsetX * 2, target.location == '0' ? -offsetY : -offsetY - 150))
+    }
+    else if (hp > 0) {
+      node.setPosition(v3(offsetX, target.location == '0' ? -offsetY : -offsetY - 150))
+    }
+    else{
+      node.setPosition(v3(0, target.location == '0' ? -offsetY : -offsetY - 150))
+    }
+
+    return node
+  }
+
+  return target.shields[target.shields.length - 1]?.node || target.node
 }
 
 // 碰撞检测

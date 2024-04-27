@@ -16,12 +16,13 @@ import {
   v3,
   v2,
 } from 'cc'
-import { EventEnum, SkillPathEnum } from '../enum'
+import { BuffEnum, EventEnum, SkillPathEnum } from '../enum'
 import EventManager from '../global/EventManager'
 import { IActor, ISkill } from '../common'
 import DataManager from '../global/DataManager'
 import { createPrompt, destroyPromt, isEmpty } from '../utils'
 import Ai from '../ai/Ai'
+import skills from '../config/skills'
 const { ccclass, property } = _decorator
 
 @ccclass('SkillUiMgr')
@@ -34,6 +35,7 @@ export class SkillUiMgr extends Component {
 
   private skillNodes: Node[] = []
   private skillItemNodes: Node[] = []
+  private skills: ISkill[] = [] //记录技能，用于判断
 
   private activeSkill: Node = null
   private dragNode: Node = null // 触摸拖动的对象
@@ -57,21 +59,24 @@ export class SkillUiMgr extends Component {
     // 把显示与绑定事件分开性能更好，不过也不用考虑性能
     this.skillItemNodes = []
     this.skillNodes = []
+    this.skills = []
+
     const normalSprite = DataManager.Instance.skillMap.get(SkillPathEnum.NormalSprite)
     const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
 
-    const skills = actor.skills
-    Object.keys(skills).forEach((key, itemIndex) => {
+    const thisSkills = actor.skills
+    Object.keys(thisSkills).forEach((key, itemIndex) => {
       const skillItemNode = this.node.children[itemIndex]
       if (itemIndex !== 0) skillItemNode.getComponent(UIOpacity).opacity = 100
       this.skillItemNodes.push(skillItemNode) //保存起来方便管理
 
-      skills[key].forEach((skill, index) => {
+      thisSkills[key].forEach((skill, index) => {
         // 遍历每个技能
         // 获取到栏位
         const skillNode = skillItemNode.getChildByName('Skills').children[index]
 
         this.skillNodes.push(skillNode) //保存起来方便管理
+        this.skills.push(skill) //保存起来方便管理
         const icon = skillNode.getChildByName('SkillIcon-001')
 
         this.node.active = true
@@ -89,16 +94,32 @@ export class SkillUiMgr extends Component {
           Input.EventType.TOUCH_END,
           (event: EventTouch) => {
             if (this.isDisable) return
-            // skillNode.getComponent(UIOpacity).opacity = 255
             // 处理旋转下落的
-
             this.handlerTouchEnd(skillNode, skill, itemIndex)()
 
             // 设置提示框
             createPrompt(skillNode, skill)
 
             if (!this.isStart) return //未开始不实际使用
-            if (skillNode.getComponent(UIOpacity).opacity === 100) return //变灰的无法使用
+            // 能级判断
+              // todo 城墙下buff没有效果
+            console.log('??', skill == skills['012'], skill,skills);
+            
+            if (
+              (DataManager.Instance.playerActor.buffs.has(BuffEnum.saiya) && skill.name.includes('波')) ||
+              (DataManager.Instance.playerActor.buffs.has(BuffEnum.wall) && skill == skills['012'])
+            ) {
+              console.log('???', DataManager.Instance.actor1.power, itemIndex);
+              
+              if (DataManager.Instance.actor1.power < itemIndex - 1) return //无法使用
+            } else {
+              if (DataManager.Instance.actor1.power < itemIndex) return //无法使用
+            }
+
+            console.log('???', event.target.getComponent(UIOpacity).opacity)
+
+            if (event.target.getComponent(UIOpacity).opacity == 100) return //变灰的
+
             // 第二次按下
             if (this.activeSkill == skillNode) {
               if (DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex) return
@@ -223,6 +244,7 @@ export class SkillUiMgr extends Component {
         } else {
           this.dragNode.destroy()
           this.dragNode = null
+          // 因为设置为0 了，所以需要显示
           skillNode.getComponent(UIOpacity).opacity = 255
         }
       }
@@ -244,11 +266,54 @@ export class SkillUiMgr extends Component {
     })
   }
 
+
   updateSkillItem(power: number) {
     console.log('当前能量, 所需能量', power)
     this.skillItemNodes.forEach((item, index) => {
+      // 处理减少消耗
+      console.log('power', power)
+
+      if (power <= 2) {
+        if (
+          DataManager.Instance.playerActor.buffs?.has(BuffEnum.saiya) ||
+          DataManager.Instance.playerActor.buffs?.has(BuffEnum.wall)
+        ) {
+          if (power >= index - 1) {
+            item.getComponent(UIOpacity).opacity = 255
+            item.getChildByName('Skills').children.forEach((skillItem, index2) => {
+              if (power >= index) {
+                skillItem.getComponent(UIOpacity).opacity = 255
+              } else {
+                if (
+                  power >= index - 1 &&
+                  (this.skills[index * 4 + index2].name?.includes('波') ||
+                    this.skills[index * 4 + index2] == skills['012'])
+                ) {
+                  skillItem.getComponent(UIOpacity).opacity = 255
+                } else {
+                  setTimeout(() => {
+                  skillItem.getComponent(UIOpacity).opacity = 100
+                  }, 100)
+                }
+              }
+            })
+          } else {
+            item.getComponent(UIOpacity).opacity = 100
+          }
+
+          return
+        }
+      }
+
       if (index > power) item.getComponent(UIOpacity).opacity = 100
       else item.getComponent(UIOpacity).opacity = 255
+    })
+
+    this.skillNodes.forEach((item, index) => {
+      //处理禁用技能
+      if (DataManager.Instance.playerActor.location == '1' && this.skills[index].buff?.indexOf(BuffEnum.wall) != -1) {
+        item.getComponent(UIOpacity).opacity = 100
+      }
     })
   }
 
@@ -297,8 +362,7 @@ export class SkillUiMgr extends Component {
         })
       })
 
-      console.log('当前轮次', DataManager.Instance.roomInfo.turn);
-      
+      console.log('当前轮次', DataManager.Instance.roomInfo.turn)
     }, 0.05 * DataManager.Instance.animalTime)
   }
 }

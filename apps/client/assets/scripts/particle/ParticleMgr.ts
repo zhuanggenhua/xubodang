@@ -20,6 +20,7 @@ export default class ParticleMgr extends Component {
   }
 
   init(particle, options: IParticleOptions = {}) {
+    this.clear()
     this.particle = particle
     this.options = options
 
@@ -79,13 +80,23 @@ export default class ParticleMgr extends Component {
       particle.draw(this.graphics)
     })
     // 删除销毁的粒子
-    this.particles = this.particles.filter((particle) => !particle.markedForDeletion)
+    this.particles = this.particles.filter((particle) => {
+      if(!particle.markedForDeletion){
+        return true
+      }else{
+        particle.onDestroy()
+      }
+    })
     if (this.particles.length == 0 && !this.options.gap) this.destroy()
   }
 
   clear() {
-    this.graphics.clear()
-    this.particles.forEach((particle) => (particle.markedForDeletion = true))
+    this.graphics?.clear()
+    this.particles?.forEach((particle) => {
+      particle.markedForDeletion = true
+      particle.onDestroy()
+    })
+    this.particles = []
   }
 
   // 粒子聚拢效果

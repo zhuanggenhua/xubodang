@@ -5,6 +5,10 @@ import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'
 import { Component, instantiate, Node, v3 } from 'cc'
+import { Wall } from '../particle/Wall'
+import ParticleMgr from '../particle/ParticleMgr'
+import actors from '../config/actor'
+import skills from '../config/skills'
 
 /**
  * 添加技能：
@@ -37,12 +41,17 @@ export default class Skill extends Component {
     return Object.keys(object).find((key) => object[key] === value)
   }
 
+  // 保存原始伤害，用于事后恢复
   damage: number
   defense: number
+  power: number
   constructor(public skill: ISkill, public id: number) {
     super()
   }
   onDestroy() {
+    this.skill.defense = this.defense
+    this.skill.power = this.power
+    this.skill.damage = this.damage
     // 在对象销毁前取消事件注册
     EventManager.Instance.off(EventEnum.powerFinal, this.powerFinal, this)
     EventManager.Instance.off(EventEnum.attackFinal, this.attackFinal, this)
@@ -55,6 +64,8 @@ export default class Skill extends Component {
   excute() {
     this.tigerLength = this.skill.type.length
     this.defense = this.skill.defense
+    this.power = this.skill.power
+    this.damage = this.skill.damage
 
     if (this.actor.buffs.has(BuffEnum.loopSword)) {
       this.tigerLength++
@@ -149,7 +160,7 @@ export default class Skill extends Component {
   // 在动画后结算伤害
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('attack结束')
+      console.log('attack结束', this.actor.id)
 
       const otherActor = this.otherActor
       switch (this.otherSkill.skill.missType) {
@@ -158,18 +169,28 @@ export default class Skill extends Component {
           // 替身动画
           EventManager.Instance.emit(EventEnum.missSingle, otherActor)
       }
-      console.log('伤害',this.miss())
+
+      if (otherActor.buffs.has(BuffEnum.door) && otherActor.doorHp > 0 && this.skill.special !== Special.qigongpao) {
+        const damage = this.skill.damage
+        this.skill.damage -= otherActor.doorHp
+        otherActor.doorHp -= damage
+        if (this.skill.damage < 0) this.skill.damage = 0
+        EventManager.Instance.emit(EventEnum.onDoorDefense, otherActor, otherActor.doorHp)
+      }
+
       // 处理闪避
       if (!this.miss()) {
         // 盾牌碎裂
         console.log('伤害', this.skill.damage)
         let damage
+
         if (this.skill.pierce) {
           // 穿透，直接造成伤害
           this.otherActor.hp -= this.skill.damage
           this.tiger()
           return
         } else {
+          // 计算护盾
           damage = this.otherActor.shieldBreak(this.skill.damage || 0, this.skill.broken || 0)
         }
         // 分身
@@ -203,7 +224,6 @@ export default class Skill extends Component {
           }
         }
 
-        
         if (damage > 0) {
           if (this.skill.animal == ParamsNameEnum.AncientSwordIdle) {
             // 没有动画，用闪白将就下
@@ -213,14 +233,11 @@ export default class Skill extends Component {
           if (this.skill.animal == ParamsNameEnum.QiGong) {
             EventManager.Instance.emit(EventEnum.moveBack, this.otherActor, 200, 0)
             this.scheduleOnce(() => {
-              console.log('????????????????????');
-              
               this.tiger()
             }, 0.2 * DataManager.Instance.animalTime)
             return
           }
         }
-        console.log('asdfafsd????????????????????');
 
         // 盾牌碎裂,等动画播完再下回合
         if (damage >= 0 && this.otherActor.shields.length > 0) {
@@ -278,7 +295,7 @@ export default class Skill extends Component {
   }
   powerFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('power结束')
+      console.log('power结束', this.actor.id)
       if (isPlayer(this.id))
         EventManager.Instance.emit(EventEnum.updateSkillItem, DataManager.Instance.actors.get(this.id).power)
       this.tiger()
@@ -286,22 +303,25 @@ export default class Skill extends Component {
   }
   defenseFinal(actor: ActorManager, damage) {
     if (actor === this.actor) {
-      console.log('defense结束')
+      console.log('defense结束', this.actor.id)
       this.tiger()
     }
   }
   missFinal(actor: ActorManager) {
     if (actor === this.actor) {
+      console.log('miss结束', this.actor.id)
       this.tiger()
     }
   }
   continueFinal(actor: ActorManager) {
     if (actor === this.actor) {
+      console.log('continue结束', this.actor.id)
       this.tiger()
     }
   }
   specialFinal(actor: ActorManager) {
     if (actor === this.actor) {
+      console.log('special结束', this.actor.id)
       this.tiger()
     }
   }
@@ -317,19 +337,18 @@ export default class Skill extends Component {
     this.setSkillState()
   }
   defenseHandler() {
-    if (this.actor.buffs.has(BuffEnum.spartan)) {
-      this.otherSkill.damage -= 1
-    }
-
     // 在角色面前生成盾牌
     if (this.skill.shield) {
       this.actor.generateShield(this.skill.shield, this.skill)
     }
 
-    if (this.skill.special === Special.door) {
+    if (this.skill.buff && this.skill.buff?.indexOf(BuffEnum.door) != -1) {
+      // EventManager.Instance.emit(EventEnum.onDoorDefense, this.actor, 0)
+      this.actor.doorHp = 6
       this.setSkillState()
       return
     }
+
     // 直接防御结束
     EventManager.Instance.emit(EventEnum.defenseFinal, this.actor)
   }
@@ -357,6 +376,17 @@ export default class Skill extends Component {
       return
     }
 
+    // 伤害修正
+    // 城墙对弓弩强化
+    if (this.actor.buffs.has(BuffEnum.wall) && this.skill.bullet === EntityTypeEnum.Crossbow) {
+      let count = 0
+      this.otherActor.node.children.forEach((child) => {
+        if (child.name === 'Crossbow') {
+          count++
+        }
+      })
+      this.skill.damage += count
+    }
     if (this.actor.buffs.has(BuffEnum.saiya) && this.skill.name.includes('龟波气功')) {
       this.skill.damage += 2
     }
@@ -366,6 +396,16 @@ export default class Skill extends Component {
     if (this.actor.buffs.has(BuffEnum.shuangbei)) {
       this.skill.damage *= 2
       this.actor.hp--
+    }
+
+    // 防御计算，因为不一定防御，写在防御逻辑里无法触发
+    // 防御效果+1
+    if (this.otherActor.buffs.has(BuffEnum.spartan)) {
+      this.skill.damage -= 1
+    }
+    // 城墙对远程防御+1
+    if (this.otherActor.buffs.has(BuffEnum.wall) && this.skill.longrang) {
+      this.skill.damage -= 1
     }
 
     if (this.skill.special === Special.sun) {
@@ -407,9 +447,6 @@ export default class Skill extends Component {
         this.actor.move(this.otherActor, () => {
           this.setSkillState()
         })
-        // } else {
-        //   // 不在范围，骂街
-        // }
       } else {
         //慢速远程
         this.setSkillState()
@@ -431,9 +468,33 @@ export default class Skill extends Component {
       case MissType.All:
         EventManager.Instance.emit(EventEnum.missFinal, this.actor)
     }
+    if (this.skill.buff?.indexOf(BuffEnum.wall) !== -1) {
+      EventManager.Instance.emit(EventEnum.missFinal, this.actor)
+    }
   }
   continueHandler() {
+    if (this.actor.buffs.has(BuffEnum.wall)) {
+      EventManager.Instance.emit(EventEnum.continueFinal, this.actor)
+      return
+    }
     this.actor.setBuffer(this.skill)
+
+    if (this.skill.buff?.indexOf(BuffEnum.wall) !== -1) {
+      // 找到十字弩并修改
+      let nu = skills['012']
+      nu.desc = '裂伤：造成对方身上箭支数量的额外伤害'
+      // 重新渲染
+      EventManager.Instance.emit(EventEnum.renderSkills, this.actor.actor)
+      // 画城墙
+      const canvas = this.actor.node.getChildByName('canvas4')
+      const particleMgr = canvas.getComponent(ParticleMgr) || canvas.addComponent(ParticleMgr)
+      particleMgr.init(Wall, {
+        max: 1,
+        other: {
+          actor: this.actor,
+        },
+      })
+    }
 
     if (this.skill.buff?.indexOf(BuffEnum.saiya) !== -1) {
       this.setSkillState()
@@ -453,13 +514,13 @@ export default class Skill extends Component {
       clone1.setParent(this.actor.node)
       clone1.setPosition(v3(0, 0))
       clone1.getComponent(ActorManager).isClone = true
-      clone1.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1)
+      clone1.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1, this.actor.actor)
       this.actor.actorClone[0] = clone1
       let clone2 = instantiate<Node>(this.actor.node)
       clone2.setParent(this.actor.node)
       clone2.setPosition(v3(0, 0))
       clone2.getComponent(ActorManager).isClone = true
-      clone2.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1)
+      clone2.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1, this.actor.actor)
       this.actor.actorClone[1] = clone2
 
       this.setSkillState()

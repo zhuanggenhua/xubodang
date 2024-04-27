@@ -52,6 +52,9 @@ export default class DataManager extends Singleton {
   textureMap: Map<string, SpriteFrame[]> = new Map()
   skillMap: Map<SkillPathEnum, SpriteFrame> = new Map()
   actors: Map<number, ActorManager> = new Map()
+  get playerActor() : ActorManager {
+    return this.actors.get(this.player.id)
+  }
   // bulletMap: Map<number, BulletManager> = new Map();
 
   // actor1 表示玩家  2表示对方

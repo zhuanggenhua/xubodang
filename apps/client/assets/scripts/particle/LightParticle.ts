@@ -19,8 +19,8 @@ export class LightParticle extends Particle {
 
   isGather: boolean = false
   init(params: any): void {
-      const {y} = params
-      this.y = y
+    const { y } = params
+    this.y = y
   }
   constructor() {
     super()
@@ -69,7 +69,7 @@ export class LightParticle extends Particle {
     const swayAmount = 100 // 摆动幅度，根据实际情况调整
     this.speedX = (Math.random() - 0.5) * swayAmount
     // 无规律移动
-    this.schedule(() => {
+    setTimeout(() => {
       // 是否收到牵引决定移动方式
       if (this.isGather) return
       tween(this)

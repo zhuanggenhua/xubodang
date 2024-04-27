@@ -73,9 +73,9 @@ export class BulletManager extends EntityManager {
     }
 
     // this.angle += Math.random() * 20 - 10
-    this.node.setRotationFromEuler(0, 0, this.angle + offsetRange)
+    this.node.getChildByName('Sprite').setRotationFromEuler(0, 0, this.angle + offsetRange)
 
-    const tempNode = new Node()
+    const tempNode = new Node('tempNode')
     tempNode.parent = this.node.parent
     const tran = this.node.getComponent(UITransform)
     tempNode.addComponent(UITransform).setContentSize(tran.height, tran.width)
@@ -107,7 +107,7 @@ export class BulletManager extends EntityManager {
                   this.node.setPosition(getNodePos(this.node, this.actor.skill.otherActor.node))
                   this.node.setParent(this.actor.skill.otherActor.node)
                   // 避免翻转影响
-                  if (isPlayer(this.actor.id)) this.node.scale = new Vec3(1, -this.node.scale.y, 1)
+                  if (isPlayer(this.actor.id)) this.node.scale = new Vec3(-this.node.scale.x, this.node.scale.y, 1)
                   return
                 }
               } else {
@@ -140,6 +140,7 @@ export class BulletManager extends EntityManager {
         },
       )
       .call(() => {
+        tempNode.destroy()
         // 跟踪波处理
         if (this.actor.skill.skill.special === Special.gengzongbo && !this.actor.skill.miss()) {
           this.move(
@@ -148,7 +149,6 @@ export class BulletManager extends EntityManager {
           return
         }
 
-        tempNode.destroy()
         if (callback) callback()
         this.actor.onAttack()
         if (this.type != EntityTypeEnum.Crossbow) this.node.destroy()

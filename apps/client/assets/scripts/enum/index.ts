@@ -33,6 +33,9 @@ export enum EventEnum {
   flicker = 'flicker',
   moveBack = 'moveBack',
   missSingle = 'missSingle',
+
+
+  onDoorDefense = 'onDoorDefense',
 }
 
 export enum PrefabPathEnum {
@@ -194,7 +197,7 @@ export enum Special {
   copy = '复制',
   qigongpao = '气功',
   saiya = '赛亚人',
-  door = '门',
+  lieshang = '裂伤',
 }
 // 持续效果
 export enum BuffEnum {
@@ -209,4 +212,6 @@ export enum BuffEnum {
   shuangbei = '双倍',
   clone = '分身',
   saiya = '赛亚人',
+  door = '门',
+  wall = '城墙',
 }

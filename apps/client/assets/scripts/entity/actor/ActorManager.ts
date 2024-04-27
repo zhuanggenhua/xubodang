@@ -17,7 +17,7 @@ import {
   Prefab,
 } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
-import { EntityTypeEnum, ISkill } from '../../common'
+import { EntityTypeEnum, IActor, ISkill } from '../../common'
 import {
   BuffEnum,
   EventEnum,
@@ -30,7 +30,7 @@ import {
 } from '../../enum'
 import DataManager from '../../global/DataManager'
 import Skill from '../../utils/Skill'
-import { checkCollision, createUINode, getNodePos, isPlayer } from '../../utils'
+import { checkCollision, createUINode, getCollisionNode, getNodePos, isPlayer } from '../../utils'
 import { ActorStateMachine } from './ActorStateMachine'
 import EventManager from '../../global/EventManager'
 import { BulletManager } from '../Bullet/BulletManager'
@@ -39,11 +39,13 @@ import { holeRadius } from '../../ui/BattleCanvas'
 
 const { ccclass, property } = _decorator
 
+export const flyHeight = 150
 @ccclass('ActorManager')
 export class ActorManager extends EntityManager {
   id: number
   bulletType: EntityTypeEnum
   count: number = 0 //计数用
+  actor: IActor
 
   isMove: boolean = false
   //动态数据
@@ -69,7 +71,7 @@ export class ActorManager extends EntityManager {
     return this.skill.otherSkill
   }
   get otherActor() {
-    return this.skill.otherActor
+    return this.skill?.otherActor
   }
 
   shields = []
@@ -81,6 +83,8 @@ export class ActorManager extends EntityManager {
   private tw: Tween<unknown>
   tran: UITransform
   location: '0' | '1' | '2' = '0'
+
+  doorHp: number = 0
 
   beforeDestroy() {
     EventManager.Instance.off(EventEnum.flicker, this.flicker, this)
@@ -108,7 +112,8 @@ export class ActorManager extends EntityManager {
   }
 
   // private wm: WeaponManager;
-  init(id, type: EntityTypeEnum, hp) {
+  init(id, type: EntityTypeEnum, hp, actor: IActor) {
+    this.actor = actor
     this.id = id
     this.hpMax = hp
     this.hp = hp
@@ -131,7 +136,7 @@ export class ActorManager extends EntityManager {
         DataManager.Instance.battleCanvas.round + this.tran.height / 2,
       )
     }
-    this.flyPosition = new Vec3(this.initPosition.x, this.initPosition.y + 150)
+    this.flyPosition = new Vec3(this.initPosition.x, this.initPosition.y + flyHeight)
     this.reset()
   }
   onDestroy() {}
@@ -145,10 +150,14 @@ export class ActorManager extends EntityManager {
       this.buffs.add(buff)
     })
     // 陷阱类不渲染
+    if (skill.buff.indexOf(BuffEnum.wall) !== -1) {
+      return
+    }
     if (
       skill.buff.indexOf(BuffEnum.trap) !== -1 ||
       skill.buff.indexOf(BuffEnum.fly) !== -1 ||
-      skill.buff.indexOf(BuffEnum.clone) !== -1
+      skill.buff.indexOf(BuffEnum.clone) !== -1 ||
+      skill.buff.indexOf(BuffEnum.door) !== -1
     ) {
       EventManager.Instance.emit(EventEnum.continueFinal, this)
       return
@@ -191,6 +200,7 @@ export class ActorManager extends EntityManager {
   moveBack(actor: ActorManager, offsetX, offsetY = 0) {
     if (actor === this) {
       if (this.otherActor.skill.miss()) return
+      if (this.buffs.has(BuffEnum.wall)) return
       const { x, y } = this.node.position
       if (isPlayer(this.id)) offsetX = -offsetX
       console.log('击退', offsetX, offsetY)
@@ -289,10 +299,7 @@ export class ActorManager extends EntityManager {
     const bulletManager = bullet.addComponent(BulletManager)
     bulletManager.init(this, bulletEnum)
     // 目标是对方或者盾牌
-    let targetNode = target.node
-    if (target.shields.length > 0) {
-      targetNode = target.shields[target.shields.length - 1].node
-    }
+    let targetNode = getCollisionNode(target, this.skill.skill.damage)
 
     bulletManager.move(targetNode, callback || function () {})
   }
@@ -318,7 +325,7 @@ export class ActorManager extends EntityManager {
             // // 闪避，则不处理碰撞
             // if (this.skill.miss()) return
             // 优先计算护盾的碰撞
-            if (checkCollision(this.node, target.shields[target.shields.length - 1]?.node || target.node)) {
+            if (checkCollision(this.node, getCollisionNode(target, this.skill.skill.damage))) {
               console.log('碰撞')
               this.isMove = false
               // 如果检测到碰撞，可以通过 tween.stop() 停止移动
@@ -439,6 +446,12 @@ export class ActorManager extends EntityManager {
   onSpade() {
     // 只挖三次
     if (this.count < 3) {
+      // 城墙动画
+      if (this.skill.skill.buff.indexOf(BuffEnum.wall) !== -1) {
+        DataManager.Instance.battleCanvas.drawHole(this.node.position.x)
+        return
+      }
+
       if (this.count === 0) {
         DataManager.Instance.battleCanvas.drawHole(this.node.position.x)
       } else {
@@ -488,7 +501,7 @@ export class ActorManager extends EntityManager {
 
   reset() {
     this.state = ParamsNameEnum.Idle
-    if (this.buffs.has(BuffEnum.fly)) {
+    if (this.buffs.has(BuffEnum.fly) || this.buffs.has(BuffEnum.wall)) {
       this.location = '1'
       this.node.setPosition(this.flyPosition)
     } else {
@@ -506,6 +519,11 @@ export class ActorManager extends EntityManager {
         item.node.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum.RoundShieldFrame)
       })
     }
+
+    // 不能让其他canvas受到影响
+    this.node.children.forEach((child) => {
+      if (child.name.includes('canvas')) child.setPosition(v3(0, 0))
+    })
   }
   resetPosition() {
     this.scheduleOnce(() => {

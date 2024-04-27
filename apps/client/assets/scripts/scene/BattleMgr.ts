@@ -14,6 +14,7 @@ import { BattleCanvas } from '../ui/BattleCanvas'
 import { ShakeManager } from '../utils/ShakeManager'
 import { ChooseMgr } from '../ui/ChooseMgr'
 import { RadarChart } from '../ui/RadarChart'
+import skills from '../config/skills'
 const { ccclass, property } = _decorator
 
 @ccclass('BattleMgr')
@@ -78,17 +79,18 @@ export class BattleMgr extends Component {
     )
     // test
     // 渲染当前选中角色技能，默认是战士
-    // this.renderSkills(actors.soldier)
-    this.renderSkills(actors.animeMan)
-    this.createActor()
+    this.renderSkills(actors.soldier)
+    // this.renderSkills(actors.animeMan)
+    this.createActor(actors.soldier)
     if (DataManager.Instance.mode === 'single') {
-      Ai.Instance.setActor('animeMan')
-      // Ai.Instance.setActor('soldier')
-      this.createActor(Ai.Instance.id)
+      Ai.Instance.setActor(actors.soldier)
+      this.createActor(actors.soldier, Ai.Instance.id)
+      // Ai.Instance.setActor(actors.animeMan)
+      // this.createActor(actors.animeMan, Ai.Instance.id)
     }
   }
 
-  createActor(id: number = DataManager.Instance.player.id) {
+  createActor(selectActor: IActor, id: number = DataManager.Instance.player.id) {
     let prefab = DataManager.Instance.prefabMap.get('Actor1')
     const actor = instantiate(prefab)
     if (!isPlayer(id)) {
@@ -98,7 +100,7 @@ export class BattleMgr extends Component {
     actor.setParent(this.Battle)
     const actorMgr = actor.addComponent(ActorManager)
 
-    actorMgr.init(id, EntityTypeEnum.Actor, DataManager.Instance.roomInfo?.life)
+    actorMgr.init(id, EntityTypeEnum.Actor, DataManager.Instance.roomInfo?.life, selectActor)
     DataManager.Instance.actors.set(id, actorMgr)
     if (DataManager.Instance.actors.size === 2) {
       this.startGame()
@@ -121,6 +123,10 @@ export class BattleMgr extends Component {
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.saiya) && skill.name.includes('波')) {
       power--
     }
+    
+    if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.wall) && skill == skills['012']) {
+      power--
+    }
     DataManager.Instance.actors.get(id).power -= power
     console.log('释放后能量', power)
 
@@ -136,6 +142,7 @@ export class BattleMgr extends Component {
       // test
       DataManager.Instance.actor1.skill.excute()
       DataManager.Instance.actor2.skill.excute()
+      // todo  十秒后强制下一轮
     }
   }
 
@@ -213,7 +220,7 @@ export class BattleMgr extends Component {
   }
 
   renderSkills(actor: IActor) {
-    this.skillContainer.getComponent(SkillUiMgr).init(JSON.parse(JSON.stringify(actor)))
+    this.skillContainer.getComponent(SkillUiMgr).init(actor)
   }
   // #endregion
 

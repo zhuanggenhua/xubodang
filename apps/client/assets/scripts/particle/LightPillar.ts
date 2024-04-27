@@ -1,7 +1,7 @@
 import { Color, Node, Graphics, UITransform, Vec2, Vec3 } from 'cc'
 import Particle from './Particle'
 import DataManager from '../global/DataManager'
-import { checkCollision, createUINode, isPlayer, rad2Angle } from '../utils'
+import { checkCollision, createUINode, getCollisionNode, isPlayer, rad2Angle } from '../utils'
 import { EventEnum } from '../enum'
 import EventManager from '../global/EventManager'
 import ParticleMgr from './ParticleMgr'
@@ -51,7 +51,7 @@ export class LightPillar extends Particle {
 
     // 矩形碰撞检测  -- 因为不能设置锚点所以直接用两倍宽
     this.tempNode.getComponent(UITransform).setContentSize(this.width * 2, this.lineH)
-    if (checkCollision(this.tempNode, this.target.node, [null, EntityTypeEnum.Actor]) && !this.done) {
+    if (checkCollision(this.tempNode, getCollisionNode(this.target), [null, EntityTypeEnum.Actor]) && !this.done) {
       EventManager.Instance.emit(EventEnum.attackFinal, this.target.otherActor)
       this.done = true
       // EventManager.Instance.emit(EventEnum.flicker, this.target)

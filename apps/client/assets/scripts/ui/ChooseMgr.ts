@@ -80,8 +80,8 @@ export class ChooseMgr extends Component {
 
     // 单人模式，ai直接选择
     if (DataManager.Instance.mode === 'single') {
-      Ai.Instance.setActor('soldier')
-      EventManager.Instance.emit(EventEnum.createActor, Ai.Instance.id)
+      Ai.Instance.setActor(actors.soldier)
+      EventManager.Instance.emit(EventEnum.createActor, actors.soldier, Ai.Instance.id)
       EventManager.Instance.emit(EventEnum.renderChart, actors['soldier'], 'Graphics2')
     }
   }
@@ -90,7 +90,7 @@ export class ChooseMgr extends Component {
     if (this.isDisable) return
     event.target.getComponent(Button).normalSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
     this.isDisable = true
-    EventManager.Instance.emit(EventEnum.createActor)
+    EventManager.Instance.emit(EventEnum.createActor, actors[this.active])
     EventManager.Instance.emit(EventEnum.renderSkills, actors[this.active])
     EventManager.Instance.emit(EventEnum.renderChart, actors[this.active], 'Graphics1')
   }

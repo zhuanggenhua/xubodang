@@ -12,6 +12,7 @@ export default class Particle extends Component {
   constructor() {
     super()
   }
+  onDestroy() {}
   init(params){}
 
   update(dt) {
