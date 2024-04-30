@@ -198,6 +198,7 @@ export enum Special {
   qigongpao = '气功',
   saiya = '赛亚人',
   lieshang = '裂伤',
+  earth = '灾害',
 }
 // 持续效果
 export enum BuffEnum {

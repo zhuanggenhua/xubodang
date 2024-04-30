@@ -135,7 +135,7 @@ export class RadarChart extends Component {
             speed++
           } else {
             if (skill.location) {
-              if (skill.location != 0) speed++
+              if (skill.location != '0') speed++
             }
           }
 
@@ -185,6 +185,7 @@ export class RadarChart extends Component {
         if (rate >= 0.1) return 'D'
         return 'E'
       }
+      // 根据比例计算所处等级
       const values = [
         getRating(attack, max.attack),
         getRating(grow, max.grow),

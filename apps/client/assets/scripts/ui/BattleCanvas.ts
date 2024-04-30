@@ -1,11 +1,15 @@
-import { _decorator, Color, Component, Graphics, instantiate, Node, UITransform } from 'cc'
+import { _decorator, Color, Component, Graphics, instantiate, Node, tween, UITransform } from 'cc'
 import DataManager from '../global/DataManager'
-import { createUINode, getRandomNumber } from '../utils'
+import { checkCollision, createUINode, getRandomNumber } from '../utils'
 import ParticleMgr from '../particle/ParticleMgr'
 import { GroundSplash } from '../particle/GroundSplash'
 import { LightParticle } from '../particle/LightParticle'
 import { LightPillar } from '../particle/LightPillar'
 import { Door } from '../particle/Door'
+import { EntityTypeEnum } from '../common'
+import EventManager from '../global/EventManager'
+import { EventEnum, SHAKE_TYPE_ENUM } from '../enum'
+import SplitFrame from '../utils/SplitFrame'
 const { ccclass, property } = _decorator
 
 export const holeRadius = 100
@@ -13,6 +17,8 @@ export const holeRadius = 100
 export class BattleCanvas extends Component {
   @property(Node)
   canvas2: Node = null
+  @property(Node)
+  canvas3: Node = null
 
   graphics: Graphics
 
@@ -36,6 +42,68 @@ export class BattleCanvas extends Component {
   reset() {
     this.graphics.clear()
     this.generaRound()
+  }
+
+  // 火星撞地球动画
+  drawEarth() {
+    // todo
+    this.canvas3.active = true
+    const graphics = this.graphics
+    // const graphics = this.canvas3.getComponent(Graphics) || this.canvas3.addComponent(Graphics)
+    graphics.fillColor = new Color('#6B6B6B') //= new Color('#6B6B6B')
+    graphics.rect(0, 0, this.width, this.height)
+    graphics.fill()
+
+    // 全部隐藏
+    this.node.children.forEach((v) => (v.active = false))
+
+    // 地球
+    const earth = this.canvas3.getChildByName('Earth')
+    earth.active = true
+    earth.setPosition(this.width / 2, 0)
+    // 火星
+    const mars = this.canvas3.getChildByName('Mars')
+    mars.active = true
+    mars.setPosition(this.width / 2, this.height)
+
+    const end = () => {
+      this.scheduleOnce(() => {
+        EventManager.Instance.emit(EventEnum.attackFinal, DataManager.Instance.actor2)
+        EventManager.Instance.emit(EventEnum.attackFinal, DataManager.Instance.actor1)
+        this.canvas3.active = false
+        earth.active = true
+        // graphics.clear()
+        this.generaRound()
+        this.node.children.forEach((v) => (v.active = true))
+      }, 0.5)
+    }
+    const tw = tween(mars)
+      .to(
+        1,
+        { position: earth.position },
+        {
+          easing: 'sineIn',
+          onUpdate: () => {
+            if (checkCollision(earth, mars, [EntityTypeEnum.Crossbow, EntityTypeEnum.Crossbow])) {
+              // todo shake
+              EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, SHAKE_TYPE_ENUM.RIGHT)
+              setTimeout(() => {
+                EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, SHAKE_TYPE_ENUM.LEFT)
+              }, 0.2)
+              const split = earth.addComponent(SplitFrame)
+              split.init(0.2)
+
+              mars.active = false
+              end()
+              tw.stop() //stop了就不会触发call
+            }
+          },
+        },
+      )
+      .call(() => {
+        end()
+      })
+      .start()
   }
 
   // 陷阱

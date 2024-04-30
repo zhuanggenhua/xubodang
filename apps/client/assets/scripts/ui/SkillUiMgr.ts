@@ -16,11 +16,11 @@ import {
   v3,
   v2,
 } from 'cc'
-import { BuffEnum, EventEnum, SkillPathEnum } from '../enum'
+import { BuffEnum, EventEnum, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import EventManager from '../global/EventManager'
 import { IActor, ISkill } from '../common'
 import DataManager from '../global/DataManager'
-import { createPrompt, destroyPromt, isEmpty } from '../utils'
+import { canUse, createPrompt, destroyPromt, isEmpty } from '../utils'
 import Ai from '../ai/Ai'
 import skills from '../config/skills'
 const { ccclass, property } = _decorator
@@ -102,27 +102,19 @@ export class SkillUiMgr extends Component {
 
             if (!this.isStart) return //未开始不实际使用
             // 能级判断
-              // todo 城墙下buff没有效果
-            console.log('??', skill == skills['012'], skill,skills);
-            
             if (
               (DataManager.Instance.playerActor.buffs.has(BuffEnum.saiya) && skill.name.includes('波')) ||
               (DataManager.Instance.playerActor.buffs.has(BuffEnum.wall) && skill == skills['012'])
             ) {
-              console.log('???', DataManager.Instance.actor1.power, itemIndex);
-              
               if (DataManager.Instance.actor1.power < itemIndex - 1) return //无法使用
             } else {
               if (DataManager.Instance.actor1.power < itemIndex) return //无法使用
             }
 
-            console.log('???', event.target.getComponent(UIOpacity).opacity)
-
-            if (event.target.getComponent(UIOpacity).opacity == 100) return //变灰的
+            if (canUse(skill)) return //变灰的
 
             // 第二次按下
             if (this.activeSkill == skillNode) {
-              if (DataManager.Instance.actors.get(DataManager.Instance.player.id).power < itemIndex) return
               // 排他
               this.skillNodes.forEach((node) => {
                 node.getComponent(Sprite).spriteFrame = normalSprite
@@ -266,7 +258,6 @@ export class SkillUiMgr extends Component {
     })
   }
 
-
   updateSkillItem(power: number) {
     console.log('当前能量, 所需能量', power)
     this.skillItemNodes.forEach((item, index) => {
@@ -292,7 +283,7 @@ export class SkillUiMgr extends Component {
                   skillItem.getComponent(UIOpacity).opacity = 255
                 } else {
                   setTimeout(() => {
-                  skillItem.getComponent(UIOpacity).opacity = 100
+                    skillItem.getComponent(UIOpacity).opacity = 100
                   }, 100)
                 }
               }
@@ -310,10 +301,13 @@ export class SkillUiMgr extends Component {
     })
 
     this.skillNodes.forEach((item, index) => {
-      //处理禁用技能
-      if (DataManager.Instance.playerActor.location == '1' && this.skills[index].buff?.indexOf(BuffEnum.wall) != -1) {
-        item.getComponent(UIOpacity).opacity = 100
-      }
+      const skill = this.skills[index]
+      setTimeout(() => {
+        //处理禁用技能
+        if (canUse(skill)) {
+          item.getComponent(UIOpacity).opacity = 100
+        }
+      }, 100)
     })
   }
 

@@ -12,11 +12,14 @@ import {
   Texture2D,
   instantiate,
 } from 'cc'
+import DataManager from '../global/DataManager'
 const { ccclass, property } = _decorator
 
 @ccclass('SplitFrame')
 export default class SplitFrame extends Component {
-  init() {
+  time
+  init(time = 0.1) {
+    this.time = time
     this.splitImage()
   }
 
@@ -62,18 +65,18 @@ export default class SplitFrame extends Component {
     rightNode.setPosition(this.node.position.x + rightTran.width / 2, this.node.position.y)
   
     // 可以选择隐藏原始节点
-    this.node.destroy()
+    this.node.active = false
   
     // 左右移动
     tween(leftNode)
-      .to(0.1, { position: new Vec3(leftNode.position.x - leftTran.width / 5, leftNode.position.y) }, { easing: 'cubicIn' })
+      .to(this.time * DataManager.Instance.animalTime, { position: new Vec3(leftNode.position.x - leftTran.width / 5, leftNode.position.y) }, { easing: 'cubicIn' })
       .call(() => {
         leftNode.destroy()
       })
       .start()
     tween(rightNode)
       .to(
-        0.1,
+        this.time * DataManager.Instance.animalTime,
         { position: new Vec3(rightNode.position.x + rightTran.width / 5, rightNode.position.y) },
         { easing: 'cubicIn' },
       )

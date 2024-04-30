@@ -32,6 +32,7 @@ export default class Skill extends Component {
   }
 
   setSkillState() {
+    if (!this.skill.animal) return
     // 确保SkillPathEnum和ParamsNameEnum 的key是一致的
     console.log('设置状态', this.skill.animal, ParamsNameEnum[this.getKeyByValue(this.skill.particle)])
     this.actor.state = this.skill.animal
@@ -62,6 +63,8 @@ export default class Skill extends Component {
   }
 
   excute() {
+    // 两个角色使用同一个技能，会错乱
+    this.skill = JSON.parse(JSON.stringify(this.skill))
     this.tigerLength = this.skill.type.length
     this.defense = this.skill.defense
     this.power = this.skill.power
@@ -160,7 +163,7 @@ export default class Skill extends Component {
   // 在动画后结算伤害
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('attack结束', this.actor.id)
+      console.log('attack结束', this.actor.id, this.skill.damage)
 
       const otherActor = this.otherActor
       switch (this.otherSkill.skill.missType) {
@@ -398,6 +401,10 @@ export default class Skill extends Component {
       this.actor.hp--
     }
 
+    if (this.skill.special === Special.earth) {
+      this.skill.damage = this.otherActor.hp
+    }
+
     // 防御计算，因为不一定防御，写在防御逻辑里无法触发
     // 防御效果+1
     if (this.otherActor.buffs.has(BuffEnum.spartan)) {
@@ -473,7 +480,8 @@ export default class Skill extends Component {
     }
   }
   continueHandler() {
-    if (this.actor.buffs.has(BuffEnum.wall)) {
+    // 城墙不重复
+    if (this.skill.buff?.indexOf(BuffEnum.wall) !== -1 && this.actor.buffs.has(BuffEnum.wall)) {
       EventManager.Instance.emit(EventEnum.continueFinal, this.actor)
       return
     }

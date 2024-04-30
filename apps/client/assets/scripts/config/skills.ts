@@ -135,10 +135,13 @@ const skills: { [key: string]: ISkill } = {
   },
   '031': {
     name: '火星撞地球',
-    type: [5],
+    type: [1, 5],
+    special: Special.earth,
     desc: '打断敌方行动，对敌我双方造成当前生命值伤害。（灾害面前，一视同仁）',
     particle: SkillPathEnum.UnstableProjectile,
-    damage: 5,
+    damage: 1,
+    range: ['012'],
+    longrang: true,
   },
   '032': {
     name: '陷阱',

@@ -159,8 +159,8 @@ export const getCollisionNode = (target: ActorManager, damage: number = 0) => {
 
 // 碰撞检测
 export const checkCollision = (
-  myNode,
-  targetNode,
+  myNode: Node,
+  targetNode: Node,
   entityType: EntityTypeEnum[] = [EntityTypeEnum.Actor, EntityTypeEnum.Actor],
   type = 'rect',
 ) => {

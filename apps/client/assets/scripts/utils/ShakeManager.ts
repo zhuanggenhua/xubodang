@@ -44,7 +44,7 @@ export class ShakeManager extends Component {
   onShakeUpdate() {
     if (this.isShaking) {
       //振幅
-      const shakeAmount = 1.6
+      const shakeAmount = 2
       //持续时间
       const duration = 200
       //频率

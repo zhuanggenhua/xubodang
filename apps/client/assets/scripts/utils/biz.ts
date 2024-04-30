@@ -1,6 +1,6 @@
 import { Color, Label, instantiate } from 'cc'
-import { IPlayer } from '../common'
-import { SkillPathEnum } from '../enum'
+import { IPlayer, ISkill } from '../common'
+import { BuffEnum, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import DataManager from '../global/DataManager'
 
 // 属性值映射
@@ -29,4 +29,31 @@ export const setPrefab = (name, node) => {
   const fire = instantiate(prefab)
   fire.setParent(node)
   return fire
+}
+
+export const canUse = (skill: ISkill) => {
+  if (DataManager.Instance.playerActor.location == '1' && skill.buff && skill.buff?.indexOf(BuffEnum.wall) != -1) {
+    return true
+  }
+  if (DataManager.Instance.playerActor.buffs?.has(BuffEnum.wall)) {
+    //禁用近战
+    if (skill.type.indexOf(1) !== -1 && !skill.longrang) {
+      return true
+    }
+    // 禁用跳跃
+    if (skill.type.indexOf(3) !== -1) {
+      if (skill.buff?.indexOf(BuffEnum.fly) != -1) {
+        return true
+      }
+      if (skill.animal == ParamsNameEnum.Jump) {
+        return true
+      }
+      // 特殊不兼容
+      if (skill.special == Special.copy || skill.special == Special.qigongpao) {
+        return true
+      }
+    }
+  }
+
+  return false
 }

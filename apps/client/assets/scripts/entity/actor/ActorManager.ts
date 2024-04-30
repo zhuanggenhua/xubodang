@@ -274,6 +274,7 @@ export class ActorManager extends EntityManager {
   removeShield(shield) {
     const split = shield.node.addComponent(SplitFrame)
     split.init()
+    shield.node.destroy()
     this.shields.splice(this.shields.indexOf(shield), 1)
   }
 

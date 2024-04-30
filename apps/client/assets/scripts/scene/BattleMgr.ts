@@ -1,7 +1,7 @@
 import { _decorator, Color, Component, Input, instantiate, Label, Node, Sprite, tween, UIOpacity, Vec3 } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
-import { BuffEnum, EventEnum } from '../enum'
+import { BuffEnum, EventEnum, Special } from '../enum'
 import { ApiFunc, EntityTypeEnum, IActor, IPlayer, ISkill } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
@@ -123,7 +123,7 @@ export class BattleMgr extends Component {
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.saiya) && skill.name.includes('波')) {
       power--
     }
-    
+
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.wall) && skill == skills['012']) {
       power--
     }
@@ -139,9 +139,18 @@ export class BattleMgr extends Component {
     })
 
     if (ready) {
+      // 火星撞地球
+      if (
+        DataManager.Instance.actor1.skill.skill.special == Special.earth ||
+        DataManager.Instance.actor2.skill.skill.special == Special.earth
+      ) {
+        DataManager.Instance.actor1.skill.skill = skills['031']
+        DataManager.Instance.actor2.skill.skill = skills['031']
+        DataManager.Instance.battleCanvas.drawEarth()
+      }
       // test
-      DataManager.Instance.actor1.skill.excute()
       DataManager.Instance.actor2.skill.excute()
+      DataManager.Instance.actor1.skill.excute()
       // todo  十秒后强制下一轮
     }
   }
