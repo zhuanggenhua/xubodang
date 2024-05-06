@@ -73,7 +73,11 @@ export class BulletManager extends EntityManager {
     }
 
     // this.angle += Math.random() * 20 - 10
-    this.node.getChildByName('Sprite').setRotationFromEuler(0, 0, this.angle + offsetRange)
+    if (this.type == EntityTypeEnum.Crossbow) {
+      this.node.getChildByName('Sprite').setRotationFromEuler(0, 0, this.angle + offsetRange)
+    } else if (this.type == EntityTypeEnum.Sword) {
+      this.node.setRotationFromEuler(0, 0, this.angle + offsetRange)
+    }
 
     const tempNode = new Node('tempNode')
     tempNode.parent = this.node.parent
@@ -103,7 +107,7 @@ export class BulletManager extends EntityManager {
               // 打到人身上
               if (targetNode.getComponent(ActorManager)) {
                 // 箭矢驻留
-                if (this.actor.skill.skill?.bullet === EntityTypeEnum.Crossbow) {
+                if (this.type === EntityTypeEnum.Crossbow) {
                   this.node.setPosition(getNodePos(this.node, this.actor.skill.otherActor.node))
                   this.node.setParent(this.actor.skill.otherActor.node)
                   // 避免翻转影响

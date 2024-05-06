@@ -20,7 +20,7 @@ import { BuffEnum, EventEnum, ParamsNameEnum, SkillPathEnum, Special } from '../
 import EventManager from '../global/EventManager'
 import { IActor, ISkill } from '../common'
 import DataManager from '../global/DataManager'
-import { canUse, createPrompt, destroyPromt, isEmpty } from '../utils'
+import { cantUse, createPrompt, destroyPromt, isEmpty } from '../utils'
 import Ai from '../ai/Ai'
 import skills from '../config/skills'
 const { ccclass, property } = _decorator
@@ -65,13 +65,13 @@ export class SkillUiMgr extends Component {
     const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
 
     const thisSkills = actor.skills
-    
+
     Object.keys(thisSkills).forEach((key, itemIndex) => {
       const skillItemNode = this.node.children[itemIndex]
-      if (itemIndex !== 0) skillItemNode.getComponent(UIOpacity).opacity = 100
+      // if (itemIndex !== 0) skillItemNode.getComponent(UIOpacity).opacity = 100
       this.skillItemNodes.push(skillItemNode) //保存起来方便管理
 
-      thisSkills[key].forEach((skill, index) => {        
+      thisSkills[key].forEach((skill, index) => {
         // 遍历每个技能
         // 获取到栏位
         const skillNode = skillItemNode.getChildByName('Skills').children[index]
@@ -112,7 +112,7 @@ export class SkillUiMgr extends Component {
               if (DataManager.Instance.actor1.power < itemIndex) return //无法使用
             }
 
-            if (canUse(skill)) return //变灰的
+            if (cantUse(skill)) return //变灰的
 
             // 第二次按下
             if (this.activeSkill == skillNode) {
@@ -218,6 +218,12 @@ export class SkillUiMgr extends Component {
         skillNode.on(Input.EventType.TOUCH_CANCEL, this.handlerTouchEnd(skillNode, skill, itemIndex))
       })
     })
+
+    if (this.isStart) {
+      this.updateSkillItem(DataManager.Instance.actor1.power)
+    } else {
+      this.updateSkillItem(4)
+    }
   }
   handlerTouchEnd(skillNode, skill, itemIndex) {
     return () => {
@@ -305,7 +311,7 @@ export class SkillUiMgr extends Component {
       const skill = this.skills[index]
       setTimeout(() => {
         //处理禁用技能
-        if (canUse(skill)) {
+        if (cantUse(skill)) {
           item.getComponent(UIOpacity).opacity = 100
         }
       }, 100)

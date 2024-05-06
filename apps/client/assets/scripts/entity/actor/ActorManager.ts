@@ -62,7 +62,7 @@ export class ActorManager extends EntityManager {
     EventManager.Instance.emit(EventEnum.updateHp, this.id)
   }
   hpMax: number
-  power: number = 5
+  power: number = 4
   buffs: Set<BuffEnum> = new Set()
   // position: IVec2;
   // direction: IVec2;

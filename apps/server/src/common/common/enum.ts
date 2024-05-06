@@ -61,7 +61,7 @@ export enum ApiFunc {
   ApiRoomJoin,
   ApiRoomLeave,
   gap = 100,
-  // 从100继续，这是api和msg的分界线
+  // 从100继续，这是api和msg的分界线，msg一般是用于无状态
   inputFromClient,
   stateFromServer,
   RoomList,

@@ -98,6 +98,8 @@ export class ActorStateMachine extends StateMachine {
         this.actor.state = ParamsNameEnum.AncientSwordAttack
       }
       if (name.includes(ParamsNameEnum.AncientSwordAttack)) {
+        this.actor.node.setPosition(this.actor.node.position.add(v3(0, -50, 0)))
+        this.actor.tran.setContentSize(200, 200)
         this.scheduleOnce(() => {
           this.actor.onAttack()
         }, 0.1 * DataManager.Instance.animalTime)
@@ -154,9 +156,7 @@ export class ActorStateMachine extends StateMachine {
       if (name.includes(ParamsNameEnum.AncientSwordIdle)) {
         // 光粒子
         // 不能让其他canvas受到影响
-        console.log('???', this.actor.node.children);
         this.actor.node.children.forEach((child) => {
-          
           if (child.name.includes('canvas')) child.position.add(v3(0, -50, 0))
         })
         // 角色的锚点应该在脚下！

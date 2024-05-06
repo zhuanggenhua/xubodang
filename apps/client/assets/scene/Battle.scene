@@ -3185,7 +3185,7 @@
         "__id__": 137
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 142
@@ -5119,7 +5119,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_opacity": 255,
+    "_opacity": 0,
     "_id": "44yCM5SBlLPbAJtAH76sun"
   },
   {

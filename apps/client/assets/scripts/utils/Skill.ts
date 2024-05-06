@@ -90,6 +90,8 @@ export default class Skill extends Component {
               this.tiger()
             }, 0.1 * DataManager.Instance.animalTime)
             return
+          } else {
+            this.tiger()
           }
         }
 
@@ -333,7 +335,7 @@ export default class Skill extends Component {
   // 蓄力
   powerHandler() {
     const power = this.skill.power
-    if (this.actor.power < 6) {
+    if (this.actor.power < 4) {
       this.actor.power += power
     }
 
@@ -551,8 +553,12 @@ export default class Skill extends Component {
         break
       case Special.spartan:
         this.actor.node.getChildByName('solider').active = true
+        EventManager.Instance.emit(EventEnum.specialFinal, this.actor)
+        break
       case Special.saiya:
         this.actor.node.getChildByName('saiya').active = true
+        EventManager.Instance.emit(EventEnum.specialFinal, this.actor)
+        break
       // this.actor.
       default:
         // 没有特殊情况直接结束

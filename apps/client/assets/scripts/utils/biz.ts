@@ -31,11 +31,11 @@ export const setPrefab = (name, node) => {
   return fire
 }
 
-export const canUse = (skill: ISkill) => {
-  if (DataManager.Instance.playerActor.location == '1' && skill.buff && skill.buff?.indexOf(BuffEnum.wall) != -1) {
+export const cantUse = (skill: ISkill) => {
+  if (DataManager.Instance.playerActor?.location == '1' && skill.buff && skill.buff?.indexOf(BuffEnum.wall) != -1) {
     return true
   }
-  if (DataManager.Instance.playerActor.buffs?.has(BuffEnum.wall)) {
+  if (DataManager.Instance.playerActor?.buffs?.has(BuffEnum.wall)) {
     //禁用近战
     if (skill.type.indexOf(1) !== -1 && !skill.longrang) {
       return true

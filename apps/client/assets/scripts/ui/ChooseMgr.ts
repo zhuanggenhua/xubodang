@@ -59,6 +59,7 @@ export class ChooseMgr extends Component {
           chooseNode.children.forEach((node) => {
             node.getComponent(Sprite).spriteFrame = normalSprite
           })
+
           // 设置按钮为按下状态的样式
           actorNode.getComponent(Button).normalSprite = activeSprite
           this.active = actor

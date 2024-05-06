@@ -84,16 +84,17 @@ export class BattleMgr extends Component {
     // // this.renderSkills(actors.animeMan)
     // this.createActor(actors.soldier)
 
-    
-    if (DataManager.Instance.mode === 'single') {
-      Ai.Instance.setActor(actors.soldier)
-      this.createActor(actors.soldier, Ai.Instance.id)
-      // Ai.Instance.setActor(actors.animeMan)
-      // this.createActor(actors.animeMan, Ai.Instance.id)
-    }
+    // if (DataManager.Instance.mode === 'single') {
+    //   Ai.Instance.setActor(actors.soldier)
+    //   this.createActor(actors.soldier, Ai.Instance.id)
+    //   // Ai.Instance.setActor(actors.animeMan)
+    //   // this.createActor(actors.animeMan, Ai.Instance.id)
+    // }
   }
 
   createActor(selectActor: IActor, id: number = DataManager.Instance.player.id) {
+    console.log('创建角色', selectActor, id)
+
     let prefab = DataManager.Instance.prefabMap.get('Actor1')
     const actor = instantiate(prefab)
     if (!isPlayer(id)) {
@@ -151,6 +152,7 @@ export class BattleMgr extends Component {
         DataManager.Instance.actor2.skill.skill = skills['031']
         DataManager.Instance.battleCanvas.drawEarth()
       }
+
       // test
       DataManager.Instance.actor2.skill.excute()
       DataManager.Instance.actor1.skill.excute()
