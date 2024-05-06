@@ -22,8 +22,8 @@ const actors: { [key: string]: IActor } = {
       0: [skills['000'], skills['001'], skills['002'], skills['003']],
       1: [skills['110'], skills['111'], skills['112'], skills['113']],
       2: [skills['120'], skills['121'], skills['122'], skills['123']],
-      3: [skills['130'], skills['121'], skills['122'], skills['133']],
-      4: [skills['140'], skills['121'], skills['122'], skills['143']],
+      3: [skills['130'], skills['131'], skills['132'], skills['133']],
+      4: [skills['140'], skills['141'], skills['142']],
     },
   },
   // joker: {

@@ -33,6 +33,7 @@ export class BattleMgr extends Component {
     DataManager.Instance.battleCanvas = this.Battle.getComponent(BattleCanvas)
     this.Battle.destroyAllChildren()
     this.Battle.addComponent(ShakeManager)
+    DataManager.Instance.battleCanvas.canvas3.addComponent(ShakeManager)
 
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
@@ -79,9 +80,11 @@ export class BattleMgr extends Component {
     )
     // test
     // 渲染当前选中角色技能，默认是战士
-    this.renderSkills(actors.soldier)
-    // this.renderSkills(actors.animeMan)
-    this.createActor(actors.soldier)
+    // this.renderSkills(actors.soldier)
+    // // this.renderSkills(actors.animeMan)
+    // this.createActor(actors.soldier)
+
+    
     if (DataManager.Instance.mode === 'single') {
       Ai.Instance.setActor(actors.soldier)
       this.createActor(actors.soldier, Ai.Instance.id)
@@ -127,7 +130,7 @@ export class BattleMgr extends Component {
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.wall) && skill == skills['012']) {
       power--
     }
-    DataManager.Instance.actors.get(id).power -= power
+    // DataManager.Instance.actors.get(id).power -= power
     console.log('释放后能量', power)
 
     // 两个角色都就绪才执行

@@ -85,10 +85,9 @@ export class BattleCanvas extends Component {
           easing: 'sineIn',
           onUpdate: () => {
             if (checkCollision(earth, mars, [EntityTypeEnum.Crossbow, EntityTypeEnum.Crossbow])) {
-              // todo shake
-              EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, SHAKE_TYPE_ENUM.RIGHT)
+              EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, SHAKE_TYPE_ENUM.RIGHT, 20)
               setTimeout(() => {
-                EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, SHAKE_TYPE_ENUM.LEFT)
+                EventManager.Instance.emit(EventEnum.SCREEN_SHAKE, SHAKE_TYPE_ENUM.LEFT, 20)
               }, 0.2)
               const split = earth.addComponent(SplitFrame)
               split.init(0.2)

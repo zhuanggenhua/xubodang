@@ -10,6 +10,9 @@ export class ShakeManager extends Component {
   private oldTime: number
   private oldPos: { x: number; y: number } = { x: 0, y: 0 }
 
+  //振幅
+  shakeAmount = 4
+
   onLoad() {
     EventManager.Instance.on(EventEnum.SCREEN_SHAKE, this.onShake, this)
   }
@@ -22,10 +25,12 @@ export class ShakeManager extends Component {
     this.isShaking = false
   }
 
-  onShake(type: SHAKE_TYPE_ENUM) {
+  onShake(type: SHAKE_TYPE_ENUM, shakeAmount?: number) {
     if (this.isShaking) {
       return
     }
+    if (shakeAmount) this.shakeAmount = shakeAmount
+    else this.shakeAmount = 5
     this.isShaking = true
     this.shakeType = type
     this.oldTime = game.totalTime
@@ -43,8 +48,6 @@ export class ShakeManager extends Component {
    */
   onShakeUpdate() {
     if (this.isShaking) {
-      //振幅
-      const shakeAmount = 2
       //持续时间
       const duration = 200
       //频率
@@ -54,7 +57,7 @@ export class ShakeManager extends Component {
       //总时间
       const totalSecond = duration / 1000
 
-      const offset = shakeAmount * Math.sin(frequency * Math.PI * curSecond)
+      const offset = this.shakeAmount * Math.sin(frequency * Math.PI * curSecond)
       if (this.shakeType === SHAKE_TYPE_ENUM.TOP) {
         this.node.setPosition(this.oldPos.x, this.oldPos.y - offset)
       } else if (this.shakeType === SHAKE_TYPE_ENUM.BOTTOM) {

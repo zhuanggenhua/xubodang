@@ -65,12 +65,13 @@ export class SkillUiMgr extends Component {
     const activeSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
 
     const thisSkills = actor.skills
+    
     Object.keys(thisSkills).forEach((key, itemIndex) => {
       const skillItemNode = this.node.children[itemIndex]
       if (itemIndex !== 0) skillItemNode.getComponent(UIOpacity).opacity = 100
       this.skillItemNodes.push(skillItemNode) //保存起来方便管理
 
-      thisSkills[key].forEach((skill, index) => {
+      thisSkills[key].forEach((skill, index) => {        
         // 遍历每个技能
         // 获取到栏位
         const skillNode = skillItemNode.getChildByName('Skills').children[index]

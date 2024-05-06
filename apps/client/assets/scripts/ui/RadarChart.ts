@@ -230,6 +230,7 @@ export class RadarChart extends Component {
     }
   }
 
+  // 绘制图表
   drawBase() {
     // 创建一个二维数组  保存每圈每个点的坐标
     let scalesSet: Vec2[][] = []
