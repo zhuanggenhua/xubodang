@@ -1,4 +1,3 @@
-import { BuffEnum, MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
 
 // 玩家当前联网状态，用于随机匹配、断线重连
 export enum ConnectStateEnum {
@@ -19,6 +18,7 @@ export interface IPlayer {
   nickname: string
   godname?: string
   rid?: number
+  actorName?: string
 }
 
 export interface IRoom {
@@ -60,15 +60,27 @@ export enum ApiFunc {
   RoomListByName,
   ApiRoomJoin,
   ApiRoomLeave,
+  ApiChooseActor,
+  ApiUseSkill,
   gap = 100,
   // 从100继续，这是api和msg的分界线，msg一般是用于无状态
   inputFromClient,
   stateFromServer,
   RoomList,
   MsgRoom,
+  ChooseActor,
+  UseSkill,
 }
 
 export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.ApiUseSkill]: {
+    req: 'game.ApiUseSkillReq',
+    res: 'game.ApiUseSkillRes',
+  },
+  [ApiFunc.ApiChooseActor]: {
+    req: 'game.ApiChooseActorReq',
+    res: 'game.ApiChooseActorRes',
+  },
   [ApiFunc.ApiRoomLeave]: {
     req: 'game.ApiRoomLeaveReq',
     res: 'game.ApiRoomLeaveRes',
@@ -126,6 +138,8 @@ export const ProtoPathEnum: Record<ApiFunc, any> = {
   [ApiFunc.stateFromServer]: 'game.StateFromServer',
   [ApiFunc.RoomList]: 'game.RoomList',
   [ApiFunc.MsgRoom]: 'game.MsgRoom',
+  [ApiFunc.ChooseActor]: 'game.ChooseActor',
+  [ApiFunc.UseSkill]: 'game.UseSkill',
 }
 
 export enum ServerIdEnum {
@@ -152,34 +166,3 @@ export enum ServerPort {
   Game = 5000,
 }
 
-export interface ISkill {
-  name?: string
-  type?: number[]
-  desc?: string
-  damage?: number
-  broken?: number //对护盾伤害
-  speed?: number
-  target?: number
-  range?: string[]
-  bullet?: EntityTypeEnum
-  longrang?: boolean
-  pierce?: boolean
-  location?: '0' | '1' | '2'
-  defense?: number
-  power?: number
-  particle?: SkillPathEnum
-  animal?: ParamsNameEnum
-  shield?: SkillPathEnum //护盾图片
-  missType?: MissType //闪避的类型
-  special?: Special //特效类型
-  buff?: BuffEnum[] //持续回合
-}
-
-export interface IActorSkills {
-  [key: number]: ISkill[]
-}
-export interface IActor {
-  actorName: string
-  prompt?: string[]
-  skills: IActorSkills
-}

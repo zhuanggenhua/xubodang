@@ -36,6 +36,7 @@ export default class Room {
       player.rid = -1
       // player.connection.unlistenMsg(ApiFunc.MsgClientSync, this.getClientMsg, this);
       this.players.delete(player)
+      
       if (!this.players.size) {
         RoomManager.Instance.closeRoom(this.id)
       }

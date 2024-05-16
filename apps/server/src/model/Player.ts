@@ -8,6 +8,7 @@ export default class Player {
   connection: Connection
   rid: number //房间id
   state: ConnectStateEnum = ConnectStateEnum.Idle
+  actorName: string = ''
 
   //   Pick 创造新类型，包含指定的属性
   constructor(connection, {id, nickname, godname}) {

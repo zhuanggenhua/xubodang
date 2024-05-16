@@ -1,6 +1,6 @@
 import { isPlayer, setPrefab } from './index'
-import { EntityTypeEnum, ISkill } from '../common'
-import { BuffEnum, EventEnum, MissType, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
+import { EntityTypeEnum } from '../common'
+import { BuffEnum, EventEnum, ISkill, MissType, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
 import { ActorManager } from '../entity/actor/ActorManager'

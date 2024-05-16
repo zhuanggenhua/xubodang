@@ -16,13 +16,14 @@ import {
   v3,
   v2,
 } from 'cc'
-import { BuffEnum, EventEnum, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
+import { BuffEnum, EventEnum, IActor, ISkill, ParamsNameEnum, SkillPathEnum, Special } from '../enum'
 import EventManager from '../global/EventManager'
-import { IActor, ISkill } from '../common'
 import DataManager from '../global/DataManager'
 import { cantUse, createPrompt, destroyPromt, isEmpty } from '../utils'
 import Ai from '../ai/Ai'
 import skills from '../config/skills'
+import { ApiFunc } from '../common'
+import NetworkManager from '../global/NetworkManager'
 const { ccclass, property } = _decorator
 
 @ccclass('SkillUiMgr')
@@ -128,7 +129,7 @@ export class SkillUiMgr extends Component {
               skillNode.getComponent(Sprite).spriteFrame = normalSprite
               destroyPromt()
 
-              this.handlerCheck(skillNode, skill, itemIndex)
+              this.handlerCheck(skillNode, { key, index }, itemIndex)
               return
             }
             this.activeSkill = skillNode
@@ -225,7 +226,7 @@ export class SkillUiMgr extends Component {
       this.updateSkillItem(4)
     }
   }
-  handlerTouchEnd(skillNode, skill, itemIndex) {
+  handlerTouchEnd(skillNode, skillIndex: any, itemIndex) {
     return () => {
       if (this.dragNode) {
         if (this.entryHand) {
@@ -237,7 +238,7 @@ export class SkillUiMgr extends Component {
               this.dragNode = null
 
               // 触发选中效果
-              this.handlerCheck(skillNode, skill, itemIndex)
+              this.handlerCheck(skillNode, skillIndex, itemIndex)
             })
             .start()
         } else {
@@ -250,11 +251,18 @@ export class SkillUiMgr extends Component {
     }
   }
 
-  handlerCheck(skillNode: Node, skill: ISkill, power: number) {
-    EventManager.Instance.emit(EventEnum.useSkill, skill, power)
+  async handlerCheck(skillNode: Node, skillIndex: any, power: number) {
+    EventManager.Instance.emit(EventEnum.useSkill, skillIndex, power)
 
     if (DataManager.Instance.mode === 'single') {
       Ai.Instance.excute()
+    } else if (DataManager.Instance.mode === 'network') {
+      const res = await NetworkManager.Instance.callApi(ApiFunc.ApiUseSkill, {
+        key: skillIndex.key,
+        index: skillIndex.index,
+        power,
+      })
+      console.log('使用技能', res)
     }
 
     this.isDisable = true

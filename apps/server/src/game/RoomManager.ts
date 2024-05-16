@@ -71,7 +71,7 @@ export default class RoomManager extends Singleton {
     return [...rooms].map((room) => this.getRoomView(room))
   }
 
-  getRoomView({ id, players, roomName, life, mode, pwd, turn }: Room) {
+  getRoomView({ id, players, roomName, life, mode, pwd, turn }: Room) {    
     let hasPwd = pwd === '' ? false : true
     return { id, roomName, life, mode, hasPwd, turn, players: PlayerManager.Instance.getPlayersView(players) }
   }

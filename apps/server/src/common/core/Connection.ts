@@ -38,7 +38,7 @@ export class Connection extends EventEmitter {
       // 用编译器 解码得到对应的类型
       const data = coder.decode(buffer.slice(1))
 
-      console.log('req',name,data);
+      // console.log('req',name,data);
 
       try {
         // const msg = json

@@ -345,10 +345,7 @@
       "__expectedType__": "cc.SpriteFrame"
     },
     "_hoverSprite": null,
-    "_pressedSprite": {
-      "__uuid__": "dcc13f21-cddc-4e35-92c5-37edc836acd1@f9941",
-      "__expectedType__": "cc.SpriteFrame"
-    },
+    "_pressedSprite": null,
     "_disabledSprite": null,
     "_duration": 0.1,
     "_zoomScale": 1.2,

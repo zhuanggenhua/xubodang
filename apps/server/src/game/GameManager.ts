@@ -150,5 +150,76 @@ export class GameManager extends Singleton {
         throw new Error('ApiRoomLeave 玩家未登录')
       }
     })
+
+    // 房间内部消息
+    // 选择角色
+    server.setApi(ApiFunc.ApiChooseActor, (connection: Connection, data) => {
+      if (connection.playerId) {
+        const { actor } = data
+
+        const player = PlayerManager.Instance.getPlayerById(connection.playerId)
+        if (player) {
+          // 记录
+          player.actorName = actor
+
+          const rid = player.rid
+          if (rid !== -1) {
+            // 通知房间内其他玩家
+            for (const otherPlayer of RoomManager.Instance.getRoomById(rid).players) {
+              if (otherPlayer.id == player.id) return
+              RoomManager.Instance.syncRoom(rid)
+            }
+            return {}
+          } else {
+            throw new Error('ApiRoomLeave 玩家不在房间')
+          }
+        } else {
+          throw new Error('ApiRoomLeave 玩家不存在')
+        }
+      } else {
+        throw new Error('ApiRoomLeave 玩家未登录')
+      }
+    })
+    // 确认选择，进入游戏
+    server.setApi(ApiFunc.enterGame, (connection: Connection, data) => {
+      if (connection.playerId) {
+        const { actor } = data
+
+        const player = PlayerManager.Instance.getPlayerById(connection.playerId)
+        const rid = player.rid
+        // 通知房间内其他玩家
+        for (const otherPlayer of RoomManager.Instance.getRoomById(rid).players) {
+          if (otherPlayer.id == player.id) continue
+          const otherPlayer2 = PlayerManager.Instance.getPlayerById(otherPlayer.id)
+          otherPlayer2.connection.sendMsg(ApiFunc.ChooseActor, {
+            id: player.id,
+            actor,
+          })
+        }
+        return {}
+      } else {
+        throw new Error('ApiRoomLeave 玩家未登录')
+      }
+    })
+
+    // 发送技能
+    server.setApi(ApiFunc.ApiUseSkill, (connection: Connection, data) => {
+      if (connection.playerId) {
+        const player = PlayerManager.Instance.getPlayerById(connection.playerId)
+        const rid = player.rid
+        // 通知房间内其他玩家
+        for (const otherPlayer of RoomManager.Instance.getRoomById(rid).players) {
+          if (otherPlayer.id == player.id) continue
+          const otherPlayer2 = PlayerManager.Instance.getPlayerById(otherPlayer.id)
+          otherPlayer2.connection.sendMsg(ApiFunc.UseSkill, {
+            ...data,
+            id: player.id,
+          })
+        }
+        return {}
+      } else {
+        throw new Error('ApiRoomLeave 玩家未登录')
+      }
+    })
   }
 }

@@ -20,7 +20,6 @@ export class HallManager extends Component {
 
   async onLoad() {
     //应该放在场景管理类一起处理
-    DataManager.Instance.stage = director.getScene().getChildByName('Canvas')
     director.preloadScene(SceneEnum.Battle)
 
     EventManager.Instance.on(EventEnum.RoomCreate, this.handleCreateRoom, this)
@@ -70,6 +69,7 @@ export class HallManager extends Component {
       return
     }
 
+    // 在已有节点基础上生成指定数量节点
     for (const item of this.roomContainer.children) {
       item.active = false
     }
@@ -79,6 +79,7 @@ export class HallManager extends Component {
       roomItem.setParent(this.roomContainer)
     }
 
+    // 为节点填充数据
     for (let i = 0; i < rooms.length; i++) {
       const data = rooms[i]
       const node = this.roomContainer.children[i]
@@ -91,6 +92,7 @@ export class HallManager extends Component {
     const res = await NetworkManager.Instance.callApi(ApiFunc.RoomCreate, roomInfo)
 
     DataManager.Instance.roomInfo = res.room
+    console.log('创建房间', DataManager.Instance.roomInfo)
     director.loadScene(SceneEnum.Battle)
     DataManager.Instance.mode = 'network'
   }
@@ -99,8 +101,8 @@ export class HallManager extends Component {
     const res = await NetworkManager.Instance.callApi(ApiFunc.ApiRoomJoin, data)
 
     if (res.error === '') {
-      console.log('进入房间')
       DataManager.Instance.roomInfo = res.room
+      console.log('进入房间', DataManager.Instance.roomInfo)
       director.loadScene(SceneEnum.Battle)
       DataManager.Instance.mode = 'network'
     } else {

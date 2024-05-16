@@ -58,7 +58,7 @@ export default class PlayerManager extends Singleton {
   }
 
   // 获取玩家公开数据
-  getPlayerView({ id, nickname, godname, rid }: Player) {
-    return { id, nickname, godname, rid }
+  getPlayerView({ id, nickname, godname, rid, actorName }: Player) {
+    return { id, nickname, godname, rid, actorName }
   }
 }

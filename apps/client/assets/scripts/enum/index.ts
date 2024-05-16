@@ -1,3 +1,5 @@
+import { EntityTypeEnum } from "../common"
+
 export enum TipEnum {
   ErrTip = 'ErrTip',
 }
@@ -33,7 +35,6 @@ export enum EventEnum {
   flicker = 'flicker',
   moveBack = 'moveBack',
   missSingle = 'missSingle',
-
 
   onDoorDefense = 'onDoorDefense',
 }
@@ -215,4 +216,36 @@ export enum BuffEnum {
   saiya = '赛亚人',
   door = '门',
   wall = '城墙',
+}
+
+export interface ISkill {
+  name?: string
+  type?: number[]
+  desc?: string
+  damage?: number
+  broken?: number //对护盾伤害
+  speed?: number
+  target?: number
+  range?: string[]
+  bullet?: EntityTypeEnum
+  longrang?: boolean
+  pierce?: boolean
+  location?: '0' | '1' | '2'
+  defense?: number
+  power?: number
+  particle?: SkillPathEnum
+  animal?: ParamsNameEnum
+  shield?: SkillPathEnum //护盾图片
+  missType?: MissType //闪避的类型
+  special?: Special //特效类型
+  buff?: BuffEnum[] //持续回合
+}
+
+export interface IActorSkills {
+  [key: number]: ISkill[]
+}
+export interface IActor {
+  actorName: string
+  prompt?: string[]
+  skills: IActorSkills
 }

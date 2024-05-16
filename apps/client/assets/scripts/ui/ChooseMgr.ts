@@ -15,14 +15,16 @@ import {
   SpriteFrame,
   Button,
   Label,
+  log,
 } from 'cc'
 import { EventEnum, SkillPathEnum } from '../enum'
-import { IActor } from '../common'
+import { ApiFunc } from '../common'
 import DataManager from '../global/DataManager'
 import { createPrompt, destroyPromt } from '../utils'
 import actors from '../config/actor'
 import EventManager from '../global/EventManager'
 import Ai from '../ai/Ai'
+import NetworkManager from '../global/NetworkManager'
 const { ccclass, property } = _decorator
 
 @ccclass('ChooseMgr')
@@ -52,7 +54,7 @@ export class ChooseMgr extends Component {
 
       actorNode.on(
         Button.EventType.CLICK,
-        (event: EventTouch) => {
+        async (event: EventTouch) => {
           destroyPromt()
           if (this.isDisable) return
           // 排他
@@ -64,8 +66,16 @@ export class ChooseMgr extends Component {
           actorNode.getComponent(Button).normalSprite = activeSprite
           this.active = actor
           this.label1.string = actors[actor].actorName
-          EventManager.Instance.emit(EventEnum.renderSkills, actors[actor])
-          EventManager.Instance.emit(EventEnum.renderChart, actors[actor], 'Graphics1')
+          EventManager.Instance.emit(EventEnum.renderSkills, this.active)
+          EventManager.Instance.emit(EventEnum.renderChart, this.active, 'Graphics1')
+
+          // 广播
+          if (DataManager.Instance.mode == 'network') {
+            const res = await NetworkManager.Instance.callApi(ApiFunc.ApiChooseActor, {
+              actor: this.active,
+            })
+            console.log('选择角色', res)
+          }
         },
         this,
       )
@@ -74,25 +84,31 @@ export class ChooseMgr extends Component {
       if (index === 0) {
         actorNode.getComponent(Button).normalSprite = activeSprite
         this.active = actor
-        EventManager.Instance.emit(EventEnum.renderSkills, actors[actor])
-        EventManager.Instance.emit(EventEnum.renderChart, actors[actor], 'Graphics1')
+        EventManager.Instance.emit(EventEnum.renderSkills, this.active)
+        EventManager.Instance.emit(EventEnum.renderChart, this.active, 'Graphics1')
+        EventManager.Instance.emit(EventEnum.renderChart, this.active, 'Graphics2')
       }
     })
 
     // 单人模式，ai直接选择
     if (DataManager.Instance.mode === 'single') {
       Ai.Instance.setActor(actors.soldier)
-      EventManager.Instance.emit(EventEnum.createActor, actors.soldier, Ai.Instance.id)
-      EventManager.Instance.emit(EventEnum.renderChart, actors['soldier'], 'Graphics2')
+      EventManager.Instance.emit(EventEnum.createActor, 'soldier', Ai.Instance.id)
+      EventManager.Instance.emit(EventEnum.renderChart, 'soldier', 'Graphics2')
     }
   }
 
-  handlerReady(event: EventTouch) {
+  async handlerReady(event: EventTouch) {
     if (this.isDisable) return
-    event.target.getComponent(Button).normalSprite = DataManager.Instance.skillMap.get(SkillPathEnum.ActiveSprite)
+    event.target.getComponent(Button).normalSprite = event.target.getComponent(Button).activeSprite
     this.isDisable = true
-    EventManager.Instance.emit(EventEnum.createActor, actors[this.active])
-    EventManager.Instance.emit(EventEnum.renderSkills, actors[this.active])
-    EventManager.Instance.emit(EventEnum.renderChart, actors[this.active], 'Graphics1')
+    EventManager.Instance.emit(EventEnum.createActor, this.active)
+    EventManager.Instance.emit(EventEnum.renderSkills, this.active)
+    EventManager.Instance.emit(EventEnum.renderChart, this.active, 'Graphics1')
+
+    const res = await NetworkManager.Instance.callApi(ApiFunc.enterGame, {
+      actor: this.active,
+    })
+    console.log('进入游戏', res)
   }
 }

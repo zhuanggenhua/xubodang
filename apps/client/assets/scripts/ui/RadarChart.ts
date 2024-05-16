@@ -1,10 +1,9 @@
-import { _decorator, Color, Component, EventTouch, Graphics, Label, Node, tween, UITransform, v2, v3, Vec2 } from 'cc'
-import NetworkManager from '../global/NetworkManager'
+import { _decorator, Color, Component, Graphics, Label, tween, v2, v3, Vec2 } from 'cc'
 import { createUINode, isEmpty } from '../utils'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
-import { EventEnum } from '../enum'
-import { IActor, ISkill } from '../common'
+import { EventEnum, ISkill } from '../enum'
+import actors from '../config/actor'
 const { ccclass, property } = _decorator
 
 /**
@@ -109,7 +108,8 @@ export class RadarChart extends Component {
     this.draw(this.data)
   }
 
-  renderChart(actor: IActor, target: string) {
+  renderChart(actorName: string, target: string) {    
+    let actor = actors[actorName]
     // 取'Graphics1'为玩家
     if (target === this.node.name) {
       let attack = 0

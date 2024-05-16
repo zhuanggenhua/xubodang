@@ -1,8 +1,8 @@
 import { _decorator, Color, Component, Input, instantiate, Label, Node, Sprite, tween, UIOpacity, Vec3 } from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
-import { BuffEnum, EventEnum, Special } from '../enum'
-import { ApiFunc, EntityTypeEnum, IActor, IPlayer, ISkill } from '../common'
+import { BuffEnum, EventEnum, ISkill, Special } from '../enum'
+import { ApiFunc, EntityTypeEnum, IPlayer } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
 import { SkillUiMgr } from '../ui/SkillUiMgr'
@@ -20,9 +20,9 @@ const { ccclass, property } = _decorator
 @ccclass('BattleMgr')
 export class BattleMgr extends Component {
   @property(Node)
-  skillContainer: Node = null
+  skillContainer: Node
   @property(Node)
-  Battle: Node = null
+  Battle: Node
 
   bg: Node
   choose: Node
@@ -35,28 +35,37 @@ export class BattleMgr extends Component {
     this.Battle.addComponent(ShakeManager)
     DataManager.Instance.battleCanvas.canvas3.addComponent(ShakeManager)
 
-    NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
-    // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
     EventManager.Instance.on(EventEnum.useSkill, this.useSkill, this)
     EventManager.Instance.on(EventEnum.updateHp, this.setHeart, this)
     EventManager.Instance.on(EventEnum.renderSkills, this.renderSkills, this)
     EventManager.Instance.on(EventEnum.createActor, this.createActor, this)
+
+    NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
+    NetworkManager.Instance.listenMsg(ApiFunc.ChooseActor, this.chooseActor, this)
+    NetworkManager.Instance.listenMsg(ApiFunc.UseSkill, this.onlineUseSkill, this)
+    // NetworkManager.Instance.listenMsg(ApiMsgEnum.MsgGameStart, this.handleGameStart, this);
   }
-  beforeDestroy() {
+  onDestroy() {
+    DataManager.Instance.actors.clear()
+    DataManager.Instance.otherPlayer = null
+
     EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
     EventManager.Instance.off(EventEnum.updateHp, this.setHeart, this)
     EventManager.Instance.off(EventEnum.renderSkills, this.renderSkills, this)
     EventManager.Instance.off(EventEnum.createActor, this.createActor, this)
 
     NetworkManager.Instance.unlistenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
+    NetworkManager.Instance.unlistenMsg(ApiFunc.ChooseActor, this.chooseActor, this)
+    NetworkManager.Instance.unlistenMsg(ApiFunc.UseSkill, this.onlineUseSkill, this)
   }
   async start() {
     // temp
-    actors.me = {
-      actorName: '崇高假身',
-      skills: [],
-    }
+    // actors.me = {
+    //   actorName: '崇高假身',
+    //   skills: [],
+    // }
     await DataManager.Instance.loadRes() //temp
+
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
     this.choose = this.bg.getChildByName('ChooseActor')
     this.choose.getChildByName('Graphics1').addComponent(RadarChart)
@@ -92,7 +101,12 @@ export class BattleMgr extends Component {
     // }
   }
 
-  createActor(selectActor: IActor, id: number = DataManager.Instance.player.id) {
+  chooseActor(data) {
+    const { id, actor } = data
+    this.createActor(actor, id)
+  }
+  createActor(actorName: string, id: number = DataManager.Instance.player.id) {
+    let selectActor = actors[actorName]
     console.log('创建角色', selectActor, id)
 
     let prefab = DataManager.Instance.prefabMap.get('Actor1')
@@ -122,7 +136,13 @@ export class BattleMgr extends Component {
     this.skillContainer.getComponent(SkillUiMgr).startGame()
   }
 
-  useSkill(skill: ISkill, power: number, id: number = DataManager.Instance.player.id) {
+  onlineUseSkill(data) {    
+    const { key, index } = data
+    this.useSkill({ key, index }, data.power, data.id)
+  }
+  useSkill(skillIndex: any, power: number, id: number = DataManager.Instance.player.id) {
+    const { key, index } = skillIndex
+    let skill: ISkill = DataManager.Instance.actor1.actor.skills[key][index]
     DataManager.Instance.actors.get(id).skill = new Skill(skill, id)
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.saiya) && skill.name.includes('波')) {
       power--
@@ -166,6 +186,14 @@ export class BattleMgr extends Component {
     if (DataManager.Instance.mode === 'network') {
       const players = room.players
       DataManager.Instance.otherPlayer = players.find((p) => p.id !== DataManager.Instance.player.id)
+      console.log('?????????????????????', DataManager.Instance.otherPlayer);
+      
+
+      // 同步更新选择的角色
+      const actorName = DataManager.Instance.otherPlayer?.actorName
+      if (actorName) {
+        EventManager.Instance.emit(EventEnum.renderChart, actorName, 'Graphics2')
+      }
     } else if (DataManager.Instance.mode === 'single') {
       // 单人模式
       DataManager.Instance.otherPlayer = {
@@ -233,7 +261,9 @@ export class BattleMgr extends Component {
     if (DataManager.Instance.actors?.get(id)?.lastHp) DataManager.Instance.actors.get(id).lastHp = count
   }
 
-  renderSkills(actor: IActor) {
+  renderSkills(actorName: string) {
+    console.log('渲染角色', actorName)
+    let actor = actors[actorName]
     this.skillContainer.getComponent(SkillUiMgr).init(actor)
   }
   // #endregion

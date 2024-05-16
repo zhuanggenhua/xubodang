@@ -8,7 +8,7 @@
     "apps/server"
   ],
   "scripts": {
-    "dev": "yarn workspace @game/server run dev"
+    "start": "yarn workspace @game/server run start"
   },
   "dependencies": {
     "yarn": "^1.22.21"

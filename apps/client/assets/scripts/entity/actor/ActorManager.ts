@@ -17,10 +17,11 @@ import {
   Prefab,
 } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
-import { EntityTypeEnum, IActor, ISkill } from '../../common'
 import {
   BuffEnum,
   EventEnum,
+  IActor,
+  ISkill,
   ParamsNameEnum,
   PrefabPathEnum,
   SHAKE_TYPE_ENUM,
@@ -36,6 +37,7 @@ import EventManager from '../../global/EventManager'
 import { BulletManager } from '../Bullet/BulletManager'
 import SplitFrame from '../../utils/SplitFrame'
 import { holeRadius } from '../../ui/BattleCanvas'
+import { EntityTypeEnum } from '../../common'
 
 const { ccclass, property } = _decorator
 

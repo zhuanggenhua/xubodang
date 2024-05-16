@@ -16717,7 +16717,7 @@
     "component": "",
     "_componentId": "6d6e8VEqJZGTa7ltSFOowOx",
     "handler": "handlerBack",
-    "customEventData": "Hall"
+    "customEventData": "Battle"
   },
   {
     "__type__": "cc.Node",

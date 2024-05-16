@@ -30,7 +30,7 @@ export default class DataManager extends Singleton {
 
   fontFamily: Font = null
 
-  mode: 'single' | 'network' | 'teach' = 'single'
+  mode: 'single' | 'network' | 'teach' = 'network'
 
   setting: any = null
 
@@ -44,7 +44,9 @@ export default class DataManager extends Singleton {
     turn: 0,
   }
 
-  stage: Node = director.getScene().getChildByName('Canvas')
+  get stage(): Node {
+    return director.getScene().getChildByName('Canvas')
+  }
   battleCanvas: BattleCanvas = null
 
   // actorMap: Map<number, ActorManager> = new Map();
@@ -53,9 +55,9 @@ export default class DataManager extends Singleton {
   skillMap: Map<SkillPathEnum, SpriteFrame> = new Map()
   actors: Map<number, ActorManager> = new Map()
   // bulletMap: Map<number, BulletManager> = new Map();
-  
+
   // 忘记有actor1了
-  get playerActor() : ActorManager {
+  get playerActor(): ActorManager {
     return this.actors.get(this.player.id)
   }
   // actor1 表示玩家  2表示对方
@@ -91,7 +93,6 @@ export default class DataManager extends Singleton {
 
     // 字体
     const p = ResourceManager.Instance.loadRes('font/gudian', Font).then((font) => {
-      
       DataManager.Instance.fontFamily = font
     })
     list.push(p)

@@ -219,7 +219,7 @@ export default class NetworkManager extends Singleton {
     }
     // 根据name生成对应的编码器并编码生成TypeArray
     const path = getProtoPathByApiFunc(name, 'req')
-    const coder = protoRoot.lookup(path)
+    const coder = protoRoot.lookup(path)    
     const ta = coder.encode(data).finish()
 
     /** 封包二进制数组，格式是[name,...data] */
