@@ -1,7 +1,7 @@
 import { UITransform, Node, Layers, instantiate, Label, Vec3, SpriteFrame, v3, log } from 'cc'
 import DataManager from '../global/DataManager'
-import { BuffEnum, Special, TipEnum } from '../enum'
-import { EntityTypeEnum, ISkill } from '../common'
+import { BuffEnum, ISkill, Special, TipEnum } from '../enum'
+import { EntityTypeEnum } from '../common'
 import { ActorManager } from '../entity/actor/ActorManager'
 import { doorOffsetX } from '../particle/Door'
 
@@ -164,7 +164,7 @@ export const checkCollision = (
   entityType: EntityTypeEnum[] = [EntityTypeEnum.Actor, EntityTypeEnum.Actor],
   type = 'rect',
 ) => {
-  const myTran = myNode.getComponent(UITransform)
+  const myTran = myNode.getComponent(UITransform)  
   const targetTran = targetNode.getComponent(UITransform)
 
   // 缩小碰撞盒

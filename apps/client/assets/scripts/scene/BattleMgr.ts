@@ -23,6 +23,10 @@ export class BattleMgr extends Component {
   skillContainer: Node
   @property(Node)
   Battle: Node
+  @property(Node)
+  GameOver: Node
+  @property(Node)
+  Bu: Node
 
   bg: Node
   choose: Node
@@ -39,6 +43,7 @@ export class BattleMgr extends Component {
     EventManager.Instance.on(EventEnum.updateHp, this.setHeart, this)
     EventManager.Instance.on(EventEnum.renderSkills, this.renderSkills, this)
     EventManager.Instance.on(EventEnum.createActor, this.createActor, this)
+    EventManager.Instance.on(EventEnum.gameOver, this.gameOver, this)
 
     NetworkManager.Instance.listenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     NetworkManager.Instance.listenMsg(ApiFunc.ChooseActor, this.chooseActor, this)
@@ -53,18 +58,20 @@ export class BattleMgr extends Component {
     EventManager.Instance.off(EventEnum.updateHp, this.setHeart, this)
     EventManager.Instance.off(EventEnum.renderSkills, this.renderSkills, this)
     EventManager.Instance.off(EventEnum.createActor, this.createActor, this)
+    EventManager.Instance.off(EventEnum.gameOver, this.gameOver, this)
 
     NetworkManager.Instance.unlistenMsg(ApiFunc.MsgRoom, this.renderPlayers, this)
     NetworkManager.Instance.unlistenMsg(ApiFunc.ChooseActor, this.chooseActor, this)
     NetworkManager.Instance.unlistenMsg(ApiFunc.UseSkill, this.onlineUseSkill, this)
   }
+  restart() {}
   async start() {
     // temp
     // actors.me = {
     //   actorName: '崇高假身',
     //   skills: [],
     // }
-    await DataManager.Instance.loadRes() //temp
+    // await DataManager.Instance.loadRes() //temp
 
     this.bg = DataManager.Instance.stage.getChildByName('Bg')
     this.choose = this.bg.getChildByName('ChooseActor')
@@ -101,11 +108,29 @@ export class BattleMgr extends Component {
     // }
   }
 
+  gameOver() {
+    this.GameOver.getChildByName('Label').getComponent(Label).string = DataManager.Instance.endTitle
+    this.GameOver.active = true
+    tween(this.GameOver.getComponent(UIOpacity)).to(0.5, { opacity: 255 }).start()
+  }
+
   chooseActor(data) {
     const { id, actor } = data
     this.createActor(actor, id)
   }
   createActor(actorName: string, id: number = DataManager.Instance.player.id) {
+    // 闪白动画
+    if (id == DataManager.Instance.player.id) {
+      this.Bu.active = true
+      tween(this.Bu.getComponent(UIOpacity))
+        .to(0.1, { opacity: 255 })
+        .to(0.1, { opacity: 0 })
+        .call(() => {
+          this.Bu.active = false
+        })
+        .start()
+    }
+
     let selectActor = actors[actorName]
     console.log('创建角色', selectActor, id)
 
@@ -118,7 +143,7 @@ export class BattleMgr extends Component {
     actor.setParent(this.Battle)
     const actorMgr = actor.addComponent(ActorManager)
 
-    actorMgr.init(id, EntityTypeEnum.Actor, DataManager.Instance.roomInfo?.life, selectActor)
+    actorMgr.init(id, EntityTypeEnum.Actor, DataManager.Instance.roomInfo?.life, selectActor, actorName)
     DataManager.Instance.actors.set(id, actorMgr)
     if (DataManager.Instance.actors.size === 2) {
       this.startGame()
@@ -136,13 +161,15 @@ export class BattleMgr extends Component {
     this.skillContainer.getComponent(SkillUiMgr).startGame()
   }
 
-  onlineUseSkill(data) {    
+  onlineUseSkill(data) {
     const { key, index } = data
     this.useSkill({ key, index }, data.power, data.id)
   }
   useSkill(skillIndex: any, power: number, id: number = DataManager.Instance.player.id) {
     const { key, index } = skillIndex
-    let skill: ISkill = DataManager.Instance.actor1.actor.skills[key][index]
+    console.log('使用技能', key, index, DataManager.Instance.actors.get(id).actor)
+
+    let skill: ISkill = DataManager.Instance.actors.get(id).actor.skills[key][index]
     DataManager.Instance.actors.get(id).skill = new Skill(skill, id)
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.saiya) && skill.name.includes('波')) {
       power--
@@ -183,11 +210,10 @@ export class BattleMgr extends Component {
   //#region
   // 渲染其他玩家
   renderPlayers({ room } = { room: DataManager.Instance.roomInfo }) {
+    DataManager.Instance.roomInfo = room
     if (DataManager.Instance.mode === 'network') {
       const players = room.players
       DataManager.Instance.otherPlayer = players.find((p) => p.id !== DataManager.Instance.player.id)
-      console.log('?????????????????????', DataManager.Instance.otherPlayer);
-      
 
       // 同步更新选择的角色
       const actorName = DataManager.Instance.otherPlayer?.actorName

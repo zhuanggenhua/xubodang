@@ -35,8 +35,11 @@ export enum EventEnum {
   flicker = 'flicker',
   moveBack = 'moveBack',
   missSingle = 'missSingle',
+  gameOver = 'gameOver',
 
   onDoorDefense = 'onDoorDefense',
+  clearTween = 'clearTween',
+  randomActor = 'randomActor',
 }
 
 export enum PrefabPathEnum {
@@ -200,6 +203,7 @@ export enum Special {
   saiya = '赛亚人',
   lieshang = '裂伤',
   earth = '灾害',
+  chongfeng = '冲撞',
 }
 // 持续效果
 export enum BuffEnum {

@@ -14,11 +14,12 @@ import {
   Vec2,
 } from 'cc'
 import DataManager from '../global/DataManager'
+import EventManager from '../global/EventManager'
+import { EventEnum } from '../enum'
 const { ccclass, property } = _decorator
 
-
-const lineWidth = 15;
-const lineWidthBorder = 30;
+const lineWidth = 15
+const lineWidthBorder = 30
 @ccclass('FiveStarBg')
 export class FiveStarBg extends Component {
   graphics: Graphics
@@ -27,8 +28,13 @@ export class FiveStarBg extends Component {
   lastPoint: Vec2
   childNode: Node
 
+  private tw1: Tween<unknown>
+  private tw2: Tween<unknown>
+
   private tw: Tween<unknown>
   start() {
+    EventManager.Instance.on(EventEnum.clearTween, this.clearTween, this)
+
     this.graphics = this.node.getComponent(Graphics)
     this.drawMagicaCircl()
 
@@ -50,8 +56,19 @@ export class FiveStarBg extends Component {
     this.node.off(Node.EventType.TOUCH_START, this.onTouchStart, this)
     this.node.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this)
     this.node.off(Node.EventType.TOUCH_END, this.onTouchEnd, this)
+
+    EventManager.Instance.off(EventEnum.clearTween, this.clearTween, this)
   }
-  
+
+  clearTween() {
+    if (this.tw1) {
+      this.tw1.stop()
+    }
+    if (this.tw2) {
+      this.tw2.stop()
+    }
+  }
+
   onTouchStart(event: EventTouch) {
     let touch = event.touch
     this.lastPoint = touch.getLocation()
@@ -104,7 +121,7 @@ export class FiveStarBg extends Component {
     // graphics.stroke()
     let from = { angle: 0 }
     let to = { angle: 2 * Math.PI }
-    tween(from)
+    this.tw1 = tween(from)
       .to(1, to, {
         onUpdate: () => {
           // 更新角度
@@ -137,7 +154,7 @@ export class FiveStarBg extends Component {
     // 定义一个状态对象来记录绘制进度
     let drawState = { value: 0 }
     // 使用tween逐步改变drawState.value，从0改变到5（因为有5个顶点）
-    tween(drawState)
+    this.tw2 = tween(drawState)
       // .delay(0.5)
       .to(
         2,

@@ -100,3 +100,10 @@ message UseSkill {
   int32 power = 3;
   string id = 4;
 }
+
+message ApiRestartReq {
+}
+message ApiRestartRes {
+}
+message Restart {
+}

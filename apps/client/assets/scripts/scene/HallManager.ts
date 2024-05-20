@@ -30,11 +30,10 @@ export class HallManager extends Component {
     await NetworkManager.Instance.connect().catch(() => false)
     this.roomContainer.destroyAllChildren()
 
-    // screen.requestFullScreen() //全屏
-    DataManager.Instance.loadRes()
+    // DataManager.Instance.loadRes()
   }
 
-  onDestroy() {
+  onDestroy() {    
     EventManager.Instance.off(EventEnum.RoomCreate, this.handleCreateRoom, this)
     EventManager.Instance.off(EventEnum.RoomJoin, this.handleJoinRoom, this)
     NetworkManager.Instance.unlistenMsg(ApiFunc.RoomList, this.renderRooms, this)

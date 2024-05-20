@@ -1,8 +1,7 @@
 import { animation, AnimationClip, Sprite, SpriteFrame } from 'cc'
 import { Singleton } from '../common/base'
 import EventManager from '../global/EventManager'
-import { BuffEnum, EventEnum } from '../enum'
-import { IActor, ISkill } from '../common'
+import { BuffEnum, EventEnum, IActor, ISkill } from '../enum'
 import DataManager from '../global/DataManager'
 import actors from '../config/actor'
 import { getRandomNumber } from '../utils'
@@ -19,11 +18,31 @@ export default class Ai extends Singleton {
   }
 
   useSkill(useSkill) {
+    // useSkill = null
+    // let skillIndex = {
+    //   key: 0,
+    //   index: 2,
+    // }
+    let skillIndex = {
+      key: 0,
+      index: 3,
+    }
     if (useSkill) {
-      EventManager.Instance.emit(EventEnum.useSkill, useSkill.skill, useSkill.power, this.id)
+      const skills = this.actor.skills
+      const keys = Object.keys(skills)
+      keys.forEach((key) => {
+        skills[key].forEach((skill: ISkill, index) => {
+          if (skill == useSkill.skill) {
+            skillIndex.key = Number(key)
+            skillIndex.index = index
+            return
+          }
+        })
+      })
+      EventManager.Instance.emit(EventEnum.useSkill, skillIndex, useSkill.power, this.id)
     } else {
       // 没有匹配，直接聚气
-      EventManager.Instance.emit(EventEnum.useSkill, this.actor.skills[0][3], 0, this.id)
+      EventManager.Instance.emit(EventEnum.useSkill, skillIndex, 0, this.id)
     }
   }
 
@@ -53,7 +72,7 @@ export default class Ai extends Singleton {
     const skills = this.actor.skills
     const keys = Object.keys(skills)
     keys.forEach((key, index) => {
-      skills[key].forEach((skill: ISkill) => {
+      skills[key].forEach((skill: ISkill, index) => {
         if (skill.damage >= player.hp) {
           canKill = true
         }
@@ -114,7 +133,7 @@ export default class Ai extends Singleton {
           }
         }
       }
-      if (actor.buffs.has(BuffEnum.saiya)) {
+      if (actor.buffs.has(BuffEnum.wall)) {
         useSkill = {
           power: 1,
           skill: skills['012'],

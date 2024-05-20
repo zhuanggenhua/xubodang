@@ -221,5 +221,21 @@ export class GameManager extends Singleton {
         throw new Error('ApiRoomLeave 玩家未登录')
       }
     })
+
+    server.setApi(ApiFunc.ApiRestart, (connection: Connection, data) => {
+      if (connection.playerId) {
+        const player = PlayerManager.Instance.getPlayerById(connection.playerId)
+        const rid = player.rid
+        // 通知房间内其他玩家
+        for (const otherPlayer of RoomManager.Instance.getRoomById(rid).players) {
+          if (otherPlayer.id == player.id) continue
+          const otherPlayer2 = PlayerManager.Instance.getPlayerById(otherPlayer.id)
+          otherPlayer2.connection.sendMsg(ApiFunc.Restart, {})
+        }
+        return {}
+      } else {
+        throw new Error('ApiRoomLeave 玩家未登录')
+      }
+    })
   }
 }

@@ -35,7 +35,15 @@ export class ChooseMgr extends Component {
   private isDisable: boolean = false
 
   // 绑定事件
-  beforeDestroy() {}
+  onLoad() {
+    EventManager.Instance.on(EventEnum.randomActor, this.randomActor, this)
+  }
+  onDestroy() {
+    EventManager.Instance.off(EventEnum.randomActor, this.randomActor, this)
+  }
+  randomActor() {
+    this.isDisable = true
+  }
   start() {
     this.label1 = this.node.getChildByName('Label1').getComponent(Label)
     this.label2 = this.node.getChildByName('Label2').getComponent(Label)
@@ -99,6 +107,8 @@ export class ChooseMgr extends Component {
   }
 
   async handlerReady(event: EventTouch) {
+    // 人没齐，不让进
+    if (DataManager.Instance.mode === 'network' && DataManager.Instance.roomInfo.players.length < 2) return
     if (this.isDisable) return
     event.target.getComponent(Button).normalSprite = event.target.getComponent(Button).activeSprite
     this.isDisable = true
@@ -106,9 +116,11 @@ export class ChooseMgr extends Component {
     EventManager.Instance.emit(EventEnum.renderSkills, this.active)
     EventManager.Instance.emit(EventEnum.renderChart, this.active, 'Graphics1')
 
-    const res = await NetworkManager.Instance.callApi(ApiFunc.enterGame, {
-      actor: this.active,
-    })
-    console.log('进入游戏', res)
+    if (DataManager.Instance.mode === 'network') {
+      const res = await NetworkManager.Instance.callApi(ApiFunc.enterGame, {
+        actor: this.active,
+      })
+      console.log('进入游戏', res)
+    }
   }
 }

@@ -1,5 +1,5 @@
-import { EntityTypeEnum, IActor } from '../common'
-import { BuffEnum, MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
+import { EntityTypeEnum } from '../common'
+import { BuffEnum, IActor, MissType, ParamsNameEnum, PrefabPathEnum, SkillPathEnum, Special, TexturePathEnum } from '../enum'
 import skills from './skills'
 
 const actors: { [key: string]: IActor } = {

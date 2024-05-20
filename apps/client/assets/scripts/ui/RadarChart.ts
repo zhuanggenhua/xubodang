@@ -28,7 +28,8 @@ const scale = 6 //刻度数
 const axes = 6 //轴线数
 const duration = 0.1
 
-const defaultOptions = {
+var defaultOptions = {
+  values: [],
   lineWidth: 5,
   lineColor: new Color(255, 255, 255, 255),
   fillColor: new Color(222, 226, 230, 150),
@@ -104,11 +105,11 @@ export class RadarChart extends Component {
 
   protected update(dt: number): void {
     if (!this.keepUpdating) return
-    // 绘制当前数据
+    // 绘制当前数据    
     this.draw(this.data)
   }
 
-  renderChart(actorName: string, target: string) {    
+  renderChart(actorName: string, target: string) {
     let actor = actors[actorName]
     // 取'Graphics1'为玩家
     if (target === this.node.name) {
@@ -197,7 +198,8 @@ export class RadarChart extends Component {
 
       // 计算节点坐标
       this.setValues(values)
-      this.data = { values }
+      defaultOptions.values = values
+      this.data = defaultOptions
 
       //   过渡效果  --未解之谜，第一次改变没有过渡
       // 处理重复调用
@@ -253,7 +255,7 @@ export class RadarChart extends Component {
 
     this.graphics.strokeColor = defaultOptions.lineColor
     this.graphics.fillColor = defaultOptions.fillColor
-    this.graphics.lineWidth = defaultOptions.lineWidth
+    this.graphics.lineWidth = defaultOptions.lineWidth    
 
     this.graphics.circle(0, 0, radius)
 
@@ -312,7 +314,7 @@ export class RadarChart extends Component {
    * 绘制数据
    * @param data 数据
    */
-  public draw(data: RadarChartData) {
+  public draw(data: RadarChartData = defaultOptions) {
     this.graphics.clear()
     this.drawBase()
     // 处理数据

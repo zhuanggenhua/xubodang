@@ -179,7 +179,9 @@ export class ActorStateMachine extends StateMachine {
           .start()
       }
 
+      // 元气弹
       if (name.includes(ParamsNameEnum.yuanqidan)) {
+        if (this.actor.isClone) return
         const bo = setPrefab('Bo', this.node)
         bo.setParent(this.node.parent)
         bo.setPosition(v3(this.node.position.x, this.node.position.y + 200))
@@ -374,13 +376,7 @@ export class ActorStateMachine extends StateMachine {
     )
     this.stateMachines.set(
       ParamsNameEnum.clone,
-      new State(this, `${this.type}${ParamsNameEnum.clone}`, AnimationClip.WrapMode.Normal, [
-        {
-          frame: ANIMATION_SPEED * 2, // 第 2帧时触发事件
-          func: 'onClone', // 事件触发时调用的函数名称
-          params: [],
-        },
-      ]),
+      new State(this, `${this.type}${ParamsNameEnum.clone}`, AnimationClip.WrapMode.Normal),
     )
     this.stateMachines.set(
       ParamsNameEnum.yuanqidan,

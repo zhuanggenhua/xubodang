@@ -43,12 +43,14 @@ export class SkillUiMgr extends Component {
   private entryHand: boolean = false //进入手势区域
   private isDisable: boolean = false
   private isStart: boolean = false
+
+  private keys: number[] = []
   startGame() {
     this.isStart = true
   }
 
   // 绑定事件
-  beforeDestroy() {
+  onDestroy() {
     EventManager.Instance.off(EventEnum.updateSkillItem, this.updateSkillItem, this)
     EventManager.Instance.off(EventEnum.handlerNextTurn, this.handlerNextTurn, this)
   }
@@ -56,7 +58,9 @@ export class SkillUiMgr extends Component {
     EventManager.Instance.on(EventEnum.updateSkillItem, this.updateSkillItem, this)
     EventManager.Instance.on(EventEnum.handlerNextTurn, this.handlerNextTurn, this)
   }
+
   init(actor: IActor) {
+    console.log('初始化技能列表', actor)
     // 把显示与绑定事件分开性能更好，不过也不用考虑性能
     this.skillItemNodes = []
     this.skillNodes = []
@@ -274,7 +278,7 @@ export class SkillUiMgr extends Component {
   }
 
   updateSkillItem(power: number) {
-    console.log('当前能量, 所需能量', power)
+    console.log('当前能量, 所需能量', power, this)
     this.skillItemNodes.forEach((item, index) => {
       // 处理减少消耗
       console.log('power', power)
@@ -326,9 +330,9 @@ export class SkillUiMgr extends Component {
     })
   }
 
-  keys: number[] = []
   handlerNextTurn() {
     // 虎符校验，都结算完就进入下一回合
+    if (!this.keys) this.keys = []
     this.keys.push(1)
     if (this.keys.length < 2) {
       return
@@ -343,8 +347,49 @@ export class SkillUiMgr extends Component {
       DataManager.Instance.battleCanvas.reset()
 
       DataManager.Instance.roomInfo.turn += 1
+
+      // 如果生命归零，结束游戏
+      // 判断最终显示平局还是其他
+      if (DataManager.Instance.actor1.hp <= 0 || DataManager.Instance.actor2.hp <= 0) {
+        const actor1 = DataManager.Instance.actor1
+        const actor2 = DataManager.Instance.actor2
+        let endTitle = '平局'
+        if (
+          DataManager.Instance.actor1.hp <= 0 &&
+          DataManager.Instance.actor2.hp <= 0 &&
+          (actor1.skill.skill.speed || actor2.skill.skill.speed)
+        ) {
+          if (actor1.skill.skill.speed && actor2.skill.skill.speed) {
+            // 都是快速
+            endTitle = '平局'
+          }
+          if (actor1.skill.skill.speed) {
+            endTitle = '陷胜！'
+          }
+          if (actor2.skill.skill.speed) {
+            endTitle = '惜败！'
+          }
+        } else {
+          if (DataManager.Instance.actor1.hp >= 1) {
+            endTitle = '胜利！'
+          }
+          if (DataManager.Instance.actor1.hp >= DataManager.Instance.actor1.hpMax / 2) {
+            endTitle = '完胜！'
+          }
+          if (DataManager.Instance.actor2.hp >= 1) {
+            endTitle = '败北！'
+          }
+          if (DataManager.Instance.actor2.hp >= DataManager.Instance.actor2.hpMax / 2) {
+            endTitle = '惨败'
+          }
+        }
+        DataManager.Instance.endTitle = endTitle
+
+        EventManager.Instance.emit(EventEnum.gameOver)
+      }
+
       DataManager.Instance.actors.forEach((actor) => {
-        actor.skill.onDestroy()
+        actor.skill?.onDestroy()
         // if (actor.skill && actor.skill.destroy) {
         //   actor.skill.destroy()
         // }
@@ -372,6 +417,6 @@ export class SkillUiMgr extends Component {
       })
 
       console.log('当前轮次', DataManager.Instance.roomInfo.turn)
-    }, 0.05 * DataManager.Instance.animalTime)
+    }, 0.1 * DataManager.Instance.animalTime)
   }
 }

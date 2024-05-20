@@ -25,6 +25,7 @@ export default class DataManager extends Singleton {
   static get Instance() {
     return super.GetInstance<DataManager>()
   }
+  endTitle: string = ''
   // 动画播放速度
   animalTime = 2
 

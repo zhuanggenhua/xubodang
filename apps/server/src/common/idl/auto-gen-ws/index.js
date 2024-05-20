@@ -273,6 +273,15 @@ var $root = ($protobuf.roots["default"] || ($protobuf.roots["default"] = new $pr
             id: 4
           }
         }
+      },
+      ApiRestartReq: {
+        fields: {}
+      },
+      ApiRestartRes: {
+        fields: {}
+      },
+      Restart: {
+        fields: {}
       }
     }
   }

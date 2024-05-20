@@ -34,7 +34,12 @@ export default class Skill extends Component {
   setSkillState() {
     if (!this.skill.animal) return
     // 确保SkillPathEnum和ParamsNameEnum 的key是一致的
-    console.log('设置状态', this.skill.animal, ParamsNameEnum[this.getKeyByValue(this.skill.particle)])
+    console.log(
+      '设置状态',
+      this.skill.animal,
+      this.getKeyByValue(this.skill.particle),
+      ParamsNameEnum[this.getKeyByValue(this.skill.particle)],
+    )
     this.actor.state = this.skill.animal
   }
   // temp 临时获取key
@@ -78,7 +83,7 @@ export default class Skill extends Component {
         // 处理闪避
         if (!this.miss()) {
           // 盾牌碎裂
-          console.log('伤害', skill.damage)
+          console.log(skill.name, '伤害', skill.damage)
           const damage = this.otherActor.shieldBreak(skill.damage || 0)
           console.log('最终伤害', damage)
 
@@ -93,9 +98,9 @@ export default class Skill extends Component {
           } else {
             this.tiger()
           }
+        } else {
+          this.tiger()
         }
-
-        this.tiger()
       })
     }
 
@@ -108,15 +113,19 @@ export default class Skill extends Component {
     }
 
     if (this.actor.buffs.has(BuffEnum.clone)) {
+      const basePower = this.skill.power
+      const baseDamage = this.skill.damage
+      const baseDefense = this.skill.defense
+
       if (this.actor.actorClone[0]) {
-        this.skill.power += this.skill.power
-        this.skill.damage += this.skill.damage
-        this.skill.defense += this.skill.defense
+        this.skill.power += basePower
+        this.skill.damage += baseDamage
+        this.skill.defense += baseDefense
       }
       if (this.actor.actorClone[1]) {
-        this.skill.power += this.skill.power
-        this.skill.damage += this.skill.damage
-        this.skill.defense += this.skill.defense
+        this.skill.power += basePower
+        this.skill.damage += baseDamage
+        this.skill.defense += baseDefense
       }
     }
 
@@ -165,7 +174,7 @@ export default class Skill extends Component {
   // 在动画后结算伤害
   attackFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('attack结束', this.actor.id, this.skill.damage)
+      console.log('attack结束', this.actor.id, this.skill.name)
 
       const otherActor = this.otherActor
       switch (this.otherSkill.skill.missType) {
@@ -314,7 +323,7 @@ export default class Skill extends Component {
   }
   missFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.log('miss结束', this.actor.id)
+      console.trace('miss结束', this.actor.id)
       this.tiger()
     }
   }
@@ -382,6 +391,12 @@ export default class Skill extends Component {
     }
 
     // 伤害修正
+    if (this.skill.special === Special.chongfeng) {
+      if (this.actor.shields?.length > 0) {
+        this.skill.damage += this.actor.shields?.length * 2
+      }
+    }
+
     // 城墙对弓弩强化
     if (this.actor.buffs.has(BuffEnum.wall) && this.skill.bullet === EntityTypeEnum.Crossbow) {
       let count = 0
@@ -419,12 +434,13 @@ export default class Skill extends Component {
 
     if (this.skill.special === Special.sun) {
       this.setSkillState()
+      let otherActor = this.otherActor
       this.scheduleOnce(() => {
         // 太阳特效
         const sun = setPrefab('Sun', this.actor.node)
         this.scheduleOnce(() => {
           sun.destroy()
-          this.actor.move(this.otherActor, () => {
+          this.actor.move(otherActor, () => {
             this.actor.state = ParamsNameEnum.Kan
           })
         }, 0.2 * DataManager.Instance.animalTime)
@@ -463,6 +479,14 @@ export default class Skill extends Component {
     }
   }
   missHandler() {
+    switch (this.skill.missType) {
+      case MissType.Single:
+        EventManager.Instance.emit(EventEnum.missFinal, this.actor)
+        break
+      case MissType.All:
+        EventManager.Instance.emit(EventEnum.missFinal, this.actor)
+        return
+    }
     // 闪避的时机
     if (this.otherSkill.skill.animal == ParamsNameEnum.QiGong) {
       this.scheduleOnce(() => {
@@ -472,12 +496,7 @@ export default class Skill extends Component {
       this.setSkillState()
     }
     if (this.skill.location) this.actor.location = this.skill.location
-    switch (this.skill.missType) {
-      case MissType.Single:
-      case MissType.All:
-        EventManager.Instance.emit(EventEnum.missFinal, this.actor)
-    }
-    if (this.skill.buff?.indexOf(BuffEnum.wall) !== -1) {
+    if (this.skill.buff && this.skill.buff?.indexOf(BuffEnum.wall) !== -1) {
       EventManager.Instance.emit(EventEnum.missFinal, this.actor)
     }
   }
@@ -494,7 +513,7 @@ export default class Skill extends Component {
       let nu = skills['012']
       nu.desc = '裂伤：造成对方身上箭支数量的额外伤害'
       // 重新渲染
-      EventManager.Instance.emit(EventEnum.renderSkills, this.actor.actor)
+      EventManager.Instance.emit(EventEnum.renderSkills, this.actor.actorName)
       // 画城墙
       const canvas = this.actor.node.getChildByName('canvas4')
       const particleMgr = canvas.getComponent(ParticleMgr) || canvas.addComponent(ParticleMgr)
@@ -511,6 +530,8 @@ export default class Skill extends Component {
     }
 
     if (this.skill.buff?.indexOf(BuffEnum.clone) !== -1) {
+      console.log('克隆开始')
+
       if (this.actor.actorClone[0]) {
         this.actor.actorClone[0].destroy()
         this.actor.actorClone[0] = null
@@ -524,16 +545,24 @@ export default class Skill extends Component {
       clone1.setParent(this.actor.node)
       clone1.setPosition(v3(0, 0))
       clone1.getComponent(ActorManager).isClone = true
-      clone1.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1, this.actor.actor)
+      clone1
+        .getComponent(ActorManager)
+        .init(this.actor.id, EntityTypeEnum.Actor, 1, this.actor.actor, this.actor.actorName)
       this.actor.actorClone[0] = clone1
       let clone2 = instantiate<Node>(this.actor.node)
       clone2.setParent(this.actor.node)
       clone2.setPosition(v3(0, 0))
       clone2.getComponent(ActorManager).isClone = true
-      clone2.getComponent(ActorManager).init(this.actor.id, EntityTypeEnum.Actor, 1, this.actor.actor)
+      clone2
+        .getComponent(ActorManager)
+        .init(this.actor.id, EntityTypeEnum.Actor, 1, this.actor.actor, this.actor.actorName)
       this.actor.actorClone[1] = clone2
 
       this.setSkillState()
+
+      this.scheduleOnce(() => {
+        this.actor.onClone()
+      }, 0.2 * DataManager.Instance.animalTime)
     }
 
     if (this.skill.buff?.indexOf(BuffEnum.trap) !== -1) {

@@ -62,6 +62,7 @@ export enum ApiFunc {
   ApiRoomLeave,
   ApiChooseActor,
   ApiUseSkill,
+  ApiRestart,
   gap = 100,
   // 从100继续，这是api和msg的分界线，msg一般是用于无状态
   inputFromClient,
@@ -70,9 +71,14 @@ export enum ApiFunc {
   MsgRoom,
   ChooseActor,
   UseSkill,
+  Restart,
 }
 
 export const ProtoPathEnum: Record<ApiFunc, any> = {
+  [ApiFunc.ApiRestart]: {
+    req: 'game.ApiRestartReq',
+    res: 'game.ApiRestartRes',
+  },
   [ApiFunc.ApiUseSkill]: {
     req: 'game.ApiUseSkillReq',
     res: 'game.ApiUseSkillRes',
@@ -140,6 +146,7 @@ export const ProtoPathEnum: Record<ApiFunc, any> = {
   [ApiFunc.MsgRoom]: 'game.MsgRoom',
   [ApiFunc.ChooseActor]: 'game.ChooseActor',
   [ApiFunc.UseSkill]: 'game.UseSkill',
+  [ApiFunc.Restart]: 'game.Restart',
 }
 
 export enum ServerIdEnum {

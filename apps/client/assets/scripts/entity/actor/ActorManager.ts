@@ -44,10 +44,12 @@ const { ccclass, property } = _decorator
 export const flyHeight = 150
 @ccclass('ActorManager')
 export class ActorManager extends EntityManager {
+  isClone: boolean = false
   id: number
   bulletType: EntityTypeEnum
   count: number = 0 //计数用
   actor: IActor
+  actorName: string
 
   isMove: boolean = false
   //动态数据
@@ -59,6 +61,7 @@ export class ActorManager extends EntityManager {
   set hp(hp) {
     if (hp < 0) hp = 0
     if (hp > this.hpMax) hp = this.hpMax
+    console.log('当前生命', hp)
 
     this._hp = hp
     EventManager.Instance.emit(EventEnum.updateHp, this.id)
@@ -88,7 +91,8 @@ export class ActorManager extends EntityManager {
 
   doorHp: number = 0
 
-  beforeDestroy() {
+  onDestroy() {
+    super.onDestroy()
     EventManager.Instance.off(EventEnum.flicker, this.flicker, this)
     EventManager.Instance.off(EventEnum.moveBack, this.moveBack, this)
     EventManager.Instance.off(EventEnum.missSingle, this.onMissSingle, this)
@@ -99,10 +103,9 @@ export class ActorManager extends EntityManager {
     EventManager.Instance.on(EventEnum.missSingle, this.onMissSingle, this)
   }
 
-  isClone: boolean = false
   set state(newState) {
     super.state = newState // 调用父类的 setter
-    // 这里可以添加额外的处理逻辑
+    // 处理克隆体 克隆体执行动作不执行逻辑
     if (this.buffs.has(BuffEnum.clone) && !this.isClone) {
       this.actorClone.forEach((node) => {
         if (node) {
@@ -114,8 +117,9 @@ export class ActorManager extends EntityManager {
   }
 
   // private wm: WeaponManager;
-  init(id, type: EntityTypeEnum, hp, actor: IActor) {
+  init(id, type: EntityTypeEnum, hp, actor: IActor, actorName: string) {
     this.actor = actor
+    this.actorName = actorName
     this.id = id
     this.hpMax = hp
     this.hp = hp
@@ -141,7 +145,6 @@ export class ActorManager extends EntityManager {
     this.flyPosition = new Vec3(this.initPosition.x, this.initPosition.y + flyHeight)
     this.reset()
   }
-  onDestroy() {}
 
   setBuffer(skill: ISkill) {
     if (skill.buff.some((buff) => this.buffs.has(buff))) {
@@ -449,8 +452,8 @@ export class ActorManager extends EntityManager {
   onSpade() {
     // 只挖三次
     if (this.count < 3) {
-      // 城墙动画
-      if (this.skill.skill.buff.indexOf(BuffEnum.wall) !== -1) {
+      // 城墙动画    只挖一次
+      if (this.skill.skill.buff && this.skill.skill.buff.indexOf(BuffEnum.wall) !== -1) {
         DataManager.Instance.battleCanvas.drawHole(this.node.position.x)
         return
       }

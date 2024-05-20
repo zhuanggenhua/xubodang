@@ -1,5 +1,5 @@
-import { EntityTypeEnum, ISkill } from '../common'
-import { SkillPathEnum, ParamsNameEnum, MissType, Special, BuffEnum } from '../enum'
+import { EntityTypeEnum } from '../common'
+import { SkillPathEnum, ParamsNameEnum, MissType, Special, BuffEnum, ISkill } from '../enum'
 
 // 存储技能，编号：职业-消耗-序号
 const skills: { [key: string]: ISkill } = {
@@ -117,9 +117,10 @@ const skills: { [key: string]: ISkill } = {
   },
   '023': {
     name: '冲锋',
-    type: [1, 2],
+    type: [1, 2, 5],
+    special: Special.chongfeng,
     range: ['0'],
-    desc: '带盾撞人，获得防御量的伤害加成',
+    desc: '带盾撞人，获得盾牌数量的伤害加成',
     damage: 2,
     defense: 2,
     particle: SkillPathEnum.ShieldBash,

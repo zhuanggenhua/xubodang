@@ -33,7 +33,7 @@ export class BattleCanvas extends Component {
     this.round = tran.height / 5
     this.width = tran.width
 
-    await DataManager.Instance.loadRes() //temp
+    // DataManager.Instance.loadRes() //temp
 
     this.graphics.lineWidth = 10
     this.generaRound()
@@ -46,7 +46,6 @@ export class BattleCanvas extends Component {
 
   // 火星撞地球动画
   drawEarth() {
-    // todo
     this.canvas3.active = true
     const graphics = this.graphics
     // const graphics = this.canvas3.getComponent(Graphics) || this.canvas3.addComponent(Graphics)

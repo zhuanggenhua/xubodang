@@ -35,6 +35,7 @@ export class BulletManager extends EntityManager {
   }
 
   move(targetNode: Node, callback?: Function, callbackStart?: Function) {
+    // let targetNodeClone = instantiate(targetNode)
     if (callbackStart) callbackStart()
     // 真正的目标位置，带点随机
     // new Vec3(targetNode.position)
@@ -102,7 +103,9 @@ export class BulletManager extends EntityManager {
               console.log('子弹碰撞')
               tw.stop()
 
-              this.actor.onAttack()
+              if (this.type != EntityTypeEnum.Sword) {
+                this.actor.onAttack()
+              }
 
               // 打到人身上
               if (targetNode.getComponent(ActorManager)) {
@@ -154,7 +157,9 @@ export class BulletManager extends EntityManager {
         }
 
         if (callback) callback()
-        this.actor.onAttack()
+        if (this.type != EntityTypeEnum.Sword) {
+          this.actor.onAttack()
+        }
         if (this.type != EntityTypeEnum.Crossbow) this.node.destroy()
       })
       .start() // 开始执行tween

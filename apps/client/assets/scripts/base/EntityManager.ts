@@ -20,4 +20,8 @@ export abstract class EntityManager extends Component {
   }
 
   abstract init(...args: any[]): void;
+
+  protected onDestroy(): void {
+      
+  }
 }

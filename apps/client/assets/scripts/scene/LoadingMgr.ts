@@ -1,6 +1,7 @@
 import { _decorator, Component, director, Node, ProgressBar, resources, tween } from 'cc'
 import { SceneEnum } from '../enum'
 import { ResourceManager } from '../global/ResourceManager'
+import DataManager from '../global/DataManager'
 const { ccclass, property } = _decorator
 
 @ccclass('LoadingMgr')
@@ -14,7 +15,7 @@ export class LoadingMgr extends Component {
   async preLoad() {
     director.preloadScene(SceneEnum.Home)
     // tween(this.bar).to(1, { progress: 0.4 }).start() // 手动+ 0.2, 不然资源过多一开始不走
-    const dirs = ['images', 'sounds', 'animations'] // 需要预加载的目录列表
+    const dirs = ['font', 'prefab', 'texture', 'ui'] // 需要预加载的目录列表
     let loaded = 0 // 已加载的目录数量
 
     for (const dir of dirs) {
@@ -45,6 +46,8 @@ export class LoadingMgr extends Component {
 
     // 所有目录加载完成，进度条补满
     tween(this.bar).to(1, { progress: 1 }).start()
+
+    await DataManager.Instance.loadRes()
 
     // 最终加载主场景
     director.loadScene(SceneEnum.Home)

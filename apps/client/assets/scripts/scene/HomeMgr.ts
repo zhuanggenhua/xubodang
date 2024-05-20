@@ -19,7 +19,7 @@ import ParticleMgr from '../particle/ParticleMgr'
 import { LightParticle } from '../particle/LightParticle'
 import FaderManager from '../global/FaderManager'
 import NetworkManager from '../global/NetworkManager'
-import {  PrefabPathEnum, TexturePathEnum } from '../enum'
+import { PrefabPathEnum, TexturePathEnum } from '../enum'
 import { ResourceManager } from '../global/ResourceManager'
 const { ccclass, property } = _decorator
 
@@ -32,8 +32,8 @@ export class HomeMgr extends Component {
 
   particleMgr: ParticleMgr
 
-  onLoad() {
-    this.loadRes()
+  async onLoad() {
+    DataManager.Instance.loadRes()
     FaderManager.Instance.fadeOut(1000)
 
     this.particleMgr = this.canvas.addComponent(ParticleMgr)
@@ -45,23 +45,6 @@ export class HomeMgr extends Component {
     // this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this)
     this.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this)
     this.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this)
-  }
-  // 加载资源
-  async loadRes() {
-    const list = []
-    for (const type in PrefabPathEnum) {
-      const p = ResourceManager.Instance.loadRes(PrefabPathEnum[type], Prefab).then((prefab) => {
-        DataManager.Instance.prefabMap.set(type, prefab)
-      })
-      list.push(p)
-    }
-    for (const type in TexturePathEnum) {
-      const p = ResourceManager.Instance.loadDir(TexturePathEnum[type], SpriteFrame).then((spriteFrames) => {
-        DataManager.Instance.textureMap.set(type, spriteFrames)
-      })
-      list.push(p)
-    }
-    await Promise.all(list)
   }
 
   onDestroy() {
