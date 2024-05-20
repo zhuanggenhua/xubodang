@@ -100,9 +100,11 @@ export class ChooseMgr extends Component {
 
     // 单人模式，ai直接选择
     if (DataManager.Instance.mode === 'single') {
-      Ai.Instance.setActor(actors.soldier)
-      EventManager.Instance.emit(EventEnum.createActor, 'soldier', Ai.Instance.id)
-      EventManager.Instance.emit(EventEnum.renderChart, 'soldier', 'Graphics2')
+      let active = Object.keys(actors)[Math.floor(Math.random() * Object.keys(actors).length)]
+      Ai.Instance.setActor(actors[active])
+      console.log('ai选择：', active)
+      EventManager.Instance.emit(EventEnum.createActor, active, Ai.Instance.id)
+      EventManager.Instance.emit(EventEnum.renderChart, active, 'Graphics2')
     }
   }
 

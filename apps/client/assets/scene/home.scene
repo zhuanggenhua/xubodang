@@ -2953,7 +2953,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "动画速度×5",
+    "_string": "动画速度×2",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 70,
@@ -4831,6 +4831,9 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "speedLabel": {
+      "__id__": 80
+    },
     "_id": "51jGzrgCpKcq97CDAE6ibZ"
   },
   {

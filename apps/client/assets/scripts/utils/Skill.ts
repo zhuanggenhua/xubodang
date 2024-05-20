@@ -79,9 +79,16 @@ export default class Skill extends Component {
       this.tigerLength++
       this.actor.shoot(this.otherActor, EntityTypeEnum.Sword, () => {
         console.log('飞剑结束')
-        const skill: ISkill = { damage: 1, range: ['0', '1'], type: [1] }
+        const skill: ISkill = {
+          damage: 1,
+          range: ['0', '1'],
+          type: [1],
+          longrang: true,
+          bullet: EntityTypeEnum.Sword,
+          speed: 1,
+        }
         // 处理闪避
-        if (!this.miss()) {
+        if (!this.miss(skill)) {
           // 盾牌碎裂
           console.log(skill.name, '伤害', skill.damage)
           const damage = this.otherActor.shieldBreak(skill.damage || 0)
@@ -267,17 +274,18 @@ export default class Skill extends Component {
   }
 
   // 判断是否被闪避
-  miss() {
+  miss(nowSkill = null) {
+    const skill = nowSkill || this.skill
     // 闪避所有
     if (this.otherSkill.skill.missType === MissType.All) {
       return true
     }
     // 不可被闪避
-    if (this.skill.special === Special.gengzongbo) {
+    if (skill.special === Special.gengzongbo) {
       return false
     }
     // 闪避弹丸类型
-    // if (this.skill.bullet && this.otherSkill.skill.missType === MissType.Bullet) {
+    // if (skill.bullet && this.otherSkill.skill.missType === MissType.Bullet) {
     //   return true
     // }
 
@@ -286,18 +294,18 @@ export default class Skill extends Component {
     // 单范围闪避
     switch (this.otherSkill.skill.missType) {
       case MissType.Bullet:
-        if (!this.skill.longrang) break
+        if (!skill.longrang) break
       case MissType.Single:
-        this.skill.range.forEach((range) => {
+        skill.range.forEach((range) => {
           if (range.length > 1) tag = false
         })
         return tag //不判断基本情况
     }
 
     // 默认只能打地面
-    if (!this.skill.range) this.skill.range = ['0']
-    if (this.actor.buffs.has(BuffEnum.fly)) this.skill.range.push('1')
-    this.skill.range.forEach((range) => {
+    if (!skill.range) skill.range = ['0']
+    if (this.actor.buffs.has(BuffEnum.fly)) skill.range.push('1')
+    skill.range.forEach((range) => {
       let location = this.otherActor.location || '0'
       if (range.includes(location)) {
         //只要包含了，就没有被闪避，当然在missType后判断
@@ -323,7 +331,7 @@ export default class Skill extends Component {
   }
   missFinal(actor: ActorManager) {
     if (actor === this.actor) {
-      console.trace('miss结束', this.actor.id)
+      console.log('miss结束', this.actor.id)
       this.tiger()
     }
   }

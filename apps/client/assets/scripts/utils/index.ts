@@ -23,19 +23,23 @@ export const createUINode = (name: string = 'node') => {
 }
 
 // 生成错误弹窗
-export const createErrorTip = (msg: string) => {
+export const createErrorTip = (msg: string, width: number = 400) => {
   if (!DataManager.Instance.stage.getChildByName('ErrTip')) {
     const prefab = DataManager.Instance.prefabMap.get('ErrTip')
 
     const node = instantiate(prefab)
     node.getChildByName('Tip').getChildByName('Label').getComponent(Label).string = msg
     node.setParent(DataManager.Instance.stage)
+    DataManager.Instance.stage.getChildByName('ErrTip').getChildByName('Tip').getComponent(UITransform).width = width
   } else {
     DataManager.Instance.stage
       .getChildByName('ErrTip')
       .getChildByName('Tip')
       .getChildByName('Label')
       .getComponent(Label).string = msg
+
+    DataManager.Instance.stage.getChildByName('ErrTip').getChildByName('Tip').getComponent(UITransform).width = width
+    
 
     DataManager.Instance.stage.getChildByName('ErrTip').active = true
   }
@@ -130,8 +134,12 @@ export const getNodePos = (node: Node, target: Node) => {
   return target.getComponent(UITransform).convertToNodeSpaceAR(worldPos)
 }
 
-export const getCollisionNode = (target: ActorManager, damage: number = 0) => { 
-  if (target.buffs.has(BuffEnum.door) && target.doorHp > 0  && target?.otherActor?.skill.skill.special !== Special.qigongpao) {
+export const getCollisionNode = (target: ActorManager, damage: number = 0) => {
+  if (
+    target.buffs.has(BuffEnum.door) &&
+    target.doorHp > 0 &&
+    target?.otherActor?.skill.skill.special !== Special.qigongpao
+  ) {
     // 根据伤害和门的血量决定碰撞对象
     const hp = target.doorHp - damage
     const node = createUINode()
@@ -140,14 +148,11 @@ export const getCollisionNode = (target: ActorManager, damage: number = 0) => {
     const offsetY = target.tran.height / 2
     if (hp > 4) {
       node.setPosition(v3(offsetX * 3, target.location == '0' ? -offsetY : -offsetY - 150))
-    }
-    else if (hp > 2) {
+    } else if (hp > 2) {
       node.setPosition(v3(offsetX * 2, target.location == '0' ? -offsetY : -offsetY - 150))
-    }
-    else if (hp > 0) {
+    } else if (hp > 0) {
       node.setPosition(v3(offsetX, target.location == '0' ? -offsetY : -offsetY - 150))
-    }
-    else{
+    } else {
       node.setPosition(v3(0, target.location == '0' ? -offsetY : -offsetY - 150))
     }
 
@@ -164,7 +169,7 @@ export const checkCollision = (
   entityType: EntityTypeEnum[] = [EntityTypeEnum.Actor, EntityTypeEnum.Actor],
   type = 'rect',
 ) => {
-  const myTran = myNode.getComponent(UITransform)  
+  const myTran = myNode.getComponent(UITransform)
   const targetTran = targetNode.getComponent(UITransform)
 
   // 缩小碰撞盒

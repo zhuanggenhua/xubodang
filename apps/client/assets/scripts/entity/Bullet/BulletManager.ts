@@ -1,7 +1,7 @@
 import { Tween, tween, Node, Vec3, _decorator, instantiate, IVec2, Vec2, UITransform } from 'cc'
 import { EntityManager } from '../../base/EntityManager'
 import { EntityTypeEnum } from '../../common'
-import { EventEnum, MissType, ParamsNameEnum, SHAKE_TYPE_ENUM, Special } from '../../enum'
+import { EventEnum, ISkill, MissType, ParamsNameEnum, SHAKE_TYPE_ENUM, Special } from '../../enum'
 import DataManager from '../../global/DataManager'
 import EventManager from '../../global/EventManager'
 import ObjectPoolManager from '../../global/ObjectPoolManager'
@@ -46,7 +46,7 @@ export class BulletManager extends EntityManager {
     let offsetX = 200
     if (this.type == EntityTypeEnum.Bo) offsetX = 50
     tempPosition.x += isPlayer(this.actor.id) ? offsetX : -offsetX
-    tempPosition.y += (Math.random() * actorTran.width) / 2 - actorTran.width / 4
+    tempPosition.y += (Math.random() * actorTran.width) / 4 - actorTran.width / 4
 
     // 设置方向
     const directionVec2 = new Vec2(
@@ -91,6 +91,19 @@ export class BulletManager extends EntityManager {
         {
           //  target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
           onUpdate: (target, ratio) => {
+            // 特殊处理飞剑
+            if (this.type == EntityTypeEnum.Sword) {
+              const skill: ISkill = {
+                damage: 1,
+                range: ['0', '1'],
+                type: [1],
+                longrang: true,
+                bullet: EntityTypeEnum.Sword,
+                speed: 1,
+              }
+              if (this.actor.skill.miss(skill)) return
+            }
+
             // 闪避，则不处理碰撞
             if (this.actor.skill.miss()) return
             // 重新设置箭矢的宽高
@@ -104,7 +117,13 @@ export class BulletManager extends EntityManager {
               tw.stop()
 
               if (this.type != EntityTypeEnum.Sword) {
-                this.actor.onAttack()
+                if (this.actor.otherSkill.skill.special) {
+                  if (this.actor.otherSkill.skill.special !== Special.Reflect) {
+                    this.actor.onAttack()
+                  }
+                } else {
+                  this.actor.onAttack()
+                }
               }
 
               // 打到人身上
@@ -119,7 +138,7 @@ export class BulletManager extends EntityManager {
                 }
               } else {
                 // 如果是反射盾
-                if (this.actor.otherSkill.skill.special === Special.Reflect) {
+                if (this.actor.otherSkill.skill.special && this.actor.otherSkill.skill.special === Special.Reflect) {
                   if (this.actor.skill.skill?.bullet) {
                     // 设置方向的时候就会翻转
                     // this.node.scale = new Vec3(1, -this.node.scale.y, 1)
@@ -131,7 +150,7 @@ export class BulletManager extends EntityManager {
                         // 用回调修正攻击者
                         this.actor.otherActor.skill.skill = this.actor.skill.skill
                         this.actor = this.actor.otherActor
-                        // this.actor.otherActor.onAttack()
+                        this.actor.otherActor.onAttack()
                       },
                     )
                     return

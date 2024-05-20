@@ -57,6 +57,11 @@ export class GameManager extends Singleton {
     // 注册api
     // 登录注册
     server.setApi(ApiFunc.login, (connection: Connection, { player: playerInfo }) => {
+      // 处理重复登录
+      if (connection.playerId) {
+        PlayerManager.Instance.removePlayer(connection.playerId)
+      }
+
       const player = PlayerManager.Instance.createPlayer(connection, playerInfo)
       // 如果还在房间，就跳转战斗
       if (player.rid !== -1) {

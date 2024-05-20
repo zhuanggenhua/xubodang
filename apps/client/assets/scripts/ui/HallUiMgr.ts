@@ -6,6 +6,7 @@ import {
   find,
   Label,
   Node,
+  sys,
   tween,
   UIOpacity,
   UITransform,
@@ -15,7 +16,10 @@ import {
 } from 'cc'
 import EventManager from '../global/EventManager'
 import { EventEnum } from '../enum'
-import { RoomMode } from '../common'
+import { ApiFunc, RoomMode } from '../common'
+import DataManager from '../global/DataManager'
+import NetworkManager from '../global/NetworkManager'
+import { HallManager } from '../scene/HallManager'
 const { ccclass, property } = _decorator
 
 @ccclass('HallUiMgr')
@@ -140,5 +144,36 @@ export class HallUiMgr extends Component {
         this.selectDesc.getComponent(Label).string = '没有任何限制'
         break
     }
+  }
+
+  // 改名
+  editNameType: string = '用户名'
+  handlerEditNameClick(event,type: string = '用户名') {
+    DataManager.Instance.stage
+      .getChildByName('EditUserName')
+      .getChildByName('EditName')
+      .getChildByName('EditBox')
+      .getComponent(EditBox).placeholder = '请输入' + type
+    this.editNameType = type
+    DataManager.Instance.stage.getChildByName('EditUserName').active = true
+  }
+  handlerEditName() {
+    const name = DataManager.Instance.stage
+      .getChildByName('EditUserName')
+      .getChildByName('EditName')
+      .getChildByName('EditBox')
+      .getComponent(EditBox).string
+
+    if (this.editNameType == '神名') {
+      DataManager.Instance.player.godname = name
+    } else {
+      DataManager.Instance.player.nickname = name
+    }
+    const player = DataManager.Instance.player
+    sys.localStorage.setItem('player', JSON.stringify(player))
+    NetworkManager.Instance.callApi(ApiFunc.login, { player })
+
+    this.getComponent(HallManager).syncRooms()
+    DataManager.Instance.stage.getChildByName('EditUserName').active = false
   }
 }

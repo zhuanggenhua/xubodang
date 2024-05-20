@@ -1,4 +1,4 @@
-import { EntityTypeEnum } from "../common"
+import { EntityTypeEnum } from '../common'
 
 export enum TipEnum {
   ErrTip = 'ErrTip',
@@ -35,7 +35,7 @@ export enum EventEnum {
   flicker = 'flicker',
   moveBack = 'moveBack',
   missSingle = 'missSingle',
-  gameOver = 'gameOver',
+    gameOver = 'gameOver',
 
   onDoorDefense = 'onDoorDefense',
   clearTween = 'clearTween',
@@ -121,6 +121,13 @@ export enum SkillPathEnum {
   HandTwo = 'hand/hand-two',
   HandFour = 'hand/hand-four',
   HandCenter = 'hand/hand-center',
+
+  // 计数图片
+  zero = 'count/inverted-dice-0',
+  one = 'count/inverted-dice-1',
+  two = 'count/inverted-dice-2',
+  three = 'count/inverted-dice-3',
+  four = 'count/inverted-dice-4',
 
   // 动态的盾牌图标
   RoundShieldFrame = 'shieldFrame/round-shield',

@@ -38,6 +38,7 @@ export class ButtonMgr extends Component {
   isDone: boolean = false
 
   handlerRestart() {
+    DataManager.Instance.roomInfo.turn = 0
     if (DataManager.Instance.mode == 'single') {
       director.loadScene(SceneEnum.Battle)
     } else if (DataManager.Instance.mode == 'network') {

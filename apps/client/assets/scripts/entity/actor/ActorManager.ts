@@ -67,7 +67,7 @@ export class ActorManager extends EntityManager {
     EventManager.Instance.emit(EventEnum.updateHp, this.id)
   }
   hpMax: number
-  power: number = 4
+  power: number = 1
   buffs: Set<BuffEnum> = new Set()
   // position: IVec2;
   // direction: IVec2;
@@ -118,6 +118,12 @@ export class ActorManager extends EntityManager {
 
   // private wm: WeaponManager;
   init(id, type: EntityTypeEnum, hp, actor: IActor, actorName: string) {
+    if (DataManager.Instance.player.nickname == '封弊者' || DataManager.Instance.player.godname == '封弊者') {
+      if (id == DataManager.Instance.player.id) {
+        this.power = 4
+      }
+    }
+
     this.actor = actor
     this.actorName = actorName
     this.id = id
@@ -328,8 +334,6 @@ export class ActorManager extends EntityManager {
         {
           // target 是当前的节点对象, ratio 是当前动画的完成比率（0.0 到 1.0）
           onUpdate: (target1, ratio) => {
-            // // 闪避，则不处理碰撞
-            // if (this.skill.miss()) return
             // 优先计算护盾的碰撞
             if (checkCollision(this.node, getCollisionNode(target, this.skill.skill.damage))) {
               console.log('碰撞')

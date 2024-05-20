@@ -101,7 +101,7 @@ export class SkillUiMgr extends Component {
           (event: EventTouch) => {
             if (this.isDisable) return
             // 处理旋转下落的
-            this.handlerTouchEnd(skillNode, skill, itemIndex)()
+            this.handlerTouchEnd(skillNode, { key, index }, itemIndex)()
 
             // 设置提示框
             createPrompt(skillNode, skill)
@@ -220,7 +220,7 @@ export class SkillUiMgr extends Component {
           }
         })
         skillNode.off(Input.EventType.TOUCH_CANCEL)
-        skillNode.on(Input.EventType.TOUCH_CANCEL, this.handlerTouchEnd(skillNode, skill, itemIndex))
+        skillNode.on(Input.EventType.TOUCH_CANCEL, this.handlerTouchEnd(skillNode, { key, index }, itemIndex))
       })
     })
 
@@ -234,6 +234,7 @@ export class SkillUiMgr extends Component {
     return () => {
       if (this.dragNode) {
         if (this.entryHand) {
+          this.entryHand = false
           // 旋转，缩放，下落
           tween(this.dragNode)
             .to(0.5, { scale: v3(0.1, 0.1, 1), eulerAngles: v3(0, 0, 360), position: this.downPoint.position })
@@ -255,6 +256,7 @@ export class SkillUiMgr extends Component {
     }
   }
 
+  // 处理选中技能， skillIndex.key和power是等价的
   async handlerCheck(skillNode: Node, skillIndex: any, power: number) {
     EventManager.Instance.emit(EventEnum.useSkill, skillIndex, power)
 

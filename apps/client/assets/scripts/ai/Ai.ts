@@ -5,6 +5,7 @@ import { BuffEnum, EventEnum, IActor, ISkill } from '../enum'
 import DataManager from '../global/DataManager'
 import actors from '../config/actor'
 import { getRandomNumber } from '../utils'
+import skills from '../config/skills'
 
 export default class Ai extends Singleton {
   static get Instance() {
@@ -27,11 +28,12 @@ export default class Ai extends Singleton {
       key: 0,
       index: 3,
     }
+
     if (useSkill) {
-      const skills = this.actor.skills
-      const keys = Object.keys(skills)
+      const mySkills = this.actor.skills
+      const keys = Object.keys(mySkills)
       keys.forEach((key) => {
-        skills[key].forEach((skill: ISkill, index) => {
+        mySkills[key].forEach((skill: ISkill, index) => {
           if (skill == useSkill.skill) {
             skillIndex.key = Number(key)
             skillIndex.index = index
@@ -39,7 +41,7 @@ export default class Ai extends Singleton {
           }
         })
       })
-      EventManager.Instance.emit(EventEnum.useSkill, skillIndex, useSkill.power, this.id)
+      EventManager.Instance.emit(EventEnum.useSkill, skillIndex, skillIndex.key, this.id)
     } else {
       // 没有匹配，直接聚气
       EventManager.Instance.emit(EventEnum.useSkill, skillIndex, 0, this.id)
@@ -69,10 +71,10 @@ export default class Ai extends Singleton {
     }
 
     // 先决定使用的种类，再决定用哪一个
-    const skills = this.actor.skills
-    const keys = Object.keys(skills)
+    const mySkills = this.actor.skills
+    const keys = Object.keys(mySkills)
     keys.forEach((key, index) => {
-      skills[key].forEach((skill: ISkill, index) => {
+      mySkills[key].forEach((skill: ISkill, index) => {
         if (skill.damage >= player.hp) {
           canKill = true
         }
@@ -96,6 +98,8 @@ export default class Ai extends Singleton {
         }
       })
     })
+    console.log('canUse', canUse);
+    
 
     // 优先使用buff增强的能力
     if (actor.buffs.size > 0) {
@@ -158,17 +162,24 @@ export default class Ai extends Singleton {
         return
       }
     } else {
-      weight.attack += 20
+      weight.attack += 40
     }
 
     // 前五个回合，优先集气  或者用buff
-    randomCount = getRandomNumber(0, 100)
-    if (DataManager.Instance.roomInfo.turn < 5 && power < 4) {
+    if (DataManager.Instance.roomInfo.turn <= 5 && power < 4) {
+      randomCount = getRandomNumber(0, 100)
       weight.power += 100 - DataManager.Instance.roomInfo.turn * 10
+
+      if (randomCount < weight.power) {
+        const useSkill = canUse.power[getRandomNumber(0, canUse.power.length - 1)]
+        this.useSkill(useSkill)
+        return
+      }
     } else {
       weight.power += 80 - power * 20
 
-      if (DataManager.Instance.roomInfo.turn < 6) {
+      // 小于六回合才考虑持续技能  只会用一个
+      if (DataManager.Instance.actor2.buffs.size <= 0) {
         const useSkill = canUse.buff[getRandomNumber(0, canUse.buff.length - 1)]
         if (useSkill) {
           this.useSkill(useSkill)
@@ -176,20 +187,23 @@ export default class Ai extends Singleton {
         }
       }
     }
+
+    // 防御
+    randomCount = getRandomNumber(0, 100)
+    weight.defense += player.power * 10 + (DataManager.Instance.actor2.hpMax - DataManager.Instance.actor2.hp) * 2
+    if (randomCount < weight.defense) {
+      const useSkill = canUse.defense[getRandomNumber(0, canUse.defense.length - 1)]
+      this.useSkill(useSkill)
+      return
+    }
+
+    randomCount = getRandomNumber(0, 100)
     if (randomCount < weight.power) {
       const useSkill = canUse.power[getRandomNumber(0, canUse.power.length - 1)]
       this.useSkill(useSkill)
       return
     }
 
-    // 防御
-    randomCount = getRandomNumber(0, 100)
-    weight.defense += player.power * 15
-    if (randomCount < weight.defense) {
-      const useSkill = canUse.defense[getRandomNumber(0, canUse.defense.length - 1)]
-      this.useSkill(useSkill)
-      return
-    }
     // 攻击
     randomCount = getRandomNumber(0, 100)
     if (randomCount < weight.attack) {
@@ -202,7 +216,10 @@ export default class Ai extends Singleton {
       return
     }
 
+    console.log('ai权重', weight)
+
     // 闪避
+    randomCount = getRandomNumber(0, 100)
     const useSkill = canUse.miss[getRandomNumber(0, canUse.miss.length - 1)]
     this.useSkill(useSkill)
 

@@ -1,7 +1,20 @@
-import { _decorator, Color, Component, Input, instantiate, Label, Node, Sprite, tween, UIOpacity, Vec3 } from 'cc'
+import {
+  _decorator,
+  Color,
+  Component,
+  Input,
+  instantiate,
+  Label,
+  Layout,
+  Node,
+  Sprite,
+  tween,
+  UIOpacity,
+  Vec3,
+} from 'cc'
 import DataManager from '../global/DataManager'
 import EventManager from '../global/EventManager'
-import { BuffEnum, EventEnum, ISkill, Special } from '../enum'
+import { BuffEnum, EventEnum, ISkill, SkillPathEnum, Special } from '../enum'
 import { ApiFunc, EntityTypeEnum, IPlayer } from '../common'
 import NetworkManager from '../global/NetworkManager'
 import actors from '../config/actor'
@@ -27,6 +40,10 @@ export class BattleMgr extends Component {
   GameOver: Node
   @property(Node)
   Bu: Node
+  @property(Node)
+  Power1: Node
+  @property(Node)
+  Power2: Node
 
   bg: Node
   choose: Node
@@ -53,6 +70,7 @@ export class BattleMgr extends Component {
   onDestroy() {
     DataManager.Instance.actors.clear()
     DataManager.Instance.otherPlayer = null
+    DataManager.Instance.roomInfo.life = 9
 
     EventManager.Instance.off(EventEnum.useSkill, this.useSkill, this)
     EventManager.Instance.off(EventEnum.updateHp, this.setHeart, this)
@@ -83,6 +101,10 @@ export class BattleMgr extends Component {
 
     this.hearts1 = this.bg.getChildByName('Hearts1')
     this.hearts2 = this.bg.getChildByName('Hearts2')
+    if (DataManager.Instance.roomInfo.life > 10) {
+      this.hearts1.getComponent(Layout).spacingX = -30
+      this.hearts2.getComponent(Layout).spacingX = -30
+    }
     this.setHeart()
     this.renderPlayers()
 
@@ -159,6 +181,18 @@ export class BattleMgr extends Component {
     tween(this.Battle.parent.getComponent(UIOpacity)).to(0.5, { opacity: 255 }).start()
 
     this.skillContainer.getComponent(SkillUiMgr).startGame()
+    this.renderSkills(DataManager.Instance.actors.get(DataManager.Instance.player.id).actorName)
+
+    this.Power1.setParent(this.Battle)
+    this.Power2.setParent(this.Battle)
+    this.Power1.setPosition(
+      DataManager.Instance.actor1.node.position.x,
+      DataManager.Instance.actor1.node.position.y - 180,
+    )
+    this.Power2.setPosition(
+      DataManager.Instance.actor2.node.position.x,
+      DataManager.Instance.actor2.node.position.y - 180,
+    )
   }
 
   onlineUseSkill(data) {
@@ -167,7 +201,7 @@ export class BattleMgr extends Component {
   }
   useSkill(skillIndex: any, power: number, id: number = DataManager.Instance.player.id) {
     const { key, index } = skillIndex
-    console.log('使用技能', key, index, DataManager.Instance.actors.get(id).actor)
+    console.log('使用技能', key, index, power, DataManager.Instance.actors.get(id).actor)
 
     let skill: ISkill = DataManager.Instance.actors.get(id).actor.skills[key][index]
     DataManager.Instance.actors.get(id).skill = new Skill(skill, id)
@@ -178,8 +212,15 @@ export class BattleMgr extends Component {
     if (DataManager.Instance.actors.get(id).buffs.has(BuffEnum.wall) && skill == skills['012']) {
       power--
     }
-    // DataManager.Instance.actors.get(id).power -= power
-    console.log('释放后能量', power)
+    if (
+      id == DataManager.Instance.player.id &&
+      (DataManager.Instance.player.nickname == '封弊者' || DataManager.Instance.player.godname == '封弊者')
+    ) {
+      DataManager.Instance.actors.get(id).power -= 0
+    } else {
+      DataManager.Instance.actors.get(id).power -= power
+    }
+    console.log('释放后能量', DataManager.Instance.actors.get(id).power, power, 'id', id)
 
     // 两个角色都就绪才执行
     let ready = true
@@ -204,6 +245,12 @@ export class BattleMgr extends Component {
       DataManager.Instance.actor2.skill.excute()
       DataManager.Instance.actor1.skill.excute()
       // todo  十秒后强制下一轮
+
+      const powerLevel = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+      let power1 = powerLevel[DataManager.Instance.actor1.power]
+      this.Power1.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum[power1])
+      let power2 = powerLevel[DataManager.Instance.actor2.power]
+      this.Power2.getComponent(Sprite).spriteFrame = DataManager.Instance.skillMap.get(SkillPathEnum[power2])
     }
   }
 
@@ -243,7 +290,7 @@ export class BattleMgr extends Component {
     }
   }
   setPlayerName(label: Label, player: IPlayer) {
-    if (player?.godname && player?.godname !== '') {
+    if (player?.godname && player?.godname !== '' && !player?.godname.includes(' ')) {
       label.string = player?.godname
       // 神名是金色
       label.color = new Color('#FFD700')

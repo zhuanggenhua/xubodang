@@ -58,7 +58,7 @@ export class HallManager extends Component {
       username.getChildByName('Tag').getChildByName('GodName').getComponent(Label).string = godname
       username.getChildByName('Tag').active = true
     } else {
-      username.getChildByName('Tag').active = false
+      // username.getChildByName('Tag').active = false
     }
   }
 
